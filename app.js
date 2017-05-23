@@ -9,6 +9,20 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 
+// variables
+const config = require('./config/databse')
+
+// Connect to Mongodb Database
+// To start the mongodb Server go to /usr/local/bin and run ./mongo - that will start the server and you can use 'mongod'
+mongoose.connect(config.database);
+
+
+mongoose.connection.on('connected',() => {
+  console.log('Connected to Database ' + config.database);
+});
+// Check Mongodb connections
+checkMongooseConnection(mongoose);
+
 const app = express();
 
 //routes files
@@ -28,6 +42,11 @@ app.use(bodyParser.json());
 // anything that is /users will go to that users file
 app.use('/users',users);
 
+// Set Static Folder for when we use Angular an other files - staticfile keyboard shortcut
+
+// Esto ultiliza los archivos Html o Javscript que tu pongas dentro de el y busca siempre en un folder que se llama public que lo junta con el current directories por eso path.join(__dirname)
+app.use(express.static(path.join(__dirname,'public')));
+
 // index Route
 app.get('/',(req,res) => {
   res.send('invalid EndPoint');
@@ -39,3 +58,33 @@ app.listen(port,() => {
   console.log('Server started on port '+port);
 
 })
+
+function checkMongooseConnection(mongoose){
+  // do Validation if Mongoose(param) is a type of Mongoose
+
+    mongoose.connection.on('open', function (ref) {
+      connected=true;
+      console.log('open connection to mongo server.');
+  });
+
+  mongoose.connection.on('disconnected', function (ref) {
+      connected=false;
+      console.log('disconnected from mongo server.');
+  });
+
+  mongoose.connection.on('close', function (ref) {
+      connected=false;
+      console.log('close connection to mongo server');
+  });
+
+  mongoose.connection.on('error', function (err) {
+      connected=false;
+      console.log('error connection to mongo server!');
+      console.log(err);
+  });
+
+  mongoose.connection.db.on('reconnect', function (ref) {
+      connected=true;
+      console.log('reconnect to mongo server.');
+  });
+}
