@@ -59,9 +59,12 @@ app.listen(port,() => {
 
 })
 
-function checkMongooseConnection(mongoose){
+function checkMongooseConnection(mongose){
   // do Validation if Mongoose(param) is a type of Mongoose
-
+   if (mongoose.constructor.name !== "Mongoose"){
+     console.log("Parameter is not a mongoose Object");
+     return;
+   }
     mongoose.connection.on('open', function (ref) {
       connected=true;
       console.log('open connection to mongo server.');
