@@ -1,1 +1,1 @@
-# MEAN-Stack-Authentication-
+# MEAN-Stack-Authentication
