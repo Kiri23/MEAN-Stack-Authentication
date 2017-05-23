@@ -1,0 +1,34 @@
+{
+  "name": "authentication",
+  "version": "1.0.0",
+  "description": "authentication app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies":{
+    "express":"*",
+    "mongoose":"*",
+    "bcryptjs":"*",
+    "cors":"*",
+    "passport":"*",
+    "body-parser":"*",
+    "passport-jwt":"*",
+    "jsonwebtoken":"*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiri23/MEAN-Stack-Authentication-.git"
+  },
+  "keywords": [
+    "node.js",
+    "mongodb",
+    "passport"
+  ],
+  "author": "Christian Nogueras Rosado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kiri23/MEAN-Stack-Authentication-/issues"
+  },
+  "homepage": "https://github.com/Kiri23/MEAN-Stack-Authentication-#readme"
+}
