@@ -59,6 +59,12 @@ app.get('/',(req,res) => {
 
 })
 
+// This is how you combine Angular with Node.js
+// Catch all other routes and return the index file that mange the angular logic
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
 // Start Server
 app.listen(port,() => {
   console.log('Server started on port '+port);
