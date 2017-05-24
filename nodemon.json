@@ -1,0 +1,9 @@
+{
+  "events":{
+    "restart":"",
+    "start":"",
+    "crash":"",
+    "exit":"",
+    "config:update":""
+  }
+}

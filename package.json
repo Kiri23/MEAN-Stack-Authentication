@@ -3,18 +3,19 @@
   "version": "1.0.0",
   "description": "authentication app",
   "main": "app.js",
+  "coment":"Se puede ver Npm Script en Google para ver las oppurtnidades que me ofrece",
   "scripts": {
     "start": "node app.js"
   },
-  "dependencies":{
-    "express":"*",
-    "mongoose":"*",
-    "bcryptjs":"*",
-    "cors":"*",
-    "passport":"*",
-    "body-parser":"*",
-    "passport-jwt":"*",
-    "jsonwebtoken":"*"
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "bcryptjs": "*",
+    "cors": "*",
+    "passport": "*",
+    "body-parser": "*",
+    "passport-jwt": "*",
+    "jsonwebtoken": "*"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,9 @@
   "bugs": {
     "url": "https://github.com/Kiri23/MEAN-Stack-Authentication-/issues"
   },
-  "homepage": "https://github.com/Kiri23/MEAN-Stack-Authentication-#readme"
+  "homepage": "https://github.com/Kiri23/MEAN-Stack-Authentication-#readme",
+  "devDependencies": {
+    "@angular/cli": "^1.0.4"
+  }
+
 }

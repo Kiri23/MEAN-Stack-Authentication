@@ -80,5 +80,9 @@ router.get('/profile',passport.authenticate('jwt',{session:false}),(req, res,nex
   res.json({user:req.user});
 });
 
+router.get('/ping', (req, res) => {
+    res.send('pong');
+});
+
 
 module.exports = router;
