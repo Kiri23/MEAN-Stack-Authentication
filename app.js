@@ -47,6 +47,12 @@ app.use('/users',users);
 // Esto ultiliza los archivos Html o Javscript que tu pongas dentro de el y busca siempre en un folder que se llama public que lo junta con el current directories por eso path.join(__dirname)
 app.use(express.static(path.join(__dirname,'public')));
 
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
 // index Route
 app.get('/',(req,res) => {
   res.send('invalid EndPoint');
