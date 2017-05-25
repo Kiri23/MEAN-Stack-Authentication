@@ -1,6 +1,31 @@
-<br>
-<br>
-<br>
-<p>
-  register works!
-</p>
+<h2 class="page-header">Register {{error}}</h2>
+
+<form name="registerForm" (submit)="onRegisterSubmit()">
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" required [(ngModel)]="name" name="name" ng-model="name"  required class="form-control">
+    <!-- <h1>{{registerForm.name.$touched}}</h1> -->
+    <!--Error message -->
+    <!--Esto es cpmo hacer que muestre un mesnaje a base de true o false de un estado -->
+    <!-- <span ng-show="registerForm.name.$touched && registerForm.name.$invalid">The name is required.</span> -->
+  </div>
+
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" required [(ngModel)]="username" name="username" required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Password</label>
+    <input type="password" required [(ngModel)]="password" name="password"  required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="name">Email</label>
+    <input type="text" required [(ngModel)]="email" name="email" required class="form-control">
+  </div>
+
+  <input type="submit" class="btn btn-primary" name="" value="submit">
+
+</form>
