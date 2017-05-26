@@ -16,6 +16,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 //Services
 import {ValidateService} from './services/validate.service';
+import {AuthService} from './services/auth.service';
 
 //appRoutes - va a contener todas las routes del app
 const appRoutes: Routes = [
@@ -45,7 +46,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule
   ],
-  providers: [ValidateService],
+  providers: [ValidateService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,7 +22,8 @@ router.post('/register', (req, res,next) => {
 // Add User to mongoDb
   User.addUser(newUser,(err, user) => {
     if(err){
-      res.json({success: false, msg:'Failed to register user'});
+      console.log(err + " add user");
+      res.json({success: false, msg:'Failed to register user',error:err});
     }else{ // addUser to the Database
       res.json({success:true,msg:'User Registered',user:newUser});
     }
