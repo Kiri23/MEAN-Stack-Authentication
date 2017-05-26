@@ -21,5 +21,33 @@ export class AuthService {
     return this.http.post('http://localhost:3002/users/register',user,{headers:headers}).map(res => res.json());
   }
 
+  // Make Http Call to Login user
+  authenticateUser(user){
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    headers.append('Content-Type','application/json');
+    // observable make the http call to authenticate user
+    // This is going to send the succes message and the authenticate Token
+    return this.http.post('http://localhost:3002/users/authenticate',user,{headers:headers}).map(res => res.json());
+  }
+
+  // authenticater user login with the token
+  storeUserData(token,user){
+    // when using jwt-token it look for this key exactly id_token. saving token to local storage
+    localStorage.setItem('id_token',token)
+    // save to local storage user. we need to store as a string because it cant store object. when we need it back we parse it back to json
+    localStorage.setItem('user',JSON.stringify(user))
+    // set values to the variable
+    this.authToken = token;
+    this.user = user;
+  }
+
+  logout(){
+    // set variables to null
+    this.authToken = null;
+    this.user = null;
+    // clear local storage
+    localStorage.clear()
+  }
 
 }
