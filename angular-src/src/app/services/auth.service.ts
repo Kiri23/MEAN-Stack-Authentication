@@ -21,7 +21,7 @@ export class AuthService {
     headers.append('Content-Type','application/json');
     // return an observable with the response
     // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
-    return this.http.post('http://localhost:3002/users/register',user,{headers:headers}).map(res => res.json());
+    return this.http.post('/users/register',user,{headers:headers}).map(res => res.json()); // change this to localhost when testing
   }
 
   // Make Http Call to Login user
@@ -31,7 +31,7 @@ export class AuthService {
     headers.append('Content-Type','application/json');
     // observable make the http call to authenticate user
     // This is going to send the succes message and the authenticate Token
-    return this.http.post('http://localhost:3002/users/authenticate',user,{headers:headers}).map(res => res.json());
+    return this.http.post('/users/authenticate',user,{headers:headers}).map(res => res.json());
   }
 
   // authenticater user login with the token
@@ -63,7 +63,7 @@ export class AuthService {
     headers.append('Authorization',this.authToken);
     headers.append('Content-Type','application/json');
     // this get request send the token and user info in a json response
-    return this.http.get('http://localhost:3002/users/profile',{headers:headers}).map(res => res.json());
+    return this.http.get('/users/profile',{headers:headers}).map(res => res.json());
   }
 
   loadToken(){
