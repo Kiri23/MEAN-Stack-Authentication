@@ -1,7 +1,10 @@
 'use strict'
+//Modules
 import { Injectable } from '@angular/core';
 import {Http,Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
+//Third party Module
+import {tokenNotExpired} from 'angular2-jwt';
 
 @Injectable()
 export class AuthService {
@@ -48,6 +51,30 @@ export class AuthService {
     this.user = null;
     // clear local storage
     localStorage.clear()
+  }
+
+  // Get Profile
+  getProfile(){
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    // with this now we have acces to the token.
+    this.loadToken()
+    // append the token to the header
+    headers.append('Authorization',this.authToken);
+    headers.append('Content-Type','application/json');
+    // this get request send the token and user info in a json response
+    return this.http.get('http://localhost:3002/users/profile',{headers:headers}).map(res => res.json());
+  }
+
+  loadToken(){
+    // Load token from local storage
+    const token = localStorage.getItem('id_token');
+    this.authToken = token;
+  }
+
+  // check if there's a user sing in
+  checkLoggedIn(){
+    return tokenNotExpired('id_token');
   }
 
 }

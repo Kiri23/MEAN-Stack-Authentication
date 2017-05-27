@@ -17,6 +17,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 //Services
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
+import {AuthGuard} from './guards/auth.guard';
 
 //appRoutes - va a contener todas las routes del app
 const appRoutes: Routes = [
@@ -24,8 +25,10 @@ const appRoutes: Routes = [
   {path:'',component:HomeComponent},
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
-  {path:'profile',component:ProfileComponent},
-  {path:'dashboard',component:DashboardComponent}
+  // protect route
+  {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+  // protect route
+  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]}
 
 ];
 
@@ -46,7 +49,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule
   ],
-  providers: [ValidateService,AuthService],
+  providers: [ValidateService,AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

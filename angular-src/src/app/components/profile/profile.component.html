@@ -1,3 +1,15 @@
-<p>
-  profile works!
-</p>
+<!--ngIf(ifStatement)- Make sure there's a user before showing html  -->
+<div *ngIf="user" class="">
+  <!--Embed the user name -->
+  <h2 class="page-header">{{user.name}}</h2>
+  <ul class="list-group">
+    <!--username of the user  -->
+    <li class="list-group-item">
+      Username: {{user.username}}
+    </li>
+    <!--Email of the user  -->
+    <li class="list-group-item">
+      Email: {{user.email}}
+    </li>
+  </ul>
+</div>
