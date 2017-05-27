@@ -29,7 +29,7 @@ const app = express();
 const users = require('./routes/users')
 
 // Port Number
-const port = process.env.Port || 3002;
+const port = process.env.PORT || 3002;
 
 // express cors google- App.Use Cors lo que hace es que
 // da Allow Acces a cualquier dominio y tambien acepta tipo de data que se envie en el nuevo request.
@@ -67,7 +67,7 @@ app.get('*', (req, res) => {
 
 // Start Server
 app.listen(port,() => {
-  console.log('Server started on port '+port);
+  console.log('Server started on port '+ port);
 
 })
 
