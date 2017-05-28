@@ -1,0 +1,44 @@
+/* https://work.smarchal.com/twbscolor/ genrate boostrap color */
+
+/* Custom Color*/
+.main-color-bg{
+  background-color: #e74c3c !important;
+  border-color: #c0932b !important ;
+  color: #ffffff !important;
+}
+
+/* dropdown button */
+.dropdown .btn-default{
+  color: #4D4848;
+  background-color:lightgrey; /* AFADB3  */
+  border-color: #130269;
+}
+
+/* Header */
+#header{
+  background: #333333;
+  color:#ffffff;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+#header .create .btn-default{
+  margin-top: 20px;
+}
+
+/*Breadcrumb*/
+
+.breadcrumb{
+  background: #cccccc;
+  color: #333333;
+}
+
+.breadcrumb a {
+  color: #333333;
+}
+
+/* Progress Bar */
+/*.progress-bar{
+  background: #333333;
+  color: #ffffff;
+}*/
