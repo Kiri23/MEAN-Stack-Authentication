@@ -16,12 +16,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { ListGroupComponent } from './components/dashboard-components/listgroup/listgroup.component';
-
-
-//Services
-import {ValidateService} from './services/validate.service';
-import {AuthService} from './services/auth.service';
-import {AuthGuard} from './guards/auth.guard';
 import { IconComponent } from './components/icon/icon.component';
 import { SidebarComponent } from './components/dashboard-components/sidebar/sidebar.component';
 import { ProgressbarComponent } from './components/dashboard-components/progressbar/progressbar.component';
@@ -29,6 +23,13 @@ import { BoxComponent } from './components/dashboard-components/box/box.componen
 import { BoxesComponent } from './components/dashboard-components/boxes/boxes.component';
 import { TableComponent } from './components/dashboard-components/table/table.component';
 import { ModalComponent } from './components/dashboard-components/modal/modal.component';
+import { AdminUsersComponent } from './components/admin-users/admin-users.component';
+
+//Services
+import {ValidateService} from './services/validate.service';
+import {AuthService} from './services/auth.service';
+import {AuthGuard} from './guards/auth.guard';
+
 
 //appRoutes - va a contener todas las routes del app
 const appRoutes: Routes = [
@@ -41,7 +42,9 @@ const appRoutes: Routes = [
   // protect route
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
   // protect route
-  {path:'adminDashboard',component:AdminDashboardComponent,canActivate:[AuthGuard]}
+  {path:'adminDashboard',component:AdminDashboardComponent,canActivate:[AuthGuard]},
+  {path:'adminUsers',component:AdminUsersComponent,canActivate:[AuthGuard]}
+
 ];
 
 @NgModule({
@@ -61,7 +64,8 @@ const appRoutes: Routes = [
     BoxComponent,
     BoxesComponent,
     TableComponent,
-    ModalComponent
+    ModalComponent,
+    AdminUsersComponent
   ],
   imports: [
     BrowserModule,

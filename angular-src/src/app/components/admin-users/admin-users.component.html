@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> DashBoard <small>Manage your website</small></h2>
+        <h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Users <small>Manage Site User</small></h2>
       </div>
       <div class="col-md-3">
        <div class="dropdown create">
@@ -24,9 +24,11 @@
 <!--Breadcrumb section  -->
 <section id="breadcrumb">
     <ol class="breadcrumb">
-      <li class="active">Dashboard</li>
+      <li class=""> <a href = "/adminDashboard">Dashboard </a> </li>
+      <li class="active">Users</li>
     </ol>
 </section> <!--End breadcrumb section -->
+
 
 <section id="main">
   <div class="controller">
@@ -36,10 +38,8 @@
         <app-sidebar></app-sidebar>
       </div>
       <div class="col-md-9">
-        <!--Boxes -->
-        <app-boxes></app-boxes>
         <!--User Table-->
-        <app-table text="Latest Users"></app-table>
+        <app-table className="main-color-bg" text = "Users"></app-table>
       </div>
     </div>
   </div>

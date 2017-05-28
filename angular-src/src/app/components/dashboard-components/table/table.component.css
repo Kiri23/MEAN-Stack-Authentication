@@ -1,0 +1,14 @@
+/* Custom Color*/
+.main-color-bg{
+  background-color: #e74c3c !important;
+  border-color: #c0932b !important ;
+  color: #ffffff !important;
+}
+ .panel-title{
+   color: #ffffff;
+ }
+
+ .panel-heading{
+   background-color: black ;
+   border-color: black  ;
+ }

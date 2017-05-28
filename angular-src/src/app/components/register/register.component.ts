@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
   email:String;
   password:String;
 
-  error = ""
+  text = "Register"
 
   //anytime we use a service we need to inject to a constructor and module also need to be injected
   // so we can this.validateService
