@@ -991,7 +991,7 @@ exports = module.exports = __webpack_require__(7)(false);
 
 
 // module
-exports.push([module.i, "#footer{\n  background: #333333;\n  color: #ffffff;\n  text-align: center;\n  padding: 10px;\n  margin: 30 5 0 5;\n}\n", ""]);
+exports.push([module.i, "#footer{\n  background: #333333;\n  color: #ffffff;\n  text-align: center;\n  padding: 10px;\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 60px;\n  overflow-y: auto;\n  -webkit-box-flex: 1;\n      -ms-flex: 1;\n          flex: 1;\n  /*margin: 300 5 0 5;*/\n}\n", ""]);
 
 // exports
 
@@ -1139,7 +1139,7 @@ module.exports = module.exports.toString();
 /* 173 */
 /***/ (function(module, exports) {
 
-module.exports = "<!--app navabr for every routes of the application  -->\n<app-navbar></app-navbar>\n<div class=\"container\">\n  <!--Flash message mdules messages for error-->\n  <flash-messages> </flash-messages>\n  <!--This manage the route for the entire app -->\n  <router-outlet ></router-outlet>\n</div>\n\n<footer id=\"footer\">\n  <p>Copyright AdminStrap, &copy; 2017</p>\n</footer>\n"
+module.exports = "<!--app navabr for every routes of the application  -->\n<app-navbar></app-navbar>\n<div class=\"container\">\n  <!--Flash message mdules messages for error-->\n  <flash-messages> </flash-messages>\n  <!--This manage the route for the entire app -->\n  <router-outlet ></router-outlet>\n</div>\n\n<!-- <footer id=\"footer\" flex>\n  <p>Copyright AdminStrap, &copy; 2017</p>\n</footer> -->\n"
 
 /***/ }),
 /* 174 */
