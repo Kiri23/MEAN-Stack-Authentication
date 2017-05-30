@@ -329,6 +329,8 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_validate_service__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_auth_service__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_users_service__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_dashboard_components_table_columns_table_columns_component__ = __webpack_require__(247);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -363,6 +365,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 //Services
+
+
 
 
 
@@ -404,7 +408,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_19__components_dashboard_components_boxes_boxes_component__["a" /* BoxesComponent */],
             __WEBPACK_IMPORTED_MODULE_20__components_dashboard_components_table_table_component__["a" /* TableComponent */],
             __WEBPACK_IMPORTED_MODULE_21__components_dashboard_components_modal_modal_component__["a" /* ModalComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */]
+            __WEBPACK_IMPORTED_MODULE_22__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__components_dashboard_components_table_columns_table_columns_component__["a" /* TableColumnsComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -413,7 +418,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(appRoutes),
             __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesModule"]
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_23__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_24__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__["a" /* AuthGuard */]],
+        providers: [__WEBPACK_IMPORTED_MODULE_23__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_24__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_25__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_26__services_users_service__["a" /* UsersService */]],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
@@ -426,6 +431,7 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__(245);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminDashboardComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -437,10 +443,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var AdminDashboardComponent = (function () {
-    function AdminDashboardComponent() {
+    function AdminDashboardComponent(userService) {
+        this.userService = userService;
+        this.us = [];
     }
     AdminDashboardComponent.prototype.ngOnInit = function () {
+        // this.userService.getUsers().subscribe(user => {
+        //   console.log("user table " + user[0].email);
+        //   this.data = user
+        //   // var us:string;
+        //   console.log(this.data[0].email + " user data");
+        //   // for (this.us of this.data) {
+        //   //   console.log(this.us + " user key data");
+        //   // }
+        //
+        // });
     };
     return AdminDashboardComponent;
 }());
@@ -450,9 +469,10 @@ AdminDashboardComponent = __decorate([
         template: __webpack_require__(174),
         styles: [__webpack_require__(165)]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object])
 ], AdminDashboardComponent);
 
+var _a;
 //# sourceMappingURL=admin-dashboard.component.js.map
 
 /***/ }),
@@ -1149,7 +1169,7 @@ module.exports = "<!--app navabr for every routes of the application  -->\n<app-
 /* 174 */
 /***/ (function(module, exports) {
 
-module.exports = "<header id=\"header\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-9\">\n        <h2><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span> DashBoard <small>Manage your website</small></h2>\n      </div>\n      <div class=\"col-md-3\">\n       <div class=\"dropdown create\">\n          <button class=\"btn btn-default dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            Create Content\n            <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n            <li><a type=\"button\" data-toggle = \"modal\" data-target=\"#addPage\">Add Page</a></li>\n            <li><a href=\"#\">Add Post</a></li>\n            <li><a href=\"/register\">Add User</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div> <!--End div container -->\n</header> <!--End top Part of the website -->\n\n<!--Breadcrumb section  -->\n<section id=\"breadcrumb\">\n    <ol class=\"breadcrumb\">\n      <li class=\"active\">Dashboard</li>\n    </ol>\n</section> <!--End breadcrumb section -->\n\n<section id=\"main\">\n  <div class=\"controller\">\n    <div class=\"row\">\n      <div class=\"col-md-3\">\n        <!--Sidebar -->\n        <app-sidebar></app-sidebar>\n      </div>\n      <div class=\"col-md-9\">\n        <!--Boxes -->\n        <app-boxes></app-boxes>\n        <!--User Table-->\n        <app-table text=\"Latest Users\"></app-table>\n      </div>\n    </div>\n  </div>\n  <!--Add Page Modal  -->\n  <app-modal modalId=\"addPage\"></app-modal>\n</section>\n"
+module.exports = "<header id=\"header\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-9\">\n        <h2><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span> DashBoard <small>Manage your website</small></h2>\n      </div>\n      <div class=\"col-md-3\">\n       <div class=\"dropdown create\">\n          <button class=\"btn btn-default dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            Create Content\n            <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n            <li><a type=\"button\" data-toggle = \"modal\" data-target=\"#addPage\">Add Page</a></li>\n            <li><a href=\"#\">Add Post</a></li>\n            <li><a href=\"/register\">Add User</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div> <!--End div container -->\n</header> <!--End top Part of the website -->\n\n<!--Breadcrumb section  -->\n<section id=\"breadcrumb\">\n    <ol class=\"breadcrumb\">\n      <li class=\"active\">Dashboard</li>\n    </ol>\n</section> <!--End breadcrumb section -->\n\n<section id=\"main\">\n  <div class=\"controller\">\n    <div class=\"row\">\n      <div class=\"col-md-3\">\n        <!--Sidebar -->\n        <app-sidebar></app-sidebar>\n      </div>\n      <div class=\"col-md-9\">\n        <!--Boxes -->\n        <app-boxes></app-boxes>\n        <!--User Table-->\n        <app-table text=\"Latest Users\">\n          <!-- <app-table-columns value='name' header='Name'></app-table-columns>\n\n          <app-table-columns value='email' header='email'></app-table-columns>\n\n          <app-table-columns value='CreatedDate' header='Joined'></app-table-columns> -->\n\n        </app-table>\n      </div>\n    </div>\n  </div>\n  <!--Add Page Modal  -->\n  <app-modal modalId=\"addPage\"></app-modal>\n</section>\n"
 
 /***/ }),
 /* 175 */
@@ -1554,6 +1574,7 @@ module.exports = "<!--Panel-->\n<div class=\"panel panel-default\">\n  <div clas
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__(245);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1565,15 +1586,59 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var TableComponent = (function () {
-    function TableComponent() {
+    function TableComponent(userService) {
+        this.userService = userService;
+        this.columns = [];
         this.className = "";
         this.text = "N/A";
+        this.name = {};
+        this.user = [];
+        this.items = [];
     }
-    TableComponent.prototype.ngOnInit = function () {
+    TableComponent.prototype.addColumn = function (column) {
+        this.columns.push(column);
     };
+    TableComponent.prototype.ngOnInit = function () {
+        // this.userService.getUserById("592c40f1c5035d0011bcf62c").subscribe(user => {
+        //   // user send with the response
+        //   console.log(user.user.name + " user data");
+        //
+        // },err => {
+        //   console.log(err);
+        // });
+        var _this = this;
+        this.userService.getUsers().subscribe(function (user) {
+            var us;
+            _this.user = user;
+            console.log(_this.user[0].name + " user data");
+            for (var _i = 0, _a = _this.user; _i < _a.length; _i++) {
+                var key = _a[_i];
+                // console.log(key.name + " user key data");
+            }
+            // us = JSON.stringify(user)
+            // this.items = us.split("{")
+            // console.log(this.items + "  user array");
+            // console.log( Object.keys+ " interfaz objeto");
+        });
+        this.name =
+            { "person": [
+                    { "name": "John", "email": "john@hotmail.com", "joined": "dec 12" },
+                    { "name": "Josue", "email": "Josue@hotmail.com", "joined": "dec 13" },
+                    { "name": "Doe", "email": "Doe@hotmail.com", "joined": "dec 13" }
+                ],
+                "headers": [
+                    "Name", "Email", "Joined"
+                ]
+            };
+    }; // End NGonInit()
     return TableComponent;
 }());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], TableComponent.prototype, "dataset", void 0);
 __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
@@ -1588,9 +1653,10 @@ TableComponent = __decorate([
         template: __webpack_require__(238),
         styles: [__webpack_require__(237)]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object])
 ], TableComponent);
 
+var _a;
 //# sourceMappingURL=table.component.js.map
 
 /***/ }),
@@ -1614,7 +1680,7 @@ module.exports = module.exports.toString();
 /* 238 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <table class=\"table table-striped table-hover\">\n      <tr>\n        <!--Table Headers  -->\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <tr>\n        <!--First Row  -->\n        <td>Jill Smith</td>\n        <td>jillsmith@gmail.com</td>\n        <td>Dec 12, 2016</td>\n      </tr>\n      <tr>\n        <!--Second Row  -->\n        <td>Smith Foster</td>\n        <td>foster23@gmail.com</td>\n        <td>Mar 12, 2016</td>\n      </tr>\n      <tr>\n        <!--Third Row  -->\n        <td>Julian Smith</td>\n        <td>JualianSmith@gmail.com</td>\n        <td>Feb 23, 2016</td>\n      </tr>\n      <tr>\n        <!--Fourt Row  -->\n        <td>John tue</td>\n        <td>Johnutru@gmail.com</td>\n        <td>Jul 2, 2016</td>\n      </tr>\n\n    </table>\n  </div>\n</div>\n"
+module.exports = "<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <table class=\"table table-striped table-hover\">\n      <!-- Table Header -->\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <!--Table Body -->\n    <tbody>\n      <!-- Do a for loop to show the tables -->\n      <tr *ngFor=\"let record of user; let i = index\">\n          <!-- || - mean alternate text. is Like an If  -->\n         <td>{{record.name || \"No name\" }}</td>\n\n         <td>{{record.email || \"No email\"}}</td>\n         <!--Show this row if there's a date in the json  -->\n         <td *ngIf=\"record.CreatedDate\">{{record.CreatedDate | date:'MMM dd' }} at\n           {{record.CreatedDate | date:'hh:mm' }}\n        </td>\n        <!--Alternate show this row if there is not a date in the json data  -->\n        <td *ngIf=\"!record.CreatedDate\"> No Date Provided</td>\n      </tr>\n    </tbody>\n</table>\n\n  </div>\n</div>\n\n\n\n\n\n\n<!-- <tr>\n<table>\n  <thead>\n    <tr>\n      <th *ngFor=\"let column of columns\">{{column.header}}</th>\n    </tr>\n  </thead>\n  <tbody *ngFor=\"let row of dataset\">\n    <h1>{{row}}</h1>\n    El row va a ser como si fuera user.persons.value -> row.value\n    <tr>\n      <td *ngFor=\"let column of columns\">{{row[colum.value]}}</td>\n  </tr>\n  </tbody>\n</table>\n\n\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <table class=\"table table-striped table-hover\">\n      Table Header\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <tr>\n        <td> jose shus</td>\n      </tr>\n\n    </table>\n   Do a for loop to show the tables\n   <tbody>\n  <tr *ngFor=\"let record of user;let i = index\">\n    <td>{{record.name}}</td>\n    <td>{{record[i]}}</td>\n    <td>{{record.email}}</td>\n    <td>dec {{items}}</td>\n  </tr>\n</tbody>\n  </div>\n</div>\n\n  <td>Jill Smith</td>\n  <td>jillsmith@gmail.com</td>\n  <td>Dec 12, 2016</td>\n</tr>\n<tr>\n  <td>Smith Foster</td>\n  <td>foster23@gmail.com</td>\n  <td>Mar 12, 2016</td>\n</tr>\n<tr>\n  <td>Julian Smith</td>\n  <td>JualianSmith@gmail.com</td>\n  <td>Feb 23, 2016</td>\n</tr>\n<tr>\n  <td>John tue</td>\n  <td>Johnutru@gmail.com</td>\n  <td>Jul 2, 2016</td>\n\n   <ng-template ngFor let-item [ngForOf]=\"createRange(5)\" let-currentElementIndex=\"index+1\">\n    <th class=\"table-active\"> {{name.headers[currentElementIndex - 1]}} </th>\n  </ng-template>\n</tr> -->\n"
 
 /***/ }),
 /* 239 */
@@ -1736,6 +1802,148 @@ module.exports = module.exports.toString();
 /***/ (function(module, exports) {
 
 module.exports = "<header id=\"header\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-9\">\n        <h2><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span> Users <small>Manage Site User</small></h2>\n      </div>\n      <div class=\"col-md-3\">\n       <div class=\"dropdown create\">\n          <button class=\"btn btn-default dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            Create Content\n            <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n            <li><a type=\"button\" data-toggle = \"modal\" data-target=\"#addPage\">Add Page</a></li>\n            <li><a href=\"#\">Add Post</a></li>\n            <li><a href=\"/register\">Add User</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div> <!--End div container -->\n</header> <!--End top Part of the website -->\n\n<!--Breadcrumb section  -->\n<section id=\"breadcrumb\">\n    <ol class=\"breadcrumb\">\n      <li class=\"\"> <a href = \"/adminDashboard\">Dashboard </a> </li>\n      <li class=\"active\">Users</li>\n    </ol>\n</section> <!--End breadcrumb section -->\n\n\n<section id=\"main\">\n  <div class=\"controller\">\n    <div class=\"row\">\n      <div class=\"col-md-3\">\n        <!--Sidebar -->\n        <app-sidebar></app-sidebar>\n      </div>\n      <div class=\"col-md-9\">\n        <!--User Table-->\n        <app-table className=\"main-color-bg\" text = \"Users\"></app-table>\n      </div>\n    </div>\n  </div>\n  <!--Add Page Modal  -->\n  <app-modal modalId=\"addPage\"></app-modal>\n</section>\n"
+
+/***/ }),
+/* 245 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsersService; });
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+//Modules
+
+
+
+var UsersService = (function () {
+    function UsersService(http) {
+        this.http = http;
+    }
+    // getUserById
+    UsersService.prototype.getUserById = function (id) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        //set the Content-Type to application/json
+        headers.append('Content-Type', 'application/json');
+        // return an observable with the response
+        // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+        return this.http.get('/users/getUserById?userId=' + id, { headers: headers }).map(function (res) {
+            return res.json();
+        });
+    };
+    //Get all users
+    UsersService.prototype.getUsers = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        //set the Content-Type to application/json
+        headers.append('Content-Type', 'application/json');
+        // return an observable with the response
+        // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+        return this.http.get('/users/getUsers', { headers: headers }).map(function (res) {
+            return res.json();
+        });
+    };
+    // getUserById
+    UsersService.prototype.ping = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        //set the Content-Type to application/json
+        headers.append('Content-Type', 'application/json');
+        // return an observable with the response
+        // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+        return this.http.get('/users/ping?', { headers: headers }).map(function (res) {
+            return res.json();
+        });
+    };
+    return UsersService;
+}());
+UsersService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+], UsersService);
+
+var _a;
+//# sourceMappingURL=users.service.js.map
+
+/***/ }),
+/* 246 */,
+/* 247 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__table_table_component__ = __webpack_require__(236);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableColumnsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var TableColumnsComponent = (function () {
+    function TableColumnsComponent(table) {
+        table.addColumn(this);
+    }
+    TableColumnsComponent.prototype.ngOnInit = function () {
+    };
+    return TableColumnsComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], TableColumnsComponent.prototype, "value", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], TableColumnsComponent.prototype, "header", void 0);
+TableColumnsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-table-columns',
+        template: __webpack_require__(249),
+        styles: [__webpack_require__(248)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__table_table_component__["a" /* TableComponent */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__table_table_component__["a" /* TableComponent */]) === "function" && _a || Object])
+], TableColumnsComponent);
+
+var _a;
+//# sourceMappingURL=table-columns.component.js.map
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(7)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+/* 249 */
+/***/ (function(module, exports) {
+
+module.exports = ""
 
 /***/ })
 ],[218]);

@@ -3,19 +3,20 @@
   "version": "1.0.0",
   "description": "authentication app",
   "main": "app.js",
-  "coment":"Se puede ver Npm Script en Google para ver las oppurtnidades que me ofrece",
+  "coment": "Se puede ver Npm Script en Google para ver las oppurtnidades que me ofrece",
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
     "bcryptjs": "*",
-    "cors": "*",
-    "passport": "*",
     "body-parser": "*",
-    "passport-jwt": "*",
-    "jsonwebtoken": "*"
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "make-array": "^1.0.2",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-jwt": "*"
   },
   "repository": {
     "type": "git",
@@ -35,5 +36,4 @@
   "devDependencies": {
     "@angular/cli": "^1.0.4"
   }
-
 }

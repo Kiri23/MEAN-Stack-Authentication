@@ -50,7 +50,7 @@ router.post('/authenticate', (req, res,next) => {
       if(isMatch){
         // construct the token- it has option
         const token = jwt.sign(user,config.secret,{
-          expiresIn:1200 // 20 minutes
+          expiresIn:120000 // 20 minutes
         });
         // Send the reponse in Json Format
         res.json({success:true,
@@ -81,8 +81,30 @@ router.get('/profile',passport.authenticate('jwt',{session:false}),(req, res,nex
   res.json({user:req.user});
 });
 
+router.get('/getUserById', (req, res) => {
+  var id = req.query.userId;
+  User.getUserById(id,(err,data) => {
+    if (err){
+      return res.json(err);
+    }
+    return res.json({user:data})
+  });
+
+});
+
+router.get('/getUsers', (req, res) => {
+  User.getAllUser((err, users) => {
+    if (err){
+      return res.json(err);
+    }
+    // console.log(users[0].name + " api");
+    res.send(users);
+  })
+
+});
+
 router.get('/ping', (req, res) => {
-    res.send('pong');
+    return res.json('pong');
 });
 
 

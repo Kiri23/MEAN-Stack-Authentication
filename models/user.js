@@ -27,27 +27,40 @@ const UserSchema = mongoose.Schema({
 
 const User = module.exports = mongoose.model('User',UserSchema);
 
+// Get a user by the id
 module.exports.getUserById = function(id,callback){
   User.findById(id,callback);
 };
 
+module.exports.getAllUser = function(callback){
+  // User.find({},callback);
+
+  // output the result as an array
+  User.find({}).sort({$natural:-1}).limit(5).lean().exec(callback);
+};
+
+// Get a user by their username
 module.exports.getUserByUsername = function(username,callback){
   const query = {username: username}
   User.findOne(query,callback);
 };
 
+// Add User to the Database
 module.exports.addUser = function(newUser,callback){
+  // Hash password
   bcrypt.genSalt(10,(err, salt) => {
     bcrypt.hash(newUser.password, salt, (err, hash) => {
       if(err){
         throw err
       }
       newUser.password = hash;
+      //save user
       newUser.save(callback);
     })
   })
 };
 
+// Compare password to login
 module.exports.comparePassword = function(candidatePassword,hash,callback){
   bcrypt.compare(candidatePassword,hash,(err, isMatch) => {
     if (err) throw err;

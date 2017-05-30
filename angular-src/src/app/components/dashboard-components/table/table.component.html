@@ -4,37 +4,105 @@
   </div>
   <div class="panel-body">
     <table class="table table-striped table-hover">
+      <!-- Table Header -->
       <tr>
-        <!--Table Headers  -->
+        <th>Name</th>
+        <th>Email</th>
+        <th>Joined</th>
+      </tr>
+      <!--Table Body -->
+    <tbody>
+      <!-- Do a for loop to show the tables -->
+      <tr *ngFor="let record of user; let i = index">
+          <!-- || - mean alternate text. is Like an If  -->
+         <td>{{record.name || "No name" }}</td>
+
+         <td>{{record.email || "No email"}}</td>
+         <!--Show this row if there's a date in the json  -->
+         <td *ngIf="record.CreatedDate">{{record.CreatedDate | date:'MMM dd' }} at
+           {{record.CreatedDate | date:'hh:mm' }}
+        </td>
+        <!--Alternate show this row if there is not a date in the json data  -->
+        <td *ngIf="!record.CreatedDate"> No Date Provided</td>
+      </tr>
+    </tbody>
+</table>
+
+  </div>
+</div>
+
+
+
+
+
+
+<!-- <tr>
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns">{{column.header}}</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let row of dataset">
+    <h1>{{row}}</h1>
+    El row va a ser como si fuera user.persons.value -> row.value
+    <tr>
+      <td *ngFor="let column of columns">{{row[colum.value]}}</td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading {{className}} ">
+    <h3 class="panel-title ">{{text}}</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-hover">
+      Table Header
+      <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Joined</th>
       </tr>
       <tr>
-        <!--First Row  -->
-        <td>Jill Smith</td>
-        <td>jillsmith@gmail.com</td>
-        <td>Dec 12, 2016</td>
-      </tr>
-      <tr>
-        <!--Second Row  -->
-        <td>Smith Foster</td>
-        <td>foster23@gmail.com</td>
-        <td>Mar 12, 2016</td>
-      </tr>
-      <tr>
-        <!--Third Row  -->
-        <td>Julian Smith</td>
-        <td>JualianSmith@gmail.com</td>
-        <td>Feb 23, 2016</td>
-      </tr>
-      <tr>
-        <!--Fourt Row  -->
-        <td>John tue</td>
-        <td>Johnutru@gmail.com</td>
-        <td>Jul 2, 2016</td>
+        <td> jose shus</td>
       </tr>
 
     </table>
+   Do a for loop to show the tables
+   <tbody>
+  <tr *ngFor="let record of user;let i = index">
+    <td>{{record.name}}</td>
+    <td>{{record[i]}}</td>
+    <td>{{record.email}}</td>
+    <td>dec {{items}}</td>
+  </tr>
+</tbody>
   </div>
 </div>
+
+  <td>Jill Smith</td>
+  <td>jillsmith@gmail.com</td>
+  <td>Dec 12, 2016</td>
+</tr>
+<tr>
+  <td>Smith Foster</td>
+  <td>foster23@gmail.com</td>
+  <td>Mar 12, 2016</td>
+</tr>
+<tr>
+  <td>Julian Smith</td>
+  <td>JualianSmith@gmail.com</td>
+  <td>Feb 23, 2016</td>
+</tr>
+<tr>
+  <td>John tue</td>
+  <td>Johnutru@gmail.com</td>
+  <td>Jul 2, 2016</td>
+
+   <ng-template ngFor let-item [ngForOf]="createRange(5)" let-currentElementIndex="index+1">
+    <th class="table-active"> {{name.headers[currentElementIndex - 1]}} </th>
+  </ng-template>
+</tr> -->

@@ -29,6 +29,8 @@ import { AdminUsersComponent } from './components/admin-users/admin-users.compon
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
+import {UsersService} from './services/users.service';
+import { TableColumnsComponent } from './components/dashboard-components/table-columns/table-columns.component';
 
 
 //appRoutes - va a contener todas las routes del app
@@ -65,7 +67,8 @@ const appRoutes: Routes = [
     BoxesComponent,
     TableComponent,
     ModalComponent,
-    AdminUsersComponent
+    AdminUsersComponent,
+    TableColumnsComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule
   ],
-  providers: [ValidateService,AuthService,AuthGuard],
+  providers: [ValidateService,AuthService,AuthGuard,UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
