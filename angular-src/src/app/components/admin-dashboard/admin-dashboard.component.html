@@ -24,7 +24,7 @@
 <!--Breadcrumb section  -->
 <section id="breadcrumb">
     <ol class="breadcrumb">
-      <li class="active">Dashboard</li>
+      <li class="active">Dashboard </li>
     </ol>
 </section> <!--End breadcrumb section -->
 
@@ -32,12 +32,13 @@
   <div class="controller">
     <div class="row">
       <div class="col-md-3">
-        <!--Sidebar -->
-        <app-sidebar></app-sidebar>
+        <!--Sidebar need to have the [] to pass the data to the child -->
+        <app-sidebar [admin-Dashboard-totalUser-Props] = totalUsers></app-sidebar>
       </div>
       <div class="col-md-9">
         <!--Boxes -->
-        <app-boxes></app-boxes>
+        <!--Pass the totalUser number to the app-boxes component  -->
+        <app-boxes [admin-Dashboard-totalUser-Props] = totalUsers></app-boxes>
         <!--User Table-->
         <app-table text="Latest Users">
           <!-- <app-table-columns value='name' header='Name'></app-table-columns>

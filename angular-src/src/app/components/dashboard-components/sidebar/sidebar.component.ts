@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  // Pass data from parent component to child component (ListGroup)
+  @Input('admin-Dashboard-totalUser-Props') totalUserProps
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
+    // this.totalUser = this.chi
+    // console.log(this.totalUser);
   }
 
 }

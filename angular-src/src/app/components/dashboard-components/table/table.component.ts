@@ -6,6 +6,8 @@ import {TableColumnsComponent} from '../table-columns/table-columns.component';
 
 
 
+
+
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',

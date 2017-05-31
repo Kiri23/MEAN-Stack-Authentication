@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 // External Modules
 import {FlashMessagesModule} from 'angular2-flash-messages';
+// import {UnderScoreModule} from 'underscore';
 // Components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -24,13 +25,16 @@ import { BoxesComponent } from './components/dashboard-components/boxes/boxes.co
 import { TableComponent } from './components/dashboard-components/table/table.component';
 import { ModalComponent } from './components/dashboard-components/modal/modal.component';
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
+import { TableColumnsComponent } from './components/dashboard-components/table-columns/table-columns.component';
 
 //Services
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 import {UsersService} from './services/users.service';
-import { TableColumnsComponent } from './components/dashboard-components/table-columns/table-columns.component';
+import {UtilitiesService} from './services/utilities.service';
+
+
 
 
 //appRoutes - va a contener todas las routes del app
@@ -75,9 +79,12 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    FlashMessagesModule
+    FlashMessagesModule,
+    // UnderScoreModule
   ],
-  providers: [ValidateService,AuthService,AuthGuard,UsersService],
+  providers: [ValidateService,AuthService,AuthGuard,UsersService
+    ,UtilitiesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

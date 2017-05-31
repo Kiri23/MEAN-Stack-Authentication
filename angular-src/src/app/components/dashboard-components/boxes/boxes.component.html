@@ -7,8 +7,9 @@
     <!--Boxes-->
     <div class="col-md-3">
       <a href="/adminUsers">
+        <!--To pass something different that is not a literal number or string need to use the []  -->
         <app-box className= "glyphicon glyphicon-user"
-                 number = 203 text = "Users" ></app-box>
+                 [number] = totalUsers text = "Users" ></app-box>
       </a>
     </div>
 
