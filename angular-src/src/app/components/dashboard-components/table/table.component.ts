@@ -3,11 +3,6 @@ import {Http,Response} from '@angular/http';
 import {UsersService} from '../../../services/users.service';
 import {TableColumnsComponent} from '../table-columns/table-columns.component';
 
-
-
-
-
-
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -15,6 +10,7 @@ import {TableColumnsComponent} from '../table-columns/table-columns.component';
 })
 export class TableComponent implements OnInit {
   @Input() dataset;
+  @Input() showFilter:boolean = false;
   columns: TableColumnsComponent[] = [];
 
   addColumn(column)

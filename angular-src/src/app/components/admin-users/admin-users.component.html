@@ -35,11 +35,11 @@
     <div class="row">
       <div class="col-md-3">
         <!--Sidebar -->
-        <app-sidebar></app-sidebar>
+        <app-sidebar [admin-Dashboard-totalUser-Props] = totalUsers> </app-sidebar>
       </div>
       <div class="col-md-9">
         <!--User Table-->
-        <app-table className="main-color-bg" text = "Users"></app-table>
+        <app-table className="main-color-bg" text = "Users" showFilter = true ></app-table>
       </div>
     </div>
   </div>

@@ -12,3 +12,13 @@
    background-color: black ;
    border-color: black  ;
  }
+
+/*.pagination{}*/
+.center {
+  margin-left: 200px;
+}
+
+/* Make Inout Search Field Smaller*/
+.makeSmaller{
+  height: 34px;
+}

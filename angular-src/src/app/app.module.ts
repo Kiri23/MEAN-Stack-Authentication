@@ -6,7 +6,7 @@ import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 // External Modules
 import {FlashMessagesModule} from 'angular2-flash-messages';
-// import {UnderScoreModule} from 'underscore';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // Components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -80,7 +80,7 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule,
-    // UnderScoreModule
+    NgbModule.forRoot()
   ],
   providers: [ValidateService,AuthService,AuthGuard,UsersService
     ,UtilitiesService
