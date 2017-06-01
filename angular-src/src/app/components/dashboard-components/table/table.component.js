@@ -10,8 +10,9 @@ function filterUsersByName(){
  tr = table.getElementsByTagName("tr")
  // console.log(tr);
  if (input.value ==""){
-  //  console.log("input vacio");
-   location.reload();
+   // reload only the table using jquery
+   $("#userTable").load("")
+  //  location.reload();
  }
 
  // Loop through all table rows, and hide those who don't match the search query
