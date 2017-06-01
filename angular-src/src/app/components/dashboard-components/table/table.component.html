@@ -23,14 +23,21 @@
           <!-- || - mean alternate text. is Like an If  -->
           <!-- <h1>{{i}} index</h1> -->
           <!--if index(i) is greater than 5 dont show more Table data  -->
+          <!--if index > 6 render the tableDate but with a display set to none.That way the search filter will look for all the user in the db and not only the one that are showing in the table  -->
+          <td style="display:none" *ngIf="ind > 5">{{record.name || "No name" }}</td>
            <td *ngIf="ind < 6">{{record.name || "No name" }}</td>
 
+           <td style="display:none" *ngIf="ind > 5">{{record.email || "No email"}}</td>
            <td *ngIf="ind < 6">{{record.email || "No email"}}</td>
+
+           <td style="display:none" *ngIf="(record.CreatedDate && ind > 5)">{{record.CreatedDate | date:'MMM dd' }} at {{record.CreatedDate | date:'hh:mm' }}
+           </td>
            <!--Show this row if there's a date in the json  -->
            <td *ngIf="(record.CreatedDate && ind < 6)">{{record.CreatedDate | date:'MMM dd' }} at
              {{record.CreatedDate | date:'hh:mm' }}
           </td>
           <!--Alternate show this row if there is not a date in the json data  -->
+          <td style="display:none" *ngIf="(!record.CreatedDate && ind > 5)"> No Date Provided</td>
           <td *ngIf="(!record.CreatedDate && ind < 6)"> No Date Provided</td>
       </tr>
     </tbody>
