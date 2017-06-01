@@ -42690,7 +42690,7 @@ NgbPagination.propDecorators = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pagination_config__ = __webpack_require__(53);
 /* unused harmony reexport NgbPagination */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_3__pagination_config__["a"]; });
+/* unused harmony reexport NgbPaginationConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbPaginationModule; });
 
 
@@ -73120,7 +73120,7 @@ NgbCalendarIslamicCivil.ctorParameters = function () { return []; };
 /* unused harmony reexport NgbModalRef */
 /* unused harmony reexport ModalDismissReasons */
 /* unused harmony reexport NgbPaginationModule */
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_9__pagination_pagination_module__["b"]; });
+/* unused harmony reexport NgbPaginationConfig */
 /* unused harmony reexport NgbPagination */
 /* unused harmony reexport NgbPopoverModule */
 /* unused harmony reexport NgbPopoverConfig */

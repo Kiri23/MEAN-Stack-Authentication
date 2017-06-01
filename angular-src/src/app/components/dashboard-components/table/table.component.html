@@ -19,17 +19,19 @@
       <!--Table Body -->
     <tbody>
       <!-- Do a for loop to show the tables -->
-      <tr *ngFor="let record of dataset; let i = index">
+      <tr *ngFor="let record of dataset; let ind = index">
           <!-- || - mean alternate text. is Like an If  -->
-         <td>{{record.name || "No name" }}</td>
+          <!-- <h1>{{i}} index</h1> -->
+          <!--if index(i) is greater than 5 dont show more Table data  -->
+           <td *ngIf="ind < 6">{{record.name || "No name" }}</td>
 
-         <td>{{record.email || "No email"}}</td>
-         <!--Show this row if there's a date in the json  -->
-         <td *ngIf="record.CreatedDate">{{record.CreatedDate | date:'MMM dd' }} at
-           {{record.CreatedDate | date:'hh:mm' }}
-        </td>
-        <!--Alternate show this row if there is not a date in the json data  -->
-        <td *ngIf="!record.CreatedDate"> No Date Provided</td>
+           <td *ngIf="ind < 6">{{record.email || "No email"}}</td>
+           <!--Show this row if there's a date in the json  -->
+           <td *ngIf="(record.CreatedDate && ind < 6)">{{record.CreatedDate | date:'MMM dd' }} at
+             {{record.CreatedDate | date:'hh:mm' }}
+          </td>
+          <!--Alternate show this row if there is not a date in the json data  -->
+          <td *ngIf="(!record.CreatedDate && ind < 6)"> No Date Provided</td>
       </tr>
     </tbody>
 </table>

@@ -6,7 +6,8 @@ webpackJsonp([1,5],{
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_underscore__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_underscore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_underscore__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -19,9 +20,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+// Third Party
 
 var TableComponent = (function () {
-    function TableComponent(userService, config) {
+    function TableComponent(userService) {
         this.userService = userService;
         this.showFilter = false;
         this.className = "";
@@ -30,28 +32,31 @@ var TableComponent = (function () {
         this.currentPage = 1;
         // Output the currentPage Property. This is how to pass a property from a child element to a parent element that integrate this component
         this.exportProp = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.showUsers = 1;
+        this.showUsersSkipNumber = 0;
         this.cuu = 1;
         this.user = [];
     }
     TableComponent.prototype.ngOnInit = function () {
+        var _this = this;
         // this.currentPage = 1;
         this.skipUser(this.currentPage);
-        // this.userService.getUsers().subscribe(user => {
-        //     var us:string;
-        //     this.user = user
-        //     console.log(this.user[0].name + " user data");
-        //     for (let key of this.user) {
-        //       // console.log(key.name + " user key data");
-        //     }
-        //  }
+        this.userService.getAllUsers().subscribe(function (user) {
+            _this.totalUsersCount = __WEBPACK_IMPORTED_MODULE_2_underscore__["size"](user);
+        });
     }; // End NGonInit()
     TableComponent.prototype.skipUser = function (currentPage) {
         var _this = this;
         console.log(this.currentPage, "currentPage");
-        this.showUsers = currentPage * 5;
-        console.log(this.showUsers);
-        this.userService.skipUsers(currentPage).subscribe(function (user) {
+        //  Logic to skip the right user for it to show it on the table. currentPage = 2. currentPage(2) - 1 = (1 * 5) + 1 = 6. 6 is the right amount of user I want to skip over. and this will also work with currentPage = 3,4,5 etc. each currentPage will only show #5 users. I wan to skip every 5 integer number each time
+        this.showUsersSkipNumber = ((currentPage - 1) * 5) + 1;
+        // This are the first five users. I dont want to skip this users.This mean tha thi's the first page. I don't want to skip users I want to skip before showUsersSkipNumber is > 5
+        if (this.showUsersSkipNumber < 5) {
+            // dont skip no one show the first 5 in the table
+            this.showUsersSkipNumber = 0;
+        }
+        console.log(this.showUsersSkipNumber, " los usuario a skip");
+        // call to the database to skip user
+        this.userService.skipUsers(this.showUsersSkipNumber).subscribe(function (user) {
             console.log(user, " user from skip user");
             // emit a event aka send the exportProp to the parent element
             _this.exportProp.emit(user);
@@ -85,10 +90,10 @@ TableComponent = __decorate([
         template: __webpack_require__(279),
         styles: [__webpack_require__(260)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["b" /* NgbPaginationConfig */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["b" /* NgbPaginationConfig */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object])
 ], TableComponent);
 
-var _a, _b;
+var _a;
 //# sourceMappingURL=table.component.js.map
 
 /***/ }),
@@ -432,7 +437,7 @@ var AdminUsersComponent = (function () {
             console.log(_this.totalUsers, " toatl user all son 7 ");
         });
     };
-    // this function only get call when in the parent Component (Aka app-table) fire a onClick Function (aka onClick pagination item)
+    // this function only get call when in the parent Component (Aka app-table) fire a onClick Function (aka onClick pagination item). passing data(currentPage int) from parent component(app-table) to this component admin-users.
     AdminUsersComponent.prototype.skipUser = function (user) {
         this.allUsers = user;
         console.log(user, " user evento ");
@@ -1748,7 +1753,7 @@ module.exports = ""
 /***/ 279:
 /***/ (function(module, exports) {
 
-module.exports = "<!--To add External Javscript file I need to add it to the script section angular-cli.json   -->\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <div *ngIf=\"showFilter\" class=\"form-group\">\n      <!--Show Search Filter  -->\n      <input id=\"filterInput\" class=\"makeSmaller form-control\" onkeyup=\"filterUsersByName()\" type=\"text\" placeholder=\"Search Filter\" name=\"\" value=\"\">\n    </div>\n    <table id=\"userTable\" class=\"table table-striped table-hover\">\n      <!-- Table Header -->\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <!--Table Body -->\n    <tbody>\n      <!-- Do a for loop to show the tables -->\n      <tr *ngFor=\"let record of dataset; let i = index\">\n          <!-- || - mean alternate text. is Like an If  -->\n         <td>{{record.name || \"No name\" }}</td>\n\n         <td>{{record.email || \"No email\"}}</td>\n         <!--Show this row if there's a date in the json  -->\n         <td *ngIf=\"record.CreatedDate\">{{record.CreatedDate | date:'MMM dd' }} at\n           {{record.CreatedDate | date:'hh:mm' }}\n        </td>\n        <!--Alternate show this row if there is not a date in the json data  -->\n        <td *ngIf=\"!record.CreatedDate\"> No Date Provided</td>\n      </tr>\n    </tbody>\n</table>\n  <!--[(page)] - pa pasar la variable  -->\n  <div class=\" text-center d-flex justify-content-center\">\n    <ngb-pagination [collectionSize]=\"70\" [(page)]=\"currentPage\" aria-label=\"Default pagination\" (click) = \"skipUser(currentPage)\" size =\"\"></ngb-pagination>\n    <pre> users: {{showUsers}}</pre>\n  </div>\n  </div>\n</div>\n\n<!-- <tr>\n  <table>\n  <thead>\n    <tr>\n      <th *ngFor=\"let column of columns\">{{column.header}}</th>\n    </tr>\n  </thead>\n  <tbody *ngFor=\"let row of dataset\">\n    <h1>{{row}}</h1>\n    El row va a ser como si fuera user.persons.value -> row.value\n    <tr>\n      <td *ngFor=\"let column of columns\">{{row[colum.value]}}</td>\n  </tr>\n  </tbody>\n</table>\n\n\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <table class=\"table table-striped table-hover\">\n      Table Header\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <tr>\n        <td> jose shus</td>\n      </tr>\n\n    </table>\n   Do a for loop to show the tables\n   <tbody>\n  <tr *ngFor=\"let record of user;let i = index\">\n    <td>{{record.name}}</td>\n    <td>{{record[i]}}</td>\n    <td>{{record.email}}</td>\n    <td>dec {{items}}</td>\n  </tr>\n</tbody>\n  </div>\n</div>\n\n  <td>Jill Smith</td>\n  <td>jillsmith@gmail.com</td>\n  <td>Dec 12, 2016</td>\n</tr>\n<tr>\n  <td>Smith Foster</td>\n  <td>foster23@gmail.com</td>\n  <td>Mar 12, 2016</td>\n</tr>\n<tr>\n  <td>Julian Smith</td>\n  <td>JualianSmith@gmail.com</td>\n  <td>Feb 23, 2016</td>\n</tr>\n<tr>\n  <td>John tue</td>\n  <td>Johnutru@gmail.com</td>\n  <td>Jul 2, 2016</td>\n\n   <ng-template ngFor let-item [ngForOf]=\"createRange(5)\" let-currentElementIndex=\"index+1\">\n    <th class=\"table-active\"> {{name.headers[currentElementIndex - 1]}} </th>\n  </ng-template>\n</tr> -->\n"
+module.exports = "<!--To add External Javscript file I need to add it to the script section angular-cli.json   -->\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <div *ngIf=\"showFilter\" class=\"form-group\">\n      <!--Show Search Filter  -->\n      <input id=\"filterInput\" class=\"makeSmaller form-control\" onkeyup=\"filterUsersByName()\" type=\"text\" placeholder=\"Search Filter\" name=\"\" value=\"\">\n    </div>\n    <table id=\"userTable\" class=\"table table-striped table-hover\">\n      <!-- Table Header -->\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <!--Table Body -->\n    <tbody>\n      <!-- Do a for loop to show the tables -->\n      <tr *ngFor=\"let record of dataset; let ind = index\">\n          <!-- || - mean alternate text. is Like an If  -->\n          <!-- <h1>{{i}} index</h1> -->\n          <!--if index(i) is greater than 5 dont show more Table data  -->\n           <td *ngIf=\"ind < 6\">{{record.name || \"No name\" }}</td>\n\n           <td *ngIf=\"ind < 6\">{{record.email || \"No email\"}}</td>\n           <!--Show this row if there's a date in the json  -->\n           <td *ngIf=\"(record.CreatedDate && ind < 6)\">{{record.CreatedDate | date:'MMM dd' }} at\n             {{record.CreatedDate | date:'hh:mm' }}\n          </td>\n          <!--Alternate show this row if there is not a date in the json data  -->\n          <td *ngIf=\"(!record.CreatedDate && ind < 6)\"> No Date Provided</td>\n      </tr>\n    </tbody>\n</table>\n  <!--[(page)] - pa pasar la variable  -->\n  <div class=\" text-center d-flex justify-content-center\">\n    <ngb-pagination [collectionSize]=\"70\" [(page)]=\"currentPage\" aria-label=\"Default pagination\" (click) = \"skipUser(currentPage)\" size =\"\"></ngb-pagination>\n    <pre> users: {{showUsers}}</pre>\n  </div>\n  </div>\n</div>\n\n<!-- <tr>\n  <table>\n  <thead>\n    <tr>\n      <th *ngFor=\"let column of columns\">{{column.header}}</th>\n    </tr>\n  </thead>\n  <tbody *ngFor=\"let row of dataset\">\n    <h1>{{row}}</h1>\n    El row va a ser como si fuera user.persons.value -> row.value\n    <tr>\n      <td *ngFor=\"let column of columns\">{{row[colum.value]}}</td>\n  </tr>\n  </tbody>\n</table>\n\n\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <table class=\"table table-striped table-hover\">\n      Table Header\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <tr>\n        <td> jose shus</td>\n      </tr>\n\n    </table>\n   Do a for loop to show the tables\n   <tbody>\n  <tr *ngFor=\"let record of user;let i = index\">\n    <td>{{record.name}}</td>\n    <td>{{record[i]}}</td>\n    <td>{{record.email}}</td>\n    <td>dec {{items}}</td>\n  </tr>\n</tbody>\n  </div>\n</div>\n\n  <td>Jill Smith</td>\n  <td>jillsmith@gmail.com</td>\n  <td>Dec 12, 2016</td>\n</tr>\n<tr>\n  <td>Smith Foster</td>\n  <td>foster23@gmail.com</td>\n  <td>Mar 12, 2016</td>\n</tr>\n<tr>\n  <td>Julian Smith</td>\n  <td>JualianSmith@gmail.com</td>\n  <td>Feb 23, 2016</td>\n</tr>\n<tr>\n  <td>John tue</td>\n  <td>Johnutru@gmail.com</td>\n  <td>Jul 2, 2016</td>\n\n   <ng-template ngFor let-item [ngForOf]=\"createRange(5)\" let-currentElementIndex=\"index+1\">\n    <th class=\"table-active\"> {{name.headers[currentElementIndex - 1]}} </th>\n  </ng-template>\n</tr> -->\n"
 
 /***/ }),
 
