@@ -6,6 +6,7 @@ webpackJsonp([1,5],{
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__ = __webpack_require__(170);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -18,53 +19,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var TableComponent = (function () {
-    function TableComponent(userService) {
+    function TableComponent(userService, config) {
         this.userService = userService;
         this.showFilter = false;
-        this.columns = [];
         this.className = "";
         this.text = "N/A";
-        this.name = {};
+        this.columns = [];
+        this.currentPage = 1;
+        // Output the currentPage Property. This is how to pass a property from a child element to a parent element that integrate this component
+        this.exportProp = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.showUsers = 1;
+        this.cuu = 1;
         this.user = [];
-        this.items = [];
     }
-    TableComponent.prototype.addColumn = function (column) {
-        this.columns.push(column);
-    };
     TableComponent.prototype.ngOnInit = function () {
-        // this.userService.getUserById("592c40f1c5035d0011bcf62c").subscribe(user => {
-        //   // user send with the response
-        //   console.log(user.user.name + " user data");
-        //
-        // },err => {
-        //   console.log(err);
-        // });
-        var _this = this;
-        this.userService.getUsers().subscribe(function (user) {
-            var us;
-            _this.user = user;
-            console.log(_this.user[0].name + " user data");
-            for (var _i = 0, _a = _this.user; _i < _a.length; _i++) {
-                var key = _a[_i];
-                // console.log(key.name + " user key data");
-            }
-            // us = JSON.stringify(user)
-            // this.items = us.split("{")
-            // console.log(this.items + "  user array");
-            // console.log( Object.keys+ " interfaz objeto");
-        });
-        this.name =
-            { "person": [
-                    { "name": "John", "email": "john@hotmail.com", "joined": "dec 12" },
-                    { "name": "Josue", "email": "Josue@hotmail.com", "joined": "dec 13" },
-                    { "name": "Doe", "email": "Doe@hotmail.com", "joined": "dec 13" }
-                ],
-                "headers": [
-                    "Name", "Email", "Joined"
-                ]
-            };
+        // this.currentPage = 1;
+        this.skipUser(this.currentPage);
+        // this.userService.getUsers().subscribe(user => {
+        //     var us:string;
+        //     this.user = user
+        //     console.log(this.user[0].name + " user data");
+        //     for (let key of this.user) {
+        //       // console.log(key.name + " user key data");
+        //     }
+        //  }
     }; // End NGonInit()
+    TableComponent.prototype.skipUser = function (currentPage) {
+        var _this = this;
+        console.log(this.currentPage, "currentPage");
+        this.showUsers = currentPage * 5;
+        console.log(this.showUsers);
+        this.userService.skipUsers(currentPage).subscribe(function (user) {
+            console.log(user, " user from skip user");
+            // emit a event aka send the exportProp to the parent element
+            _this.exportProp.emit(user);
+        });
+    };
     return TableComponent;
 }());
 __decorate([
@@ -83,16 +75,20 @@ __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], TableComponent.prototype, "text", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+    __metadata("design:type", Object)
+], TableComponent.prototype, "exportProp", void 0);
 TableComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-table',
         template: __webpack_require__(279),
         styles: [__webpack_require__(260)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["b" /* NgbPaginationConfig */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ng_bootstrap_ng_bootstrap__["b" /* NgbPaginationConfig */]) === "function" && _b || Object])
 ], TableComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=table.component.js.map
 
 /***/ }),
@@ -375,7 +371,11 @@ var AdminDashboardComponent = (function () {
     }
     AdminDashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userService.getUsers().subscribe(function (user) {
+        this.userService.getLatestUsers().subscribe(function (user) {
+            _this.latestUser = user;
+        });
+        // This is for counting all User.
+        this.userService.getAllUsers().subscribe(function (user) {
             // use underscore size - return the size of an object
             _this.totalUsers = __WEBPACK_IMPORTED_MODULE_2_underscore__["size"](user);
         });
@@ -424,10 +424,18 @@ var AdminUsersComponent = (function () {
     }
     AdminUsersComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.userService.getUsers().subscribe(function (user) {
+        this.userService.getAllUsers().subscribe(function (user) {
+            _this.allUsers = user;
+            console.log(user, " user data ");
             // use underscore size - return the size of an object
             _this.totalUsers = __WEBPACK_IMPORTED_MODULE_2_underscore__["size"](user);
+            console.log(_this.totalUsers, " toatl user all son 7 ");
         });
+    };
+    // this function only get call when in the parent Component (Aka app-table) fire a onClick Function (aka onClick pagination item)
+    AdminUsersComponent.prototype.skipUser = function (user) {
+        this.allUsers = user;
+        console.log(user, " user evento ");
     };
     return AdminUsersComponent;
 }());
@@ -1677,14 +1685,14 @@ module.exports = "<!--app navabr for every routes of the application  -->\n<app-
 /***/ 270:
 /***/ (function(module, exports) {
 
-module.exports = "<header id=\"header\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-9\">\n        <h2><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span> DashBoard <small>Manage your website</small></h2>\n      </div>\n      <div class=\"col-md-3\">\n       <div class=\"dropdown create\">\n          <button class=\"btn btn-default dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            Create Content\n            <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n            <li><a type=\"button\" data-toggle = \"modal\" data-target=\"#addPage\">Add Page</a></li>\n            <li><a href=\"#\">Add Post</a></li>\n            <li><a href=\"/register\">Add User</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div> <!--End div container -->\n</header> <!--End top Part of the website -->\n\n<!--Breadcrumb section  -->\n<section id=\"breadcrumb\">\n    <ol class=\"breadcrumb\">\n      <li class=\"active\">Dashboard </li>\n    </ol>\n</section> <!--End breadcrumb section -->\n\n<section id=\"main\">\n  <div class=\"controller\">\n    <div class=\"row\">\n      <div class=\"col-md-3\">\n        <!--Sidebar need to have the [] to pass the data to the child -->\n        <app-sidebar [admin-Dashboard-totalUser-Props] = totalUsers></app-sidebar>\n      </div>\n      <div class=\"col-md-9\">\n        <!--Boxes -->\n        <!--Pass the totalUser number to the app-boxes component  -->\n        <app-boxes [admin-Dashboard-totalUser-Props] = totalUsers></app-boxes>\n        <!--User Table-->\n        <app-table text=\"Latest Users\">\n          <!-- <app-table-columns value='name' header='Name'></app-table-columns>\n\n          <app-table-columns value='email' header='email'></app-table-columns>\n\n          <app-table-columns value='CreatedDate' header='Joined'></app-table-columns> -->\n\n        </app-table>\n      </div>\n    </div>\n  </div>\n  <!--Add Page Modal  -->\n  <app-modal modalId=\"addPage\"></app-modal>\n</section>\n"
+module.exports = "<header id=\"header\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-9\">\n        <h2><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span> DashBoard <small>Manage your website</small></h2>\n      </div>\n      <div class=\"col-md-3\">\n       <div class=\"dropdown create\">\n          <button class=\"btn btn-default dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            Create Content\n            <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n            <li><a type=\"button\" data-toggle = \"modal\" data-target=\"#addPage\">Add Page</a></li>\n            <li><a href=\"#\">Add Post</a></li>\n            <li><a href=\"/register\">Add User</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div> <!--End div container -->\n</header> <!--End top Part of the website -->\n\n<!--Breadcrumb section  -->\n<section id=\"breadcrumb\">\n    <ol class=\"breadcrumb\">\n      <li class=\"active\">Dashboard </li>\n    </ol>\n</section> <!--End breadcrumb section -->\n\n<section id=\"main\">\n  <div class=\"controller\">\n    <div class=\"row\">\n      <div class=\"col-md-3\">\n        <!--Sidebar need to have the [] to pass the data to the child -->\n        <app-sidebar [admin-Dashboard-totalUser-Props] = totalUsers></app-sidebar>\n      </div>\n      <div class=\"col-md-9\">\n        <!--Boxes -->\n        <!--Pass the totalUser number to the app-boxes component  -->\n        <app-boxes [admin-Dashboard-totalUser-Props] = totalUsers></app-boxes>\n        <!--User Table-->\n        <app-table [dataset] = latestUser text=\"Latest Users\">\n          <!-- <app-table-columns value='name' header='Name'></app-table-columns>\n\n          <app-table-columns value='email' header='email'></app-table-columns>\n\n          <app-table-columns value='CreatedDate' header='Joined'></app-table-columns> -->\n\n        </app-table>\n      </div>\n    </div>\n  </div>\n  <!--Add Page Modal  -->\n  <app-modal modalId=\"addPage\"></app-modal>\n</section>\n"
 
 /***/ }),
 
 /***/ 271:
 /***/ (function(module, exports) {
 
-module.exports = "<header id=\"header\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-9\">\n        <h2><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span> Users <small>Manage Site User</small></h2>\n      </div>\n      <div class=\"col-md-3\">\n       <div class=\"dropdown create\">\n          <button class=\"btn btn-default dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            Create Content\n            <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n            <li><a type=\"button\" data-toggle = \"modal\" data-target=\"#addPage\">Add Page</a></li>\n            <li><a href=\"#\">Add Post</a></li>\n            <li><a href=\"/register\">Add User</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div> <!--End div container -->\n</header> <!--End top Part of the website -->\n\n<!--Breadcrumb section  -->\n<section id=\"breadcrumb\">\n    <ol class=\"breadcrumb\">\n      <li class=\"\"> <a href = \"/adminDashboard\">Dashboard </a> </li>\n      <li class=\"active\">Users</li>\n    </ol>\n</section> <!--End breadcrumb section -->\n\n\n<section id=\"main\">\n  <div class=\"controller\">\n    <div class=\"row\">\n      <div class=\"col-md-3\">\n        <!--Sidebar -->\n        <app-sidebar [admin-Dashboard-totalUser-Props] = totalUsers> </app-sidebar>\n      </div>\n      <div class=\"col-md-9\">\n        <!--User Table-->\n        <app-table className=\"main-color-bg\" text = \"Users\" showFilter = true ></app-table>\n      </div>\n    </div>\n  </div>\n  <!--Add Page Modal  -->\n  <app-modal modalId=\"addPage\"></app-modal>\n</section>\n"
+module.exports = "<header id=\"header\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-9\">\n        <h2><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span> Users <small>Manage Site User</small></h2>\n      </div>\n      <div class=\"col-md-3\">\n       <div class=\"dropdown create\">\n          <button class=\"btn btn-default dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            Create Content\n            <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n            <li><a type=\"button\" data-toggle = \"modal\" data-target=\"#addPage\">Add Page</a></li>\n            <li><a href=\"#\">Add Post</a></li>\n            <li><a href=\"/register\">Add User</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div> <!--End div container -->\n</header> <!--End top Part of the website -->\n\n<!--Breadcrumb section  -->\n<section id=\"breadcrumb\">\n    <ol class=\"breadcrumb\">\n      <li class=\"\"> <a href = \"/adminDashboard\">Dashboard </a> </li>\n      <li class=\"active\">Users</li>\n    </ol>\n</section> <!--End breadcrumb section -->\n\n\n<section id=\"main\">\n  <div class=\"controller\">\n    <div class=\"row\">\n      <div class=\"col-md-3\">\n        <!--Sidebar -->\n        <app-sidebar [admin-Dashboard-totalUser-Props] = totalUsers> </app-sidebar>\n      </div>\n      <div class=\"col-md-9\">\n        <!--User Table exportProp -> is a prop pass to the admin-users from the app-table-->\n        <app-table [dataset] = allUsers className=\"main-color-bg\" text = \"Users\" showFilter = true (exportProp)=\"skipUser($event)\"></app-table>\n      </div>\n    </div>\n  </div>\n  <!--Add Page Modal  -->\n  <app-modal modalId=\"addPage\"></app-modal>\n</section>\n"
 
 /***/ }),
 
@@ -1740,7 +1748,7 @@ module.exports = ""
 /***/ 279:
 /***/ (function(module, exports) {
 
-module.exports = "<!--To add External Javscript file I need to add it to the script section angular-cli.json   -->\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <div *ngIf=\"showFilter\" class=\"form-group\">\n      <!--Show Search Filter  -->\n      <input id=\"filterInput\" class=\"makeSmaller form-control\" onkeyup=\"filterUsersByName()\" type=\"text\" placeholder=\"Search Filter\" name=\"\" value=\"\">\n    </div>\n    <table id=\"userTable\" class=\"table table-striped table-hover\">\n      <!-- Table Header -->\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <!--Table Body -->\n    <tbody>\n      <!-- Do a for loop to show the tables -->\n      <tr *ngFor=\"let record of user; let i = index\">\n          <!-- || - mean alternate text. is Like an If  -->\n         <td>{{record.name || \"No name\" }}</td>\n\n         <td>{{record.email || \"No email\"}}</td>\n         <!--Show this row if there's a date in the json  -->\n         <td *ngIf=\"record.CreatedDate\">{{record.CreatedDate | date:'MMM dd' }} at\n           {{record.CreatedDate | date:'hh:mm' }}\n        </td>\n        <!--Alternate show this row if there is not a date in the json data  -->\n        <td *ngIf=\"!record.CreatedDate\"> No Date Provided</td>\n      </tr>\n    </tbody>\n</table>\n  <!--[(page)] - pa pasar la variable  -->\n  <div class=\" text-center d-flex justify-content-center\">\n    <ngb-pagination [collectionSize]=\"70\" page=\"4\" aria-label=\"Default pagination\" size =\"\"></ngb-pagination>\n  </div>\n  </div>\n</div>\n\n<!-- <tr>\n  <table>\n  <thead>\n    <tr>\n      <th *ngFor=\"let column of columns\">{{column.header}}</th>\n    </tr>\n  </thead>\n  <tbody *ngFor=\"let row of dataset\">\n    <h1>{{row}}</h1>\n    El row va a ser como si fuera user.persons.value -> row.value\n    <tr>\n      <td *ngFor=\"let column of columns\">{{row[colum.value]}}</td>\n  </tr>\n  </tbody>\n</table>\n\n\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <table class=\"table table-striped table-hover\">\n      Table Header\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <tr>\n        <td> jose shus</td>\n      </tr>\n\n    </table>\n   Do a for loop to show the tables\n   <tbody>\n  <tr *ngFor=\"let record of user;let i = index\">\n    <td>{{record.name}}</td>\n    <td>{{record[i]}}</td>\n    <td>{{record.email}}</td>\n    <td>dec {{items}}</td>\n  </tr>\n</tbody>\n  </div>\n</div>\n\n  <td>Jill Smith</td>\n  <td>jillsmith@gmail.com</td>\n  <td>Dec 12, 2016</td>\n</tr>\n<tr>\n  <td>Smith Foster</td>\n  <td>foster23@gmail.com</td>\n  <td>Mar 12, 2016</td>\n</tr>\n<tr>\n  <td>Julian Smith</td>\n  <td>JualianSmith@gmail.com</td>\n  <td>Feb 23, 2016</td>\n</tr>\n<tr>\n  <td>John tue</td>\n  <td>Johnutru@gmail.com</td>\n  <td>Jul 2, 2016</td>\n\n   <ng-template ngFor let-item [ngForOf]=\"createRange(5)\" let-currentElementIndex=\"index+1\">\n    <th class=\"table-active\"> {{name.headers[currentElementIndex - 1]}} </th>\n  </ng-template>\n</tr> -->\n"
+module.exports = "<!--To add External Javscript file I need to add it to the script section angular-cli.json   -->\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <div *ngIf=\"showFilter\" class=\"form-group\">\n      <!--Show Search Filter  -->\n      <input id=\"filterInput\" class=\"makeSmaller form-control\" onkeyup=\"filterUsersByName()\" type=\"text\" placeholder=\"Search Filter\" name=\"\" value=\"\">\n    </div>\n    <table id=\"userTable\" class=\"table table-striped table-hover\">\n      <!-- Table Header -->\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <!--Table Body -->\n    <tbody>\n      <!-- Do a for loop to show the tables -->\n      <tr *ngFor=\"let record of dataset; let i = index\">\n          <!-- || - mean alternate text. is Like an If  -->\n         <td>{{record.name || \"No name\" }}</td>\n\n         <td>{{record.email || \"No email\"}}</td>\n         <!--Show this row if there's a date in the json  -->\n         <td *ngIf=\"record.CreatedDate\">{{record.CreatedDate | date:'MMM dd' }} at\n           {{record.CreatedDate | date:'hh:mm' }}\n        </td>\n        <!--Alternate show this row if there is not a date in the json data  -->\n        <td *ngIf=\"!record.CreatedDate\"> No Date Provided</td>\n      </tr>\n    </tbody>\n</table>\n  <!--[(page)] - pa pasar la variable  -->\n  <div class=\" text-center d-flex justify-content-center\">\n    <ngb-pagination [collectionSize]=\"70\" [(page)]=\"currentPage\" aria-label=\"Default pagination\" (click) = \"skipUser(currentPage)\" size =\"\"></ngb-pagination>\n    <pre> users: {{showUsers}}</pre>\n  </div>\n  </div>\n</div>\n\n<!-- <tr>\n  <table>\n  <thead>\n    <tr>\n      <th *ngFor=\"let column of columns\">{{column.header}}</th>\n    </tr>\n  </thead>\n  <tbody *ngFor=\"let row of dataset\">\n    <h1>{{row}}</h1>\n    El row va a ser como si fuera user.persons.value -> row.value\n    <tr>\n      <td *ngFor=\"let column of columns\">{{row[colum.value]}}</td>\n  </tr>\n  </tbody>\n</table>\n\n\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <table class=\"table table-striped table-hover\">\n      Table Header\n      <tr>\n        <th>Name</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <tr>\n        <td> jose shus</td>\n      </tr>\n\n    </table>\n   Do a for loop to show the tables\n   <tbody>\n  <tr *ngFor=\"let record of user;let i = index\">\n    <td>{{record.name}}</td>\n    <td>{{record[i]}}</td>\n    <td>{{record.email}}</td>\n    <td>dec {{items}}</td>\n  </tr>\n</tbody>\n  </div>\n</div>\n\n  <td>Jill Smith</td>\n  <td>jillsmith@gmail.com</td>\n  <td>Dec 12, 2016</td>\n</tr>\n<tr>\n  <td>Smith Foster</td>\n  <td>foster23@gmail.com</td>\n  <td>Mar 12, 2016</td>\n</tr>\n<tr>\n  <td>Julian Smith</td>\n  <td>JualianSmith@gmail.com</td>\n  <td>Feb 23, 2016</td>\n</tr>\n<tr>\n  <td>John tue</td>\n  <td>Johnutru@gmail.com</td>\n  <td>Jul 2, 2016</td>\n\n   <ng-template ngFor let-item [ngForOf]=\"createRange(5)\" let-currentElementIndex=\"index+1\">\n    <th class=\"table-active\"> {{name.headers[currentElementIndex - 1]}} </th>\n  </ng-template>\n</tr> -->\n"
 
 /***/ }),
 
@@ -1840,13 +1848,35 @@ var UsersService = (function () {
         });
     };
     //Get all users
-    UsersService.prototype.getUsers = function () {
+    UsersService.prototype.getLatestUsers = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         //set the Content-Type to application/json
         headers.append('Content-Type', 'application/json');
         // return an observable with the response
         // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
-        return this.http.get('/users/getUsers', { headers: headers }).map(function (res) {
+        return this.http.get('/users/getLatestUsers', { headers: headers }).map(function (res) {
+            return res.json();
+        });
+    };
+    //Get all users
+    UsersService.prototype.getAllUsers = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        //set the Content-Type to application/json
+        headers.append('Content-Type', 'application/json');
+        // return an observable with the response
+        // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+        return this.http.get('/users/getAllUsers', { headers: headers }).map(function (res) {
+            return res.json();
+        });
+    };
+    //Get all users
+    UsersService.prototype.skipUsers = function (number) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        //set the Content-Type to application/json
+        headers.append('Content-Type', 'application/json');
+        // return an observable with the response
+        // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+        return this.http.get('/users/skipUsers?skipNumber=' + number, { headers: headers }).map(function (res) {
             return res.json();
         });
     };

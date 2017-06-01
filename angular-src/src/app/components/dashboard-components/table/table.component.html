@@ -19,7 +19,7 @@
       <!--Table Body -->
     <tbody>
       <!-- Do a for loop to show the tables -->
-      <tr *ngFor="let record of user; let i = index">
+      <tr *ngFor="let record of dataset; let i = index">
           <!-- || - mean alternate text. is Like an If  -->
          <td>{{record.name || "No name" }}</td>
 
@@ -35,7 +35,8 @@
 </table>
   <!--[(page)] - pa pasar la variable  -->
   <div class=" text-center d-flex justify-content-center">
-    <ngb-pagination [collectionSize]="70" page="4" aria-label="Default pagination" size =""></ngb-pagination>
+    <ngb-pagination [collectionSize]="70" [(page)]="currentPage" aria-label="Default pagination" (click) = "skipUser(currentPage)" size =""></ngb-pagination>
+    <pre> users: {{showUsers}}</pre>
   </div>
   </div>
 </div>

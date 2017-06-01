@@ -38,8 +38,8 @@
         <app-sidebar [admin-Dashboard-totalUser-Props] = totalUsers> </app-sidebar>
       </div>
       <div class="col-md-9">
-        <!--User Table-->
-        <app-table className="main-color-bg" text = "Users" showFilter = true ></app-table>
+        <!--User Table exportProp -> is a prop pass to the admin-users from the app-table-->
+        <app-table [dataset] = allUsers className="main-color-bg" text = "Users" showFilter = true (exportProp)="skipUser($event)"></app-table>
       </div>
     </div>
   </div>

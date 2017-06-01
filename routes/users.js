@@ -81,6 +81,7 @@ router.get('/profile',passport.authenticate('jwt',{session:false}),(req, res,nex
   res.json({user:req.user});
 });
 
+// Get a Users by their Id
 router.get('/getUserById', (req, res) => {
   var id = req.query.userId;
   User.getUserById(id,(err,data) => {
@@ -92,12 +93,40 @@ router.get('/getUserById', (req, res) => {
 
 });
 
-router.get('/getUsers', (req, res) => {
+// get the Latest Users from Database
+router.get('/getLatestUsers', (req, res) => {
+  User.getLatestUser((err, users) => {
+    if (err){
+      return res.json(err);
+    }
+    console.log(users[0].name + " latest user from api");
+    res.send(users);
+  })
+
+});
+
+// get all the Users from Database
+router.get('/getAllUsers', (req, res) => {
   User.getAllUser((err, users) => {
     if (err){
       return res.json(err);
     }
-    // console.log(users[0].name + " api");
+    console.log(users[0].name + " All users from the api");
+    res.send(users);
+  })
+
+});
+
+// Skip Users from Database
+router.get('/skipUsers', (req, res) => {
+  var number = req.query.skipNumber;
+  console.log(number , "number to skip api");
+  // Convert number to string
+  User.skipUser(parseInt(number),(err, users) => {
+    if (err){
+      return res.json(err);
+    }
+    // console.log(users[0].name + " Skip users from the api");
     res.send(users);
   })
 

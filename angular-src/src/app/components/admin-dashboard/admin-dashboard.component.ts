@@ -10,14 +10,20 @@ import * as underscore from 'underscore';
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
+  latestUser
   totalUsers
   constructor(private userService:UsersService) { }
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(user => {
+    this.userService.getLatestUsers().subscribe(user => {
+      this.latestUser = user;
+
+    });
+
+    // This is for counting all User.
+    this.userService.getAllUsers().subscribe(user => {
       // use underscore size - return the size of an object
       this.totalUsers = underscore.size(user);
-
 
     });
 

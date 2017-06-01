@@ -21,13 +21,35 @@ export class UsersService {
   }
 
   //Get all users
-  getUsers(){
+  getLatestUsers(){
     let headers = new Headers();
     //set the Content-Type to application/json
     headers.append('Content-Type','application/json');
     // return an observable with the response
     // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
-    return this.http.get('/users/getUsers',{headers:headers}).map(res =>
+    return this.http.get('/users/getLatestUsers',{headers:headers}).map(res =>
+      res.json());
+  }
+
+  //Get all users
+  getAllUsers(){
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    headers.append('Content-Type','application/json');
+    // return an observable with the response
+    // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+    return this.http.get('/users/getAllUsers',{headers:headers}).map(res =>
+      res.json());
+  }
+
+  //Get all users
+  skipUsers(number){
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    headers.append('Content-Type','application/json');
+    // return an observable with the response
+    // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+    return this.http.get('/users/skipUsers?skipNumber='+number,{headers:headers}).map(res =>
       res.json());
   }
 

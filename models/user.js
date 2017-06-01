@@ -32,12 +32,23 @@ module.exports.getUserById = function(id,callback){
   User.findById(id,callback);
 };
 
-module.exports.getAllUser = function(callback){
+// Get the Latest User
+module.exports.getLatestUser = function(callback){
   // User.find({},callback);
 
   // output the result as an array
   User.find({}).sort({$natural:-1}).limit(5).lean().exec(callback);
 };
+
+module.exports.getAllUser = function(callback){
+  // Find all users
+  User.find({},callback)
+}
+
+module.exports.skipUser = function(skipNumberUser,callback){
+  // Skip User in the Database
+  User.find({},callback).skip(skipNumberUser,7)
+}
 
 // Get a user by their username
 module.exports.getUserByUsername = function(username,callback){
