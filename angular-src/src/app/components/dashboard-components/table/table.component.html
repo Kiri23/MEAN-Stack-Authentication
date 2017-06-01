@@ -36,7 +36,7 @@
     </tbody>
 </table>
   <!--[(page)] - pa pasar la variable  -->
-  <div class=" text-center d-flex justify-content-center">
+  <div *ngIf="showFilter" class=" text-center d-flex justify-content-center">
     <ngb-pagination [collectionSize]="70" [(page)]="currentPage" aria-label="Default pagination" (click) = "skipUser(currentPage)" size =""></ngb-pagination>
     <pre> users: {{showUsers}}</pre>
   </div>
