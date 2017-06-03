@@ -1,3 +1,4 @@
+
 //Modules d
 const mongoose = require('mongoose');
 // to encrypt files
@@ -5,9 +6,14 @@ const bcrypt = require('bcryptjs');
 const config = require('../config/databse');
 
 //user Schema
-const UserSchema = mongoose.Schema({
+const AministratorSchema = mongoose.Schema({
   name: {
     type: String
+  },
+  // users of this administrator
+  users: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Administrator'
   },
   email : {
     type: String,
@@ -48,48 +54,48 @@ const UserSchema = mongoose.Schema({
     */
 });
 
-const User = module.exports = mongoose.model('User',UserSchema);
+const Administrator = module.exports = mongoose.model('Administrator',AministratorSchema);
 
 // Get a user by the id
-module.exports.getUserById = function(id,callback){
-  User.findById(id,callback);
+module.exports.getAdministratorById = function(id,callback){
+  Administrator.findById(id,callback);
 };
 
-// Get the Latest User
-module.exports.getLatestUser = function(callback){
-  // User.find({},callback);
+// Get the Latest Administrator
+module.exports.getLatestAdministrator = function(callback){
+  // Administrator.find({},callback);
 
   // output the result as an array
-  User.find({}).sort({$natural:-1}).limit(5).lean().exec(callback);
+  Administrator.find({}).sort({$natural:-1}).limit(5).lean().exec(callback);
 };
 
-module.exports.getAllUser = function(callback){
+module.exports.getAllAdministrator = function(callback){
   // Find all users
-  User.find({},callback)
+  Administrator.find({},callback)
 }
 
-module.exports.skipUser = function(skipNumberUser,callback){
-  // Skip User in the Database
-  User.find({},callback).skip(skipNumberUser,7)
+module.exports.skipUser = function(skipNumberAdministrator,callback){
+  // Skip Administrator in the Database
+  Administrator.find({},callback).skip(skipNumberAdministrator,7)
 }
 
 // Get a user by their username
-module.exports.getUserByUsername = function(username,callback){
+module.exports.getAdministratorByUsername = function(username,callback){
   const query = {username: username}
-  User.findOne(query,callback);
+  Administrator.findOne(query,callback);
 };
 
-// Add User to the Database
-module.exports.addUser = function(newUser,callback){
+// Add Administrator to the Database
+module.exports.addAdministrator = function(newAministrator,callback){
   // Hash password
   bcrypt.genSalt(10,(err, salt) => {
-    bcrypt.hash(newUser.password, salt, (err, hash) => {
+    bcrypt.hash(newAministrator.password, salt, (err, hash) => {
       if(err){
         throw err
       }
-      newUser.password = hash;
+      newAministrator.password = hash;
       //save user
-      newUser.save(callback);
+      newAministrator.save(callback);
     })
   })
 };

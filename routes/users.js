@@ -1,3 +1,4 @@
+// Contain the endpoint for all the users routes 
 'use strict'
 const express = require('express');
 const router = express.Router();

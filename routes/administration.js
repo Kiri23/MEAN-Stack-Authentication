@@ -1,0 +1,142 @@
+// Contain the endpoint for all the Administrator routes
+'use strict'
+const express = require('express');
+const router = express.Router();
+const passport = require('passport');
+const jwt = require('jsonwebtoken');
+
+const config = require('../config/databse');
+const Administration = require('../models/administrator');
+
+//aget6 shortcut for app.get
+
+// Register
+// cause whe're in the Administrator file is Administrator/register
+router.post('/register', (req, res,next) => {
+  // Administration Object Retriev Administrator Properties from Form
+  let newAdministrator = new Administration({
+    name: req.body.name,
+    email: req.body.email,
+    username: req.body.username,
+    password: req.body.password
+  });
+// Add Administration to mongoDb
+  Administration.addAdministrator(newAdministrator,(err, Administrator) => {
+    if(err){
+      console.log(err + " add Administrator");
+      res.json({success: false, msg:'Failed to register Administrator',error:err});
+    }else{ // addAdministrator to the Database
+      res.json({success:true,msg:'Administration Registered',Administrator:newAdministrator});
+    }
+  });
+// End add Administration logic
+
+})
+
+// Authenticate Route
+router.post('/authenticate', (req, res,next) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  // Get the Administrator to authenticate
+  Administration.getAdministratorByUsername(username,(err,Administrator) => {
+    if (err) throw err;
+    if(!Administrator){
+      return res.json({success:false,msg:'Administration not found'});
+    }
+    // Compare the Password
+    Administration.comparePassword(password,Administrator.password,(err,isMatch) => {
+      if (err) throw err;
+      // if the password match
+      if(isMatch){
+        // construct the token- it has option
+        const token = jwt.sign(Administrator,config.secret,{
+          expiresIn:120000 // 20 minutes
+        });
+        // Send the reponse in Json Format
+        res.json({success:true,
+          token:'JWT '+token,
+          Administrator:{
+            id:Administrator._id,
+            name:Administrator.name,
+            username:Administrator.username,
+            email:Administrator.email
+          }
+        });
+      }
+      // if no match
+      else {
+        return res.json({success:false,msg:'Wrong password'});
+      }
+
+    });
+
+
+  })
+
+});
+
+// protect route with our Authentication, Our Token
+// Profile Route
+// El passport Config file tengo que cambiarlo para que funcione con administrator. crear otro metodo para administrator
+router.get('/profile',passport.authenticate('jwt',{session:false}),(req, res,next) => {
+  res.json({Administrator:req.Administrator});
+});
+
+// Get a Administrator by their Id
+router.get('/getAdministratorById', (req, res) => {
+  var id = req.query.AdministratorId;
+  Administration.getAdministratorById(id,(err,data) => {
+    if (err){
+      return res.json(err);
+    }
+    return res.json({Administrator:data})
+  });
+
+});
+
+// get the Latest Administrator from Database
+router.get('/getLatestAdministrators', (req, res) => {
+  Administration.getLatestAdministrator((err, Administrator) => {
+    if (err){
+      return res.json(err);
+    }
+    // console.log(Administrator[0].name + " latest Administrator from api");
+    res.send(Administrator);
+  })
+
+});
+
+// get all the Administrator from Database
+router.get('/getAllAdministrators', (req, res) => {
+  Administration.getAllAdministrator((err, Administrator) => {
+    if (err){
+      return res.json(err);
+    }
+    // console.log(Administrator[0].name + " All Administrator from the api");
+    res.send(Administrator);
+  })
+
+});
+
+// Skip Administrator from Database
+router.get('/skipAdministrators', (req, res) => {
+  var number = req.query.skipNumber;
+  console.log(number , "number to skip api");
+  // Convert number to string
+  Administration.skipAdministrator(parseInt(number),(err, Administrator) => {
+    if (err){
+      return res.json(err);
+    }
+    // console.log(Administrator[0].name + " Skip Administrator from the api");
+    res.send(Administrator);
+  })
+
+});
+
+router.get('/ping', (req, res) => {
+    return res.json('pong');
+});
+
+
+module.exports = router;

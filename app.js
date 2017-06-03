@@ -12,6 +12,12 @@ const mongoose = require('mongoose');
 // variables
 const config = require('./config/databse')
 
+// route files
+const organization = require('./routes/organization');
+const administration = require('./routes/administration');
+const users = require('./routes/users')
+
+
 // Connect to Mongodb Database
 // To start the mongodb Server go to /usr/local/bin and run ./mongo - that will start the server and you can use 'mongod'
 mongoose.connect(config.database);
@@ -23,10 +29,9 @@ mongoose.connection.on('connected',() => {
 // Check Mongodb connections
 checkMongooseConnection(mongoose);
 
+// app express
 const app = express();
 
-//routes files
-const users = require('./routes/users')
 
 // Port Number
 const port = process.env.PORT || 3002;
@@ -41,6 +46,11 @@ app.use(bodyParser.json());
 
 // anything that is /users will go to that users file
 app.use('/users',users);
+// route for organization
+app.use('/organization',organization);
+// route for Administrator
+app.use('/administrator',administration);
+
 
 // Set Static Folder for when we use Angular an other files - staticfile keyboard shortcut
 
@@ -71,6 +81,7 @@ app.listen(port,() => {
 
 })
 
+// Function to chech different event in mongoDb
 function checkMongooseConnection(mongose){
   // do Validation if Mongoose(param) is a type of Mongoose
    if (mongoose.constructor.name !== "Mongoose"){
@@ -103,3 +114,10 @@ function checkMongooseConnection(mongose){
       console.log('reconnect to mongo server.');
   });
 }
+
+// var orga = require('.//models/organization');
+//
+// var orgaw = new orga({
+//   name: "Test",
+//
+// });

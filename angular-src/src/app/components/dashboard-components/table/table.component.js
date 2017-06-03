@@ -4,16 +4,12 @@ function filterUsersByName(){
  var input, filter, table, tr, td, i;
  input = document.getElementById("filterInput");
  filter = input.value.toUpperCase();
- // alert(filter);
+
  table = document.getElementById("userTable");
- // console.log(table);
- tr = table.getElementsByTagName("tr")
- // console.log(tr);
- if (input.value ==""){
-   // reload only the table using jquery
-   $("#userTable").load("")
-  //  location.reload();
- }
+
+ tr = table.getElementsByTagName("tr");
+
+ reloadComponents(input);
 
  // Loop through all table rows, and hide those who don't match the search query
  for (i = 0; i < tr.length; i++) {
@@ -45,6 +41,32 @@ function filterUsersByName(){
  }
 }
 
+// Reload Components
+function reloadComponents (input){
+  if (input.value ==""){
+    // reload only the table using jquery
+    // $("#userTable").hide();
+    // Aqui se pudiera poner un spinerr using .show
+    // no funciona correctamente hasta que busque una manera de como no volver a cargar los script ya cargados
+    // $("#userTable").load("")
+    location.reload();
+  }
+
+}
+
+// Check if a Script is loaded. src = "https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"
+function isScriptAlreadyIncluded(src){
+    var scripts = document.getElementsByTagName("script");
+    console.log(scripts , " scripts");
+    for(var i = 0; i < scripts.length; i++)
+       if(scripts[i].getAttribute('src') == src){
+         // buscar una manera de como no volver a cargar el archivo ya cargado
+         console.log(" file is already loaded");
+         return true
+       }
+       console.log(" file is not loaded");
+    return false;
+}
 
 
 // can't use module.export

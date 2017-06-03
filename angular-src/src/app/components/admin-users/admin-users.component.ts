@@ -16,18 +16,14 @@ export class AdminUsersComponent implements OnInit {
   ngOnInit() {
     this.userService.getAllUsers().subscribe(user => {
       this.allUsers = user
-       console.log(user , " user data ");
       // use underscore size - return the size of an object
       this.totalUsers = underscore.size(user);
-      console.log(this.totalUsers , " toatl user all son 7 ");
-
     });
   }
 
   // this function only get call when in the parent Component (Aka app-table) fire a onClick Function (aka onClick pagination item). passing data(currentPage int) from parent component(app-table) to this component admin-users.
   skipUser(user: any) {
     this.allUsers = user
-    console.log(user , " user evento ");
  }
 
 

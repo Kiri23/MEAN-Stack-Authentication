@@ -23,8 +23,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // Third Party
 
 var TableComponent = (function () {
-    function TableComponent(userService) {
+    function TableComponent(userService, zone) {
         this.userService = userService;
+        this.zone = zone;
         this.showFilter = false;
         this.className = "";
         this.text = "N/A";
@@ -46,7 +47,6 @@ var TableComponent = (function () {
     }; // End NGonInit()
     TableComponent.prototype.skipUser = function (currentPage) {
         var _this = this;
-        console.log(this.currentPage, "currentPage");
         //  Logic to skip the right user for it to show it on the table. currentPage = 2. currentPage(2) - 1 = (1 * 5) + 1 = 6. 6 is the right amount of user I want to skip over. and this will also work with currentPage = 3,4,5 etc. each currentPage will only show #5 users. I wan to skip every 5 integer number each time
         this.showUsersSkipNumber = ((currentPage - 1) * 5) + 1;
         // This are the first five users. I dont want to skip this users.This mean tha thi's the first page. I don't want to skip users I want to skip before showUsersSkipNumber is > 5
@@ -54,13 +54,13 @@ var TableComponent = (function () {
             // dont skip no one show the first 5 in the table
             this.showUsersSkipNumber = 0;
         }
-        console.log(this.showUsersSkipNumber, " los usuario a skip");
         // call to the database to skip user
         this.userService.skipUsers(this.showUsersSkipNumber).subscribe(function (user) {
             console.log(user, " user from skip user");
             // emit a event aka send the exportProp to the parent element
             _this.exportProp.emit(user);
         });
+        //  console.log(this.);
     };
     return TableComponent;
 }());
@@ -90,10 +90,10 @@ TableComponent = __decorate([
         template: __webpack_require__(279),
         styles: [__webpack_require__(260)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"]) === "function" && _b || Object])
 ], TableComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=table.component.js.map
 
 /***/ }),
@@ -431,16 +431,13 @@ var AdminUsersComponent = (function () {
         var _this = this;
         this.userService.getAllUsers().subscribe(function (user) {
             _this.allUsers = user;
-            console.log(user, " user data ");
             // use underscore size - return the size of an object
             _this.totalUsers = __WEBPACK_IMPORTED_MODULE_2_underscore__["size"](user);
-            console.log(_this.totalUsers, " toatl user all son 7 ");
         });
     };
     // this function only get call when in the parent Component (Aka app-table) fire a onClick Function (aka onClick pagination item). passing data(currentPage int) from parent component(app-table) to this component admin-users.
     AdminUsersComponent.prototype.skipUser = function (user) {
         this.allUsers = user;
-        console.log(user, " user evento ");
     };
     return AdminUsersComponent;
 }());
