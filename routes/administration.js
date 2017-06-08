@@ -134,6 +134,18 @@ router.get('/skipAdministrators', (req, res) => {
 
 });
 
+// EndPoit for the Role of the Admin
+router.get('/getAdminRole', (req, res) => {
+    var roleNumber = req.query.role;
+    Administration.getAdminRole((err, AdminRole) => {
+      if (err){
+        return res.json(err);
+      }
+      res.json(AdminRole[0]);
+
+    })
+});
+
 router.get('/ping', (req, res) => {
     return res.json('pong');
 });

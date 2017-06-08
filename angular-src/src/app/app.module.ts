@@ -33,6 +33,8 @@ import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 import {UsersService} from './services/users.service';
 import {UtilitiesService} from './services/utilities.service';
+import {AdministratorsService} from './services/administration/administrator.service';
+import {OrganizationsService} from './services/organization/organization.service';
 
 
 
@@ -83,7 +85,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot()
   ],
   providers: [ValidateService,AuthService,AuthGuard,UsersService
-    ,UtilitiesService
+    ,UtilitiesService,AdministratorsService,OrganizationsService
   ],
   bootstrap: [AppComponent]
 })

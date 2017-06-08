@@ -10,14 +10,20 @@ const AministratorSchema = mongoose.Schema({
   name: {
     type: String
   },
-  // users of this administrator
+  // users of this administrator. Reference to the user schema
   users: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Administrator'
+    ref: 'User'
   },
   email : {
     type: String,
+    unique: true,
     required: true
+  },
+  role: {
+    type:Number,
+    required: true,
+    default: 1
   },
   username: {
     type: String,
@@ -74,7 +80,7 @@ module.exports.getAllAdministrator = function(callback){
   Administrator.find({},callback)
 }
 
-module.exports.skipUser = function(skipNumberAdministrator,callback){
+module.exports.skipAdministrator = function(skipNumberAdministrator,callback){
   // Skip Administrator in the Database
   Administrator.find({},callback).skip(skipNumberAdministrator,7)
 }
@@ -99,6 +105,14 @@ module.exports.addAdministrator = function(newAministrator,callback){
     })
   })
 };
+
+// Get the admin role from the db
+module.exports.getAdminRole = function(callback){
+  // this return only the role field and the object id aka the id of the admin
+  // to exclude a field like the _id you can set the option to #0. like this _id:0
+  // reference: https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/.
+  Administrator.find({},{role:1}).exec(callback)
+}
 
 // Compare password to login
 module.exports.comparePassword = function(candidatePassword,hash,callback){

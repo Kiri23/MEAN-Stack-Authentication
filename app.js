@@ -9,6 +9,7 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 
+
 // variables
 const config = require('./config/databse')
 
@@ -115,9 +116,52 @@ function checkMongooseConnection(mongose){
   });
 }
 
-// var orga = require('.//models/organization');
+
+// var user = new users({
+//   name: "Huis2",
+//   email: "huis2@mai.com",
+//   username: "snsn"
 //
-// var orgaw = new orga({
-//   name: "Test",
+// });
+
+// How to save Organization data and administrator data
+// const Administrator = require("./models/administrator")
+// const orga = require('./models/organization');
 //
+// var admin = new Administrator({
+//   name:"Test",
+//   users:"592a1d46b872b500117d1fb0",
+//   email: "test@mai.com",
+//   username: "tets",
+//   password: "1234"
+// });
+//
+// var orga2 = new orga({
+//   name:"OrgaTest",
+//   administrator:"59323daf506a91a626c5eb68",
+//   users:admin.users,
+//   email:"orga@hot.organization"
+//
+// });
+//
+// orga2.save((err) => {
+//    if (!err){
+//      orga.find({})
+//         .populate('administrator')
+//         .populate("users")
+//         .exec((err,orga) => {
+//           console.log(JSON.stringify(orga, null, "\t"))
+//         })
+//    }
+// });
+//
+//
+// admin.save((err) => {
+//    if (!err){
+//      Administrator.find({})
+//         .populate('users')
+//         .exec((err,admin) => {
+//           console.log(JSON.stringify(admin, null, "\t"))
+//         })
+//    }
 // });

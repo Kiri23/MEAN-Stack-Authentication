@@ -1,4 +1,4 @@
-// Contain the endpoint for all the users routes 
+// Contain the endpoint for all the users routes
 'use strict'
 const express = require('express');
 const router = express.Router();
@@ -7,6 +7,9 @@ const jwt = require('jsonwebtoken');
 
 const config = require('../config/databse');
 const User = require('../models/user');
+
+// const Administrator = require("./models/administrator")
+
 
 //aget6 shortcut for app.get
 
@@ -131,6 +134,17 @@ router.get('/skipUsers', (req, res) => {
     res.send(users);
   })
 
+});
+
+// EndPoit for the Role of the User
+router.get('/getUserRole', (req, res) => {
+    Administration.getAdminRole((err, userRole) => {
+      if (err){
+        return res.json(err);
+      }
+      res.send(userRole[0].role);
+
+    })
 });
 
 router.get('/ping', (req, res) => {

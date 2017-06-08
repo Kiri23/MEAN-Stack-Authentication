@@ -16,7 +16,7 @@ export class AuthGuard implements CanActivate{
     private flashMessage:FlashMessagesService
   ){ }
 
-  // Protect Route with lowercase c
+  // Protect Route with lowercase c. to restrict whatever page you nedd to extend the CanActivate interface and include the canActivate function. inside the function you put whatever logic you want and return true or false to Authorized access. 
   canActivate(){
     if (this.authService.checkLoggedIn()){
       //Authorized acces
