@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 
 const config = require('../config/databse');
 const User = require('../models/user');
+const Administrator = require('../models/administrator');
 
 // const Administrator = require("./models/administrator")
 
@@ -21,7 +22,9 @@ router.post('/register', (req, res,next) => {
     name: req.body.name,
     email: req.body.email,
     username: req.body.username,
-    password: req.body.password
+    password: req.body.password,
+    role:user.role,
+    CreatedDate:user.CreatedDate
   });
 // Add User to mongoDb
   User.addUser(newUser,(err, user) => {
@@ -34,7 +37,7 @@ router.post('/register', (req, res,next) => {
   });
 // End add User logic
 
-})
+});
 
 // Authenticate Route
 router.post('/authenticate', (req, res,next) => {
@@ -45,39 +48,86 @@ router.post('/authenticate', (req, res,next) => {
   User.getUserByUsername(username,(err,user) => {
     if (err) throw err;
     if(!user){
-      return res.json({success:false,msg:'User not found'});
-    }
-    // Compare the Password
-    User.comparePassword(password,user.password,(err,isMatch) => {
-      if (err) throw err;
-      // if the password match
-      if(isMatch){
-        // construct the token- it has option
-        const token = jwt.sign(user,config.secret,{
-          expiresIn:120000 // 20 minutes
-        });
-        // Send the reponse in Json Format
-        res.json({success:true,
-          token:'JWT '+token,
-          user:{
-            id:user._id,
-            name:user.name,
-            username:user.username,
-            email:user.email
+
+      console.log("va a buscar los administradores ahora ")
+      console.log("password: " + password);
+      Administrator.getAdministratorByUsername(username,(err,administrator) => {
+          // if not administrator where found in the db
+          if(!administrator){
+            return res.json({success:false,msg:'User not found'});
           }
-        });
-      }
-      // if no match
-      else {
-        return res.json({success:false,msg:'Wrong password'});
-      }
+          // compare the administrator Password
+          Administrator.comparePassword(password,administrator.password,(err,isMatch) => {
+             administratorCheckPassowrd(res,err,isMatch);
+          });
 
-    });
+      });
 
+    } else{
+      // Compare the Password of the regular user 
+      User.comparePassword(password,user.password,(err,isMatch) => {
+        if (err) throw err;
+        // if the password match
+        if(isMatch){
+          // construct the token- it has option
+          const token = jwt.sign(user,config.secret,{
+            expiresIn:120000 // 20 minutes
+          });
+          // Send the reponse in Json Format
+          res.json({success:true,
+            token:'JWT '+token,
+            user:{
+              id:user._id,
+              name:user.name,
+              username:user.username,
+              email:user.email,
+              role:user.role,
+              CreatedDate:user.CreatedDate
+
+
+            }
+          });
+
+        }
+        // if no match
+        else {
+          return res.json({success:false,msg:'Wrong password'});
+        }
+
+      });
+    }
 
   })
 
 });
+
+function administratorCheckPassowrd(res,err,isMatch){
+  if (err) throw err;
+  // if the password match
+  if(isMatch){
+    // construct the token- it has option
+    const token = jwt.sign(user,config.secret,{
+      expiresIn:120000 // 20 minutes
+    });
+    // Send the reponse in Json Format
+    res.json({success:true,
+      token:'JWT '+token,
+      administrator:{
+        id:administrator._id,
+        name:administrator.name,
+        username:administrator.username,
+        email:administrator.email,
+        role:administrator.role,
+        CreatedDate:administrator.CreatedDate
+
+      }
+    });
+  }
+  // if no match
+  else {
+    return res.json({success:false,msg:'Wrong password'});
+  }
+}
 
 // protect route with our Authentication, Our Token
 // Profile Route
@@ -137,12 +187,17 @@ router.get('/skipUsers', (req, res) => {
 });
 
 // EndPoit for the Role of the User
-router.get('/getUserRole', (req, res) => {
-    Administration.getAdminRole((err, userRole) => {
+router.get('/getUserRoleById', (req, res) => {
+    var id = req.query.id
+    // convert the string to a Int
+    console.log(id);
+    // var idInt = parseInt(idStr)
+    // console.log(idInt);
+    User.getUserRole(id,(err, userRole) => {
       if (err){
         return res.json(err);
       }
-      res.send(userRole[0].role);
+      res.json(userRole);
 
     })
 });

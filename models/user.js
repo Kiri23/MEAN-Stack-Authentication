@@ -101,11 +101,11 @@ module.exports.addUser = function(newUser,callback){
 };
 
 // Get the user role from the db
-module.exports.getUserRole = function(userRole, callback ){
+module.exports.getUserRole = function(id,callback ){
   // this return only the role field and the object id aka the id of the user
   // to exclude a field like the _id you can set the option to #0. like this _id:0
   // reference: https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/
-  User.find({role:userRole},{role:1}).exec(callback)
+  User.find({_id:id},{role:1,name:1}).exec(callback)
 }
 
 // Compare password to login

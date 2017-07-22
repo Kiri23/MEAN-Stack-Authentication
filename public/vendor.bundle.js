@@ -6,11 +6,11 @@ webpackJsonp([4,5],[
 /* WEBPACK VAR INJECTION */(function(global) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__ = __webpack_require__(307);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Class", function() { return Class; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPlatform", function() { return createPlatform; });
@@ -6107,7 +6107,7 @@ var SystemJsNgModuleLoader = (function () {
         if (exportName === undefined) {
             exportName = 'default';
         }
-        return __webpack_require__(161)(module)
+        return __webpack_require__(163)(module)
             .then(function (module) { return module[exportName]; })
             .then(function (type) { return checkNotEmpty(type, module, exportName); })
             .then(function (type) { return _this._compiler.compileModuleAsync(type); });
@@ -6123,7 +6123,7 @@ var SystemJsNgModuleLoader = (function () {
             exportName = 'default';
             factoryClassSuffix = '';
         }
-        return __webpack_require__(161)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
+        return __webpack_require__(163)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
             .then(function (module) { return module[exportName + factoryClassSuffix]; })
             .then(function (factory) { return checkNotEmpty(factory, module, exportName); });
     };
@@ -14379,7 +14379,7 @@ function transition$$1(stateChangeExpr, steps) {
 
 //# sourceMappingURL=core.es5.js.map
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(45)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(46)))
 
 /***/ }),
 /* 1 */,
@@ -14388,9 +14388,9 @@ function transition$$1(stateChangeExpr, steps) {
 
 "use strict";
 
-var root_1 = __webpack_require__(20);
-var toSubscriber_1 = __webpack_require__(322);
-var observable_1 = __webpack_require__(86);
+var root_1 = __webpack_require__(21);
+var toSubscriber_1 = __webpack_require__(324);
+var observable_1 = __webpack_require__(87);
 /**
  * A representation of any set of values over any amount of time. This the most basic building block
  * of RxJS.
@@ -18697,10 +18697,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isFunction_1 = __webpack_require__(91);
-var Subscription_1 = __webpack_require__(34);
-var Observer_1 = __webpack_require__(150);
-var rxSubscriber_1 = __webpack_require__(87);
+var isFunction_1 = __webpack_require__(92);
+var Subscription_1 = __webpack_require__(36);
+var Observer_1 = __webpack_require__(154);
+var rxSubscriber_1 = __webpack_require__(88);
 /**
  * Implements the {@link Observer} interface and extends the
  * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -18966,13 +18966,13 @@ var SafeSubscriber = (function (_super) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(304);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(27);
 /* unused harmony export AbstractControlDirective */
 /* unused harmony export AbstractFormGroupDirective */
 /* unused harmony export CheckboxControlValueAccessor */
@@ -25045,7 +25045,7 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_date__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_date__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCalendar; });
@@ -25157,6 +25157,2236 @@ NgbCalendarGregorian.ctorParameters = function () { return []; };
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(27);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserXhr", function() { return BrowserXhr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JSONPBackend", function() { return JSONPBackend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JSONPConnection", function() { return JSONPConnection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CookieXSRFStrategy", function() { return CookieXSRFStrategy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XHRBackend", function() { return XHRBackend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XHRConnection", function() { return XHRConnection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseRequestOptions", function() { return BaseRequestOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RequestOptions", function() { return RequestOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseResponseOptions", function() { return BaseResponseOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResponseOptions", function() { return ResponseOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReadyState", function() { return ReadyState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RequestMethod", function() { return RequestMethod; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResponseContentType", function() { return ResponseContentType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResponseType", function() { return ResponseType; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Headers", function() { return Headers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Http", function() { return Http; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Jsonp", function() { return Jsonp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpModule", function() { return HttpModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JsonpModule", function() { return JsonpModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Connection", function() { return Connection; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConnectionBackend", function() { return ConnectionBackend; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XSRFStrategy", function() { return XSRFStrategy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Request", function() { return Request; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Response", function() { return Response; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QueryEncoder", function() { return QueryEncoder; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URLSearchParams", function() { return URLSearchParams; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VERSION", function() { return VERSION; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵg", function() { return BrowserJsonp; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return JSONPBackend_; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵf", function() { return Body; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return _createDefaultCookieXSRFStrategy; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return httpFactory; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return jsonpFactory; });
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+/**
+ * @license Angular v4.1.3
+ * (c) 2010-2017 Google, Inc. https://angular.io/
+ * License: MIT
+ */
+
+
+
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * A backend for http that uses the `XMLHttpRequest` browser API.
+ *
+ * Take care not to evaluate this in non-browser contexts.
+ *
+ * \@experimental
+ */
+var BrowserXhr = (function () {
+    function BrowserXhr() {
+    }
+    /**
+     * @return {?}
+     */
+    BrowserXhr.prototype.build = function () { return ((new XMLHttpRequest())); };
+    return BrowserXhr;
+}());
+BrowserXhr.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+BrowserXhr.ctorParameters = function () { return []; };
+var RequestMethod = {};
+RequestMethod.Get = 0;
+RequestMethod.Post = 1;
+RequestMethod.Put = 2;
+RequestMethod.Delete = 3;
+RequestMethod.Options = 4;
+RequestMethod.Head = 5;
+RequestMethod.Patch = 6;
+RequestMethod[RequestMethod.Get] = "Get";
+RequestMethod[RequestMethod.Post] = "Post";
+RequestMethod[RequestMethod.Put] = "Put";
+RequestMethod[RequestMethod.Delete] = "Delete";
+RequestMethod[RequestMethod.Options] = "Options";
+RequestMethod[RequestMethod.Head] = "Head";
+RequestMethod[RequestMethod.Patch] = "Patch";
+var ReadyState = {};
+ReadyState.Unsent = 0;
+ReadyState.Open = 1;
+ReadyState.HeadersReceived = 2;
+ReadyState.Loading = 3;
+ReadyState.Done = 4;
+ReadyState.Cancelled = 5;
+ReadyState[ReadyState.Unsent] = "Unsent";
+ReadyState[ReadyState.Open] = "Open";
+ReadyState[ReadyState.HeadersReceived] = "HeadersReceived";
+ReadyState[ReadyState.Loading] = "Loading";
+ReadyState[ReadyState.Done] = "Done";
+ReadyState[ReadyState.Cancelled] = "Cancelled";
+var ResponseType = {};
+ResponseType.Basic = 0;
+ResponseType.Cors = 1;
+ResponseType.Default = 2;
+ResponseType.Error = 3;
+ResponseType.Opaque = 4;
+ResponseType[ResponseType.Basic] = "Basic";
+ResponseType[ResponseType.Cors] = "Cors";
+ResponseType[ResponseType.Default] = "Default";
+ResponseType[ResponseType.Error] = "Error";
+ResponseType[ResponseType.Opaque] = "Opaque";
+var ContentType = {};
+ContentType.NONE = 0;
+ContentType.JSON = 1;
+ContentType.FORM = 2;
+ContentType.FORM_DATA = 3;
+ContentType.TEXT = 4;
+ContentType.BLOB = 5;
+ContentType.ARRAY_BUFFER = 6;
+ContentType[ContentType.NONE] = "NONE";
+ContentType[ContentType.JSON] = "JSON";
+ContentType[ContentType.FORM] = "FORM";
+ContentType[ContentType.FORM_DATA] = "FORM_DATA";
+ContentType[ContentType.TEXT] = "TEXT";
+ContentType[ContentType.BLOB] = "BLOB";
+ContentType[ContentType.ARRAY_BUFFER] = "ARRAY_BUFFER";
+var ResponseContentType = {};
+ResponseContentType.Text = 0;
+ResponseContentType.Json = 1;
+ResponseContentType.ArrayBuffer = 2;
+ResponseContentType.Blob = 3;
+ResponseContentType[ResponseContentType.Text] = "Text";
+ResponseContentType[ResponseContentType.Json] = "Json";
+ResponseContentType[ResponseContentType.ArrayBuffer] = "ArrayBuffer";
+ResponseContentType[ResponseContentType.Blob] = "Blob";
+/**
+ * Polyfill for [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers), as
+ * specified in the [Fetch Spec](https://fetch.spec.whatwg.org/#headers-class).
+ *
+ * The only known difference between this `Headers` implementation and the spec is the
+ * lack of an `entries` method.
+ *
+ * ### Example
+ *
+ * ```
+ * import {Headers} from '\@angular/http';
+ *
+ * var firstHeaders = new Headers();
+ * firstHeaders.append('Content-Type', 'image/jpeg');
+ * console.log(firstHeaders.get('Content-Type')) //'image/jpeg'
+ *
+ * // Create headers from Plain Old JavaScript Object
+ * var secondHeaders = new Headers({
+ *   'X-My-Custom-Header': 'Angular'
+ * });
+ * console.log(secondHeaders.get('X-My-Custom-Header')); //'Angular'
+ *
+ * var thirdHeaders = new Headers(secondHeaders);
+ * console.log(thirdHeaders.get('X-My-Custom-Header')); //'Angular'
+ * ```
+ *
+ * \@experimental
+ */
+var Headers = (function () {
+    /**
+     * @param {?=} headers
+     */
+    function Headers(headers) {
+        var _this = this;
+        /**
+         * \@internal header names are lower case
+         */
+        this._headers = new Map();
+        /**
+         * \@internal map lower case names to actual names
+         */
+        this._normalizedNames = new Map();
+        if (!headers) {
+            return;
+        }
+        if (headers instanceof Headers) {
+            headers.forEach(function (values, name) {
+                values.forEach(function (value) { return _this.append(name, value); });
+            });
+            return;
+        }
+        Object.keys(headers).forEach(function (name) {
+            var values = Array.isArray(headers[name]) ? headers[name] : [headers[name]];
+            _this.delete(name);
+            values.forEach(function (value) { return _this.append(name, value); });
+        });
+    }
+    /**
+     * Returns a new Headers instance from the given DOMString of Response Headers
+     * @param {?} headersString
+     * @return {?}
+     */
+    Headers.fromResponseHeaderString = function (headersString) {
+        var /** @type {?} */ headers = new Headers();
+        headersString.split('\n').forEach(function (line) {
+            var /** @type {?} */ index = line.indexOf(':');
+            if (index > 0) {
+                var /** @type {?} */ name = line.slice(0, index);
+                var /** @type {?} */ value = line.slice(index + 1).trim();
+                headers.set(name, value);
+            }
+        });
+        return headers;
+    };
+    /**
+     * Appends a header to existing list of header values for a given header name.
+     * @param {?} name
+     * @param {?} value
+     * @return {?}
+     */
+    Headers.prototype.append = function (name, value) {
+        var /** @type {?} */ values = this.getAll(name);
+        if (values === null) {
+            this.set(name, value);
+        }
+        else {
+            values.push(value);
+        }
+    };
+    /**
+     * Deletes all header values for the given name.
+     * @param {?} name
+     * @return {?}
+     */
+    Headers.prototype.delete = function (name) {
+        var /** @type {?} */ lcName = name.toLowerCase();
+        this._normalizedNames.delete(lcName);
+        this._headers.delete(lcName);
+    };
+    /**
+     * @param {?} fn
+     * @return {?}
+     */
+    Headers.prototype.forEach = function (fn) {
+        var _this = this;
+        this._headers.forEach(function (values, lcName) { return fn(values, _this._normalizedNames.get(lcName), _this._headers); });
+    };
+    /**
+     * Returns first header that matches given name.
+     * @param {?} name
+     * @return {?}
+     */
+    Headers.prototype.get = function (name) {
+        var /** @type {?} */ values = this.getAll(name);
+        if (values === null) {
+            return null;
+        }
+        return values.length > 0 ? values[0] : null;
+    };
+    /**
+     * Checks for existence of header by given name.
+     * @param {?} name
+     * @return {?}
+     */
+    Headers.prototype.has = function (name) { return this._headers.has(name.toLowerCase()); };
+    /**
+     * Returns the names of the headers
+     * @return {?}
+     */
+    Headers.prototype.keys = function () { return Array.from(this._normalizedNames.values()); };
+    /**
+     * Sets or overrides header value for given name.
+     * @param {?} name
+     * @param {?} value
+     * @return {?}
+     */
+    Headers.prototype.set = function (name, value) {
+        if (Array.isArray(value)) {
+            if (value.length) {
+                this._headers.set(name.toLowerCase(), [value.join(',')]);
+            }
+        }
+        else {
+            this._headers.set(name.toLowerCase(), [value]);
+        }
+        this.mayBeSetNormalizedName(name);
+    };
+    /**
+     * Returns values of all headers.
+     * @return {?}
+     */
+    Headers.prototype.values = function () { return Array.from(this._headers.values()); };
+    /**
+     * @return {?}
+     */
+    Headers.prototype.toJSON = function () {
+        var _this = this;
+        var /** @type {?} */ serialized = {};
+        this._headers.forEach(function (values, name) {
+            var /** @type {?} */ split = [];
+            values.forEach(function (v) { return split.push.apply(split, v.split(',')); });
+            serialized[((_this._normalizedNames.get(name)))] = split;
+        });
+        return serialized;
+    };
+    /**
+     * Returns list of header values for a given name.
+     * @param {?} name
+     * @return {?}
+     */
+    Headers.prototype.getAll = function (name) {
+        return this.has(name) ? this._headers.get(name.toLowerCase()) || null : null;
+    };
+    /**
+     * This method is not implemented.
+     * @return {?}
+     */
+    Headers.prototype.entries = function () { throw new Error('"entries" method is not implemented on Headers class'); };
+    /**
+     * @param {?} name
+     * @return {?}
+     */
+    Headers.prototype.mayBeSetNormalizedName = function (name) {
+        var /** @type {?} */ lcName = name.toLowerCase();
+        if (!this._normalizedNames.has(lcName)) {
+            this._normalizedNames.set(lcName, name);
+        }
+    };
+    return Headers;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * Creates a response options object to be optionally provided when instantiating a
+ * {\@link Response}.
+ *
+ * This class is based on the `ResponseInit` description in the [Fetch
+ * Spec](https://fetch.spec.whatwg.org/#responseinit).
+ *
+ * All values are null by default. Typical defaults can be found in the
+ * {\@link BaseResponseOptions} class, which sub-classes `ResponseOptions`.
+ *
+ * This class may be used in tests to build {\@link Response Responses} for
+ * mock responses (see {\@link MockBackend}).
+ *
+ * ### Example ([live demo](http://plnkr.co/edit/P9Jkk8e8cz6NVzbcxEsD?p=preview))
+ *
+ * ```typescript
+ * import {ResponseOptions, Response} from '\@angular/http';
+ *
+ * var options = new ResponseOptions({
+ *   body: '{"name":"Jeff"}'
+ * });
+ * var res = new Response(options);
+ *
+ * console.log('res.json():', res.json()); // Object {name: "Jeff"}
+ * ```
+ *
+ * \@experimental
+ */
+var ResponseOptions = (function () {
+    /**
+     * @param {?=} __0
+     */
+    function ResponseOptions(_a) {
+        var _b = _a === void 0 ? {} : _a, body = _b.body, status = _b.status, headers = _b.headers, statusText = _b.statusText, type = _b.type, url = _b.url;
+        this.body = body != null ? body : null;
+        this.status = status != null ? status : null;
+        this.headers = headers != null ? headers : null;
+        this.statusText = statusText != null ? statusText : null;
+        this.type = type != null ? type : null;
+        this.url = url != null ? url : null;
+    }
+    /**
+     * Creates a copy of the `ResponseOptions` instance, using the optional input as values to
+     * override
+     * existing values. This method will not change the values of the instance on which it is being
+     * called.
+     *
+     * This may be useful when sharing a base `ResponseOptions` object inside tests,
+     * where certain properties may change from test to test.
+     *
+     * ### Example ([live demo](http://plnkr.co/edit/1lXquqFfgduTFBWjNoRE?p=preview))
+     *
+     * ```typescript
+     * import {ResponseOptions, Response} from '\@angular/http';
+     *
+     * var options = new ResponseOptions({
+     *   body: {name: 'Jeff'}
+     * });
+     * var res = new Response(options.merge({
+     *   url: 'https://google.com'
+     * }));
+     * console.log('options.url:', options.url); // null
+     * console.log('res.json():', res.json()); // Object {name: "Jeff"}
+     * console.log('res.url:', res.url); // https://google.com
+     * ```
+     * @param {?=} options
+     * @return {?}
+     */
+    ResponseOptions.prototype.merge = function (options) {
+        return new ResponseOptions({
+            body: options && options.body != null ? options.body : this.body,
+            status: options && options.status != null ? options.status : this.status,
+            headers: options && options.headers != null ? options.headers : this.headers,
+            statusText: options && options.statusText != null ? options.statusText : this.statusText,
+            type: options && options.type != null ? options.type : this.type,
+            url: options && options.url != null ? options.url : this.url,
+        });
+    };
+    return ResponseOptions;
+}());
+/**
+ * Subclass of {\@link ResponseOptions}, with default values.
+ *
+ * Default values:
+ *  * status: 200
+ *  * headers: empty {\@link Headers} object
+ *
+ * This class could be extended and bound to the {\@link ResponseOptions} class
+ * when configuring an {\@link Injector}, in order to override the default options
+ * used by {\@link Http} to create {\@link Response Responses}.
+ *
+ * ### Example ([live demo](http://plnkr.co/edit/qv8DLT?p=preview))
+ *
+ * ```typescript
+ * import {provide} from '\@angular/core';
+ * import {bootstrap} from '\@angular/platform-browser/browser';
+ * import {HTTP_PROVIDERS, Headers, Http, BaseResponseOptions, ResponseOptions} from
+ * '\@angular/http';
+ * import {App} from './myapp';
+ *
+ * class MyOptions extends BaseResponseOptions {
+ *   headers:Headers = new Headers({network: 'github'});
+ * }
+ *
+ * bootstrap(App, [HTTP_PROVIDERS, {provide: ResponseOptions, useClass: MyOptions}]);
+ * ```
+ *
+ * The options could also be extended when manually creating a {\@link Response}
+ * object.
+ *
+ * ### Example ([live demo](http://plnkr.co/edit/VngosOWiaExEtbstDoix?p=preview))
+ *
+ * ```
+ * import {BaseResponseOptions, Response} from '\@angular/http';
+ *
+ * var options = new BaseResponseOptions();
+ * var res = new Response(options.merge({
+ *   body: 'Angular',
+ *   headers: new Headers({framework: 'angular'})
+ * }));
+ * console.log('res.headers.get("framework"):', res.headers.get('framework')); // angular
+ * console.log('res.text():', res.text()); // Angular;
+ * ```
+ *
+ * \@experimental
+ */
+var BaseResponseOptions = (function (_super) {
+    __extends(BaseResponseOptions, _super);
+    function BaseResponseOptions() {
+        return _super.call(this, { status: 200, statusText: 'Ok', type: ResponseType.Default, headers: new Headers() }) || this;
+    }
+    return BaseResponseOptions;
+}(ResponseOptions));
+BaseResponseOptions.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+BaseResponseOptions.ctorParameters = function () { return []; };
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * Abstract class from which real backends are derived.
+ *
+ * The primary purpose of a `ConnectionBackend` is to create new connections to fulfill a given
+ * {\@link Request}.
+ *
+ * \@experimental
+ * @abstract
+ */
+var ConnectionBackend = (function () {
+    function ConnectionBackend() {
+    }
+    /**
+     * @abstract
+     * @param {?} request
+     * @return {?}
+     */
+    ConnectionBackend.prototype.createConnection = function (request) { };
+    return ConnectionBackend;
+}());
+/**
+ * Abstract class from which real connections are derived.
+ *
+ * \@experimental
+ * @abstract
+ */
+var Connection = (function () {
+    function Connection() {
+    }
+    return Connection;
+}());
+/**
+ * An XSRFStrategy configures XSRF protection (e.g. via headers) on an HTTP request.
+ *
+ * \@experimental
+ * @abstract
+ */
+var XSRFStrategy = (function () {
+    function XSRFStrategy() {
+    }
+    /**
+     * @abstract
+     * @param {?} req
+     * @return {?}
+     */
+    XSRFStrategy.prototype.configureRequest = function (req) { };
+    return XSRFStrategy;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} method
+ * @return {?}
+ */
+function normalizeMethodName(method) {
+    if (typeof method !== 'string')
+        return method;
+    switch (method.toUpperCase()) {
+        case 'GET':
+            return RequestMethod.Get;
+        case 'POST':
+            return RequestMethod.Post;
+        case 'PUT':
+            return RequestMethod.Put;
+        case 'DELETE':
+            return RequestMethod.Delete;
+        case 'OPTIONS':
+            return RequestMethod.Options;
+        case 'HEAD':
+            return RequestMethod.Head;
+        case 'PATCH':
+            return RequestMethod.Patch;
+    }
+    throw new Error("Invalid request method. The method \"" + method + "\" is not supported.");
+}
+var isSuccess = function (status) { return (status >= 200 && status < 300); };
+/**
+ * @param {?} xhr
+ * @return {?}
+ */
+function getResponseURL(xhr) {
+    if ('responseURL' in xhr) {
+        return xhr.responseURL;
+    }
+    if (/^X-Request-URL:/m.test(xhr.getAllResponseHeaders())) {
+        return xhr.getResponseHeader('X-Request-URL');
+    }
+    return null;
+}
+/**
+ * @param {?} input
+ * @return {?}
+ */
+/**
+ * @param {?} input
+ * @return {?}
+ */
+function stringToArrayBuffer(input) {
+    var /** @type {?} */ view = new Uint16Array(input.length);
+    for (var /** @type {?} */ i = 0, /** @type {?} */ strLen = input.length; i < strLen; i++) {
+        view[i] = input.charCodeAt(i);
+    }
+    return view.buffer;
+}
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ * @param {?=} rawParams
+ * @return {?}
+ */
+function paramParser(rawParams) {
+    if (rawParams === void 0) { rawParams = ''; }
+    var /** @type {?} */ map = new Map();
+    if (rawParams.length > 0) {
+        var /** @type {?} */ params = rawParams.split('&');
+        params.forEach(function (param) {
+            var /** @type {?} */ eqIdx = param.indexOf('=');
+            var _a = eqIdx == -1 ? [param, ''] : [param.slice(0, eqIdx), param.slice(eqIdx + 1)], key = _a[0], val = _a[1];
+            var /** @type {?} */ list = map.get(key) || [];
+            list.push(val);
+            map.set(key, list);
+        });
+    }
+    return map;
+}
+/**
+ * \@experimental
+ *
+ */
+var QueryEncoder = (function () {
+    function QueryEncoder() {
+    }
+    /**
+     * @param {?} k
+     * @return {?}
+     */
+    QueryEncoder.prototype.encodeKey = function (k) { return standardEncoding(k); };
+    /**
+     * @param {?} v
+     * @return {?}
+     */
+    QueryEncoder.prototype.encodeValue = function (v) { return standardEncoding(v); };
+    return QueryEncoder;
+}());
+/**
+ * @param {?} v
+ * @return {?}
+ */
+function standardEncoding(v) {
+    return encodeURIComponent(v)
+        .replace(/%40/gi, '@')
+        .replace(/%3A/gi, ':')
+        .replace(/%24/gi, '$')
+        .replace(/%2C/gi, ',')
+        .replace(/%3B/gi, ';')
+        .replace(/%2B/gi, '+')
+        .replace(/%3D/gi, '=')
+        .replace(/%3F/gi, '?')
+        .replace(/%2F/gi, '/');
+}
+/**
+ * Map-like representation of url search parameters, based on
+ * [URLSearchParams](https://url.spec.whatwg.org/#urlsearchparams) in the url living standard,
+ * with several extensions for merging URLSearchParams objects:
+ *   - setAll()
+ *   - appendAll()
+ *   - replaceAll()
+ *
+ * This class accepts an optional second parameter of ${\@link QueryEncoder},
+ * which is used to serialize parameters before making a request. By default,
+ * `QueryEncoder` encodes keys and values of parameters using `encodeURIComponent`,
+ * and then un-encodes certain characters that are allowed to be part of the query
+ * according to IETF RFC 3986: https://tools.ietf.org/html/rfc3986.
+ *
+ * These are the characters that are not encoded: `! $ \' ( ) * + , ; A 9 - . _ ~ ? /`
+ *
+ * If the set of allowed query characters is not acceptable for a particular backend,
+ * `QueryEncoder` can be subclassed and provided as the 2nd argument to URLSearchParams.
+ *
+ * ```
+ * import {URLSearchParams, QueryEncoder} from '\@angular/http';
+ * class MyQueryEncoder extends QueryEncoder {
+ *   encodeKey(k: string): string {
+ *     return myEncodingFunction(k);
+ *   }
+ *
+ *   encodeValue(v: string): string {
+ *     return myEncodingFunction(v);
+ *   }
+ * }
+ *
+ * let params = new URLSearchParams('', new MyQueryEncoder());
+ * ```
+ * \@experimental
+ */
+var URLSearchParams = (function () {
+    /**
+     * @param {?=} rawParams
+     * @param {?=} queryEncoder
+     */
+    function URLSearchParams(rawParams, queryEncoder) {
+        if (rawParams === void 0) { rawParams = ''; }
+        if (queryEncoder === void 0) { queryEncoder = new QueryEncoder(); }
+        this.rawParams = rawParams;
+        this.queryEncoder = queryEncoder;
+        this.paramsMap = paramParser(rawParams);
+    }
+    /**
+     * @return {?}
+     */
+    URLSearchParams.prototype.clone = function () {
+        var /** @type {?} */ clone = new URLSearchParams('', this.queryEncoder);
+        clone.appendAll(this);
+        return clone;
+    };
+    /**
+     * @param {?} param
+     * @return {?}
+     */
+    URLSearchParams.prototype.has = function (param) { return this.paramsMap.has(param); };
+    /**
+     * @param {?} param
+     * @return {?}
+     */
+    URLSearchParams.prototype.get = function (param) {
+        var /** @type {?} */ storedParam = this.paramsMap.get(param);
+        return Array.isArray(storedParam) ? storedParam[0] : null;
+    };
+    /**
+     * @param {?} param
+     * @return {?}
+     */
+    URLSearchParams.prototype.getAll = function (param) { return this.paramsMap.get(param) || []; };
+    /**
+     * @param {?} param
+     * @param {?} val
+     * @return {?}
+     */
+    URLSearchParams.prototype.set = function (param, val) {
+        if (val === void 0 || val === null) {
+            this.delete(param);
+            return;
+        }
+        var /** @type {?} */ list = this.paramsMap.get(param) || [];
+        list.length = 0;
+        list.push(val);
+        this.paramsMap.set(param, list);
+    };
+    /**
+     * @param {?} searchParams
+     * @return {?}
+     */
+    URLSearchParams.prototype.setAll = function (searchParams) {
+        var _this = this;
+        searchParams.paramsMap.forEach(function (value, param) {
+            var /** @type {?} */ list = _this.paramsMap.get(param) || [];
+            list.length = 0;
+            list.push(value[0]);
+            _this.paramsMap.set(param, list);
+        });
+    };
+    /**
+     * @param {?} param
+     * @param {?} val
+     * @return {?}
+     */
+    URLSearchParams.prototype.append = function (param, val) {
+        if (val === void 0 || val === null)
+            return;
+        var /** @type {?} */ list = this.paramsMap.get(param) || [];
+        list.push(val);
+        this.paramsMap.set(param, list);
+    };
+    /**
+     * @param {?} searchParams
+     * @return {?}
+     */
+    URLSearchParams.prototype.appendAll = function (searchParams) {
+        var _this = this;
+        searchParams.paramsMap.forEach(function (value, param) {
+            var /** @type {?} */ list = _this.paramsMap.get(param) || [];
+            for (var /** @type {?} */ i = 0; i < value.length; ++i) {
+                list.push(value[i]);
+            }
+            _this.paramsMap.set(param, list);
+        });
+    };
+    /**
+     * @param {?} searchParams
+     * @return {?}
+     */
+    URLSearchParams.prototype.replaceAll = function (searchParams) {
+        var _this = this;
+        searchParams.paramsMap.forEach(function (value, param) {
+            var /** @type {?} */ list = _this.paramsMap.get(param) || [];
+            list.length = 0;
+            for (var /** @type {?} */ i = 0; i < value.length; ++i) {
+                list.push(value[i]);
+            }
+            _this.paramsMap.set(param, list);
+        });
+    };
+    /**
+     * @return {?}
+     */
+    URLSearchParams.prototype.toString = function () {
+        var _this = this;
+        var /** @type {?} */ paramsList = [];
+        this.paramsMap.forEach(function (values, k) {
+            values.forEach(function (v) { return paramsList.push(_this.queryEncoder.encodeKey(k) + '=' + _this.queryEncoder.encodeValue(v)); });
+        });
+        return paramsList.join('&');
+    };
+    /**
+     * @param {?} param
+     * @return {?}
+     */
+    URLSearchParams.prototype.delete = function (param) { this.paramsMap.delete(param); };
+    return URLSearchParams;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * HTTP request body used by both {\@link Request} and {\@link Response}
+ * https://fetch.spec.whatwg.org/#body
+ * @abstract
+ */
+var Body = (function () {
+    function Body() {
+    }
+    /**
+     * Attempts to return body as parsed `JSON` object, or raises an exception.
+     * @return {?}
+     */
+    Body.prototype.json = function () {
+        if (typeof this._body === 'string') {
+            return JSON.parse(/** @type {?} */ (this._body));
+        }
+        if (this._body instanceof ArrayBuffer) {
+            return JSON.parse(this.text());
+        }
+        return this._body;
+    };
+    /**
+     * Returns the body as a string, presuming `toString()` can be called on the response body.
+     *
+     * When decoding an `ArrayBuffer`, the optional `encodingHint` parameter determines how the
+     * bytes in the buffer will be interpreted. Valid values are:
+     *
+     * - `legacy` - incorrectly interpret the bytes as UTF-16 (technically, UCS-2). Only characters
+     *   in the Basic Multilingual Plane are supported, surrogate pairs are not handled correctly.
+     *   In addition, the endianness of the 16-bit octet pairs in the `ArrayBuffer` is not taken
+     *   into consideration. This is the default behavior to avoid breaking apps, but should be
+     *   considered deprecated.
+     *
+     * - `iso-8859` - interpret the bytes as ISO-8859 (which can be used for ASCII encoded text).
+     * @param {?=} encodingHint
+     * @return {?}
+     */
+    Body.prototype.text = function (encodingHint) {
+        if (encodingHint === void 0) { encodingHint = 'legacy'; }
+        if (this._body instanceof URLSearchParams) {
+            return this._body.toString();
+        }
+        if (this._body instanceof ArrayBuffer) {
+            switch (encodingHint) {
+                case 'legacy':
+                    return String.fromCharCode.apply(null, new Uint16Array(/** @type {?} */ (this._body)));
+                case 'iso-8859':
+                    return String.fromCharCode.apply(null, new Uint8Array(/** @type {?} */ (this._body)));
+                default:
+                    throw new Error("Invalid value for encodingHint: " + encodingHint);
+            }
+        }
+        if (this._body == null) {
+            return '';
+        }
+        if (typeof this._body === 'object') {
+            return JSON.stringify(this._body, null, 2);
+        }
+        return this._body.toString();
+    };
+    /**
+     * Return the body as an ArrayBuffer
+     * @return {?}
+     */
+    Body.prototype.arrayBuffer = function () {
+        if (this._body instanceof ArrayBuffer) {
+            return (this._body);
+        }
+        return stringToArrayBuffer(this.text());
+    };
+    /**
+     * Returns the request's body as a Blob, assuming that body exists.
+     * @return {?}
+     */
+    Body.prototype.blob = function () {
+        if (this._body instanceof Blob) {
+            return (this._body);
+        }
+        if (this._body instanceof ArrayBuffer) {
+            return new Blob([this._body]);
+        }
+        throw new Error('The request body isn\'t either a blob or an array buffer');
+    };
+    return Body;
+}());
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * Creates `Response` instances from provided values.
+ *
+ * Though this object isn't
+ * usually instantiated by end-users, it is the primary object interacted with when it comes time to
+ * add data to a view.
+ *
+ * ### Example
+ *
+ * ```
+ * http.request('my-friends.txt').subscribe(response => this.friends = response.text());
+ * ```
+ *
+ * The Response's interface is inspired by the Response constructor defined in the [Fetch
+ * Spec](https://fetch.spec.whatwg.org/#response-class), but is considered a static value whose body
+ * can be accessed many times. There are other differences in the implementation, but this is the
+ * most significant.
+ *
+ * \@experimental
+ */
+var Response = (function (_super) {
+    __extends(Response, _super);
+    /**
+     * @param {?} responseOptions
+     */
+    function Response(responseOptions) {
+        var _this = _super.call(this) || this;
+        _this._body = responseOptions.body;
+        _this.status = responseOptions.status;
+        _this.ok = (_this.status >= 200 && _this.status <= 299);
+        _this.statusText = responseOptions.statusText;
+        _this.headers = responseOptions.headers;
+        _this.type = responseOptions.type;
+        _this.url = responseOptions.url;
+        return _this;
+    }
+    /**
+     * @return {?}
+     */
+    Response.prototype.toString = function () {
+        return "Response with status: " + this.status + " " + this.statusText + " for URL: " + this.url;
+    };
+    return Response;
+}(Body));
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var _nextRequestId = 0;
+var JSONP_HOME = '__ng_jsonp__';
+var _jsonpConnections = null;
+/**
+ * @return {?}
+ */
+function _getJsonpConnections() {
+    var /** @type {?} */ w = typeof window == 'object' ? window : {};
+    if (_jsonpConnections === null) {
+        _jsonpConnections = w[JSONP_HOME] = {};
+    }
+    return _jsonpConnections;
+}
+var BrowserJsonp = (function () {
+    function BrowserJsonp() {
+    }
+    /**
+     * @param {?} url
+     * @return {?}
+     */
+    BrowserJsonp.prototype.build = function (url) {
+        var /** @type {?} */ node = document.createElement('script');
+        node.src = url;
+        return node;
+    };
+    /**
+     * @return {?}
+     */
+    BrowserJsonp.prototype.nextRequestID = function () { return "__req" + _nextRequestId++; };
+    /**
+     * @param {?} id
+     * @return {?}
+     */
+    BrowserJsonp.prototype.requestCallback = function (id) { return JSONP_HOME + "." + id + ".finished"; };
+    /**
+     * @param {?} id
+     * @param {?} connection
+     * @return {?}
+     */
+    BrowserJsonp.prototype.exposeConnection = function (id, connection) {
+        var /** @type {?} */ connections = _getJsonpConnections();
+        connections[id] = connection;
+    };
+    /**
+     * @param {?} id
+     * @return {?}
+     */
+    BrowserJsonp.prototype.removeConnection = function (id) {
+        var /** @type {?} */ connections = _getJsonpConnections();
+        connections[id] = null;
+    };
+    /**
+     * @param {?} node
+     * @return {?}
+     */
+    BrowserJsonp.prototype.send = function (node) { document.body.appendChild(/** @type {?} */ ((node))); };
+    /**
+     * @param {?} node
+     * @return {?}
+     */
+    BrowserJsonp.prototype.cleanup = function (node) {
+        if (node.parentNode) {
+            node.parentNode.removeChild(/** @type {?} */ ((node)));
+        }
+    };
+    return BrowserJsonp;
+}());
+BrowserJsonp.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+BrowserJsonp.ctorParameters = function () { return []; };
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var JSONP_ERR_NO_CALLBACK = 'JSONP injected script did not invoke callback.';
+var JSONP_ERR_WRONG_METHOD = 'JSONP requests must use GET request method.';
+/**
+ * Abstract base class for an in-flight JSONP request.
+ *
+ * \@experimental
+ * @abstract
+ */
+var JSONPConnection = (function () {
+    function JSONPConnection() {
+    }
+    /**
+     * Callback called when the JSONP request completes, to notify the application
+     * of the new data.
+     * @abstract
+     * @param {?=} data
+     * @return {?}
+     */
+    JSONPConnection.prototype.finished = function (data) { };
+    return JSONPConnection;
+}());
+var JSONPConnection_ = (function (_super) {
+    __extends(JSONPConnection_, _super);
+    /**
+     * @param {?} req
+     * @param {?} _dom
+     * @param {?=} baseResponseOptions
+     */
+    function JSONPConnection_(req, _dom, baseResponseOptions) {
+        var _this = _super.call(this) || this;
+        _this._dom = _dom;
+        _this.baseResponseOptions = baseResponseOptions;
+        _this._finished = false;
+        if (req.method !== RequestMethod.Get) {
+            throw new TypeError(JSONP_ERR_WRONG_METHOD);
+        }
+        _this.request = req;
+        _this.response = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"](function (responseObserver) {
+            _this.readyState = ReadyState.Loading;
+            var id = _this._id = _dom.nextRequestID();
+            _dom.exposeConnection(id, _this);
+            // Workaround Dart
+            // url = url.replace(/=JSONP_CALLBACK(&|$)/, `generated method`);
+            var callback = _dom.requestCallback(_this._id);
+            var url = req.url;
+            if (url.indexOf('=JSONP_CALLBACK&') > -1) {
+                url = url.replace('=JSONP_CALLBACK&', "=" + callback + "&");
+            }
+            else if (url.lastIndexOf('=JSONP_CALLBACK') === url.length - '=JSONP_CALLBACK'.length) {
+                url = url.substring(0, url.length - '=JSONP_CALLBACK'.length) + ("=" + callback);
+            }
+            var script = _this._script = _dom.build(url);
+            var onLoad = function (event) {
+                if (_this.readyState === ReadyState.Cancelled)
+                    return;
+                _this.readyState = ReadyState.Done;
+                _dom.cleanup(script);
+                if (!_this._finished) {
+                    var responseOptions_1 = new ResponseOptions({ body: JSONP_ERR_NO_CALLBACK, type: ResponseType.Error, url: url });
+                    if (baseResponseOptions) {
+                        responseOptions_1 = baseResponseOptions.merge(responseOptions_1);
+                    }
+                    responseObserver.error(new Response(responseOptions_1));
+                    return;
+                }
+                var responseOptions = new ResponseOptions({ body: _this._responseData, url: url });
+                if (_this.baseResponseOptions) {
+                    responseOptions = _this.baseResponseOptions.merge(responseOptions);
+                }
+                responseObserver.next(new Response(responseOptions));
+                responseObserver.complete();
+            };
+            var onError = function (error) {
+                if (_this.readyState === ReadyState.Cancelled)
+                    return;
+                _this.readyState = ReadyState.Done;
+                _dom.cleanup(script);
+                var responseOptions = new ResponseOptions({ body: error.message, type: ResponseType.Error });
+                if (baseResponseOptions) {
+                    responseOptions = baseResponseOptions.merge(responseOptions);
+                }
+                responseObserver.error(new Response(responseOptions));
+            };
+            script.addEventListener('load', onLoad);
+            script.addEventListener('error', onError);
+            _dom.send(script);
+            return function () {
+                _this.readyState = ReadyState.Cancelled;
+                script.removeEventListener('load', onLoad);
+                script.removeEventListener('error', onError);
+                _this._dom.cleanup(script);
+            };
+        });
+        return _this;
+    }
+    /**
+     * @param {?=} data
+     * @return {?}
+     */
+    JSONPConnection_.prototype.finished = function (data) {
+        // Don't leak connections
+        this._finished = true;
+        this._dom.removeConnection(this._id);
+        if (this.readyState === ReadyState.Cancelled)
+            return;
+        this._responseData = data;
+    };
+    return JSONPConnection_;
+}(JSONPConnection));
+/**
+ * A {\@link ConnectionBackend} that uses the JSONP strategy of making requests.
+ *
+ * \@experimental
+ * @abstract
+ */
+var JSONPBackend = (function (_super) {
+    __extends(JSONPBackend, _super);
+    function JSONPBackend() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    return JSONPBackend;
+}(ConnectionBackend));
+var JSONPBackend_ = (function (_super) {
+    __extends(JSONPBackend_, _super);
+    /**
+     * @param {?} _browserJSONP
+     * @param {?} _baseResponseOptions
+     */
+    function JSONPBackend_(_browserJSONP, _baseResponseOptions) {
+        var _this = _super.call(this) || this;
+        _this._browserJSONP = _browserJSONP;
+        _this._baseResponseOptions = _baseResponseOptions;
+        return _this;
+    }
+    /**
+     * @param {?} request
+     * @return {?}
+     */
+    JSONPBackend_.prototype.createConnection = function (request) {
+        return new JSONPConnection_(request, this._browserJSONP, this._baseResponseOptions);
+    };
+    return JSONPBackend_;
+}(JSONPBackend));
+JSONPBackend_.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+JSONPBackend_.ctorParameters = function () { return [
+    { type: BrowserJsonp, },
+    { type: ResponseOptions, },
+]; };
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+var XSSI_PREFIX = /^\)\]\}',?\n/;
+/**
+ * Creates connections using `XMLHttpRequest`. Given a fully-qualified
+ * request, an `XHRConnection` will immediately create an `XMLHttpRequest` object and send the
+ * request.
+ *
+ * This class would typically not be created or interacted with directly inside applications, though
+ * the {\@link MockConnection} may be interacted with in tests.
+ *
+ * \@experimental
+ */
+var XHRConnection = (function () {
+    /**
+     * @param {?} req
+     * @param {?} browserXHR
+     * @param {?=} baseResponseOptions
+     */
+    function XHRConnection(req, browserXHR, baseResponseOptions) {
+        var _this = this;
+        this.request = req;
+        this.response = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"](function (responseObserver) {
+            var _xhr = browserXHR.build();
+            _xhr.open(RequestMethod[req.method].toUpperCase(), req.url);
+            if (req.withCredentials != null) {
+                _xhr.withCredentials = req.withCredentials;
+            }
+            // load event handler
+            var onLoad = function () {
+                // normalize IE9 bug (http://bugs.jquery.com/ticket/1450)
+                var status = _xhr.status === 1223 ? 204 : _xhr.status;
+                var body = null;
+                // HTTP 204 means no content
+                if (status !== 204) {
+                    // responseText is the old-school way of retrieving response (supported by IE8 & 9)
+                    // response/responseType properties were introduced in ResourceLoader Level2 spec
+                    // (supported by IE10)
+                    body = (typeof _xhr.response === 'undefined') ? _xhr.responseText : _xhr.response;
+                    // Implicitly strip a potential XSSI prefix.
+                    if (typeof body === 'string') {
+                        body = body.replace(XSSI_PREFIX, '');
+                    }
+                }
+                // fix status code when it is 0 (0 status is undocumented).
+                // Occurs when accessing file resources or on Android 4.1 stock browser
+                // while retrieving files from application cache.
+                if (status === 0) {
+                    status = body ? 200 : 0;
+                }
+                var headers = Headers.fromResponseHeaderString(_xhr.getAllResponseHeaders());
+                // IE 9 does not provide the way to get URL of response
+                var url = getResponseURL(_xhr) || req.url;
+                var statusText = _xhr.statusText || 'OK';
+                var responseOptions = new ResponseOptions({ body: body, status: status, headers: headers, statusText: statusText, url: url });
+                if (baseResponseOptions != null) {
+                    responseOptions = baseResponseOptions.merge(responseOptions);
+                }
+                var response = new Response(responseOptions);
+                response.ok = isSuccess(status);
+                if (response.ok) {
+                    responseObserver.next(response);
+                    // TODO(gdi2290): defer complete if array buffer until done
+                    responseObserver.complete();
+                    return;
+                }
+                responseObserver.error(response);
+            };
+            // error event handler
+            var onError = function (err) {
+                var responseOptions = new ResponseOptions({
+                    body: err,
+                    type: ResponseType.Error,
+                    status: _xhr.status,
+                    statusText: _xhr.statusText,
+                });
+                if (baseResponseOptions != null) {
+                    responseOptions = baseResponseOptions.merge(responseOptions);
+                }
+                responseObserver.error(new Response(responseOptions));
+            };
+            _this.setDetectedContentType(req, _xhr);
+            if (req.headers == null) {
+                req.headers = new Headers();
+            }
+            if (!req.headers.has('Accept')) {
+                req.headers.append('Accept', 'application/json, text/plain, */*');
+            }
+            req.headers.forEach(function (values, name) { return _xhr.setRequestHeader(name, values.join(',')); });
+            // Select the correct buffer type to store the response
+            if (req.responseType != null && _xhr.responseType != null) {
+                switch (req.responseType) {
+                    case ResponseContentType.ArrayBuffer:
+                        _xhr.responseType = 'arraybuffer';
+                        break;
+                    case ResponseContentType.Json:
+                        _xhr.responseType = 'json';
+                        break;
+                    case ResponseContentType.Text:
+                        _xhr.responseType = 'text';
+                        break;
+                    case ResponseContentType.Blob:
+                        _xhr.responseType = 'blob';
+                        break;
+                    default:
+                        throw new Error('The selected responseType is not supported');
+                }
+            }
+            _xhr.addEventListener('load', onLoad);
+            _xhr.addEventListener('error', onError);
+            _xhr.send(_this.request.getBody());
+            return function () {
+                _xhr.removeEventListener('load', onLoad);
+                _xhr.removeEventListener('error', onError);
+                _xhr.abort();
+            };
+        });
+    }
+    /**
+     * @param {?} req
+     * @param {?} _xhr
+     * @return {?}
+     */
+    XHRConnection.prototype.setDetectedContentType = function (req /** TODO Request */, _xhr /** XMLHttpRequest */) {
+        // Skip if a custom Content-Type header is provided
+        if (req.headers != null && req.headers.get('Content-Type') != null) {
+            return;
+        }
+        // Set the detected content type
+        switch (req.contentType) {
+            case ContentType.NONE:
+                break;
+            case ContentType.JSON:
+                _xhr.setRequestHeader('content-type', 'application/json');
+                break;
+            case ContentType.FORM:
+                _xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+                break;
+            case ContentType.TEXT:
+                _xhr.setRequestHeader('content-type', 'text/plain');
+                break;
+            case ContentType.BLOB:
+                var /** @type {?} */ blob = req.blob();
+                if (blob.type) {
+                    _xhr.setRequestHeader('content-type', blob.type);
+                }
+                break;
+        }
+    };
+    return XHRConnection;
+}());
+/**
+ * `XSRFConfiguration` sets up Cross Site Request Forgery (XSRF) protection for the application
+ * using a cookie. See https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
+ * for more information on XSRF.
+ *
+ * Applications can configure custom cookie and header names by binding an instance of this class
+ * with different `cookieName` and `headerName` values. See the main HTTP documentation for more
+ * details.
+ *
+ * \@experimental
+ */
+var CookieXSRFStrategy = (function () {
+    /**
+     * @param {?=} _cookieName
+     * @param {?=} _headerName
+     */
+    function CookieXSRFStrategy(_cookieName, _headerName) {
+        if (_cookieName === void 0) { _cookieName = 'XSRF-TOKEN'; }
+        if (_headerName === void 0) { _headerName = 'X-XSRF-TOKEN'; }
+        this._cookieName = _cookieName;
+        this._headerName = _headerName;
+    }
+    /**
+     * @param {?} req
+     * @return {?}
+     */
+    CookieXSRFStrategy.prototype.configureRequest = function (req) {
+        var /** @type {?} */ xsrfToken = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* ɵgetDOM */])().getCookie(this._cookieName);
+        if (xsrfToken) {
+            req.headers.set(this._headerName, xsrfToken);
+        }
+    };
+    return CookieXSRFStrategy;
+}());
+/**
+ * Creates {\@link XHRConnection} instances.
+ *
+ * This class would typically not be used by end users, but could be
+ * overridden if a different backend implementation should be used,
+ * such as in a node backend.
+ *
+ * ### Example
+ *
+ * ```
+ * import {Http, MyNodeBackend, HTTP_PROVIDERS, BaseRequestOptions} from '\@angular/http';
+ * \@Component({
+ *   viewProviders: [
+ *     HTTP_PROVIDERS,
+ *     {provide: Http, useFactory: (backend, options) => {
+ *       return new Http(backend, options);
+ *     }, deps: [MyNodeBackend, BaseRequestOptions]}]
+ * })
+ * class MyComponent {
+ *   constructor(http:Http) {
+ *     http.request('people.json').subscribe(res => this.people = res.json());
+ *   }
+ * }
+ * ```
+ * \@experimental
+ */
+var XHRBackend = (function () {
+    /**
+     * @param {?} _browserXHR
+     * @param {?} _baseResponseOptions
+     * @param {?} _xsrfStrategy
+     */
+    function XHRBackend(_browserXHR, _baseResponseOptions, _xsrfStrategy) {
+        this._browserXHR = _browserXHR;
+        this._baseResponseOptions = _baseResponseOptions;
+        this._xsrfStrategy = _xsrfStrategy;
+    }
+    /**
+     * @param {?} request
+     * @return {?}
+     */
+    XHRBackend.prototype.createConnection = function (request) {
+        this._xsrfStrategy.configureRequest(request);
+        return new XHRConnection(request, this._browserXHR, this._baseResponseOptions);
+    };
+    return XHRBackend;
+}());
+XHRBackend.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+XHRBackend.ctorParameters = function () { return [
+    { type: BrowserXhr, },
+    { type: ResponseOptions, },
+    { type: XSRFStrategy, },
+]; };
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * Creates a request options object to be optionally provided when instantiating a
+ * {\@link Request}.
+ *
+ * This class is based on the `RequestInit` description in the [Fetch
+ * Spec](https://fetch.spec.whatwg.org/#requestinit).
+ *
+ * All values are null by default. Typical defaults can be found in the {\@link BaseRequestOptions}
+ * class, which sub-classes `RequestOptions`.
+ *
+ * ```typescript
+ * import {RequestOptions, Request, RequestMethod} from '\@angular/http';
+ *
+ * const options = new RequestOptions({
+ *   method: RequestMethod.Post,
+ *   url: 'https://google.com'
+ * });
+ * const req = new Request(options);
+ * console.log('req.method:', RequestMethod[req.method]); // Post
+ * console.log('options.url:', options.url); // https://google.com
+ * ```
+ *
+ * \@experimental
+ */
+var RequestOptions = (function () {
+    /**
+     * @param {?=} __0
+     */
+    function RequestOptions(_a) {
+        var _b = _a === void 0 ? {} : _a, method = _b.method, headers = _b.headers, body = _b.body, url = _b.url, search = _b.search, params = _b.params, withCredentials = _b.withCredentials, responseType = _b.responseType;
+        this.method = method != null ? normalizeMethodName(method) : null;
+        this.headers = headers != null ? headers : null;
+        this.body = body != null ? body : null;
+        this.url = url != null ? url : null;
+        this.params = this._mergeSearchParams(params || search);
+        this.withCredentials = withCredentials != null ? withCredentials : null;
+        this.responseType = responseType != null ? responseType : null;
+    }
+    Object.defineProperty(RequestOptions.prototype, "search", {
+        /**
+         * @deprecated from 4.0.0. Use params instead.
+         * @return {?}
+         */
+        get: function () { return this.params; },
+        /**
+         * @deprecated from 4.0.0. Use params instead.
+         * @param {?} params
+         * @return {?}
+         */
+        set: function (params) { this.params = params; },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Creates a copy of the `RequestOptions` instance, using the optional input as values to override
+     * existing values. This method will not change the values of the instance on which it is being
+     * called.
+     *
+     * Note that `headers` and `search` will override existing values completely if present in
+     * the `options` object. If these values should be merged, it should be done prior to calling
+     * `merge` on the `RequestOptions` instance.
+     *
+     * ```typescript
+     * import {RequestOptions, Request, RequestMethod} from '\@angular/http';
+     *
+     * const options = new RequestOptions({
+     *   method: RequestMethod.Post
+     * });
+     * const req = new Request(options.merge({
+     *   url: 'https://google.com'
+     * }));
+     * console.log('req.method:', RequestMethod[req.method]); // Post
+     * console.log('options.url:', options.url); // null
+     * console.log('req.url:', req.url); // https://google.com
+     * ```
+     * @param {?=} options
+     * @return {?}
+     */
+    RequestOptions.prototype.merge = function (options) {
+        return new RequestOptions({
+            method: options && options.method != null ? options.method : this.method,
+            headers: options && options.headers != null ? options.headers : new Headers(this.headers),
+            body: options && options.body != null ? options.body : this.body,
+            url: options && options.url != null ? options.url : this.url,
+            params: options && this._mergeSearchParams(options.params || options.search),
+            withCredentials: options && options.withCredentials != null ? options.withCredentials :
+                this.withCredentials,
+            responseType: options && options.responseType != null ? options.responseType :
+                this.responseType
+        });
+    };
+    /**
+     * @param {?=} params
+     * @return {?}
+     */
+    RequestOptions.prototype._mergeSearchParams = function (params) {
+        if (!params)
+            return this.params;
+        if (params instanceof URLSearchParams) {
+            return params.clone();
+        }
+        if (typeof params === 'string') {
+            return new URLSearchParams(params);
+        }
+        return this._parseParams(params);
+    };
+    /**
+     * @param {?=} objParams
+     * @return {?}
+     */
+    RequestOptions.prototype._parseParams = function (objParams) {
+        var _this = this;
+        if (objParams === void 0) { objParams = {}; }
+        var /** @type {?} */ params = new URLSearchParams();
+        Object.keys(objParams).forEach(function (key) {
+            var /** @type {?} */ value = objParams[key];
+            if (Array.isArray(value)) {
+                value.forEach(function (item) { return _this._appendParam(key, item, params); });
+            }
+            else {
+                _this._appendParam(key, value, params);
+            }
+        });
+        return params;
+    };
+    /**
+     * @param {?} key
+     * @param {?} value
+     * @param {?} params
+     * @return {?}
+     */
+    RequestOptions.prototype._appendParam = function (key, value, params) {
+        if (typeof value !== 'string') {
+            value = JSON.stringify(value);
+        }
+        params.append(key, value);
+    };
+    return RequestOptions;
+}());
+/**
+ * Subclass of {\@link RequestOptions}, with default values.
+ *
+ * Default values:
+ *  * method: {\@link RequestMethod RequestMethod.Get}
+ *  * headers: empty {\@link Headers} object
+ *
+ * This class could be extended and bound to the {\@link RequestOptions} class
+ * when configuring an {\@link Injector}, in order to override the default options
+ * used by {\@link Http} to create and send {\@link Request Requests}.
+ *
+ * ```typescript
+ * import {BaseRequestOptions, RequestOptions} from '\@angular/http';
+ *
+ * class MyOptions extends BaseRequestOptions {
+ *   search: string = 'coreTeam=true';
+ * }
+ *
+ * {provide: RequestOptions, useClass: MyOptions};
+ * ```
+ *
+ * The options could also be extended when manually creating a {\@link Request}
+ * object.
+ *
+ * ```
+ * import {BaseRequestOptions, Request, RequestMethod} from '\@angular/http';
+ *
+ * const options = new BaseRequestOptions();
+ * const req = new Request(options.merge({
+ *   method: RequestMethod.Post,
+ *   url: 'https://google.com'
+ * }));
+ * console.log('req.method:', RequestMethod[req.method]); // Post
+ * console.log('options.url:', options.url); // null
+ * console.log('req.url:', req.url); // https://google.com
+ * ```
+ *
+ * \@experimental
+ */
+var BaseRequestOptions = (function (_super) {
+    __extends(BaseRequestOptions, _super);
+    function BaseRequestOptions() {
+        return _super.call(this, { method: RequestMethod.Get, headers: new Headers() }) || this;
+    }
+    return BaseRequestOptions;
+}(RequestOptions));
+BaseRequestOptions.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+BaseRequestOptions.ctorParameters = function () { return []; };
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * Creates `Request` instances from provided values.
+ *
+ * The Request's interface is inspired by the Request constructor defined in the [Fetch
+ * Spec](https://fetch.spec.whatwg.org/#request-class),
+ * but is considered a static value whose body can be accessed many times. There are other
+ * differences in the implementation, but this is the most significant.
+ *
+ * `Request` instances are typically created by higher-level classes, like {\@link Http} and
+ * {\@link Jsonp}, but it may occasionally be useful to explicitly create `Request` instances.
+ * One such example is when creating services that wrap higher-level services, like {\@link Http},
+ * where it may be useful to generate a `Request` with arbitrary headers and search params.
+ *
+ * ```typescript
+ * import {Injectable, Injector} from '\@angular/core';
+ * import {HTTP_PROVIDERS, Http, Request, RequestMethod} from '\@angular/http';
+ *
+ * \@Injectable()
+ * class AutoAuthenticator {
+ *   constructor(public http:Http) {}
+ *   request(url:string) {
+ *     return this.http.request(new Request({
+ *       method: RequestMethod.Get,
+ *       url: url,
+ *       search: 'password=123'
+ *     }));
+ *   }
+ * }
+ *
+ * var injector = Injector.resolveAndCreate([HTTP_PROVIDERS, AutoAuthenticator]);
+ * var authenticator = injector.get(AutoAuthenticator);
+ * authenticator.request('people.json').subscribe(res => {
+ *   //URL should have included '?password=123'
+ *   console.log('people', res.json());
+ * });
+ * ```
+ *
+ * \@experimental
+ */
+var Request = (function (_super) {
+    __extends(Request, _super);
+    /**
+     * @param {?} requestOptions
+     */
+    function Request(requestOptions) {
+        var _this = _super.call(this) || this;
+        // TODO: assert that url is present
+        var url = requestOptions.url;
+        _this.url = requestOptions.url;
+        var paramsArg = requestOptions.params || requestOptions.search;
+        if (paramsArg) {
+            var params = void 0;
+            if (typeof paramsArg === 'object' && !(paramsArg instanceof URLSearchParams)) {
+                params = urlEncodeParams(paramsArg).toString();
+            }
+            else {
+                params = paramsArg.toString();
+            }
+            if (params.length > 0) {
+                var prefix = '?';
+                if (_this.url.indexOf('?') != -1) {
+                    prefix = (_this.url[_this.url.length - 1] == '&') ? '' : '&';
+                }
+                // TODO: just delete search-query-looking string in url?
+                _this.url = url + prefix + params;
+            }
+        }
+        _this._body = requestOptions.body;
+        _this.method = normalizeMethodName(requestOptions.method);
+        // TODO(jeffbcross): implement behavior
+        // Defaults to 'omit', consistent with browser
+        _this.headers = new Headers(requestOptions.headers);
+        _this.contentType = _this.detectContentType();
+        _this.withCredentials = requestOptions.withCredentials;
+        _this.responseType = requestOptions.responseType;
+        return _this;
+    }
+    /**
+     * Returns the content type enum based on header options.
+     * @return {?}
+     */
+    Request.prototype.detectContentType = function () {
+        switch (this.headers.get('content-type')) {
+            case 'application/json':
+                return ContentType.JSON;
+            case 'application/x-www-form-urlencoded':
+                return ContentType.FORM;
+            case 'multipart/form-data':
+                return ContentType.FORM_DATA;
+            case 'text/plain':
+            case 'text/html':
+                return ContentType.TEXT;
+            case 'application/octet-stream':
+                return this._body instanceof ArrayBuffer$1 ? ContentType.ARRAY_BUFFER : ContentType.BLOB;
+            default:
+                return this.detectContentTypeFromBody();
+        }
+    };
+    /**
+     * Returns the content type of request's body based on its type.
+     * @return {?}
+     */
+    Request.prototype.detectContentTypeFromBody = function () {
+        if (this._body == null) {
+            return ContentType.NONE;
+        }
+        else if (this._body instanceof URLSearchParams) {
+            return ContentType.FORM;
+        }
+        else if (this._body instanceof FormData) {
+            return ContentType.FORM_DATA;
+        }
+        else if (this._body instanceof Blob$1) {
+            return ContentType.BLOB;
+        }
+        else if (this._body instanceof ArrayBuffer$1) {
+            return ContentType.ARRAY_BUFFER;
+        }
+        else if (this._body && typeof this._body === 'object') {
+            return ContentType.JSON;
+        }
+        else {
+            return ContentType.TEXT;
+        }
+    };
+    /**
+     * Returns the request's body according to its type. If body is undefined, return
+     * null.
+     * @return {?}
+     */
+    Request.prototype.getBody = function () {
+        switch (this.contentType) {
+            case ContentType.JSON:
+                return this.text();
+            case ContentType.FORM:
+                return this.text();
+            case ContentType.FORM_DATA:
+                return this._body;
+            case ContentType.TEXT:
+                return this.text();
+            case ContentType.BLOB:
+                return this.blob();
+            case ContentType.ARRAY_BUFFER:
+                return this.arrayBuffer();
+            default:
+                return null;
+        }
+    };
+    return Request;
+}(Body));
+/**
+ * @param {?} params
+ * @return {?}
+ */
+function urlEncodeParams(params) {
+    var /** @type {?} */ searchParams = new URLSearchParams();
+    Object.keys(params).forEach(function (key) {
+        var /** @type {?} */ value = params[key];
+        if (value && Array.isArray(value)) {
+            value.forEach(function (element) { return searchParams.append(key, element.toString()); });
+        }
+        else {
+            searchParams.append(key, value.toString());
+        }
+    });
+    return searchParams;
+}
+var noop = function () { };
+var w = typeof window == 'object' ? window : noop;
+var FormData = ((w) /** TODO #9100 */)['FormData'] || noop;
+var Blob$1 = ((w) /** TODO #9100 */)['Blob'] || noop;
+var ArrayBuffer$1 = ((w) /** TODO #9100 */)['ArrayBuffer'] || noop;
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @param {?} backend
+ * @param {?} request
+ * @return {?}
+ */
+function httpRequest(backend, request) {
+    return backend.createConnection(request).response;
+}
+/**
+ * @param {?} defaultOpts
+ * @param {?} providedOpts
+ * @param {?} method
+ * @param {?} url
+ * @return {?}
+ */
+function mergeOptions(defaultOpts, providedOpts, method, url) {
+    var /** @type {?} */ newOptions = defaultOpts;
+    if (providedOpts) {
+        // Hack so Dart can used named parameters
+        return (newOptions.merge(new RequestOptions({
+            method: providedOpts.method || method,
+            url: providedOpts.url || url,
+            search: providedOpts.search,
+            params: providedOpts.params,
+            headers: providedOpts.headers,
+            body: providedOpts.body,
+            withCredentials: providedOpts.withCredentials,
+            responseType: providedOpts.responseType
+        })));
+    }
+    return (newOptions.merge(new RequestOptions({ method: method, url: url })));
+}
+/**
+ * Performs http requests using `XMLHttpRequest` as the default backend.
+ *
+ * `Http` is available as an injectable class, with methods to perform http requests. Calling
+ * `request` returns an `Observable` which will emit a single {\@link Response} when a
+ * response is received.
+ *
+ * ### Example
+ *
+ * ```typescript
+ * import {Http, HTTP_PROVIDERS} from '\@angular/http';
+ * import 'rxjs/add/operator/map'
+ * \@Component({
+ *   selector: 'http-app',
+ *   viewProviders: [HTTP_PROVIDERS],
+ *   templateUrl: 'people.html'
+ * })
+ * class PeopleComponent {
+ *   constructor(http: Http) {
+ *     http.get('people.json')
+ *       // Call map on the response observable to get the parsed people object
+ *       .map(res => res.json())
+ *       // Subscribe to the observable to get the parsed people object and attach it to the
+ *       // component
+ *       .subscribe(people => this.people = people);
+ *   }
+ * }
+ * ```
+ *
+ *
+ * ### Example
+ *
+ * ```
+ * http.get('people.json').subscribe((res:Response) => this.people = res.json());
+ * ```
+ *
+ * The default construct used to perform requests, `XMLHttpRequest`, is abstracted as a "Backend" (
+ * {\@link XHRBackend} in this case), which could be mocked with dependency injection by replacing
+ * the {\@link XHRBackend} provider, as in the following example:
+ *
+ * ### Example
+ *
+ * ```typescript
+ * import {BaseRequestOptions, Http} from '\@angular/http';
+ * import {MockBackend} from '\@angular/http/testing';
+ * var injector = Injector.resolveAndCreate([
+ *   BaseRequestOptions,
+ *   MockBackend,
+ *   {provide: Http, useFactory:
+ *       function(backend, defaultOptions) {
+ *         return new Http(backend, defaultOptions);
+ *       },
+ *       deps: [MockBackend, BaseRequestOptions]}
+ * ]);
+ * var http = injector.get(Http);
+ * http.get('request-from-mock-backend.json').subscribe((res:Response) => doSomething(res));
+ * ```
+ *
+ * \@experimental
+ */
+var Http = (function () {
+    /**
+     * @param {?} _backend
+     * @param {?} _defaultOptions
+     */
+    function Http(_backend, _defaultOptions) {
+        this._backend = _backend;
+        this._defaultOptions = _defaultOptions;
+    }
+    /**
+     * Performs any type of http request. First argument is required, and can either be a url or
+     * a {\@link Request} instance. If the first argument is a url, an optional {\@link RequestOptions}
+     * object can be provided as the 2nd argument. The options object will be merged with the values
+     * of {\@link BaseRequestOptions} before performing the request.
+     * @param {?} url
+     * @param {?=} options
+     * @return {?}
+     */
+    Http.prototype.request = function (url, options) {
+        var /** @type {?} */ responseObservable;
+        if (typeof url === 'string') {
+            responseObservable = httpRequest(this._backend, new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Get, /** @type {?} */ (url))));
+        }
+        else if (url instanceof Request) {
+            responseObservable = httpRequest(this._backend, url);
+        }
+        else {
+            throw new Error('First argument must be a url string or Request instance.');
+        }
+        return responseObservable;
+    };
+    /**
+     * Performs a request with `get` http method.
+     * @param {?} url
+     * @param {?=} options
+     * @return {?}
+     */
+    Http.prototype.get = function (url, options) {
+        return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Get, url)));
+    };
+    /**
+     * Performs a request with `post` http method.
+     * @param {?} url
+     * @param {?} body
+     * @param {?=} options
+     * @return {?}
+     */
+    Http.prototype.post = function (url, body, options) {
+        return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, RequestMethod.Post, url)));
+    };
+    /**
+     * Performs a request with `put` http method.
+     * @param {?} url
+     * @param {?} body
+     * @param {?=} options
+     * @return {?}
+     */
+    Http.prototype.put = function (url, body, options) {
+        return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, RequestMethod.Put, url)));
+    };
+    /**
+     * Performs a request with `delete` http method.
+     * @param {?} url
+     * @param {?=} options
+     * @return {?}
+     */
+    Http.prototype.delete = function (url, options) {
+        return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Delete, url)));
+    };
+    /**
+     * Performs a request with `patch` http method.
+     * @param {?} url
+     * @param {?} body
+     * @param {?=} options
+     * @return {?}
+     */
+    Http.prototype.patch = function (url, body, options) {
+        return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, RequestMethod.Patch, url)));
+    };
+    /**
+     * Performs a request with `head` http method.
+     * @param {?} url
+     * @param {?=} options
+     * @return {?}
+     */
+    Http.prototype.head = function (url, options) {
+        return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Head, url)));
+    };
+    /**
+     * Performs a request with `options` http method.
+     * @param {?} url
+     * @param {?=} options
+     * @return {?}
+     */
+    Http.prototype.options = function (url, options) {
+        return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Options, url)));
+    };
+    return Http;
+}());
+Http.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+Http.ctorParameters = function () { return [
+    { type: ConnectionBackend, },
+    { type: RequestOptions, },
+]; };
+/**
+ * \@experimental
+ */
+var Jsonp = (function (_super) {
+    __extends(Jsonp, _super);
+    /**
+     * @param {?} backend
+     * @param {?} defaultOptions
+     */
+    function Jsonp(backend, defaultOptions) {
+        return _super.call(this, backend, defaultOptions) || this;
+    }
+    /**
+     * Performs any type of http request. First argument is required, and can either be a url or
+     * a {\@link Request} instance. If the first argument is a url, an optional {\@link RequestOptions}
+     * object can be provided as the 2nd argument. The options object will be merged with the values
+     * of {\@link BaseRequestOptions} before performing the request.
+     *
+     * \@security Regular XHR is the safest alternative to JSONP for most applications, and is
+     * supported by all current browsers. Because JSONP creates a `<script>` element with
+     * contents retrieved from a remote source, attacker-controlled data introduced by an untrusted
+     * source could expose your application to XSS risks. Data exposed by JSONP may also be
+     * readable by malicious third-party websites. In addition, JSONP introduces potential risk for
+     * future security issues (e.g. content sniffing).  For more detail, see the
+     * [Security Guide](http://g.co/ng/security).
+     * @param {?} url
+     * @param {?=} options
+     * @return {?}
+     */
+    Jsonp.prototype.request = function (url, options) {
+        var /** @type {?} */ responseObservable;
+        if (typeof url === 'string') {
+            url =
+                new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Get, /** @type {?} */ (url)));
+        }
+        if (url instanceof Request) {
+            if (url.method !== RequestMethod.Get) {
+                throw new Error('JSONP requests must use GET request method.');
+            }
+            responseObservable = httpRequest(this._backend, url);
+        }
+        else {
+            throw new Error('First argument must be a url string or Request instance.');
+        }
+        return responseObservable;
+    };
+    return Jsonp;
+}(Http));
+Jsonp.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/**
+ * @nocollapse
+ */
+Jsonp.ctorParameters = function () { return [
+    { type: ConnectionBackend, },
+    { type: RequestOptions, },
+]; };
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * The http module provides services to perform http requests. To get started, see the {@link Http}
+ * class.
+ */
+/**
+ * @return {?}
+ */
+function _createDefaultCookieXSRFStrategy() {
+    return new CookieXSRFStrategy();
+}
+/**
+ * @param {?} xhrBackend
+ * @param {?} requestOptions
+ * @return {?}
+ */
+function httpFactory(xhrBackend, requestOptions) {
+    return new Http(xhrBackend, requestOptions);
+}
+/**
+ * @param {?} jsonpBackend
+ * @param {?} requestOptions
+ * @return {?}
+ */
+function jsonpFactory(jsonpBackend, requestOptions) {
+    return new Jsonp(jsonpBackend, requestOptions);
+}
+/**
+ * The module that includes http's providers
+ *
+ * \@experimental
+ */
+var HttpModule = (function () {
+    function HttpModule() {
+    }
+    return HttpModule;
+}());
+HttpModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                providers: [
+                    // TODO(pascal): use factory type annotations once supported in DI
+                    // issue: https://github.com/angular/angular/issues/3183
+                    { provide: Http, useFactory: httpFactory, deps: [XHRBackend, RequestOptions] },
+                    BrowserXhr,
+                    { provide: RequestOptions, useClass: BaseRequestOptions },
+                    { provide: ResponseOptions, useClass: BaseResponseOptions },
+                    XHRBackend,
+                    { provide: XSRFStrategy, useFactory: _createDefaultCookieXSRFStrategy },
+                ],
+            },] },
+];
+/**
+ * @nocollapse
+ */
+HttpModule.ctorParameters = function () { return []; };
+/**
+ * The module that includes jsonp's providers
+ *
+ * \@experimental
+ */
+var JsonpModule = (function () {
+    function JsonpModule() {
+    }
+    return JsonpModule;
+}());
+JsonpModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                providers: [
+                    // TODO(pascal): use factory type annotations once supported in DI
+                    // issue: https://github.com/angular/angular/issues/3183
+                    { provide: Jsonp, useFactory: jsonpFactory, deps: [JSONPBackend, RequestOptions] },
+                    BrowserJsonp,
+                    { provide: RequestOptions, useClass: BaseRequestOptions },
+                    { provide: ResponseOptions, useClass: BaseResponseOptions },
+                    { provide: JSONPBackend, useClass: JSONPBackend_ },
+                ],
+            },] },
+];
+/**
+ * @nocollapse
+ */
+JsonpModule.ctorParameters = function () { return []; };
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the common package.
+ */
+/**
+ * \@stable
+ */
+var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["Version"]('4.1.3');
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * @module
+ * @description
+ * Entry point for all public APIs of the http package.
+ */
+// This file only reexports content of the `src` folder. Keep it that way.
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+//# sourceMappingURL=http.es5.js.map
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDate; });
 var NgbDate = (function () {
     function NgbDate(year, month, day) {
@@ -25209,9 +27439,9 @@ var NgbDate = (function () {
 //# sourceMappingURL=ngb-date.js.map
 
 /***/ }),
-/* 18 */,
 /* 19 */,
-/* 20 */
+/* 20 */,
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -25234,51 +27464,51 @@ exports.root = _root;
     }
 })();
 //# sourceMappingURL=root.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(45)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46)))
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__ = __webpack_require__(289);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from__ = __webpack_require__(305);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__ = __webpack_require__(308);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__ = __webpack_require__(311);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first__ = __webpack_require__(315);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__ = __webpack_require__(83);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Observable__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__ = __webpack_require__(309);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll__ = __webpack_require__(310);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError__ = __webpack_require__(89);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__ = __webpack_require__(82);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last__ = __webpack_require__(316);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_platform_browser__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_platform_browser__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__ = __webpack_require__(314);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__);
 /* unused harmony export RouterLink */
 /* unused harmony export RouterLinkWithHref */
@@ -31408,7 +33638,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.1.3'
 
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -31461,8 +33691,9 @@ NgbDatepickerI18nDefault.ctorParameters = function () { return []; };
 //# sourceMappingURL=datepicker-i18n.js.map
 
 /***/ }),
-/* 23 */,
-/* 24 */
+/* 24 */,
+/* 25 */,
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31471,11 +33702,11 @@ function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(195));
+__export(__webpack_require__(197));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35986,7 +38217,7 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.1.3'
 
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -36046,12 +38277,12 @@ var PopupService = (function () {
 //# sourceMappingURL=popup.js.map
 
 /***/ }),
-/* 27 */,
-/* 28 */,
 /* 29 */,
 /* 30 */,
 /* 31 */,
-/* 32 */
+/* 32 */,
+/* 33 */,
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36087,7 +38318,7 @@ exports.OuterSubscriber = OuterSubscriber;
 //# sourceMappingURL=OuterSubscriber.js.map
 
 /***/ }),
-/* 33 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36099,10 +38330,10 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var Observable_1 = __webpack_require__(2);
 var Subscriber_1 = __webpack_require__(8);
-var Subscription_1 = __webpack_require__(34);
-var ObjectUnsubscribedError_1 = __webpack_require__(154);
-var SubjectSubscription_1 = __webpack_require__(290);
-var rxSubscriber_1 = __webpack_require__(87);
+var Subscription_1 = __webpack_require__(36);
+var ObjectUnsubscribedError_1 = __webpack_require__(157);
+var SubjectSubscription_1 = __webpack_require__(292);
+var rxSubscriber_1 = __webpack_require__(88);
 /**
  * @class SubjectSubscriber<T>
  */
@@ -36261,17 +38492,17 @@ exports.AnonymousSubject = AnonymousSubject;
 //# sourceMappingURL=Subject.js.map
 
 /***/ }),
-/* 34 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var isArray_1 = __webpack_require__(90);
-var isObject_1 = __webpack_require__(156);
-var isFunction_1 = __webpack_require__(91);
-var tryCatch_1 = __webpack_require__(159);
-var errorObject_1 = __webpack_require__(89);
-var UnsubscriptionError_1 = __webpack_require__(321);
+var isArray_1 = __webpack_require__(91);
+var isObject_1 = __webpack_require__(159);
+var isFunction_1 = __webpack_require__(92);
+var tryCatch_1 = __webpack_require__(162);
+var errorObject_1 = __webpack_require__(90);
+var UnsubscriptionError_1 = __webpack_require__(323);
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
  * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -36460,19 +38691,19 @@ function flattenUnsubscriptionErrors(errors) {
 //# sourceMappingURL=Subscription.js.map
 
 /***/ }),
-/* 35 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var root_1 = __webpack_require__(20);
-var isArrayLike_1 = __webpack_require__(155);
-var isPromise_1 = __webpack_require__(157);
-var isObject_1 = __webpack_require__(156);
+var root_1 = __webpack_require__(21);
+var isArrayLike_1 = __webpack_require__(158);
+var isPromise_1 = __webpack_require__(160);
+var isObject_1 = __webpack_require__(159);
 var Observable_1 = __webpack_require__(2);
-var iterator_1 = __webpack_require__(85);
-var InnerSubscriber_1 = __webpack_require__(288);
-var observable_1 = __webpack_require__(86);
+var iterator_1 = __webpack_require__(86);
+var InnerSubscriber_1 = __webpack_require__(290);
+var observable_1 = __webpack_require__(87);
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
     if (destination.closed) {
@@ -36544,2237 +38775,7 @@ exports.subscribeToResult = subscribeToResult;
 //# sourceMappingURL=subscribeToResult.js.map
 
 /***/ }),
-/* 36 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(25);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BrowserXhr", function() { return BrowserXhr; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JSONPBackend", function() { return JSONPBackend; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JSONPConnection", function() { return JSONPConnection; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CookieXSRFStrategy", function() { return CookieXSRFStrategy; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XHRBackend", function() { return XHRBackend; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XHRConnection", function() { return XHRConnection; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseRequestOptions", function() { return BaseRequestOptions; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RequestOptions", function() { return RequestOptions; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BaseResponseOptions", function() { return BaseResponseOptions; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResponseOptions", function() { return ResponseOptions; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReadyState", function() { return ReadyState; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RequestMethod", function() { return RequestMethod; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResponseContentType", function() { return ResponseContentType; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ResponseType", function() { return ResponseType; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Headers", function() { return Headers; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Http", function() { return Http; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Jsonp", function() { return Jsonp; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpModule", function() { return HttpModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JsonpModule", function() { return JsonpModule; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Connection", function() { return Connection; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConnectionBackend", function() { return ConnectionBackend; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "XSRFStrategy", function() { return XSRFStrategy; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Request", function() { return Request; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Response", function() { return Response; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QueryEncoder", function() { return QueryEncoder; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URLSearchParams", function() { return URLSearchParams; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VERSION", function() { return VERSION; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵg", function() { return BrowserJsonp; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵa", function() { return JSONPBackend_; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵf", function() { return Body; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵb", function() { return _createDefaultCookieXSRFStrategy; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵc", function() { return httpFactory; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵd", function() { return jsonpFactory; });
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-/**
- * @license Angular v4.1.3
- * (c) 2010-2017 Google, Inc. https://angular.io/
- * License: MIT
- */
-
-
-
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * A backend for http that uses the `XMLHttpRequest` browser API.
- *
- * Take care not to evaluate this in non-browser contexts.
- *
- * \@experimental
- */
-var BrowserXhr = (function () {
-    function BrowserXhr() {
-    }
-    /**
-     * @return {?}
-     */
-    BrowserXhr.prototype.build = function () { return ((new XMLHttpRequest())); };
-    return BrowserXhr;
-}());
-BrowserXhr.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/**
- * @nocollapse
- */
-BrowserXhr.ctorParameters = function () { return []; };
-var RequestMethod = {};
-RequestMethod.Get = 0;
-RequestMethod.Post = 1;
-RequestMethod.Put = 2;
-RequestMethod.Delete = 3;
-RequestMethod.Options = 4;
-RequestMethod.Head = 5;
-RequestMethod.Patch = 6;
-RequestMethod[RequestMethod.Get] = "Get";
-RequestMethod[RequestMethod.Post] = "Post";
-RequestMethod[RequestMethod.Put] = "Put";
-RequestMethod[RequestMethod.Delete] = "Delete";
-RequestMethod[RequestMethod.Options] = "Options";
-RequestMethod[RequestMethod.Head] = "Head";
-RequestMethod[RequestMethod.Patch] = "Patch";
-var ReadyState = {};
-ReadyState.Unsent = 0;
-ReadyState.Open = 1;
-ReadyState.HeadersReceived = 2;
-ReadyState.Loading = 3;
-ReadyState.Done = 4;
-ReadyState.Cancelled = 5;
-ReadyState[ReadyState.Unsent] = "Unsent";
-ReadyState[ReadyState.Open] = "Open";
-ReadyState[ReadyState.HeadersReceived] = "HeadersReceived";
-ReadyState[ReadyState.Loading] = "Loading";
-ReadyState[ReadyState.Done] = "Done";
-ReadyState[ReadyState.Cancelled] = "Cancelled";
-var ResponseType = {};
-ResponseType.Basic = 0;
-ResponseType.Cors = 1;
-ResponseType.Default = 2;
-ResponseType.Error = 3;
-ResponseType.Opaque = 4;
-ResponseType[ResponseType.Basic] = "Basic";
-ResponseType[ResponseType.Cors] = "Cors";
-ResponseType[ResponseType.Default] = "Default";
-ResponseType[ResponseType.Error] = "Error";
-ResponseType[ResponseType.Opaque] = "Opaque";
-var ContentType = {};
-ContentType.NONE = 0;
-ContentType.JSON = 1;
-ContentType.FORM = 2;
-ContentType.FORM_DATA = 3;
-ContentType.TEXT = 4;
-ContentType.BLOB = 5;
-ContentType.ARRAY_BUFFER = 6;
-ContentType[ContentType.NONE] = "NONE";
-ContentType[ContentType.JSON] = "JSON";
-ContentType[ContentType.FORM] = "FORM";
-ContentType[ContentType.FORM_DATA] = "FORM_DATA";
-ContentType[ContentType.TEXT] = "TEXT";
-ContentType[ContentType.BLOB] = "BLOB";
-ContentType[ContentType.ARRAY_BUFFER] = "ARRAY_BUFFER";
-var ResponseContentType = {};
-ResponseContentType.Text = 0;
-ResponseContentType.Json = 1;
-ResponseContentType.ArrayBuffer = 2;
-ResponseContentType.Blob = 3;
-ResponseContentType[ResponseContentType.Text] = "Text";
-ResponseContentType[ResponseContentType.Json] = "Json";
-ResponseContentType[ResponseContentType.ArrayBuffer] = "ArrayBuffer";
-ResponseContentType[ResponseContentType.Blob] = "Blob";
-/**
- * Polyfill for [Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers/Headers), as
- * specified in the [Fetch Spec](https://fetch.spec.whatwg.org/#headers-class).
- *
- * The only known difference between this `Headers` implementation and the spec is the
- * lack of an `entries` method.
- *
- * ### Example
- *
- * ```
- * import {Headers} from '\@angular/http';
- *
- * var firstHeaders = new Headers();
- * firstHeaders.append('Content-Type', 'image/jpeg');
- * console.log(firstHeaders.get('Content-Type')) //'image/jpeg'
- *
- * // Create headers from Plain Old JavaScript Object
- * var secondHeaders = new Headers({
- *   'X-My-Custom-Header': 'Angular'
- * });
- * console.log(secondHeaders.get('X-My-Custom-Header')); //'Angular'
- *
- * var thirdHeaders = new Headers(secondHeaders);
- * console.log(thirdHeaders.get('X-My-Custom-Header')); //'Angular'
- * ```
- *
- * \@experimental
- */
-var Headers = (function () {
-    /**
-     * @param {?=} headers
-     */
-    function Headers(headers) {
-        var _this = this;
-        /**
-         * \@internal header names are lower case
-         */
-        this._headers = new Map();
-        /**
-         * \@internal map lower case names to actual names
-         */
-        this._normalizedNames = new Map();
-        if (!headers) {
-            return;
-        }
-        if (headers instanceof Headers) {
-            headers.forEach(function (values, name) {
-                values.forEach(function (value) { return _this.append(name, value); });
-            });
-            return;
-        }
-        Object.keys(headers).forEach(function (name) {
-            var values = Array.isArray(headers[name]) ? headers[name] : [headers[name]];
-            _this.delete(name);
-            values.forEach(function (value) { return _this.append(name, value); });
-        });
-    }
-    /**
-     * Returns a new Headers instance from the given DOMString of Response Headers
-     * @param {?} headersString
-     * @return {?}
-     */
-    Headers.fromResponseHeaderString = function (headersString) {
-        var /** @type {?} */ headers = new Headers();
-        headersString.split('\n').forEach(function (line) {
-            var /** @type {?} */ index = line.indexOf(':');
-            if (index > 0) {
-                var /** @type {?} */ name = line.slice(0, index);
-                var /** @type {?} */ value = line.slice(index + 1).trim();
-                headers.set(name, value);
-            }
-        });
-        return headers;
-    };
-    /**
-     * Appends a header to existing list of header values for a given header name.
-     * @param {?} name
-     * @param {?} value
-     * @return {?}
-     */
-    Headers.prototype.append = function (name, value) {
-        var /** @type {?} */ values = this.getAll(name);
-        if (values === null) {
-            this.set(name, value);
-        }
-        else {
-            values.push(value);
-        }
-    };
-    /**
-     * Deletes all header values for the given name.
-     * @param {?} name
-     * @return {?}
-     */
-    Headers.prototype.delete = function (name) {
-        var /** @type {?} */ lcName = name.toLowerCase();
-        this._normalizedNames.delete(lcName);
-        this._headers.delete(lcName);
-    };
-    /**
-     * @param {?} fn
-     * @return {?}
-     */
-    Headers.prototype.forEach = function (fn) {
-        var _this = this;
-        this._headers.forEach(function (values, lcName) { return fn(values, _this._normalizedNames.get(lcName), _this._headers); });
-    };
-    /**
-     * Returns first header that matches given name.
-     * @param {?} name
-     * @return {?}
-     */
-    Headers.prototype.get = function (name) {
-        var /** @type {?} */ values = this.getAll(name);
-        if (values === null) {
-            return null;
-        }
-        return values.length > 0 ? values[0] : null;
-    };
-    /**
-     * Checks for existence of header by given name.
-     * @param {?} name
-     * @return {?}
-     */
-    Headers.prototype.has = function (name) { return this._headers.has(name.toLowerCase()); };
-    /**
-     * Returns the names of the headers
-     * @return {?}
-     */
-    Headers.prototype.keys = function () { return Array.from(this._normalizedNames.values()); };
-    /**
-     * Sets or overrides header value for given name.
-     * @param {?} name
-     * @param {?} value
-     * @return {?}
-     */
-    Headers.prototype.set = function (name, value) {
-        if (Array.isArray(value)) {
-            if (value.length) {
-                this._headers.set(name.toLowerCase(), [value.join(',')]);
-            }
-        }
-        else {
-            this._headers.set(name.toLowerCase(), [value]);
-        }
-        this.mayBeSetNormalizedName(name);
-    };
-    /**
-     * Returns values of all headers.
-     * @return {?}
-     */
-    Headers.prototype.values = function () { return Array.from(this._headers.values()); };
-    /**
-     * @return {?}
-     */
-    Headers.prototype.toJSON = function () {
-        var _this = this;
-        var /** @type {?} */ serialized = {};
-        this._headers.forEach(function (values, name) {
-            var /** @type {?} */ split = [];
-            values.forEach(function (v) { return split.push.apply(split, v.split(',')); });
-            serialized[((_this._normalizedNames.get(name)))] = split;
-        });
-        return serialized;
-    };
-    /**
-     * Returns list of header values for a given name.
-     * @param {?} name
-     * @return {?}
-     */
-    Headers.prototype.getAll = function (name) {
-        return this.has(name) ? this._headers.get(name.toLowerCase()) || null : null;
-    };
-    /**
-     * This method is not implemented.
-     * @return {?}
-     */
-    Headers.prototype.entries = function () { throw new Error('"entries" method is not implemented on Headers class'); };
-    /**
-     * @param {?} name
-     * @return {?}
-     */
-    Headers.prototype.mayBeSetNormalizedName = function (name) {
-        var /** @type {?} */ lcName = name.toLowerCase();
-        if (!this._normalizedNames.has(lcName)) {
-            this._normalizedNames.set(lcName, name);
-        }
-    };
-    return Headers;
-}());
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * Creates a response options object to be optionally provided when instantiating a
- * {\@link Response}.
- *
- * This class is based on the `ResponseInit` description in the [Fetch
- * Spec](https://fetch.spec.whatwg.org/#responseinit).
- *
- * All values are null by default. Typical defaults can be found in the
- * {\@link BaseResponseOptions} class, which sub-classes `ResponseOptions`.
- *
- * This class may be used in tests to build {\@link Response Responses} for
- * mock responses (see {\@link MockBackend}).
- *
- * ### Example ([live demo](http://plnkr.co/edit/P9Jkk8e8cz6NVzbcxEsD?p=preview))
- *
- * ```typescript
- * import {ResponseOptions, Response} from '\@angular/http';
- *
- * var options = new ResponseOptions({
- *   body: '{"name":"Jeff"}'
- * });
- * var res = new Response(options);
- *
- * console.log('res.json():', res.json()); // Object {name: "Jeff"}
- * ```
- *
- * \@experimental
- */
-var ResponseOptions = (function () {
-    /**
-     * @param {?=} __0
-     */
-    function ResponseOptions(_a) {
-        var _b = _a === void 0 ? {} : _a, body = _b.body, status = _b.status, headers = _b.headers, statusText = _b.statusText, type = _b.type, url = _b.url;
-        this.body = body != null ? body : null;
-        this.status = status != null ? status : null;
-        this.headers = headers != null ? headers : null;
-        this.statusText = statusText != null ? statusText : null;
-        this.type = type != null ? type : null;
-        this.url = url != null ? url : null;
-    }
-    /**
-     * Creates a copy of the `ResponseOptions` instance, using the optional input as values to
-     * override
-     * existing values. This method will not change the values of the instance on which it is being
-     * called.
-     *
-     * This may be useful when sharing a base `ResponseOptions` object inside tests,
-     * where certain properties may change from test to test.
-     *
-     * ### Example ([live demo](http://plnkr.co/edit/1lXquqFfgduTFBWjNoRE?p=preview))
-     *
-     * ```typescript
-     * import {ResponseOptions, Response} from '\@angular/http';
-     *
-     * var options = new ResponseOptions({
-     *   body: {name: 'Jeff'}
-     * });
-     * var res = new Response(options.merge({
-     *   url: 'https://google.com'
-     * }));
-     * console.log('options.url:', options.url); // null
-     * console.log('res.json():', res.json()); // Object {name: "Jeff"}
-     * console.log('res.url:', res.url); // https://google.com
-     * ```
-     * @param {?=} options
-     * @return {?}
-     */
-    ResponseOptions.prototype.merge = function (options) {
-        return new ResponseOptions({
-            body: options && options.body != null ? options.body : this.body,
-            status: options && options.status != null ? options.status : this.status,
-            headers: options && options.headers != null ? options.headers : this.headers,
-            statusText: options && options.statusText != null ? options.statusText : this.statusText,
-            type: options && options.type != null ? options.type : this.type,
-            url: options && options.url != null ? options.url : this.url,
-        });
-    };
-    return ResponseOptions;
-}());
-/**
- * Subclass of {\@link ResponseOptions}, with default values.
- *
- * Default values:
- *  * status: 200
- *  * headers: empty {\@link Headers} object
- *
- * This class could be extended and bound to the {\@link ResponseOptions} class
- * when configuring an {\@link Injector}, in order to override the default options
- * used by {\@link Http} to create {\@link Response Responses}.
- *
- * ### Example ([live demo](http://plnkr.co/edit/qv8DLT?p=preview))
- *
- * ```typescript
- * import {provide} from '\@angular/core';
- * import {bootstrap} from '\@angular/platform-browser/browser';
- * import {HTTP_PROVIDERS, Headers, Http, BaseResponseOptions, ResponseOptions} from
- * '\@angular/http';
- * import {App} from './myapp';
- *
- * class MyOptions extends BaseResponseOptions {
- *   headers:Headers = new Headers({network: 'github'});
- * }
- *
- * bootstrap(App, [HTTP_PROVIDERS, {provide: ResponseOptions, useClass: MyOptions}]);
- * ```
- *
- * The options could also be extended when manually creating a {\@link Response}
- * object.
- *
- * ### Example ([live demo](http://plnkr.co/edit/VngosOWiaExEtbstDoix?p=preview))
- *
- * ```
- * import {BaseResponseOptions, Response} from '\@angular/http';
- *
- * var options = new BaseResponseOptions();
- * var res = new Response(options.merge({
- *   body: 'Angular',
- *   headers: new Headers({framework: 'angular'})
- * }));
- * console.log('res.headers.get("framework"):', res.headers.get('framework')); // angular
- * console.log('res.text():', res.text()); // Angular;
- * ```
- *
- * \@experimental
- */
-var BaseResponseOptions = (function (_super) {
-    __extends(BaseResponseOptions, _super);
-    function BaseResponseOptions() {
-        return _super.call(this, { status: 200, statusText: 'Ok', type: ResponseType.Default, headers: new Headers() }) || this;
-    }
-    return BaseResponseOptions;
-}(ResponseOptions));
-BaseResponseOptions.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/**
- * @nocollapse
- */
-BaseResponseOptions.ctorParameters = function () { return []; };
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * Abstract class from which real backends are derived.
- *
- * The primary purpose of a `ConnectionBackend` is to create new connections to fulfill a given
- * {\@link Request}.
- *
- * \@experimental
- * @abstract
- */
-var ConnectionBackend = (function () {
-    function ConnectionBackend() {
-    }
-    /**
-     * @abstract
-     * @param {?} request
-     * @return {?}
-     */
-    ConnectionBackend.prototype.createConnection = function (request) { };
-    return ConnectionBackend;
-}());
-/**
- * Abstract class from which real connections are derived.
- *
- * \@experimental
- * @abstract
- */
-var Connection = (function () {
-    function Connection() {
-    }
-    return Connection;
-}());
-/**
- * An XSRFStrategy configures XSRF protection (e.g. via headers) on an HTTP request.
- *
- * \@experimental
- * @abstract
- */
-var XSRFStrategy = (function () {
-    function XSRFStrategy() {
-    }
-    /**
-     * @abstract
-     * @param {?} req
-     * @return {?}
-     */
-    XSRFStrategy.prototype.configureRequest = function (req) { };
-    return XSRFStrategy;
-}());
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * @param {?} method
- * @return {?}
- */
-function normalizeMethodName(method) {
-    if (typeof method !== 'string')
-        return method;
-    switch (method.toUpperCase()) {
-        case 'GET':
-            return RequestMethod.Get;
-        case 'POST':
-            return RequestMethod.Post;
-        case 'PUT':
-            return RequestMethod.Put;
-        case 'DELETE':
-            return RequestMethod.Delete;
-        case 'OPTIONS':
-            return RequestMethod.Options;
-        case 'HEAD':
-            return RequestMethod.Head;
-        case 'PATCH':
-            return RequestMethod.Patch;
-    }
-    throw new Error("Invalid request method. The method \"" + method + "\" is not supported.");
-}
-var isSuccess = function (status) { return (status >= 200 && status < 300); };
-/**
- * @param {?} xhr
- * @return {?}
- */
-function getResponseURL(xhr) {
-    if ('responseURL' in xhr) {
-        return xhr.responseURL;
-    }
-    if (/^X-Request-URL:/m.test(xhr.getAllResponseHeaders())) {
-        return xhr.getResponseHeader('X-Request-URL');
-    }
-    return null;
-}
-/**
- * @param {?} input
- * @return {?}
- */
-/**
- * @param {?} input
- * @return {?}
- */
-function stringToArrayBuffer(input) {
-    var /** @type {?} */ view = new Uint16Array(input.length);
-    for (var /** @type {?} */ i = 0, /** @type {?} */ strLen = input.length; i < strLen; i++) {
-        view[i] = input.charCodeAt(i);
-    }
-    return view.buffer;
-}
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- * @param {?=} rawParams
- * @return {?}
- */
-function paramParser(rawParams) {
-    if (rawParams === void 0) { rawParams = ''; }
-    var /** @type {?} */ map = new Map();
-    if (rawParams.length > 0) {
-        var /** @type {?} */ params = rawParams.split('&');
-        params.forEach(function (param) {
-            var /** @type {?} */ eqIdx = param.indexOf('=');
-            var _a = eqIdx == -1 ? [param, ''] : [param.slice(0, eqIdx), param.slice(eqIdx + 1)], key = _a[0], val = _a[1];
-            var /** @type {?} */ list = map.get(key) || [];
-            list.push(val);
-            map.set(key, list);
-        });
-    }
-    return map;
-}
-/**
- * \@experimental
- *
- */
-var QueryEncoder = (function () {
-    function QueryEncoder() {
-    }
-    /**
-     * @param {?} k
-     * @return {?}
-     */
-    QueryEncoder.prototype.encodeKey = function (k) { return standardEncoding(k); };
-    /**
-     * @param {?} v
-     * @return {?}
-     */
-    QueryEncoder.prototype.encodeValue = function (v) { return standardEncoding(v); };
-    return QueryEncoder;
-}());
-/**
- * @param {?} v
- * @return {?}
- */
-function standardEncoding(v) {
-    return encodeURIComponent(v)
-        .replace(/%40/gi, '@')
-        .replace(/%3A/gi, ':')
-        .replace(/%24/gi, '$')
-        .replace(/%2C/gi, ',')
-        .replace(/%3B/gi, ';')
-        .replace(/%2B/gi, '+')
-        .replace(/%3D/gi, '=')
-        .replace(/%3F/gi, '?')
-        .replace(/%2F/gi, '/');
-}
-/**
- * Map-like representation of url search parameters, based on
- * [URLSearchParams](https://url.spec.whatwg.org/#urlsearchparams) in the url living standard,
- * with several extensions for merging URLSearchParams objects:
- *   - setAll()
- *   - appendAll()
- *   - replaceAll()
- *
- * This class accepts an optional second parameter of ${\@link QueryEncoder},
- * which is used to serialize parameters before making a request. By default,
- * `QueryEncoder` encodes keys and values of parameters using `encodeURIComponent`,
- * and then un-encodes certain characters that are allowed to be part of the query
- * according to IETF RFC 3986: https://tools.ietf.org/html/rfc3986.
- *
- * These are the characters that are not encoded: `! $ \' ( ) * + , ; A 9 - . _ ~ ? /`
- *
- * If the set of allowed query characters is not acceptable for a particular backend,
- * `QueryEncoder` can be subclassed and provided as the 2nd argument to URLSearchParams.
- *
- * ```
- * import {URLSearchParams, QueryEncoder} from '\@angular/http';
- * class MyQueryEncoder extends QueryEncoder {
- *   encodeKey(k: string): string {
- *     return myEncodingFunction(k);
- *   }
- *
- *   encodeValue(v: string): string {
- *     return myEncodingFunction(v);
- *   }
- * }
- *
- * let params = new URLSearchParams('', new MyQueryEncoder());
- * ```
- * \@experimental
- */
-var URLSearchParams = (function () {
-    /**
-     * @param {?=} rawParams
-     * @param {?=} queryEncoder
-     */
-    function URLSearchParams(rawParams, queryEncoder) {
-        if (rawParams === void 0) { rawParams = ''; }
-        if (queryEncoder === void 0) { queryEncoder = new QueryEncoder(); }
-        this.rawParams = rawParams;
-        this.queryEncoder = queryEncoder;
-        this.paramsMap = paramParser(rawParams);
-    }
-    /**
-     * @return {?}
-     */
-    URLSearchParams.prototype.clone = function () {
-        var /** @type {?} */ clone = new URLSearchParams('', this.queryEncoder);
-        clone.appendAll(this);
-        return clone;
-    };
-    /**
-     * @param {?} param
-     * @return {?}
-     */
-    URLSearchParams.prototype.has = function (param) { return this.paramsMap.has(param); };
-    /**
-     * @param {?} param
-     * @return {?}
-     */
-    URLSearchParams.prototype.get = function (param) {
-        var /** @type {?} */ storedParam = this.paramsMap.get(param);
-        return Array.isArray(storedParam) ? storedParam[0] : null;
-    };
-    /**
-     * @param {?} param
-     * @return {?}
-     */
-    URLSearchParams.prototype.getAll = function (param) { return this.paramsMap.get(param) || []; };
-    /**
-     * @param {?} param
-     * @param {?} val
-     * @return {?}
-     */
-    URLSearchParams.prototype.set = function (param, val) {
-        if (val === void 0 || val === null) {
-            this.delete(param);
-            return;
-        }
-        var /** @type {?} */ list = this.paramsMap.get(param) || [];
-        list.length = 0;
-        list.push(val);
-        this.paramsMap.set(param, list);
-    };
-    /**
-     * @param {?} searchParams
-     * @return {?}
-     */
-    URLSearchParams.prototype.setAll = function (searchParams) {
-        var _this = this;
-        searchParams.paramsMap.forEach(function (value, param) {
-            var /** @type {?} */ list = _this.paramsMap.get(param) || [];
-            list.length = 0;
-            list.push(value[0]);
-            _this.paramsMap.set(param, list);
-        });
-    };
-    /**
-     * @param {?} param
-     * @param {?} val
-     * @return {?}
-     */
-    URLSearchParams.prototype.append = function (param, val) {
-        if (val === void 0 || val === null)
-            return;
-        var /** @type {?} */ list = this.paramsMap.get(param) || [];
-        list.push(val);
-        this.paramsMap.set(param, list);
-    };
-    /**
-     * @param {?} searchParams
-     * @return {?}
-     */
-    URLSearchParams.prototype.appendAll = function (searchParams) {
-        var _this = this;
-        searchParams.paramsMap.forEach(function (value, param) {
-            var /** @type {?} */ list = _this.paramsMap.get(param) || [];
-            for (var /** @type {?} */ i = 0; i < value.length; ++i) {
-                list.push(value[i]);
-            }
-            _this.paramsMap.set(param, list);
-        });
-    };
-    /**
-     * @param {?} searchParams
-     * @return {?}
-     */
-    URLSearchParams.prototype.replaceAll = function (searchParams) {
-        var _this = this;
-        searchParams.paramsMap.forEach(function (value, param) {
-            var /** @type {?} */ list = _this.paramsMap.get(param) || [];
-            list.length = 0;
-            for (var /** @type {?} */ i = 0; i < value.length; ++i) {
-                list.push(value[i]);
-            }
-            _this.paramsMap.set(param, list);
-        });
-    };
-    /**
-     * @return {?}
-     */
-    URLSearchParams.prototype.toString = function () {
-        var _this = this;
-        var /** @type {?} */ paramsList = [];
-        this.paramsMap.forEach(function (values, k) {
-            values.forEach(function (v) { return paramsList.push(_this.queryEncoder.encodeKey(k) + '=' + _this.queryEncoder.encodeValue(v)); });
-        });
-        return paramsList.join('&');
-    };
-    /**
-     * @param {?} param
-     * @return {?}
-     */
-    URLSearchParams.prototype.delete = function (param) { this.paramsMap.delete(param); };
-    return URLSearchParams;
-}());
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * HTTP request body used by both {\@link Request} and {\@link Response}
- * https://fetch.spec.whatwg.org/#body
- * @abstract
- */
-var Body = (function () {
-    function Body() {
-    }
-    /**
-     * Attempts to return body as parsed `JSON` object, or raises an exception.
-     * @return {?}
-     */
-    Body.prototype.json = function () {
-        if (typeof this._body === 'string') {
-            return JSON.parse(/** @type {?} */ (this._body));
-        }
-        if (this._body instanceof ArrayBuffer) {
-            return JSON.parse(this.text());
-        }
-        return this._body;
-    };
-    /**
-     * Returns the body as a string, presuming `toString()` can be called on the response body.
-     *
-     * When decoding an `ArrayBuffer`, the optional `encodingHint` parameter determines how the
-     * bytes in the buffer will be interpreted. Valid values are:
-     *
-     * - `legacy` - incorrectly interpret the bytes as UTF-16 (technically, UCS-2). Only characters
-     *   in the Basic Multilingual Plane are supported, surrogate pairs are not handled correctly.
-     *   In addition, the endianness of the 16-bit octet pairs in the `ArrayBuffer` is not taken
-     *   into consideration. This is the default behavior to avoid breaking apps, but should be
-     *   considered deprecated.
-     *
-     * - `iso-8859` - interpret the bytes as ISO-8859 (which can be used for ASCII encoded text).
-     * @param {?=} encodingHint
-     * @return {?}
-     */
-    Body.prototype.text = function (encodingHint) {
-        if (encodingHint === void 0) { encodingHint = 'legacy'; }
-        if (this._body instanceof URLSearchParams) {
-            return this._body.toString();
-        }
-        if (this._body instanceof ArrayBuffer) {
-            switch (encodingHint) {
-                case 'legacy':
-                    return String.fromCharCode.apply(null, new Uint16Array(/** @type {?} */ (this._body)));
-                case 'iso-8859':
-                    return String.fromCharCode.apply(null, new Uint8Array(/** @type {?} */ (this._body)));
-                default:
-                    throw new Error("Invalid value for encodingHint: " + encodingHint);
-            }
-        }
-        if (this._body == null) {
-            return '';
-        }
-        if (typeof this._body === 'object') {
-            return JSON.stringify(this._body, null, 2);
-        }
-        return this._body.toString();
-    };
-    /**
-     * Return the body as an ArrayBuffer
-     * @return {?}
-     */
-    Body.prototype.arrayBuffer = function () {
-        if (this._body instanceof ArrayBuffer) {
-            return (this._body);
-        }
-        return stringToArrayBuffer(this.text());
-    };
-    /**
-     * Returns the request's body as a Blob, assuming that body exists.
-     * @return {?}
-     */
-    Body.prototype.blob = function () {
-        if (this._body instanceof Blob) {
-            return (this._body);
-        }
-        if (this._body instanceof ArrayBuffer) {
-            return new Blob([this._body]);
-        }
-        throw new Error('The request body isn\'t either a blob or an array buffer');
-    };
-    return Body;
-}());
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * Creates `Response` instances from provided values.
- *
- * Though this object isn't
- * usually instantiated by end-users, it is the primary object interacted with when it comes time to
- * add data to a view.
- *
- * ### Example
- *
- * ```
- * http.request('my-friends.txt').subscribe(response => this.friends = response.text());
- * ```
- *
- * The Response's interface is inspired by the Response constructor defined in the [Fetch
- * Spec](https://fetch.spec.whatwg.org/#response-class), but is considered a static value whose body
- * can be accessed many times. There are other differences in the implementation, but this is the
- * most significant.
- *
- * \@experimental
- */
-var Response = (function (_super) {
-    __extends(Response, _super);
-    /**
-     * @param {?} responseOptions
-     */
-    function Response(responseOptions) {
-        var _this = _super.call(this) || this;
-        _this._body = responseOptions.body;
-        _this.status = responseOptions.status;
-        _this.ok = (_this.status >= 200 && _this.status <= 299);
-        _this.statusText = responseOptions.statusText;
-        _this.headers = responseOptions.headers;
-        _this.type = responseOptions.type;
-        _this.url = responseOptions.url;
-        return _this;
-    }
-    /**
-     * @return {?}
-     */
-    Response.prototype.toString = function () {
-        return "Response with status: " + this.status + " " + this.statusText + " for URL: " + this.url;
-    };
-    return Response;
-}(Body));
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-var _nextRequestId = 0;
-var JSONP_HOME = '__ng_jsonp__';
-var _jsonpConnections = null;
-/**
- * @return {?}
- */
-function _getJsonpConnections() {
-    var /** @type {?} */ w = typeof window == 'object' ? window : {};
-    if (_jsonpConnections === null) {
-        _jsonpConnections = w[JSONP_HOME] = {};
-    }
-    return _jsonpConnections;
-}
-var BrowserJsonp = (function () {
-    function BrowserJsonp() {
-    }
-    /**
-     * @param {?} url
-     * @return {?}
-     */
-    BrowserJsonp.prototype.build = function (url) {
-        var /** @type {?} */ node = document.createElement('script');
-        node.src = url;
-        return node;
-    };
-    /**
-     * @return {?}
-     */
-    BrowserJsonp.prototype.nextRequestID = function () { return "__req" + _nextRequestId++; };
-    /**
-     * @param {?} id
-     * @return {?}
-     */
-    BrowserJsonp.prototype.requestCallback = function (id) { return JSONP_HOME + "." + id + ".finished"; };
-    /**
-     * @param {?} id
-     * @param {?} connection
-     * @return {?}
-     */
-    BrowserJsonp.prototype.exposeConnection = function (id, connection) {
-        var /** @type {?} */ connections = _getJsonpConnections();
-        connections[id] = connection;
-    };
-    /**
-     * @param {?} id
-     * @return {?}
-     */
-    BrowserJsonp.prototype.removeConnection = function (id) {
-        var /** @type {?} */ connections = _getJsonpConnections();
-        connections[id] = null;
-    };
-    /**
-     * @param {?} node
-     * @return {?}
-     */
-    BrowserJsonp.prototype.send = function (node) { document.body.appendChild(/** @type {?} */ ((node))); };
-    /**
-     * @param {?} node
-     * @return {?}
-     */
-    BrowserJsonp.prototype.cleanup = function (node) {
-        if (node.parentNode) {
-            node.parentNode.removeChild(/** @type {?} */ ((node)));
-        }
-    };
-    return BrowserJsonp;
-}());
-BrowserJsonp.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/**
- * @nocollapse
- */
-BrowserJsonp.ctorParameters = function () { return []; };
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-var JSONP_ERR_NO_CALLBACK = 'JSONP injected script did not invoke callback.';
-var JSONP_ERR_WRONG_METHOD = 'JSONP requests must use GET request method.';
-/**
- * Abstract base class for an in-flight JSONP request.
- *
- * \@experimental
- * @abstract
- */
-var JSONPConnection = (function () {
-    function JSONPConnection() {
-    }
-    /**
-     * Callback called when the JSONP request completes, to notify the application
-     * of the new data.
-     * @abstract
-     * @param {?=} data
-     * @return {?}
-     */
-    JSONPConnection.prototype.finished = function (data) { };
-    return JSONPConnection;
-}());
-var JSONPConnection_ = (function (_super) {
-    __extends(JSONPConnection_, _super);
-    /**
-     * @param {?} req
-     * @param {?} _dom
-     * @param {?=} baseResponseOptions
-     */
-    function JSONPConnection_(req, _dom, baseResponseOptions) {
-        var _this = _super.call(this) || this;
-        _this._dom = _dom;
-        _this.baseResponseOptions = baseResponseOptions;
-        _this._finished = false;
-        if (req.method !== RequestMethod.Get) {
-            throw new TypeError(JSONP_ERR_WRONG_METHOD);
-        }
-        _this.request = req;
-        _this.response = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"](function (responseObserver) {
-            _this.readyState = ReadyState.Loading;
-            var id = _this._id = _dom.nextRequestID();
-            _dom.exposeConnection(id, _this);
-            // Workaround Dart
-            // url = url.replace(/=JSONP_CALLBACK(&|$)/, `generated method`);
-            var callback = _dom.requestCallback(_this._id);
-            var url = req.url;
-            if (url.indexOf('=JSONP_CALLBACK&') > -1) {
-                url = url.replace('=JSONP_CALLBACK&', "=" + callback + "&");
-            }
-            else if (url.lastIndexOf('=JSONP_CALLBACK') === url.length - '=JSONP_CALLBACK'.length) {
-                url = url.substring(0, url.length - '=JSONP_CALLBACK'.length) + ("=" + callback);
-            }
-            var script = _this._script = _dom.build(url);
-            var onLoad = function (event) {
-                if (_this.readyState === ReadyState.Cancelled)
-                    return;
-                _this.readyState = ReadyState.Done;
-                _dom.cleanup(script);
-                if (!_this._finished) {
-                    var responseOptions_1 = new ResponseOptions({ body: JSONP_ERR_NO_CALLBACK, type: ResponseType.Error, url: url });
-                    if (baseResponseOptions) {
-                        responseOptions_1 = baseResponseOptions.merge(responseOptions_1);
-                    }
-                    responseObserver.error(new Response(responseOptions_1));
-                    return;
-                }
-                var responseOptions = new ResponseOptions({ body: _this._responseData, url: url });
-                if (_this.baseResponseOptions) {
-                    responseOptions = _this.baseResponseOptions.merge(responseOptions);
-                }
-                responseObserver.next(new Response(responseOptions));
-                responseObserver.complete();
-            };
-            var onError = function (error) {
-                if (_this.readyState === ReadyState.Cancelled)
-                    return;
-                _this.readyState = ReadyState.Done;
-                _dom.cleanup(script);
-                var responseOptions = new ResponseOptions({ body: error.message, type: ResponseType.Error });
-                if (baseResponseOptions) {
-                    responseOptions = baseResponseOptions.merge(responseOptions);
-                }
-                responseObserver.error(new Response(responseOptions));
-            };
-            script.addEventListener('load', onLoad);
-            script.addEventListener('error', onError);
-            _dom.send(script);
-            return function () {
-                _this.readyState = ReadyState.Cancelled;
-                script.removeEventListener('load', onLoad);
-                script.removeEventListener('error', onError);
-                _this._dom.cleanup(script);
-            };
-        });
-        return _this;
-    }
-    /**
-     * @param {?=} data
-     * @return {?}
-     */
-    JSONPConnection_.prototype.finished = function (data) {
-        // Don't leak connections
-        this._finished = true;
-        this._dom.removeConnection(this._id);
-        if (this.readyState === ReadyState.Cancelled)
-            return;
-        this._responseData = data;
-    };
-    return JSONPConnection_;
-}(JSONPConnection));
-/**
- * A {\@link ConnectionBackend} that uses the JSONP strategy of making requests.
- *
- * \@experimental
- * @abstract
- */
-var JSONPBackend = (function (_super) {
-    __extends(JSONPBackend, _super);
-    function JSONPBackend() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return JSONPBackend;
-}(ConnectionBackend));
-var JSONPBackend_ = (function (_super) {
-    __extends(JSONPBackend_, _super);
-    /**
-     * @param {?} _browserJSONP
-     * @param {?} _baseResponseOptions
-     */
-    function JSONPBackend_(_browserJSONP, _baseResponseOptions) {
-        var _this = _super.call(this) || this;
-        _this._browserJSONP = _browserJSONP;
-        _this._baseResponseOptions = _baseResponseOptions;
-        return _this;
-    }
-    /**
-     * @param {?} request
-     * @return {?}
-     */
-    JSONPBackend_.prototype.createConnection = function (request) {
-        return new JSONPConnection_(request, this._browserJSONP, this._baseResponseOptions);
-    };
-    return JSONPBackend_;
-}(JSONPBackend));
-JSONPBackend_.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/**
- * @nocollapse
- */
-JSONPBackend_.ctorParameters = function () { return [
-    { type: BrowserJsonp, },
-    { type: ResponseOptions, },
-]; };
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-var XSSI_PREFIX = /^\)\]\}',?\n/;
-/**
- * Creates connections using `XMLHttpRequest`. Given a fully-qualified
- * request, an `XHRConnection` will immediately create an `XMLHttpRequest` object and send the
- * request.
- *
- * This class would typically not be created or interacted with directly inside applications, though
- * the {\@link MockConnection} may be interacted with in tests.
- *
- * \@experimental
- */
-var XHRConnection = (function () {
-    /**
-     * @param {?} req
-     * @param {?} browserXHR
-     * @param {?=} baseResponseOptions
-     */
-    function XHRConnection(req, browserXHR, baseResponseOptions) {
-        var _this = this;
-        this.request = req;
-        this.response = new __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["Observable"](function (responseObserver) {
-            var _xhr = browserXHR.build();
-            _xhr.open(RequestMethod[req.method].toUpperCase(), req.url);
-            if (req.withCredentials != null) {
-                _xhr.withCredentials = req.withCredentials;
-            }
-            // load event handler
-            var onLoad = function () {
-                // normalize IE9 bug (http://bugs.jquery.com/ticket/1450)
-                var status = _xhr.status === 1223 ? 204 : _xhr.status;
-                var body = null;
-                // HTTP 204 means no content
-                if (status !== 204) {
-                    // responseText is the old-school way of retrieving response (supported by IE8 & 9)
-                    // response/responseType properties were introduced in ResourceLoader Level2 spec
-                    // (supported by IE10)
-                    body = (typeof _xhr.response === 'undefined') ? _xhr.responseText : _xhr.response;
-                    // Implicitly strip a potential XSSI prefix.
-                    if (typeof body === 'string') {
-                        body = body.replace(XSSI_PREFIX, '');
-                    }
-                }
-                // fix status code when it is 0 (0 status is undocumented).
-                // Occurs when accessing file resources or on Android 4.1 stock browser
-                // while retrieving files from application cache.
-                if (status === 0) {
-                    status = body ? 200 : 0;
-                }
-                var headers = Headers.fromResponseHeaderString(_xhr.getAllResponseHeaders());
-                // IE 9 does not provide the way to get URL of response
-                var url = getResponseURL(_xhr) || req.url;
-                var statusText = _xhr.statusText || 'OK';
-                var responseOptions = new ResponseOptions({ body: body, status: status, headers: headers, statusText: statusText, url: url });
-                if (baseResponseOptions != null) {
-                    responseOptions = baseResponseOptions.merge(responseOptions);
-                }
-                var response = new Response(responseOptions);
-                response.ok = isSuccess(status);
-                if (response.ok) {
-                    responseObserver.next(response);
-                    // TODO(gdi2290): defer complete if array buffer until done
-                    responseObserver.complete();
-                    return;
-                }
-                responseObserver.error(response);
-            };
-            // error event handler
-            var onError = function (err) {
-                var responseOptions = new ResponseOptions({
-                    body: err,
-                    type: ResponseType.Error,
-                    status: _xhr.status,
-                    statusText: _xhr.statusText,
-                });
-                if (baseResponseOptions != null) {
-                    responseOptions = baseResponseOptions.merge(responseOptions);
-                }
-                responseObserver.error(new Response(responseOptions));
-            };
-            _this.setDetectedContentType(req, _xhr);
-            if (req.headers == null) {
-                req.headers = new Headers();
-            }
-            if (!req.headers.has('Accept')) {
-                req.headers.append('Accept', 'application/json, text/plain, */*');
-            }
-            req.headers.forEach(function (values, name) { return _xhr.setRequestHeader(name, values.join(',')); });
-            // Select the correct buffer type to store the response
-            if (req.responseType != null && _xhr.responseType != null) {
-                switch (req.responseType) {
-                    case ResponseContentType.ArrayBuffer:
-                        _xhr.responseType = 'arraybuffer';
-                        break;
-                    case ResponseContentType.Json:
-                        _xhr.responseType = 'json';
-                        break;
-                    case ResponseContentType.Text:
-                        _xhr.responseType = 'text';
-                        break;
-                    case ResponseContentType.Blob:
-                        _xhr.responseType = 'blob';
-                        break;
-                    default:
-                        throw new Error('The selected responseType is not supported');
-                }
-            }
-            _xhr.addEventListener('load', onLoad);
-            _xhr.addEventListener('error', onError);
-            _xhr.send(_this.request.getBody());
-            return function () {
-                _xhr.removeEventListener('load', onLoad);
-                _xhr.removeEventListener('error', onError);
-                _xhr.abort();
-            };
-        });
-    }
-    /**
-     * @param {?} req
-     * @param {?} _xhr
-     * @return {?}
-     */
-    XHRConnection.prototype.setDetectedContentType = function (req /** TODO Request */, _xhr /** XMLHttpRequest */) {
-        // Skip if a custom Content-Type header is provided
-        if (req.headers != null && req.headers.get('Content-Type') != null) {
-            return;
-        }
-        // Set the detected content type
-        switch (req.contentType) {
-            case ContentType.NONE:
-                break;
-            case ContentType.JSON:
-                _xhr.setRequestHeader('content-type', 'application/json');
-                break;
-            case ContentType.FORM:
-                _xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-                break;
-            case ContentType.TEXT:
-                _xhr.setRequestHeader('content-type', 'text/plain');
-                break;
-            case ContentType.BLOB:
-                var /** @type {?} */ blob = req.blob();
-                if (blob.type) {
-                    _xhr.setRequestHeader('content-type', blob.type);
-                }
-                break;
-        }
-    };
-    return XHRConnection;
-}());
-/**
- * `XSRFConfiguration` sets up Cross Site Request Forgery (XSRF) protection for the application
- * using a cookie. See https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)
- * for more information on XSRF.
- *
- * Applications can configure custom cookie and header names by binding an instance of this class
- * with different `cookieName` and `headerName` values. See the main HTTP documentation for more
- * details.
- *
- * \@experimental
- */
-var CookieXSRFStrategy = (function () {
-    /**
-     * @param {?=} _cookieName
-     * @param {?=} _headerName
-     */
-    function CookieXSRFStrategy(_cookieName, _headerName) {
-        if (_cookieName === void 0) { _cookieName = 'XSRF-TOKEN'; }
-        if (_headerName === void 0) { _headerName = 'X-XSRF-TOKEN'; }
-        this._cookieName = _cookieName;
-        this._headerName = _headerName;
-    }
-    /**
-     * @param {?} req
-     * @return {?}
-     */
-    CookieXSRFStrategy.prototype.configureRequest = function (req) {
-        var /** @type {?} */ xsrfToken = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__["b" /* ɵgetDOM */])().getCookie(this._cookieName);
-        if (xsrfToken) {
-            req.headers.set(this._headerName, xsrfToken);
-        }
-    };
-    return CookieXSRFStrategy;
-}());
-/**
- * Creates {\@link XHRConnection} instances.
- *
- * This class would typically not be used by end users, but could be
- * overridden if a different backend implementation should be used,
- * such as in a node backend.
- *
- * ### Example
- *
- * ```
- * import {Http, MyNodeBackend, HTTP_PROVIDERS, BaseRequestOptions} from '\@angular/http';
- * \@Component({
- *   viewProviders: [
- *     HTTP_PROVIDERS,
- *     {provide: Http, useFactory: (backend, options) => {
- *       return new Http(backend, options);
- *     }, deps: [MyNodeBackend, BaseRequestOptions]}]
- * })
- * class MyComponent {
- *   constructor(http:Http) {
- *     http.request('people.json').subscribe(res => this.people = res.json());
- *   }
- * }
- * ```
- * \@experimental
- */
-var XHRBackend = (function () {
-    /**
-     * @param {?} _browserXHR
-     * @param {?} _baseResponseOptions
-     * @param {?} _xsrfStrategy
-     */
-    function XHRBackend(_browserXHR, _baseResponseOptions, _xsrfStrategy) {
-        this._browserXHR = _browserXHR;
-        this._baseResponseOptions = _baseResponseOptions;
-        this._xsrfStrategy = _xsrfStrategy;
-    }
-    /**
-     * @param {?} request
-     * @return {?}
-     */
-    XHRBackend.prototype.createConnection = function (request) {
-        this._xsrfStrategy.configureRequest(request);
-        return new XHRConnection(request, this._browserXHR, this._baseResponseOptions);
-    };
-    return XHRBackend;
-}());
-XHRBackend.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/**
- * @nocollapse
- */
-XHRBackend.ctorParameters = function () { return [
-    { type: BrowserXhr, },
-    { type: ResponseOptions, },
-    { type: XSRFStrategy, },
-]; };
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * Creates a request options object to be optionally provided when instantiating a
- * {\@link Request}.
- *
- * This class is based on the `RequestInit` description in the [Fetch
- * Spec](https://fetch.spec.whatwg.org/#requestinit).
- *
- * All values are null by default. Typical defaults can be found in the {\@link BaseRequestOptions}
- * class, which sub-classes `RequestOptions`.
- *
- * ```typescript
- * import {RequestOptions, Request, RequestMethod} from '\@angular/http';
- *
- * const options = new RequestOptions({
- *   method: RequestMethod.Post,
- *   url: 'https://google.com'
- * });
- * const req = new Request(options);
- * console.log('req.method:', RequestMethod[req.method]); // Post
- * console.log('options.url:', options.url); // https://google.com
- * ```
- *
- * \@experimental
- */
-var RequestOptions = (function () {
-    /**
-     * @param {?=} __0
-     */
-    function RequestOptions(_a) {
-        var _b = _a === void 0 ? {} : _a, method = _b.method, headers = _b.headers, body = _b.body, url = _b.url, search = _b.search, params = _b.params, withCredentials = _b.withCredentials, responseType = _b.responseType;
-        this.method = method != null ? normalizeMethodName(method) : null;
-        this.headers = headers != null ? headers : null;
-        this.body = body != null ? body : null;
-        this.url = url != null ? url : null;
-        this.params = this._mergeSearchParams(params || search);
-        this.withCredentials = withCredentials != null ? withCredentials : null;
-        this.responseType = responseType != null ? responseType : null;
-    }
-    Object.defineProperty(RequestOptions.prototype, "search", {
-        /**
-         * @deprecated from 4.0.0. Use params instead.
-         * @return {?}
-         */
-        get: function () { return this.params; },
-        /**
-         * @deprecated from 4.0.0. Use params instead.
-         * @param {?} params
-         * @return {?}
-         */
-        set: function (params) { this.params = params; },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Creates a copy of the `RequestOptions` instance, using the optional input as values to override
-     * existing values. This method will not change the values of the instance on which it is being
-     * called.
-     *
-     * Note that `headers` and `search` will override existing values completely if present in
-     * the `options` object. If these values should be merged, it should be done prior to calling
-     * `merge` on the `RequestOptions` instance.
-     *
-     * ```typescript
-     * import {RequestOptions, Request, RequestMethod} from '\@angular/http';
-     *
-     * const options = new RequestOptions({
-     *   method: RequestMethod.Post
-     * });
-     * const req = new Request(options.merge({
-     *   url: 'https://google.com'
-     * }));
-     * console.log('req.method:', RequestMethod[req.method]); // Post
-     * console.log('options.url:', options.url); // null
-     * console.log('req.url:', req.url); // https://google.com
-     * ```
-     * @param {?=} options
-     * @return {?}
-     */
-    RequestOptions.prototype.merge = function (options) {
-        return new RequestOptions({
-            method: options && options.method != null ? options.method : this.method,
-            headers: options && options.headers != null ? options.headers : new Headers(this.headers),
-            body: options && options.body != null ? options.body : this.body,
-            url: options && options.url != null ? options.url : this.url,
-            params: options && this._mergeSearchParams(options.params || options.search),
-            withCredentials: options && options.withCredentials != null ? options.withCredentials :
-                this.withCredentials,
-            responseType: options && options.responseType != null ? options.responseType :
-                this.responseType
-        });
-    };
-    /**
-     * @param {?=} params
-     * @return {?}
-     */
-    RequestOptions.prototype._mergeSearchParams = function (params) {
-        if (!params)
-            return this.params;
-        if (params instanceof URLSearchParams) {
-            return params.clone();
-        }
-        if (typeof params === 'string') {
-            return new URLSearchParams(params);
-        }
-        return this._parseParams(params);
-    };
-    /**
-     * @param {?=} objParams
-     * @return {?}
-     */
-    RequestOptions.prototype._parseParams = function (objParams) {
-        var _this = this;
-        if (objParams === void 0) { objParams = {}; }
-        var /** @type {?} */ params = new URLSearchParams();
-        Object.keys(objParams).forEach(function (key) {
-            var /** @type {?} */ value = objParams[key];
-            if (Array.isArray(value)) {
-                value.forEach(function (item) { return _this._appendParam(key, item, params); });
-            }
-            else {
-                _this._appendParam(key, value, params);
-            }
-        });
-        return params;
-    };
-    /**
-     * @param {?} key
-     * @param {?} value
-     * @param {?} params
-     * @return {?}
-     */
-    RequestOptions.prototype._appendParam = function (key, value, params) {
-        if (typeof value !== 'string') {
-            value = JSON.stringify(value);
-        }
-        params.append(key, value);
-    };
-    return RequestOptions;
-}());
-/**
- * Subclass of {\@link RequestOptions}, with default values.
- *
- * Default values:
- *  * method: {\@link RequestMethod RequestMethod.Get}
- *  * headers: empty {\@link Headers} object
- *
- * This class could be extended and bound to the {\@link RequestOptions} class
- * when configuring an {\@link Injector}, in order to override the default options
- * used by {\@link Http} to create and send {\@link Request Requests}.
- *
- * ```typescript
- * import {BaseRequestOptions, RequestOptions} from '\@angular/http';
- *
- * class MyOptions extends BaseRequestOptions {
- *   search: string = 'coreTeam=true';
- * }
- *
- * {provide: RequestOptions, useClass: MyOptions};
- * ```
- *
- * The options could also be extended when manually creating a {\@link Request}
- * object.
- *
- * ```
- * import {BaseRequestOptions, Request, RequestMethod} from '\@angular/http';
- *
- * const options = new BaseRequestOptions();
- * const req = new Request(options.merge({
- *   method: RequestMethod.Post,
- *   url: 'https://google.com'
- * }));
- * console.log('req.method:', RequestMethod[req.method]); // Post
- * console.log('options.url:', options.url); // null
- * console.log('req.url:', req.url); // https://google.com
- * ```
- *
- * \@experimental
- */
-var BaseRequestOptions = (function (_super) {
-    __extends(BaseRequestOptions, _super);
-    function BaseRequestOptions() {
-        return _super.call(this, { method: RequestMethod.Get, headers: new Headers() }) || this;
-    }
-    return BaseRequestOptions;
-}(RequestOptions));
-BaseRequestOptions.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/**
- * @nocollapse
- */
-BaseRequestOptions.ctorParameters = function () { return []; };
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * Creates `Request` instances from provided values.
- *
- * The Request's interface is inspired by the Request constructor defined in the [Fetch
- * Spec](https://fetch.spec.whatwg.org/#request-class),
- * but is considered a static value whose body can be accessed many times. There are other
- * differences in the implementation, but this is the most significant.
- *
- * `Request` instances are typically created by higher-level classes, like {\@link Http} and
- * {\@link Jsonp}, but it may occasionally be useful to explicitly create `Request` instances.
- * One such example is when creating services that wrap higher-level services, like {\@link Http},
- * where it may be useful to generate a `Request` with arbitrary headers and search params.
- *
- * ```typescript
- * import {Injectable, Injector} from '\@angular/core';
- * import {HTTP_PROVIDERS, Http, Request, RequestMethod} from '\@angular/http';
- *
- * \@Injectable()
- * class AutoAuthenticator {
- *   constructor(public http:Http) {}
- *   request(url:string) {
- *     return this.http.request(new Request({
- *       method: RequestMethod.Get,
- *       url: url,
- *       search: 'password=123'
- *     }));
- *   }
- * }
- *
- * var injector = Injector.resolveAndCreate([HTTP_PROVIDERS, AutoAuthenticator]);
- * var authenticator = injector.get(AutoAuthenticator);
- * authenticator.request('people.json').subscribe(res => {
- *   //URL should have included '?password=123'
- *   console.log('people', res.json());
- * });
- * ```
- *
- * \@experimental
- */
-var Request = (function (_super) {
-    __extends(Request, _super);
-    /**
-     * @param {?} requestOptions
-     */
-    function Request(requestOptions) {
-        var _this = _super.call(this) || this;
-        // TODO: assert that url is present
-        var url = requestOptions.url;
-        _this.url = requestOptions.url;
-        var paramsArg = requestOptions.params || requestOptions.search;
-        if (paramsArg) {
-            var params = void 0;
-            if (typeof paramsArg === 'object' && !(paramsArg instanceof URLSearchParams)) {
-                params = urlEncodeParams(paramsArg).toString();
-            }
-            else {
-                params = paramsArg.toString();
-            }
-            if (params.length > 0) {
-                var prefix = '?';
-                if (_this.url.indexOf('?') != -1) {
-                    prefix = (_this.url[_this.url.length - 1] == '&') ? '' : '&';
-                }
-                // TODO: just delete search-query-looking string in url?
-                _this.url = url + prefix + params;
-            }
-        }
-        _this._body = requestOptions.body;
-        _this.method = normalizeMethodName(requestOptions.method);
-        // TODO(jeffbcross): implement behavior
-        // Defaults to 'omit', consistent with browser
-        _this.headers = new Headers(requestOptions.headers);
-        _this.contentType = _this.detectContentType();
-        _this.withCredentials = requestOptions.withCredentials;
-        _this.responseType = requestOptions.responseType;
-        return _this;
-    }
-    /**
-     * Returns the content type enum based on header options.
-     * @return {?}
-     */
-    Request.prototype.detectContentType = function () {
-        switch (this.headers.get('content-type')) {
-            case 'application/json':
-                return ContentType.JSON;
-            case 'application/x-www-form-urlencoded':
-                return ContentType.FORM;
-            case 'multipart/form-data':
-                return ContentType.FORM_DATA;
-            case 'text/plain':
-            case 'text/html':
-                return ContentType.TEXT;
-            case 'application/octet-stream':
-                return this._body instanceof ArrayBuffer$1 ? ContentType.ARRAY_BUFFER : ContentType.BLOB;
-            default:
-                return this.detectContentTypeFromBody();
-        }
-    };
-    /**
-     * Returns the content type of request's body based on its type.
-     * @return {?}
-     */
-    Request.prototype.detectContentTypeFromBody = function () {
-        if (this._body == null) {
-            return ContentType.NONE;
-        }
-        else if (this._body instanceof URLSearchParams) {
-            return ContentType.FORM;
-        }
-        else if (this._body instanceof FormData) {
-            return ContentType.FORM_DATA;
-        }
-        else if (this._body instanceof Blob$1) {
-            return ContentType.BLOB;
-        }
-        else if (this._body instanceof ArrayBuffer$1) {
-            return ContentType.ARRAY_BUFFER;
-        }
-        else if (this._body && typeof this._body === 'object') {
-            return ContentType.JSON;
-        }
-        else {
-            return ContentType.TEXT;
-        }
-    };
-    /**
-     * Returns the request's body according to its type. If body is undefined, return
-     * null.
-     * @return {?}
-     */
-    Request.prototype.getBody = function () {
-        switch (this.contentType) {
-            case ContentType.JSON:
-                return this.text();
-            case ContentType.FORM:
-                return this.text();
-            case ContentType.FORM_DATA:
-                return this._body;
-            case ContentType.TEXT:
-                return this.text();
-            case ContentType.BLOB:
-                return this.blob();
-            case ContentType.ARRAY_BUFFER:
-                return this.arrayBuffer();
-            default:
-                return null;
-        }
-    };
-    return Request;
-}(Body));
-/**
- * @param {?} params
- * @return {?}
- */
-function urlEncodeParams(params) {
-    var /** @type {?} */ searchParams = new URLSearchParams();
-    Object.keys(params).forEach(function (key) {
-        var /** @type {?} */ value = params[key];
-        if (value && Array.isArray(value)) {
-            value.forEach(function (element) { return searchParams.append(key, element.toString()); });
-        }
-        else {
-            searchParams.append(key, value.toString());
-        }
-    });
-    return searchParams;
-}
-var noop = function () { };
-var w = typeof window == 'object' ? window : noop;
-var FormData = ((w) /** TODO #9100 */)['FormData'] || noop;
-var Blob$1 = ((w) /** TODO #9100 */)['Blob'] || noop;
-var ArrayBuffer$1 = ((w) /** TODO #9100 */)['ArrayBuffer'] || noop;
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * @param {?} backend
- * @param {?} request
- * @return {?}
- */
-function httpRequest(backend, request) {
-    return backend.createConnection(request).response;
-}
-/**
- * @param {?} defaultOpts
- * @param {?} providedOpts
- * @param {?} method
- * @param {?} url
- * @return {?}
- */
-function mergeOptions(defaultOpts, providedOpts, method, url) {
-    var /** @type {?} */ newOptions = defaultOpts;
-    if (providedOpts) {
-        // Hack so Dart can used named parameters
-        return (newOptions.merge(new RequestOptions({
-            method: providedOpts.method || method,
-            url: providedOpts.url || url,
-            search: providedOpts.search,
-            params: providedOpts.params,
-            headers: providedOpts.headers,
-            body: providedOpts.body,
-            withCredentials: providedOpts.withCredentials,
-            responseType: providedOpts.responseType
-        })));
-    }
-    return (newOptions.merge(new RequestOptions({ method: method, url: url })));
-}
-/**
- * Performs http requests using `XMLHttpRequest` as the default backend.
- *
- * `Http` is available as an injectable class, with methods to perform http requests. Calling
- * `request` returns an `Observable` which will emit a single {\@link Response} when a
- * response is received.
- *
- * ### Example
- *
- * ```typescript
- * import {Http, HTTP_PROVIDERS} from '\@angular/http';
- * import 'rxjs/add/operator/map'
- * \@Component({
- *   selector: 'http-app',
- *   viewProviders: [HTTP_PROVIDERS],
- *   templateUrl: 'people.html'
- * })
- * class PeopleComponent {
- *   constructor(http: Http) {
- *     http.get('people.json')
- *       // Call map on the response observable to get the parsed people object
- *       .map(res => res.json())
- *       // Subscribe to the observable to get the parsed people object and attach it to the
- *       // component
- *       .subscribe(people => this.people = people);
- *   }
- * }
- * ```
- *
- *
- * ### Example
- *
- * ```
- * http.get('people.json').subscribe((res:Response) => this.people = res.json());
- * ```
- *
- * The default construct used to perform requests, `XMLHttpRequest`, is abstracted as a "Backend" (
- * {\@link XHRBackend} in this case), which could be mocked with dependency injection by replacing
- * the {\@link XHRBackend} provider, as in the following example:
- *
- * ### Example
- *
- * ```typescript
- * import {BaseRequestOptions, Http} from '\@angular/http';
- * import {MockBackend} from '\@angular/http/testing';
- * var injector = Injector.resolveAndCreate([
- *   BaseRequestOptions,
- *   MockBackend,
- *   {provide: Http, useFactory:
- *       function(backend, defaultOptions) {
- *         return new Http(backend, defaultOptions);
- *       },
- *       deps: [MockBackend, BaseRequestOptions]}
- * ]);
- * var http = injector.get(Http);
- * http.get('request-from-mock-backend.json').subscribe((res:Response) => doSomething(res));
- * ```
- *
- * \@experimental
- */
-var Http = (function () {
-    /**
-     * @param {?} _backend
-     * @param {?} _defaultOptions
-     */
-    function Http(_backend, _defaultOptions) {
-        this._backend = _backend;
-        this._defaultOptions = _defaultOptions;
-    }
-    /**
-     * Performs any type of http request. First argument is required, and can either be a url or
-     * a {\@link Request} instance. If the first argument is a url, an optional {\@link RequestOptions}
-     * object can be provided as the 2nd argument. The options object will be merged with the values
-     * of {\@link BaseRequestOptions} before performing the request.
-     * @param {?} url
-     * @param {?=} options
-     * @return {?}
-     */
-    Http.prototype.request = function (url, options) {
-        var /** @type {?} */ responseObservable;
-        if (typeof url === 'string') {
-            responseObservable = httpRequest(this._backend, new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Get, /** @type {?} */ (url))));
-        }
-        else if (url instanceof Request) {
-            responseObservable = httpRequest(this._backend, url);
-        }
-        else {
-            throw new Error('First argument must be a url string or Request instance.');
-        }
-        return responseObservable;
-    };
-    /**
-     * Performs a request with `get` http method.
-     * @param {?} url
-     * @param {?=} options
-     * @return {?}
-     */
-    Http.prototype.get = function (url, options) {
-        return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Get, url)));
-    };
-    /**
-     * Performs a request with `post` http method.
-     * @param {?} url
-     * @param {?} body
-     * @param {?=} options
-     * @return {?}
-     */
-    Http.prototype.post = function (url, body, options) {
-        return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, RequestMethod.Post, url)));
-    };
-    /**
-     * Performs a request with `put` http method.
-     * @param {?} url
-     * @param {?} body
-     * @param {?=} options
-     * @return {?}
-     */
-    Http.prototype.put = function (url, body, options) {
-        return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, RequestMethod.Put, url)));
-    };
-    /**
-     * Performs a request with `delete` http method.
-     * @param {?} url
-     * @param {?=} options
-     * @return {?}
-     */
-    Http.prototype.delete = function (url, options) {
-        return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Delete, url)));
-    };
-    /**
-     * Performs a request with `patch` http method.
-     * @param {?} url
-     * @param {?} body
-     * @param {?=} options
-     * @return {?}
-     */
-    Http.prototype.patch = function (url, body, options) {
-        return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, RequestMethod.Patch, url)));
-    };
-    /**
-     * Performs a request with `head` http method.
-     * @param {?} url
-     * @param {?=} options
-     * @return {?}
-     */
-    Http.prototype.head = function (url, options) {
-        return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Head, url)));
-    };
-    /**
-     * Performs a request with `options` http method.
-     * @param {?} url
-     * @param {?=} options
-     * @return {?}
-     */
-    Http.prototype.options = function (url, options) {
-        return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Options, url)));
-    };
-    return Http;
-}());
-Http.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/**
- * @nocollapse
- */
-Http.ctorParameters = function () { return [
-    { type: ConnectionBackend, },
-    { type: RequestOptions, },
-]; };
-/**
- * \@experimental
- */
-var Jsonp = (function (_super) {
-    __extends(Jsonp, _super);
-    /**
-     * @param {?} backend
-     * @param {?} defaultOptions
-     */
-    function Jsonp(backend, defaultOptions) {
-        return _super.call(this, backend, defaultOptions) || this;
-    }
-    /**
-     * Performs any type of http request. First argument is required, and can either be a url or
-     * a {\@link Request} instance. If the first argument is a url, an optional {\@link RequestOptions}
-     * object can be provided as the 2nd argument. The options object will be merged with the values
-     * of {\@link BaseRequestOptions} before performing the request.
-     *
-     * \@security Regular XHR is the safest alternative to JSONP for most applications, and is
-     * supported by all current browsers. Because JSONP creates a `<script>` element with
-     * contents retrieved from a remote source, attacker-controlled data introduced by an untrusted
-     * source could expose your application to XSS risks. Data exposed by JSONP may also be
-     * readable by malicious third-party websites. In addition, JSONP introduces potential risk for
-     * future security issues (e.g. content sniffing).  For more detail, see the
-     * [Security Guide](http://g.co/ng/security).
-     * @param {?} url
-     * @param {?=} options
-     * @return {?}
-     */
-    Jsonp.prototype.request = function (url, options) {
-        var /** @type {?} */ responseObservable;
-        if (typeof url === 'string') {
-            url =
-                new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Get, /** @type {?} */ (url)));
-        }
-        if (url instanceof Request) {
-            if (url.method !== RequestMethod.Get) {
-                throw new Error('JSONP requests must use GET request method.');
-            }
-            responseObservable = httpRequest(this._backend, url);
-        }
-        else {
-            throw new Error('First argument must be a url string or Request instance.');
-        }
-        return responseObservable;
-    };
-    return Jsonp;
-}(Http));
-Jsonp.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/**
- * @nocollapse
- */
-Jsonp.ctorParameters = function () { return [
-    { type: ConnectionBackend, },
-    { type: RequestOptions, },
-]; };
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * @module
- * @description
- * The http module provides services to perform http requests. To get started, see the {@link Http}
- * class.
- */
-/**
- * @return {?}
- */
-function _createDefaultCookieXSRFStrategy() {
-    return new CookieXSRFStrategy();
-}
-/**
- * @param {?} xhrBackend
- * @param {?} requestOptions
- * @return {?}
- */
-function httpFactory(xhrBackend, requestOptions) {
-    return new Http(xhrBackend, requestOptions);
-}
-/**
- * @param {?} jsonpBackend
- * @param {?} requestOptions
- * @return {?}
- */
-function jsonpFactory(jsonpBackend, requestOptions) {
-    return new Jsonp(jsonpBackend, requestOptions);
-}
-/**
- * The module that includes http's providers
- *
- * \@experimental
- */
-var HttpModule = (function () {
-    function HttpModule() {
-    }
-    return HttpModule;
-}());
-HttpModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
-                providers: [
-                    // TODO(pascal): use factory type annotations once supported in DI
-                    // issue: https://github.com/angular/angular/issues/3183
-                    { provide: Http, useFactory: httpFactory, deps: [XHRBackend, RequestOptions] },
-                    BrowserXhr,
-                    { provide: RequestOptions, useClass: BaseRequestOptions },
-                    { provide: ResponseOptions, useClass: BaseResponseOptions },
-                    XHRBackend,
-                    { provide: XSRFStrategy, useFactory: _createDefaultCookieXSRFStrategy },
-                ],
-            },] },
-];
-/**
- * @nocollapse
- */
-HttpModule.ctorParameters = function () { return []; };
-/**
- * The module that includes jsonp's providers
- *
- * \@experimental
- */
-var JsonpModule = (function () {
-    function JsonpModule() {
-    }
-    return JsonpModule;
-}());
-JsonpModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
-                providers: [
-                    // TODO(pascal): use factory type annotations once supported in DI
-                    // issue: https://github.com/angular/angular/issues/3183
-                    { provide: Jsonp, useFactory: jsonpFactory, deps: [JSONPBackend, RequestOptions] },
-                    BrowserJsonp,
-                    { provide: RequestOptions, useClass: BaseRequestOptions },
-                    { provide: ResponseOptions, useClass: BaseResponseOptions },
-                    { provide: JSONPBackend, useClass: JSONPBackend_ },
-                ],
-            },] },
-];
-/**
- * @nocollapse
- */
-JsonpModule.ctorParameters = function () { return []; };
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * @module
- * @description
- * Entry point for all public APIs of the common package.
- */
-/**
- * \@stable
- */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["Version"]('4.1.3');
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
- * @module
- * @description
- * Entry point for all public APIs of the http package.
- */
-// This file only reexports content of the `src` folder. Keep it that way.
-/**
- * Generated bundle index. Do not edit.
- */
-
-//# sourceMappingURL=http.es5.js.map
-
-
-/***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38916,7 +38917,6 @@ function positionElements(hostElement, targetElement, placement, appendToBody) {
 //# sourceMappingURL=positioning.js.map
 
 /***/ }),
-/* 38 */,
 /* 39 */,
 /* 40 */,
 /* 41 */,
@@ -38924,6 +38924,17 @@ function positionElements(hostElement, targetElement, placement, appendToBody) {
 /* 43 */,
 /* 44 */,
 /* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var map_1 = __webpack_require__(83);
+Observable_1.Observable.prototype.map = map_1.map;
+//# sourceMappingURL=map.js.map
+
+/***/ }),
+/* 46 */
 /***/ (function(module, exports) {
 
 var g;
@@ -38950,7 +38961,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -38977,7 +38988,7 @@ NgbAccordionConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=accordion-config.js.map
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39005,7 +39016,7 @@ NgbAlertConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=alert-config.js.map
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39034,7 +39045,7 @@ NgbCarouselConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=carousel-config.js.map
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39066,19 +39077,19 @@ NgbDatepickerConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=datepicker-config.js.map
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngb_calendar__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_date__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datepicker_service__ = __webpack_require__(107);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__datepicker_view_model__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_date__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datepicker_service__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__datepicker_view_model__ = __webpack_require__(110);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_config__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_config__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__ = __webpack_require__(23);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepicker; });
 
 
@@ -39278,7 +39289,7 @@ NgbDatepicker.propDecorators = {
 //# sourceMappingURL=datepicker.js.map
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39333,7 +39344,7 @@ var NgbDateISOParserFormatter = (function (_super) {
 //# sourceMappingURL=ngb-date-parser-formatter.js.map
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39361,7 +39372,7 @@ NgbDropdownConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=dropdown-config.js.map
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39394,7 +39405,7 @@ NgbPaginationConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=pagination-config.js.map
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39422,7 +39433,7 @@ NgbPopoverConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=popover-config.js.map
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39452,7 +39463,7 @@ NgbProgressbarConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=progressbar-config.js.map
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39481,7 +39492,7 @@ NgbRatingConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=rating-config.js.map
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39509,7 +39520,7 @@ NgbTabsetConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=tabset-config.js.map
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39544,7 +39555,7 @@ NgbTimepickerConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=timepicker-config.js.map
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39572,7 +39583,7 @@ NgbTooltipConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=tooltip-config.js.map
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39601,7 +39612,7 @@ NgbTypeaheadConfig.ctorParameters = function () { return []; };
 //# sourceMappingURL=typeahead-config.js.map
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -39688,7 +39699,7 @@ NgbTypeaheadWindow.propDecorators = {
 //# sourceMappingURL=typeahead-window.js.map
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39709,7 +39720,6 @@ exports.FlashMessagesService = FlashMessagesService;
 //# sourceMappingURL=flash-messages.service.js.map
 
 /***/ }),
-/* 63 */,
 /* 64 */,
 /* 65 */,
 /* 66 */,
@@ -39725,7 +39735,8 @@ exports.FlashMessagesService = FlashMessagesService;
 /* 76 */,
 /* 77 */,
 /* 78 */,
-/* 79 */
+/* 79 */,
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39736,9 +39747,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(2);
-var ScalarObservable_1 = __webpack_require__(153);
-var EmptyObservable_1 = __webpack_require__(80);
-var isScheduler_1 = __webpack_require__(158);
+var ScalarObservable_1 = __webpack_require__(156);
+var EmptyObservable_1 = __webpack_require__(81);
+var isScheduler_1 = __webpack_require__(161);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -39853,7 +39864,7 @@ exports.ArrayObservable = ArrayObservable;
 //# sourceMappingURL=ArrayObservable.js.map
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39940,17 +39951,17 @@ exports.EmptyObservable = EmptyObservable;
 //# sourceMappingURL=EmptyObservable.js.map
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var PromiseObservable_1 = __webpack_require__(152);
+var PromiseObservable_1 = __webpack_require__(155);
 exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 //# sourceMappingURL=fromPromise.js.map
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40043,7 +40054,7 @@ var MapSubscriber = (function (_super) {
 //# sourceMappingURL=map.js.map
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40053,8 +40064,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var OuterSubscriber_1 = __webpack_require__(32);
-var subscribeToResult_1 = __webpack_require__(35);
+var OuterSubscriber_1 = __webpack_require__(34);
+var subscribeToResult_1 = __webpack_require__(37);
 /**
  * Converts a higher-order Observable into a first-order Observable which
  * concurrently delivers all values that are emitted on the inner Observables.
@@ -40160,7 +40171,7 @@ exports.MergeAllSubscriber = MergeAllSubscriber;
 //# sourceMappingURL=mergeAll.js.map
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40170,8 +40181,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var subscribeToResult_1 = __webpack_require__(35);
-var OuterSubscriber_1 = __webpack_require__(32);
+var subscribeToResult_1 = __webpack_require__(37);
+var OuterSubscriber_1 = __webpack_require__(34);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -40337,12 +40348,12 @@ exports.MergeMapSubscriber = MergeMapSubscriber;
 //# sourceMappingURL=mergeMap.js.map
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var root_1 = __webpack_require__(20);
+var root_1 = __webpack_require__(21);
 function symbolIteratorPonyfill(root) {
     var Symbol = root.Symbol;
     if (typeof Symbol === 'function') {
@@ -40381,12 +40392,12 @@ exports.$$iterator = exports.iterator;
 //# sourceMappingURL=iterator.js.map
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var root_1 = __webpack_require__(20);
+var root_1 = __webpack_require__(21);
 function getSymbolObservable(context) {
     var $$observable;
     var Symbol = context.Symbol;
@@ -40413,12 +40424,12 @@ exports.$$observable = exports.observable;
 //# sourceMappingURL=observable.js.map
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var root_1 = __webpack_require__(20);
+var root_1 = __webpack_require__(21);
 var Symbol = root_1.root.Symbol;
 exports.rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
     Symbol.for('rxSubscriber') : '@@rxSubscriber';
@@ -40429,7 +40440,7 @@ exports.$$rxSubscriber = exports.rxSubscriber;
 //# sourceMappingURL=rxSubscriber.js.map
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40463,7 +40474,7 @@ exports.EmptyError = EmptyError;
 //# sourceMappingURL=EmptyError.js.map
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40473,7 +40484,7 @@ exports.errorObject = { e: {} };
 //# sourceMappingURL=errorObject.js.map
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40482,7 +40493,7 @@ exports.isArray = Array.isArray || (function (x) { return x && typeof x.length =
 //# sourceMappingURL=isArray.js.map
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40494,3980 +40505,7 @@ exports.isFunction = isFunction;
 //# sourceMappingURL=isFunction.js.map
 
 /***/ }),
-/* 92 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion_config__ = __webpack_require__(46);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return NgbPanelTitle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return NgbPanelContent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbPanel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbAccordion; });
-
-
-
-var nextId = 0;
-/**
- * This directive should be used to wrap accordion panel titles that need to contain HTML markup or other directives.
- */
-var NgbPanelTitle = (function () {
-    function NgbPanelTitle(templateRef) {
-        this.templateRef = templateRef;
-    }
-    return NgbPanelTitle;
-}());
-
-NgbPanelTitle.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ng-template[ngbPanelTitle]' },] },
-];
-/** @nocollapse */
-NgbPanelTitle.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], },
-]; };
-/**
- * This directive must be used to wrap accordion panel content.
- */
-var NgbPanelContent = (function () {
-    function NgbPanelContent(templateRef) {
-        this.templateRef = templateRef;
-    }
-    return NgbPanelContent;
-}());
-
-NgbPanelContent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ng-template[ngbPanelContent]' },] },
-];
-/** @nocollapse */
-NgbPanelContent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], },
-]; };
-/**
- * The NgbPanel directive represents an individual panel with the title and collapsible
- * content
- */
-var NgbPanel = (function () {
-    function NgbPanel() {
-        /**
-         *  A flag determining whether the panel is disabled or not.
-         *  When disabled, the panel cannot be toggled.
-         */
-        this.disabled = false;
-        /**
-         *  An optional id for the panel. The id should be unique.
-         *  If not provided, it will be auto-generated.
-         */
-        this.id = "ngb-panel-" + nextId++;
-    }
-    return NgbPanel;
-}());
-
-NgbPanel.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ngb-panel' },] },
-];
-/** @nocollapse */
-NgbPanel.ctorParameters = function () { return []; };
-NgbPanel.propDecorators = {
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'title': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'contentTpl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [NgbPanelContent,] },],
-    'titleTpl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [NgbPanelTitle,] },],
-};
-/**
- * The NgbAccordion directive is a collection of panels.
- * It can assure that only one panel can be opened at a time.
- */
-var NgbAccordion = (function () {
-    function NgbAccordion(config) {
-        /**
-         * A map that stores each panel state
-         */
-        this._states = new Map();
-        /**
-         * A map that stores references to all panels
-         */
-        this._panelRefs = new Map();
-        /**
-         * An array or comma separated strings of panel identifiers that should be opened
-         */
-        this.activeIds = [];
-        /**
-         * A panel change event fired right before the panel toggle happens. See NgbPanelChangeEvent for payload details
-         */
-        this.panelChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.type = config.type;
-        this.closeOtherPanels = config.closeOthers;
-    }
-    /**
-     * Programmatically toggle a panel with a given id.
-     */
-    NgbAccordion.prototype.toggle = function (panelId) {
-        var panel = this._panelRefs.get(panelId);
-        if (panel && !panel.disabled) {
-            var nextState = !this._states.get(panelId);
-            var defaultPrevented_1 = false;
-            this.panelChange.emit({ panelId: panelId, nextState: nextState, preventDefault: function () { defaultPrevented_1 = true; } });
-            if (!defaultPrevented_1) {
-                this._states.set(panelId, nextState);
-                if (this.closeOtherPanels) {
-                    this._closeOthers(panelId);
-                }
-                this._updateActiveIds();
-            }
-        }
-    };
-    NgbAccordion.prototype.ngAfterContentChecked = function () {
-        // active id updates
-        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["h" /* isString */])(this.activeIds)) {
-            this.activeIds = this.activeIds.split(/\s*,\s*/);
-        }
-        this._updateStates();
-        // closeOthers updates
-        if (this.activeIds.length > 1 && this.closeOtherPanels) {
-            this._closeOthers(this.activeIds[0]);
-            this._updateActiveIds();
-        }
-    };
-    /**
-     * @internal
-     */
-    NgbAccordion.prototype.isOpen = function (panelId) { return this._states.get(panelId); };
-    NgbAccordion.prototype._closeOthers = function (panelId) {
-        var _this = this;
-        this._states.forEach(function (state, id) {
-            if (id !== panelId) {
-                _this._states.set(id, false);
-            }
-        });
-    };
-    NgbAccordion.prototype._updateActiveIds = function () {
-        var _this = this;
-        this.activeIds =
-            this.panels.toArray().filter(function (panel) { return _this.isOpen(panel.id) && !panel.disabled; }).map(function (panel) { return panel.id; });
-    };
-    NgbAccordion.prototype._updateStates = function () {
-        var _this = this;
-        this._states.clear();
-        this._panelRefs.clear();
-        this.panels.toArray().forEach(function (panel) {
-            _this._states.set(panel.id, _this.activeIds.indexOf(panel.id) > -1 && !panel.disabled);
-            _this._panelRefs.set(panel.id, panel);
-        });
-    };
-    return NgbAccordion;
-}());
-
-NgbAccordion.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-accordion',
-                exportAs: 'ngbAccordion',
-                host: { 'role': 'tablist', '[attr.aria-multiselectable]': '!closeOtherPanels' },
-                template: "\n  <div class=\"card\">\n    <ng-template ngFor let-panel [ngForOf]=\"panels\">\n      <div role=\"tab\" id=\"{{panel.id}}-header\"\n        [class]=\"'card-header ' + (panel.type ? 'card-'+panel.type: type ? 'card-'+type : '')\" [class.active]=\"isOpen(panel.id)\">\n        <a href (click)=\"!!toggle(panel.id)\" [class.text-muted]=\"panel.disabled\" [attr.tabindex]=\"(panel.disabled ? '-1' : null)\"\n          [attr.aria-expanded]=\"isOpen(panel.id)\" [attr.aria-controls]=\"(isOpen(panel.id) ? panel.id : null)\"\n          [attr.aria-disabled]=\"panel.disabled\">\n          {{panel.title}}<ng-template [ngTemplateOutlet]=\"panel.titleTpl?.templateRef\"></ng-template>\n        </a>\n      </div>\n      <div id=\"{{panel.id}}\" role=\"tabpanel\" [attr.aria-labelledby]=\"panel.id + '-header'\" class=\"card-block\" *ngIf=\"isOpen(panel.id)\">\n        <ng-template [ngTemplateOutlet]=\"panel.contentTpl.templateRef\"></ng-template>\n      </div>\n    </ng-template>\n  </div>\n"
-            },] },
-];
-/** @nocollapse */
-NgbAccordion.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_2__accordion_config__["a" /* NgbAccordionConfig */], },
-]; };
-NgbAccordion.propDecorators = {
-    'panels': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChildren"], args: [NgbPanel,] },],
-    'activeIds': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'closeOtherPanels': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['closeOthers',] },],
-    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'panelChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-//# sourceMappingURL=accordion.js.map
-
-/***/ }),
 /* 93 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion__ = __webpack_require__(92);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accordion_config__ = __webpack_require__(46);
-/* unused harmony reexport NgbAccordion */
-/* unused harmony reexport NgbPanel */
-/* unused harmony reexport NgbPanelTitle */
-/* unused harmony reexport NgbPanelContent */
-/* unused harmony reexport NgbAccordionConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbAccordionModule; });
-
-
-
-
-
-
-var NGB_ACCORDION_DIRECTIVES = [__WEBPACK_IMPORTED_MODULE_2__accordion__["a" /* NgbAccordion */], __WEBPACK_IMPORTED_MODULE_2__accordion__["b" /* NgbPanel */], __WEBPACK_IMPORTED_MODULE_2__accordion__["c" /* NgbPanelTitle */], __WEBPACK_IMPORTED_MODULE_2__accordion__["d" /* NgbPanelContent */]];
-var NgbAccordionModule = (function () {
-    function NgbAccordionModule() {
-    }
-    NgbAccordionModule.forRoot = function () { return { ngModule: NgbAccordionModule, providers: [__WEBPACK_IMPORTED_MODULE_3__accordion_config__["a" /* NgbAccordionConfig */]] }; };
-    return NgbAccordionModule;
-}());
-
-NgbAccordionModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: NGB_ACCORDION_DIRECTIVES, exports: NGB_ACCORDION_DIRECTIVES, imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
-];
-/** @nocollapse */
-NgbAccordionModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=accordion.module.js.map
-
-/***/ }),
-/* 94 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_config__ = __webpack_require__(47);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbAlert; });
-
-
-/**
- * Alerts can be used to provide feedback messages.
- */
-var NgbAlert = (function () {
-    function NgbAlert(config) {
-        /**
-         * An event emitted when the close button is clicked. This event has no payload. Only relevant for dismissible alerts.
-         */
-        this.close = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.dismissible = config.dismissible;
-        this.type = config.type;
-    }
-    NgbAlert.prototype.closeHandler = function () { this.close.emit(null); };
-    return NgbAlert;
-}());
-
-NgbAlert.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-alert',
-                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
-                template: "\n    <div [class]=\"'alert alert-' + type + (dismissible ? ' alert-dismissible' : '')\" role=\"alert\">\n      <button *ngIf=\"dismissible\" type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeHandler()\">\n            <span aria-hidden=\"true\">&times;</span>\n      </button>\n      <ng-content></ng-content>\n    </div>\n    "
-            },] },
-];
-/** @nocollapse */
-NgbAlert.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__alert_config__["a" /* NgbAlertConfig */], },
-]; };
-NgbAlert.propDecorators = {
-    'dismissible': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'close': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-//# sourceMappingURL=alert.js.map
-
-/***/ }),
-/* 95 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__alert_config__ = __webpack_require__(47);
-/* unused harmony reexport NgbAlert */
-/* unused harmony reexport NgbAlertConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbAlertModule; });
-
-
-
-
-
-
-var NgbAlertModule = (function () {
-    function NgbAlertModule() {
-    }
-    NgbAlertModule.forRoot = function () { return { ngModule: NgbAlertModule, providers: [__WEBPACK_IMPORTED_MODULE_3__alert_config__["a" /* NgbAlertConfig */]] }; };
-    return NgbAlertModule;
-}());
-
-NgbAlertModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_2__alert__["a" /* NgbAlert */]], exports: [__WEBPACK_IMPORTED_MODULE_2__alert__["a" /* NgbAlert */]], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]], entryComponents: [__WEBPACK_IMPORTED_MODULE_2__alert__["a" /* NgbAlert */]] },] },
-];
-/** @nocollapse */
-NgbAlertModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=alert.module.js.map
-
-/***/ }),
-/* 96 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return NgbRadioGroup; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbActiveLabel; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbRadio; });
-
-
-var NGB_RADIO_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbRadioGroup; }),
-    multi: true
-};
-/**
- * Easily create Bootstrap-style radio buttons. A value of a selected button is bound to a variable
- * specified via ngModel.
- */
-var NgbRadioGroup = (function () {
-    function NgbRadioGroup() {
-        this._radios = new Set();
-        this._value = null;
-        this.onChange = function (_) { };
-        this.onTouched = function () { };
-    }
-    Object.defineProperty(NgbRadioGroup.prototype, "disabled", {
-        get: function () { return this._disabled; },
-        set: function (isDisabled) { this.setDisabledState(isDisabled); },
-        enumerable: true,
-        configurable: true
-    });
-    NgbRadioGroup.prototype.onRadioChange = function (radio) {
-        this.writeValue(radio.value);
-        this.onChange(radio.value);
-    };
-    NgbRadioGroup.prototype.onRadioValueUpdate = function () { this._updateRadiosValue(); };
-    NgbRadioGroup.prototype.register = function (radio) { this._radios.add(radio); };
-    NgbRadioGroup.prototype.registerOnChange = function (fn) { this.onChange = fn; };
-    NgbRadioGroup.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
-    NgbRadioGroup.prototype.setDisabledState = function (isDisabled) {
-        this._disabled = isDisabled;
-        this._updateRadiosDisabled();
-    };
-    NgbRadioGroup.prototype.unregister = function (radio) { this._radios.delete(radio); };
-    NgbRadioGroup.prototype.writeValue = function (value) {
-        this._value = value;
-        this._updateRadiosValue();
-    };
-    NgbRadioGroup.prototype._updateRadiosValue = function () {
-        var _this = this;
-        this._radios.forEach(function (radio) { return radio.updateValue(_this._value); });
-    };
-    NgbRadioGroup.prototype._updateRadiosDisabled = function () { this._radios.forEach(function (radio) { return radio.updateDisabled(); }); };
-    return NgbRadioGroup;
-}());
-
-NgbRadioGroup.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                selector: '[ngbRadioGroup]',
-                host: { 'data-toggle': 'buttons', 'class': 'btn-group', 'role': 'group' },
-                providers: [NGB_RADIO_VALUE_ACCESSOR]
-            },] },
-];
-/** @nocollapse */
-NgbRadioGroup.ctorParameters = function () { return []; };
-var NgbActiveLabel = (function () {
-    function NgbActiveLabel(_renderer, _elRef) {
-        this._renderer = _renderer;
-        this._elRef = _elRef;
-    }
-    Object.defineProperty(NgbActiveLabel.prototype, "active", {
-        set: function (isActive) {
-            if (isActive) {
-                this._renderer.addClass(this._elRef.nativeElement, 'active');
-            }
-            else {
-                this._renderer.removeClass(this._elRef.nativeElement, 'active');
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(NgbActiveLabel.prototype, "disabled", {
-        set: function (isDisabled) {
-            if (isDisabled) {
-                this._renderer.addClass(this._elRef.nativeElement, 'disabled');
-            }
-            else {
-                this._renderer.removeClass(this._elRef.nativeElement, 'disabled');
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(NgbActiveLabel.prototype, "focused", {
-        set: function (isFocused) {
-            if (isFocused) {
-                this._renderer.addClass(this._elRef.nativeElement, 'focus');
-            }
-            else {
-                this._renderer.removeClass(this._elRef.nativeElement, 'focus');
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    return NgbActiveLabel;
-}());
-
-NgbActiveLabel.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'label.btn' },] },
-];
-/** @nocollapse */
-NgbActiveLabel.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-]; };
-/**
- * Marks an input of type "radio" as part of the NgbRadioGroup.
- */
-var NgbRadio = (function () {
-    function NgbRadio(_group, _label, _renderer, _element) {
-        this._group = _group;
-        this._label = _label;
-        this._renderer = _renderer;
-        this._element = _element;
-        this._value = null;
-        if (this._group) {
-            this._group.register(this);
-        }
-    }
-    Object.defineProperty(NgbRadio.prototype, "value", {
-        get: function () { return this._value; },
-        /**
-         * You can specify model value of a given radio by binding to the value property.
-        */
-        set: function (value) {
-            this._value = value;
-            var stringValue = value ? value.toString() : '';
-            this._renderer.setProperty(this._element.nativeElement, 'value', stringValue);
-            if (this._group) {
-                this._group.onRadioValueUpdate();
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(NgbRadio.prototype, "checked", {
-        get: function () { return this._checked; },
-        /**
-         * A flag indicating if a given radio button is checked.
-         */
-        set: function (value) {
-            this._checked = this._element.nativeElement.hasAttribute('checked') ? true : value;
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(NgbRadio.prototype, "disabled", {
-        get: function () { return (this._group && this._group.disabled) || this._disabled; },
-        /**
-         * A flag indicating if a given radio button is disabled.
-         */
-        set: function (isDisabled) {
-            this._disabled = isDisabled !== false;
-            this.updateDisabled();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(NgbRadio.prototype, "focused", {
-        set: function (isFocused) {
-            if (this._label) {
-                this._label.focused = isFocused;
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    NgbRadio.prototype.ngOnDestroy = function () {
-        if (this._group) {
-            this._group.unregister(this);
-        }
-    };
-    NgbRadio.prototype.onChange = function () {
-        if (this._group) {
-            this._group.onRadioChange(this);
-        }
-    };
-    NgbRadio.prototype.updateValue = function (value) {
-        this._checked = (this.value === value && value !== null);
-        this._label.active = this._checked;
-    };
-    NgbRadio.prototype.updateDisabled = function () {
-        var disabled = (this._group && this._group.disabled) || this._disabled;
-        if (this._label) {
-            this._label.disabled = disabled;
-        }
-    };
-    return NgbRadio;
-}());
-
-NgbRadio.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                selector: 'input[type=radio]',
-                host: {
-                    '[checked]': 'checked',
-                    '[disabled]': 'disabled',
-                    '(change)': 'onChange()',
-                    '(focus)': 'focused = true',
-                    '(blur)': 'focused = false'
-                }
-            },] },
-];
-/** @nocollapse */
-NgbRadio.ctorParameters = function () { return [
-    { type: NgbRadioGroup, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] },] },
-    { type: NgbActiveLabel, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] },] },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-]; };
-NgbRadio.propDecorators = {
-    'value': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['value',] },],
-    'checked': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['checked',] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['disabled',] },],
-};
-//# sourceMappingURL=radio.js.map
-
-/***/ }),
-/* 97 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__radio__ = __webpack_require__(96);
-/* unused harmony reexport NgbRadio */
-/* unused harmony reexport NgbActiveLabel */
-/* unused harmony reexport NgbRadioGroup */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbButtonsModule; });
-
-
-
-var NGB_RADIO_DIRECTIVES = [__WEBPACK_IMPORTED_MODULE_1__radio__["a" /* NgbRadio */], __WEBPACK_IMPORTED_MODULE_1__radio__["b" /* NgbActiveLabel */], __WEBPACK_IMPORTED_MODULE_1__radio__["c" /* NgbRadioGroup */]];
-var NgbButtonsModule = (function () {
-    function NgbButtonsModule() {
-    }
-    NgbButtonsModule.forRoot = function () { return { ngModule: NgbButtonsModule, providers: [] }; };
-    return NgbButtonsModule;
-}());
-
-NgbButtonsModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: NGB_RADIO_DIRECTIVES, exports: NGB_RADIO_DIRECTIVES },] },
-];
-/** @nocollapse */
-NgbButtonsModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=radio.module.js.map
-
-/***/ }),
-/* 98 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__carousel_config__ = __webpack_require__(48);
-/* unused harmony export NgbSlide */
-/* unused harmony export NgbCarousel */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NGB_CAROUSEL_DIRECTIVES; });
-
-
-var nextId = 0;
-/**
- * Represents an individual slide to be used within a carousel.
- */
-var NgbSlide = (function () {
-    function NgbSlide(tplRef) {
-        this.tplRef = tplRef;
-        /**
-         * Unique slide identifier. Must be unique for the entire document for proper accessibility support.
-         * Will be auto-generated if not provided.
-         */
-        this.id = "ngb-slide-" + nextId++;
-    }
-    return NgbSlide;
-}());
-
-NgbSlide.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ng-template[ngbSlide]' },] },
-];
-/** @nocollapse */
-NgbSlide.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], },
-]; };
-NgbSlide.propDecorators = {
-    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-};
-/**
- * Directive to easily create carousels based on Bootstrap's markup.
- */
-var NgbCarousel = (function () {
-    function NgbCarousel(config) {
-        this.interval = config.interval;
-        this.wrap = config.wrap;
-        this.keyboard = config.keyboard;
-    }
-    NgbCarousel.prototype.ngAfterContentChecked = function () {
-        var activeSlide = this._getSlideById(this.activeId);
-        this.activeId = activeSlide ? activeSlide.id : (this.slides.length ? this.slides.first.id : null);
-    };
-    NgbCarousel.prototype.ngOnInit = function () { this._startTimer(); };
-    NgbCarousel.prototype.ngOnDestroy = function () { clearInterval(this._slideChangeInterval); };
-    /**
-     * Navigate to a slide with the specified identifier.
-     */
-    NgbCarousel.prototype.select = function (slideId) {
-        this.cycleToSelected(slideId);
-        this._restartTimer();
-    };
-    /**
-     * Navigate to the next slide.
-     */
-    NgbCarousel.prototype.prev = function () {
-        this.cycleToPrev();
-        this._restartTimer();
-    };
-    /**
-     * Navigate to the next slide.
-     */
-    NgbCarousel.prototype.next = function () {
-        this.cycleToNext();
-        this._restartTimer();
-    };
-    /**
-     * Stops the carousel from cycling through items.
-     */
-    NgbCarousel.prototype.pause = function () { this._stopTimer(); };
-    /**
-     * Restarts cycling through the carousel slides from left to right.
-     */
-    NgbCarousel.prototype.cycle = function () { this._startTimer(); };
-    NgbCarousel.prototype.cycleToNext = function () { this.cycleToSelected(this._getNextSlide(this.activeId)); };
-    NgbCarousel.prototype.cycleToPrev = function () { this.cycleToSelected(this._getPrevSlide(this.activeId)); };
-    NgbCarousel.prototype.cycleToSelected = function (slideIdx) {
-        var selectedSlide = this._getSlideById(slideIdx);
-        if (selectedSlide) {
-            this.activeId = selectedSlide.id;
-        }
-    };
-    NgbCarousel.prototype.keyPrev = function () {
-        if (this.keyboard) {
-            this.prev();
-        }
-    };
-    NgbCarousel.prototype.keyNext = function () {
-        if (this.keyboard) {
-            this.next();
-        }
-    };
-    NgbCarousel.prototype._restartTimer = function () {
-        this._stopTimer();
-        this._startTimer();
-    };
-    NgbCarousel.prototype._startTimer = function () {
-        var _this = this;
-        if (this.interval > 0) {
-            this._slideChangeInterval = setInterval(function () { _this.cycleToNext(); }, this.interval);
-        }
-    };
-    NgbCarousel.prototype._stopTimer = function () { clearInterval(this._slideChangeInterval); };
-    NgbCarousel.prototype._getSlideById = function (slideId) {
-        var slideWithId = this.slides.filter(function (slide) { return slide.id === slideId; });
-        return slideWithId.length ? slideWithId[0] : null;
-    };
-    NgbCarousel.prototype._getSlideIdxById = function (slideId) {
-        return this.slides.toArray().indexOf(this._getSlideById(slideId));
-    };
-    NgbCarousel.prototype._getNextSlide = function (currentSlideId) {
-        var slideArr = this.slides.toArray();
-        var currentSlideIdx = this._getSlideIdxById(currentSlideId);
-        var isLastSlide = currentSlideIdx === slideArr.length - 1;
-        return isLastSlide ? (this.wrap ? slideArr[0].id : slideArr[slideArr.length - 1].id) :
-            slideArr[currentSlideIdx + 1].id;
-    };
-    NgbCarousel.prototype._getPrevSlide = function (currentSlideId) {
-        var slideArr = this.slides.toArray();
-        var currentSlideIdx = this._getSlideIdxById(currentSlideId);
-        var isFirstSlide = currentSlideIdx === 0;
-        return isFirstSlide ? (this.wrap ? slideArr[slideArr.length - 1].id : slideArr[0].id) :
-            slideArr[currentSlideIdx - 1].id;
-    };
-    return NgbCarousel;
-}());
-
-NgbCarousel.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-carousel',
-                exportAs: 'ngbCarousel',
-                host: {
-                    'class': 'carousel slide',
-                    '[style.display]': '"block"',
-                    'tabIndex': '0',
-                    '(mouseenter)': 'pause()',
-                    '(mouseleave)': 'cycle()',
-                    '(keydown.arrowLeft)': 'keyPrev()',
-                    '(keydown.arrowRight)': 'keyNext()'
-                },
-                template: "\n    <ol class=\"carousel-indicators\">\n      <li *ngFor=\"let slide of slides\" [id]=\"slide.id\" [class.active]=\"slide.id === activeId\" (click)=\"cycleToSelected(slide.id)\"></li>\n    </ol>\n    <div class=\"carousel-inner\">\n      <div *ngFor=\"let slide of slides\" class=\"carousel-item\" [class.active]=\"slide.id === activeId\">\n        <ng-template [ngTemplateOutlet]=\"slide.tplRef\"></ng-template>\n      </div>\n    </div>\n    <a class=\"left carousel-control-prev\" role=\"button\" (click)=\"cycleToPrev()\">\n      <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Previous</span>\n    </a>\n    <a class=\"right carousel-control-next\" role=\"button\" (click)=\"cycleToNext()\">\n      <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Next</span>\n    </a>\n    "
-            },] },
-];
-/** @nocollapse */
-NgbCarousel.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__carousel_config__["a" /* NgbCarouselConfig */], },
-]; };
-NgbCarousel.propDecorators = {
-    'slides': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChildren"], args: [NgbSlide,] },],
-    'interval': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'wrap': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'keyboard': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'activeId': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-};
-var NGB_CAROUSEL_DIRECTIVES = [NgbCarousel, NgbSlide];
-//# sourceMappingURL=carousel.js.map
-
-/***/ }),
-/* 99 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel__ = __webpack_require__(98);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__carousel_config__ = __webpack_require__(48);
-/* unused harmony reexport NgbCarousel */
-/* unused harmony reexport NgbSlide */
-/* unused harmony reexport NgbCarouselConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCarouselModule; });
-
-
-
-
-
-
-var NgbCarouselModule = (function () {
-    function NgbCarouselModule() {
-    }
-    NgbCarouselModule.forRoot = function () { return { ngModule: NgbCarouselModule, providers: [__WEBPACK_IMPORTED_MODULE_3__carousel_config__["a" /* NgbCarouselConfig */]] }; };
-    return NgbCarouselModule;
-}());
-
-NgbCarouselModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: __WEBPACK_IMPORTED_MODULE_2__carousel__["a" /* NGB_CAROUSEL_DIRECTIVES */], exports: __WEBPACK_IMPORTED_MODULE_2__carousel__["a" /* NGB_CAROUSEL_DIRECTIVES */], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
-];
-/** @nocollapse */
-NgbCarouselModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=carousel.module.js.map
-
-/***/ }),
-/* 100 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCollapse; });
-
-/**
- * The NgbCollapse directive provides a simple way to hide and show an element with animations.
- */
-var NgbCollapse = (function () {
-    function NgbCollapse() {
-        /**
-         * A flag indicating collapsed (true) or open (false) state.
-         */
-        this.collapsed = false;
-    }
-    return NgbCollapse;
-}());
-
-NgbCollapse.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                selector: '[ngbCollapse]',
-                exportAs: 'ngbCollapse',
-                host: { '[class.collapse]': 'true', '[class.show]': '!collapsed' }
-            },] },
-];
-/** @nocollapse */
-NgbCollapse.ctorParameters = function () { return []; };
-NgbCollapse.propDecorators = {
-    'collapsed': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['ngbCollapse',] },],
-};
-//# sourceMappingURL=collapse.js.map
-
-/***/ }),
-/* 101 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collapse__ = __webpack_require__(100);
-/* unused harmony reexport NgbCollapse */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCollapseModule; });
-
-
-
-var NgbCollapseModule = (function () {
-    function NgbCollapseModule() {
-    }
-    NgbCollapseModule.forRoot = function () { return { ngModule: NgbCollapseModule, providers: [] }; };
-    return NgbCollapseModule;
-}());
-
-NgbCollapseModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_1__collapse__["a" /* NgbCollapse */]], exports: [__WEBPACK_IMPORTED_MODULE_1__collapse__["a" /* NgbCollapse */]] },] },
-];
-/** @nocollapse */
-NgbCollapseModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=collapse.module.js.map
-
-/***/ }),
-/* 102 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerDayView; });
-
-var NgbDatepickerDayView = (function () {
-    function NgbDatepickerDayView() {
-    }
-    NgbDatepickerDayView.prototype.isMuted = function () { return !this.selected && (this.date.month !== this.currentMonth || this.disabled); };
-    return NgbDatepickerDayView;
-}());
-
-NgbDatepickerDayView.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: '[ngbDatepickerDayView]',
-                styles: ["\n    :host {\n      text-align: center;\n      width: 2rem;\n      height: 2rem;\n      line-height: 2rem;      \n      border-radius: 0.25rem;\n    }\n    :host.outside {\n      opacity: 0.5;\n    }\n  "],
-                host: {
-                    '[class.bg-primary]': 'selected',
-                    '[class.text-white]': 'selected',
-                    '[class.text-muted]': 'isMuted()',
-                    '[class.outside]': 'isMuted()',
-                    '[class.btn-secondary]': '!disabled'
-                },
-                template: "{{ date.day }}"
-            },] },
-];
-/** @nocollapse */
-NgbDatepickerDayView.ctorParameters = function () { return []; };
-NgbDatepickerDayView.propDecorators = {
-    'currentMonth': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'date': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'selected': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-};
-//# sourceMappingURL=datepicker-day-view.js.map
-
-/***/ }),
-/* 103 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngb_date__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngb_date_parser_formatter__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_positioning__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngb_calendar__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_service__ = __webpack_require__(107);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbInputDatepicker; });
-
-
-
-
-
-
-
-
-var NGB_DATEPICKER_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbInputDatepicker; }),
-    multi: true
-};
-var NGB_DATEPICKER_VALIDATOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* NG_VALIDATORS */],
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbInputDatepicker; }),
-    multi: true
-};
-/**
- * A directive that makes it possible to have datepickers on input fields.
- * Manages integration with the input field itself (data entry) and ngModel (validation etc.).
- */
-var NgbInputDatepicker = (function () {
-    function NgbInputDatepicker(_parserFormatter, _elRef, _vcRef, _renderer, _cfr, ngZone, _service, _calendar) {
-        var _this = this;
-        this._parserFormatter = _parserFormatter;
-        this._elRef = _elRef;
-        this._vcRef = _vcRef;
-        this._renderer = _renderer;
-        this._cfr = _cfr;
-        this._service = _service;
-        this._calendar = _calendar;
-        this._cRef = null;
-        /**
-         * An event fired when navigation happens and currently displayed month changes.
-         * See NgbDatepickerNavigateEvent for the payload info.
-         */
-        this.navigate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this._onChange = function (_) { };
-        this._onTouched = function () { };
-        this._validatorChange = function () { };
-        this._zoneSubscription = ngZone.onStable.subscribe(function () {
-            if (_this._cRef) {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__util_positioning__["a" /* positionElements */])(_this._elRef.nativeElement, _this._cRef.location.nativeElement, 'bottom-left');
-            }
-        });
-    }
-    NgbInputDatepicker.prototype.registerOnChange = function (fn) { this._onChange = fn; };
-    NgbInputDatepicker.prototype.registerOnTouched = function (fn) { this._onTouched = fn; };
-    NgbInputDatepicker.prototype.registerOnValidatorChange = function (fn) { this._validatorChange = fn; };
-    ;
-    NgbInputDatepicker.prototype.setDisabledState = function (isDisabled) {
-        this._renderer.setProperty(this._elRef.nativeElement, 'disabled', isDisabled);
-        if (this.isOpen()) {
-            this._cRef.instance.setDisabledState(isDisabled);
-        }
-    };
-    NgbInputDatepicker.prototype.validate = function (c) {
-        var value = c.value;
-        if (value === null || value === undefined) {
-            return null;
-        }
-        if (!this._calendar.isValid(value)) {
-            return { 'ngbDate': { invalid: c.value } };
-        }
-        if (this.minDate && __WEBPACK_IMPORTED_MODULE_2__ngb_date__["a" /* NgbDate */].from(value).before(__WEBPACK_IMPORTED_MODULE_2__ngb_date__["a" /* NgbDate */].from(this.minDate))) {
-            return { 'ngbDate': { requiredBefore: this.minDate } };
-        }
-        if (this.maxDate && __WEBPACK_IMPORTED_MODULE_2__ngb_date__["a" /* NgbDate */].from(value).after(__WEBPACK_IMPORTED_MODULE_2__ngb_date__["a" /* NgbDate */].from(this.maxDate))) {
-            return { 'ngbDate': { requiredAfter: this.maxDate } };
-        }
-    };
-    NgbInputDatepicker.prototype.writeValue = function (value) {
-        var ngbDate = value ? new __WEBPACK_IMPORTED_MODULE_2__ngb_date__["a" /* NgbDate */](value.year, value.month, value.day) : null;
-        this._model = this._calendar.isValid(value) ? ngbDate : null;
-        this._writeModelValue(this._model);
-    };
-    NgbInputDatepicker.prototype.manualDateChange = function (value) {
-        this._model = this._service.toValidDate(this._parserFormatter.parse(value), null);
-        this._onChange(this._model ? { year: this._model.year, month: this._model.month, day: this._model.day } : value);
-        this._writeModelValue(this._model);
-    };
-    NgbInputDatepicker.prototype.isOpen = function () { return !!this._cRef; };
-    /**
-     * Opens the datepicker with the selected date indicated by the ngModel value.
-     */
-    NgbInputDatepicker.prototype.open = function () {
-        var _this = this;
-        if (!this.isOpen()) {
-            var cf = this._cfr.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_3__datepicker__["a" /* NgbDatepicker */]);
-            this._cRef = this._vcRef.createComponent(cf);
-            this._applyPopupStyling(this._cRef.location.nativeElement);
-            this._cRef.instance.writeValue(this._model);
-            this._applyDatepickerInputs(this._cRef.instance);
-            this._subscribeForDatepickerOutputs(this._cRef.instance);
-            this._cRef.instance.ngOnInit();
-            // date selection event handling
-            this._cRef.instance.registerOnChange(function (selectedDate) {
-                _this.writeValue(selectedDate);
-                _this._onChange(selectedDate);
-                _this.close();
-            });
-        }
-    };
-    /**
-     * Closes the datepicker popup.
-     */
-    NgbInputDatepicker.prototype.close = function () {
-        if (this.isOpen()) {
-            this._vcRef.remove(this._vcRef.indexOf(this._cRef.hostView));
-            this._cRef = null;
-        }
-    };
-    /**
-     * Toggles the datepicker popup (opens when closed and closes when opened).
-     */
-    NgbInputDatepicker.prototype.toggle = function () {
-        if (this.isOpen()) {
-            this.close();
-        }
-        else {
-            this.open();
-        }
-    };
-    /**
-     * Navigates current view to provided date.
-     * With default calendar we use ISO 8601: 'month' is 1=Jan ... 12=Dec.
-     * If nothing or invalid date provided calendar will open current month.
-     * Use 'startDate' input as an alternative
-     */
-    NgbInputDatepicker.prototype.navigateTo = function (date) {
-        if (this.isOpen()) {
-            this._cRef.instance.navigateTo(date);
-        }
-    };
-    NgbInputDatepicker.prototype.onBlur = function () { this._onTouched(); };
-    NgbInputDatepicker.prototype.ngOnChanges = function (changes) {
-        if (changes['minDate'] || changes['maxDate']) {
-            this._validatorChange();
-        }
-    };
-    NgbInputDatepicker.prototype.ngOnDestroy = function () {
-        this.close();
-        this._zoneSubscription.unsubscribe();
-    };
-    NgbInputDatepicker.prototype._applyDatepickerInputs = function (datepickerInstance) {
-        var _this = this;
-        ['dayTemplate', 'displayMonths', 'firstDayOfWeek', 'markDisabled', 'minDate', 'maxDate', 'navigation',
-            'outsideDays', 'showNavigation', 'showWeekdays', 'showWeekNumbers']
-            .forEach(function (optionName) {
-            if (_this[optionName] !== undefined) {
-                datepickerInstance[optionName] = _this[optionName];
-            }
-        });
-        datepickerInstance.startDate = this.startDate || this._model;
-    };
-    NgbInputDatepicker.prototype._applyPopupStyling = function (nativeElement) {
-        this._renderer.addClass(nativeElement, 'dropdown-menu');
-        this._renderer.setStyle(nativeElement, 'padding', '0');
-    };
-    NgbInputDatepicker.prototype._subscribeForDatepickerOutputs = function (datepickerInstance) {
-        var _this = this;
-        datepickerInstance.navigate.subscribe(function (date) { return _this.navigate.emit(date); });
-    };
-    NgbInputDatepicker.prototype._writeModelValue = function (model) {
-        this._renderer.setProperty(this._elRef.nativeElement, 'value', this._parserFormatter.format(model));
-        if (this.isOpen()) {
-            this._cRef.instance.writeValue(model);
-            this._onTouched();
-        }
-    };
-    return NgbInputDatepicker;
-}());
-
-NgbInputDatepicker.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                selector: 'input[ngbDatepicker]',
-                exportAs: 'ngbDatepicker',
-                host: { '(change)': 'manualDateChange($event.target.value)', '(keyup.esc)': 'close()', '(blur)': 'onBlur()' },
-                providers: [NGB_DATEPICKER_VALUE_ACCESSOR, NGB_DATEPICKER_VALIDATOR, __WEBPACK_IMPORTED_MODULE_7__datepicker_service__["a" /* NgbDatepickerService */]]
-            },] },
-];
-/** @nocollapse */
-NgbInputDatepicker.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_4__ngb_date_parser_formatter__["a" /* NgbDateParserFormatter */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
-    { type: __WEBPACK_IMPORTED_MODULE_7__datepicker_service__["a" /* NgbDatepickerService */], },
-    { type: __WEBPACK_IMPORTED_MODULE_6__ngb_calendar__["a" /* NgbCalendar */], },
-]; };
-NgbInputDatepicker.propDecorators = {
-    'dayTemplate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'displayMonths': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'firstDayOfWeek': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'markDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'minDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'maxDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'navigation': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'outsideDays': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'showWeekdays': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'showWeekNumbers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'startDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'navigate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-//# sourceMappingURL=datepicker-input.js.map
-
-/***/ }),
-/* 104 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__ = __webpack_require__(22);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerMonthView; });
-
-
-
-var NgbDatepickerMonthView = (function () {
-    function NgbDatepickerMonthView(i18n) {
-        this.i18n = i18n;
-        this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-    }
-    NgbDatepickerMonthView.prototype.doSelect = function (day) {
-        if (!this.isDisabled(day) && !this.isHidden(day)) {
-            this.select.emit(__WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */].from(day.date));
-        }
-    };
-    NgbDatepickerMonthView.prototype.isDisabled = function (day) { return this.disabled || day.disabled; };
-    NgbDatepickerMonthView.prototype.isSelected = function (date) { return this.selectedDate && this.selectedDate.equals(date); };
-    NgbDatepickerMonthView.prototype.isCollapsed = function (week) {
-        return this.outsideDays === 'collapsed' && week.days[0].date.month !== this.month.number &&
-            week.days[week.days.length - 1].date.month !== this.month.number;
-    };
-    NgbDatepickerMonthView.prototype.isHidden = function (day) {
-        return (this.outsideDays === 'hidden' || this.outsideDays === 'collapsed') && this.month.number !== day.date.month;
-    };
-    return NgbDatepickerMonthView;
-}());
-
-NgbDatepickerMonthView.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-datepicker-month-view',
-                host: { 'class': 'd-block' },
-                styles: ["\n    .ngb-dp-weekday, .ngb-dp-week-number {\n      line-height: 2rem;\n    }\n    .ngb-dp-day, .ngb-dp-weekday, .ngb-dp-week-number {\n      width: 2rem;\n      height: 2rem;      \n    }\n    .ngb-dp-day {\n      cursor: pointer;\n    }\n    .ngb-dp-day.disabled, .ngb-dp-day.hidden {\n      cursor: default;\n    }\n  "],
-                template: "\n    <div *ngIf=\"showWeekdays\" class=\"ngb-dp-week d-flex\">\n      <div *ngIf=\"showWeekNumbers\" class=\"ngb-dp-weekday\"></div>\n      <div *ngFor=\"let w of month.weekdays\" class=\"ngb-dp-weekday small text-center text-info font-italic\">\n        {{ i18n.getWeekdayShortName(w) }}\n      </div>\n    </div>\n    <ng-template ngFor let-week [ngForOf]=\"month.weeks\">\n      <div *ngIf=\"!isCollapsed(week)\" class=\"ngb-dp-week d-flex\">\n        <div *ngIf=\"showWeekNumbers\" class=\"ngb-dp-week-number small text-center font-italic text-muted\">{{ week.number }}</div>\n        <div *ngFor=\"let day of week.days\" (click)=\"doSelect(day)\" class=\"ngb-dp-day\" [class.disabled]=\"isDisabled(day)\"\n         [class.hidden]=\"isHidden(day)\">\n          <ng-template [ngIf]=\"!isHidden(day)\">\n            <ng-template [ngTemplateOutlet]=\"dayTemplate\"\n            [ngOutletContext]=\"{date: {year: day.date.year, month: day.date.month, day: day.date.day},\n              currentMonth: month.number,\n              disabled: isDisabled(day),\n              selected: isSelected(day.date)}\">\n            </ng-template>\n          </ng-template>\n        </div>\n      </div>\n    </ng-template>\n  "
-            },] },
-];
-/** @nocollapse */
-NgbDatepickerMonthView.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__["a" /* NgbDatepickerI18n */], },
-]; };
-NgbDatepickerMonthView.propDecorators = {
-    'dayTemplate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'month': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'outsideDays': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'selectedDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'showWeekdays': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'showWeekNumbers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'select': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-//# sourceMappingURL=datepicker-month-view.js.map
-
-/***/ }),
-/* 105 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_i18n__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngb_calendar__ = __webpack_require__(14);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerNavigationSelect; });
-
-
-
-
-
-var NgbDatepickerNavigationSelect = (function () {
-    function NgbDatepickerNavigationSelect(i18n, calendar) {
-        this.i18n = i18n;
-        this.calendar = calendar;
-        this.years = [];
-        this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.months = calendar.getMonths();
-    }
-    NgbDatepickerNavigationSelect.prototype.ngOnChanges = function (changes) {
-        if (changes['maxDate'] || changes['minDate'] || changes['date']) {
-            this._generateYears();
-            this._generateMonths();
-        }
-    };
-    NgbDatepickerNavigationSelect.prototype.changeMonth = function (month) { this.select.emit(new __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */](this.date.year, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["e" /* toInteger */])(month), 1)); };
-    NgbDatepickerNavigationSelect.prototype.changeYear = function (year) { this.select.emit(new __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */](__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["e" /* toInteger */])(year), this.date.month, 1)); };
-    NgbDatepickerNavigationSelect.prototype._generateMonths = function () {
-        var _this = this;
-        this.months = this.calendar.getMonths();
-        if (this.date && this.date.year === this.minDate.year) {
-            var index = this.months.findIndex(function (month) { return month === _this.minDate.month; });
-            this.months = this.months.slice(index);
-        }
-        if (this.date && this.date.year === this.maxDate.year) {
-            var index = this.months.findIndex(function (month) { return month === _this.maxDate.month; });
-            this.months = this.months.slice(0, index + 1);
-        }
-    };
-    NgbDatepickerNavigationSelect.prototype._generateYears = function () {
-        var _this = this;
-        this.years = Array.from({ length: this.maxDate.year - this.minDate.year + 1 }, function (e, i) { return _this.minDate.year + i; });
-    };
-    return NgbDatepickerNavigationSelect;
-}());
-
-NgbDatepickerNavigationSelect.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-datepicker-navigation-select',
-                styles: ["\n    select {\n      /* to align with btn-sm */\n      padding: 0.25rem 0.5rem;\n      font-size: 0.875rem;      \n      line-height: 1.25;\n      /* to cancel the custom height set by custom-select */\n      height: inherit;\n      width: 50%;\n    }\n  "],
-                template: "\n    <select [disabled]=\"disabled\" class=\"custom-select d-inline-block\" [value]=\"date?.month\" (change)=\"changeMonth($event.target.value)\">\n      <option *ngFor=\"let m of months\" [value]=\"m\">{{ i18n.getMonthShortName(m) }}</option>\n    </select>" +
-                    "<select [disabled]=\"disabled\" class=\"custom-select d-inline-block\" [value]=\"date?.year\" (change)=\"changeYear($event.target.value)\">\n      <option *ngFor=\"let y of years\" [value]=\"y\">{{ y }}</option>\n    </select> \n  " // template needs to be formatted in a certain way so we don't add empty text nodes
-            },] },
-];
-/** @nocollapse */
-NgbDatepickerNavigationSelect.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_3__datepicker_i18n__["a" /* NgbDatepickerI18n */], },
-    { type: __WEBPACK_IMPORTED_MODULE_4__ngb_calendar__["a" /* NgbCalendar */], },
-]; };
-NgbDatepickerNavigationSelect.propDecorators = {
-    'date': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'maxDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'minDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'select': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-//# sourceMappingURL=datepicker-navigation-select.js.map
-
-/***/ }),
-/* 106 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datepicker_view_model__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_calendar__ = __webpack_require__(14);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerNavigation; });
-
-
-
-
-var NgbDatepickerNavigation = (function () {
-    function NgbDatepickerNavigation(i18n, _calendar) {
-        this.i18n = i18n;
-        this._calendar = _calendar;
-        this.navigation = __WEBPACK_IMPORTED_MODULE_1__datepicker_view_model__["a" /* NavigationEvent */];
-        this.navigate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-    }
-    NgbDatepickerNavigation.prototype.doNavigate = function (event) { this.navigate.emit(event); };
-    NgbDatepickerNavigation.prototype.nextDisabled = function () {
-        return this.disabled || (this.maxDate && this._calendar.getNext(this.date, 'm').after(this.maxDate));
-    };
-    NgbDatepickerNavigation.prototype.prevDisabled = function () {
-        var prevDate = this._calendar.getPrev(this.date, 'm');
-        return this.disabled || (this.minDate && prevDate.year <= this.minDate.year && prevDate.month < this.minDate.month);
-    };
-    NgbDatepickerNavigation.prototype.selectDate = function (date) { this.select.emit(date); };
-    return NgbDatepickerNavigation;
-}());
-
-NgbDatepickerNavigation.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-datepicker-navigation',
-                host: { 'class': 'd-flex justify-content-between', '[class.collapsed]': '!showSelect' },
-                styles: ["\n    :host {\n      height: 2rem;\n      line-height: 1.85rem;\n    }\n    :host.collapsed {\n      margin-bottom: -2rem;        \n    }\n    .ngb-dp-navigation-chevron::before {\n      border-style: solid;\n      border-width: 0.2em 0.2em 0 0;\n      content: '';\n      display: inline-block;\n      height: 0.75em;\n      transform: rotate(-135deg);\n      -webkit-transform: rotate(-135deg);\n      -ms-transform: rotate(-135deg);\n      width: 0.75em;\n      margin: 0 0 0 0.5rem;\n    }    \n    .ngb-dp-navigation-chevron.right:before {\n      -webkit-transform: rotate(45deg);\n      -ms-transform: rotate(45deg);\n      transform: rotate(45deg);\n      margin: 0 0.5rem 0 0;\n    }\n    .btn-link {\n      cursor: pointer;\n      outline: 0;\n    }\n    .btn-link[disabled] {\n      cursor: not-allowed;\n      opacity: .65;\n    }    \n  "],
-                template: "\n    <button type=\"button\" class=\"btn-link\" (click)=\"!!doNavigate(navigation.PREV)\" [disabled]=\"prevDisabled()\">\n      <span class=\"ngb-dp-navigation-chevron\"></span>    \n    </button>\n    \n    <ngb-datepicker-navigation-select *ngIf=\"showSelect\" class=\"d-block\" [style.width.rem]=\"months * 9\"\n      [date]=\"date\"\n      [minDate]=\"minDate\"\n      [maxDate]=\"maxDate\"\n      [disabled] = \"disabled\"\n      (select)=\"selectDate($event)\">\n    </ngb-datepicker-navigation-select>\n    \n    <button type=\"button\" class=\"btn-link\" (click)=\"!!doNavigate(navigation.NEXT)\" [disabled]=\"nextDisabled()\">\n      <span class=\"ngb-dp-navigation-chevron right\"></span>\n    </button>\n  "
-            },] },
-];
-/** @nocollapse */
-NgbDatepickerNavigation.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__["a" /* NgbDatepickerI18n */], },
-    { type: __WEBPACK_IMPORTED_MODULE_3__ngb_calendar__["a" /* NgbCalendar */], },
-]; };
-NgbDatepickerNavigation.propDecorators = {
-    'date': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'maxDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'minDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'months': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'showSelect': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'showWeekNumbers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'navigate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-    'select': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-//# sourceMappingURL=datepicker-navigation.js.map
-
-/***/ }),
-/* 107 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_calendar__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerService; });
-
-
-
-var NgbDatepickerService = (function () {
-    function NgbDatepickerService(_calendar) {
-        this._calendar = _calendar;
-    }
-    NgbDatepickerService.prototype.generateMonthViewModel = function (date, minDate, maxDate, firstDayOfWeek, markDisabled) {
-        var month = { firstDate: null, number: date.month, year: date.year, weeks: [], weekdays: [] };
-        date = this._getFirstViewDate(date, firstDayOfWeek);
-        // month has weeks
-        for (var w = 0; w < this._calendar.getWeeksPerMonth(); w++) {
-            var days = [];
-            // week has days
-            for (var d = 0; d < this._calendar.getDaysPerWeek(); d++) {
-                if (w === 0) {
-                    month.weekdays.push(this._calendar.getWeekday(date));
-                }
-                var newDate = new __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */](date.year, date.month, date.day);
-                var disabled = (minDate && newDate.before(minDate)) || (maxDate && newDate.after(maxDate));
-                if (!disabled && markDisabled) {
-                    disabled = markDisabled(newDate, { month: month.number, year: month.year });
-                }
-                // saving first date of the month
-                if (month.firstDate === null && date.month === month.number) {
-                    month.firstDate = newDate;
-                }
-                days.push({ date: newDate, disabled: disabled });
-                date = this._calendar.getNext(date);
-            }
-            month.weeks.push({ number: this._calendar.getWeekNumber(days.map(function (day) { return __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */].from(day.date); }), firstDayOfWeek), days: days });
-        }
-        return month;
-    };
-    NgbDatepickerService.prototype.toValidDate = function (date, defaultValue) {
-        var ngbDate = __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */].from(date);
-        if (defaultValue === undefined) {
-            defaultValue = this._calendar.getToday();
-        }
-        return this._calendar.isValid(ngbDate) ? ngbDate : defaultValue;
-    };
-    NgbDatepickerService.prototype._getFirstViewDate = function (date, firstDayOfWeek) {
-        var _this = this;
-        var currentMonth = date.month;
-        var today = new __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */](date.year, date.month, date.day);
-        var yesterday = this._calendar.getPrev(today);
-        var firstDayOfCurrentMonthIsAlsoFirstDayOfWeek = function () { return today.month !== yesterday.month && firstDayOfWeek === _this._calendar.getWeekday(today); };
-        var reachedTheFirstDayOfTheLastWeekOfPreviousMonth = function () { return today.month !== currentMonth && firstDayOfWeek === _this._calendar.getWeekday(today); };
-        // going back in time
-        while (!reachedTheFirstDayOfTheLastWeekOfPreviousMonth() && !firstDayOfCurrentMonthIsAlsoFirstDayOfWeek()) {
-            today = new __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */](yesterday.year, yesterday.month, yesterday.day);
-            yesterday = this._calendar.getPrev(yesterday);
-        }
-        return today;
-    };
-    return NgbDatepickerService;
-}());
-
-NgbDatepickerService.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-NgbDatepickerService.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__ngb_calendar__["a" /* NgbCalendar */], },
-]; };
-//# sourceMappingURL=datepicker-service.js.map
-
-/***/ }),
-/* 108 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationEvent; });
-var NavigationEvent;
-(function (NavigationEvent) {
-    NavigationEvent[NavigationEvent["PREV"] = 0] = "PREV";
-    NavigationEvent[NavigationEvent["NEXT"] = 1] = "NEXT";
-})(NavigationEvent || (NavigationEvent = {}));
-//# sourceMappingURL=datepicker-view-model.js.map
-
-/***/ }),
-/* 109 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_month_view__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datepicker_navigation__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__datepicker_input__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_day_view__ = __webpack_require__(102);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ngb_calendar__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ngb_date_parser_formatter__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__datepicker_navigation_select__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__datepicker_config__ = __webpack_require__(49);
-/* unused harmony reexport NgbDatepicker */
-/* unused harmony reexport NgbInputDatepicker */
-/* unused harmony reexport NgbCalendar */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__hijri_ngb_calendar_islamic_civil__ = __webpack_require__(169);
-/* unused harmony reexport NgbCalendarIslamicCivil */
-/* unused harmony reexport NgbDatepickerMonthView */
-/* unused harmony reexport NgbDatepickerDayView */
-/* unused harmony reexport NgbDatepickerNavigation */
-/* unused harmony reexport NgbDatepickerNavigationSelect */
-/* unused harmony reexport NgbDatepickerConfig */
-/* unused harmony reexport NgbDatepickerI18n */
-/* unused harmony reexport NgbDateParserFormatter */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerModule; });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var NgbDatepickerModule = (function () {
-    function NgbDatepickerModule() {
-    }
-    NgbDatepickerModule.forRoot = function () {
-        return {
-            ngModule: NgbDatepickerModule,
-            providers: [
-                { provide: __WEBPACK_IMPORTED_MODULE_9__ngb_calendar__["a" /* NgbCalendar */], useClass: __WEBPACK_IMPORTED_MODULE_9__ngb_calendar__["b" /* NgbCalendarGregorian */] },
-                { provide: __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__["a" /* NgbDatepickerI18n */], useClass: __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__["b" /* NgbDatepickerI18nDefault */] },
-                { provide: __WEBPACK_IMPORTED_MODULE_10__ngb_date_parser_formatter__["a" /* NgbDateParserFormatter */], useClass: __WEBPACK_IMPORTED_MODULE_10__ngb_date_parser_formatter__["b" /* NgbDateISOParserFormatter */] }, __WEBPACK_IMPORTED_MODULE_12__datepicker_config__["a" /* NgbDatepickerConfig */]
-            ]
-        };
-    };
-    return NgbDatepickerModule;
-}());
-
-NgbDatepickerModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
-                declarations: [
-                    __WEBPACK_IMPORTED_MODULE_2__datepicker__["a" /* NgbDatepicker */], __WEBPACK_IMPORTED_MODULE_3__datepicker_month_view__["a" /* NgbDatepickerMonthView */], __WEBPACK_IMPORTED_MODULE_4__datepicker_navigation__["a" /* NgbDatepickerNavigation */], __WEBPACK_IMPORTED_MODULE_11__datepicker_navigation_select__["a" /* NgbDatepickerNavigationSelect */], __WEBPACK_IMPORTED_MODULE_7__datepicker_day_view__["a" /* NgbDatepickerDayView */],
-                    __WEBPACK_IMPORTED_MODULE_5__datepicker_input__["a" /* NgbInputDatepicker */]
-                ],
-                exports: [__WEBPACK_IMPORTED_MODULE_2__datepicker__["a" /* NgbDatepicker */], __WEBPACK_IMPORTED_MODULE_5__datepicker_input__["a" /* NgbInputDatepicker */]],
-                imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"], __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */]],
-                entryComponents: [__WEBPACK_IMPORTED_MODULE_2__datepicker__["a" /* NgbDatepicker */]]
-            },] },
-];
-/** @nocollapse */
-NgbDatepickerModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=datepicker.module.js.map
-
-/***/ }),
-/* 110 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dropdown_config__ = __webpack_require__(52);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbDropdown; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDropdownToggle; });
-
-
-/**
- * Transforms a node into a dropdown.
- */
-var NgbDropdown = (function () {
-    function NgbDropdown(config) {
-        /**
-         *  Defines whether or not the dropdown-menu is open initially.
-         */
-        this._open = false;
-        /**
-         *  An event fired when the dropdown is opened or closed.
-         *  Event's payload equals whether dropdown is open.
-         */
-        this.openChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.up = config.up;
-        this.autoClose = config.autoClose;
-    }
-    /**
-     * Checks if the dropdown menu is open or not.
-     */
-    NgbDropdown.prototype.isOpen = function () { return this._open; };
-    /**
-     * Opens the dropdown menu of a given navbar or tabbed navigation.
-     */
-    NgbDropdown.prototype.open = function () {
-        if (!this._open) {
-            this._open = true;
-            this.openChange.emit(true);
-        }
-    };
-    /**
-     * Closes the dropdown menu of a given navbar or tabbed navigation.
-     */
-    NgbDropdown.prototype.close = function () {
-        if (this._open) {
-            this._open = false;
-            this.openChange.emit(false);
-        }
-    };
-    /**
-     * Toggles the dropdown menu of a given navbar or tabbed navigation.
-     */
-    NgbDropdown.prototype.toggle = function () {
-        if (this.isOpen()) {
-            this.close();
-        }
-        else {
-            this.open();
-        }
-    };
-    NgbDropdown.prototype.closeFromOutsideClick = function ($event) {
-        if (this.autoClose && $event.button !== 2 && !this._isEventFromToggle($event)) {
-            this.close();
-        }
-    };
-    NgbDropdown.prototype.closeFromOutsideEsc = function () {
-        if (this.autoClose) {
-            this.close();
-        }
-    };
-    Object.defineProperty(NgbDropdown.prototype, "toggleElement", {
-        /**
-         * @internal
-         */
-        set: function (toggleElement) { this._toggleElement = toggleElement; },
-        enumerable: true,
-        configurable: true
-    });
-    NgbDropdown.prototype._isEventFromToggle = function ($event) { return !!this._toggleElement && this._toggleElement.contains($event.target); };
-    return NgbDropdown;
-}());
-
-NgbDropdown.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                selector: '[ngbDropdown]',
-                exportAs: 'ngbDropdown',
-                host: {
-                    '[class.dropdown]': '!up',
-                    '[class.dropup]': 'up',
-                    '[class.show]': 'isOpen()',
-                    '(keyup.esc)': 'closeFromOutsideEsc()',
-                    '(document:click)': 'closeFromOutsideClick($event)'
-                }
-            },] },
-];
-/** @nocollapse */
-NgbDropdown.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__dropdown_config__["a" /* NgbDropdownConfig */], },
-]; };
-NgbDropdown.propDecorators = {
-    'up': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'autoClose': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    '_open': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['open',] },],
-    'openChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-/**
- * Allows the dropdown to be toggled via click. This directive is optional.
- */
-var NgbDropdownToggle = (function () {
-    function NgbDropdownToggle(dropdown, elementRef) {
-        this.dropdown = dropdown;
-        dropdown.toggleElement = elementRef.nativeElement;
-    }
-    NgbDropdownToggle.prototype.toggleOpen = function () { this.dropdown.toggle(); };
-    return NgbDropdownToggle;
-}());
-
-NgbDropdownToggle.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                selector: '[ngbDropdownToggle]',
-                host: {
-                    'class': 'dropdown-toggle',
-                    'aria-haspopup': 'true',
-                    '[attr.aria-expanded]': 'dropdown.isOpen()',
-                    '(click)': 'toggleOpen()'
-                }
-            },] },
-];
-/** @nocollapse */
-NgbDropdownToggle.ctorParameters = function () { return [
-    { type: NgbDropdown, },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-]; };
-//# sourceMappingURL=dropdown.js.map
-
-/***/ }),
-/* 111 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dropdown__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dropdown_config__ = __webpack_require__(52);
-/* unused harmony reexport NgbDropdown */
-/* unused harmony reexport NgbDropdownToggle */
-/* unused harmony reexport NgbDropdownConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDropdownModule; });
-
-
-
-
-
-var NGB_DROPDOWN_DIRECTIVES = [__WEBPACK_IMPORTED_MODULE_1__dropdown__["a" /* NgbDropdownToggle */], __WEBPACK_IMPORTED_MODULE_1__dropdown__["b" /* NgbDropdown */]];
-var NgbDropdownModule = (function () {
-    function NgbDropdownModule() {
-    }
-    NgbDropdownModule.forRoot = function () { return { ngModule: NgbDropdownModule, providers: [__WEBPACK_IMPORTED_MODULE_2__dropdown_config__["a" /* NgbDropdownConfig */]] }; };
-    return NgbDropdownModule;
-}());
-
-NgbDropdownModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: NGB_DROPDOWN_DIRECTIVES, exports: NGB_DROPDOWN_DIRECTIVES },] },
-];
-/** @nocollapse */
-NgbDropdownModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=dropdown.module.js.map
-
-/***/ }),
-/* 112 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalBackdrop; });
-
-var NgbModalBackdrop = (function () {
-    function NgbModalBackdrop() {
-    }
-    return NgbModalBackdrop;
-}());
-
-NgbModalBackdrop.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{ selector: 'ngb-modal-backdrop', template: '', host: { 'class': 'modal-backdrop fade show' } },] },
-];
-/** @nocollapse */
-NgbModalBackdrop.ctorParameters = function () { return []; };
-//# sourceMappingURL=modal-backdrop.js.map
-
-/***/ }),
-/* 113 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalDismissReasons; });
-var ModalDismissReasons;
-(function (ModalDismissReasons) {
-    ModalDismissReasons[ModalDismissReasons["BACKDROP_CLICK"] = 0] = "BACKDROP_CLICK";
-    ModalDismissReasons[ModalDismissReasons["ESC"] = 1] = "ESC";
-})(ModalDismissReasons || (ModalDismissReasons = {}));
-//# sourceMappingURL=modal-dismiss-reasons.js.map
-
-/***/ }),
-/* 114 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_popup__ = __webpack_require__(26);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbActiveModal; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbModalRef; });
-
-
-/**
- * A reference to an active (currently opened) modal. Instances of this class
- * can be injected into components passed as modal content.
- */
-var NgbActiveModal = (function () {
-    function NgbActiveModal() {
-    }
-    /**
-     * Can be used to close a modal, passing an optional result.
-     */
-    NgbActiveModal.prototype.close = function (result) { };
-    /**
-     * Can be used to dismiss a modal, passing an optional reason.
-     */
-    NgbActiveModal.prototype.dismiss = function (reason) { };
-    return NgbActiveModal;
-}());
-
-NgbActiveModal.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-NgbActiveModal.ctorParameters = function () { return []; };
-/**
- * A reference to a newly opened modal.
- */
-var NgbModalRef = (function () {
-    function NgbModalRef(_windowCmptRef, _contentRef, _backdropCmptRef) {
-        var _this = this;
-        this._windowCmptRef = _windowCmptRef;
-        this._contentRef = _contentRef;
-        this._backdropCmptRef = _backdropCmptRef;
-        _windowCmptRef.instance.dismissEvent.subscribe(function (reason) { _this.dismiss(reason); });
-        this.result = new Promise(function (resolve, reject) {
-            _this._resolve = resolve;
-            _this._reject = reject;
-        });
-        this.result.then(null, function () { });
-    }
-    Object.defineProperty(NgbModalRef.prototype, "componentInstance", {
-        /**
-         * The instance of component used as modal's content.
-         * Undefined when a TemplateRef is used as modal's content.
-         */
-        get: function () {
-            if (this._contentRef.componentRef) {
-                return this._contentRef.componentRef.instance;
-            }
-        },
-        // only needed to keep TS1.8 compatibility
-        set: function (instance) { },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Can be used to close a modal, passing an optional result.
-     */
-    NgbModalRef.prototype.close = function (result) {
-        if (this._windowCmptRef) {
-            this._resolve(result);
-            this._removeModalElements();
-        }
-    };
-    /**
-     * Can be used to dismiss a modal, passing an optional reason.
-     */
-    NgbModalRef.prototype.dismiss = function (reason) {
-        if (this._windowCmptRef) {
-            this._reject(reason);
-            this._removeModalElements();
-        }
-    };
-    NgbModalRef.prototype._removeModalElements = function () {
-        var windowNativeEl = this._windowCmptRef.location.nativeElement;
-        windowNativeEl.parentNode.removeChild(windowNativeEl);
-        this._windowCmptRef.destroy();
-        if (this._backdropCmptRef) {
-            var backdropNativeEl = this._backdropCmptRef.location.nativeElement;
-            backdropNativeEl.parentNode.removeChild(backdropNativeEl);
-            this._backdropCmptRef.destroy();
-        }
-        if (this._contentRef && this._contentRef.viewRef) {
-            this._contentRef.viewRef.destroy();
-        }
-        this._windowCmptRef = null;
-        this._backdropCmptRef = null;
-        this._contentRef = null;
-    };
-    return NgbModalRef;
-}());
-
-NgbModalRef.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-NgbModalRef.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__util_popup__["b" /* ContentRef */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentRef"], },
-]; };
-//# sourceMappingURL=modal-ref.js.map
-
-/***/ }),
-/* 115 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_popup__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_backdrop__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_window__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_ref__ = __webpack_require__(114);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalStack; });
-
-
-
-
-
-
-var NgbModalStack = (function () {
-    function NgbModalStack(_applicationRef, _injector, _componentFactoryResolver) {
-        this._applicationRef = _applicationRef;
-        this._injector = _injector;
-        this._componentFactoryResolver = _componentFactoryResolver;
-        this._backdropFactory = _componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_3__modal_backdrop__["a" /* NgbModalBackdrop */]);
-        this._windowFactory = _componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_4__modal_window__["a" /* NgbModalWindow */]);
-    }
-    NgbModalStack.prototype.open = function (moduleCFR, contentInjector, content, options) {
-        var containerSelector = options.container || 'body';
-        var containerEl = document.querySelector(containerSelector);
-        if (!containerEl) {
-            throw new Error("The specified modal container \"" + containerSelector + "\" was not found in the DOM.");
-        }
-        var activeModal = new __WEBPACK_IMPORTED_MODULE_5__modal_ref__["a" /* NgbActiveModal */]();
-        var contentRef = this._getContentRef(moduleCFR, contentInjector, content, activeModal);
-        var windowCmptRef;
-        var backdropCmptRef;
-        var ngbModalRef;
-        if (options.backdrop !== false) {
-            backdropCmptRef = this._backdropFactory.create(this._injector);
-            this._applicationRef.attachView(backdropCmptRef.hostView);
-            containerEl.appendChild(backdropCmptRef.location.nativeElement);
-        }
-        windowCmptRef = this._windowFactory.create(this._injector, contentRef.nodes);
-        this._applicationRef.attachView(windowCmptRef.hostView);
-        containerEl.appendChild(windowCmptRef.location.nativeElement);
-        ngbModalRef = new __WEBPACK_IMPORTED_MODULE_5__modal_ref__["b" /* NgbModalRef */](windowCmptRef, contentRef, backdropCmptRef);
-        activeModal.close = function (result) { ngbModalRef.close(result); };
-        activeModal.dismiss = function (reason) { ngbModalRef.dismiss(reason); };
-        this._applyWindowOptions(windowCmptRef.instance, options);
-        return ngbModalRef;
-    };
-    NgbModalStack.prototype._applyWindowOptions = function (windowInstance, options) {
-        ['backdrop', 'keyboard', 'size', 'windowClass'].forEach(function (optionName) {
-            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["c" /* isDefined */])(options[optionName])) {
-                windowInstance[optionName] = options[optionName];
-            }
-        });
-    };
-    NgbModalStack.prototype._getContentRef = function (moduleCFR, contentInjector, content, context) {
-        if (!content) {
-            return new __WEBPACK_IMPORTED_MODULE_1__util_popup__["b" /* ContentRef */]([]);
-        }
-        else if (content instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"]) {
-            var viewRef = content.createEmbeddedView(context);
-            this._applicationRef.attachView(viewRef);
-            return new __WEBPACK_IMPORTED_MODULE_1__util_popup__["b" /* ContentRef */]([viewRef.rootNodes], viewRef);
-        }
-        else if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["h" /* isString */])(content)) {
-            return new __WEBPACK_IMPORTED_MODULE_1__util_popup__["b" /* ContentRef */]([[document.createTextNode("" + content)]]);
-        }
-        else {
-            var contentCmptFactory = moduleCFR.resolveComponentFactory(content);
-            var modalContentInjector = __WEBPACK_IMPORTED_MODULE_0__angular_core__["ReflectiveInjector"].resolveAndCreate([{ provide: __WEBPACK_IMPORTED_MODULE_5__modal_ref__["a" /* NgbActiveModal */], useValue: context }], contentInjector);
-            var componentRef = contentCmptFactory.create(modalContentInjector);
-            this._applicationRef.attachView(componentRef.hostView);
-            return new __WEBPACK_IMPORTED_MODULE_1__util_popup__["b" /* ContentRef */]([[componentRef.location.nativeElement]], componentRef.hostView, componentRef);
-        }
-    };
-    return NgbModalStack;
-}());
-
-NgbModalStack.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-NgbModalStack.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
-]; };
-//# sourceMappingURL=modal-stack.js.map
-
-/***/ }),
-/* 116 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_dismiss_reasons__ = __webpack_require__(113);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalWindow; });
-
-
-var NgbModalWindow = (function () {
-    function NgbModalWindow(_elRef, _renderer) {
-        this._elRef = _elRef;
-        this._renderer = _renderer;
-        this.backdrop = true;
-        this.keyboard = true;
-        this.dismissEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-    }
-    NgbModalWindow.prototype.backdropClick = function ($event) {
-        if (this.backdrop === true && this._elRef.nativeElement === $event.target) {
-            this.dismiss(__WEBPACK_IMPORTED_MODULE_1__modal_dismiss_reasons__["a" /* ModalDismissReasons */].BACKDROP_CLICK);
-        }
-    };
-    NgbModalWindow.prototype.escKey = function ($event) {
-        if (this.keyboard && !$event.defaultPrevented) {
-            this.dismiss(__WEBPACK_IMPORTED_MODULE_1__modal_dismiss_reasons__["a" /* ModalDismissReasons */].ESC);
-        }
-    };
-    NgbModalWindow.prototype.dismiss = function (reason) { this.dismissEvent.emit(reason); };
-    NgbModalWindow.prototype.ngOnInit = function () {
-        this._elWithFocus = document.activeElement;
-        this._renderer.addClass(document.body, 'modal-open');
-    };
-    NgbModalWindow.prototype.ngAfterViewInit = function () {
-        if (!this._elRef.nativeElement.contains(document.activeElement)) {
-            this._elRef.nativeElement['focus'].apply(this._elRef.nativeElement, []);
-        }
-    };
-    NgbModalWindow.prototype.ngOnDestroy = function () {
-        if (this._elWithFocus && document.body.contains(this._elWithFocus)) {
-            this._elWithFocus['focus'].apply(this._elWithFocus, []);
-        }
-        else {
-            document.body['focus'].apply(document.body, []);
-        }
-        this._elWithFocus = null;
-        this._renderer.removeClass(document.body, 'modal-open');
-    };
-    return NgbModalWindow;
-}());
-
-NgbModalWindow.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-modal-window',
-                host: {
-                    '[class]': '"modal fade show" + (windowClass ? " " + windowClass : "")',
-                    'role': 'dialog',
-                    'tabindex': '-1',
-                    'style': 'display: block;',
-                    '(keyup.esc)': 'escKey($event)',
-                    '(click)': 'backdropClick($event)'
-                },
-                template: "\n    <div [class]=\"'modal-dialog' + (size ? ' modal-' + size : '')\" role=\"document\">\n        <div class=\"modal-content\"><ng-content></ng-content></div>\n    </div>\n    "
-            },] },
-];
-/** @nocollapse */
-NgbModalWindow.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
-]; };
-NgbModalWindow.propDecorators = {
-    'backdrop': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'keyboard': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'size': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'windowClass': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'dismissEvent': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"], args: ['dismiss',] },],
-};
-//# sourceMappingURL=modal-window.js.map
-
-/***/ }),
-/* 117 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_stack__ = __webpack_require__(115);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModal; });
-
-
-/**
- * A service to open modal windows. Creating a modal is straightforward: create a template and pass it as an argument to
- * the "open" method!
- */
-var NgbModal = (function () {
-    function NgbModal(_moduleCFR, _injector, _modalStack) {
-        this._moduleCFR = _moduleCFR;
-        this._injector = _injector;
-        this._modalStack = _modalStack;
-    }
-    /**
-     * Opens a new modal window with the specified content and using supplied options. Content can be provided
-     * as a TemplateRef or a component type. If you pass a component type as content than instances of those
-     * components can be injected with an instance of the NgbActiveModal class. You can use methods on the
-     * NgbActiveModal class to close / dismiss modals from "inside" of a component.
-     */
-    NgbModal.prototype.open = function (content, options) {
-        if (options === void 0) { options = {}; }
-        return this._modalStack.open(this._moduleCFR, this._injector, content, options);
-    };
-    return NgbModal;
-}());
-
-NgbModal.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-NgbModal.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__modal_stack__["a" /* NgbModalStack */], },
-]; };
-//# sourceMappingURL=modal.js.map
-
-/***/ }),
-/* 118 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_backdrop__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_window__ = __webpack_require__(116);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_stack__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal__ = __webpack_require__(117);
-/* unused harmony reexport NgbModal */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_ref__ = __webpack_require__(114);
-/* unused harmony reexport NgbModalRef */
-/* unused harmony reexport NgbActiveModal */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modal_dismiss_reasons__ = __webpack_require__(113);
-/* unused harmony reexport ModalDismissReasons */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalModule; });
-
-
-
-
-
-
-
-
-var NgbModalModule = (function () {
-    function NgbModalModule() {
-    }
-    NgbModalModule.forRoot = function () { return { ngModule: NgbModalModule, providers: [__WEBPACK_IMPORTED_MODULE_4__modal__["a" /* NgbModal */], __WEBPACK_IMPORTED_MODULE_3__modal_stack__["a" /* NgbModalStack */]] }; };
-    return NgbModalModule;
-}());
-
-NgbModalModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
-                declarations: [__WEBPACK_IMPORTED_MODULE_1__modal_backdrop__["a" /* NgbModalBackdrop */], __WEBPACK_IMPORTED_MODULE_2__modal_window__["a" /* NgbModalWindow */]],
-                entryComponents: [__WEBPACK_IMPORTED_MODULE_1__modal_backdrop__["a" /* NgbModalBackdrop */], __WEBPACK_IMPORTED_MODULE_2__modal_window__["a" /* NgbModalWindow */]],
-                providers: [__WEBPACK_IMPORTED_MODULE_4__modal__["a" /* NgbModal */]]
-            },] },
-];
-/** @nocollapse */
-NgbModalModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=modal.module.js.map
-
-/***/ }),
-/* 119 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination_config__ = __webpack_require__(53);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbPagination; });
-
-
-
-/**
- * A directive that will take care of visualising a pagination bar and enable / disable buttons correctly!
- */
-var NgbPagination = (function () {
-    function NgbPagination(config) {
-        this.pageCount = 0;
-        this.pages = [];
-        /**
-         *  Current page.
-         */
-        this.page = 0;
-        /**
-         *  An event fired when the page is changed.
-         *  Event's payload equals to the newly selected page.
-         */
-        this.pageChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"](true);
-        this.disabled = config.disabled;
-        this.boundaryLinks = config.boundaryLinks;
-        this.directionLinks = config.directionLinks;
-        this.ellipses = config.ellipses;
-        this.maxSize = config.maxSize;
-        this.pageSize = config.pageSize;
-        this.rotate = config.rotate;
-        this.size = config.size;
-    }
-    NgbPagination.prototype.hasPrevious = function () { return this.page > 1; };
-    NgbPagination.prototype.hasNext = function () { return this.page < this.pageCount; };
-    NgbPagination.prototype.selectPage = function (pageNumber) { this._updatePages(pageNumber); };
-    NgbPagination.prototype.ngOnChanges = function (changes) { this._updatePages(this.page); };
-    /**
-     * @internal
-     */
-    NgbPagination.prototype.isEllipsis = function (pageNumber) { return pageNumber === -1; };
-    /**
-     * Appends ellipses and first/last page number to the displayed pages
-     */
-    NgbPagination.prototype._applyEllipses = function (start, end) {
-        if (this.ellipses) {
-            if (start > 0) {
-                if (start > 1) {
-                    this.pages.unshift(-1);
-                }
-                this.pages.unshift(1);
-            }
-            if (end < this.pageCount) {
-                if (end < (this.pageCount - 1)) {
-                    this.pages.push(-1);
-                }
-                this.pages.push(this.pageCount);
-            }
-        }
-    };
-    /**
-     * Rotates page numbers based on maxSize items visible.
-     * Currently selected page stays in the middle:
-     *
-     * Ex. for selected page = 6:
-     * [5,*6*,7] for maxSize = 3
-     * [4,5,*6*,7] for maxSize = 4
-     */
-    NgbPagination.prototype._applyRotation = function () {
-        var start = 0;
-        var end = this.pageCount;
-        var leftOffset = Math.floor(this.maxSize / 2);
-        var rightOffset = this.maxSize % 2 === 0 ? leftOffset - 1 : leftOffset;
-        if (this.page <= leftOffset) {
-            // very beginning, no rotation -> [0..maxSize]
-            end = this.maxSize;
-        }
-        else if (this.pageCount - this.page < leftOffset) {
-            // very end, no rotation -> [len-maxSize..len]
-            start = this.pageCount - this.maxSize;
-        }
-        else {
-            // rotate
-            start = this.page - leftOffset - 1;
-            end = this.page + rightOffset;
-        }
-        return [start, end];
-    };
-    /**
-     * Paginates page numbers based on maxSize items per page
-     */
-    NgbPagination.prototype._applyPagination = function () {
-        var page = Math.ceil(this.page / this.maxSize) - 1;
-        var start = page * this.maxSize;
-        var end = start + this.maxSize;
-        return [start, end];
-    };
-    NgbPagination.prototype._setPageInRange = function (newPageNo) {
-        var prevPageNo = this.page;
-        this.page = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["g" /* getValueInRange */])(newPageNo, this.pageCount, 1);
-        if (this.page !== prevPageNo) {
-            this.pageChange.emit(this.page);
-        }
-    };
-    NgbPagination.prototype._updatePages = function (newPage) {
-        this.pageCount = Math.ceil(this.collectionSize / this.pageSize);
-        if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["d" /* isNumber */])(this.pageCount)) {
-            this.pageCount = 0;
-        }
-        // fill-in model needed to render pages
-        this.pages.length = 0;
-        for (var i = 1; i <= this.pageCount; i++) {
-            this.pages.push(i);
-        }
-        // set page within 1..max range
-        this._setPageInRange(newPage);
-        // apply maxSize if necessary
-        if (this.maxSize > 0 && this.pageCount > this.maxSize) {
-            var start = 0;
-            var end = this.pageCount;
-            // either paginating or rotating page numbers
-            if (this.rotate) {
-                _a = this._applyRotation(), start = _a[0], end = _a[1];
-            }
-            else {
-                _b = this._applyPagination(), start = _b[0], end = _b[1];
-            }
-            this.pages = this.pages.slice(start, end);
-            // adding ellipses
-            this._applyEllipses(start, end);
-        }
-        var _a, _b;
-    };
-    return NgbPagination;
-}());
-
-NgbPagination.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-pagination',
-                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
-                host: { 'role': 'navigation' },
-                template: "\n    <ul [class]=\"'pagination' + (size ? ' pagination-' + size : '')\">\n      <li *ngIf=\"boundaryLinks\" class=\"page-item\"\n        [class.disabled]=\"!hasPrevious() || disabled\">\n        <a aria-label=\"First\" class=\"page-link\" href (click)=\"!!selectPage(1)\" [attr.tabindex]=\"(hasPrevious() ? null : '-1')\">\n          <span aria-hidden=\"true\">&laquo;&laquo;</span>\n        </a>\n      </li>\n\n      <li *ngIf=\"directionLinks\" class=\"page-item\"\n        [class.disabled]=\"!hasPrevious() || disabled\">\n        <a aria-label=\"Previous\" class=\"page-link\" href (click)=\"!!selectPage(page-1)\" [attr.tabindex]=\"(hasPrevious() ? null : '-1')\">\n          <span aria-hidden=\"true\">&laquo;</span>\n        </a>\n      </li>\n      <li *ngFor=\"let pageNumber of pages\" class=\"page-item\" [class.active]=\"pageNumber === page\"\n        [class.disabled]=\"isEllipsis(pageNumber) || disabled\">\n        <a *ngIf=\"isEllipsis(pageNumber)\" class=\"page-link\">...</a>\n        <a *ngIf=\"!isEllipsis(pageNumber)\" class=\"page-link\" href (click)=\"!!selectPage(pageNumber)\">\n          {{pageNumber}}\n          <span *ngIf=\"pageNumber === page\" class=\"sr-only\">(current)</span>\n        </a>\n      </li>\n      <li *ngIf=\"directionLinks\" class=\"page-item\" [class.disabled]=\"!hasNext() || disabled\">\n        <a aria-label=\"Next\" class=\"page-link\" href (click)=\"!!selectPage(page+1)\" [attr.tabindex]=\"(hasNext() ? null : '-1')\">\n          <span aria-hidden=\"true\">&raquo;</span>\n        </a>\n      </li>\n\n      <li *ngIf=\"boundaryLinks\" class=\"page-item\" [class.disabled]=\"!hasNext() || disabled\">\n        <a aria-label=\"Last\" class=\"page-link\" href (click)=\"!!selectPage(pageCount)\" [attr.tabindex]=\"(hasNext() ? null : '-1')\">\n          <span aria-hidden=\"true\">&raquo;&raquo;</span>\n        </a>\n      </li>\n    </ul>\n  "
-            },] },
-];
-/** @nocollapse */
-NgbPagination.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_2__pagination_config__["a" /* NgbPaginationConfig */], },
-]; };
-NgbPagination.propDecorators = {
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'boundaryLinks': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'directionLinks': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'ellipses': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'rotate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'collectionSize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'maxSize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'page': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'pageSize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'pageChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-    'size': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-};
-//# sourceMappingURL=pagination.js.map
-
-/***/ }),
-/* 120 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination__ = __webpack_require__(119);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pagination_config__ = __webpack_require__(53);
-/* unused harmony reexport NgbPagination */
-/* unused harmony reexport NgbPaginationConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbPaginationModule; });
-
-
-
-
-
-
-var NgbPaginationModule = (function () {
-    function NgbPaginationModule() {
-    }
-    NgbPaginationModule.forRoot = function () { return { ngModule: NgbPaginationModule, providers: [__WEBPACK_IMPORTED_MODULE_3__pagination_config__["a" /* NgbPaginationConfig */]] }; };
-    return NgbPaginationModule;
-}());
-
-NgbPaginationModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_2__pagination__["a" /* NgbPagination */]], exports: [__WEBPACK_IMPORTED_MODULE_2__pagination__["a" /* NgbPagination */]], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
-];
-/** @nocollapse */
-NgbPaginationModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=pagination.module.js.map
-
-/***/ }),
-/* 121 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_triggers__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_positioning__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_popup__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__popover_config__ = __webpack_require__(54);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbPopoverWindow; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbPopover; });
-
-
-
-
-
-var nextId = 0;
-var NgbPopoverWindow = (function () {
-    function NgbPopoverWindow() {
-        this.placement = 'top';
-    }
-    return NgbPopoverWindow;
-}());
-
-NgbPopoverWindow.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-popover-window',
-                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
-                host: { '[class]': '"popover show popover-" + placement', 'role': 'tooltip', '[id]': 'id' },
-                template: "\n    <h3 class=\"popover-title\">{{title}}</h3><div class=\"popover-content\"><ng-content></ng-content></div>\n    "
-            },] },
-];
-/** @nocollapse */
-NgbPopoverWindow.ctorParameters = function () { return []; };
-NgbPopoverWindow.propDecorators = {
-    'placement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'title': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-};
-/**
- * A lightweight, extensible directive for fancy popover creation.
- */
-var NgbPopover = (function () {
-    function NgbPopover(_elementRef, _renderer, injector, componentFactoryResolver, viewContainerRef, config, ngZone) {
-        var _this = this;
-        this._elementRef = _elementRef;
-        this._renderer = _renderer;
-        /**
-         * Emits an event when the popover is shown
-         */
-        this.shown = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        /**
-         * Emits an event when the popover is hidden
-         */
-        this.hidden = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this._ngbPopoverWindowId = "ngb-popover-" + nextId++;
-        this.placement = config.placement;
-        this.triggers = config.triggers;
-        this.container = config.container;
-        this._popupService = new __WEBPACK_IMPORTED_MODULE_3__util_popup__["a" /* PopupService */](NgbPopoverWindow, injector, viewContainerRef, _renderer, componentFactoryResolver);
-        this._zoneSubscription = ngZone.onStable.subscribe(function () {
-            if (_this._windowRef) {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_positioning__["a" /* positionElements */])(_this._elementRef.nativeElement, _this._windowRef.location.nativeElement, _this.placement, _this.container === 'body');
-            }
-        });
-    }
-    /**
-     * Opens an element’s popover. This is considered a “manual” triggering of the popover.
-     * The context is an optional value to be injected into the popover template when it is created.
-     */
-    NgbPopover.prototype.open = function (context) {
-        if (!this._windowRef) {
-            this._windowRef = this._popupService.open(this.ngbPopover, context);
-            this._windowRef.instance.placement = this.placement;
-            this._windowRef.instance.title = this.popoverTitle;
-            this._windowRef.instance.id = this._ngbPopoverWindowId;
-            this._renderer.setAttribute(this._elementRef.nativeElement, 'aria-describedby', this._ngbPopoverWindowId);
-            if (this.container === 'body') {
-                window.document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);
-            }
-            // we need to manually invoke change detection since events registered via
-            // Renderer::listen() are not picked up by change detection with the OnPush strategy
-            this._windowRef.changeDetectorRef.markForCheck();
-            this.shown.emit();
-        }
-    };
-    /**
-     * Closes an element’s popover. This is considered a “manual” triggering of the popover.
-     */
-    NgbPopover.prototype.close = function () {
-        if (this._windowRef) {
-            this._renderer.removeAttribute(this._elementRef.nativeElement, 'aria-describedby');
-            this._popupService.close();
-            this._windowRef = null;
-            this.hidden.emit();
-        }
-    };
-    /**
-     * Toggles an element’s popover. This is considered a “manual” triggering of the popover.
-     */
-    NgbPopover.prototype.toggle = function () {
-        if (this._windowRef) {
-            this.close();
-        }
-        else {
-            this.open();
-        }
-    };
-    /**
-     * Returns whether or not the popover is currently being shown
-     */
-    NgbPopover.prototype.isOpen = function () { return this._windowRef != null; };
-    NgbPopover.prototype.ngOnInit = function () {
-        this._unregisterListenersFn = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_triggers__["a" /* listenToTriggers */])(this._renderer, this._elementRef.nativeElement, this.triggers, this.open.bind(this), this.close.bind(this), this.toggle.bind(this));
-    };
-    NgbPopover.prototype.ngOnDestroy = function () {
-        this.close();
-        this._unregisterListenersFn();
-        this._zoneSubscription.unsubscribe();
-    };
-    return NgbPopover;
-}());
-
-NgbPopover.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: '[ngbPopover]', exportAs: 'ngbPopover' },] },
-];
-/** @nocollapse */
-NgbPopover.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_4__popover_config__["a" /* NgbPopoverConfig */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
-]; };
-NgbPopover.propDecorators = {
-    'ngbPopover': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'popoverTitle': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'placement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'triggers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'container': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'shown': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-    'hidden': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-//# sourceMappingURL=popover.js.map
-
-/***/ }),
-/* 122 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popover__ = __webpack_require__(121);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__popover_config__ = __webpack_require__(54);
-/* unused harmony reexport NgbPopover */
-/* unused harmony reexport NgbPopoverConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbPopoverModule; });
-
-
-
-
-
-var NgbPopoverModule = (function () {
-    function NgbPopoverModule() {
-    }
-    NgbPopoverModule.forRoot = function () { return { ngModule: NgbPopoverModule, providers: [__WEBPACK_IMPORTED_MODULE_2__popover_config__["a" /* NgbPopoverConfig */]] }; };
-    return NgbPopoverModule;
-}());
-
-NgbPopoverModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_1__popover__["a" /* NgbPopover */], __WEBPACK_IMPORTED_MODULE_1__popover__["b" /* NgbPopoverWindow */]], exports: [__WEBPACK_IMPORTED_MODULE_1__popover__["a" /* NgbPopover */]], entryComponents: [__WEBPACK_IMPORTED_MODULE_1__popover__["b" /* NgbPopoverWindow */]] },] },
-];
-/** @nocollapse */
-NgbPopoverModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=popover.module.js.map
-
-/***/ }),
-/* 123 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progressbar_config__ = __webpack_require__(55);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbProgressbar; });
-
-
-
-/**
- * Directive that can be used to provide feedback on the progress of a workflow or an action.
- */
-var NgbProgressbar = (function () {
-    function NgbProgressbar(config) {
-        /**
-         * Current value to be displayed in the progressbar. Should be smaller or equal to "max" value.
-         */
-        this.value = 0;
-        this.max = config.max;
-        this.animated = config.animated;
-        this.striped = config.striped;
-        this.type = config.type;
-        this.showValue = config.showValue;
-    }
-    NgbProgressbar.prototype.getValue = function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["g" /* getValueInRange */])(this.value, this.max); };
-    NgbProgressbar.prototype.getPercentValue = function () { return 100 * this.getValue() / this.max; };
-    return NgbProgressbar;
-}());
-
-NgbProgressbar.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-progressbar',
-                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
-                template: "\n    <div class=\"progress\">\n      <div class=\"progress-bar{{type ? ' bg-' + type : ''}}{{animated ? ' progress-bar-animated' : ''}}{{striped ?\n    ' progress-bar-striped' : ''}}\" role=\"progressbar\" [style.width.%]=\"getPercentValue()\"\n    [attr.aria-valuenow]=\"getValue()\" aria-valuemin=\"0\" [attr.aria-valuemax]=\"max\">\n        <span *ngIf=\"showValue\">{{getPercentValue()}}%</span><ng-content></ng-content>\n      </div>\n    </div>\n  "
-            },] },
-];
-/** @nocollapse */
-NgbProgressbar.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_2__progressbar_config__["a" /* NgbProgressbarConfig */], },
-]; };
-NgbProgressbar.propDecorators = {
-    'max': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'animated': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'striped': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'showValue': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'value': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-};
-//# sourceMappingURL=progressbar.js.map
-
-/***/ }),
-/* 124 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progressbar__ = __webpack_require__(123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progressbar_config__ = __webpack_require__(55);
-/* unused harmony reexport NgbProgressbar */
-/* unused harmony reexport NgbProgressbarConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbProgressbarModule; });
-
-
-
-
-
-
-var NgbProgressbarModule = (function () {
-    function NgbProgressbarModule() {
-    }
-    NgbProgressbarModule.forRoot = function () { return { ngModule: NgbProgressbarModule, providers: [__WEBPACK_IMPORTED_MODULE_3__progressbar_config__["a" /* NgbProgressbarConfig */]] }; };
-    return NgbProgressbarModule;
-}());
-
-NgbProgressbarModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_2__progressbar__["a" /* NgbProgressbar */]], exports: [__WEBPACK_IMPORTED_MODULE_2__progressbar__["a" /* NgbProgressbar */]], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
-];
-/** @nocollapse */
-NgbProgressbarModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=progressbar.module.js.map
-
-/***/ }),
-/* 125 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rating_config__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(13);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbRating; });
-
-
-
-
-var Key;
-(function (Key) {
-    Key[Key["End"] = 35] = "End";
-    Key[Key["Home"] = 36] = "Home";
-    Key[Key["ArrowLeft"] = 37] = "ArrowLeft";
-    Key[Key["ArrowUp"] = 38] = "ArrowUp";
-    Key[Key["ArrowRight"] = 39] = "ArrowRight";
-    Key[Key["ArrowDown"] = 40] = "ArrowDown";
-})(Key || (Key = {}));
-var NGB_RATING_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbRating; }),
-    multi: true
-};
-/**
- * Rating directive that will take care of visualising a star rating bar.
- */
-var NgbRating = (function () {
-    function NgbRating(config, _changeDetectorRef) {
-        this._changeDetectorRef = _changeDetectorRef;
-        this.contexts = [];
-        this.disabled = false;
-        /**
-         * An event fired when a user is hovering over a given rating.
-         * Event's payload equals to the rating being hovered over.
-         */
-        this.hover = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        /**
-         * An event fired when a user stops hovering over a given rating.
-         * Event's payload equals to the rating of the last item being hovered over.
-         */
-        this.leave = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        /**
-         * An event fired when a user selects a new rating.
-         * Event's payload equals to the newly selected rating.
-         */
-        this.rateChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"](true);
-        this.onChange = function (_) { };
-        this.onTouched = function () { };
-        this.max = config.max;
-        this.readonly = config.readonly;
-    }
-    NgbRating.prototype.ariaValueText = function () { return this.nextRate + " out of " + this.max; };
-    NgbRating.prototype.enter = function (value) {
-        if (!this.readonly && !this.disabled) {
-            this._updateState(value);
-        }
-        this.hover.emit(value);
-    };
-    NgbRating.prototype.handleBlur = function () { this.onTouched(); };
-    NgbRating.prototype.handleClick = function (value) { this.update(this.resettable && this.rate === value ? 0 : value); };
-    NgbRating.prototype.handleKeyDown = function (event) {
-        if (Key[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["a" /* toString */])(event.which)]) {
-            event.preventDefault();
-            switch (event.which) {
-                case Key.ArrowDown:
-                case Key.ArrowLeft:
-                    this.update(this.rate - 1);
-                    break;
-                case Key.ArrowUp:
-                case Key.ArrowRight:
-                    this.update(this.rate + 1);
-                    break;
-                case Key.Home:
-                    this.update(0);
-                    break;
-                case Key.End:
-                    this.update(this.max);
-                    break;
-            }
-        }
-    };
-    NgbRating.prototype.ngOnChanges = function (changes) {
-        if (changes['rate']) {
-            this.update(this.rate);
-        }
-    };
-    NgbRating.prototype.ngOnInit = function () {
-        this.contexts = Array.from({ length: this.max }, function () { return ({ fill: 0 }); });
-        this._updateState(this.rate);
-    };
-    NgbRating.prototype.registerOnChange = function (fn) { this.onChange = fn; };
-    NgbRating.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
-    NgbRating.prototype.reset = function () {
-        this.leave.emit(this.nextRate);
-        this._updateState(this.rate);
-    };
-    NgbRating.prototype.setDisabledState = function (isDisabled) { this.disabled = isDisabled; };
-    NgbRating.prototype.update = function (value, internalChange) {
-        if (internalChange === void 0) { internalChange = true; }
-        var newRate = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["g" /* getValueInRange */])(value, this.max, 0);
-        if (!this.readonly && !this.disabled && this.rate !== newRate) {
-            this.rate = newRate;
-            this.rateChange.emit(this.rate);
-        }
-        if (internalChange) {
-            this.onChange(this.rate);
-            this.onTouched();
-        }
-        this._updateState(this.rate);
-    };
-    NgbRating.prototype.writeValue = function (value) {
-        this.update(value, false);
-        this._changeDetectorRef.markForCheck();
-    };
-    NgbRating.prototype._getFillValue = function (index) {
-        var diff = this.nextRate - index;
-        if (diff >= 1) {
-            return 100;
-        }
-        if (diff < 1 && diff > 0) {
-            return Number.parseInt((diff * 100).toFixed(2));
-        }
-        return 0;
-    };
-    NgbRating.prototype._updateState = function (nextValue) {
-        var _this = this;
-        this.nextRate = nextValue;
-        this.contexts.forEach(function (context, index) { return context.fill = _this._getFillValue(index); });
-    };
-    return NgbRating;
-}());
-
-NgbRating.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-rating',
-                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
-                host: {
-                    'class': 'd-inline-flex',
-                    'tabindex': '0',
-                    'role': 'slider',
-                    'aria-valuemin': '0',
-                    '[attr.aria-valuemax]': 'max',
-                    '[attr.aria-valuenow]': 'nextRate',
-                    '[attr.aria-valuetext]': 'ariaValueText()',
-                    '[attr.aria-disabled]': 'readonly ? true : null',
-                    '(blur)': 'handleBlur()',
-                    '(keydown)': 'handleKeyDown($event)',
-                    '(mouseleave)': 'reset()'
-                },
-                template: "\n    <ng-template #t let-fill=\"fill\">{{ fill === 100 ? '&#9733;' : '&#9734;' }}</ng-template>\n    <ng-template ngFor [ngForOf]=\"contexts\" let-index=\"index\">\n      <span class=\"sr-only\">({{ index < nextRate ? '*' : ' ' }})</span>\n      <span (mouseenter)=\"enter(index + 1)\" (click)=\"handleClick(index + 1)\" [style.cursor]=\"readonly || disabled ? 'default' : 'pointer'\">\n        <ng-template [ngTemplateOutlet]=\"starTemplate || t\" [ngOutletContext]=\"contexts[index]\"></ng-template>\n      </span>\n    </ng-template>\n  ",
-                providers: [NGB_RATING_VALUE_ACCESSOR]
-            },] },
-];
-/** @nocollapse */
-NgbRating.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__rating_config__["a" /* NgbRatingConfig */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"], },
-]; };
-NgbRating.propDecorators = {
-    'max': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'rate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'readonly': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'resettable': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'starTemplate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"],] },],
-    'hover': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-    'leave': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-    'rateChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-//# sourceMappingURL=rating.js.map
-
-/***/ }),
-/* 126 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rating_config__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rating__ = __webpack_require__(125);
-/* unused harmony reexport NgbRating */
-/* unused harmony reexport NgbRatingConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbRatingModule; });
-
-
-
-
-
-
-var NgbRatingModule = (function () {
-    function NgbRatingModule() {
-    }
-    NgbRatingModule.forRoot = function () { return { ngModule: NgbRatingModule, providers: [__WEBPACK_IMPORTED_MODULE_2__rating_config__["a" /* NgbRatingConfig */]] }; };
-    return NgbRatingModule;
-}());
-
-NgbRatingModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_3__rating__["a" /* NgbRating */]], exports: [__WEBPACK_IMPORTED_MODULE_3__rating__["a" /* NgbRating */]], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
-];
-/** @nocollapse */
-NgbRatingModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=rating.module.js.map
-
-/***/ }),
-/* 127 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tabset_config__ = __webpack_require__(57);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return NgbTabTitle; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return NgbTabContent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbTab; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTabset; });
-
-
-var nextId = 0;
-/**
- * This directive should be used to wrap tab titles that need to contain HTML markup or other directives.
- */
-var NgbTabTitle = (function () {
-    function NgbTabTitle(templateRef) {
-        this.templateRef = templateRef;
-    }
-    return NgbTabTitle;
-}());
-
-NgbTabTitle.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ng-template[ngbTabTitle]' },] },
-];
-/** @nocollapse */
-NgbTabTitle.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], },
-]; };
-/**
- * This directive must be used to wrap content to be displayed in a tab.
- */
-var NgbTabContent = (function () {
-    function NgbTabContent(templateRef) {
-        this.templateRef = templateRef;
-    }
-    return NgbTabContent;
-}());
-
-NgbTabContent.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ng-template[ngbTabContent]' },] },
-];
-/** @nocollapse */
-NgbTabContent.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], },
-]; };
-/**
- * A directive representing an individual tab.
- */
-var NgbTab = (function () {
-    function NgbTab() {
-        /**
-         * Unique tab identifier. Must be unique for the entire document for proper accessibility support.
-         */
-        this.id = "ngb-tab-" + nextId++;
-        /**
-         * Allows toggling disabled state of a given state. Disabled tabs can't be selected.
-         */
-        this.disabled = false;
-    }
-    return NgbTab;
-}());
-
-NgbTab.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ngb-tab' },] },
-];
-/** @nocollapse */
-NgbTab.ctorParameters = function () { return []; };
-NgbTab.propDecorators = {
-    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'title': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'contentTpl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [NgbTabContent,] },],
-    'titleTpl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [NgbTabTitle,] },],
-};
-/**
- * A component that makes it easy to create tabbed interface.
- */
-var NgbTabset = (function () {
-    function NgbTabset(config) {
-        /**
-         * Whether the closed tabs should be hidden without destroying them
-         */
-        this.destroyOnHide = true;
-        /**
-         * A tab change event fired right before the tab selection happens. See NgbTabChangeEvent for payload details
-         */
-        this.tabChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.type = config.type;
-        this.justify = config.justify;
-    }
-    /**
-     * Selects the tab with the given id and shows its associated pane.
-     * Any other tab that was previously selected becomes unselected and its associated pane is hidden.
-     */
-    NgbTabset.prototype.select = function (tabId) {
-        var selectedTab = this._getTabById(tabId);
-        if (selectedTab && !selectedTab.disabled && this.activeId !== selectedTab.id) {
-            var defaultPrevented_1 = false;
-            this.tabChange.emit({ activeId: this.activeId, nextId: selectedTab.id, preventDefault: function () { defaultPrevented_1 = true; } });
-            if (!defaultPrevented_1) {
-                this.activeId = selectedTab.id;
-            }
-        }
-    };
-    NgbTabset.prototype.ngAfterContentChecked = function () {
-        // auto-correct activeId that might have been set incorrectly as input
-        var activeTab = this._getTabById(this.activeId);
-        this.activeId = activeTab ? activeTab.id : (this.tabs.length ? this.tabs.first.id : null);
-    };
-    NgbTabset.prototype._getTabById = function (id) {
-        var tabsWithId = this.tabs.filter(function (tab) { return tab.id === id; });
-        return tabsWithId.length ? tabsWithId[0] : null;
-    };
-    return NgbTabset;
-}());
-
-NgbTabset.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-tabset',
-                exportAs: 'ngbTabset',
-                template: "\n    <ul [class]=\"'nav nav-' + type + ' justify-content-' + justify\" role=\"tablist\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a [id]=\"tab.id\" class=\"nav-link\" [class.active]=\"tab.id === activeId\" [class.disabled]=\"tab.disabled\"\n          href (click)=\"!!select(tab.id)\" role=\"tab\" [attr.tabindex]=\"(tab.disabled ? '-1': undefined)\"\n          [attr.aria-controls]=\"(!destroyOnHide || tab.id === activeId ? tab.id + '-panel' : null)\"\n          [attr.aria-expanded]=\"tab.id === activeId\" [attr.aria-disabled]=\"tab.disabled\">\n          {{tab.title}}<ng-template [ngTemplateOutlet]=\"tab.titleTpl?.templateRef\"></ng-template>\n        </a>\n      </li>\n    </ul>\n    <div class=\"tab-content\">\n      <ng-template ngFor let-tab [ngForOf]=\"tabs\">\n        <div\n          class=\"tab-pane {{tab.id === activeId ? 'active' : null}}\"\n          *ngIf=\"!destroyOnHide || tab.id === activeId\"\n          role=\"tabpanel\"\n          [attr.aria-labelledby]=\"tab.id\" id=\"{{tab.id}}-panel\"\n          [attr.aria-expanded]=\"tab.id === activeId\">\n          <ng-template [ngTemplateOutlet]=\"tab.contentTpl.templateRef\"></ng-template>\n        </div>\n      </ng-template>\n    </div>\n  "
-            },] },
-];
-/** @nocollapse */
-NgbTabset.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__tabset_config__["a" /* NgbTabsetConfig */], },
-]; };
-NgbTabset.propDecorators = {
-    'tabs': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChildren"], args: [NgbTab,] },],
-    'activeId': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'destroyOnHide': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'justify': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'tabChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-//# sourceMappingURL=tabset.js.map
-
-/***/ }),
-/* 128 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabset__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabset_config__ = __webpack_require__(57);
-/* unused harmony reexport NgbTabset */
-/* unused harmony reexport NgbTab */
-/* unused harmony reexport NgbTabContent */
-/* unused harmony reexport NgbTabTitle */
-/* unused harmony reexport NgbTabsetConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTabsetModule; });
-
-
-
-
-
-
-var NGB_TABSET_DIRECTIVES = [__WEBPACK_IMPORTED_MODULE_2__tabset__["a" /* NgbTabset */], __WEBPACK_IMPORTED_MODULE_2__tabset__["b" /* NgbTab */], __WEBPACK_IMPORTED_MODULE_2__tabset__["c" /* NgbTabContent */], __WEBPACK_IMPORTED_MODULE_2__tabset__["d" /* NgbTabTitle */]];
-var NgbTabsetModule = (function () {
-    function NgbTabsetModule() {
-    }
-    NgbTabsetModule.forRoot = function () { return { ngModule: NgbTabsetModule, providers: [__WEBPACK_IMPORTED_MODULE_3__tabset_config__["a" /* NgbTabsetConfig */]] }; };
-    return NgbTabsetModule;
-}());
-
-NgbTabsetModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: NGB_TABSET_DIRECTIVES, exports: NGB_TABSET_DIRECTIVES, imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
-];
-/** @nocollapse */
-NgbTabsetModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=tabset.module.js.map
-
-/***/ }),
-/* 129 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_time__ = __webpack_require__(171);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__timepicker_config__ = __webpack_require__(58);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTimepicker; });
-
-
-
-
-
-var NGB_TIMEPICKER_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbTimepicker; }),
-    multi: true
-};
-/**
- * A lightweight & configurable timepicker directive.
- */
-var NgbTimepicker = (function () {
-    function NgbTimepicker(config) {
-        this.onChange = function (_) { };
-        this.onTouched = function () { };
-        this.meridian = config.meridian;
-        this.spinners = config.spinners;
-        this.seconds = config.seconds;
-        this.hourStep = config.hourStep;
-        this.minuteStep = config.minuteStep;
-        this.secondStep = config.secondStep;
-        this.disabled = config.disabled;
-        this.readonlyInputs = config.readonlyInputs;
-        this.size = config.size;
-    }
-    NgbTimepicker.prototype.writeValue = function (value) {
-        this.model = value ? new __WEBPACK_IMPORTED_MODULE_3__ngb_time__["a" /* NgbTime */](value.hour, value.minute, value.second) : new __WEBPACK_IMPORTED_MODULE_3__ngb_time__["a" /* NgbTime */]();
-        if (!this.seconds && (!value || !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["d" /* isNumber */])(value.second))) {
-            this.model.second = 0;
-        }
-    };
-    NgbTimepicker.prototype.registerOnChange = function (fn) { this.onChange = fn; };
-    NgbTimepicker.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
-    NgbTimepicker.prototype.setDisabledState = function (isDisabled) { this.disabled = isDisabled; };
-    NgbTimepicker.prototype.changeHour = function (step) {
-        this.model.changeHour(step);
-        this.propagateModelChange();
-    };
-    NgbTimepicker.prototype.changeMinute = function (step) {
-        this.model.changeMinute(step);
-        this.propagateModelChange();
-    };
-    NgbTimepicker.prototype.changeSecond = function (step) {
-        this.model.changeSecond(step);
-        this.propagateModelChange();
-    };
-    NgbTimepicker.prototype.updateHour = function (newVal) {
-        this.model.updateHour(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["e" /* toInteger */])(newVal));
-        this.propagateModelChange();
-    };
-    NgbTimepicker.prototype.updateMinute = function (newVal) {
-        this.model.updateMinute(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["e" /* toInteger */])(newVal));
-        this.propagateModelChange();
-    };
-    NgbTimepicker.prototype.updateSecond = function (newVal) {
-        this.model.updateSecond(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["e" /* toInteger */])(newVal));
-        this.propagateModelChange();
-    };
-    NgbTimepicker.prototype.toggleMeridian = function () {
-        if (this.meridian) {
-            this.changeHour(12);
-        }
-    };
-    NgbTimepicker.prototype.formatHour = function (value) {
-        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["d" /* isNumber */])(value)) {
-            if (this.meridian) {
-                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["f" /* padNumber */])(value % 12 === 0 ? 12 : value % 12);
-            }
-            else {
-                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["f" /* padNumber */])(value % 24);
-            }
-        }
-        else {
-            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["f" /* padNumber */])(NaN);
-        }
-    };
-    NgbTimepicker.prototype.formatMinSec = function (value) { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["f" /* padNumber */])(value); };
-    NgbTimepicker.prototype.setFormControlSize = function () { return { 'form-control-sm': this.size === 'small', 'form-control-lg': this.size === 'large' }; };
-    NgbTimepicker.prototype.setButtonSize = function () { return { 'btn-sm': this.size === 'small', 'btn-lg': this.size === 'large' }; };
-    NgbTimepicker.prototype.ngOnChanges = function (changes) {
-        if (changes['seconds'] && !this.seconds && this.model && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["d" /* isNumber */])(this.model.second)) {
-            this.model.second = 0;
-            this.propagateModelChange(false);
-        }
-    };
-    NgbTimepicker.prototype.propagateModelChange = function (touched) {
-        if (touched === void 0) { touched = true; }
-        if (touched) {
-            this.onTouched();
-        }
-        if (this.model.isValid(this.seconds)) {
-            this.onChange({ hour: this.model.hour, minute: this.model.minute, second: this.model.second });
-        }
-        else {
-            this.onChange(null);
-        }
-    };
-    return NgbTimepicker;
-}());
-
-NgbTimepicker.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-timepicker',
-                styles: ["\n    .ngb-tp {\n      display: flex;\n      align-items: center;\n    }\n\n    .ngb-tp-hour, .ngb-tp-minute, .ngb-tp-second, .ngb-tp-meridian {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: space-around;\n    }\n\n    .ngb-tp-spacer {\n      width: 1em;\n      text-align: center;\n    }\n\n    .chevron::before {\n      border-style: solid;\n      border-width: 0.29em 0.29em 0 0;\n      content: '';\n      display: inline-block;\n      height: 0.69em;\n      left: 0.05em;\n      position: relative;\n      top: 0.15em;\n      transform: rotate(-45deg);\n      -webkit-transform: rotate(-45deg);\n      -ms-transform: rotate(-45deg);\n      vertical-align: middle;\n      width: 0.71em;\n    }\n\n    .chevron.bottom:before {\n      top: -.3em;\n      -webkit-transform: rotate(135deg);\n      -ms-transform: rotate(135deg);\n      transform: rotate(135deg);\n    }\n\n    .btn-link {\n      outline: 0;\n    }\n\n    .btn-link.disabled {\n      cursor: not-allowed;\n      opacity: .65;\n    }\n\n    input {\n      text-align: center;\n      display: inline-block;\n      width: auto;\n    }\n  "],
-                template: "\n    <fieldset [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n      <div class=\"ngb-tp\">\n        <div class=\"ngb-tp-hour\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeHour(hourStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron\"></span>\n            <span class=\"sr-only\">Increment hours</span>\n          </button>\n          <input type=\"text\" class=\"form-control\" [ngClass]=\"setFormControlSize()\" maxlength=\"2\" size=\"2\" placeholder=\"HH\"\n            [value]=\"formatHour(model?.hour)\" (change)=\"updateHour($event.target.value)\"\n            [readonly]=\"readonlyInputs\" [disabled]=\"disabled\" aria-label=\"Hours\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeHour(-hourStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron bottom\"></span>\n            <span class=\"sr-only\">Decrement hours</span>\n          </button>\n        </div>\n        <div class=\"ngb-tp-spacer\">:</div>\n        <div class=\"ngb-tp-minute\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeMinute(minuteStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron\"></span>\n            <span class=\"sr-only\">Increment minutes</span>\n          </button>\n          <input type=\"text\" class=\"form-control\" [ngClass]=\"setFormControlSize()\" maxlength=\"2\" size=\"2\" placeholder=\"MM\"\n            [value]=\"formatMinSec(model?.minute)\" (change)=\"updateMinute($event.target.value)\"\n            [readonly]=\"readonlyInputs\" [disabled]=\"disabled\" aria-label=\"Minutes\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeMinute(-minuteStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron bottom\"></span>\n            <span class=\"sr-only\">Decrement minutes</span>\n          </button>\n        </div>\n        <div *ngIf=\"seconds\" class=\"ngb-tp-spacer\">:</div>\n        <div *ngIf=\"seconds\" class=\"ngb-tp-second\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeSecond(secondStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron\"></span>\n            <span class=\"sr-only\">Increment seconds</span>\n          </button>\n          <input type=\"text\" class=\"form-control\" [ngClass]=\"setFormControlSize()\" maxlength=\"2\" size=\"2\" placeholder=\"SS\"\n            [value]=\"formatMinSec(model?.second)\" (change)=\"updateSecond($event.target.value)\"\n            [readonly]=\"readonlyInputs\" [disabled]=\"disabled\" aria-label=\"Seconds\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeSecond(-secondStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron bottom\"></span>\n            <span class=\"sr-only\">Decrement seconds</span>\n          </button>\n        </div>\n        <div *ngIf=\"meridian\" class=\"ngb-tp-spacer\"></div>\n        <div *ngIf=\"meridian\" class=\"ngb-tp-meridian\">\n          <button type=\"button\" class=\"btn btn-outline-primary\" [ngClass]=\"setButtonSize()\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\"\n            (click)=\"toggleMeridian()\">{{model.hour >= 12 ? 'PM' : 'AM'}}</button>\n        </div>\n      </div>\n    </fieldset>\n  ",
-                providers: [NGB_TIMEPICKER_VALUE_ACCESSOR]
-            },] },
-];
-/** @nocollapse */
-NgbTimepicker.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_4__timepicker_config__["a" /* NgbTimepickerConfig */], },
-]; };
-NgbTimepicker.propDecorators = {
-    'meridian': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'spinners': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'seconds': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'hourStep': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'minuteStep': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'secondStep': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'readonlyInputs': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'size': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-};
-//# sourceMappingURL=timepicker.js.map
-
-/***/ }),
-/* 130 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timepicker__ = __webpack_require__(129);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__timepicker_config__ = __webpack_require__(58);
-/* unused harmony reexport NgbTimepicker */
-/* unused harmony reexport NgbTimepickerConfig */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTimepickerModule; });
-
-
-
-
-
-
-var NgbTimepickerModule = (function () {
-    function NgbTimepickerModule() {
-    }
-    NgbTimepickerModule.forRoot = function () { return { ngModule: NgbTimepickerModule, providers: [__WEBPACK_IMPORTED_MODULE_3__timepicker_config__["a" /* NgbTimepickerConfig */]] }; };
-    return NgbTimepickerModule;
-}());
-
-NgbTimepickerModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_2__timepicker__["a" /* NgbTimepicker */]], exports: [__WEBPACK_IMPORTED_MODULE_2__timepicker__["a" /* NgbTimepicker */]], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
-];
-/** @nocollapse */
-NgbTimepickerModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=timepicker.module.js.map
-
-/***/ }),
-/* 131 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_triggers__ = __webpack_require__(136);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_positioning__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_popup__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_config__ = __webpack_require__(59);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbTooltipWindow; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTooltip; });
-
-
-
-
-
-var nextId = 0;
-var NgbTooltipWindow = (function () {
-    function NgbTooltipWindow() {
-        this.placement = 'top';
-    }
-    return NgbTooltipWindow;
-}());
-
-NgbTooltipWindow.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-tooltip-window',
-                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
-                host: { '[class]': '"tooltip show tooltip-" + placement', 'role': 'tooltip', '[id]': 'id' },
-                template: "\n    <div class=\"tooltip-inner\"><ng-content></ng-content></div>\n    "
-            },] },
-];
-/** @nocollapse */
-NgbTooltipWindow.ctorParameters = function () { return []; };
-NgbTooltipWindow.propDecorators = {
-    'placement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-};
-/**
- * A lightweight, extensible directive for fancy tooltip creation.
- */
-var NgbTooltip = (function () {
-    function NgbTooltip(_elementRef, _renderer, injector, componentFactoryResolver, viewContainerRef, config, ngZone) {
-        var _this = this;
-        this._elementRef = _elementRef;
-        this._renderer = _renderer;
-        /**
-         * Emits an event when the tooltip is shown
-         */
-        this.shown = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        /**
-         * Emits an event when the tooltip is hidden
-         */
-        this.hidden = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this._ngbTooltipWindowId = "ngb-tooltip-" + nextId++;
-        this.placement = config.placement;
-        this.triggers = config.triggers;
-        this.container = config.container;
-        this._popupService = new __WEBPACK_IMPORTED_MODULE_3__util_popup__["a" /* PopupService */](NgbTooltipWindow, injector, viewContainerRef, _renderer, componentFactoryResolver);
-        this._zoneSubscription = ngZone.onStable.subscribe(function () {
-            if (_this._windowRef) {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_positioning__["a" /* positionElements */])(_this._elementRef.nativeElement, _this._windowRef.location.nativeElement, _this.placement, _this.container === 'body');
-            }
-        });
-    }
-    Object.defineProperty(NgbTooltip.prototype, "ngbTooltip", {
-        get: function () { return this._ngbTooltip; },
-        /**
-         * Content to be displayed as tooltip. If falsy, the tooltip won't open.
-         */
-        set: function (value) {
-            this._ngbTooltip = value;
-            if (!value && this._windowRef) {
-                this.close();
-            }
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * Opens an element’s tooltip. This is considered a “manual” triggering of the tooltip.
-     * The context is an optional value to be injected into the tooltip template when it is created.
-     */
-    NgbTooltip.prototype.open = function (context) {
-        if (!this._windowRef && this._ngbTooltip) {
-            this._windowRef = this._popupService.open(this._ngbTooltip, context);
-            this._windowRef.instance.placement = this.placement;
-            this._windowRef.instance.id = this._ngbTooltipWindowId;
-            this._renderer.setAttribute(this._elementRef.nativeElement, 'aria-describedby', this._ngbTooltipWindowId);
-            if (this.container === 'body') {
-                window.document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);
-            }
-            // we need to manually invoke change detection since events registered via
-            // Renderer::listen() - to be determined if this is a bug in the Angular itself
-            this._windowRef.changeDetectorRef.markForCheck();
-            this.shown.emit();
-        }
-    };
-    /**
-     * Closes an element’s tooltip. This is considered a “manual” triggering of the tooltip.
-     */
-    NgbTooltip.prototype.close = function () {
-        if (this._windowRef != null) {
-            this._renderer.removeAttribute(this._elementRef.nativeElement, 'aria-describedby');
-            this._popupService.close();
-            this._windowRef = null;
-            this.hidden.emit();
-        }
-    };
-    /**
-     * Toggles an element’s tooltip. This is considered a “manual” triggering of the tooltip.
-     */
-    NgbTooltip.prototype.toggle = function () {
-        if (this._windowRef) {
-            this.close();
-        }
-        else {
-            this.open();
-        }
-    };
-    /**
-     * Returns whether or not the tooltip is currently being shown
-     */
-    NgbTooltip.prototype.isOpen = function () { return this._windowRef != null; };
-    NgbTooltip.prototype.ngOnInit = function () {
-        this._unregisterListenersFn = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_triggers__["a" /* listenToTriggers */])(this._renderer, this._elementRef.nativeElement, this.triggers, this.open.bind(this), this.close.bind(this), this.toggle.bind(this));
-    };
-    NgbTooltip.prototype.ngOnDestroy = function () {
-        this.close();
-        this._unregisterListenersFn();
-        this._zoneSubscription.unsubscribe();
-    };
-    return NgbTooltip;
-}());
-
-NgbTooltip.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: '[ngbTooltip]', exportAs: 'ngbTooltip' },] },
-];
-/** @nocollapse */
-NgbTooltip.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_4__tooltip_config__["a" /* NgbTooltipConfig */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
-]; };
-NgbTooltip.propDecorators = {
-    'placement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'triggers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'container': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'shown': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-    'hidden': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-    'ngbTooltip': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-};
-//# sourceMappingURL=tooltip.js.map
-
-/***/ }),
-/* 132 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip__ = __webpack_require__(131);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_config__ = __webpack_require__(59);
-/* unused harmony reexport NgbTooltipConfig */
-/* unused harmony reexport NgbTooltip */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTooltipModule; });
-
-
-
-
-
-var NgbTooltipModule = (function () {
-    function NgbTooltipModule() {
-    }
-    NgbTooltipModule.forRoot = function () { return { ngModule: NgbTooltipModule, providers: [__WEBPACK_IMPORTED_MODULE_2__tooltip_config__["a" /* NgbTooltipConfig */]] }; };
-    return NgbTooltipModule;
-}());
-
-NgbTooltipModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_1__tooltip__["a" /* NgbTooltip */], __WEBPACK_IMPORTED_MODULE_1__tooltip__["b" /* NgbTooltipWindow */]], exports: [__WEBPACK_IMPORTED_MODULE_1__tooltip__["a" /* NgbTooltip */]], entryComponents: [__WEBPACK_IMPORTED_MODULE_1__tooltip__["b" /* NgbTooltipWindow */]] },] },
-];
-/** @nocollapse */
-NgbTooltipModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=tooltip.module.js.map
-
-/***/ }),
-/* 133 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbHighlight; });
-
-
-var NgbHighlight = (function () {
-    function NgbHighlight() {
-        this.highlightClass = 'ngb-highlight';
-    }
-    NgbHighlight.prototype.ngOnChanges = function (changes) {
-        var resultStr = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["a" /* toString */])(this.result);
-        var resultLC = resultStr.toLowerCase();
-        var termLC = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["a" /* toString */])(this.term).toLowerCase();
-        var currentIdx = 0;
-        if (termLC.length > 0) {
-            this.parts = resultLC.split(new RegExp("(" + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["b" /* regExpEscape */])(termLC) + ")")).map(function (part) {
-                var originalPart = resultStr.substr(currentIdx, part.length);
-                currentIdx += part.length;
-                return originalPart;
-            });
-        }
-        else {
-            this.parts = [resultStr];
-        }
-    };
-    return NgbHighlight;
-}());
-
-NgbHighlight.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
-                selector: 'ngb-highlight',
-                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
-                template: "<ng-template ngFor [ngForOf]=\"parts\" let-part let-isOdd=\"odd\">" +
-                    "<span *ngIf=\"isOdd\" class=\"{{highlightClass}}\">{{part}}</span><ng-template [ngIf]=\"!isOdd\">{{part}}</ng-template>" +
-                    "</ng-template>",
-                styles: ["\n    .ngb-highlight {\n      font-weight: bold;\n    }\n  "]
-            },] },
-];
-/** @nocollapse */
-NgbHighlight.ctorParameters = function () { return []; };
-NgbHighlight.propDecorators = {
-    'highlightClass': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'result': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'term': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-};
-//# sourceMappingURL=highlight.js.map
-
-/***/ }),
-/* 134 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let__ = __webpack_require__(315);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__ = __webpack_require__(310);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent__ = __webpack_require__(304);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_positioning__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__typeahead_window__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__util_popup__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__typeahead_config__ = __webpack_require__(60);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTypeahead; });
-
-
-
-
-
-
-
-
-
-
-var Key;
-(function (Key) {
-    Key[Key["Tab"] = 9] = "Tab";
-    Key[Key["Enter"] = 13] = "Enter";
-    Key[Key["Escape"] = 27] = "Escape";
-    Key[Key["ArrowUp"] = 38] = "ArrowUp";
-    Key[Key["ArrowDown"] = 40] = "ArrowDown";
-})(Key || (Key = {}));
-var NGB_TYPEAHEAD_VALUE_ACCESSOR = {
-    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbTypeahead; }),
-    multi: true
-};
-var nextWindowId = 0;
-/**
- * NgbTypeahead directive provides a simple way of creating powerful typeaheads from any text input
- */
-var NgbTypeahead = (function () {
-    function NgbTypeahead(_elementRef, _viewContainerRef, _renderer, _injector, componentFactoryResolver, config, ngZone) {
-        var _this = this;
-        this._elementRef = _elementRef;
-        this._viewContainerRef = _viewContainerRef;
-        this._renderer = _renderer;
-        this._injector = _injector;
-        /**
-         * An event emitted when a match is selected. Event payload is of type NgbTypeaheadSelectItemEvent.
-         */
-        this.selectItem = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
-        this.popupId = "ngb-typeahead-" + nextWindowId++;
-        this._onTouched = function () { };
-        this._onChange = function (_) { };
-        this.editable = config.editable;
-        this.focusFirst = config.focusFirst;
-        this.showHint = config.showHint;
-        this._valueChanges = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent__["fromEvent"])(_elementRef.nativeElement, 'input', function ($event) { return $event.target.value; });
-        this._popupService = new __WEBPACK_IMPORTED_MODULE_7__util_popup__["a" /* PopupService */](__WEBPACK_IMPORTED_MODULE_6__typeahead_window__["a" /* NgbTypeaheadWindow */], _injector, _viewContainerRef, _renderer, componentFactoryResolver);
-        this._zoneSubscription = ngZone.onStable.subscribe(function () {
-            if (_this.isPopupOpen()) {
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__util_positioning__["a" /* positionElements */])(_this._elementRef.nativeElement, _this._windowRef.location.nativeElement, 'bottom-left');
-            }
-        });
-    }
-    NgbTypeahead.prototype.ngOnInit = function () {
-        var _this = this;
-        var inputValues$ = __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__["_do"].call(this._valueChanges, function (value) {
-            _this._userInput = value;
-            if (_this.editable) {
-                _this._onChange(value);
-            }
-        });
-        var results$ = __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let__["letProto"].call(inputValues$, this.ngbTypeahead);
-        var userInput$ = __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__["_do"].call(results$, function () {
-            if (!_this.editable) {
-                _this._onChange(undefined);
-            }
-        });
-        this._subscription = this._subscribeToUserInput(userInput$);
-    };
-    NgbTypeahead.prototype.ngOnDestroy = function () {
-        this._unsubscribeFromUserInput();
-        this._zoneSubscription.unsubscribe();
-    };
-    NgbTypeahead.prototype.registerOnChange = function (fn) { this._onChange = fn; };
-    NgbTypeahead.prototype.registerOnTouched = function (fn) { this._onTouched = fn; };
-    NgbTypeahead.prototype.writeValue = function (value) { this._writeInputValue(this._formatItemForInput(value)); };
-    NgbTypeahead.prototype.setDisabledState = function (isDisabled) {
-        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
-    };
-    NgbTypeahead.prototype.dismissPopup = function () {
-        if (this.isPopupOpen()) {
-            this._closePopup();
-            this._writeInputValue(this._userInput);
-        }
-    };
-    NgbTypeahead.prototype.isPopupOpen = function () { return this._windowRef != null; };
-    NgbTypeahead.prototype.handleBlur = function () { this._onTouched(); };
-    NgbTypeahead.prototype.handleKeyDown = function (event) {
-        if (!this.isPopupOpen()) {
-            return;
-        }
-        if (Key[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__util_util__["a" /* toString */])(event.which)]) {
-            switch (event.which) {
-                case Key.ArrowDown:
-                    event.preventDefault();
-                    this._windowRef.instance.next();
-                    this._showHint();
-                    break;
-                case Key.ArrowUp:
-                    event.preventDefault();
-                    this._windowRef.instance.prev();
-                    this._showHint();
-                    break;
-                case Key.Enter:
-                case Key.Tab:
-                    var result = this._windowRef.instance.getActive();
-                    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__util_util__["c" /* isDefined */])(result)) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        this._selectResult(result);
-                    }
-                    this._closePopup();
-                    break;
-                case Key.Escape:
-                    event.preventDefault();
-                    this.dismissPopup();
-                    break;
-            }
-        }
-    };
-    NgbTypeahead.prototype._openPopup = function () {
-        var _this = this;
-        if (!this.isPopupOpen()) {
-            this._windowRef = this._popupService.open();
-            this._windowRef.instance.id = this.popupId;
-            this._windowRef.instance.selectEvent.subscribe(function (result) { return _this._selectResultClosePopup(result); });
-            this._windowRef.instance.activeChangeEvent.subscribe(function (activeId) { return _this.activeDescendant = activeId; });
-        }
-    };
-    NgbTypeahead.prototype._closePopup = function () {
-        this._popupService.close();
-        this._windowRef = null;
-        this.activeDescendant = undefined;
-    };
-    NgbTypeahead.prototype._selectResult = function (result) {
-        var defaultPrevented = false;
-        this.selectItem.emit({ item: result, preventDefault: function () { defaultPrevented = true; } });
-        if (!defaultPrevented) {
-            this.writeValue(result);
-            this._onChange(result);
-        }
-    };
-    NgbTypeahead.prototype._selectResultClosePopup = function (result) {
-        this._selectResult(result);
-        this._closePopup();
-    };
-    NgbTypeahead.prototype._showHint = function () {
-        if (this.showHint) {
-            var userInputLowerCase = this._userInput.toLowerCase();
-            var formattedVal = this._formatItemForInput(this._windowRef.instance.getActive());
-            if (userInputLowerCase === formattedVal.substr(0, this._userInput.length).toLowerCase()) {
-                this._writeInputValue(this._userInput + formattedVal.substr(this._userInput.length));
-                this._elementRef.nativeElement['setSelectionRange'].apply(this._elementRef.nativeElement, [this._userInput.length, formattedVal.length]);
-            }
-            else {
-                this.writeValue(this._windowRef.instance.getActive());
-            }
-        }
-    };
-    NgbTypeahead.prototype._formatItemForInput = function (item) {
-        return item && this.inputFormatter ? this.inputFormatter(item) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__util_util__["a" /* toString */])(item);
-    };
-    NgbTypeahead.prototype._writeInputValue = function (value) {
-        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
-    };
-    NgbTypeahead.prototype._subscribeToUserInput = function (userInput$) {
-        var _this = this;
-        return userInput$.subscribe(function (results) {
-            if (!results || results.length === 0) {
-                _this._closePopup();
-            }
-            else {
-                _this._openPopup();
-                _this._windowRef.instance.focusFirst = _this.focusFirst;
-                _this._windowRef.instance.results = results;
-                _this._windowRef.instance.term = _this._elementRef.nativeElement.value;
-                if (_this.resultFormatter) {
-                    _this._windowRef.instance.formatter = _this.resultFormatter;
-                }
-                if (_this.resultTemplate) {
-                    _this._windowRef.instance.resultTemplate = _this.resultTemplate;
-                }
-                _this._showHint();
-                // The observable stream we are subscribing to might have async steps
-                // and if a component containing typeahead is using the OnPush strategy
-                // the change detection turn wouldn't be invoked automatically.
-                _this._windowRef.changeDetectorRef.detectChanges();
-            }
-        });
-    };
-    NgbTypeahead.prototype._unsubscribeFromUserInput = function () {
-        if (this._subscription) {
-            this._subscription.unsubscribe();
-        }
-        this._subscription = null;
-    };
-    return NgbTypeahead;
-}());
-
-NgbTypeahead.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
-                selector: 'input[ngbTypeahead]',
-                host: {
-                    '(blur)': 'handleBlur()',
-                    '[class.open]': 'isPopupOpen()',
-                    '(document:click)': 'dismissPopup()',
-                    '(keydown)': 'handleKeyDown($event)',
-                    'autocomplete': 'off',
-                    'autocapitalize': 'off',
-                    'autocorrect': 'off',
-                    'role': 'combobox',
-                    'aria-multiline': 'false',
-                    '[attr.aria-autocomplete]': 'showHint ? "both" : "list"',
-                    '[attr.aria-activedescendant]': 'activeDescendant',
-                    '[attr.aria-owns]': 'isPopupOpen() ? popupId : null',
-                    '[attr.aria-expanded]': 'isPopupOpen()'
-                },
-                providers: [NGB_TYPEAHEAD_VALUE_ACCESSOR]
-            },] },
-];
-/** @nocollapse */
-NgbTypeahead.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
-    { type: __WEBPACK_IMPORTED_MODULE_9__typeahead_config__["a" /* NgbTypeaheadConfig */], },
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
-]; };
-NgbTypeahead.propDecorators = {
-    'editable': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'focusFirst': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'inputFormatter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'ngbTypeahead': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'resultFormatter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'resultTemplate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'showHint': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
-    'selectItem': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
-};
-//# sourceMappingURL=typeahead.js.map
-
-/***/ }),
-/* 135 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__highlight__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__typeahead_window__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__typeahead__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__typeahead_config__ = __webpack_require__(60);
-/* unused harmony reexport NgbHighlight */
-/* unused harmony reexport NgbTypeaheadWindow */
-/* unused harmony reexport NgbTypeaheadConfig */
-/* unused harmony reexport NgbTypeahead */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTypeaheadModule; });
-
-
-
-
-
-
-
-
-
-
-var NgbTypeaheadModule = (function () {
-    function NgbTypeaheadModule() {
-    }
-    NgbTypeaheadModule.forRoot = function () { return { ngModule: NgbTypeaheadModule, providers: [__WEBPACK_IMPORTED_MODULE_5__typeahead_config__["a" /* NgbTypeaheadConfig */]] }; };
-    return NgbTypeaheadModule;
-}());
-
-NgbTypeaheadModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
-                declarations: [__WEBPACK_IMPORTED_MODULE_4__typeahead__["a" /* NgbTypeahead */], __WEBPACK_IMPORTED_MODULE_2__highlight__["a" /* NgbHighlight */], __WEBPACK_IMPORTED_MODULE_3__typeahead_window__["a" /* NgbTypeaheadWindow */]],
-                exports: [__WEBPACK_IMPORTED_MODULE_4__typeahead__["a" /* NgbTypeahead */]],
-                imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]],
-                entryComponents: [__WEBPACK_IMPORTED_MODULE_3__typeahead_window__["a" /* NgbTypeaheadWindow */]]
-            },] },
-];
-/** @nocollapse */
-NgbTypeaheadModule.ctorParameters = function () { return []; };
-//# sourceMappingURL=typeahead.module.js.map
-
-/***/ }),
-/* 136 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* unused harmony export Trigger */
-/* unused harmony export parseTriggers */
-/* harmony export (immutable) */ __webpack_exports__["a"] = listenToTriggers;
-var Trigger = (function () {
-    function Trigger(open, close) {
-        this.open = open;
-        this.close = close;
-        if (!close) {
-            this.close = open;
-        }
-    }
-    Trigger.prototype.isManual = function () { return this.open === 'manual' || this.close === 'manual'; };
-    return Trigger;
-}());
-
-var DEFAULT_ALIASES = {
-    hover: ['mouseenter', 'mouseleave']
-};
-function parseTriggers(triggers, aliases) {
-    if (aliases === void 0) { aliases = DEFAULT_ALIASES; }
-    var trimmedTriggers = (triggers || '').trim();
-    if (trimmedTriggers.length === 0) {
-        return [];
-    }
-    var parsedTriggers = trimmedTriggers.split(/\s+/).map(function (trigger) { return trigger.split(':'); }).map(function (triggerPair) {
-        var alias = aliases[triggerPair[0]] || triggerPair;
-        return new Trigger(alias[0], alias[1]);
-    });
-    var manualTriggers = parsedTriggers.filter(function (triggerPair) { return triggerPair.isManual(); });
-    if (manualTriggers.length > 1) {
-        throw 'Triggers parse error: only one manual trigger is allowed';
-    }
-    if (manualTriggers.length === 1 && parsedTriggers.length > 1) {
-        throw 'Triggers parse error: manual trigger can\'t be mixed with other triggers';
-    }
-    return parsedTriggers;
-}
-var noopFn = function () { };
-function listenToTriggers(renderer, nativeElement, triggers, openFn, closeFn, toggleFn) {
-    var parsedTriggers = parseTriggers(triggers);
-    var listeners = [];
-    if (parsedTriggers.length === 1 && parsedTriggers[0].isManual()) {
-        return noopFn;
-    }
-    parsedTriggers.forEach(function (trigger) {
-        if (trigger.open === trigger.close) {
-            listeners.push(renderer.listen(nativeElement, trigger.open, toggleFn));
-        }
-        else {
-            listeners.push(renderer.listen(nativeElement, trigger.open, openFn), renderer.listen(nativeElement, trigger.close, closeFn));
-        }
-    });
-    return function () { listeners.forEach(function (unsubscribeFn) { return unsubscribeFn(); }); };
-}
-//# sourceMappingURL=triggers.js.map
-
-/***/ }),
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.empty = {
-    closed: true,
-    next: function (value) { },
-    error: function (err) { throw err; },
-    complete: function () { }
-};
-//# sourceMappingURL=Observer.js.map
-
-/***/ }),
-/* 151 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var map_1 = __webpack_require__(82);
-Observable_1.Observable.prototype.map = map_1.map;
-//# sourceMappingURL=map.js.map
-
-/***/ }),
-/* 152 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var root_1 = __webpack_require__(20);
-var Observable_1 = __webpack_require__(2);
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @extends {Ignored}
- * @hide true
- */
-var PromiseObservable = (function (_super) {
-    __extends(PromiseObservable, _super);
-    function PromiseObservable(promise, scheduler) {
-        _super.call(this);
-        this.promise = promise;
-        this.scheduler = scheduler;
-    }
-    /**
-     * Converts a Promise to an Observable.
-     *
-     * <span class="informal">Returns an Observable that just emits the Promise's
-     * resolved value, then completes.</span>
-     *
-     * Converts an ES2015 Promise or a Promises/A+ spec compliant Promise to an
-     * Observable. If the Promise resolves with a value, the output Observable
-     * emits that resolved value as a `next`, and then completes. If the Promise
-     * is rejected, then the output Observable emits the corresponding Error.
-     *
-     * @example <caption>Convert the Promise returned by Fetch to an Observable</caption>
-     * var result = Rx.Observable.fromPromise(fetch('http://myserver.com/'));
-     * result.subscribe(x => console.log(x), e => console.error(e));
-     *
-     * @see {@link bindCallback}
-     * @see {@link from}
-     *
-     * @param {PromiseLike<T>} promise The promise to be converted.
-     * @param {Scheduler} [scheduler] An optional IScheduler to use for scheduling
-     * the delivery of the resolved value (or the rejection).
-     * @return {Observable<T>} An Observable which wraps the Promise.
-     * @static true
-     * @name fromPromise
-     * @owner Observable
-     */
-    PromiseObservable.create = function (promise, scheduler) {
-        return new PromiseObservable(promise, scheduler);
-    };
-    PromiseObservable.prototype._subscribe = function (subscriber) {
-        var _this = this;
-        var promise = this.promise;
-        var scheduler = this.scheduler;
-        if (scheduler == null) {
-            if (this._isScalar) {
-                if (!subscriber.closed) {
-                    subscriber.next(this.value);
-                    subscriber.complete();
-                }
-            }
-            else {
-                promise.then(function (value) {
-                    _this.value = value;
-                    _this._isScalar = true;
-                    if (!subscriber.closed) {
-                        subscriber.next(value);
-                        subscriber.complete();
-                    }
-                }, function (err) {
-                    if (!subscriber.closed) {
-                        subscriber.error(err);
-                    }
-                })
-                    .then(null, function (err) {
-                    // escape the promise trap, throw unhandled errors
-                    root_1.root.setTimeout(function () { throw err; });
-                });
-            }
-        }
-        else {
-            if (this._isScalar) {
-                if (!subscriber.closed) {
-                    return scheduler.schedule(dispatchNext, 0, { value: this.value, subscriber: subscriber });
-                }
-            }
-            else {
-                promise.then(function (value) {
-                    _this.value = value;
-                    _this._isScalar = true;
-                    if (!subscriber.closed) {
-                        subscriber.add(scheduler.schedule(dispatchNext, 0, { value: value, subscriber: subscriber }));
-                    }
-                }, function (err) {
-                    if (!subscriber.closed) {
-                        subscriber.add(scheduler.schedule(dispatchError, 0, { err: err, subscriber: subscriber }));
-                    }
-                })
-                    .then(null, function (err) {
-                    // escape the promise trap, throw unhandled errors
-                    root_1.root.setTimeout(function () { throw err; });
-                });
-            }
-        }
-    };
-    return PromiseObservable;
-}(Observable_1.Observable));
-exports.PromiseObservable = PromiseObservable;
-function dispatchNext(arg) {
-    var value = arg.value, subscriber = arg.subscriber;
-    if (!subscriber.closed) {
-        subscriber.next(value);
-        subscriber.complete();
-    }
-}
-function dispatchError(arg) {
-    var err = arg.err, subscriber = arg.subscriber;
-    if (!subscriber.closed) {
-        subscriber.error(err);
-    }
-}
-//# sourceMappingURL=PromiseObservable.js.map
-
-/***/ }),
-/* 153 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-var Observable_1 = __webpack_require__(2);
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @extends {Ignored}
- * @hide true
- */
-var ScalarObservable = (function (_super) {
-    __extends(ScalarObservable, _super);
-    function ScalarObservable(value, scheduler) {
-        _super.call(this);
-        this.value = value;
-        this.scheduler = scheduler;
-        this._isScalar = true;
-        if (scheduler) {
-            this._isScalar = false;
-        }
-    }
-    ScalarObservable.create = function (value, scheduler) {
-        return new ScalarObservable(value, scheduler);
-    };
-    ScalarObservable.dispatch = function (state) {
-        var done = state.done, value = state.value, subscriber = state.subscriber;
-        if (done) {
-            subscriber.complete();
-            return;
-        }
-        subscriber.next(value);
-        if (subscriber.closed) {
-            return;
-        }
-        state.done = true;
-        this.schedule(state);
-    };
-    ScalarObservable.prototype._subscribe = function (subscriber) {
-        var value = this.value;
-        var scheduler = this.scheduler;
-        if (scheduler) {
-            return scheduler.schedule(ScalarObservable.dispatch, 0, {
-                done: false, value: value, subscriber: subscriber
-            });
-        }
-        else {
-            subscriber.next(value);
-            if (!subscriber.closed) {
-                subscriber.complete();
-            }
-        }
-    };
-    return ScalarObservable;
-}(Observable_1.Observable));
-exports.ScalarObservable = ScalarObservable;
-//# sourceMappingURL=ScalarObservable.js.map
-
-/***/ }),
-/* 154 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-/**
- * An error thrown when an action is invalid because the object has been
- * unsubscribed.
- *
- * @see {@link Subject}
- * @see {@link BehaviorSubject}
- *
- * @class ObjectUnsubscribedError
- */
-var ObjectUnsubscribedError = (function (_super) {
-    __extends(ObjectUnsubscribedError, _super);
-    function ObjectUnsubscribedError() {
-        var err = _super.call(this, 'object unsubscribed');
-        this.name = err.name = 'ObjectUnsubscribedError';
-        this.stack = err.stack;
-        this.message = err.message;
-    }
-    return ObjectUnsubscribedError;
-}(Error));
-exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
-//# sourceMappingURL=ObjectUnsubscribedError.js.map
-
-/***/ }),
-/* 155 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.isArrayLike = (function (x) { return x && typeof x.length === 'number'; });
-//# sourceMappingURL=isArrayLike.js.map
-
-/***/ }),
-/* 156 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function isObject(x) {
-    return x != null && typeof x === 'object';
-}
-exports.isObject = isObject;
-//# sourceMappingURL=isObject.js.map
-
-/***/ }),
-/* 157 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function isPromise(value) {
-    return value && typeof value.subscribe !== 'function' && typeof value.then === 'function';
-}
-exports.isPromise = isPromise;
-//# sourceMappingURL=isPromise.js.map
-
-/***/ }),
-/* 158 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function isScheduler(value) {
-    return value && typeof value.schedule === 'function';
-}
-exports.isScheduler = isScheduler;
-//# sourceMappingURL=isScheduler.js.map
-
-/***/ }),
-/* 159 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var errorObject_1 = __webpack_require__(89);
-var tryCatchTarget;
-function tryCatcher() {
-    try {
-        return tryCatchTarget.apply(this, arguments);
-    }
-    catch (e) {
-        errorObject_1.errorObject.e = e;
-        return errorObject_1.errorObject;
-    }
-}
-function tryCatch(fn) {
-    tryCatchTarget = fn;
-    return tryCatcher;
-}
-exports.tryCatch = tryCatch;
-;
-//# sourceMappingURL=tryCatch.js.map
-
-/***/ }),
-/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.8.3
@@ -46022,12 +42060,3976 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscor
 
 
 /***/ }),
-/* 161 */,
-/* 162 */,
+/* 94 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion_config__ = __webpack_require__(47);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return NgbPanelTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return NgbPanelContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbPanel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbAccordion; });
+
+
+
+var nextId = 0;
+/**
+ * This directive should be used to wrap accordion panel titles that need to contain HTML markup or other directives.
+ */
+var NgbPanelTitle = (function () {
+    function NgbPanelTitle(templateRef) {
+        this.templateRef = templateRef;
+    }
+    return NgbPanelTitle;
+}());
+
+NgbPanelTitle.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ng-template[ngbPanelTitle]' },] },
+];
+/** @nocollapse */
+NgbPanelTitle.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], },
+]; };
+/**
+ * This directive must be used to wrap accordion panel content.
+ */
+var NgbPanelContent = (function () {
+    function NgbPanelContent(templateRef) {
+        this.templateRef = templateRef;
+    }
+    return NgbPanelContent;
+}());
+
+NgbPanelContent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ng-template[ngbPanelContent]' },] },
+];
+/** @nocollapse */
+NgbPanelContent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], },
+]; };
+/**
+ * The NgbPanel directive represents an individual panel with the title and collapsible
+ * content
+ */
+var NgbPanel = (function () {
+    function NgbPanel() {
+        /**
+         *  A flag determining whether the panel is disabled or not.
+         *  When disabled, the panel cannot be toggled.
+         */
+        this.disabled = false;
+        /**
+         *  An optional id for the panel. The id should be unique.
+         *  If not provided, it will be auto-generated.
+         */
+        this.id = "ngb-panel-" + nextId++;
+    }
+    return NgbPanel;
+}());
+
+NgbPanel.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ngb-panel' },] },
+];
+/** @nocollapse */
+NgbPanel.ctorParameters = function () { return []; };
+NgbPanel.propDecorators = {
+    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'title': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'contentTpl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [NgbPanelContent,] },],
+    'titleTpl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [NgbPanelTitle,] },],
+};
+/**
+ * The NgbAccordion directive is a collection of panels.
+ * It can assure that only one panel can be opened at a time.
+ */
+var NgbAccordion = (function () {
+    function NgbAccordion(config) {
+        /**
+         * A map that stores each panel state
+         */
+        this._states = new Map();
+        /**
+         * A map that stores references to all panels
+         */
+        this._panelRefs = new Map();
+        /**
+         * An array or comma separated strings of panel identifiers that should be opened
+         */
+        this.activeIds = [];
+        /**
+         * A panel change event fired right before the panel toggle happens. See NgbPanelChangeEvent for payload details
+         */
+        this.panelChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.type = config.type;
+        this.closeOtherPanels = config.closeOthers;
+    }
+    /**
+     * Programmatically toggle a panel with a given id.
+     */
+    NgbAccordion.prototype.toggle = function (panelId) {
+        var panel = this._panelRefs.get(panelId);
+        if (panel && !panel.disabled) {
+            var nextState = !this._states.get(panelId);
+            var defaultPrevented_1 = false;
+            this.panelChange.emit({ panelId: panelId, nextState: nextState, preventDefault: function () { defaultPrevented_1 = true; } });
+            if (!defaultPrevented_1) {
+                this._states.set(panelId, nextState);
+                if (this.closeOtherPanels) {
+                    this._closeOthers(panelId);
+                }
+                this._updateActiveIds();
+            }
+        }
+    };
+    NgbAccordion.prototype.ngAfterContentChecked = function () {
+        // active id updates
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["h" /* isString */])(this.activeIds)) {
+            this.activeIds = this.activeIds.split(/\s*,\s*/);
+        }
+        this._updateStates();
+        // closeOthers updates
+        if (this.activeIds.length > 1 && this.closeOtherPanels) {
+            this._closeOthers(this.activeIds[0]);
+            this._updateActiveIds();
+        }
+    };
+    /**
+     * @internal
+     */
+    NgbAccordion.prototype.isOpen = function (panelId) { return this._states.get(panelId); };
+    NgbAccordion.prototype._closeOthers = function (panelId) {
+        var _this = this;
+        this._states.forEach(function (state, id) {
+            if (id !== panelId) {
+                _this._states.set(id, false);
+            }
+        });
+    };
+    NgbAccordion.prototype._updateActiveIds = function () {
+        var _this = this;
+        this.activeIds =
+            this.panels.toArray().filter(function (panel) { return _this.isOpen(panel.id) && !panel.disabled; }).map(function (panel) { return panel.id; });
+    };
+    NgbAccordion.prototype._updateStates = function () {
+        var _this = this;
+        this._states.clear();
+        this._panelRefs.clear();
+        this.panels.toArray().forEach(function (panel) {
+            _this._states.set(panel.id, _this.activeIds.indexOf(panel.id) > -1 && !panel.disabled);
+            _this._panelRefs.set(panel.id, panel);
+        });
+    };
+    return NgbAccordion;
+}());
+
+NgbAccordion.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-accordion',
+                exportAs: 'ngbAccordion',
+                host: { 'role': 'tablist', '[attr.aria-multiselectable]': '!closeOtherPanels' },
+                template: "\n  <div class=\"card\">\n    <ng-template ngFor let-panel [ngForOf]=\"panels\">\n      <div role=\"tab\" id=\"{{panel.id}}-header\"\n        [class]=\"'card-header ' + (panel.type ? 'card-'+panel.type: type ? 'card-'+type : '')\" [class.active]=\"isOpen(panel.id)\">\n        <a href (click)=\"!!toggle(panel.id)\" [class.text-muted]=\"panel.disabled\" [attr.tabindex]=\"(panel.disabled ? '-1' : null)\"\n          [attr.aria-expanded]=\"isOpen(panel.id)\" [attr.aria-controls]=\"(isOpen(panel.id) ? panel.id : null)\"\n          [attr.aria-disabled]=\"panel.disabled\">\n          {{panel.title}}<ng-template [ngTemplateOutlet]=\"panel.titleTpl?.templateRef\"></ng-template>\n        </a>\n      </div>\n      <div id=\"{{panel.id}}\" role=\"tabpanel\" [attr.aria-labelledby]=\"panel.id + '-header'\" class=\"card-block\" *ngIf=\"isOpen(panel.id)\">\n        <ng-template [ngTemplateOutlet]=\"panel.contentTpl.templateRef\"></ng-template>\n      </div>\n    </ng-template>\n  </div>\n"
+            },] },
+];
+/** @nocollapse */
+NgbAccordion.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_2__accordion_config__["a" /* NgbAccordionConfig */], },
+]; };
+NgbAccordion.propDecorators = {
+    'panels': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChildren"], args: [NgbPanel,] },],
+    'activeIds': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'closeOtherPanels': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['closeOthers',] },],
+    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'panelChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+//# sourceMappingURL=accordion.js.map
+
+/***/ }),
+/* 95 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accordion_config__ = __webpack_require__(47);
+/* unused harmony reexport NgbAccordion */
+/* unused harmony reexport NgbPanel */
+/* unused harmony reexport NgbPanelTitle */
+/* unused harmony reexport NgbPanelContent */
+/* unused harmony reexport NgbAccordionConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbAccordionModule; });
+
+
+
+
+
+
+var NGB_ACCORDION_DIRECTIVES = [__WEBPACK_IMPORTED_MODULE_2__accordion__["a" /* NgbAccordion */], __WEBPACK_IMPORTED_MODULE_2__accordion__["b" /* NgbPanel */], __WEBPACK_IMPORTED_MODULE_2__accordion__["c" /* NgbPanelTitle */], __WEBPACK_IMPORTED_MODULE_2__accordion__["d" /* NgbPanelContent */]];
+var NgbAccordionModule = (function () {
+    function NgbAccordionModule() {
+    }
+    NgbAccordionModule.forRoot = function () { return { ngModule: NgbAccordionModule, providers: [__WEBPACK_IMPORTED_MODULE_3__accordion_config__["a" /* NgbAccordionConfig */]] }; };
+    return NgbAccordionModule;
+}());
+
+NgbAccordionModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: NGB_ACCORDION_DIRECTIVES, exports: NGB_ACCORDION_DIRECTIVES, imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
+];
+/** @nocollapse */
+NgbAccordionModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=accordion.module.js.map
+
+/***/ }),
+/* 96 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_config__ = __webpack_require__(48);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbAlert; });
+
+
+/**
+ * Alerts can be used to provide feedback messages.
+ */
+var NgbAlert = (function () {
+    function NgbAlert(config) {
+        /**
+         * An event emitted when the close button is clicked. This event has no payload. Only relevant for dismissible alerts.
+         */
+        this.close = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.dismissible = config.dismissible;
+        this.type = config.type;
+    }
+    NgbAlert.prototype.closeHandler = function () { this.close.emit(null); };
+    return NgbAlert;
+}());
+
+NgbAlert.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-alert',
+                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
+                template: "\n    <div [class]=\"'alert alert-' + type + (dismissible ? ' alert-dismissible' : '')\" role=\"alert\">\n      <button *ngIf=\"dismissible\" type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"closeHandler()\">\n            <span aria-hidden=\"true\">&times;</span>\n      </button>\n      <ng-content></ng-content>\n    </div>\n    "
+            },] },
+];
+/** @nocollapse */
+NgbAlert.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_1__alert_config__["a" /* NgbAlertConfig */], },
+]; };
+NgbAlert.propDecorators = {
+    'dismissible': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'close': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+//# sourceMappingURL=alert.js.map
+
+/***/ }),
+/* 97 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__alert_config__ = __webpack_require__(48);
+/* unused harmony reexport NgbAlert */
+/* unused harmony reexport NgbAlertConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbAlertModule; });
+
+
+
+
+
+
+var NgbAlertModule = (function () {
+    function NgbAlertModule() {
+    }
+    NgbAlertModule.forRoot = function () { return { ngModule: NgbAlertModule, providers: [__WEBPACK_IMPORTED_MODULE_3__alert_config__["a" /* NgbAlertConfig */]] }; };
+    return NgbAlertModule;
+}());
+
+NgbAlertModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_2__alert__["a" /* NgbAlert */]], exports: [__WEBPACK_IMPORTED_MODULE_2__alert__["a" /* NgbAlert */]], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]], entryComponents: [__WEBPACK_IMPORTED_MODULE_2__alert__["a" /* NgbAlert */]] },] },
+];
+/** @nocollapse */
+NgbAlertModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=alert.module.js.map
+
+/***/ }),
+/* 98 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return NgbRadioGroup; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbActiveLabel; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbRadio; });
+
+
+var NGB_RADIO_VALUE_ACCESSOR = {
+    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbRadioGroup; }),
+    multi: true
+};
+/**
+ * Easily create Bootstrap-style radio buttons. A value of a selected button is bound to a variable
+ * specified via ngModel.
+ */
+var NgbRadioGroup = (function () {
+    function NgbRadioGroup() {
+        this._radios = new Set();
+        this._value = null;
+        this.onChange = function (_) { };
+        this.onTouched = function () { };
+    }
+    Object.defineProperty(NgbRadioGroup.prototype, "disabled", {
+        get: function () { return this._disabled; },
+        set: function (isDisabled) { this.setDisabledState(isDisabled); },
+        enumerable: true,
+        configurable: true
+    });
+    NgbRadioGroup.prototype.onRadioChange = function (radio) {
+        this.writeValue(radio.value);
+        this.onChange(radio.value);
+    };
+    NgbRadioGroup.prototype.onRadioValueUpdate = function () { this._updateRadiosValue(); };
+    NgbRadioGroup.prototype.register = function (radio) { this._radios.add(radio); };
+    NgbRadioGroup.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+    NgbRadioGroup.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+    NgbRadioGroup.prototype.setDisabledState = function (isDisabled) {
+        this._disabled = isDisabled;
+        this._updateRadiosDisabled();
+    };
+    NgbRadioGroup.prototype.unregister = function (radio) { this._radios.delete(radio); };
+    NgbRadioGroup.prototype.writeValue = function (value) {
+        this._value = value;
+        this._updateRadiosValue();
+    };
+    NgbRadioGroup.prototype._updateRadiosValue = function () {
+        var _this = this;
+        this._radios.forEach(function (radio) { return radio.updateValue(_this._value); });
+    };
+    NgbRadioGroup.prototype._updateRadiosDisabled = function () { this._radios.forEach(function (radio) { return radio.updateDisabled(); }); };
+    return NgbRadioGroup;
+}());
+
+NgbRadioGroup.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                selector: '[ngbRadioGroup]',
+                host: { 'data-toggle': 'buttons', 'class': 'btn-group', 'role': 'group' },
+                providers: [NGB_RADIO_VALUE_ACCESSOR]
+            },] },
+];
+/** @nocollapse */
+NgbRadioGroup.ctorParameters = function () { return []; };
+var NgbActiveLabel = (function () {
+    function NgbActiveLabel(_renderer, _elRef) {
+        this._renderer = _renderer;
+        this._elRef = _elRef;
+    }
+    Object.defineProperty(NgbActiveLabel.prototype, "active", {
+        set: function (isActive) {
+            if (isActive) {
+                this._renderer.addClass(this._elRef.nativeElement, 'active');
+            }
+            else {
+                this._renderer.removeClass(this._elRef.nativeElement, 'active');
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NgbActiveLabel.prototype, "disabled", {
+        set: function (isDisabled) {
+            if (isDisabled) {
+                this._renderer.addClass(this._elRef.nativeElement, 'disabled');
+            }
+            else {
+                this._renderer.removeClass(this._elRef.nativeElement, 'disabled');
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NgbActiveLabel.prototype, "focused", {
+        set: function (isFocused) {
+            if (isFocused) {
+                this._renderer.addClass(this._elRef.nativeElement, 'focus');
+            }
+            else {
+                this._renderer.removeClass(this._elRef.nativeElement, 'focus');
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return NgbActiveLabel;
+}());
+
+NgbActiveLabel.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'label.btn' },] },
+];
+/** @nocollapse */
+NgbActiveLabel.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+]; };
+/**
+ * Marks an input of type "radio" as part of the NgbRadioGroup.
+ */
+var NgbRadio = (function () {
+    function NgbRadio(_group, _label, _renderer, _element) {
+        this._group = _group;
+        this._label = _label;
+        this._renderer = _renderer;
+        this._element = _element;
+        this._value = null;
+        if (this._group) {
+            this._group.register(this);
+        }
+    }
+    Object.defineProperty(NgbRadio.prototype, "value", {
+        get: function () { return this._value; },
+        /**
+         * You can specify model value of a given radio by binding to the value property.
+        */
+        set: function (value) {
+            this._value = value;
+            var stringValue = value ? value.toString() : '';
+            this._renderer.setProperty(this._element.nativeElement, 'value', stringValue);
+            if (this._group) {
+                this._group.onRadioValueUpdate();
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NgbRadio.prototype, "checked", {
+        get: function () { return this._checked; },
+        /**
+         * A flag indicating if a given radio button is checked.
+         */
+        set: function (value) {
+            this._checked = this._element.nativeElement.hasAttribute('checked') ? true : value;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NgbRadio.prototype, "disabled", {
+        get: function () { return (this._group && this._group.disabled) || this._disabled; },
+        /**
+         * A flag indicating if a given radio button is disabled.
+         */
+        set: function (isDisabled) {
+            this._disabled = isDisabled !== false;
+            this.updateDisabled();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(NgbRadio.prototype, "focused", {
+        set: function (isFocused) {
+            if (this._label) {
+                this._label.focused = isFocused;
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    NgbRadio.prototype.ngOnDestroy = function () {
+        if (this._group) {
+            this._group.unregister(this);
+        }
+    };
+    NgbRadio.prototype.onChange = function () {
+        if (this._group) {
+            this._group.onRadioChange(this);
+        }
+    };
+    NgbRadio.prototype.updateValue = function (value) {
+        this._checked = (this.value === value && value !== null);
+        this._label.active = this._checked;
+    };
+    NgbRadio.prototype.updateDisabled = function () {
+        var disabled = (this._group && this._group.disabled) || this._disabled;
+        if (this._label) {
+            this._label.disabled = disabled;
+        }
+    };
+    return NgbRadio;
+}());
+
+NgbRadio.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                selector: 'input[type=radio]',
+                host: {
+                    '[checked]': 'checked',
+                    '[disabled]': 'disabled',
+                    '(change)': 'onChange()',
+                    '(focus)': 'focused = true',
+                    '(blur)': 'focused = false'
+                }
+            },] },
+];
+/** @nocollapse */
+NgbRadio.ctorParameters = function () { return [
+    { type: NgbRadioGroup, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] },] },
+    { type: NgbActiveLabel, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Optional"] },] },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+]; };
+NgbRadio.propDecorators = {
+    'value': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['value',] },],
+    'checked': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['checked',] },],
+    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['disabled',] },],
+};
+//# sourceMappingURL=radio.js.map
+
+/***/ }),
+/* 99 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__radio__ = __webpack_require__(98);
+/* unused harmony reexport NgbRadio */
+/* unused harmony reexport NgbActiveLabel */
+/* unused harmony reexport NgbRadioGroup */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbButtonsModule; });
+
+
+
+var NGB_RADIO_DIRECTIVES = [__WEBPACK_IMPORTED_MODULE_1__radio__["a" /* NgbRadio */], __WEBPACK_IMPORTED_MODULE_1__radio__["b" /* NgbActiveLabel */], __WEBPACK_IMPORTED_MODULE_1__radio__["c" /* NgbRadioGroup */]];
+var NgbButtonsModule = (function () {
+    function NgbButtonsModule() {
+    }
+    NgbButtonsModule.forRoot = function () { return { ngModule: NgbButtonsModule, providers: [] }; };
+    return NgbButtonsModule;
+}());
+
+NgbButtonsModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: NGB_RADIO_DIRECTIVES, exports: NGB_RADIO_DIRECTIVES },] },
+];
+/** @nocollapse */
+NgbButtonsModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=radio.module.js.map
+
+/***/ }),
+/* 100 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__carousel_config__ = __webpack_require__(49);
+/* unused harmony export NgbSlide */
+/* unused harmony export NgbCarousel */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NGB_CAROUSEL_DIRECTIVES; });
+
+
+var nextId = 0;
+/**
+ * Represents an individual slide to be used within a carousel.
+ */
+var NgbSlide = (function () {
+    function NgbSlide(tplRef) {
+        this.tplRef = tplRef;
+        /**
+         * Unique slide identifier. Must be unique for the entire document for proper accessibility support.
+         * Will be auto-generated if not provided.
+         */
+        this.id = "ngb-slide-" + nextId++;
+    }
+    return NgbSlide;
+}());
+
+NgbSlide.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ng-template[ngbSlide]' },] },
+];
+/** @nocollapse */
+NgbSlide.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], },
+]; };
+NgbSlide.propDecorators = {
+    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+/**
+ * Directive to easily create carousels based on Bootstrap's markup.
+ */
+var NgbCarousel = (function () {
+    function NgbCarousel(config) {
+        this.interval = config.interval;
+        this.wrap = config.wrap;
+        this.keyboard = config.keyboard;
+    }
+    NgbCarousel.prototype.ngAfterContentChecked = function () {
+        var activeSlide = this._getSlideById(this.activeId);
+        this.activeId = activeSlide ? activeSlide.id : (this.slides.length ? this.slides.first.id : null);
+    };
+    NgbCarousel.prototype.ngOnInit = function () { this._startTimer(); };
+    NgbCarousel.prototype.ngOnDestroy = function () { clearInterval(this._slideChangeInterval); };
+    /**
+     * Navigate to a slide with the specified identifier.
+     */
+    NgbCarousel.prototype.select = function (slideId) {
+        this.cycleToSelected(slideId);
+        this._restartTimer();
+    };
+    /**
+     * Navigate to the next slide.
+     */
+    NgbCarousel.prototype.prev = function () {
+        this.cycleToPrev();
+        this._restartTimer();
+    };
+    /**
+     * Navigate to the next slide.
+     */
+    NgbCarousel.prototype.next = function () {
+        this.cycleToNext();
+        this._restartTimer();
+    };
+    /**
+     * Stops the carousel from cycling through items.
+     */
+    NgbCarousel.prototype.pause = function () { this._stopTimer(); };
+    /**
+     * Restarts cycling through the carousel slides from left to right.
+     */
+    NgbCarousel.prototype.cycle = function () { this._startTimer(); };
+    NgbCarousel.prototype.cycleToNext = function () { this.cycleToSelected(this._getNextSlide(this.activeId)); };
+    NgbCarousel.prototype.cycleToPrev = function () { this.cycleToSelected(this._getPrevSlide(this.activeId)); };
+    NgbCarousel.prototype.cycleToSelected = function (slideIdx) {
+        var selectedSlide = this._getSlideById(slideIdx);
+        if (selectedSlide) {
+            this.activeId = selectedSlide.id;
+        }
+    };
+    NgbCarousel.prototype.keyPrev = function () {
+        if (this.keyboard) {
+            this.prev();
+        }
+    };
+    NgbCarousel.prototype.keyNext = function () {
+        if (this.keyboard) {
+            this.next();
+        }
+    };
+    NgbCarousel.prototype._restartTimer = function () {
+        this._stopTimer();
+        this._startTimer();
+    };
+    NgbCarousel.prototype._startTimer = function () {
+        var _this = this;
+        if (this.interval > 0) {
+            this._slideChangeInterval = setInterval(function () { _this.cycleToNext(); }, this.interval);
+        }
+    };
+    NgbCarousel.prototype._stopTimer = function () { clearInterval(this._slideChangeInterval); };
+    NgbCarousel.prototype._getSlideById = function (slideId) {
+        var slideWithId = this.slides.filter(function (slide) { return slide.id === slideId; });
+        return slideWithId.length ? slideWithId[0] : null;
+    };
+    NgbCarousel.prototype._getSlideIdxById = function (slideId) {
+        return this.slides.toArray().indexOf(this._getSlideById(slideId));
+    };
+    NgbCarousel.prototype._getNextSlide = function (currentSlideId) {
+        var slideArr = this.slides.toArray();
+        var currentSlideIdx = this._getSlideIdxById(currentSlideId);
+        var isLastSlide = currentSlideIdx === slideArr.length - 1;
+        return isLastSlide ? (this.wrap ? slideArr[0].id : slideArr[slideArr.length - 1].id) :
+            slideArr[currentSlideIdx + 1].id;
+    };
+    NgbCarousel.prototype._getPrevSlide = function (currentSlideId) {
+        var slideArr = this.slides.toArray();
+        var currentSlideIdx = this._getSlideIdxById(currentSlideId);
+        var isFirstSlide = currentSlideIdx === 0;
+        return isFirstSlide ? (this.wrap ? slideArr[slideArr.length - 1].id : slideArr[0].id) :
+            slideArr[currentSlideIdx - 1].id;
+    };
+    return NgbCarousel;
+}());
+
+NgbCarousel.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-carousel',
+                exportAs: 'ngbCarousel',
+                host: {
+                    'class': 'carousel slide',
+                    '[style.display]': '"block"',
+                    'tabIndex': '0',
+                    '(mouseenter)': 'pause()',
+                    '(mouseleave)': 'cycle()',
+                    '(keydown.arrowLeft)': 'keyPrev()',
+                    '(keydown.arrowRight)': 'keyNext()'
+                },
+                template: "\n    <ol class=\"carousel-indicators\">\n      <li *ngFor=\"let slide of slides\" [id]=\"slide.id\" [class.active]=\"slide.id === activeId\" (click)=\"cycleToSelected(slide.id)\"></li>\n    </ol>\n    <div class=\"carousel-inner\">\n      <div *ngFor=\"let slide of slides\" class=\"carousel-item\" [class.active]=\"slide.id === activeId\">\n        <ng-template [ngTemplateOutlet]=\"slide.tplRef\"></ng-template>\n      </div>\n    </div>\n    <a class=\"left carousel-control-prev\" role=\"button\" (click)=\"cycleToPrev()\">\n      <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Previous</span>\n    </a>\n    <a class=\"right carousel-control-next\" role=\"button\" (click)=\"cycleToNext()\">\n      <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Next</span>\n    </a>\n    "
+            },] },
+];
+/** @nocollapse */
+NgbCarousel.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_1__carousel_config__["a" /* NgbCarouselConfig */], },
+]; };
+NgbCarousel.propDecorators = {
+    'slides': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChildren"], args: [NgbSlide,] },],
+    'interval': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'wrap': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'keyboard': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'activeId': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+var NGB_CAROUSEL_DIRECTIVES = [NgbCarousel, NgbSlide];
+//# sourceMappingURL=carousel.js.map
+
+/***/ }),
+/* 101 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__carousel_config__ = __webpack_require__(49);
+/* unused harmony reexport NgbCarousel */
+/* unused harmony reexport NgbSlide */
+/* unused harmony reexport NgbCarouselConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCarouselModule; });
+
+
+
+
+
+
+var NgbCarouselModule = (function () {
+    function NgbCarouselModule() {
+    }
+    NgbCarouselModule.forRoot = function () { return { ngModule: NgbCarouselModule, providers: [__WEBPACK_IMPORTED_MODULE_3__carousel_config__["a" /* NgbCarouselConfig */]] }; };
+    return NgbCarouselModule;
+}());
+
+NgbCarouselModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: __WEBPACK_IMPORTED_MODULE_2__carousel__["a" /* NGB_CAROUSEL_DIRECTIVES */], exports: __WEBPACK_IMPORTED_MODULE_2__carousel__["a" /* NGB_CAROUSEL_DIRECTIVES */], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
+];
+/** @nocollapse */
+NgbCarouselModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=carousel.module.js.map
+
+/***/ }),
+/* 102 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCollapse; });
+
+/**
+ * The NgbCollapse directive provides a simple way to hide and show an element with animations.
+ */
+var NgbCollapse = (function () {
+    function NgbCollapse() {
+        /**
+         * A flag indicating collapsed (true) or open (false) state.
+         */
+        this.collapsed = false;
+    }
+    return NgbCollapse;
+}());
+
+NgbCollapse.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                selector: '[ngbCollapse]',
+                exportAs: 'ngbCollapse',
+                host: { '[class.collapse]': 'true', '[class.show]': '!collapsed' }
+            },] },
+];
+/** @nocollapse */
+NgbCollapse.ctorParameters = function () { return []; };
+NgbCollapse.propDecorators = {
+    'collapsed': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['ngbCollapse',] },],
+};
+//# sourceMappingURL=collapse.js.map
+
+/***/ }),
+/* 103 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collapse__ = __webpack_require__(102);
+/* unused harmony reexport NgbCollapse */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCollapseModule; });
+
+
+
+var NgbCollapseModule = (function () {
+    function NgbCollapseModule() {
+    }
+    NgbCollapseModule.forRoot = function () { return { ngModule: NgbCollapseModule, providers: [] }; };
+    return NgbCollapseModule;
+}());
+
+NgbCollapseModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_1__collapse__["a" /* NgbCollapse */]], exports: [__WEBPACK_IMPORTED_MODULE_1__collapse__["a" /* NgbCollapse */]] },] },
+];
+/** @nocollapse */
+NgbCollapseModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=collapse.module.js.map
+
+/***/ }),
+/* 104 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerDayView; });
+
+var NgbDatepickerDayView = (function () {
+    function NgbDatepickerDayView() {
+    }
+    NgbDatepickerDayView.prototype.isMuted = function () { return !this.selected && (this.date.month !== this.currentMonth || this.disabled); };
+    return NgbDatepickerDayView;
+}());
+
+NgbDatepickerDayView.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: '[ngbDatepickerDayView]',
+                styles: ["\n    :host {\n      text-align: center;\n      width: 2rem;\n      height: 2rem;\n      line-height: 2rem;      \n      border-radius: 0.25rem;\n    }\n    :host.outside {\n      opacity: 0.5;\n    }\n  "],
+                host: {
+                    '[class.bg-primary]': 'selected',
+                    '[class.text-white]': 'selected',
+                    '[class.text-muted]': 'isMuted()',
+                    '[class.outside]': 'isMuted()',
+                    '[class.btn-secondary]': '!disabled'
+                },
+                template: "{{ date.day }}"
+            },] },
+];
+/** @nocollapse */
+NgbDatepickerDayView.ctorParameters = function () { return []; };
+NgbDatepickerDayView.propDecorators = {
+    'currentMonth': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'date': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'selected': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+//# sourceMappingURL=datepicker-day-view.js.map
+
+/***/ }),
+/* 105 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngb_date__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngb_date_parser_formatter__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_positioning__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngb_calendar__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_service__ = __webpack_require__(109);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbInputDatepicker; });
+
+
+
+
+
+
+
+
+var NGB_DATEPICKER_VALUE_ACCESSOR = {
+    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbInputDatepicker; }),
+    multi: true
+};
+var NGB_DATEPICKER_VALIDATOR = {
+    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* NG_VALIDATORS */],
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbInputDatepicker; }),
+    multi: true
+};
+/**
+ * A directive that makes it possible to have datepickers on input fields.
+ * Manages integration with the input field itself (data entry) and ngModel (validation etc.).
+ */
+var NgbInputDatepicker = (function () {
+    function NgbInputDatepicker(_parserFormatter, _elRef, _vcRef, _renderer, _cfr, ngZone, _service, _calendar) {
+        var _this = this;
+        this._parserFormatter = _parserFormatter;
+        this._elRef = _elRef;
+        this._vcRef = _vcRef;
+        this._renderer = _renderer;
+        this._cfr = _cfr;
+        this._service = _service;
+        this._calendar = _calendar;
+        this._cRef = null;
+        /**
+         * An event fired when navigation happens and currently displayed month changes.
+         * See NgbDatepickerNavigateEvent for the payload info.
+         */
+        this.navigate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this._onChange = function (_) { };
+        this._onTouched = function () { };
+        this._validatorChange = function () { };
+        this._zoneSubscription = ngZone.onStable.subscribe(function () {
+            if (_this._cRef) {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__util_positioning__["a" /* positionElements */])(_this._elRef.nativeElement, _this._cRef.location.nativeElement, 'bottom-left');
+            }
+        });
+    }
+    NgbInputDatepicker.prototype.registerOnChange = function (fn) { this._onChange = fn; };
+    NgbInputDatepicker.prototype.registerOnTouched = function (fn) { this._onTouched = fn; };
+    NgbInputDatepicker.prototype.registerOnValidatorChange = function (fn) { this._validatorChange = fn; };
+    ;
+    NgbInputDatepicker.prototype.setDisabledState = function (isDisabled) {
+        this._renderer.setProperty(this._elRef.nativeElement, 'disabled', isDisabled);
+        if (this.isOpen()) {
+            this._cRef.instance.setDisabledState(isDisabled);
+        }
+    };
+    NgbInputDatepicker.prototype.validate = function (c) {
+        var value = c.value;
+        if (value === null || value === undefined) {
+            return null;
+        }
+        if (!this._calendar.isValid(value)) {
+            return { 'ngbDate': { invalid: c.value } };
+        }
+        if (this.minDate && __WEBPACK_IMPORTED_MODULE_2__ngb_date__["a" /* NgbDate */].from(value).before(__WEBPACK_IMPORTED_MODULE_2__ngb_date__["a" /* NgbDate */].from(this.minDate))) {
+            return { 'ngbDate': { requiredBefore: this.minDate } };
+        }
+        if (this.maxDate && __WEBPACK_IMPORTED_MODULE_2__ngb_date__["a" /* NgbDate */].from(value).after(__WEBPACK_IMPORTED_MODULE_2__ngb_date__["a" /* NgbDate */].from(this.maxDate))) {
+            return { 'ngbDate': { requiredAfter: this.maxDate } };
+        }
+    };
+    NgbInputDatepicker.prototype.writeValue = function (value) {
+        var ngbDate = value ? new __WEBPACK_IMPORTED_MODULE_2__ngb_date__["a" /* NgbDate */](value.year, value.month, value.day) : null;
+        this._model = this._calendar.isValid(value) ? ngbDate : null;
+        this._writeModelValue(this._model);
+    };
+    NgbInputDatepicker.prototype.manualDateChange = function (value) {
+        this._model = this._service.toValidDate(this._parserFormatter.parse(value), null);
+        this._onChange(this._model ? { year: this._model.year, month: this._model.month, day: this._model.day } : value);
+        this._writeModelValue(this._model);
+    };
+    NgbInputDatepicker.prototype.isOpen = function () { return !!this._cRef; };
+    /**
+     * Opens the datepicker with the selected date indicated by the ngModel value.
+     */
+    NgbInputDatepicker.prototype.open = function () {
+        var _this = this;
+        if (!this.isOpen()) {
+            var cf = this._cfr.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_3__datepicker__["a" /* NgbDatepicker */]);
+            this._cRef = this._vcRef.createComponent(cf);
+            this._applyPopupStyling(this._cRef.location.nativeElement);
+            this._cRef.instance.writeValue(this._model);
+            this._applyDatepickerInputs(this._cRef.instance);
+            this._subscribeForDatepickerOutputs(this._cRef.instance);
+            this._cRef.instance.ngOnInit();
+            // date selection event handling
+            this._cRef.instance.registerOnChange(function (selectedDate) {
+                _this.writeValue(selectedDate);
+                _this._onChange(selectedDate);
+                _this.close();
+            });
+        }
+    };
+    /**
+     * Closes the datepicker popup.
+     */
+    NgbInputDatepicker.prototype.close = function () {
+        if (this.isOpen()) {
+            this._vcRef.remove(this._vcRef.indexOf(this._cRef.hostView));
+            this._cRef = null;
+        }
+    };
+    /**
+     * Toggles the datepicker popup (opens when closed and closes when opened).
+     */
+    NgbInputDatepicker.prototype.toggle = function () {
+        if (this.isOpen()) {
+            this.close();
+        }
+        else {
+            this.open();
+        }
+    };
+    /**
+     * Navigates current view to provided date.
+     * With default calendar we use ISO 8601: 'month' is 1=Jan ... 12=Dec.
+     * If nothing or invalid date provided calendar will open current month.
+     * Use 'startDate' input as an alternative
+     */
+    NgbInputDatepicker.prototype.navigateTo = function (date) {
+        if (this.isOpen()) {
+            this._cRef.instance.navigateTo(date);
+        }
+    };
+    NgbInputDatepicker.prototype.onBlur = function () { this._onTouched(); };
+    NgbInputDatepicker.prototype.ngOnChanges = function (changes) {
+        if (changes['minDate'] || changes['maxDate']) {
+            this._validatorChange();
+        }
+    };
+    NgbInputDatepicker.prototype.ngOnDestroy = function () {
+        this.close();
+        this._zoneSubscription.unsubscribe();
+    };
+    NgbInputDatepicker.prototype._applyDatepickerInputs = function (datepickerInstance) {
+        var _this = this;
+        ['dayTemplate', 'displayMonths', 'firstDayOfWeek', 'markDisabled', 'minDate', 'maxDate', 'navigation',
+            'outsideDays', 'showNavigation', 'showWeekdays', 'showWeekNumbers']
+            .forEach(function (optionName) {
+            if (_this[optionName] !== undefined) {
+                datepickerInstance[optionName] = _this[optionName];
+            }
+        });
+        datepickerInstance.startDate = this.startDate || this._model;
+    };
+    NgbInputDatepicker.prototype._applyPopupStyling = function (nativeElement) {
+        this._renderer.addClass(nativeElement, 'dropdown-menu');
+        this._renderer.setStyle(nativeElement, 'padding', '0');
+    };
+    NgbInputDatepicker.prototype._subscribeForDatepickerOutputs = function (datepickerInstance) {
+        var _this = this;
+        datepickerInstance.navigate.subscribe(function (date) { return _this.navigate.emit(date); });
+    };
+    NgbInputDatepicker.prototype._writeModelValue = function (model) {
+        this._renderer.setProperty(this._elRef.nativeElement, 'value', this._parserFormatter.format(model));
+        if (this.isOpen()) {
+            this._cRef.instance.writeValue(model);
+            this._onTouched();
+        }
+    };
+    return NgbInputDatepicker;
+}());
+
+NgbInputDatepicker.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                selector: 'input[ngbDatepicker]',
+                exportAs: 'ngbDatepicker',
+                host: { '(change)': 'manualDateChange($event.target.value)', '(keyup.esc)': 'close()', '(blur)': 'onBlur()' },
+                providers: [NGB_DATEPICKER_VALUE_ACCESSOR, NGB_DATEPICKER_VALIDATOR, __WEBPACK_IMPORTED_MODULE_7__datepicker_service__["a" /* NgbDatepickerService */]]
+            },] },
+];
+/** @nocollapse */
+NgbInputDatepicker.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_4__ngb_date_parser_formatter__["a" /* NgbDateParserFormatter */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
+    { type: __WEBPACK_IMPORTED_MODULE_7__datepicker_service__["a" /* NgbDatepickerService */], },
+    { type: __WEBPACK_IMPORTED_MODULE_6__ngb_calendar__["a" /* NgbCalendar */], },
+]; };
+NgbInputDatepicker.propDecorators = {
+    'dayTemplate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'displayMonths': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'firstDayOfWeek': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'markDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'minDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'maxDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'navigation': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'outsideDays': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showWeekdays': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showWeekNumbers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'startDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'navigate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+//# sourceMappingURL=datepicker-input.js.map
+
+/***/ }),
+/* 106 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__ = __webpack_require__(23);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerMonthView; });
+
+
+
+var NgbDatepickerMonthView = (function () {
+    function NgbDatepickerMonthView(i18n) {
+        this.i18n = i18n;
+        this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+    }
+    NgbDatepickerMonthView.prototype.doSelect = function (day) {
+        if (!this.isDisabled(day) && !this.isHidden(day)) {
+            this.select.emit(__WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */].from(day.date));
+        }
+    };
+    NgbDatepickerMonthView.prototype.isDisabled = function (day) { return this.disabled || day.disabled; };
+    NgbDatepickerMonthView.prototype.isSelected = function (date) { return this.selectedDate && this.selectedDate.equals(date); };
+    NgbDatepickerMonthView.prototype.isCollapsed = function (week) {
+        return this.outsideDays === 'collapsed' && week.days[0].date.month !== this.month.number &&
+            week.days[week.days.length - 1].date.month !== this.month.number;
+    };
+    NgbDatepickerMonthView.prototype.isHidden = function (day) {
+        return (this.outsideDays === 'hidden' || this.outsideDays === 'collapsed') && this.month.number !== day.date.month;
+    };
+    return NgbDatepickerMonthView;
+}());
+
+NgbDatepickerMonthView.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-datepicker-month-view',
+                host: { 'class': 'd-block' },
+                styles: ["\n    .ngb-dp-weekday, .ngb-dp-week-number {\n      line-height: 2rem;\n    }\n    .ngb-dp-day, .ngb-dp-weekday, .ngb-dp-week-number {\n      width: 2rem;\n      height: 2rem;      \n    }\n    .ngb-dp-day {\n      cursor: pointer;\n    }\n    .ngb-dp-day.disabled, .ngb-dp-day.hidden {\n      cursor: default;\n    }\n  "],
+                template: "\n    <div *ngIf=\"showWeekdays\" class=\"ngb-dp-week d-flex\">\n      <div *ngIf=\"showWeekNumbers\" class=\"ngb-dp-weekday\"></div>\n      <div *ngFor=\"let w of month.weekdays\" class=\"ngb-dp-weekday small text-center text-info font-italic\">\n        {{ i18n.getWeekdayShortName(w) }}\n      </div>\n    </div>\n    <ng-template ngFor let-week [ngForOf]=\"month.weeks\">\n      <div *ngIf=\"!isCollapsed(week)\" class=\"ngb-dp-week d-flex\">\n        <div *ngIf=\"showWeekNumbers\" class=\"ngb-dp-week-number small text-center font-italic text-muted\">{{ week.number }}</div>\n        <div *ngFor=\"let day of week.days\" (click)=\"doSelect(day)\" class=\"ngb-dp-day\" [class.disabled]=\"isDisabled(day)\"\n         [class.hidden]=\"isHidden(day)\">\n          <ng-template [ngIf]=\"!isHidden(day)\">\n            <ng-template [ngTemplateOutlet]=\"dayTemplate\"\n            [ngOutletContext]=\"{date: {year: day.date.year, month: day.date.month, day: day.date.day},\n              currentMonth: month.number,\n              disabled: isDisabled(day),\n              selected: isSelected(day.date)}\">\n            </ng-template>\n          </ng-template>\n        </div>\n      </div>\n    </ng-template>\n  "
+            },] },
+];
+/** @nocollapse */
+NgbDatepickerMonthView.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__["a" /* NgbDatepickerI18n */], },
+]; };
+NgbDatepickerMonthView.propDecorators = {
+    'dayTemplate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'month': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'outsideDays': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'selectedDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showWeekdays': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showWeekNumbers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'select': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+//# sourceMappingURL=datepicker-month-view.js.map
+
+/***/ }),
+/* 107 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_i18n__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngb_calendar__ = __webpack_require__(14);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerNavigationSelect; });
+
+
+
+
+
+var NgbDatepickerNavigationSelect = (function () {
+    function NgbDatepickerNavigationSelect(i18n, calendar) {
+        this.i18n = i18n;
+        this.calendar = calendar;
+        this.years = [];
+        this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.months = calendar.getMonths();
+    }
+    NgbDatepickerNavigationSelect.prototype.ngOnChanges = function (changes) {
+        if (changes['maxDate'] || changes['minDate'] || changes['date']) {
+            this._generateYears();
+            this._generateMonths();
+        }
+    };
+    NgbDatepickerNavigationSelect.prototype.changeMonth = function (month) { this.select.emit(new __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */](this.date.year, __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["e" /* toInteger */])(month), 1)); };
+    NgbDatepickerNavigationSelect.prototype.changeYear = function (year) { this.select.emit(new __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */](__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["e" /* toInteger */])(year), this.date.month, 1)); };
+    NgbDatepickerNavigationSelect.prototype._generateMonths = function () {
+        var _this = this;
+        this.months = this.calendar.getMonths();
+        if (this.date && this.date.year === this.minDate.year) {
+            var index = this.months.findIndex(function (month) { return month === _this.minDate.month; });
+            this.months = this.months.slice(index);
+        }
+        if (this.date && this.date.year === this.maxDate.year) {
+            var index = this.months.findIndex(function (month) { return month === _this.maxDate.month; });
+            this.months = this.months.slice(0, index + 1);
+        }
+    };
+    NgbDatepickerNavigationSelect.prototype._generateYears = function () {
+        var _this = this;
+        this.years = Array.from({ length: this.maxDate.year - this.minDate.year + 1 }, function (e, i) { return _this.minDate.year + i; });
+    };
+    return NgbDatepickerNavigationSelect;
+}());
+
+NgbDatepickerNavigationSelect.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-datepicker-navigation-select',
+                styles: ["\n    select {\n      /* to align with btn-sm */\n      padding: 0.25rem 0.5rem;\n      font-size: 0.875rem;      \n      line-height: 1.25;\n      /* to cancel the custom height set by custom-select */\n      height: inherit;\n      width: 50%;\n    }\n  "],
+                template: "\n    <select [disabled]=\"disabled\" class=\"custom-select d-inline-block\" [value]=\"date?.month\" (change)=\"changeMonth($event.target.value)\">\n      <option *ngFor=\"let m of months\" [value]=\"m\">{{ i18n.getMonthShortName(m) }}</option>\n    </select>" +
+                    "<select [disabled]=\"disabled\" class=\"custom-select d-inline-block\" [value]=\"date?.year\" (change)=\"changeYear($event.target.value)\">\n      <option *ngFor=\"let y of years\" [value]=\"y\">{{ y }}</option>\n    </select> \n  " // template needs to be formatted in a certain way so we don't add empty text nodes
+            },] },
+];
+/** @nocollapse */
+NgbDatepickerNavigationSelect.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_3__datepicker_i18n__["a" /* NgbDatepickerI18n */], },
+    { type: __WEBPACK_IMPORTED_MODULE_4__ngb_calendar__["a" /* NgbCalendar */], },
+]; };
+NgbDatepickerNavigationSelect.propDecorators = {
+    'date': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'maxDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'minDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'select': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+//# sourceMappingURL=datepicker-navigation-select.js.map
+
+/***/ }),
+/* 108 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datepicker_view_model__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_calendar__ = __webpack_require__(14);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerNavigation; });
+
+
+
+
+var NgbDatepickerNavigation = (function () {
+    function NgbDatepickerNavigation(i18n, _calendar) {
+        this.i18n = i18n;
+        this._calendar = _calendar;
+        this.navigation = __WEBPACK_IMPORTED_MODULE_1__datepicker_view_model__["a" /* NavigationEvent */];
+        this.navigate = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.select = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+    }
+    NgbDatepickerNavigation.prototype.doNavigate = function (event) { this.navigate.emit(event); };
+    NgbDatepickerNavigation.prototype.nextDisabled = function () {
+        return this.disabled || (this.maxDate && this._calendar.getNext(this.date, 'm').after(this.maxDate));
+    };
+    NgbDatepickerNavigation.prototype.prevDisabled = function () {
+        var prevDate = this._calendar.getPrev(this.date, 'm');
+        return this.disabled || (this.minDate && prevDate.year <= this.minDate.year && prevDate.month < this.minDate.month);
+    };
+    NgbDatepickerNavigation.prototype.selectDate = function (date) { this.select.emit(date); };
+    return NgbDatepickerNavigation;
+}());
+
+NgbDatepickerNavigation.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-datepicker-navigation',
+                host: { 'class': 'd-flex justify-content-between', '[class.collapsed]': '!showSelect' },
+                styles: ["\n    :host {\n      height: 2rem;\n      line-height: 1.85rem;\n    }\n    :host.collapsed {\n      margin-bottom: -2rem;        \n    }\n    .ngb-dp-navigation-chevron::before {\n      border-style: solid;\n      border-width: 0.2em 0.2em 0 0;\n      content: '';\n      display: inline-block;\n      height: 0.75em;\n      transform: rotate(-135deg);\n      -webkit-transform: rotate(-135deg);\n      -ms-transform: rotate(-135deg);\n      width: 0.75em;\n      margin: 0 0 0 0.5rem;\n    }    \n    .ngb-dp-navigation-chevron.right:before {\n      -webkit-transform: rotate(45deg);\n      -ms-transform: rotate(45deg);\n      transform: rotate(45deg);\n      margin: 0 0.5rem 0 0;\n    }\n    .btn-link {\n      cursor: pointer;\n      outline: 0;\n    }\n    .btn-link[disabled] {\n      cursor: not-allowed;\n      opacity: .65;\n    }    \n  "],
+                template: "\n    <button type=\"button\" class=\"btn-link\" (click)=\"!!doNavigate(navigation.PREV)\" [disabled]=\"prevDisabled()\">\n      <span class=\"ngb-dp-navigation-chevron\"></span>    \n    </button>\n    \n    <ngb-datepicker-navigation-select *ngIf=\"showSelect\" class=\"d-block\" [style.width.rem]=\"months * 9\"\n      [date]=\"date\"\n      [minDate]=\"minDate\"\n      [maxDate]=\"maxDate\"\n      [disabled] = \"disabled\"\n      (select)=\"selectDate($event)\">\n    </ngb-datepicker-navigation-select>\n    \n    <button type=\"button\" class=\"btn-link\" (click)=\"!!doNavigate(navigation.NEXT)\" [disabled]=\"nextDisabled()\">\n      <span class=\"ngb-dp-navigation-chevron right\"></span>\n    </button>\n  "
+            },] },
+];
+/** @nocollapse */
+NgbDatepickerNavigation.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__["a" /* NgbDatepickerI18n */], },
+    { type: __WEBPACK_IMPORTED_MODULE_3__ngb_calendar__["a" /* NgbCalendar */], },
+]; };
+NgbDatepickerNavigation.propDecorators = {
+    'date': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'maxDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'minDate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'months': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showSelect': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showWeekNumbers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'navigate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'select': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+//# sourceMappingURL=datepicker-navigation.js.map
+
+/***/ }),
+/* 109 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_calendar__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerService; });
+
+
+
+var NgbDatepickerService = (function () {
+    function NgbDatepickerService(_calendar) {
+        this._calendar = _calendar;
+    }
+    NgbDatepickerService.prototype.generateMonthViewModel = function (date, minDate, maxDate, firstDayOfWeek, markDisabled) {
+        var month = { firstDate: null, number: date.month, year: date.year, weeks: [], weekdays: [] };
+        date = this._getFirstViewDate(date, firstDayOfWeek);
+        // month has weeks
+        for (var w = 0; w < this._calendar.getWeeksPerMonth(); w++) {
+            var days = [];
+            // week has days
+            for (var d = 0; d < this._calendar.getDaysPerWeek(); d++) {
+                if (w === 0) {
+                    month.weekdays.push(this._calendar.getWeekday(date));
+                }
+                var newDate = new __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */](date.year, date.month, date.day);
+                var disabled = (minDate && newDate.before(minDate)) || (maxDate && newDate.after(maxDate));
+                if (!disabled && markDisabled) {
+                    disabled = markDisabled(newDate, { month: month.number, year: month.year });
+                }
+                // saving first date of the month
+                if (month.firstDate === null && date.month === month.number) {
+                    month.firstDate = newDate;
+                }
+                days.push({ date: newDate, disabled: disabled });
+                date = this._calendar.getNext(date);
+            }
+            month.weeks.push({ number: this._calendar.getWeekNumber(days.map(function (day) { return __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */].from(day.date); }), firstDayOfWeek), days: days });
+        }
+        return month;
+    };
+    NgbDatepickerService.prototype.toValidDate = function (date, defaultValue) {
+        var ngbDate = __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */].from(date);
+        if (defaultValue === undefined) {
+            defaultValue = this._calendar.getToday();
+        }
+        return this._calendar.isValid(ngbDate) ? ngbDate : defaultValue;
+    };
+    NgbDatepickerService.prototype._getFirstViewDate = function (date, firstDayOfWeek) {
+        var _this = this;
+        var currentMonth = date.month;
+        var today = new __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */](date.year, date.month, date.day);
+        var yesterday = this._calendar.getPrev(today);
+        var firstDayOfCurrentMonthIsAlsoFirstDayOfWeek = function () { return today.month !== yesterday.month && firstDayOfWeek === _this._calendar.getWeekday(today); };
+        var reachedTheFirstDayOfTheLastWeekOfPreviousMonth = function () { return today.month !== currentMonth && firstDayOfWeek === _this._calendar.getWeekday(today); };
+        // going back in time
+        while (!reachedTheFirstDayOfTheLastWeekOfPreviousMonth() && !firstDayOfCurrentMonthIsAlsoFirstDayOfWeek()) {
+            today = new __WEBPACK_IMPORTED_MODULE_1__ngb_date__["a" /* NgbDate */](yesterday.year, yesterday.month, yesterday.day);
+            yesterday = this._calendar.getPrev(yesterday);
+        }
+        return today;
+    };
+    return NgbDatepickerService;
+}());
+
+NgbDatepickerService.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_2__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+NgbDatepickerService.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__ngb_calendar__["a" /* NgbCalendar */], },
+]; };
+//# sourceMappingURL=datepicker-service.js.map
+
+/***/ }),
+/* 110 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationEvent; });
+var NavigationEvent;
+(function (NavigationEvent) {
+    NavigationEvent[NavigationEvent["PREV"] = 0] = "PREV";
+    NavigationEvent[NavigationEvent["NEXT"] = 1] = "NEXT";
+})(NavigationEvent || (NavigationEvent = {}));
+//# sourceMappingURL=datepicker-view-model.js.map
+
+/***/ }),
+/* 111 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker__ = __webpack_require__(51);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_month_view__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datepicker_navigation__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__datepicker_input__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_day_view__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ngb_calendar__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ngb_date_parser_formatter__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__datepicker_navigation_select__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__datepicker_config__ = __webpack_require__(50);
+/* unused harmony reexport NgbDatepicker */
+/* unused harmony reexport NgbInputDatepicker */
+/* unused harmony reexport NgbCalendar */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__hijri_ngb_calendar_islamic_civil__ = __webpack_require__(171);
+/* unused harmony reexport NgbCalendarIslamicCivil */
+/* unused harmony reexport NgbDatepickerMonthView */
+/* unused harmony reexport NgbDatepickerDayView */
+/* unused harmony reexport NgbDatepickerNavigation */
+/* unused harmony reexport NgbDatepickerNavigationSelect */
+/* unused harmony reexport NgbDatepickerConfig */
+/* unused harmony reexport NgbDatepickerI18n */
+/* unused harmony reexport NgbDateParserFormatter */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerModule; });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var NgbDatepickerModule = (function () {
+    function NgbDatepickerModule() {
+    }
+    NgbDatepickerModule.forRoot = function () {
+        return {
+            ngModule: NgbDatepickerModule,
+            providers: [
+                { provide: __WEBPACK_IMPORTED_MODULE_9__ngb_calendar__["a" /* NgbCalendar */], useClass: __WEBPACK_IMPORTED_MODULE_9__ngb_calendar__["b" /* NgbCalendarGregorian */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__["a" /* NgbDatepickerI18n */], useClass: __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__["b" /* NgbDatepickerI18nDefault */] },
+                { provide: __WEBPACK_IMPORTED_MODULE_10__ngb_date_parser_formatter__["a" /* NgbDateParserFormatter */], useClass: __WEBPACK_IMPORTED_MODULE_10__ngb_date_parser_formatter__["b" /* NgbDateISOParserFormatter */] }, __WEBPACK_IMPORTED_MODULE_12__datepicker_config__["a" /* NgbDatepickerConfig */]
+            ]
+        };
+    };
+    return NgbDatepickerModule;
+}());
+
+NgbDatepickerModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                declarations: [
+                    __WEBPACK_IMPORTED_MODULE_2__datepicker__["a" /* NgbDatepicker */], __WEBPACK_IMPORTED_MODULE_3__datepicker_month_view__["a" /* NgbDatepickerMonthView */], __WEBPACK_IMPORTED_MODULE_4__datepicker_navigation__["a" /* NgbDatepickerNavigation */], __WEBPACK_IMPORTED_MODULE_11__datepicker_navigation_select__["a" /* NgbDatepickerNavigationSelect */], __WEBPACK_IMPORTED_MODULE_7__datepicker_day_view__["a" /* NgbDatepickerDayView */],
+                    __WEBPACK_IMPORTED_MODULE_5__datepicker_input__["a" /* NgbInputDatepicker */]
+                ],
+                exports: [__WEBPACK_IMPORTED_MODULE_2__datepicker__["a" /* NgbDatepicker */], __WEBPACK_IMPORTED_MODULE_5__datepicker_input__["a" /* NgbInputDatepicker */]],
+                imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"], __WEBPACK_IMPORTED_MODULE_6__angular_forms__["a" /* FormsModule */]],
+                entryComponents: [__WEBPACK_IMPORTED_MODULE_2__datepicker__["a" /* NgbDatepicker */]]
+            },] },
+];
+/** @nocollapse */
+NgbDatepickerModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=datepicker.module.js.map
+
+/***/ }),
+/* 112 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dropdown_config__ = __webpack_require__(53);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbDropdown; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDropdownToggle; });
+
+
+/**
+ * Transforms a node into a dropdown.
+ */
+var NgbDropdown = (function () {
+    function NgbDropdown(config) {
+        /**
+         *  Defines whether or not the dropdown-menu is open initially.
+         */
+        this._open = false;
+        /**
+         *  An event fired when the dropdown is opened or closed.
+         *  Event's payload equals whether dropdown is open.
+         */
+        this.openChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.up = config.up;
+        this.autoClose = config.autoClose;
+    }
+    /**
+     * Checks if the dropdown menu is open or not.
+     */
+    NgbDropdown.prototype.isOpen = function () { return this._open; };
+    /**
+     * Opens the dropdown menu of a given navbar or tabbed navigation.
+     */
+    NgbDropdown.prototype.open = function () {
+        if (!this._open) {
+            this._open = true;
+            this.openChange.emit(true);
+        }
+    };
+    /**
+     * Closes the dropdown menu of a given navbar or tabbed navigation.
+     */
+    NgbDropdown.prototype.close = function () {
+        if (this._open) {
+            this._open = false;
+            this.openChange.emit(false);
+        }
+    };
+    /**
+     * Toggles the dropdown menu of a given navbar or tabbed navigation.
+     */
+    NgbDropdown.prototype.toggle = function () {
+        if (this.isOpen()) {
+            this.close();
+        }
+        else {
+            this.open();
+        }
+    };
+    NgbDropdown.prototype.closeFromOutsideClick = function ($event) {
+        if (this.autoClose && $event.button !== 2 && !this._isEventFromToggle($event)) {
+            this.close();
+        }
+    };
+    NgbDropdown.prototype.closeFromOutsideEsc = function () {
+        if (this.autoClose) {
+            this.close();
+        }
+    };
+    Object.defineProperty(NgbDropdown.prototype, "toggleElement", {
+        /**
+         * @internal
+         */
+        set: function (toggleElement) { this._toggleElement = toggleElement; },
+        enumerable: true,
+        configurable: true
+    });
+    NgbDropdown.prototype._isEventFromToggle = function ($event) { return !!this._toggleElement && this._toggleElement.contains($event.target); };
+    return NgbDropdown;
+}());
+
+NgbDropdown.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                selector: '[ngbDropdown]',
+                exportAs: 'ngbDropdown',
+                host: {
+                    '[class.dropdown]': '!up',
+                    '[class.dropup]': 'up',
+                    '[class.show]': 'isOpen()',
+                    '(keyup.esc)': 'closeFromOutsideEsc()',
+                    '(document:click)': 'closeFromOutsideClick($event)'
+                }
+            },] },
+];
+/** @nocollapse */
+NgbDropdown.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_1__dropdown_config__["a" /* NgbDropdownConfig */], },
+]; };
+NgbDropdown.propDecorators = {
+    'up': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'autoClose': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    '_open': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"], args: ['open',] },],
+    'openChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+/**
+ * Allows the dropdown to be toggled via click. This directive is optional.
+ */
+var NgbDropdownToggle = (function () {
+    function NgbDropdownToggle(dropdown, elementRef) {
+        this.dropdown = dropdown;
+        dropdown.toggleElement = elementRef.nativeElement;
+    }
+    NgbDropdownToggle.prototype.toggleOpen = function () { this.dropdown.toggle(); };
+    return NgbDropdownToggle;
+}());
+
+NgbDropdownToggle.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                selector: '[ngbDropdownToggle]',
+                host: {
+                    'class': 'dropdown-toggle',
+                    'aria-haspopup': 'true',
+                    '[attr.aria-expanded]': 'dropdown.isOpen()',
+                    '(click)': 'toggleOpen()'
+                }
+            },] },
+];
+/** @nocollapse */
+NgbDropdownToggle.ctorParameters = function () { return [
+    { type: NgbDropdown, },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+]; };
+//# sourceMappingURL=dropdown.js.map
+
+/***/ }),
+/* 113 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dropdown__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dropdown_config__ = __webpack_require__(53);
+/* unused harmony reexport NgbDropdown */
+/* unused harmony reexport NgbDropdownToggle */
+/* unused harmony reexport NgbDropdownConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDropdownModule; });
+
+
+
+
+
+var NGB_DROPDOWN_DIRECTIVES = [__WEBPACK_IMPORTED_MODULE_1__dropdown__["a" /* NgbDropdownToggle */], __WEBPACK_IMPORTED_MODULE_1__dropdown__["b" /* NgbDropdown */]];
+var NgbDropdownModule = (function () {
+    function NgbDropdownModule() {
+    }
+    NgbDropdownModule.forRoot = function () { return { ngModule: NgbDropdownModule, providers: [__WEBPACK_IMPORTED_MODULE_2__dropdown_config__["a" /* NgbDropdownConfig */]] }; };
+    return NgbDropdownModule;
+}());
+
+NgbDropdownModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: NGB_DROPDOWN_DIRECTIVES, exports: NGB_DROPDOWN_DIRECTIVES },] },
+];
+/** @nocollapse */
+NgbDropdownModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=dropdown.module.js.map
+
+/***/ }),
+/* 114 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalBackdrop; });
+
+var NgbModalBackdrop = (function () {
+    function NgbModalBackdrop() {
+    }
+    return NgbModalBackdrop;
+}());
+
+NgbModalBackdrop.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{ selector: 'ngb-modal-backdrop', template: '', host: { 'class': 'modal-backdrop fade show' } },] },
+];
+/** @nocollapse */
+NgbModalBackdrop.ctorParameters = function () { return []; };
+//# sourceMappingURL=modal-backdrop.js.map
+
+/***/ }),
+/* 115 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalDismissReasons; });
+var ModalDismissReasons;
+(function (ModalDismissReasons) {
+    ModalDismissReasons[ModalDismissReasons["BACKDROP_CLICK"] = 0] = "BACKDROP_CLICK";
+    ModalDismissReasons[ModalDismissReasons["ESC"] = 1] = "ESC";
+})(ModalDismissReasons || (ModalDismissReasons = {}));
+//# sourceMappingURL=modal-dismiss-reasons.js.map
+
+/***/ }),
+/* 116 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_popup__ = __webpack_require__(28);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbActiveModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbModalRef; });
+
+
+/**
+ * A reference to an active (currently opened) modal. Instances of this class
+ * can be injected into components passed as modal content.
+ */
+var NgbActiveModal = (function () {
+    function NgbActiveModal() {
+    }
+    /**
+     * Can be used to close a modal, passing an optional result.
+     */
+    NgbActiveModal.prototype.close = function (result) { };
+    /**
+     * Can be used to dismiss a modal, passing an optional reason.
+     */
+    NgbActiveModal.prototype.dismiss = function (reason) { };
+    return NgbActiveModal;
+}());
+
+NgbActiveModal.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+NgbActiveModal.ctorParameters = function () { return []; };
+/**
+ * A reference to a newly opened modal.
+ */
+var NgbModalRef = (function () {
+    function NgbModalRef(_windowCmptRef, _contentRef, _backdropCmptRef) {
+        var _this = this;
+        this._windowCmptRef = _windowCmptRef;
+        this._contentRef = _contentRef;
+        this._backdropCmptRef = _backdropCmptRef;
+        _windowCmptRef.instance.dismissEvent.subscribe(function (reason) { _this.dismiss(reason); });
+        this.result = new Promise(function (resolve, reject) {
+            _this._resolve = resolve;
+            _this._reject = reject;
+        });
+        this.result.then(null, function () { });
+    }
+    Object.defineProperty(NgbModalRef.prototype, "componentInstance", {
+        /**
+         * The instance of component used as modal's content.
+         * Undefined when a TemplateRef is used as modal's content.
+         */
+        get: function () {
+            if (this._contentRef.componentRef) {
+                return this._contentRef.componentRef.instance;
+            }
+        },
+        // only needed to keep TS1.8 compatibility
+        set: function (instance) { },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Can be used to close a modal, passing an optional result.
+     */
+    NgbModalRef.prototype.close = function (result) {
+        if (this._windowCmptRef) {
+            this._resolve(result);
+            this._removeModalElements();
+        }
+    };
+    /**
+     * Can be used to dismiss a modal, passing an optional reason.
+     */
+    NgbModalRef.prototype.dismiss = function (reason) {
+        if (this._windowCmptRef) {
+            this._reject(reason);
+            this._removeModalElements();
+        }
+    };
+    NgbModalRef.prototype._removeModalElements = function () {
+        var windowNativeEl = this._windowCmptRef.location.nativeElement;
+        windowNativeEl.parentNode.removeChild(windowNativeEl);
+        this._windowCmptRef.destroy();
+        if (this._backdropCmptRef) {
+            var backdropNativeEl = this._backdropCmptRef.location.nativeElement;
+            backdropNativeEl.parentNode.removeChild(backdropNativeEl);
+            this._backdropCmptRef.destroy();
+        }
+        if (this._contentRef && this._contentRef.viewRef) {
+            this._contentRef.viewRef.destroy();
+        }
+        this._windowCmptRef = null;
+        this._backdropCmptRef = null;
+        this._contentRef = null;
+    };
+    return NgbModalRef;
+}());
+
+NgbModalRef.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+NgbModalRef.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__util_popup__["b" /* ContentRef */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentRef"], },
+]; };
+//# sourceMappingURL=modal-ref.js.map
+
+/***/ }),
+/* 117 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_popup__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_backdrop__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_window__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_ref__ = __webpack_require__(116);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalStack; });
+
+
+
+
+
+
+var NgbModalStack = (function () {
+    function NgbModalStack(_applicationRef, _injector, _componentFactoryResolver) {
+        this._applicationRef = _applicationRef;
+        this._injector = _injector;
+        this._componentFactoryResolver = _componentFactoryResolver;
+        this._backdropFactory = _componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_3__modal_backdrop__["a" /* NgbModalBackdrop */]);
+        this._windowFactory = _componentFactoryResolver.resolveComponentFactory(__WEBPACK_IMPORTED_MODULE_4__modal_window__["a" /* NgbModalWindow */]);
+    }
+    NgbModalStack.prototype.open = function (moduleCFR, contentInjector, content, options) {
+        var containerSelector = options.container || 'body';
+        var containerEl = document.querySelector(containerSelector);
+        if (!containerEl) {
+            throw new Error("The specified modal container \"" + containerSelector + "\" was not found in the DOM.");
+        }
+        var activeModal = new __WEBPACK_IMPORTED_MODULE_5__modal_ref__["a" /* NgbActiveModal */]();
+        var contentRef = this._getContentRef(moduleCFR, contentInjector, content, activeModal);
+        var windowCmptRef;
+        var backdropCmptRef;
+        var ngbModalRef;
+        if (options.backdrop !== false) {
+            backdropCmptRef = this._backdropFactory.create(this._injector);
+            this._applicationRef.attachView(backdropCmptRef.hostView);
+            containerEl.appendChild(backdropCmptRef.location.nativeElement);
+        }
+        windowCmptRef = this._windowFactory.create(this._injector, contentRef.nodes);
+        this._applicationRef.attachView(windowCmptRef.hostView);
+        containerEl.appendChild(windowCmptRef.location.nativeElement);
+        ngbModalRef = new __WEBPACK_IMPORTED_MODULE_5__modal_ref__["b" /* NgbModalRef */](windowCmptRef, contentRef, backdropCmptRef);
+        activeModal.close = function (result) { ngbModalRef.close(result); };
+        activeModal.dismiss = function (reason) { ngbModalRef.dismiss(reason); };
+        this._applyWindowOptions(windowCmptRef.instance, options);
+        return ngbModalRef;
+    };
+    NgbModalStack.prototype._applyWindowOptions = function (windowInstance, options) {
+        ['backdrop', 'keyboard', 'size', 'windowClass'].forEach(function (optionName) {
+            if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["c" /* isDefined */])(options[optionName])) {
+                windowInstance[optionName] = options[optionName];
+            }
+        });
+    };
+    NgbModalStack.prototype._getContentRef = function (moduleCFR, contentInjector, content, context) {
+        if (!content) {
+            return new __WEBPACK_IMPORTED_MODULE_1__util_popup__["b" /* ContentRef */]([]);
+        }
+        else if (content instanceof __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"]) {
+            var viewRef = content.createEmbeddedView(context);
+            this._applicationRef.attachView(viewRef);
+            return new __WEBPACK_IMPORTED_MODULE_1__util_popup__["b" /* ContentRef */]([viewRef.rootNodes], viewRef);
+        }
+        else if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["h" /* isString */])(content)) {
+            return new __WEBPACK_IMPORTED_MODULE_1__util_popup__["b" /* ContentRef */]([[document.createTextNode("" + content)]]);
+        }
+        else {
+            var contentCmptFactory = moduleCFR.resolveComponentFactory(content);
+            var modalContentInjector = __WEBPACK_IMPORTED_MODULE_0__angular_core__["ReflectiveInjector"].resolveAndCreate([{ provide: __WEBPACK_IMPORTED_MODULE_5__modal_ref__["a" /* NgbActiveModal */], useValue: context }], contentInjector);
+            var componentRef = contentCmptFactory.create(modalContentInjector);
+            this._applicationRef.attachView(componentRef.hostView);
+            return new __WEBPACK_IMPORTED_MODULE_1__util_popup__["b" /* ContentRef */]([[componentRef.location.nativeElement]], componentRef.hostView, componentRef);
+        }
+    };
+    return NgbModalStack;
+}());
+
+NgbModalStack.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+NgbModalStack.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ApplicationRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
+]; };
+//# sourceMappingURL=modal-stack.js.map
+
+/***/ }),
+/* 118 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_dismiss_reasons__ = __webpack_require__(115);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalWindow; });
+
+
+var NgbModalWindow = (function () {
+    function NgbModalWindow(_elRef, _renderer) {
+        this._elRef = _elRef;
+        this._renderer = _renderer;
+        this.backdrop = true;
+        this.keyboard = true;
+        this.dismissEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+    }
+    NgbModalWindow.prototype.backdropClick = function ($event) {
+        if (this.backdrop === true && this._elRef.nativeElement === $event.target) {
+            this.dismiss(__WEBPACK_IMPORTED_MODULE_1__modal_dismiss_reasons__["a" /* ModalDismissReasons */].BACKDROP_CLICK);
+        }
+    };
+    NgbModalWindow.prototype.escKey = function ($event) {
+        if (this.keyboard && !$event.defaultPrevented) {
+            this.dismiss(__WEBPACK_IMPORTED_MODULE_1__modal_dismiss_reasons__["a" /* ModalDismissReasons */].ESC);
+        }
+    };
+    NgbModalWindow.prototype.dismiss = function (reason) { this.dismissEvent.emit(reason); };
+    NgbModalWindow.prototype.ngOnInit = function () {
+        this._elWithFocus = document.activeElement;
+        this._renderer.addClass(document.body, 'modal-open');
+    };
+    NgbModalWindow.prototype.ngAfterViewInit = function () {
+        if (!this._elRef.nativeElement.contains(document.activeElement)) {
+            this._elRef.nativeElement['focus'].apply(this._elRef.nativeElement, []);
+        }
+    };
+    NgbModalWindow.prototype.ngOnDestroy = function () {
+        if (this._elWithFocus && document.body.contains(this._elWithFocus)) {
+            this._elWithFocus['focus'].apply(this._elWithFocus, []);
+        }
+        else {
+            document.body['focus'].apply(document.body, []);
+        }
+        this._elWithFocus = null;
+        this._renderer.removeClass(document.body, 'modal-open');
+    };
+    return NgbModalWindow;
+}());
+
+NgbModalWindow.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-modal-window',
+                host: {
+                    '[class]': '"modal fade show" + (windowClass ? " " + windowClass : "")',
+                    'role': 'dialog',
+                    'tabindex': '-1',
+                    'style': 'display: block;',
+                    '(keyup.esc)': 'escKey($event)',
+                    '(click)': 'backdropClick($event)'
+                },
+                template: "\n    <div [class]=\"'modal-dialog' + (size ? ' modal-' + size : '')\" role=\"document\">\n        <div class=\"modal-content\"><ng-content></ng-content></div>\n    </div>\n    "
+            },] },
+];
+/** @nocollapse */
+NgbModalWindow.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
+]; };
+NgbModalWindow.propDecorators = {
+    'backdrop': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'keyboard': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'size': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'windowClass': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'dismissEvent': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"], args: ['dismiss',] },],
+};
+//# sourceMappingURL=modal-window.js.map
+
+/***/ }),
+/* 119 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_stack__ = __webpack_require__(117);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModal; });
+
+
+/**
+ * A service to open modal windows. Creating a modal is straightforward: create a template and pass it as an argument to
+ * the "open" method!
+ */
+var NgbModal = (function () {
+    function NgbModal(_moduleCFR, _injector, _modalStack) {
+        this._moduleCFR = _moduleCFR;
+        this._injector = _injector;
+        this._modalStack = _modalStack;
+    }
+    /**
+     * Opens a new modal window with the specified content and using supplied options. Content can be provided
+     * as a TemplateRef or a component type. If you pass a component type as content than instances of those
+     * components can be injected with an instance of the NgbActiveModal class. You can use methods on the
+     * NgbActiveModal class to close / dismiss modals from "inside" of a component.
+     */
+    NgbModal.prototype.open = function (content, options) {
+        if (options === void 0) { options = {}; }
+        return this._modalStack.open(this._moduleCFR, this._injector, content, options);
+    };
+    return NgbModal;
+}());
+
+NgbModal.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+NgbModal.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__modal_stack__["a" /* NgbModalStack */], },
+]; };
+//# sourceMappingURL=modal.js.map
+
+/***/ }),
+/* 120 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_backdrop__ = __webpack_require__(114);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_window__ = __webpack_require__(118);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_stack__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal__ = __webpack_require__(119);
+/* unused harmony reexport NgbModal */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_ref__ = __webpack_require__(116);
+/* unused harmony reexport NgbModalRef */
+/* unused harmony reexport NgbActiveModal */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modal_dismiss_reasons__ = __webpack_require__(115);
+/* unused harmony reexport ModalDismissReasons */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalModule; });
+
+
+
+
+
+
+
+
+var NgbModalModule = (function () {
+    function NgbModalModule() {
+    }
+    NgbModalModule.forRoot = function () { return { ngModule: NgbModalModule, providers: [__WEBPACK_IMPORTED_MODULE_4__modal__["a" /* NgbModal */], __WEBPACK_IMPORTED_MODULE_3__modal_stack__["a" /* NgbModalStack */]] }; };
+    return NgbModalModule;
+}());
+
+NgbModalModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                declarations: [__WEBPACK_IMPORTED_MODULE_1__modal_backdrop__["a" /* NgbModalBackdrop */], __WEBPACK_IMPORTED_MODULE_2__modal_window__["a" /* NgbModalWindow */]],
+                entryComponents: [__WEBPACK_IMPORTED_MODULE_1__modal_backdrop__["a" /* NgbModalBackdrop */], __WEBPACK_IMPORTED_MODULE_2__modal_window__["a" /* NgbModalWindow */]],
+                providers: [__WEBPACK_IMPORTED_MODULE_4__modal__["a" /* NgbModal */]]
+            },] },
+];
+/** @nocollapse */
+NgbModalModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=modal.module.js.map
+
+/***/ }),
+/* 121 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination_config__ = __webpack_require__(54);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbPagination; });
+
+
+
+/**
+ * A directive that will take care of visualising a pagination bar and enable / disable buttons correctly!
+ */
+var NgbPagination = (function () {
+    function NgbPagination(config) {
+        this.pageCount = 0;
+        this.pages = [];
+        /**
+         *  Current page.
+         */
+        this.page = 0;
+        /**
+         *  An event fired when the page is changed.
+         *  Event's payload equals to the newly selected page.
+         */
+        this.pageChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"](true);
+        this.disabled = config.disabled;
+        this.boundaryLinks = config.boundaryLinks;
+        this.directionLinks = config.directionLinks;
+        this.ellipses = config.ellipses;
+        this.maxSize = config.maxSize;
+        this.pageSize = config.pageSize;
+        this.rotate = config.rotate;
+        this.size = config.size;
+    }
+    NgbPagination.prototype.hasPrevious = function () { return this.page > 1; };
+    NgbPagination.prototype.hasNext = function () { return this.page < this.pageCount; };
+    NgbPagination.prototype.selectPage = function (pageNumber) { this._updatePages(pageNumber); };
+    NgbPagination.prototype.ngOnChanges = function (changes) { this._updatePages(this.page); };
+    /**
+     * @internal
+     */
+    NgbPagination.prototype.isEllipsis = function (pageNumber) { return pageNumber === -1; };
+    /**
+     * Appends ellipses and first/last page number to the displayed pages
+     */
+    NgbPagination.prototype._applyEllipses = function (start, end) {
+        if (this.ellipses) {
+            if (start > 0) {
+                if (start > 1) {
+                    this.pages.unshift(-1);
+                }
+                this.pages.unshift(1);
+            }
+            if (end < this.pageCount) {
+                if (end < (this.pageCount - 1)) {
+                    this.pages.push(-1);
+                }
+                this.pages.push(this.pageCount);
+            }
+        }
+    };
+    /**
+     * Rotates page numbers based on maxSize items visible.
+     * Currently selected page stays in the middle:
+     *
+     * Ex. for selected page = 6:
+     * [5,*6*,7] for maxSize = 3
+     * [4,5,*6*,7] for maxSize = 4
+     */
+    NgbPagination.prototype._applyRotation = function () {
+        var start = 0;
+        var end = this.pageCount;
+        var leftOffset = Math.floor(this.maxSize / 2);
+        var rightOffset = this.maxSize % 2 === 0 ? leftOffset - 1 : leftOffset;
+        if (this.page <= leftOffset) {
+            // very beginning, no rotation -> [0..maxSize]
+            end = this.maxSize;
+        }
+        else if (this.pageCount - this.page < leftOffset) {
+            // very end, no rotation -> [len-maxSize..len]
+            start = this.pageCount - this.maxSize;
+        }
+        else {
+            // rotate
+            start = this.page - leftOffset - 1;
+            end = this.page + rightOffset;
+        }
+        return [start, end];
+    };
+    /**
+     * Paginates page numbers based on maxSize items per page
+     */
+    NgbPagination.prototype._applyPagination = function () {
+        var page = Math.ceil(this.page / this.maxSize) - 1;
+        var start = page * this.maxSize;
+        var end = start + this.maxSize;
+        return [start, end];
+    };
+    NgbPagination.prototype._setPageInRange = function (newPageNo) {
+        var prevPageNo = this.page;
+        this.page = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["g" /* getValueInRange */])(newPageNo, this.pageCount, 1);
+        if (this.page !== prevPageNo) {
+            this.pageChange.emit(this.page);
+        }
+    };
+    NgbPagination.prototype._updatePages = function (newPage) {
+        this.pageCount = Math.ceil(this.collectionSize / this.pageSize);
+        if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["d" /* isNumber */])(this.pageCount)) {
+            this.pageCount = 0;
+        }
+        // fill-in model needed to render pages
+        this.pages.length = 0;
+        for (var i = 1; i <= this.pageCount; i++) {
+            this.pages.push(i);
+        }
+        // set page within 1..max range
+        this._setPageInRange(newPage);
+        // apply maxSize if necessary
+        if (this.maxSize > 0 && this.pageCount > this.maxSize) {
+            var start = 0;
+            var end = this.pageCount;
+            // either paginating or rotating page numbers
+            if (this.rotate) {
+                _a = this._applyRotation(), start = _a[0], end = _a[1];
+            }
+            else {
+                _b = this._applyPagination(), start = _b[0], end = _b[1];
+            }
+            this.pages = this.pages.slice(start, end);
+            // adding ellipses
+            this._applyEllipses(start, end);
+        }
+        var _a, _b;
+    };
+    return NgbPagination;
+}());
+
+NgbPagination.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-pagination',
+                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
+                host: { 'role': 'navigation' },
+                template: "\n    <ul [class]=\"'pagination' + (size ? ' pagination-' + size : '')\">\n      <li *ngIf=\"boundaryLinks\" class=\"page-item\"\n        [class.disabled]=\"!hasPrevious() || disabled\">\n        <a aria-label=\"First\" class=\"page-link\" href (click)=\"!!selectPage(1)\" [attr.tabindex]=\"(hasPrevious() ? null : '-1')\">\n          <span aria-hidden=\"true\">&laquo;&laquo;</span>\n        </a>\n      </li>\n\n      <li *ngIf=\"directionLinks\" class=\"page-item\"\n        [class.disabled]=\"!hasPrevious() || disabled\">\n        <a aria-label=\"Previous\" class=\"page-link\" href (click)=\"!!selectPage(page-1)\" [attr.tabindex]=\"(hasPrevious() ? null : '-1')\">\n          <span aria-hidden=\"true\">&laquo;</span>\n        </a>\n      </li>\n      <li *ngFor=\"let pageNumber of pages\" class=\"page-item\" [class.active]=\"pageNumber === page\"\n        [class.disabled]=\"isEllipsis(pageNumber) || disabled\">\n        <a *ngIf=\"isEllipsis(pageNumber)\" class=\"page-link\">...</a>\n        <a *ngIf=\"!isEllipsis(pageNumber)\" class=\"page-link\" href (click)=\"!!selectPage(pageNumber)\">\n          {{pageNumber}}\n          <span *ngIf=\"pageNumber === page\" class=\"sr-only\">(current)</span>\n        </a>\n      </li>\n      <li *ngIf=\"directionLinks\" class=\"page-item\" [class.disabled]=\"!hasNext() || disabled\">\n        <a aria-label=\"Next\" class=\"page-link\" href (click)=\"!!selectPage(page+1)\" [attr.tabindex]=\"(hasNext() ? null : '-1')\">\n          <span aria-hidden=\"true\">&raquo;</span>\n        </a>\n      </li>\n\n      <li *ngIf=\"boundaryLinks\" class=\"page-item\" [class.disabled]=\"!hasNext() || disabled\">\n        <a aria-label=\"Last\" class=\"page-link\" href (click)=\"!!selectPage(pageCount)\" [attr.tabindex]=\"(hasNext() ? null : '-1')\">\n          <span aria-hidden=\"true\">&raquo;&raquo;</span>\n        </a>\n      </li>\n    </ul>\n  "
+            },] },
+];
+/** @nocollapse */
+NgbPagination.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_2__pagination_config__["a" /* NgbPaginationConfig */], },
+]; };
+NgbPagination.propDecorators = {
+    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'boundaryLinks': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'directionLinks': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'ellipses': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'rotate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'collectionSize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'maxSize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'page': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'pageSize': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'pageChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'size': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+//# sourceMappingURL=pagination.js.map
+
+/***/ }),
+/* 122 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pagination_config__ = __webpack_require__(54);
+/* unused harmony reexport NgbPagination */
+/* unused harmony reexport NgbPaginationConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbPaginationModule; });
+
+
+
+
+
+
+var NgbPaginationModule = (function () {
+    function NgbPaginationModule() {
+    }
+    NgbPaginationModule.forRoot = function () { return { ngModule: NgbPaginationModule, providers: [__WEBPACK_IMPORTED_MODULE_3__pagination_config__["a" /* NgbPaginationConfig */]] }; };
+    return NgbPaginationModule;
+}());
+
+NgbPaginationModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_2__pagination__["a" /* NgbPagination */]], exports: [__WEBPACK_IMPORTED_MODULE_2__pagination__["a" /* NgbPagination */]], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
+];
+/** @nocollapse */
+NgbPaginationModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=pagination.module.js.map
+
+/***/ }),
+/* 123 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_triggers__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_positioning__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_popup__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__popover_config__ = __webpack_require__(55);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbPopoverWindow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbPopover; });
+
+
+
+
+
+var nextId = 0;
+var NgbPopoverWindow = (function () {
+    function NgbPopoverWindow() {
+        this.placement = 'top';
+    }
+    return NgbPopoverWindow;
+}());
+
+NgbPopoverWindow.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-popover-window',
+                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
+                host: { '[class]': '"popover show popover-" + placement', 'role': 'tooltip', '[id]': 'id' },
+                template: "\n    <h3 class=\"popover-title\">{{title}}</h3><div class=\"popover-content\"><ng-content></ng-content></div>\n    "
+            },] },
+];
+/** @nocollapse */
+NgbPopoverWindow.ctorParameters = function () { return []; };
+NgbPopoverWindow.propDecorators = {
+    'placement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'title': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+/**
+ * A lightweight, extensible directive for fancy popover creation.
+ */
+var NgbPopover = (function () {
+    function NgbPopover(_elementRef, _renderer, injector, componentFactoryResolver, viewContainerRef, config, ngZone) {
+        var _this = this;
+        this._elementRef = _elementRef;
+        this._renderer = _renderer;
+        /**
+         * Emits an event when the popover is shown
+         */
+        this.shown = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * Emits an event when the popover is hidden
+         */
+        this.hidden = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this._ngbPopoverWindowId = "ngb-popover-" + nextId++;
+        this.placement = config.placement;
+        this.triggers = config.triggers;
+        this.container = config.container;
+        this._popupService = new __WEBPACK_IMPORTED_MODULE_3__util_popup__["a" /* PopupService */](NgbPopoverWindow, injector, viewContainerRef, _renderer, componentFactoryResolver);
+        this._zoneSubscription = ngZone.onStable.subscribe(function () {
+            if (_this._windowRef) {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_positioning__["a" /* positionElements */])(_this._elementRef.nativeElement, _this._windowRef.location.nativeElement, _this.placement, _this.container === 'body');
+            }
+        });
+    }
+    /**
+     * Opens an element’s popover. This is considered a “manual” triggering of the popover.
+     * The context is an optional value to be injected into the popover template when it is created.
+     */
+    NgbPopover.prototype.open = function (context) {
+        if (!this._windowRef) {
+            this._windowRef = this._popupService.open(this.ngbPopover, context);
+            this._windowRef.instance.placement = this.placement;
+            this._windowRef.instance.title = this.popoverTitle;
+            this._windowRef.instance.id = this._ngbPopoverWindowId;
+            this._renderer.setAttribute(this._elementRef.nativeElement, 'aria-describedby', this._ngbPopoverWindowId);
+            if (this.container === 'body') {
+                window.document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);
+            }
+            // we need to manually invoke change detection since events registered via
+            // Renderer::listen() are not picked up by change detection with the OnPush strategy
+            this._windowRef.changeDetectorRef.markForCheck();
+            this.shown.emit();
+        }
+    };
+    /**
+     * Closes an element’s popover. This is considered a “manual” triggering of the popover.
+     */
+    NgbPopover.prototype.close = function () {
+        if (this._windowRef) {
+            this._renderer.removeAttribute(this._elementRef.nativeElement, 'aria-describedby');
+            this._popupService.close();
+            this._windowRef = null;
+            this.hidden.emit();
+        }
+    };
+    /**
+     * Toggles an element’s popover. This is considered a “manual” triggering of the popover.
+     */
+    NgbPopover.prototype.toggle = function () {
+        if (this._windowRef) {
+            this.close();
+        }
+        else {
+            this.open();
+        }
+    };
+    /**
+     * Returns whether or not the popover is currently being shown
+     */
+    NgbPopover.prototype.isOpen = function () { return this._windowRef != null; };
+    NgbPopover.prototype.ngOnInit = function () {
+        this._unregisterListenersFn = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_triggers__["a" /* listenToTriggers */])(this._renderer, this._elementRef.nativeElement, this.triggers, this.open.bind(this), this.close.bind(this), this.toggle.bind(this));
+    };
+    NgbPopover.prototype.ngOnDestroy = function () {
+        this.close();
+        this._unregisterListenersFn();
+        this._zoneSubscription.unsubscribe();
+    };
+    return NgbPopover;
+}());
+
+NgbPopover.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: '[ngbPopover]', exportAs: 'ngbPopover' },] },
+];
+/** @nocollapse */
+NgbPopover.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_4__popover_config__["a" /* NgbPopoverConfig */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
+]; };
+NgbPopover.propDecorators = {
+    'ngbPopover': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'popoverTitle': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'placement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'triggers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'container': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'shown': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'hidden': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+//# sourceMappingURL=popover.js.map
+
+/***/ }),
+/* 124 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popover__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__popover_config__ = __webpack_require__(55);
+/* unused harmony reexport NgbPopover */
+/* unused harmony reexport NgbPopoverConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbPopoverModule; });
+
+
+
+
+
+var NgbPopoverModule = (function () {
+    function NgbPopoverModule() {
+    }
+    NgbPopoverModule.forRoot = function () { return { ngModule: NgbPopoverModule, providers: [__WEBPACK_IMPORTED_MODULE_2__popover_config__["a" /* NgbPopoverConfig */]] }; };
+    return NgbPopoverModule;
+}());
+
+NgbPopoverModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_1__popover__["a" /* NgbPopover */], __WEBPACK_IMPORTED_MODULE_1__popover__["b" /* NgbPopoverWindow */]], exports: [__WEBPACK_IMPORTED_MODULE_1__popover__["a" /* NgbPopover */]], entryComponents: [__WEBPACK_IMPORTED_MODULE_1__popover__["b" /* NgbPopoverWindow */]] },] },
+];
+/** @nocollapse */
+NgbPopoverModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=popover.module.js.map
+
+/***/ }),
+/* 125 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progressbar_config__ = __webpack_require__(56);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbProgressbar; });
+
+
+
+/**
+ * Directive that can be used to provide feedback on the progress of a workflow or an action.
+ */
+var NgbProgressbar = (function () {
+    function NgbProgressbar(config) {
+        /**
+         * Current value to be displayed in the progressbar. Should be smaller or equal to "max" value.
+         */
+        this.value = 0;
+        this.max = config.max;
+        this.animated = config.animated;
+        this.striped = config.striped;
+        this.type = config.type;
+        this.showValue = config.showValue;
+    }
+    NgbProgressbar.prototype.getValue = function () { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["g" /* getValueInRange */])(this.value, this.max); };
+    NgbProgressbar.prototype.getPercentValue = function () { return 100 * this.getValue() / this.max; };
+    return NgbProgressbar;
+}());
+
+NgbProgressbar.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-progressbar',
+                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
+                template: "\n    <div class=\"progress\">\n      <div class=\"progress-bar{{type ? ' bg-' + type : ''}}{{animated ? ' progress-bar-animated' : ''}}{{striped ?\n    ' progress-bar-striped' : ''}}\" role=\"progressbar\" [style.width.%]=\"getPercentValue()\"\n    [attr.aria-valuenow]=\"getValue()\" aria-valuemin=\"0\" [attr.aria-valuemax]=\"max\">\n        <span *ngIf=\"showValue\">{{getPercentValue()}}%</span><ng-content></ng-content>\n      </div>\n    </div>\n  "
+            },] },
+];
+/** @nocollapse */
+NgbProgressbar.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_2__progressbar_config__["a" /* NgbProgressbarConfig */], },
+]; };
+NgbProgressbar.propDecorators = {
+    'max': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'animated': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'striped': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showValue': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'value': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+//# sourceMappingURL=progressbar.js.map
+
+/***/ }),
+/* 126 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progressbar__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progressbar_config__ = __webpack_require__(56);
+/* unused harmony reexport NgbProgressbar */
+/* unused harmony reexport NgbProgressbarConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbProgressbarModule; });
+
+
+
+
+
+
+var NgbProgressbarModule = (function () {
+    function NgbProgressbarModule() {
+    }
+    NgbProgressbarModule.forRoot = function () { return { ngModule: NgbProgressbarModule, providers: [__WEBPACK_IMPORTED_MODULE_3__progressbar_config__["a" /* NgbProgressbarConfig */]] }; };
+    return NgbProgressbarModule;
+}());
+
+NgbProgressbarModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_2__progressbar__["a" /* NgbProgressbar */]], exports: [__WEBPACK_IMPORTED_MODULE_2__progressbar__["a" /* NgbProgressbar */]], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
+];
+/** @nocollapse */
+NgbProgressbarModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=progressbar.module.js.map
+
+/***/ }),
+/* 127 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rating_config__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(13);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbRating; });
+
+
+
+
+var Key;
+(function (Key) {
+    Key[Key["End"] = 35] = "End";
+    Key[Key["Home"] = 36] = "Home";
+    Key[Key["ArrowLeft"] = 37] = "ArrowLeft";
+    Key[Key["ArrowUp"] = 38] = "ArrowUp";
+    Key[Key["ArrowRight"] = 39] = "ArrowRight";
+    Key[Key["ArrowDown"] = 40] = "ArrowDown";
+})(Key || (Key = {}));
+var NGB_RATING_VALUE_ACCESSOR = {
+    provide: __WEBPACK_IMPORTED_MODULE_3__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbRating; }),
+    multi: true
+};
+/**
+ * Rating directive that will take care of visualising a star rating bar.
+ */
+var NgbRating = (function () {
+    function NgbRating(config, _changeDetectorRef) {
+        this._changeDetectorRef = _changeDetectorRef;
+        this.contexts = [];
+        this.disabled = false;
+        /**
+         * An event fired when a user is hovering over a given rating.
+         * Event's payload equals to the rating being hovered over.
+         */
+        this.hover = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * An event fired when a user stops hovering over a given rating.
+         * Event's payload equals to the rating of the last item being hovered over.
+         */
+        this.leave = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * An event fired when a user selects a new rating.
+         * Event's payload equals to the newly selected rating.
+         */
+        this.rateChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"](true);
+        this.onChange = function (_) { };
+        this.onTouched = function () { };
+        this.max = config.max;
+        this.readonly = config.readonly;
+    }
+    NgbRating.prototype.ariaValueText = function () { return this.nextRate + " out of " + this.max; };
+    NgbRating.prototype.enter = function (value) {
+        if (!this.readonly && !this.disabled) {
+            this._updateState(value);
+        }
+        this.hover.emit(value);
+    };
+    NgbRating.prototype.handleBlur = function () { this.onTouched(); };
+    NgbRating.prototype.handleClick = function (value) { this.update(this.resettable && this.rate === value ? 0 : value); };
+    NgbRating.prototype.handleKeyDown = function (event) {
+        if (Key[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["a" /* toString */])(event.which)]) {
+            event.preventDefault();
+            switch (event.which) {
+                case Key.ArrowDown:
+                case Key.ArrowLeft:
+                    this.update(this.rate - 1);
+                    break;
+                case Key.ArrowUp:
+                case Key.ArrowRight:
+                    this.update(this.rate + 1);
+                    break;
+                case Key.Home:
+                    this.update(0);
+                    break;
+                case Key.End:
+                    this.update(this.max);
+                    break;
+            }
+        }
+    };
+    NgbRating.prototype.ngOnChanges = function (changes) {
+        if (changes['rate']) {
+            this.update(this.rate);
+        }
+    };
+    NgbRating.prototype.ngOnInit = function () {
+        this.contexts = Array.from({ length: this.max }, function () { return ({ fill: 0 }); });
+        this._updateState(this.rate);
+    };
+    NgbRating.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+    NgbRating.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+    NgbRating.prototype.reset = function () {
+        this.leave.emit(this.nextRate);
+        this._updateState(this.rate);
+    };
+    NgbRating.prototype.setDisabledState = function (isDisabled) { this.disabled = isDisabled; };
+    NgbRating.prototype.update = function (value, internalChange) {
+        if (internalChange === void 0) { internalChange = true; }
+        var newRate = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["g" /* getValueInRange */])(value, this.max, 0);
+        if (!this.readonly && !this.disabled && this.rate !== newRate) {
+            this.rate = newRate;
+            this.rateChange.emit(this.rate);
+        }
+        if (internalChange) {
+            this.onChange(this.rate);
+            this.onTouched();
+        }
+        this._updateState(this.rate);
+    };
+    NgbRating.prototype.writeValue = function (value) {
+        this.update(value, false);
+        this._changeDetectorRef.markForCheck();
+    };
+    NgbRating.prototype._getFillValue = function (index) {
+        var diff = this.nextRate - index;
+        if (diff >= 1) {
+            return 100;
+        }
+        if (diff < 1 && diff > 0) {
+            return Number.parseInt((diff * 100).toFixed(2));
+        }
+        return 0;
+    };
+    NgbRating.prototype._updateState = function (nextValue) {
+        var _this = this;
+        this.nextRate = nextValue;
+        this.contexts.forEach(function (context, index) { return context.fill = _this._getFillValue(index); });
+    };
+    return NgbRating;
+}());
+
+NgbRating.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-rating',
+                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
+                host: {
+                    'class': 'd-inline-flex',
+                    'tabindex': '0',
+                    'role': 'slider',
+                    'aria-valuemin': '0',
+                    '[attr.aria-valuemax]': 'max',
+                    '[attr.aria-valuenow]': 'nextRate',
+                    '[attr.aria-valuetext]': 'ariaValueText()',
+                    '[attr.aria-disabled]': 'readonly ? true : null',
+                    '(blur)': 'handleBlur()',
+                    '(keydown)': 'handleKeyDown($event)',
+                    '(mouseleave)': 'reset()'
+                },
+                template: "\n    <ng-template #t let-fill=\"fill\">{{ fill === 100 ? '&#9733;' : '&#9734;' }}</ng-template>\n    <ng-template ngFor [ngForOf]=\"contexts\" let-index=\"index\">\n      <span class=\"sr-only\">({{ index < nextRate ? '*' : ' ' }})</span>\n      <span (mouseenter)=\"enter(index + 1)\" (click)=\"handleClick(index + 1)\" [style.cursor]=\"readonly || disabled ? 'default' : 'pointer'\">\n        <ng-template [ngTemplateOutlet]=\"starTemplate || t\" [ngOutletContext]=\"contexts[index]\"></ng-template>\n      </span>\n    </ng-template>\n  ",
+                providers: [NGB_RATING_VALUE_ACCESSOR]
+            },] },
+];
+/** @nocollapse */
+NgbRating.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_1__rating_config__["a" /* NgbRatingConfig */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"], },
+]; };
+NgbRating.propDecorators = {
+    'max': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'rate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'readonly': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'resettable': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'starTemplate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] }, { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [__WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"],] },],
+    'hover': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'leave': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'rateChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+//# sourceMappingURL=rating.js.map
+
+/***/ }),
+/* 128 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rating_config__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rating__ = __webpack_require__(127);
+/* unused harmony reexport NgbRating */
+/* unused harmony reexport NgbRatingConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbRatingModule; });
+
+
+
+
+
+
+var NgbRatingModule = (function () {
+    function NgbRatingModule() {
+    }
+    NgbRatingModule.forRoot = function () { return { ngModule: NgbRatingModule, providers: [__WEBPACK_IMPORTED_MODULE_2__rating_config__["a" /* NgbRatingConfig */]] }; };
+    return NgbRatingModule;
+}());
+
+NgbRatingModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_3__rating__["a" /* NgbRating */]], exports: [__WEBPACK_IMPORTED_MODULE_3__rating__["a" /* NgbRating */]], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
+];
+/** @nocollapse */
+NgbRatingModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=rating.module.js.map
+
+/***/ }),
+/* 129 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tabset_config__ = __webpack_require__(58);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return NgbTabTitle; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return NgbTabContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbTab; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTabset; });
+
+
+var nextId = 0;
+/**
+ * This directive should be used to wrap tab titles that need to contain HTML markup or other directives.
+ */
+var NgbTabTitle = (function () {
+    function NgbTabTitle(templateRef) {
+        this.templateRef = templateRef;
+    }
+    return NgbTabTitle;
+}());
+
+NgbTabTitle.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ng-template[ngbTabTitle]' },] },
+];
+/** @nocollapse */
+NgbTabTitle.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], },
+]; };
+/**
+ * This directive must be used to wrap content to be displayed in a tab.
+ */
+var NgbTabContent = (function () {
+    function NgbTabContent(templateRef) {
+        this.templateRef = templateRef;
+    }
+    return NgbTabContent;
+}());
+
+NgbTabContent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ng-template[ngbTabContent]' },] },
+];
+/** @nocollapse */
+NgbTabContent.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["TemplateRef"], },
+]; };
+/**
+ * A directive representing an individual tab.
+ */
+var NgbTab = (function () {
+    function NgbTab() {
+        /**
+         * Unique tab identifier. Must be unique for the entire document for proper accessibility support.
+         */
+        this.id = "ngb-tab-" + nextId++;
+        /**
+         * Allows toggling disabled state of a given state. Disabled tabs can't be selected.
+         */
+        this.disabled = false;
+    }
+    return NgbTab;
+}());
+
+NgbTab.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: 'ngb-tab' },] },
+];
+/** @nocollapse */
+NgbTab.ctorParameters = function () { return []; };
+NgbTab.propDecorators = {
+    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'title': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'contentTpl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [NgbTabContent,] },],
+    'titleTpl': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChild"], args: [NgbTabTitle,] },],
+};
+/**
+ * A component that makes it easy to create tabbed interface.
+ */
+var NgbTabset = (function () {
+    function NgbTabset(config) {
+        /**
+         * Whether the closed tabs should be hidden without destroying them
+         */
+        this.destroyOnHide = true;
+        /**
+         * A tab change event fired right before the tab selection happens. See NgbTabChangeEvent for payload details
+         */
+        this.tabChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.type = config.type;
+        this.justify = config.justify;
+    }
+    /**
+     * Selects the tab with the given id and shows its associated pane.
+     * Any other tab that was previously selected becomes unselected and its associated pane is hidden.
+     */
+    NgbTabset.prototype.select = function (tabId) {
+        var selectedTab = this._getTabById(tabId);
+        if (selectedTab && !selectedTab.disabled && this.activeId !== selectedTab.id) {
+            var defaultPrevented_1 = false;
+            this.tabChange.emit({ activeId: this.activeId, nextId: selectedTab.id, preventDefault: function () { defaultPrevented_1 = true; } });
+            if (!defaultPrevented_1) {
+                this.activeId = selectedTab.id;
+            }
+        }
+    };
+    NgbTabset.prototype.ngAfterContentChecked = function () {
+        // auto-correct activeId that might have been set incorrectly as input
+        var activeTab = this._getTabById(this.activeId);
+        this.activeId = activeTab ? activeTab.id : (this.tabs.length ? this.tabs.first.id : null);
+    };
+    NgbTabset.prototype._getTabById = function (id) {
+        var tabsWithId = this.tabs.filter(function (tab) { return tab.id === id; });
+        return tabsWithId.length ? tabsWithId[0] : null;
+    };
+    return NgbTabset;
+}());
+
+NgbTabset.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-tabset',
+                exportAs: 'ngbTabset',
+                template: "\n    <ul [class]=\"'nav nav-' + type + ' justify-content-' + justify\" role=\"tablist\">\n      <li class=\"nav-item\" *ngFor=\"let tab of tabs\">\n        <a [id]=\"tab.id\" class=\"nav-link\" [class.active]=\"tab.id === activeId\" [class.disabled]=\"tab.disabled\"\n          href (click)=\"!!select(tab.id)\" role=\"tab\" [attr.tabindex]=\"(tab.disabled ? '-1': undefined)\"\n          [attr.aria-controls]=\"(!destroyOnHide || tab.id === activeId ? tab.id + '-panel' : null)\"\n          [attr.aria-expanded]=\"tab.id === activeId\" [attr.aria-disabled]=\"tab.disabled\">\n          {{tab.title}}<ng-template [ngTemplateOutlet]=\"tab.titleTpl?.templateRef\"></ng-template>\n        </a>\n      </li>\n    </ul>\n    <div class=\"tab-content\">\n      <ng-template ngFor let-tab [ngForOf]=\"tabs\">\n        <div\n          class=\"tab-pane {{tab.id === activeId ? 'active' : null}}\"\n          *ngIf=\"!destroyOnHide || tab.id === activeId\"\n          role=\"tabpanel\"\n          [attr.aria-labelledby]=\"tab.id\" id=\"{{tab.id}}-panel\"\n          [attr.aria-expanded]=\"tab.id === activeId\">\n          <ng-template [ngTemplateOutlet]=\"tab.contentTpl.templateRef\"></ng-template>\n        </div>\n      </ng-template>\n    </div>\n  "
+            },] },
+];
+/** @nocollapse */
+NgbTabset.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_1__tabset_config__["a" /* NgbTabsetConfig */], },
+]; };
+NgbTabset.propDecorators = {
+    'tabs': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ContentChildren"], args: [NgbTab,] },],
+    'activeId': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'destroyOnHide': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'justify': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'type': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'tabChange': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+//# sourceMappingURL=tabset.js.map
+
+/***/ }),
+/* 130 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabset__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabset_config__ = __webpack_require__(58);
+/* unused harmony reexport NgbTabset */
+/* unused harmony reexport NgbTab */
+/* unused harmony reexport NgbTabContent */
+/* unused harmony reexport NgbTabTitle */
+/* unused harmony reexport NgbTabsetConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTabsetModule; });
+
+
+
+
+
+
+var NGB_TABSET_DIRECTIVES = [__WEBPACK_IMPORTED_MODULE_2__tabset__["a" /* NgbTabset */], __WEBPACK_IMPORTED_MODULE_2__tabset__["b" /* NgbTab */], __WEBPACK_IMPORTED_MODULE_2__tabset__["c" /* NgbTabContent */], __WEBPACK_IMPORTED_MODULE_2__tabset__["d" /* NgbTabTitle */]];
+var NgbTabsetModule = (function () {
+    function NgbTabsetModule() {
+    }
+    NgbTabsetModule.forRoot = function () { return { ngModule: NgbTabsetModule, providers: [__WEBPACK_IMPORTED_MODULE_3__tabset_config__["a" /* NgbTabsetConfig */]] }; };
+    return NgbTabsetModule;
+}());
+
+NgbTabsetModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: NGB_TABSET_DIRECTIVES, exports: NGB_TABSET_DIRECTIVES, imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
+];
+/** @nocollapse */
+NgbTabsetModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=tabset.module.js.map
+
+/***/ }),
+/* 131 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_time__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__timepicker_config__ = __webpack_require__(59);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTimepicker; });
+
+
+
+
+
+var NGB_TIMEPICKER_VALUE_ACCESSOR = {
+    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbTimepicker; }),
+    multi: true
+};
+/**
+ * A lightweight & configurable timepicker directive.
+ */
+var NgbTimepicker = (function () {
+    function NgbTimepicker(config) {
+        this.onChange = function (_) { };
+        this.onTouched = function () { };
+        this.meridian = config.meridian;
+        this.spinners = config.spinners;
+        this.seconds = config.seconds;
+        this.hourStep = config.hourStep;
+        this.minuteStep = config.minuteStep;
+        this.secondStep = config.secondStep;
+        this.disabled = config.disabled;
+        this.readonlyInputs = config.readonlyInputs;
+        this.size = config.size;
+    }
+    NgbTimepicker.prototype.writeValue = function (value) {
+        this.model = value ? new __WEBPACK_IMPORTED_MODULE_3__ngb_time__["a" /* NgbTime */](value.hour, value.minute, value.second) : new __WEBPACK_IMPORTED_MODULE_3__ngb_time__["a" /* NgbTime */]();
+        if (!this.seconds && (!value || !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["d" /* isNumber */])(value.second))) {
+            this.model.second = 0;
+        }
+    };
+    NgbTimepicker.prototype.registerOnChange = function (fn) { this.onChange = fn; };
+    NgbTimepicker.prototype.registerOnTouched = function (fn) { this.onTouched = fn; };
+    NgbTimepicker.prototype.setDisabledState = function (isDisabled) { this.disabled = isDisabled; };
+    NgbTimepicker.prototype.changeHour = function (step) {
+        this.model.changeHour(step);
+        this.propagateModelChange();
+    };
+    NgbTimepicker.prototype.changeMinute = function (step) {
+        this.model.changeMinute(step);
+        this.propagateModelChange();
+    };
+    NgbTimepicker.prototype.changeSecond = function (step) {
+        this.model.changeSecond(step);
+        this.propagateModelChange();
+    };
+    NgbTimepicker.prototype.updateHour = function (newVal) {
+        this.model.updateHour(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["e" /* toInteger */])(newVal));
+        this.propagateModelChange();
+    };
+    NgbTimepicker.prototype.updateMinute = function (newVal) {
+        this.model.updateMinute(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["e" /* toInteger */])(newVal));
+        this.propagateModelChange();
+    };
+    NgbTimepicker.prototype.updateSecond = function (newVal) {
+        this.model.updateSecond(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["e" /* toInteger */])(newVal));
+        this.propagateModelChange();
+    };
+    NgbTimepicker.prototype.toggleMeridian = function () {
+        if (this.meridian) {
+            this.changeHour(12);
+        }
+    };
+    NgbTimepicker.prototype.formatHour = function (value) {
+        if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["d" /* isNumber */])(value)) {
+            if (this.meridian) {
+                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["f" /* padNumber */])(value % 12 === 0 ? 12 : value % 12);
+            }
+            else {
+                return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["f" /* padNumber */])(value % 24);
+            }
+        }
+        else {
+            return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["f" /* padNumber */])(NaN);
+        }
+    };
+    NgbTimepicker.prototype.formatMinSec = function (value) { return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["f" /* padNumber */])(value); };
+    NgbTimepicker.prototype.setFormControlSize = function () { return { 'form-control-sm': this.size === 'small', 'form-control-lg': this.size === 'large' }; };
+    NgbTimepicker.prototype.setButtonSize = function () { return { 'btn-sm': this.size === 'small', 'btn-lg': this.size === 'large' }; };
+    NgbTimepicker.prototype.ngOnChanges = function (changes) {
+        if (changes['seconds'] && !this.seconds && this.model && !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["d" /* isNumber */])(this.model.second)) {
+            this.model.second = 0;
+            this.propagateModelChange(false);
+        }
+    };
+    NgbTimepicker.prototype.propagateModelChange = function (touched) {
+        if (touched === void 0) { touched = true; }
+        if (touched) {
+            this.onTouched();
+        }
+        if (this.model.isValid(this.seconds)) {
+            this.onChange({ hour: this.model.hour, minute: this.model.minute, second: this.model.second });
+        }
+        else {
+            this.onChange(null);
+        }
+    };
+    return NgbTimepicker;
+}());
+
+NgbTimepicker.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-timepicker',
+                styles: ["\n    .ngb-tp {\n      display: flex;\n      align-items: center;\n    }\n\n    .ngb-tp-hour, .ngb-tp-minute, .ngb-tp-second, .ngb-tp-meridian {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      justify-content: space-around;\n    }\n\n    .ngb-tp-spacer {\n      width: 1em;\n      text-align: center;\n    }\n\n    .chevron::before {\n      border-style: solid;\n      border-width: 0.29em 0.29em 0 0;\n      content: '';\n      display: inline-block;\n      height: 0.69em;\n      left: 0.05em;\n      position: relative;\n      top: 0.15em;\n      transform: rotate(-45deg);\n      -webkit-transform: rotate(-45deg);\n      -ms-transform: rotate(-45deg);\n      vertical-align: middle;\n      width: 0.71em;\n    }\n\n    .chevron.bottom:before {\n      top: -.3em;\n      -webkit-transform: rotate(135deg);\n      -ms-transform: rotate(135deg);\n      transform: rotate(135deg);\n    }\n\n    .btn-link {\n      outline: 0;\n    }\n\n    .btn-link.disabled {\n      cursor: not-allowed;\n      opacity: .65;\n    }\n\n    input {\n      text-align: center;\n      display: inline-block;\n      width: auto;\n    }\n  "],
+                template: "\n    <fieldset [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n      <div class=\"ngb-tp\">\n        <div class=\"ngb-tp-hour\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeHour(hourStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron\"></span>\n            <span class=\"sr-only\">Increment hours</span>\n          </button>\n          <input type=\"text\" class=\"form-control\" [ngClass]=\"setFormControlSize()\" maxlength=\"2\" size=\"2\" placeholder=\"HH\"\n            [value]=\"formatHour(model?.hour)\" (change)=\"updateHour($event.target.value)\"\n            [readonly]=\"readonlyInputs\" [disabled]=\"disabled\" aria-label=\"Hours\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeHour(-hourStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron bottom\"></span>\n            <span class=\"sr-only\">Decrement hours</span>\n          </button>\n        </div>\n        <div class=\"ngb-tp-spacer\">:</div>\n        <div class=\"ngb-tp-minute\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeMinute(minuteStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron\"></span>\n            <span class=\"sr-only\">Increment minutes</span>\n          </button>\n          <input type=\"text\" class=\"form-control\" [ngClass]=\"setFormControlSize()\" maxlength=\"2\" size=\"2\" placeholder=\"MM\"\n            [value]=\"formatMinSec(model?.minute)\" (change)=\"updateMinute($event.target.value)\"\n            [readonly]=\"readonlyInputs\" [disabled]=\"disabled\" aria-label=\"Minutes\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeMinute(-minuteStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron bottom\"></span>\n            <span class=\"sr-only\">Decrement minutes</span>\n          </button>\n        </div>\n        <div *ngIf=\"seconds\" class=\"ngb-tp-spacer\">:</div>\n        <div *ngIf=\"seconds\" class=\"ngb-tp-second\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeSecond(secondStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron\"></span>\n            <span class=\"sr-only\">Increment seconds</span>\n          </button>\n          <input type=\"text\" class=\"form-control\" [ngClass]=\"setFormControlSize()\" maxlength=\"2\" size=\"2\" placeholder=\"SS\"\n            [value]=\"formatMinSec(model?.second)\" (change)=\"updateSecond($event.target.value)\"\n            [readonly]=\"readonlyInputs\" [disabled]=\"disabled\" aria-label=\"Seconds\">\n          <button *ngIf=\"spinners\" type=\"button\" class=\"btn-link\" [ngClass]=\"setButtonSize()\" (click)=\"changeSecond(-secondStep)\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\">\n            <span class=\"chevron bottom\"></span>\n            <span class=\"sr-only\">Decrement seconds</span>\n          </button>\n        </div>\n        <div *ngIf=\"meridian\" class=\"ngb-tp-spacer\"></div>\n        <div *ngIf=\"meridian\" class=\"ngb-tp-meridian\">\n          <button type=\"button\" class=\"btn btn-outline-primary\" [ngClass]=\"setButtonSize()\"\n            [disabled]=\"disabled\" [class.disabled]=\"disabled\"\n            (click)=\"toggleMeridian()\">{{model.hour >= 12 ? 'PM' : 'AM'}}</button>\n        </div>\n      </div>\n    </fieldset>\n  ",
+                providers: [NGB_TIMEPICKER_VALUE_ACCESSOR]
+            },] },
+];
+/** @nocollapse */
+NgbTimepicker.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_4__timepicker_config__["a" /* NgbTimepickerConfig */], },
+]; };
+NgbTimepicker.propDecorators = {
+    'meridian': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'spinners': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'seconds': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'hourStep': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'minuteStep': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'secondStep': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'readonlyInputs': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'size': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+//# sourceMappingURL=timepicker.js.map
+
+/***/ }),
+/* 132 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timepicker__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__timepicker_config__ = __webpack_require__(59);
+/* unused harmony reexport NgbTimepicker */
+/* unused harmony reexport NgbTimepickerConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTimepickerModule; });
+
+
+
+
+
+
+var NgbTimepickerModule = (function () {
+    function NgbTimepickerModule() {
+    }
+    NgbTimepickerModule.forRoot = function () { return { ngModule: NgbTimepickerModule, providers: [__WEBPACK_IMPORTED_MODULE_3__timepicker_config__["a" /* NgbTimepickerConfig */]] }; };
+    return NgbTimepickerModule;
+}());
+
+NgbTimepickerModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_2__timepicker__["a" /* NgbTimepicker */]], exports: [__WEBPACK_IMPORTED_MODULE_2__timepicker__["a" /* NgbTimepicker */]], imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]] },] },
+];
+/** @nocollapse */
+NgbTimepickerModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=timepicker.module.js.map
+
+/***/ }),
+/* 133 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_triggers__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_positioning__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_popup__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_config__ = __webpack_require__(60);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbTooltipWindow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTooltip; });
+
+
+
+
+
+var nextId = 0;
+var NgbTooltipWindow = (function () {
+    function NgbTooltipWindow() {
+        this.placement = 'top';
+    }
+    return NgbTooltipWindow;
+}());
+
+NgbTooltipWindow.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-tooltip-window',
+                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
+                host: { '[class]': '"tooltip show tooltip-" + placement', 'role': 'tooltip', '[id]': 'id' },
+                template: "\n    <div class=\"tooltip-inner\"><ng-content></ng-content></div>\n    "
+            },] },
+];
+/** @nocollapse */
+NgbTooltipWindow.ctorParameters = function () { return []; };
+NgbTooltipWindow.propDecorators = {
+    'placement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'id': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+/**
+ * A lightweight, extensible directive for fancy tooltip creation.
+ */
+var NgbTooltip = (function () {
+    function NgbTooltip(_elementRef, _renderer, injector, componentFactoryResolver, viewContainerRef, config, ngZone) {
+        var _this = this;
+        this._elementRef = _elementRef;
+        this._renderer = _renderer;
+        /**
+         * Emits an event when the tooltip is shown
+         */
+        this.shown = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        /**
+         * Emits an event when the tooltip is hidden
+         */
+        this.hidden = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this._ngbTooltipWindowId = "ngb-tooltip-" + nextId++;
+        this.placement = config.placement;
+        this.triggers = config.triggers;
+        this.container = config.container;
+        this._popupService = new __WEBPACK_IMPORTED_MODULE_3__util_popup__["a" /* PopupService */](NgbTooltipWindow, injector, viewContainerRef, _renderer, componentFactoryResolver);
+        this._zoneSubscription = ngZone.onStable.subscribe(function () {
+            if (_this._windowRef) {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_positioning__["a" /* positionElements */])(_this._elementRef.nativeElement, _this._windowRef.location.nativeElement, _this.placement, _this.container === 'body');
+            }
+        });
+    }
+    Object.defineProperty(NgbTooltip.prototype, "ngbTooltip", {
+        get: function () { return this._ngbTooltip; },
+        /**
+         * Content to be displayed as tooltip. If falsy, the tooltip won't open.
+         */
+        set: function (value) {
+            this._ngbTooltip = value;
+            if (!value && this._windowRef) {
+                this.close();
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Opens an element’s tooltip. This is considered a “manual” triggering of the tooltip.
+     * The context is an optional value to be injected into the tooltip template when it is created.
+     */
+    NgbTooltip.prototype.open = function (context) {
+        if (!this._windowRef && this._ngbTooltip) {
+            this._windowRef = this._popupService.open(this._ngbTooltip, context);
+            this._windowRef.instance.placement = this.placement;
+            this._windowRef.instance.id = this._ngbTooltipWindowId;
+            this._renderer.setAttribute(this._elementRef.nativeElement, 'aria-describedby', this._ngbTooltipWindowId);
+            if (this.container === 'body') {
+                window.document.querySelector(this.container).appendChild(this._windowRef.location.nativeElement);
+            }
+            // we need to manually invoke change detection since events registered via
+            // Renderer::listen() - to be determined if this is a bug in the Angular itself
+            this._windowRef.changeDetectorRef.markForCheck();
+            this.shown.emit();
+        }
+    };
+    /**
+     * Closes an element’s tooltip. This is considered a “manual” triggering of the tooltip.
+     */
+    NgbTooltip.prototype.close = function () {
+        if (this._windowRef != null) {
+            this._renderer.removeAttribute(this._elementRef.nativeElement, 'aria-describedby');
+            this._popupService.close();
+            this._windowRef = null;
+            this.hidden.emit();
+        }
+    };
+    /**
+     * Toggles an element’s tooltip. This is considered a “manual” triggering of the tooltip.
+     */
+    NgbTooltip.prototype.toggle = function () {
+        if (this._windowRef) {
+            this.close();
+        }
+        else {
+            this.open();
+        }
+    };
+    /**
+     * Returns whether or not the tooltip is currently being shown
+     */
+    NgbTooltip.prototype.isOpen = function () { return this._windowRef != null; };
+    NgbTooltip.prototype.ngOnInit = function () {
+        this._unregisterListenersFn = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_triggers__["a" /* listenToTriggers */])(this._renderer, this._elementRef.nativeElement, this.triggers, this.open.bind(this), this.close.bind(this), this.toggle.bind(this));
+    };
+    NgbTooltip.prototype.ngOnDestroy = function () {
+        this.close();
+        this._unregisterListenersFn();
+        this._zoneSubscription.unsubscribe();
+    };
+    return NgbTooltip;
+}());
+
+NgbTooltip.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{ selector: '[ngbTooltip]', exportAs: 'ngbTooltip' },] },
+];
+/** @nocollapse */
+NgbTooltip.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_4__tooltip_config__["a" /* NgbTooltipConfig */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
+]; };
+NgbTooltip.propDecorators = {
+    'placement': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'triggers': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'container': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'shown': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'hidden': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+    'ngbTooltip': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+//# sourceMappingURL=tooltip.js.map
+
+/***/ }),
+/* 134 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_config__ = __webpack_require__(60);
+/* unused harmony reexport NgbTooltipConfig */
+/* unused harmony reexport NgbTooltip */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTooltipModule; });
+
+
+
+
+
+var NgbTooltipModule = (function () {
+    function NgbTooltipModule() {
+    }
+    NgbTooltipModule.forRoot = function () { return { ngModule: NgbTooltipModule, providers: [__WEBPACK_IMPORTED_MODULE_2__tooltip_config__["a" /* NgbTooltipConfig */]] }; };
+    return NgbTooltipModule;
+}());
+
+NgbTooltipModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{ declarations: [__WEBPACK_IMPORTED_MODULE_1__tooltip__["a" /* NgbTooltip */], __WEBPACK_IMPORTED_MODULE_1__tooltip__["b" /* NgbTooltipWindow */]], exports: [__WEBPACK_IMPORTED_MODULE_1__tooltip__["a" /* NgbTooltip */]], entryComponents: [__WEBPACK_IMPORTED_MODULE_1__tooltip__["b" /* NgbTooltipWindow */]] },] },
+];
+/** @nocollapse */
+NgbTooltipModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=tooltip.module.js.map
+
+/***/ }),
+/* 135 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbHighlight; });
+
+
+var NgbHighlight = (function () {
+    function NgbHighlight() {
+        this.highlightClass = 'ngb-highlight';
+    }
+    NgbHighlight.prototype.ngOnChanges = function (changes) {
+        var resultStr = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["a" /* toString */])(this.result);
+        var resultLC = resultStr.toLowerCase();
+        var termLC = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["a" /* toString */])(this.term).toLowerCase();
+        var currentIdx = 0;
+        if (termLC.length > 0) {
+            this.parts = resultLC.split(new RegExp("(" + __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__util_util__["b" /* regExpEscape */])(termLC) + ")")).map(function (part) {
+                var originalPart = resultStr.substr(currentIdx, part.length);
+                currentIdx += part.length;
+                return originalPart;
+            });
+        }
+        else {
+            this.parts = [resultStr];
+        }
+    };
+    return NgbHighlight;
+}());
+
+NgbHighlight.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"], args: [{
+                selector: 'ngb-highlight',
+                changeDetection: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectionStrategy"].OnPush,
+                template: "<ng-template ngFor [ngForOf]=\"parts\" let-part let-isOdd=\"odd\">" +
+                    "<span *ngIf=\"isOdd\" class=\"{{highlightClass}}\">{{part}}</span><ng-template [ngIf]=\"!isOdd\">{{part}}</ng-template>" +
+                    "</ng-template>",
+                styles: ["\n    .ngb-highlight {\n      font-weight: bold;\n    }\n  "]
+            },] },
+];
+/** @nocollapse */
+NgbHighlight.ctorParameters = function () { return []; };
+NgbHighlight.propDecorators = {
+    'highlightClass': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'result': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'term': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+};
+//# sourceMappingURL=highlight.js.map
+
+/***/ }),
+/* 136 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_positioning__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__typeahead_window__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__util_popup__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__typeahead_config__ = __webpack_require__(61);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTypeahead; });
+
+
+
+
+
+
+
+
+
+
+var Key;
+(function (Key) {
+    Key[Key["Tab"] = 9] = "Tab";
+    Key[Key["Enter"] = 13] = "Enter";
+    Key[Key["Escape"] = 27] = "Escape";
+    Key[Key["ArrowUp"] = 38] = "ArrowUp";
+    Key[Key["ArrowDown"] = 40] = "ArrowDown";
+})(Key || (Key = {}));
+var NGB_TYPEAHEAD_VALUE_ACCESSOR = {
+    provide: __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* NG_VALUE_ACCESSOR */],
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["forwardRef"])(function () { return NgbTypeahead; }),
+    multi: true
+};
+var nextWindowId = 0;
+/**
+ * NgbTypeahead directive provides a simple way of creating powerful typeaheads from any text input
+ */
+var NgbTypeahead = (function () {
+    function NgbTypeahead(_elementRef, _viewContainerRef, _renderer, _injector, componentFactoryResolver, config, ngZone) {
+        var _this = this;
+        this._elementRef = _elementRef;
+        this._viewContainerRef = _viewContainerRef;
+        this._renderer = _renderer;
+        this._injector = _injector;
+        /**
+         * An event emitted when a match is selected. Event payload is of type NgbTypeaheadSelectItemEvent.
+         */
+        this.selectItem = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.popupId = "ngb-typeahead-" + nextWindowId++;
+        this._onTouched = function () { };
+        this._onChange = function (_) { };
+        this.editable = config.editable;
+        this.focusFirst = config.focusFirst;
+        this.showHint = config.showHint;
+        this._valueChanges = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent__["fromEvent"])(_elementRef.nativeElement, 'input', function ($event) { return $event.target.value; });
+        this._popupService = new __WEBPACK_IMPORTED_MODULE_7__util_popup__["a" /* PopupService */](__WEBPACK_IMPORTED_MODULE_6__typeahead_window__["a" /* NgbTypeaheadWindow */], _injector, _viewContainerRef, _renderer, componentFactoryResolver);
+        this._zoneSubscription = ngZone.onStable.subscribe(function () {
+            if (_this.isPopupOpen()) {
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5__util_positioning__["a" /* positionElements */])(_this._elementRef.nativeElement, _this._windowRef.location.nativeElement, 'bottom-left');
+            }
+        });
+    }
+    NgbTypeahead.prototype.ngOnInit = function () {
+        var _this = this;
+        var inputValues$ = __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__["_do"].call(this._valueChanges, function (value) {
+            _this._userInput = value;
+            if (_this.editable) {
+                _this._onChange(value);
+            }
+        });
+        var results$ = __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let__["letProto"].call(inputValues$, this.ngbTypeahead);
+        var userInput$ = __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__["_do"].call(results$, function () {
+            if (!_this.editable) {
+                _this._onChange(undefined);
+            }
+        });
+        this._subscription = this._subscribeToUserInput(userInput$);
+    };
+    NgbTypeahead.prototype.ngOnDestroy = function () {
+        this._unsubscribeFromUserInput();
+        this._zoneSubscription.unsubscribe();
+    };
+    NgbTypeahead.prototype.registerOnChange = function (fn) { this._onChange = fn; };
+    NgbTypeahead.prototype.registerOnTouched = function (fn) { this._onTouched = fn; };
+    NgbTypeahead.prototype.writeValue = function (value) { this._writeInputValue(this._formatItemForInput(value)); };
+    NgbTypeahead.prototype.setDisabledState = function (isDisabled) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'disabled', isDisabled);
+    };
+    NgbTypeahead.prototype.dismissPopup = function () {
+        if (this.isPopupOpen()) {
+            this._closePopup();
+            this._writeInputValue(this._userInput);
+        }
+    };
+    NgbTypeahead.prototype.isPopupOpen = function () { return this._windowRef != null; };
+    NgbTypeahead.prototype.handleBlur = function () { this._onTouched(); };
+    NgbTypeahead.prototype.handleKeyDown = function (event) {
+        if (!this.isPopupOpen()) {
+            return;
+        }
+        if (Key[__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__util_util__["a" /* toString */])(event.which)]) {
+            switch (event.which) {
+                case Key.ArrowDown:
+                    event.preventDefault();
+                    this._windowRef.instance.next();
+                    this._showHint();
+                    break;
+                case Key.ArrowUp:
+                    event.preventDefault();
+                    this._windowRef.instance.prev();
+                    this._showHint();
+                    break;
+                case Key.Enter:
+                case Key.Tab:
+                    var result = this._windowRef.instance.getActive();
+                    if (__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__util_util__["c" /* isDefined */])(result)) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        this._selectResult(result);
+                    }
+                    this._closePopup();
+                    break;
+                case Key.Escape:
+                    event.preventDefault();
+                    this.dismissPopup();
+                    break;
+            }
+        }
+    };
+    NgbTypeahead.prototype._openPopup = function () {
+        var _this = this;
+        if (!this.isPopupOpen()) {
+            this._windowRef = this._popupService.open();
+            this._windowRef.instance.id = this.popupId;
+            this._windowRef.instance.selectEvent.subscribe(function (result) { return _this._selectResultClosePopup(result); });
+            this._windowRef.instance.activeChangeEvent.subscribe(function (activeId) { return _this.activeDescendant = activeId; });
+        }
+    };
+    NgbTypeahead.prototype._closePopup = function () {
+        this._popupService.close();
+        this._windowRef = null;
+        this.activeDescendant = undefined;
+    };
+    NgbTypeahead.prototype._selectResult = function (result) {
+        var defaultPrevented = false;
+        this.selectItem.emit({ item: result, preventDefault: function () { defaultPrevented = true; } });
+        if (!defaultPrevented) {
+            this.writeValue(result);
+            this._onChange(result);
+        }
+    };
+    NgbTypeahead.prototype._selectResultClosePopup = function (result) {
+        this._selectResult(result);
+        this._closePopup();
+    };
+    NgbTypeahead.prototype._showHint = function () {
+        if (this.showHint) {
+            var userInputLowerCase = this._userInput.toLowerCase();
+            var formattedVal = this._formatItemForInput(this._windowRef.instance.getActive());
+            if (userInputLowerCase === formattedVal.substr(0, this._userInput.length).toLowerCase()) {
+                this._writeInputValue(this._userInput + formattedVal.substr(this._userInput.length));
+                this._elementRef.nativeElement['setSelectionRange'].apply(this._elementRef.nativeElement, [this._userInput.length, formattedVal.length]);
+            }
+            else {
+                this.writeValue(this._windowRef.instance.getActive());
+            }
+        }
+    };
+    NgbTypeahead.prototype._formatItemForInput = function (item) {
+        return item && this.inputFormatter ? this.inputFormatter(item) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_8__util_util__["a" /* toString */])(item);
+    };
+    NgbTypeahead.prototype._writeInputValue = function (value) {
+        this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
+    };
+    NgbTypeahead.prototype._subscribeToUserInput = function (userInput$) {
+        var _this = this;
+        return userInput$.subscribe(function (results) {
+            if (!results || results.length === 0) {
+                _this._closePopup();
+            }
+            else {
+                _this._openPopup();
+                _this._windowRef.instance.focusFirst = _this.focusFirst;
+                _this._windowRef.instance.results = results;
+                _this._windowRef.instance.term = _this._elementRef.nativeElement.value;
+                if (_this.resultFormatter) {
+                    _this._windowRef.instance.formatter = _this.resultFormatter;
+                }
+                if (_this.resultTemplate) {
+                    _this._windowRef.instance.resultTemplate = _this.resultTemplate;
+                }
+                _this._showHint();
+                // The observable stream we are subscribing to might have async steps
+                // and if a component containing typeahead is using the OnPush strategy
+                // the change detection turn wouldn't be invoked automatically.
+                _this._windowRef.changeDetectorRef.detectChanges();
+            }
+        });
+    };
+    NgbTypeahead.prototype._unsubscribeFromUserInput = function () {
+        if (this._subscription) {
+            this._subscription.unsubscribe();
+        }
+        this._subscription = null;
+    };
+    return NgbTypeahead;
+}());
+
+NgbTypeahead.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Directive"], args: [{
+                selector: 'input[ngbTypeahead]',
+                host: {
+                    '(blur)': 'handleBlur()',
+                    '[class.open]': 'isPopupOpen()',
+                    '(document:click)': 'dismissPopup()',
+                    '(keydown)': 'handleKeyDown($event)',
+                    'autocomplete': 'off',
+                    'autocapitalize': 'off',
+                    'autocorrect': 'off',
+                    'role': 'combobox',
+                    'aria-multiline': 'false',
+                    '[attr.aria-autocomplete]': 'showHint ? "both" : "list"',
+                    '[attr.aria-activedescendant]': 'activeDescendant',
+                    '[attr.aria-owns]': 'isPopupOpen() ? popupId : null',
+                    '[attr.aria-expanded]': 'isPopupOpen()'
+                },
+                providers: [NGB_TYPEAHEAD_VALUE_ACCESSOR]
+            },] },
+];
+/** @nocollapse */
+NgbTypeahead.ctorParameters = function () { return [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewContainerRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Renderer2"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injector"], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["ComponentFactoryResolver"], },
+    { type: __WEBPACK_IMPORTED_MODULE_9__typeahead_config__["a" /* NgbTypeaheadConfig */], },
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgZone"], },
+]; };
+NgbTypeahead.propDecorators = {
+    'editable': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'focusFirst': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'inputFormatter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'ngbTypeahead': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'resultFormatter': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'resultTemplate': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'showHint': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"] },],
+    'selectItem': [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"] },],
+};
+//# sourceMappingURL=typeahead.js.map
+
+/***/ }),
+/* 137 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__highlight__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__typeahead_window__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__typeahead__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__typeahead_config__ = __webpack_require__(61);
+/* unused harmony reexport NgbHighlight */
+/* unused harmony reexport NgbTypeaheadWindow */
+/* unused harmony reexport NgbTypeaheadConfig */
+/* unused harmony reexport NgbTypeahead */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTypeaheadModule; });
+
+
+
+
+
+
+
+
+
+
+var NgbTypeaheadModule = (function () {
+    function NgbTypeaheadModule() {
+    }
+    NgbTypeaheadModule.forRoot = function () { return { ngModule: NgbTypeaheadModule, providers: [__WEBPACK_IMPORTED_MODULE_5__typeahead_config__["a" /* NgbTypeaheadConfig */]] }; };
+    return NgbTypeaheadModule;
+}());
+
+NgbTypeaheadModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"], args: [{
+                declarations: [__WEBPACK_IMPORTED_MODULE_4__typeahead__["a" /* NgbTypeahead */], __WEBPACK_IMPORTED_MODULE_2__highlight__["a" /* NgbHighlight */], __WEBPACK_IMPORTED_MODULE_3__typeahead_window__["a" /* NgbTypeaheadWindow */]],
+                exports: [__WEBPACK_IMPORTED_MODULE_4__typeahead__["a" /* NgbTypeahead */]],
+                imports: [__WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"]],
+                entryComponents: [__WEBPACK_IMPORTED_MODULE_3__typeahead_window__["a" /* NgbTypeaheadWindow */]]
+            },] },
+];
+/** @nocollapse */
+NgbTypeaheadModule.ctorParameters = function () { return []; };
+//# sourceMappingURL=typeahead.module.js.map
+
+/***/ }),
+/* 138 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export Trigger */
+/* unused harmony export parseTriggers */
+/* harmony export (immutable) */ __webpack_exports__["a"] = listenToTriggers;
+var Trigger = (function () {
+    function Trigger(open, close) {
+        this.open = open;
+        this.close = close;
+        if (!close) {
+            this.close = open;
+        }
+    }
+    Trigger.prototype.isManual = function () { return this.open === 'manual' || this.close === 'manual'; };
+    return Trigger;
+}());
+
+var DEFAULT_ALIASES = {
+    hover: ['mouseenter', 'mouseleave']
+};
+function parseTriggers(triggers, aliases) {
+    if (aliases === void 0) { aliases = DEFAULT_ALIASES; }
+    var trimmedTriggers = (triggers || '').trim();
+    if (trimmedTriggers.length === 0) {
+        return [];
+    }
+    var parsedTriggers = trimmedTriggers.split(/\s+/).map(function (trigger) { return trigger.split(':'); }).map(function (triggerPair) {
+        var alias = aliases[triggerPair[0]] || triggerPair;
+        return new Trigger(alias[0], alias[1]);
+    });
+    var manualTriggers = parsedTriggers.filter(function (triggerPair) { return triggerPair.isManual(); });
+    if (manualTriggers.length > 1) {
+        throw 'Triggers parse error: only one manual trigger is allowed';
+    }
+    if (manualTriggers.length === 1 && parsedTriggers.length > 1) {
+        throw 'Triggers parse error: manual trigger can\'t be mixed with other triggers';
+    }
+    return parsedTriggers;
+}
+var noopFn = function () { };
+function listenToTriggers(renderer, nativeElement, triggers, openFn, closeFn, toggleFn) {
+    var parsedTriggers = parseTriggers(triggers);
+    var listeners = [];
+    if (parsedTriggers.length === 1 && parsedTriggers[0].isManual()) {
+        return noopFn;
+    }
+    parsedTriggers.forEach(function (trigger) {
+        if (trigger.open === trigger.close) {
+            listeners.push(renderer.listen(nativeElement, trigger.open, toggleFn));
+        }
+        else {
+            listeners.push(renderer.listen(nativeElement, trigger.open, openFn), renderer.listen(nativeElement, trigger.close, closeFn));
+        }
+    });
+    return function () { listeners.forEach(function (unsubscribeFn) { return unsubscribeFn(); }); };
+}
+//# sourceMappingURL=triggers.js.map
+
+/***/ }),
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.empty = {
+    closed: true,
+    next: function (value) { },
+    error: function (err) { throw err; },
+    complete: function () { }
+};
+//# sourceMappingURL=Observer.js.map
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var root_1 = __webpack_require__(21);
+var Observable_1 = __webpack_require__(2);
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @extends {Ignored}
+ * @hide true
+ */
+var PromiseObservable = (function (_super) {
+    __extends(PromiseObservable, _super);
+    function PromiseObservable(promise, scheduler) {
+        _super.call(this);
+        this.promise = promise;
+        this.scheduler = scheduler;
+    }
+    /**
+     * Converts a Promise to an Observable.
+     *
+     * <span class="informal">Returns an Observable that just emits the Promise's
+     * resolved value, then completes.</span>
+     *
+     * Converts an ES2015 Promise or a Promises/A+ spec compliant Promise to an
+     * Observable. If the Promise resolves with a value, the output Observable
+     * emits that resolved value as a `next`, and then completes. If the Promise
+     * is rejected, then the output Observable emits the corresponding Error.
+     *
+     * @example <caption>Convert the Promise returned by Fetch to an Observable</caption>
+     * var result = Rx.Observable.fromPromise(fetch('http://myserver.com/'));
+     * result.subscribe(x => console.log(x), e => console.error(e));
+     *
+     * @see {@link bindCallback}
+     * @see {@link from}
+     *
+     * @param {PromiseLike<T>} promise The promise to be converted.
+     * @param {Scheduler} [scheduler] An optional IScheduler to use for scheduling
+     * the delivery of the resolved value (or the rejection).
+     * @return {Observable<T>} An Observable which wraps the Promise.
+     * @static true
+     * @name fromPromise
+     * @owner Observable
+     */
+    PromiseObservable.create = function (promise, scheduler) {
+        return new PromiseObservable(promise, scheduler);
+    };
+    PromiseObservable.prototype._subscribe = function (subscriber) {
+        var _this = this;
+        var promise = this.promise;
+        var scheduler = this.scheduler;
+        if (scheduler == null) {
+            if (this._isScalar) {
+                if (!subscriber.closed) {
+                    subscriber.next(this.value);
+                    subscriber.complete();
+                }
+            }
+            else {
+                promise.then(function (value) {
+                    _this.value = value;
+                    _this._isScalar = true;
+                    if (!subscriber.closed) {
+                        subscriber.next(value);
+                        subscriber.complete();
+                    }
+                }, function (err) {
+                    if (!subscriber.closed) {
+                        subscriber.error(err);
+                    }
+                })
+                    .then(null, function (err) {
+                    // escape the promise trap, throw unhandled errors
+                    root_1.root.setTimeout(function () { throw err; });
+                });
+            }
+        }
+        else {
+            if (this._isScalar) {
+                if (!subscriber.closed) {
+                    return scheduler.schedule(dispatchNext, 0, { value: this.value, subscriber: subscriber });
+                }
+            }
+            else {
+                promise.then(function (value) {
+                    _this.value = value;
+                    _this._isScalar = true;
+                    if (!subscriber.closed) {
+                        subscriber.add(scheduler.schedule(dispatchNext, 0, { value: value, subscriber: subscriber }));
+                    }
+                }, function (err) {
+                    if (!subscriber.closed) {
+                        subscriber.add(scheduler.schedule(dispatchError, 0, { err: err, subscriber: subscriber }));
+                    }
+                })
+                    .then(null, function (err) {
+                    // escape the promise trap, throw unhandled errors
+                    root_1.root.setTimeout(function () { throw err; });
+                });
+            }
+        }
+    };
+    return PromiseObservable;
+}(Observable_1.Observable));
+exports.PromiseObservable = PromiseObservable;
+function dispatchNext(arg) {
+    var value = arg.value, subscriber = arg.subscriber;
+    if (!subscriber.closed) {
+        subscriber.next(value);
+        subscriber.complete();
+    }
+}
+function dispatchError(arg) {
+    var err = arg.err, subscriber = arg.subscriber;
+    if (!subscriber.closed) {
+        subscriber.error(err);
+    }
+}
+//# sourceMappingURL=PromiseObservable.js.map
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+var Observable_1 = __webpack_require__(2);
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @extends {Ignored}
+ * @hide true
+ */
+var ScalarObservable = (function (_super) {
+    __extends(ScalarObservable, _super);
+    function ScalarObservable(value, scheduler) {
+        _super.call(this);
+        this.value = value;
+        this.scheduler = scheduler;
+        this._isScalar = true;
+        if (scheduler) {
+            this._isScalar = false;
+        }
+    }
+    ScalarObservable.create = function (value, scheduler) {
+        return new ScalarObservable(value, scheduler);
+    };
+    ScalarObservable.dispatch = function (state) {
+        var done = state.done, value = state.value, subscriber = state.subscriber;
+        if (done) {
+            subscriber.complete();
+            return;
+        }
+        subscriber.next(value);
+        if (subscriber.closed) {
+            return;
+        }
+        state.done = true;
+        this.schedule(state);
+    };
+    ScalarObservable.prototype._subscribe = function (subscriber) {
+        var value = this.value;
+        var scheduler = this.scheduler;
+        if (scheduler) {
+            return scheduler.schedule(ScalarObservable.dispatch, 0, {
+                done: false, value: value, subscriber: subscriber
+            });
+        }
+        else {
+            subscriber.next(value);
+            if (!subscriber.closed) {
+                subscriber.complete();
+            }
+        }
+    };
+    return ScalarObservable;
+}(Observable_1.Observable));
+exports.ScalarObservable = ScalarObservable;
+//# sourceMappingURL=ScalarObservable.js.map
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+/**
+ * An error thrown when an action is invalid because the object has been
+ * unsubscribed.
+ *
+ * @see {@link Subject}
+ * @see {@link BehaviorSubject}
+ *
+ * @class ObjectUnsubscribedError
+ */
+var ObjectUnsubscribedError = (function (_super) {
+    __extends(ObjectUnsubscribedError, _super);
+    function ObjectUnsubscribedError() {
+        var err = _super.call(this, 'object unsubscribed');
+        this.name = err.name = 'ObjectUnsubscribedError';
+        this.stack = err.stack;
+        this.message = err.message;
+    }
+    return ObjectUnsubscribedError;
+}(Error));
+exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
+//# sourceMappingURL=ObjectUnsubscribedError.js.map
+
+/***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.isArrayLike = (function (x) { return x && typeof x.length === 'number'; });
+//# sourceMappingURL=isArrayLike.js.map
+
+/***/ }),
+/* 159 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function isObject(x) {
+    return x != null && typeof x === 'object';
+}
+exports.isObject = isObject;
+//# sourceMappingURL=isObject.js.map
+
+/***/ }),
+/* 160 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function isPromise(value) {
+    return value && typeof value.subscribe !== 'function' && typeof value.then === 'function';
+}
+exports.isPromise = isPromise;
+//# sourceMappingURL=isPromise.js.map
+
+/***/ }),
+/* 161 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function isScheduler(value) {
+    return value && typeof value.schedule === 'function';
+}
+exports.isScheduler = isScheduler;
+//# sourceMappingURL=isScheduler.js.map
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var errorObject_1 = __webpack_require__(90);
+var tryCatchTarget;
+function tryCatcher() {
+    try {
+        return tryCatchTarget.apply(this, arguments);
+    }
+    catch (e) {
+        errorObject_1.errorObject.e = e;
+        return errorObject_1.errorObject;
+    }
+}
+function tryCatch(fn) {
+    tryCatchTarget = fn;
+    return tryCatcher;
+}
+exports.tryCatch = tryCatch;
+;
+//# sourceMappingURL=tryCatch.js.map
+
+/***/ }),
 /* 163 */,
 /* 164 */,
 /* 165 */,
-/* 166 */
+/* 166 */,
+/* 167 */,
+/* 168 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72643,14 +72645,14 @@ var ImportResolver = (function () {
 //# sourceMappingURL=compiler.es5.js.map
 
 /***/ }),
-/* 167 */
+/* 169 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(166);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(168);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(27);
 /* unused harmony export RESOURCE_CACHE_PROVIDER */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return platformBrowserDynamic; });
 /* unused harmony export VERSION */
@@ -72829,7 +72831,7 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__
 
 
 /***/ }),
-/* 168 */
+/* 170 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72912,12 +72914,12 @@ NgbCalendarHijri.ctorParameters = function () { return []; };
 //# sourceMappingURL=ngb-calendar-hijri.js.map
 
 /***/ }),
-/* 169 */
+/* 171 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_calendar_hijri__ = __webpack_require__(168);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_calendar_hijri__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* unused harmony export NgbCalendarIslamicCivil */
 var __extends = (this && this.__extends) || function (d, b) {
@@ -73065,27 +73067,27 @@ NgbCalendarIslamicCivil.ctorParameters = function () { return []; };
 //# sourceMappingURL=ngb-calendar-islamic-civil.js.map
 
 /***/ }),
-/* 170 */
+/* 172 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion_accordion_module__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert_alert_module__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__buttons_radio_module__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__carousel_carousel_module__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__collapse_collapse_module__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__datepicker_datepicker_module__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dropdown_dropdown_module__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modal_modal_module__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pagination_pagination_module__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__popover_popover_module__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__progressbar_progressbar_module__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__rating_rating_module__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__tabset_tabset_module__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__timepicker_timepicker_module__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__tooltip_tooltip_module__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__typeahead_typeahead_module__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion_accordion_module__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert_alert_module__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__buttons_radio_module__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__carousel_carousel_module__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__collapse_collapse_module__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__datepicker_datepicker_module__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dropdown_dropdown_module__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modal_modal_module__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pagination_pagination_module__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__popover_popover_module__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__progressbar_progressbar_module__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__rating_rating_module__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__tabset_tabset_module__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__timepicker_timepicker_module__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__tooltip_tooltip_module__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__typeahead_typeahead_module__ = __webpack_require__(137);
 /* unused harmony reexport NgbAccordionModule */
 /* unused harmony reexport NgbAccordionConfig */
 /* unused harmony reexport NgbAccordion */
@@ -73221,7 +73223,7 @@ NgbModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 171 */
+/* 173 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -73283,8 +73285,6 @@ var NgbTime = (function () {
 //# sourceMappingURL=ngb-time.js.map
 
 /***/ }),
-/* 172 */,
-/* 173 */,
 /* 174 */,
 /* 175 */,
 /* 176 */,
@@ -73304,7 +73304,9 @@ var NgbTime = (function () {
 /* 190 */,
 /* 191 */,
 /* 192 */,
-/* 193 */
+/* 193 */,
+/* 194 */,
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73325,15 +73327,15 @@ exports.FlashMessage = FlashMessage;
 //# sourceMappingURL=flash-message.js.map
 
 /***/ }),
-/* 194 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var flash_message_1 = __webpack_require__(193);
-var flash_messages_service_1 = __webpack_require__(62);
+var flash_message_1 = __webpack_require__(195);
+var flash_messages_service_1 = __webpack_require__(63);
 var FlashMessagesComponent = (function () {
     function FlashMessagesComponent(_flashMessagesService, _cdRef) {
         this._flashMessagesService = _flashMessagesService;
@@ -73391,20 +73393,20 @@ exports.FlashMessagesComponent = FlashMessagesComponent;
 //# sourceMappingURL=flash-messages.component.js.map
 
 /***/ }),
-/* 195 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var module_1 = __webpack_require__(196);
+var module_1 = __webpack_require__(198);
 exports.FlashMessagesModule = module_1.FlashMessagesModule;
-var flash_messages_service_1 = __webpack_require__(62);
+var flash_messages_service_1 = __webpack_require__(63);
 exports.FlashMessagesService = flash_messages_service_1.FlashMessagesService;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 196 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73412,8 +73414,8 @@ exports.FlashMessagesService = flash_messages_service_1.FlashMessagesService;
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
 var common_1 = __webpack_require__(6);
-var flash_messages_component_1 = __webpack_require__(194);
-var flash_messages_service_1 = __webpack_require__(62);
+var flash_messages_component_1 = __webpack_require__(196);
+var flash_messages_service_1 = __webpack_require__(63);
 var FlashMessagesModule = (function () {
     function FlashMessagesModule() {
     }
@@ -73433,7 +73435,7 @@ exports.FlashMessagesModule = FlashMessagesModule;
 //# sourceMappingURL=module.js.map
 
 /***/ }),
-/* 197 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73455,12 +73457,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var http_1 = __webpack_require__(36);
+var http_1 = __webpack_require__(17);
 var core_1 = __webpack_require__(0);
 var Observable_1 = __webpack_require__(2);
-__webpack_require__(292);
-__webpack_require__(291);
+__webpack_require__(294);
 __webpack_require__(293);
+__webpack_require__(295);
 var AuthConfigConsts = (function () {
     function AuthConfigConsts() {
     }
@@ -73801,8 +73803,6 @@ var AuthModule_1;
 //# sourceMappingURL=angular2-jwt.js.map
 
 /***/ }),
-/* 198 */,
-/* 199 */,
 /* 200 */,
 /* 201 */,
 /* 202 */,
@@ -73890,7 +73890,9 @@ var AuthModule_1;
 /* 284 */,
 /* 285 */,
 /* 286 */,
-/* 287 */
+/* 287 */,
+/* 288 */,
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73900,8 +73902,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subject_1 = __webpack_require__(33);
-var ObjectUnsubscribedError_1 = __webpack_require__(154);
+var Subject_1 = __webpack_require__(35);
+var ObjectUnsubscribedError_1 = __webpack_require__(157);
 /**
  * @class BehaviorSubject<T>
  */
@@ -73945,7 +73947,7 @@ exports.BehaviorSubject = BehaviorSubject;
 //# sourceMappingURL=BehaviorSubject.js.map
 
 /***/ }),
-/* 288 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73987,7 +73989,7 @@ exports.InnerSubscriber = InnerSubscriber;
 //# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ }),
-/* 289 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74120,7 +74122,7 @@ exports.Notification = Notification;
 //# sourceMappingURL=Notification.js.map
 
 /***/ }),
-/* 290 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74130,7 +74132,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscription_1 = __webpack_require__(34);
+var Subscription_1 = __webpack_require__(36);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @ignore
@@ -74166,41 +74168,41 @@ exports.SubjectSubscription = SubjectSubscription;
 //# sourceMappingURL=SubjectSubscription.js.map
 
 /***/ }),
-/* 291 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var defer_1 = __webpack_require__(301);
-Observable_1.Observable.defer = defer_1.defer;
-//# sourceMappingURL=defer.js.map
-
-/***/ }),
-/* 292 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var Observable_1 = __webpack_require__(2);
-var fromPromise_1 = __webpack_require__(81);
-Observable_1.Observable.fromPromise = fromPromise_1.fromPromise;
-//# sourceMappingURL=fromPromise.js.map
-
-/***/ }),
 /* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var mergeMap_1 = __webpack_require__(84);
+var defer_1 = __webpack_require__(303);
+Observable_1.Observable.defer = defer_1.defer;
+//# sourceMappingURL=defer.js.map
+
+/***/ }),
+/* 294 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var fromPromise_1 = __webpack_require__(82);
+Observable_1.Observable.fromPromise = fromPromise_1.fromPromise;
+//# sourceMappingURL=fromPromise.js.map
+
+/***/ }),
+/* 295 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(2);
+var mergeMap_1 = __webpack_require__(85);
 Observable_1.Observable.prototype.mergeMap = mergeMap_1.mergeMap;
 Observable_1.Observable.prototype.flatMap = mergeMap_1.mergeMap;
 //# sourceMappingURL=mergeMap.js.map
 
 /***/ }),
-/* 294 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74211,8 +74213,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(2);
-var ScalarObservable_1 = __webpack_require__(153);
-var EmptyObservable_1 = __webpack_require__(80);
+var ScalarObservable_1 = __webpack_require__(156);
+var EmptyObservable_1 = __webpack_require__(81);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -74276,7 +74278,7 @@ exports.ArrayLikeObservable = ArrayLikeObservable;
 //# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ }),
-/* 295 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74286,10 +74288,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subject_1 = __webpack_require__(33);
+var Subject_1 = __webpack_require__(35);
 var Observable_1 = __webpack_require__(2);
 var Subscriber_1 = __webpack_require__(8);
-var Subscription_1 = __webpack_require__(34);
+var Subscription_1 = __webpack_require__(36);
 /**
  * @class ConnectableObservable<T>
  */
@@ -74451,7 +74453,7 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ }),
-/* 296 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74462,8 +74464,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(2);
-var subscribeToResult_1 = __webpack_require__(35);
-var OuterSubscriber_1 = __webpack_require__(32);
+var subscribeToResult_1 = __webpack_require__(37);
+var OuterSubscriber_1 = __webpack_require__(34);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -74556,7 +74558,7 @@ var DeferSubscriber = (function (_super) {
 //# sourceMappingURL=DeferObservable.js.map
 
 /***/ }),
-/* 297 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74567,10 +74569,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(2);
-var EmptyObservable_1 = __webpack_require__(80);
-var isArray_1 = __webpack_require__(90);
-var subscribeToResult_1 = __webpack_require__(35);
-var OuterSubscriber_1 = __webpack_require__(32);
+var EmptyObservable_1 = __webpack_require__(81);
+var isArray_1 = __webpack_require__(91);
+var subscribeToResult_1 = __webpack_require__(37);
+var OuterSubscriber_1 = __webpack_require__(34);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -74674,7 +74676,7 @@ var ForkJoinSubscriber = (function (_super) {
 //# sourceMappingURL=ForkJoinObservable.js.map
 
 /***/ }),
-/* 298 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74685,10 +74687,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(2);
-var tryCatch_1 = __webpack_require__(159);
-var isFunction_1 = __webpack_require__(91);
-var errorObject_1 = __webpack_require__(89);
-var Subscription_1 = __webpack_require__(34);
+var tryCatch_1 = __webpack_require__(162);
+var isFunction_1 = __webpack_require__(92);
+var errorObject_1 = __webpack_require__(90);
+var Subscription_1 = __webpack_require__(36);
 var toString = Object.prototype.toString;
 function isNodeStyleEventEmitter(sourceObj) {
     return !!sourceObj && typeof sourceObj.addListener === 'function' && typeof sourceObj.removeListener === 'function';
@@ -74820,7 +74822,7 @@ exports.FromEventObservable = FromEventObservable;
 //# sourceMappingURL=FromEventObservable.js.map
 
 /***/ }),
-/* 299 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74830,17 +74832,17 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isArray_1 = __webpack_require__(90);
-var isArrayLike_1 = __webpack_require__(155);
-var isPromise_1 = __webpack_require__(157);
-var PromiseObservable_1 = __webpack_require__(152);
-var IteratorObservable_1 = __webpack_require__(300);
-var ArrayObservable_1 = __webpack_require__(79);
-var ArrayLikeObservable_1 = __webpack_require__(294);
-var iterator_1 = __webpack_require__(85);
+var isArray_1 = __webpack_require__(91);
+var isArrayLike_1 = __webpack_require__(158);
+var isPromise_1 = __webpack_require__(160);
+var PromiseObservable_1 = __webpack_require__(155);
+var IteratorObservable_1 = __webpack_require__(302);
+var ArrayObservable_1 = __webpack_require__(80);
+var ArrayLikeObservable_1 = __webpack_require__(296);
+var iterator_1 = __webpack_require__(86);
 var Observable_1 = __webpack_require__(2);
-var observeOn_1 = __webpack_require__(318);
-var observable_1 = __webpack_require__(86);
+var observeOn_1 = __webpack_require__(320);
+var observable_1 = __webpack_require__(87);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -74948,7 +74950,7 @@ exports.FromObservable = FromObservable;
 //# sourceMappingURL=FromObservable.js.map
 
 /***/ }),
-/* 300 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74958,9 +74960,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var root_1 = __webpack_require__(20);
+var root_1 = __webpack_require__(21);
 var Observable_1 = __webpack_require__(2);
-var iterator_1 = __webpack_require__(85);
+var iterator_1 = __webpack_require__(86);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -75117,34 +75119,14 @@ function sign(value) {
 //# sourceMappingURL=IteratorObservable.js.map
 
 /***/ }),
-/* 301 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var DeferObservable_1 = __webpack_require__(296);
-exports.defer = DeferObservable_1.DeferObservable.create;
-//# sourceMappingURL=defer.js.map
-
-/***/ }),
-/* 302 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var ForkJoinObservable_1 = __webpack_require__(297);
-exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
-//# sourceMappingURL=forkJoin.js.map
-
-/***/ }),
 /* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var FromObservable_1 = __webpack_require__(299);
-exports.from = FromObservable_1.FromObservable.create;
-//# sourceMappingURL=from.js.map
+var DeferObservable_1 = __webpack_require__(298);
+exports.defer = DeferObservable_1.DeferObservable.create;
+//# sourceMappingURL=defer.js.map
 
 /***/ }),
 /* 304 */
@@ -75152,9 +75134,9 @@ exports.from = FromObservable_1.FromObservable.create;
 
 "use strict";
 
-var FromEventObservable_1 = __webpack_require__(298);
-exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
-//# sourceMappingURL=fromEvent.js.map
+var ForkJoinObservable_1 = __webpack_require__(299);
+exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
+//# sourceMappingURL=forkJoin.js.map
 
 /***/ }),
 /* 305 */
@@ -75162,9 +75144,9 @@ exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
 
 "use strict";
 
-var merge_1 = __webpack_require__(316);
-exports.merge = merge_1.mergeStatic;
-//# sourceMappingURL=merge.js.map
+var FromObservable_1 = __webpack_require__(301);
+exports.from = FromObservable_1.FromObservable.create;
+//# sourceMappingURL=from.js.map
 
 /***/ }),
 /* 306 */
@@ -75172,12 +75154,32 @@ exports.merge = merge_1.mergeStatic;
 
 "use strict";
 
-var ArrayObservable_1 = __webpack_require__(79);
+var FromEventObservable_1 = __webpack_require__(300);
+exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
+//# sourceMappingURL=fromEvent.js.map
+
+/***/ }),
+/* 307 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var merge_1 = __webpack_require__(318);
+exports.merge = merge_1.mergeStatic;
+//# sourceMappingURL=merge.js.map
+
+/***/ }),
+/* 308 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var ArrayObservable_1 = __webpack_require__(80);
 exports.of = ArrayObservable_1.ArrayObservable.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 307 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75187,8 +75189,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var OuterSubscriber_1 = __webpack_require__(32);
-var subscribeToResult_1 = __webpack_require__(35);
+var OuterSubscriber_1 = __webpack_require__(34);
+var subscribeToResult_1 = __webpack_require__(37);
 /**
  * Catches errors on the observable to be handled by returning a new observable or throwing an error.
  *
@@ -75299,12 +75301,12 @@ var CatchSubscriber = (function (_super) {
 //# sourceMappingURL=catch.js.map
 
 /***/ }),
-/* 308 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeAll_1 = __webpack_require__(83);
+var mergeAll_1 = __webpack_require__(84);
 /* tslint:enable:max-line-length */
 /**
  * Converts a higher-order Observable into a first-order Observable by
@@ -75361,12 +75363,12 @@ exports.concatAll = concatAll;
 //# sourceMappingURL=concatAll.js.map
 
 /***/ }),
-/* 309 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeMap_1 = __webpack_require__(84);
+var mergeMap_1 = __webpack_require__(85);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -75437,7 +75439,7 @@ exports.concatMap = concatMap;
 //# sourceMappingURL=concatMap.js.map
 
 /***/ }),
-/* 310 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75556,7 +75558,7 @@ var DoSubscriber = (function (_super) {
 //# sourceMappingURL=do.js.map
 
 /***/ }),
-/* 311 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75636,7 +75638,7 @@ var EverySubscriber = (function (_super) {
 //# sourceMappingURL=every.js.map
 
 /***/ }),
-/* 312 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75735,7 +75737,7 @@ var FilterSubscriber = (function (_super) {
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
-/* 313 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75746,7 +75748,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(8);
-var EmptyError_1 = __webpack_require__(88);
+var EmptyError_1 = __webpack_require__(89);
 /**
  * Emits only the first value (or the first value that meets some condition)
  * emitted by the source Observable.
@@ -75893,7 +75895,7 @@ var FirstSubscriber = (function (_super) {
 //# sourceMappingURL=first.js.map
 
 /***/ }),
-/* 314 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75904,7 +75906,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(8);
-var EmptyError_1 = __webpack_require__(88);
+var EmptyError_1 = __webpack_require__(89);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits only the last item emitted by the source Observable.
@@ -76018,7 +76020,7 @@ var LastSubscriber = (function (_super) {
 //# sourceMappingURL=last.js.map
 
 /***/ }),
-/* 315 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76036,15 +76038,15 @@ exports.letProto = letProto;
 //# sourceMappingURL=let.js.map
 
 /***/ }),
-/* 316 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var ArrayObservable_1 = __webpack_require__(79);
-var mergeAll_1 = __webpack_require__(83);
-var isScheduler_1 = __webpack_require__(158);
+var ArrayObservable_1 = __webpack_require__(80);
+var mergeAll_1 = __webpack_require__(84);
+var isScheduler_1 = __webpack_require__(161);
 /* tslint:enable:max-line-length */
 /**
  * Creates an output Observable which concurrently emits all values from every
@@ -76187,12 +76189,12 @@ exports.mergeStatic = mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 317 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ConnectableObservable_1 = __webpack_require__(295);
+var ConnectableObservable_1 = __webpack_require__(297);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits the results of invoking a specified selector on items
@@ -76250,7 +76252,7 @@ exports.MulticastOperator = MulticastOperator;
 //# sourceMappingURL=multicast.js.map
 
 /***/ }),
-/* 318 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76261,7 +76263,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(8);
-var Notification_1 = __webpack_require__(289);
+var Notification_1 = __webpack_require__(291);
 /**
  *
  * Re-emits all notifications from source Observable with specified scheduler.
@@ -76369,7 +76371,7 @@ exports.ObserveOnMessage = ObserveOnMessage;
 //# sourceMappingURL=observeOn.js.map
 
 /***/ }),
-/* 319 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76501,13 +76503,13 @@ exports.ReduceSubscriber = ReduceSubscriber;
 //# sourceMappingURL=reduce.js.map
 
 /***/ }),
-/* 320 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var multicast_1 = __webpack_require__(317);
-var Subject_1 = __webpack_require__(33);
+var multicast_1 = __webpack_require__(319);
+var Subject_1 = __webpack_require__(35);
 function shareSubjectFactory() {
     return new Subject_1.Subject();
 }
@@ -76531,7 +76533,7 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 321 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76562,14 +76564,14 @@ exports.UnsubscriptionError = UnsubscriptionError;
 //# sourceMappingURL=UnsubscriptionError.js.map
 
 /***/ }),
-/* 322 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Subscriber_1 = __webpack_require__(8);
-var rxSubscriber_1 = __webpack_require__(87);
-var Observer_1 = __webpack_require__(150);
+var rxSubscriber_1 = __webpack_require__(88);
+var Observer_1 = __webpack_require__(154);
 function toSubscriber(nextOrObserver, error, complete) {
     if (nextOrObserver) {
         if (nextOrObserver instanceof Subscriber_1.Subscriber) {

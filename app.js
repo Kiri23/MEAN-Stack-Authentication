@@ -129,11 +129,11 @@ function checkMongooseConnection(mongose){
 // const orga = require('./models/organization');
 //
 // var admin = new Administrator({
-//   name:"Test",
-//   users:"592a1d46b872b500117d1fb0",
-//   email: "test@mai.com",
-//   username: "tets",
-//   password: "1234"
+  // name:"Test",
+  // users:"592a1d46b872b500117d1fb0",
+  // email: "test@mai.com",
+  // username: "tets",
+  // password: "1234"
 // });
 //
 // var orga2 = new orga({

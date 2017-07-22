@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
-
+//  Este file es para hacerle Unit Testing a los componentes
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({

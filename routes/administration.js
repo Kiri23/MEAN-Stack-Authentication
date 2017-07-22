@@ -141,7 +141,7 @@ router.get('/getAdminRole', (req, res) => {
       if (err){
         return res.json(err);
       }
-      res.json(AdminRole[0]);
+      res.json(AdminRole);
 
     })
 });

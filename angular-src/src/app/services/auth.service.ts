@@ -39,7 +39,9 @@ export class AuthService {
     // when using jwt-token it look for this key exactly id_token. saving token to local storage
     localStorage.setItem('id_token',token)
     // save to local storage user. we need to store as a string because it cant store object. when we need it back we parse it back to json
-    localStorage.setItem('user',JSON.stringify(user))
+    // localStorage.setItem('user',JSON.stringify(user))
+    localStorage.setItem('user',user)
+
     // set values to the variable
     this.authToken = token;
     this.user = user;

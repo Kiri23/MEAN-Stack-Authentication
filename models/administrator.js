@@ -87,6 +87,7 @@ module.exports.skipAdministrator = function(skipNumberAdministrator,callback){
 
 // Get a user by their username
 module.exports.getAdministratorByUsername = function(username,callback){
+  console.log("Encontrando todos los administradores" + username);
   const query = {username: username}
   Administrator.findOne(query,callback);
 };
@@ -111,7 +112,7 @@ module.exports.getAdminRole = function(callback){
   // this return only the role field and the object id aka the id of the admin
   // to exclude a field like the _id you can set the option to #0. like this _id:0
   // reference: https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/.
-  Administrator.find({},{role:1}).exec(callback)
+  Administrator.find({},{role:1,name:1}).exec(callback)
 }
 
 // Compare password to login
