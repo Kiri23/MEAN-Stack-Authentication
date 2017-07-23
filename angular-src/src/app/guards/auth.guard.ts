@@ -22,36 +22,49 @@ export class AuthGuard implements CanActivate{
     private userService:UsersService,
     private http:Http
   ){
-    this.getRole()
+    // this.getRole()
    }
 
   // Protect Route with lowercase c. to restrict whatever page you nedd to extend the CanActivate interface and include the canActivate function. inside the function you put whatever logic you want and return true or false to Authorized access.
    canActivate(){
     if (this.authService.checkLoggedIn()){
-      console.log(this.userService.getRole() , ' role from method' );
-
+      console.log("Hello Role");
       // if the user is Login check for the role of the user
       this.getRoleOfUser()
       // setTimeout to wait and load the role. I do this to restrict that a user cant change the local storage
-      setTimeout(function(){
+      // setTimeout(function(){
        console.log(localStorage.getItem('role'),' role second');
        const role = localStorage.getItem('role')
+
+       window.addEventListener("storage", function () {
+          // do your checks to detect
+          // changes in "e1", "e2" & "e3" here
+          console.log("localstorage cambio");
+          // Le doy redirect a una pagina 400 o a una pagina especial dicindole que ellos
+          // no deben modificar el storage. Using below code
+          // window.location.replace(Page Especial Url);
+          this.location.reload();
+        }, false);
        // user access
        if (role.localeCompare("2") == 0){
-
+         console.log("El rol del usuario es 2 enviar ahora falso");
+         return true;
+       }else if (role.localeCompare("1") == 0) {
+         console.log("el rol es uno")
+         return false;
        }
 
-     }, 1550);
+    //  }, 1550);
 
      // set another timeout wait one and half second to make the condition and then delete the item in the localstorage
-     setTimeout(function(){
-       localStorage.removeItem('role');
-       console.log("deleted. third");
-    }, 1550);
+    //  setTimeout(function(){
+    //    localStorage.removeItem('role');
+    //    console.log("deleted. third");
+    // }, 1550);
 
       //Authorized acces
-      console.log("first");
-      return true
+      // console.log("first");
+      // return true
 
     }else {
       // Unathorized Access

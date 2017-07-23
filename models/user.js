@@ -87,6 +87,7 @@ module.exports.getUserByUsername = function(username,callback){
 
 // Add User to the Database
 module.exports.addUser = function(newUser,callback){
+  console.log("password: "+ newUser.password + " from addUser Function");
   // Hash password
   bcrypt.genSalt(10,(err, salt) => {
     bcrypt.hash(newUser.password, salt, (err, hash) => {

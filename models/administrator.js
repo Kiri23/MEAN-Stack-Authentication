@@ -94,6 +94,7 @@ module.exports.getAdministratorByUsername = function(username,callback){
 
 // Add Administrator to the Database
 module.exports.addAdministrator = function(newAministrator,callback){
+  // console.log(JSON.stringify(newAministrator,null,4) + " add administrator model");
   // Hash password
   bcrypt.genSalt(10,(err, salt) => {
     bcrypt.hash(newAministrator.password, salt, (err, hash) => {
@@ -108,11 +109,11 @@ module.exports.addAdministrator = function(newAministrator,callback){
 };
 
 // Get the admin role from the db
-module.exports.getAdminRole = function(callback){
+module.exports.getAdminRole = function(id,callback){
   // this return only the role field and the object id aka the id of the admin
   // to exclude a field like the _id you can set the option to #0. like this _id:0
   // reference: https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/.
-  Administrator.find({},{role:1,name:1}).exec(callback)
+  Administrator.find({_id:id}},{role:1,name:1}).exec(callback)
 }
 
 // Compare password to login

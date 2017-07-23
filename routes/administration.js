@@ -13,17 +13,18 @@ const Administration = require('../models/administrator');
 // Register
 // cause whe're in the Administrator file is Administrator/register
 router.post('/register', (req, res,next) => {
+  console.log("llego a la ruta del register administrator");
   // Administration Object Retriev Administrator Properties from Form
   let newAdministrator = new Administration({
-    name: req.body.name,
-    email: req.body.email,
-    username: req.body.username,
-    password: req.body.password
+    name: req.body.user.name,
+    email: req.body.user.email,
+    username: req.body.user.username,
+    password: req.body.user.password
   });
 // Add Administration to mongoDb
   Administration.addAdministrator(newAdministrator,(err, Administrator) => {
     if(err){
-      console.log(err + " add Administrator");
+      console.log(err + " adding Administrator");
       res.json({success: false, msg:'Failed to register Administrator',error:err});
     }else{ // addAdministrator to the Database
       res.json({success:true,msg:'Administration Registered',Administrator:newAdministrator});

@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   username:String;
   email:String;
   password:String;
+  role;
 
   text = "Register"
 
@@ -26,15 +27,21 @@ export class RegisterComponent implements OnInit {
   constructor(private validateService:ValidateService,private flashMessage:FlashMessagesService,private authService:AuthService,private router:Router) { }
 
   ngOnInit() {
+    // role of administrator
+    this.role = 1;
   }
 
   onRegisterSubmit(){
     console.log(this.name,this.username,this.email)
+    // Aqui tengo que mandar el rol del usuario pa asegurar quien lo creo y que rol tiene este
+    // usuario nuevo
     const user = {
       name: this.name,
       email:this.email,
       username:this.username,
-      password:this.password
+      password:this.password,
+      role:this.role,
+      CreatedDate:new Date()
     }
     // Required Fields
     if(!this.validateService.validateRegister(user)){

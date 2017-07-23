@@ -26,6 +26,7 @@ import { TableComponent } from './components/dashboard-components/table/table.co
 import { ModalComponent } from './components/dashboard-components/modal/modal.component';
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
 import { TableColumnsComponent } from './components/dashboard-components/table-columns/table-columns.component';
+import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 
 //Services
 import {ValidateService} from './services/validate.service';
@@ -51,7 +52,10 @@ const appRoutes: Routes = [
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
   // protect route
   {path:'adminDashboard',component:AdminDashboardComponent,canActivate:[AuthGuard]},
-  {path:'adminUsers',component:AdminUsersComponent,canActivate:[AuthGuard]}
+  {path:'adminUsers',component:AdminUsersComponent,canActivate:[AuthGuard]},
+  // I will want this route to be protected only another administrator can create other
+  // administrator
+  {path:'register/admin',component:AdminRegisterComponent}
 
 ];
 
@@ -74,7 +78,8 @@ const appRoutes: Routes = [
     TableComponent,
     ModalComponent,
     AdminUsersComponent,
-    TableColumnsComponent
+    TableColumnsComponent,
+    AdminRegisterComponent
   ],
   imports: [
     BrowserModule,

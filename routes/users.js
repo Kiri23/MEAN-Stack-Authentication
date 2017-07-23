@@ -18,13 +18,16 @@ const Administrator = require('../models/administrator');
 // cause whe're in the users file is users/register
 router.post('/register', (req, res,next) => {
   // User Object Retriev user Properties from Form
+  // console.log(req.body.user + " hello");
+  // str = JSON.stringify(req.body.user, null, 4); // (Optional) beautiful indented output.
+  console.log(JSON.stringify(req.body.user, null, 4)); // how to show [object object] in console
   let newUser = new User({
-    name: req.body.name,
-    email: req.body.email,
-    username: req.body.username,
-    password: req.body.password,
-    role:user.role,
-    CreatedDate:user.CreatedDate
+    name: req.body.user.name,
+    email: req.body.user.email,
+    username: req.body.user.username,
+    password: req.body.user.password
+    // role:req.body.user.role,
+    // CreatedDate:req.body.user.CreatedDate
   });
 // Add User to mongoDb
   User.addUser(newUser,(err, user) => {
@@ -44,64 +47,38 @@ router.post('/authenticate', (req, res,next) => {
   const username = req.body.username;
   const password = req.body.password;
 
-  // Get the user to authenticate
-  User.getUserByUsername(username,(err,user) => {
-    if (err) throw err;
-    if(!user){
+    // Get the user to authenticate
+    User.getUserByUsername(username,(err,user) => {
+      if (err) throw err;
+      if(!user){
 
-      console.log("va a buscar los administradores ahora ")
-      console.log("password: " + password);
-      Administrator.getAdministratorByUsername(username,(err,administrator) => {
-          // if not administrator where found in the db
-          if(!administrator){
-            return res.json({success:false,msg:'User not found'});
-          }
-          // compare the administrator Password
-          Administrator.comparePassword(password,administrator.password,(err,isMatch) => {
-             administratorCheckPassowrd(res,err,isMatch);
-          });
-
-      });
-
-    } else{
-      // Compare the Password of the regular user 
-      User.comparePassword(password,user.password,(err,isMatch) => {
-        if (err) throw err;
-        // if the password match
-        if(isMatch){
-          // construct the token- it has option
-          const token = jwt.sign(user,config.secret,{
-            expiresIn:120000 // 20 minutes
-          });
-          // Send the reponse in Json Format
-          res.json({success:true,
-            token:'JWT '+token,
-            user:{
-              id:user._id,
-              name:user.name,
-              username:user.username,
-              email:user.email,
-              role:user.role,
-              CreatedDate:user.CreatedDate
-
-
+        console.log("va a buscar los administradores ahora ")
+        console.log("password: " + password);
+        Administrator.getAdministratorByUsername(username,(err,administrator) => {
+            // if not administrator where found in the db
+            if(!administrator){
+              return res.json({success:false,msg:'User not found'});
             }
+            // compare the administrator Password
+            Administrator.comparePassword(password,administrator.password,(err,isMatch) => {
+               userCheckPassowrd(res,err,isMatch,administrator);
+            });
+
+        });
+
+      }
+       else{
+          // Compare the Password of the regular user
+          User.comparePassword(password,user.password,(err,isMatch) => {
+            userCheckPassowrd(res,err,isMatch,user);
+
           });
-
-        }
-        // if no match
-        else {
-          return res.json({success:false,msg:'Wrong password'});
-        }
-
-      });
-    }
-
-  })
-
+      }
+   });
 });
 
-function administratorCheckPassowrd(res,err,isMatch){
+// Function to compare the password of a regular user or administratopr
+function userCheckPassowrd(res,err,isMatch,user){
   if (err) throw err;
   // if the password match
   if(isMatch){
@@ -112,13 +89,13 @@ function administratorCheckPassowrd(res,err,isMatch){
     // Send the reponse in Json Format
     res.json({success:true,
       token:'JWT '+token,
-      administrator:{
-        id:administrator._id,
-        name:administrator.name,
-        username:administrator.username,
-        email:administrator.email,
-        role:administrator.role,
-        CreatedDate:administrator.CreatedDate
+      user:{
+        id:user._id,
+        name:user.name,
+        username:user.username,
+        email:user.email,
+        role:user.role,
+        CreatedDate:user.CreatedDate
 
       }
     });
