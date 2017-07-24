@@ -33,6 +33,7 @@ export class TableComponent implements OnInit {
 
   this.userService.getAllUsers().subscribe(user => {
       this.totalUsersCount = underscore.size(user)
+    
    });
 
   } // End NGonInit()

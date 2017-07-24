@@ -110,10 +110,12 @@ module.exports.addAdministrator = function(newAministrator,callback){
 
 // Get the admin role from the db
 module.exports.getAdminRole = function(id,callback){
+  console.log(id + " Role from Adminsitrador");
+  console.log("Encontrando rol del administrador de la base de datos.");
   // this return only the role field and the object id aka the id of the admin
   // to exclude a field like the _id you can set the option to #0. like this _id:0
   // reference: https://docs.mongodb.com/manual/tutorial/project-fields-from-query-results/.
-  Administrator.find({_id:id}},{role:1,name:1}).exec(callback)
+  Administrator.find({_id:id},{role:1,name:1}).exec(callback)
 }
 
 // Compare password to login

@@ -138,7 +138,7 @@ router.get('/skipAdministrators', (req, res) => {
 // EndPoit for the Role of the Admin
 router.get('/getAdminRole', (req, res) => {
     var roleNumber = req.query.role;
-    Administration.getAdminRole((err, AdminRole) => {
+    Administration.getAdminRole(roleNumber,(err, AdminRole) => {
       if (err){
         return res.json(err);
       }

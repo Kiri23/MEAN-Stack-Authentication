@@ -4,6 +4,9 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
+// Import third partie library js
+const underscore = require('underscore');
+
 
 const config = require('../config/databse');
 const User = require('../models/user');
@@ -55,6 +58,7 @@ router.post('/authenticate', (req, res,next) => {
         console.log("va a buscar los administradores ahora ")
         console.log("password: " + password);
         Administrator.getAdministratorByUsername(username,(err,administrator) => {
+           console.log("User Role from call from db: " + administrator.role);
             // if not administrator where found in the db
             if(!administrator){
               return res.json({success:false,msg:'User not found'});
@@ -86,6 +90,10 @@ function userCheckPassowrd(res,err,isMatch,user){
     const token = jwt.sign(user,config.secret,{
       expiresIn:120000 // 20 minutes
     });
+
+    console.log("User Role from authenticate route: " + user.role + "\n" +
+                " from User Name: " + user.name
+   );
     // Send the reponse in Json Format
     res.json({success:true,
       token:'JWT '+token,
@@ -167,16 +175,36 @@ router.get('/skipUsers', (req, res) => {
 router.get('/getUserRoleById', (req, res) => {
     var id = req.query.id
     // convert the string to a Int
-    console.log(id);
+    console.log("User Id from route Api" +id);
     // var idInt = parseInt(idStr)
     // console.log(idInt);
-    User.getUserRole(id,(err, userRole) => {
+    User.getUserRole(id,(err,userRole) => {
       if (err){
         return res.json(err);
       }
-      res.json(userRole);
+      // get role of a Admin User
+      if (underscore.isEmpty(userRole)){
+          console.log(userRole + " user role");
+          console.log("User Role esta vacio.encontrando role del administrador");
+          Administrator.getAdminRole(id,(err,adminRole) =>{
+              if (underscore.isEmpty(adminRole)){
+                console.log(adminRole + " AdminRole");
+                console.log("Ningun usuario del rol fue encotrado.No usuario, no administrador");
+                res.json({data:false,msg:"Usuario Role no encontrado"})
+              }
+              // A role is found
+              else {
+                res.json(adminRole)
+              }
 
-    })
+          })
+      }
+      // Get role of a regular user
+      else {
+        res.json(userRole);
+      }
+
+    });
 });
 
 router.get('/ping', (req, res) => {

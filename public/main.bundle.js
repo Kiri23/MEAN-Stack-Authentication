@@ -449,10 +449,11 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__services_validate_service__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_auth_service__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__guards_auth_guard__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__services_users_service__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__services_utilities_service__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__services_administration_administrator_service__ = __webpack_require__(140);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__services_organization_organization_service__ = __webpack_require__(141);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__guards_administrtor_guard__ = __webpack_require__(335);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__services_users_service__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__services_utilities_service__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__services_administration_administrator_service__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__services_organization_organization_service__ = __webpack_require__(141);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -497,6 +498,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 //appRoutes - va a contener todas las routes del app
 var appRoutes = [
     // Home Route
@@ -508,7 +510,7 @@ var appRoutes = [
     // protect route
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_12__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__guards_auth_guard__["a" /* AuthGuard */]] },
     // protect route
-    { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_14__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_14__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_29__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
     { path: 'adminUsers', component: __WEBPACK_IMPORTED_MODULE_23__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_28__guards_auth_guard__["a" /* AuthGuard */]] },
     // I will want this route to be protected only another administrator can create other
     // administrator
@@ -550,8 +552,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesModule"],
             __WEBPACK_IMPORTED_MODULE_6__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_26__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_27__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_28__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_29__services_users_service__["a" /* UsersService */],
-            __WEBPACK_IMPORTED_MODULE_30__services_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_31__services_administration_administrator_service__["a" /* AdministratorsService */], __WEBPACK_IMPORTED_MODULE_32__services_organization_organization_service__["a" /* OrganizationsService */]
+        providers: [__WEBPACK_IMPORTED_MODULE_26__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_27__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_28__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_29__guards_administrtor_guard__["a" /* AdministratorGuard */],
+            __WEBPACK_IMPORTED_MODULE_30__services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_31__services_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_32__services_administration_administrator_service__["a" /* AdministratorsService */], __WEBPACK_IMPORTED_MODULE_33__services_organization_organization_service__["a" /* OrganizationsService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
     })
@@ -1152,11 +1154,24 @@ var LoginComponent = (function () {
         //Auth service Make http call to Login user
         this.authService.authenticateUser(user).subscribe(function (data) {
             if (data.success) {
-                // authenticate user with the token
-                _this.authService.storeUserData(data.token, data.user.id);
+                console.log("user Role from login component: " + data.user.role);
+                // authenticate user with the token and store User Data in local storage
+                _this.authService.storeUserData(data.token, data.user.id, data.user.role);
                 // show message login
                 _this.flashMessage.show("You are now logged in", { cssClass: 'alert-success', timeout: 5000 });
-                _this.router.navigate(['/dashboard']);
+                // window.location.replace(window.location.hostname + ":3002/dashboard");
+                if (_this.authService.userRole == 1) {
+                    // Navigate to Admin DashBoard
+                    _this.router.navigate(['/adminDashboard']);
+                }
+                else {
+                    // User DashBoard
+                    _this.router.navigate(['/dashboard']);
+                }
+                // reload nav Bar component
+                setTimeout(function () {
+                    window.location.reload();
+                }, 1);
             }
             else {
                 //data.msg contains user not found or wrong password
@@ -1188,8 +1203,9 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_users_service__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavbarComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1205,16 +1221,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 // services
 
+
 // 3rd parthy
 
 var NavbarComponent = (function () {
     // inject the module and service to the constructor
-    function NavbarComponent(authService, router, flashMessage) {
+    function NavbarComponent(authService, userService, router, flashMessage) {
         this.authService = authService;
+        this.userService = userService;
         this.router = router;
         this.flashMessage = flashMessage;
     }
     NavbarComponent.prototype.ngOnInit = function () {
+        // if the user is logged In retrieve the role of the user
+        if (this.authService.checkLoggedIn()) {
+            console.log("User is Logge In from Navbar");
+            // Retrieve the user role.
+            this.getRoleOfUser();
+        }
     };
     // click event on log out
     NavbarComponent.prototype.onLogoutClick = function () {
@@ -1225,7 +1249,35 @@ var NavbarComponent = (function () {
         this.flashMessage.show("You are logged out", { cssClass: 'alert-success', timeout: 4000 });
         // redirect to login
         this.router.navigate(['/login']);
+        // if I want to reload the page when the user logge out. I wan this because the navbar item
+        // doesnt get removed when a new person logged in. 
+        // setTimeout(function(){
+        //   window.location.reload();
+        // },10)
         return false;
+    };
+    NavbarComponent.prototype.isAdminRole = function () {
+        // if User Role is administrator(Aka 1) sent true otherwise sent false
+        console.log("User Role from NavBar: " + this.userRole);
+        return this.userRole == 1 ? true : false;
+    };
+    NavbarComponent.prototype.getRoleOfUser = function () {
+        var _this = this;
+        // Ge the Id of the user.
+        var userId = localStorage.getItem('user');
+        // make an http call to the API
+        this.userService.getRoleOfUser(userId).subscribe(function (user) {
+            // user send with the response
+            _this.userRole = user[0].role;
+            console.log("Nav Bar Role: " + _this.userRole);
+        }, function (err) {
+            // observable can also return error
+            console.log(err);
+            // Show a error message
+            _this.flashMessage.show("An error has ocurred retrieving the role", { cssClass: 'alert-danger', timeout: 5000 });
+            // redirect to the login page
+            _this.router.navigate(['/login']);
+        });
     };
     return NavbarComponent;
 }());
@@ -1235,10 +1287,10 @@ NavbarComponent = __decorate([
         template: __webpack_require__(289),
         styles: [__webpack_require__(269)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_users_service__["a" /* UsersService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]) === "function" && _d || Object])
 ], NavbarComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=navbar.component.js.map
 
 /***/ }),
@@ -1428,41 +1480,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t;
-    return { next: verb(0), "throw": verb(1), "return": verb(2) };
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 // Module
 
 
@@ -1484,22 +1501,14 @@ var AuthGuard = (function () {
     // Protect Route with lowercase c. to restrict whatever page you nedd to extend the CanActivate interface and include the canActivate function. inside the function you put whatever logic you want and return true or false to Authorized access.
     AuthGuard.prototype.canActivate = function () {
         if (this.authService.checkLoggedIn()) {
-            console.log("Hello Role");
+            // console.log("role from authservice: " + this.authService.userRole);
+            //  restrict the acces for user and admin
             // if the user is Login check for the role of the user
             this.getRoleOfUser();
-            // setTimeout to wait and load the role. I do this to restrict that a user cant change the local storage
-            // setTimeout(function(){
+            this.detectLocalStorageChange();
             console.log(localStorage.getItem('role'), ' role second');
+            //  get the role of a user from local storage
             var role = localStorage.getItem('role');
-            window.addEventListener("storage", function () {
-                // do your checks to detect
-                // changes in "e1", "e2" & "e3" here
-                console.log("localstorage cambio");
-                // Le doy redirect a una pagina 400 o a una pagina especial dicindole que ellos
-                // no deben modificar el storage. Using below code
-                // window.location.replace(Page Especial Url);
-                this.location.reload();
-            }, false);
             // user access
             if (role.localeCompare("2") == 0) {
                 console.log("El rol del usuario es 2 enviar ahora falso");
@@ -1507,28 +1516,20 @@ var AuthGuard = (function () {
             }
             else if (role.localeCompare("1") == 0) {
                 console.log("el rol es uno");
+                // Show a error message
+                this.flashMessage.show("Acces Unathorized", { cssClass: 'alert-danger', timeout: 5000 });
+                //  Wait half and second then set it back to the page they last visited
+                //  setTimeout(function(){
+                //    window.history.back();
+                //  }, 2500);
                 return false;
             }
-            //  }, 1550);
-            // set another timeout wait one and half second to make the condition and then delete the item in the localstorage
-            //  setTimeout(function(){
-            //    localStorage.removeItem('role');
-            //    console.log("deleted. third");
-            // }, 1550);
-            //Authorized acces
-            // console.log("first");
-            // return true
         }
         else {
-            // Unathorized Access
-            // Show a error message
-            this.flashMessage.show("Unathorized acces", { cssClass: 'alert-danger', timeout: 5000 });
-            // redirect to the login page
-            // redirect to login
-            this.router.navigate(['/login']);
-            return false;
+            this.showMessageUserNotLoggedIn();
         }
     };
+    // Helper Method
     AuthGuard.prototype.getRoleOfUser = function () {
         var _this = this;
         var userId = localStorage.getItem('user');
@@ -1547,23 +1548,23 @@ var AuthGuard = (function () {
             return false;
         });
     };
-    AuthGuard.prototype.getRole = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var _a;
-            return __generator(this, function (_b) {
-                switch (_b.label) {
-                    case 0:
-                        console.log("se esta llamando la funcion");
-                        _a = this;
-                        return [4 /*yield*/, this.userService.sayHello()];
-                    case 1:
-                        _a.userRole = _b.sent();
-                        console.log(this.userRole);
-                        console.log(this.userRole, "3. Im only going to run after getRole is Finished");
-                        return [2 /*return*/];
-                }
-            });
-        });
+    AuthGuard.prototype.detectLocalStorageChange = function () {
+        window.addEventListener("storage", function () {
+            console.log("localstorage cambio");
+            // Le doy redirect a una pagina 400 o a una pagina especial dicindole que ellos
+            // no deben modificar el storage. Using below code
+            // window.location.replace(Page Especial Url);
+            this.location.reload();
+        }, false);
+    };
+    AuthGuard.prototype.showMessageUserNotLoggedIn = function () {
+        // Unathorized Access
+        // Show a error message
+        this.flashMessage.show("Unathorized acces. Not login session found. ", { cssClass: 'alert-danger', timeout: 5000 });
+        // redirect to the login page
+        // redirect to login
+        this.router.navigate(['/login']);
+        return false;
     };
     return AuthGuard;
 }());
@@ -1699,15 +1700,21 @@ var AuthService = (function () {
         return this.http.post('/users/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     // authenticater user login with the token
-    AuthService.prototype.storeUserData = function (token, user) {
+    AuthService.prototype.storeUserData = function (token, user, role) {
         // when using jwt-token it look for this key exactly id_token. saving token to local storage
         localStorage.setItem('id_token', token);
         // save to local storage user. we need to store as a string because it cant store object. when we need it back we parse it back to json
         // localStorage.setItem('user',JSON.stringify(user))
         localStorage.setItem('user', user);
+        // set localStorage role
+        localStorage.setItem('role', role);
         // set values to the variable
         this.authToken = token;
         this.user = user;
+        // cargar underscore verificar si role no es empty y setiar el role. pq
+        // si voy a estar confiando tanto en el role de auth.servoce tengo que asegurarme que nunca
+        // sea nullo pq si no esto puede traer mucho comportamiento inesperado 
+        this.userRole = role;
     };
     AuthService.prototype.logout = function () {
         // set variables to null
@@ -1732,6 +1739,8 @@ var AuthService = (function () {
         // Load token from local storage
         var token = localStorage.getItem('id_token');
         this.authToken = token;
+    };
+    AuthService.prototype.loadVariables = function () {
     };
     // check if there's a user sing in
     AuthService.prototype.checkLoggedIn = function () {
@@ -2365,7 +2374,7 @@ module.exports = "<h2 class=\"page-header\">Login</h2>\n<form (submit)=\"onLogin
 /***/ 289:
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-default\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">Mean Auth App</a>\n    </div>\n  <div id=\"navbar\" class=\"collapse navbar-collapse\">\n  <ul class=\"nav navbar-nav navbar-left\">  -->\n    <!--RouterLinkActive es para darle active a las clas cuando se de click en el navbar\n        RouterLinkActiveOption = para que el tab correcto se marque active pq si no se marcan los dos nn -->\n        <li [routerLinkActive] = \"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"> <a [routerLink] = \"['/']\">Home</a> </li>\n   </ul>\n\n  <ul class=\"nav navbar-nav navbar-right\">\n    <li *ngIf=\"authService.checkLoggedIn()\" [routerLinkActive]= \"['active']\" [routerLinkActiveOptions]= \"{exact:true}\"><a [routerLink]=\"['/adminDashboard']\">Admin</a></li>\n    \n    <li *ngIf=\"authService.checkLoggedIn()\" [routerLinkActive]= \"['active']\" [routerLinkActiveOptions]= \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\n\n    <li *ngIf=\"authService.checkLoggedIn()\" [routerLinkActive]= \"['active']\" [routerLinkActiveOptions]= \"{exact:true}\"><a [routerLink]=\"['/profile']\">Profile</a></li>\n\n\n    <li *ngIf=\"!authService.checkLoggedIn()\" [routerLinkActive]= \"['active']\" [routerLinkActiveOptions]= \"{exact:true}\"><a [routerLink]=\"['/login']\">Login</a></li>\n\n    <li *ngIf=\"!authService.checkLoggedIn()\" [routerLinkActive]= \"['active']\" [routerLinkActiveOptions]= \"{exact:true}\"><a [routerLink]= \"['/register']\">Register</a></li>\n    <!--click event  -->\n    <li *ngIf=\"authService.checkLoggedIn()\" > <a href=\"#\" (click)=\"onLogoutClick()\">Logout</a></li>\n </ul>\n\n</div>\n\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-default\">\n  <div class=\"container\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#navbar\" aria-expanded=\"false\" aria-controls=\"navbar\">\n        <span class=\"sr-only\">Toggle navigation</span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n      </button>\n      <a class=\"navbar-brand\" href=\"#\">Mean Auth App</a>\n    </div>\n  <div id=\"navbar\" class=\"collapse navbar-collapse\">\n  <ul class=\"nav navbar-nav navbar-left\">  -->\n    <!--RouterLinkActive es para darle active a las clas cuando se de click en el navbar\n        RouterLinkActiveOption = para que el tab correcto se marque active pq si no se marcan los dos nn -->\n        <li [routerLinkActive] = \"['active']\" [routerLinkActiveOptions] = \"{exact:true}\"> <a [routerLink] = \"['/']\">Home</a> </li>\n   </ul>\n\n  <ul class=\"nav navbar-nav navbar-right\">\n    <li *ngIf=\"authService.checkLoggedIn()&& isAdminRole()\" [routerLinkActive]= \"['active']\" [routerLinkActiveOptions]= \"{exact:true}\"><a [routerLink]=\"['/adminDashboard']\">Admin</a></li>\n\n    <li *ngIf=\"authService.checkLoggedIn()\" [routerLinkActive]= \"['active']\" [routerLinkActiveOptions]= \"{exact:true}\"><a [routerLink]=\"['/dashboard']\">Dashboard</a></li>\n\n    <li *ngIf=\"authService.checkLoggedIn()\" [routerLinkActive]= \"['active']\" [routerLinkActiveOptions]= \"{exact:true}\"><a [routerLink]=\"['/profile']\">Profile</a></li>\n\n\n    <li *ngIf=\"!authService.checkLoggedIn()\" [routerLinkActive]= \"['active']\" [routerLinkActiveOptions]= \"{exact:true}\"><a [routerLink]=\"['/login']\">Login</a></li>\n\n    <li *ngIf=\"!authService.checkLoggedIn()\" [routerLinkActive]= \"['active']\" [routerLinkActiveOptions]= \"{exact:true}\"><a [routerLink]= \"['/register']\">Register</a></li>\n    <!--click event  -->\n    <li *ngIf=\"authService.checkLoggedIn()\" > <a href=\"#\" (click)=\"onLogoutClick()\">Logout</a></li>\n </ul>\n\n</div>\n\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -2388,6 +2397,121 @@ module.exports = "<h2 class=\"page-header\">{{text}}</h2>\n\n<form name=\"regist
 
 module.exports = __webpack_require__(164);
 
+
+/***/ }),
+
+/***/ 335:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_auth_service__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_users_service__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdministratorGuard; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+// Module
+
+
+
+// Service
+
+
+// 3rd Pathy
+
+var AdministratorGuard = (function () {
+    function AdministratorGuard(authService, router, flashMessage, userService, http) {
+        this.authService = authService;
+        this.router = router;
+        this.flashMessage = flashMessage;
+        this.userService = userService;
+        this.http = http;
+        // this.getRole()
+    }
+    // Protect Route with lowercase c. to restrict whatever page you nedd to extend the CanActivate interface and include the canActivate function. inside the function you put whatever logic you want and return true or false to Authorized access.
+    AdministratorGuard.prototype.canActivate = function () {
+        if (this.authService.checkLoggedIn()) {
+            //  restrict the acces for user and admin
+            // if the user is Login check for the role of the user
+            this.getRoleOfUser();
+            this.detectLocalStorageChange();
+            console.log(localStorage.getItem('role'), ' role second');
+            //  get the role of a user from local storage
+            var role = localStorage.getItem('role');
+            // user access
+            if (role.localeCompare("1") == 0) {
+                console.log("El rol del usuario es 1 enviar ahora true");
+                return true;
+            }
+            else if (role.localeCompare("2") == 0) {
+                console.log("el rol es uno");
+                // Show a error message
+                this.flashMessage.show("Acces Unathorized", { cssClass: 'alert-danger', timeout: 5000 });
+                window.history.back();
+                return false;
+            }
+        }
+        else {
+            this.showMessageUserNotLoggedIn();
+        }
+    };
+    // Helper Method
+    AdministratorGuard.prototype.getRoleOfUser = function () {
+        var _this = this;
+        var userId = localStorage.getItem('user');
+        var id;
+        // make an http call to the API
+        this.userService.getRoleOfUser(userId).subscribe(function (user) {
+            // user send with the response
+            localStorage.setItem('role', user[0].role);
+        }, function (err) {
+            // observable can also return error
+            console.log(err);
+            // Show a error message
+            _this.flashMessage.show("An error has ocurred retrieving the role", { cssClass: 'alert-danger', timeout: 5000 });
+            // redirect to the login page
+            _this.router.navigate(['/login']);
+            return false;
+        });
+    };
+    AdministratorGuard.prototype.detectLocalStorageChange = function () {
+        window.addEventListener("storage", function () {
+            console.log("localstorage cambio");
+            // Le doy redirect a una pagina 400 o a una pagina especial dicindole que ellos
+            // no deben modificar el storage. Using below code
+            // window.location.replace(Page Especial Url);
+            this.location.reload();
+        }, false);
+    };
+    AdministratorGuard.prototype.showMessageUserNotLoggedIn = function () {
+        // Unathorized Access
+        // Show a error message
+        this.flashMessage.show("Unathorized acces", { cssClass: 'alert-danger', timeout: 5000 });
+        // redirect to the login page
+        // redirect to login
+        this.router.navigate(['/login']);
+        return false;
+    };
+    return AdministratorGuard;
+}());
+AdministratorGuard = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesService"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_users_service__["a" /* UsersService */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["Http"]) === "function" && _e || Object])
+], AdministratorGuard);
+
+var _a, _b, _c, _d, _e;
+//# sourceMappingURL=administrtor.guard.js.map
 
 /***/ }),
 

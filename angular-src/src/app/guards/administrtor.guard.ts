@@ -12,7 +12,7 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 
 
 @Injectable()
-export class AuthGuard implements CanActivate{
+export class AdministratorGuard implements CanActivate{
   userRole;
   ss:any;
   constructor(
@@ -28,7 +28,6 @@ export class AuthGuard implements CanActivate{
   // Protect Route with lowercase c. to restrict whatever page you nedd to extend the CanActivate interface and include the canActivate function. inside the function you put whatever logic you want and return true or false to Authorized access.
    canActivate(){
     if (this.authService.checkLoggedIn()){
-      // console.log("role from authservice: " + this.authService.userRole);
       //  restrict the acces for user and admin
       // if the user is Login check for the role of the user
       this.getRoleOfUser()
@@ -38,18 +37,14 @@ export class AuthGuard implements CanActivate{
       //  get the role of a user from local storage
        const role = localStorage.getItem('role')
        // user access
-       if (role.localeCompare("2") == 0){
-         console.log("El rol del usuario es 2 enviar ahora falso");
+       if (role.localeCompare("1") == 0){
+         console.log("El rol del usuario es 1 enviar ahora true");
          return true;
-       }else if (role.localeCompare("1") == 0) {
+       }else if (role.localeCompare("2") == 0) {
          console.log("el rol es uno")
          // Show a error message
          this.flashMessage.show("Acces Unathorized",{cssClass:'alert-danger',timeout: 5000});
-        //  Wait half and second then set it back to the page they last visited
-        //  setTimeout(function(){
-        //    window.history.back();
-        //  }, 2500);
-
+         window.history.back();
          return false;
        }
 
@@ -95,7 +90,7 @@ export class AuthGuard implements CanActivate{
   showMessageUserNotLoggedIn(){
     // Unathorized Access
     // Show a error message
-    this.flashMessage.show("Unathorized acces. Not login session found. ",{cssClass:'alert-danger',timeout: 5000});
+    this.flashMessage.show("Unathorized acces",{cssClass:'alert-danger',timeout: 5000});
     // redirect to the login page
     // redirect to login
     this.router.navigate(['/login']);

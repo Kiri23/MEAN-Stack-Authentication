@@ -32,6 +32,7 @@ import { AdminRegisterComponent } from './components/admin-register/admin-regist
 import {ValidateService} from './services/validate.service';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
+import {AdministratorGuard} from './guards/administrtor.guard';
 import {UsersService} from './services/users.service';
 import {UtilitiesService} from './services/utilities.service';
 import {AdministratorsService} from './services/administration/administrator.service';
@@ -51,7 +52,7 @@ const appRoutes: Routes = [
   // protect route
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
   // protect route
-  {path:'adminDashboard',component:AdminDashboardComponent,canActivate:[AuthGuard]},
+  {path:'adminDashboard',component:AdminDashboardComponent,canActivate:[AdministratorGuard]},
   {path:'adminUsers',component:AdminUsersComponent,canActivate:[AuthGuard]},
   // I will want this route to be protected only another administrator can create other
   // administrator
@@ -89,8 +90,8 @@ const appRoutes: Routes = [
     FlashMessagesModule,
     NgbModule.forRoot()
   ],
-  providers: [ValidateService,AuthService,AuthGuard,UsersService
-    ,UtilitiesService,AdministratorsService,OrganizationsService
+  providers: [ValidateService,AuthService,AuthGuard,AdministratorGuard,
+    UsersService,UtilitiesService,AdministratorsService,OrganizationsService
   ],
   bootstrap: [AppComponent]
 })

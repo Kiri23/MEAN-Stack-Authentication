@@ -34,11 +34,26 @@ export class LoginComponent implements OnInit {
     //Auth service Make http call to Login user
     this.authService.authenticateUser(user).subscribe(data => {
       if(data.success){
-        // authenticate user with the token
-        this.authService.storeUserData(data.token,data.user.id);
+        console.log("user Role from login component: "+ data.user.role)
+        // authenticate user with the token and store User Data in local storage
+        this.authService.storeUserData(data.token,data.user.id,data.user.role);
         // show message login
         this.flashMessage.show("You are now logged in",{cssClass:'alert-success',timeout: 5000});
-        this.router.navigate(['/dashboard'])
+        // window.location.replace(window.location.hostname + ":3002/dashboard");
+
+        if (this.authService.userRole == 1 ){
+            // Navigate to Admin DashBoard
+            this.router.navigate(['/adminDashboard'])
+        }
+        else {
+          // User DashBoard
+          this.router.navigate(['/dashboard'])
+        }
+        // reload nav Bar component
+        setTimeout(function(){
+          window.location.reload()
+        },1)
+
       }else{ // if user can't log in.
         //data.msg contains user not found or wrong password
         this.flashMessage.show(data.msg,{cssClass:'alert-danger',timeout: 5000});

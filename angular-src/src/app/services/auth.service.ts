@@ -10,6 +10,7 @@ import {tokenNotExpired} from 'angular2-jwt';
 export class AuthService {
   authToken:any;
   user:any;
+  userRole:Number;
   // inject the http module into the constructor. like the service
   constructor(private http:Http) { }
 //
@@ -43,16 +44,22 @@ export class AuthService {
   }
 
   // authenticater user login with the token
-  storeUserData(token,user){
+  storeUserData(token,user,role){
     // when using jwt-token it look for this key exactly id_token. saving token to local storage
     localStorage.setItem('id_token',token)
     // save to local storage user. we need to store as a string because it cant store object. when we need it back we parse it back to json
     // localStorage.setItem('user',JSON.stringify(user))
     localStorage.setItem('user',user)
+    // set localStorage role
+    localStorage.setItem('role',role)
 
     // set values to the variable
     this.authToken = token;
     this.user = user;
+    // cargar underscore verificar si role no es empty y setiar el role. pq
+    // si voy a estar confiando tanto en el role de auth.servoce tengo que asegurarme que nunca
+    // sea nullo pq si no esto puede traer mucho comportamiento inesperado 
+    this.userRole = role;
   }
 
   logout(){
@@ -80,6 +87,10 @@ export class AuthService {
     // Load token from local storage
     const token = localStorage.getItem('id_token');
     this.authToken = token;
+  }
+
+  loadVariables(){
+
   }
 
   // check if there's a user sing in

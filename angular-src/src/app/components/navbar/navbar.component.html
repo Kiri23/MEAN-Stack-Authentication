@@ -17,8 +17,8 @@
    </ul>
 
   <ul class="nav navbar-nav navbar-right">
-    <li *ngIf="authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/adminDashboard']">Admin</a></li>
-    
+    <li *ngIf="authService.checkLoggedIn()&& isAdminRole()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/adminDashboard']">Admin</a></li>
+
     <li *ngIf="authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/dashboard']">Dashboard</a></li>
 
     <li *ngIf="authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/profile']">Profile</a></li>
