@@ -7,6 +7,8 @@ import {RouterModule, Routes} from '@angular/router';
 // External Modules
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FileSelectDirective } from 'ng2-file-upload';
+
 // Components
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -37,6 +39,7 @@ import {UsersService} from './services/users.service';
 import {UtilitiesService} from './services/utilities.service';
 import {AdministratorsService} from './services/administration/administrator.service';
 import {OrganizationsService} from './services/organization/organization.service';
+import { UploadFileComponent } from './components/upload-file/upload-file.component';
 
 
 
@@ -56,7 +59,9 @@ const appRoutes: Routes = [
   {path:'adminUsers',component:AdminUsersComponent,canActivate:[AuthGuard]},
   // I will want this route to be protected only another administrator can create other
   // administrator
-  {path:'register/admin',component:AdminRegisterComponent}
+  {path:'register/admin',component:AdminRegisterComponent},
+  {path:'upload',component:UploadFileComponent}
+
 
 ];
 
@@ -80,7 +85,9 @@ const appRoutes: Routes = [
     ModalComponent,
     AdminUsersComponent,
     TableColumnsComponent,
-    AdminRegisterComponent
+    AdminRegisterComponent,
+    UploadFileComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

@@ -9,14 +9,26 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 
-
 // variables
 const config = require('./config/databse')
+
+const multer  = require('multer')
+// const upload = multer({ dest: 'uploads/' })
+
+const Grid = require('gridfs-stream');
+Grid.mongo = mongoose.mongo;
+var gfs;
+const GridFsStorage = require('multer-gridfs-storage');
+
+
 
 // route files
 const organization = require('./routes/organization');
 const administration = require('./routes/administration');
 const users = require('./routes/users')
+
+// app express
+const app = express();
 
 
 // Connect to Mongodb Database
@@ -26,12 +38,85 @@ mongoose.connect(config.database);
 
 mongoose.connection.on('connected',() => {
   console.log('Connected to Database ' + config.database);
+
 });
+// Parte Nueva Añadida
+mongoose.connection.once('open', () => {
+  gfs = Grid(mongoose.connection.db);
+  app.set('gridfs', gfs);
+});
+
+
+/** Setting up storage using multer-gridfs-storage */
+var storage = GridFsStorage({
+    url: config.database,
+    gfs : gfs,
+    filename: function (req, file, cb) {
+      var options = { year: 'numeric', month: 'long', day: 'numeric',
+      				        hour: 'numeric', minute:'numeric',second:'numeric'
+                    };
+      // verificar si el filename tiene mas de un punto y borrarselor que solo se quede con el
+      // ultimo punto
+      var fileName = file.originalname;
+      var nameOfFile = fileName.split(".")[fileName.split(".").length -2]
+      var typeOfFileName = fileName.split('.')[fileName.split('.').length -1];
+      var datetimestamp = new Date().toLocaleDateString('en-US',options);
+
+      cb(null, nameOfFile + '-' + datetimestamp + '.' + typeOfFileName);
+    },
+    /** With gridfs we can store aditional meta-data along with the file */
+    metadata: function(req, file, cb) {
+        cb(null, { originalname: file.originalname });
+    },
+    root: 'templateFiles' //root name for collection to store files into
+});
+
+var upload = multer({ //multer settings for single upload
+    storage: storage
+}).single('file');
+
+/** API path that will upload the files */
+app.post('/upload', function(req, res) {
+   upload(req,res,function(err){
+       if(err){
+            res.json({error_code:1,err_desc:err});
+            return;
+       }
+        res.json({error_code:0,err_desc:null,file:req.file});
+   });
+});
+
+app.get('/file/:filename', function(req, res){
+    gfs.collection('templateFiles'); //set collection name to lookup into
+
+    /** First check if file exists */
+    gfs.files.find({filename: req.params.filename}).toArray(function(err, files){
+        if(!files || files.length === 0){
+            return res.status(404).json({
+                responseCode: 1,
+                responseMessage: "error"
+            });
+        }
+        /** create read stream */
+        var readstream = gfs.createReadStream({
+            filename: files[0].filename,
+            root: "templateFiles"
+        });
+        /** set the proper content type */
+        res.set('Content-Type', files[0].contentType)
+
+        return readstream.pipe(res);
+    });
+  });
+
+// Fin de la parte Nueva Añadida
+
+
+
+
+
 // Check Mongodb connections
 checkMongooseConnection(mongoose);
-
-// app express
-const app = express();
 
 
 // Port Number
@@ -51,6 +136,19 @@ app.use('/users',users);
 app.use('/organization',organization);
 // route for Administrator
 app.use('/administrator',administration);
+
+// app.post('/image',upload.single('img'), (req,res,next) => {
+//
+//   if (req.file == undefined){
+//     return res.send("Error Req file undefined");
+//   } else if (req.file.length == 0 ){
+//     return res.send("erro. req.file is zero lenght");
+//   }
+//
+//   res.json({
+//     file:req.file
+//   });
+// });
 
 
 // Set Static Folder for when we use Angular an other files - staticfile keyboard shortcut
