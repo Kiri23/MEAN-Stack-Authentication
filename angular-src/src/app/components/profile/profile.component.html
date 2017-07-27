@@ -13,3 +13,13 @@
     </li>
   </ul>
 </div>
+
+<div *ngIf="fileLink" class="">
+  <h2>Template to download
+      <a target="_blank" [href]=fileUrl download (click)="downloadLink()" >Template 1</a>
+  </h2>
+</div>
+
+<div *ngIf="isDownloading" class="">
+  <h2>Downloading Files</h2>
+</div>

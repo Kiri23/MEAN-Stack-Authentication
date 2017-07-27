@@ -43,7 +43,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
 
     // if I want to reload the page when the user logge out. I wan this because the navbar item
-    // doesnt get removed when a new person logged in. 
+    // doesnt get removed when a new person logged in.
     // setTimeout(function(){
     //   window.location.reload();
     // },10)
@@ -52,7 +52,7 @@ export class NavbarComponent implements OnInit {
 
   isAdminRole(){
     // if User Role is administrator(Aka 1) sent true otherwise sent false
-    console.log("User Role from NavBar: " + this.userRole);
+    // console.log("User Role from NavBar: " + this.userRole);
     return this.userRole == 1 ? true:false;
   }
 
@@ -64,7 +64,7 @@ export class NavbarComponent implements OnInit {
     this.userService.getRoleOfUser(userId).subscribe(user => {
       // user send with the response
       this.userRole = user[0].role;
-      console.log("Nav Bar Role: " + this.userRole);
+      // console.log("Nav Bar Role: " + this.userRole);
 
     },
     err => {

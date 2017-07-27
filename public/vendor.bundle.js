@@ -6,9 +6,9 @@ webpackJsonp([4,5],[
 /* WEBPACK VAR INJECTION */(function(global) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__ = __webpack_require__(323);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_merge__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__ = __webpack_require__(338);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_share__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
@@ -6107,7 +6107,7 @@ var SystemJsNgModuleLoader = (function () {
         if (exportName === undefined) {
             exportName = 'default';
         }
-        return __webpack_require__(163)(module)
+        return __webpack_require__(169)(module)
             .then(function (module) { return module[exportName]; })
             .then(function (type) { return checkNotEmpty(type, module, exportName); })
             .then(function (type) { return _this._compiler.compileModuleAsync(type); });
@@ -6123,7 +6123,7 @@ var SystemJsNgModuleLoader = (function () {
             exportName = 'default';
             factoryClassSuffix = '';
         }
-        return __webpack_require__(163)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
+        return __webpack_require__(169)(this._config.factoryPathPrefix + module + this._config.factoryPathSuffix)
             .then(function (module) { return module[exportName + factoryClassSuffix]; })
             .then(function (factory) { return checkNotEmpty(factory, module, exportName); });
     };
@@ -14388,9 +14388,9 @@ function transition$$1(stateChangeExpr, steps) {
 
 "use strict";
 
-var root_1 = __webpack_require__(21);
-var toSubscriber_1 = __webpack_require__(327);
-var observable_1 = __webpack_require__(87);
+var root_1 = __webpack_require__(25);
+var toSubscriber_1 = __webpack_require__(340);
+var observable_1 = __webpack_require__(89);
 /**
  * A representation of any set of values over any amount of time. This the most basic building block
  * of RxJS.
@@ -14615,55 +14615,6 @@ function toComment(sourceMap) {
 /***/ }),
 /* 4 */,
 /* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["e"] = toInteger;
-/* harmony export (immutable) */ __webpack_exports__["a"] = toString;
-/* harmony export (immutable) */ __webpack_exports__["g"] = getValueInRange;
-/* harmony export (immutable) */ __webpack_exports__["h"] = isString;
-/* harmony export (immutable) */ __webpack_exports__["d"] = isNumber;
-/* harmony export (immutable) */ __webpack_exports__["i"] = isInteger;
-/* harmony export (immutable) */ __webpack_exports__["c"] = isDefined;
-/* harmony export (immutable) */ __webpack_exports__["f"] = padNumber;
-/* harmony export (immutable) */ __webpack_exports__["b"] = regExpEscape;
-function toInteger(value) {
-    return parseInt("" + value, 10);
-}
-function toString(value) {
-    return (value !== undefined && value !== null) ? "" + value : '';
-}
-function getValueInRange(value, max, min) {
-    if (min === void 0) { min = 0; }
-    return Math.max(Math.min(value, max), min);
-}
-function isString(value) {
-    return typeof value === 'string';
-}
-function isNumber(value) {
-    return !isNaN(toInteger(value));
-}
-function isInteger(value) {
-    return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
-}
-function isDefined(value) {
-    return value !== undefined && value !== null;
-}
-function padNumber(value) {
-    if (isNumber(value)) {
-        return ("0" + value).slice(-2);
-    }
-    else {
-        return '';
-    }
-}
-function regExpEscape(text) {
-    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
-}
-//# sourceMappingURL=util.js.map
-
-/***/ }),
-/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -18686,6 +18637,55 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["Version"]('4.1.3'
 
 
 /***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["e"] = toInteger;
+/* harmony export (immutable) */ __webpack_exports__["a"] = toString;
+/* harmony export (immutable) */ __webpack_exports__["g"] = getValueInRange;
+/* harmony export (immutable) */ __webpack_exports__["h"] = isString;
+/* harmony export (immutable) */ __webpack_exports__["d"] = isNumber;
+/* harmony export (immutable) */ __webpack_exports__["i"] = isInteger;
+/* harmony export (immutable) */ __webpack_exports__["c"] = isDefined;
+/* harmony export (immutable) */ __webpack_exports__["f"] = padNumber;
+/* harmony export (immutable) */ __webpack_exports__["b"] = regExpEscape;
+function toInteger(value) {
+    return parseInt("" + value, 10);
+}
+function toString(value) {
+    return (value !== undefined && value !== null) ? "" + value : '';
+}
+function getValueInRange(value, max, min) {
+    if (min === void 0) { min = 0; }
+    return Math.max(Math.min(value, max), min);
+}
+function isString(value) {
+    return typeof value === 'string';
+}
+function isNumber(value) {
+    return !isNaN(toInteger(value));
+}
+function isInteger(value) {
+    return typeof value === 'number' && isFinite(value) && Math.floor(value) === value;
+}
+function isDefined(value) {
+    return value !== undefined && value !== null;
+}
+function padNumber(value) {
+    if (isNumber(value)) {
+        return ("0" + value).slice(-2);
+    }
+    else {
+        return '';
+    }
+}
+function regExpEscape(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
+//# sourceMappingURL=util.js.map
+
+/***/ }),
 /* 7 */,
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -18697,10 +18697,10 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isFunction_1 = __webpack_require__(92);
+var isFunction_1 = __webpack_require__(94);
 var Subscription_1 = __webpack_require__(36);
-var Observer_1 = __webpack_require__(154);
-var rxSubscriber_1 = __webpack_require__(88);
+var Observer_1 = __webpack_require__(160);
+var rxSubscriber_1 = __webpack_require__(90);
 /**
  * Implements the {@link Observer} interface and extends the
  * {@link Subscription} class. While the {@link Observer} is the public API for
@@ -18966,11 +18966,11 @@ var SafeSubscriber = (function (_super) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(320);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__(27);
 /* unused harmony export AbstractControlDirective */
@@ -25045,118 +25045,6 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_date__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCalendar; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbCalendarGregorian; });
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-
-
-
-function fromJSDate(jsDate) {
-    return new __WEBPACK_IMPORTED_MODULE_0__ngb_date__["a" /* NgbDate */](jsDate.getFullYear(), jsDate.getMonth() + 1, jsDate.getDate());
-}
-function toJSDate(date) {
-    var jsDate = new Date(date.year, date.month - 1, date.day);
-    // this is done avoid 30 -> 1930 conversion
-    if (!isNaN(jsDate.getTime())) {
-        jsDate.setFullYear(date.year);
-    }
-    return jsDate;
-}
-var NgbCalendar = (function () {
-    function NgbCalendar() {
-    }
-    return NgbCalendar;
-}());
-
-NgbCalendar.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-NgbCalendar.ctorParameters = function () { return []; };
-var NgbCalendarGregorian = (function (_super) {
-    __extends(NgbCalendarGregorian, _super);
-    function NgbCalendarGregorian() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    NgbCalendarGregorian.prototype.getDaysPerWeek = function () { return 7; };
-    NgbCalendarGregorian.prototype.getMonths = function () { return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; };
-    NgbCalendarGregorian.prototype.getWeeksPerMonth = function () { return 6; };
-    NgbCalendarGregorian.prototype.getNext = function (date, period, number) {
-        if (period === void 0) { period = 'd'; }
-        if (number === void 0) { number = 1; }
-        var jsDate = toJSDate(date);
-        switch (period) {
-            case 'y':
-                return new __WEBPACK_IMPORTED_MODULE_0__ngb_date__["a" /* NgbDate */](date.year + number, 1, 1);
-            case 'm':
-                jsDate = new Date(date.year, date.month + number - 1, 1);
-                break;
-            case 'd':
-                jsDate.setDate(jsDate.getDate() + number);
-                break;
-            default:
-                return date;
-        }
-        return fromJSDate(jsDate);
-    };
-    NgbCalendarGregorian.prototype.getPrev = function (date, period, number) {
-        if (period === void 0) { period = 'd'; }
-        if (number === void 0) { number = 1; }
-        return this.getNext(date, period, -number);
-    };
-    NgbCalendarGregorian.prototype.getWeekday = function (date) {
-        var jsDate = toJSDate(date);
-        var day = jsDate.getDay();
-        // in JS Date Sun=0, in ISO 8601 Sun=7
-        return day === 0 ? 7 : day;
-    };
-    NgbCalendarGregorian.prototype.getWeekNumber = function (week, firstDayOfWeek) {
-        // in JS Date Sun=0, in ISO 8601 Sun=7
-        if (firstDayOfWeek === 7) {
-            firstDayOfWeek = 0;
-        }
-        var thursdayIndex = (4 + 7 - firstDayOfWeek) % 7;
-        var date = week[thursdayIndex];
-        var jsDate = toJSDate(date);
-        jsDate.setDate(jsDate.getDate() + 4 - (jsDate.getDay() || 7)); // Thursday
-        var time = jsDate.getTime();
-        jsDate.setMonth(0); // Compare with Jan 1
-        jsDate.setDate(1);
-        return Math.floor(Math.round((time - jsDate.getTime()) / 86400000) / 7) + 1;
-    };
-    NgbCalendarGregorian.prototype.getToday = function () { return fromJSDate(new Date()); };
-    NgbCalendarGregorian.prototype.isValid = function (date) {
-        if (!date || !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["i" /* isInteger */])(date.year) || !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["i" /* isInteger */])(date.month) || !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["i" /* isInteger */])(date.day)) {
-            return false;
-        }
-        var jsDate = toJSDate(date);
-        return !isNaN(jsDate.getTime()) && jsDate.getFullYear() === date.year && jsDate.getMonth() + 1 === date.month &&
-            jsDate.getDate() === date.day;
-    };
-    return NgbCalendarGregorian;
-}(NgbCalendar));
-
-NgbCalendarGregorian.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"] },
-];
-/** @nocollapse */
-NgbCalendarGregorian.ctorParameters = function () { return []; };
-//# sourceMappingURL=ngb-calendar.js.map
-
-/***/ }),
-/* 15 */,
-/* 16 */,
-/* 17 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__(2);
@@ -27383,132 +27271,161 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["Version"]('4.1.3'
 
 
 /***/ }),
-/* 18 */
+/* 15 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDate; });
-var NgbDate = (function () {
-    function NgbDate(year, month, day) {
-        this.year = year;
-        this.month = month;
-        this.day = day;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_date__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(6);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCalendar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbCalendarGregorian; });
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+
+function fromJSDate(jsDate) {
+    return new __WEBPACK_IMPORTED_MODULE_0__ngb_date__["a" /* NgbDate */](jsDate.getFullYear(), jsDate.getMonth() + 1, jsDate.getDate());
+}
+function toJSDate(date) {
+    var jsDate = new Date(date.year, date.month - 1, date.day);
+    // this is done avoid 30 -> 1930 conversion
+    if (!isNaN(jsDate.getTime())) {
+        jsDate.setFullYear(date.year);
     }
-    NgbDate.from = function (date) {
-        return date ? new NgbDate(date.year, date.month, date.day ? date.day : 1) : null;
-    };
-    NgbDate.prototype.equals = function (other) {
-        return other && this.year === other.year && this.month === other.month && this.day === other.day;
-    };
-    NgbDate.prototype.before = function (other) {
-        if (!other) {
-            return false;
-        }
-        if (this.year === other.year) {
-            if (this.month === other.month) {
-                return this.day === other.day ? false : this.day < other.day;
-            }
-            else {
-                return this.month < other.month;
-            }
-        }
-        else {
-            return this.year < other.year;
-        }
-    };
-    NgbDate.prototype.after = function (other) {
-        if (!other) {
-            return false;
-        }
-        if (this.year === other.year) {
-            if (this.month === other.month) {
-                return this.day === other.day ? false : this.day > other.day;
-            }
-            else {
-                return this.month > other.month;
-            }
-        }
-        else {
-            return this.year > other.year;
-        }
-    };
-    NgbDate.prototype.toString = function () { return this.year + "-" + this.month + "-" + this.day; };
-    return NgbDate;
+    return jsDate;
+}
+var NgbCalendar = (function () {
+    function NgbCalendar() {
+    }
+    return NgbCalendar;
 }());
 
-//# sourceMappingURL=ngb-date.js.map
-
-/***/ }),
-/* 19 */,
-/* 20 */,
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(global) {
-// CommonJS / Node have global context exposed as "global" variable.
-// We don't want to include the whole node.d.ts this this compilation unit so we'll just fake
-// the global "global" var for now.
-var __window = typeof window !== 'undefined' && window;
-var __self = typeof self !== 'undefined' && typeof WorkerGlobalScope !== 'undefined' &&
-    self instanceof WorkerGlobalScope && self;
-var __global = typeof global !== 'undefined' && global;
-var _root = __window || __global || __self;
-exports.root = _root;
-// Workaround Closure Compiler restriction: The body of a goog.module cannot use throw.
-// This is needed when used with angular/tsickle which inserts a goog.module statement.
-// Wrap in IIFE
-(function () {
-    if (!_root) {
-        throw new Error('RxJS could not find any global context (window, self, global)');
+NgbCalendar.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+NgbCalendar.ctorParameters = function () { return []; };
+var NgbCalendarGregorian = (function (_super) {
+    __extends(NgbCalendarGregorian, _super);
+    function NgbCalendarGregorian() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-})();
-//# sourceMappingURL=root.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46)))
+    NgbCalendarGregorian.prototype.getDaysPerWeek = function () { return 7; };
+    NgbCalendarGregorian.prototype.getMonths = function () { return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]; };
+    NgbCalendarGregorian.prototype.getWeeksPerMonth = function () { return 6; };
+    NgbCalendarGregorian.prototype.getNext = function (date, period, number) {
+        if (period === void 0) { period = 'd'; }
+        if (number === void 0) { number = 1; }
+        var jsDate = toJSDate(date);
+        switch (period) {
+            case 'y':
+                return new __WEBPACK_IMPORTED_MODULE_0__ngb_date__["a" /* NgbDate */](date.year + number, 1, 1);
+            case 'm':
+                jsDate = new Date(date.year, date.month + number - 1, 1);
+                break;
+            case 'd':
+                jsDate.setDate(jsDate.getDate() + number);
+                break;
+            default:
+                return date;
+        }
+        return fromJSDate(jsDate);
+    };
+    NgbCalendarGregorian.prototype.getPrev = function (date, period, number) {
+        if (period === void 0) { period = 'd'; }
+        if (number === void 0) { number = 1; }
+        return this.getNext(date, period, -number);
+    };
+    NgbCalendarGregorian.prototype.getWeekday = function (date) {
+        var jsDate = toJSDate(date);
+        var day = jsDate.getDay();
+        // in JS Date Sun=0, in ISO 8601 Sun=7
+        return day === 0 ? 7 : day;
+    };
+    NgbCalendarGregorian.prototype.getWeekNumber = function (week, firstDayOfWeek) {
+        // in JS Date Sun=0, in ISO 8601 Sun=7
+        if (firstDayOfWeek === 7) {
+            firstDayOfWeek = 0;
+        }
+        var thursdayIndex = (4 + 7 - firstDayOfWeek) % 7;
+        var date = week[thursdayIndex];
+        var jsDate = toJSDate(date);
+        jsDate.setDate(jsDate.getDate() + 4 - (jsDate.getDay() || 7)); // Thursday
+        var time = jsDate.getTime();
+        jsDate.setMonth(0); // Compare with Jan 1
+        jsDate.setDate(1);
+        return Math.floor(Math.round((time - jsDate.getTime()) / 86400000) / 7) + 1;
+    };
+    NgbCalendarGregorian.prototype.getToday = function () { return fromJSDate(new Date()); };
+    NgbCalendarGregorian.prototype.isValid = function (date) {
+        if (!date || !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["i" /* isInteger */])(date.year) || !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["i" /* isInteger */])(date.month) || !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2__util_util__["i" /* isInteger */])(date.day)) {
+            return false;
+        }
+        var jsDate = toJSDate(date);
+        return !isNaN(jsDate.getTime()) && jsDate.getFullYear() === date.year && jsDate.getMonth() + 1 === date.month &&
+            jsDate.getDate() === date.day;
+    };
+    return NgbCalendarGregorian;
+}(NgbCalendar));
+
+NgbCalendarGregorian.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"] },
+];
+/** @nocollapse */
+NgbCalendarGregorian.ctorParameters = function () { return []; };
+//# sourceMappingURL=ngb-calendar.js.map
 
 /***/ }),
-/* 22 */
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__ = __webpack_require__(305);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_Subject__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from__ = __webpack_require__(321);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_from__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_observable_of__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__ = __webpack_require__(314);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__ = __webpack_require__(327);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_rxjs_operator_concatMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every__ = __webpack_require__(329);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_every__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first__ = __webpack_require__(331);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_operator_first__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__ = __webpack_require__(83);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__ = __webpack_require__(85);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__ = __webpack_require__(85);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__ = __webpack_require__(87);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_rxjs_operator_mergeMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce__ = __webpack_require__(337);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_rxjs_operator_reduce__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Observable__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__ = __webpack_require__(325);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_rxjs_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll__ = __webpack_require__(326);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14_rxjs_operator_concatAll__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError__ = __webpack_require__(89);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError__ = __webpack_require__(91);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_15_rxjs_util_EmptyError__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16_rxjs_observable_fromPromise__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last__ = __webpack_require__(332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17_rxjs_operator_last__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_18_rxjs_operator_mergeAll__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_platform_browser__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__ = __webpack_require__(330);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_rxjs_operator_filter__);
 /* unused harmony export RouterLink */
 /* unused harmony export RouterLinkWithHref */
@@ -33638,7 +33555,105 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.1.3'
 
 
 /***/ }),
-/* 23 */
+/* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDate; });
+var NgbDate = (function () {
+    function NgbDate(year, month, day) {
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }
+    NgbDate.from = function (date) {
+        return date ? new NgbDate(date.year, date.month, date.day ? date.day : 1) : null;
+    };
+    NgbDate.prototype.equals = function (other) {
+        return other && this.year === other.year && this.month === other.month && this.day === other.day;
+    };
+    NgbDate.prototype.before = function (other) {
+        if (!other) {
+            return false;
+        }
+        if (this.year === other.year) {
+            if (this.month === other.month) {
+                return this.day === other.day ? false : this.day < other.day;
+            }
+            else {
+                return this.month < other.month;
+            }
+        }
+        else {
+            return this.year < other.year;
+        }
+    };
+    NgbDate.prototype.after = function (other) {
+        if (!other) {
+            return false;
+        }
+        if (this.year === other.year) {
+            if (this.month === other.month) {
+                return this.day === other.day ? false : this.day > other.day;
+            }
+            else {
+                return this.month > other.month;
+            }
+        }
+        else {
+            return this.year > other.year;
+        }
+    };
+    NgbDate.prototype.toString = function () { return this.year + "-" + this.month + "-" + this.day; };
+    return NgbDate;
+}());
+
+//# sourceMappingURL=ngb-date.js.map
+
+/***/ }),
+/* 21 */,
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__(206));
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+/* 23 */,
+/* 24 */,
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {
+// CommonJS / Node have global context exposed as "global" variable.
+// We don't want to include the whole node.d.ts this this compilation unit so we'll just fake
+// the global "global" var for now.
+var __window = typeof window !== 'undefined' && window;
+var __self = typeof self !== 'undefined' && typeof WorkerGlobalScope !== 'undefined' &&
+    self instanceof WorkerGlobalScope && self;
+var __global = typeof global !== 'undefined' && global;
+var _root = __window || __global || __self;
+exports.root = _root;
+// Workaround Closure Compiler restriction: The body of a goog.module cannot use throw.
+// This is needed when used with angular/tsickle which inserts a goog.module statement.
+// Wrap in IIFE
+(function () {
+    if (!_root) {
+        throw new Error('RxJS could not find any global context (window, self, global)');
+    }
+})();
+//# sourceMappingURL=root.js.map
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(46)))
+
+/***/ }),
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33691,26 +33706,11 @@ NgbDatepickerI18nDefault.ctorParameters = function () { return []; };
 //# sourceMappingURL=datepicker-i18n.js.map
 
 /***/ }),
-/* 24 */,
-/* 25 */,
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-Object.defineProperty(exports, "__esModule", { value: true });
-__export(__webpack_require__(198));
-//# sourceMappingURL=index.js.map
-
-/***/ }),
 /* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BrowserModule; });
 /* unused harmony export platformBrowser */
@@ -33725,10 +33725,10 @@ __export(__webpack_require__(198));
 /* unused harmony export EventManager */
 /* unused harmony export HAMMER_GESTURE_CONFIG */
 /* unused harmony export HammerGestureConfig */
-/* unused harmony export DomSanitizer */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return DomSanitizer; });
 /* unused harmony export VERSION */
 /* unused harmony export ɵBROWSER_SANITIZATION_PROVIDERS */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return INTERNAL_BROWSER_PLATFORM_PROVIDERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return INTERNAL_BROWSER_PLATFORM_PROVIDERS; });
 /* unused harmony export ɵinitDomAdapter */
 /* unused harmony export ɵBrowserDomAdapter */
 /* unused harmony export ɵsetValueOnPath */
@@ -38331,9 +38331,9 @@ var __extends = (this && this.__extends) || function (d, b) {
 var Observable_1 = __webpack_require__(2);
 var Subscriber_1 = __webpack_require__(8);
 var Subscription_1 = __webpack_require__(36);
-var ObjectUnsubscribedError_1 = __webpack_require__(157);
-var SubjectSubscription_1 = __webpack_require__(295);
-var rxSubscriber_1 = __webpack_require__(88);
+var ObjectUnsubscribedError_1 = __webpack_require__(163);
+var SubjectSubscription_1 = __webpack_require__(308);
+var rxSubscriber_1 = __webpack_require__(90);
 /**
  * @class SubjectSubscriber<T>
  */
@@ -38497,12 +38497,12 @@ exports.AnonymousSubject = AnonymousSubject;
 
 "use strict";
 
-var isArray_1 = __webpack_require__(91);
-var isObject_1 = __webpack_require__(159);
-var isFunction_1 = __webpack_require__(92);
-var tryCatch_1 = __webpack_require__(162);
-var errorObject_1 = __webpack_require__(90);
-var UnsubscriptionError_1 = __webpack_require__(326);
+var isArray_1 = __webpack_require__(93);
+var isObject_1 = __webpack_require__(165);
+var isFunction_1 = __webpack_require__(94);
+var tryCatch_1 = __webpack_require__(168);
+var errorObject_1 = __webpack_require__(92);
+var UnsubscriptionError_1 = __webpack_require__(339);
 /**
  * Represents a disposable resource, such as the execution of an Observable. A
  * Subscription has one important method, `unsubscribe`, that takes no argument
@@ -38696,14 +38696,14 @@ function flattenUnsubscriptionErrors(errors) {
 
 "use strict";
 
-var root_1 = __webpack_require__(21);
-var isArrayLike_1 = __webpack_require__(158);
-var isPromise_1 = __webpack_require__(160);
-var isObject_1 = __webpack_require__(159);
+var root_1 = __webpack_require__(25);
+var isArrayLike_1 = __webpack_require__(164);
+var isPromise_1 = __webpack_require__(166);
+var isObject_1 = __webpack_require__(165);
 var Observable_1 = __webpack_require__(2);
-var iterator_1 = __webpack_require__(86);
-var InnerSubscriber_1 = __webpack_require__(293);
-var observable_1 = __webpack_require__(87);
+var iterator_1 = __webpack_require__(88);
+var InnerSubscriber_1 = __webpack_require__(306);
+var observable_1 = __webpack_require__(89);
 function subscribeToResult(outerSubscriber, result, outerValue, outerIndex) {
     var destination = new InnerSubscriber_1.InnerSubscriber(outerSubscriber, outerValue, outerIndex);
     if (destination.closed) {
@@ -38929,7 +38929,7 @@ function positionElements(hostElement, targetElement, placement, appendToBody) {
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var map_1 = __webpack_require__(83);
+var map_1 = __webpack_require__(85);
 Observable_1.Observable.prototype.map = map_1.map;
 //# sourceMappingURL=map.js.map
 
@@ -39083,13 +39083,13 @@ NgbDatepickerConfig.ctorParameters = function () { return []; };
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngb_calendar__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_date__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datepicker_service__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__datepicker_view_model__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngb_calendar__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_date__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datepicker_service__ = __webpack_require__(111);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__datepicker_view_model__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__util_util__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_config__ = __webpack_require__(50);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__ = __webpack_require__(26);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepicker; });
 
 
@@ -39293,7 +39293,7 @@ NgbDatepicker.propDecorators = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_util__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDateParserFormatter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return NgbDateISOParserFormatter; });
 var __extends = (this && this.__extends) || function (d, b) {
@@ -39617,7 +39617,7 @@ NgbTypeaheadConfig.ctorParameters = function () { return []; };
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTypeaheadWindow; });
 
 
@@ -39741,15 +39741,461 @@ exports.FlashMessagesService = FlashMessagesService;
 
 "use strict";
 
+function isElement(node) {
+    return !!(node && (node.nodeName || node.prop && node.attr && node.find));
+}
+var FileLikeObject = (function () {
+    function FileLikeObject(fileOrInput) {
+        var isInput = isElement(fileOrInput);
+        var fakePathOrObject = isInput ? fileOrInput.value : fileOrInput;
+        var postfix = typeof fakePathOrObject === 'string' ? 'FakePath' : 'Object';
+        var method = '_createFrom' + postfix;
+        this[method](fakePathOrObject);
+    }
+    FileLikeObject.prototype._createFromFakePath = function (path) {
+        this.lastModifiedDate = void 0;
+        this.size = void 0;
+        this.type = 'like/' + path.slice(path.lastIndexOf('.') + 1).toLowerCase();
+        this.name = path.slice(path.lastIndexOf('/') + path.lastIndexOf('\\') + 2);
+    };
+    FileLikeObject.prototype._createFromObject = function (object) {
+        // this.lastModifiedDate = copy(object.lastModifiedDate);
+        this.size = object.size;
+        this.type = object.type;
+        this.name = object.name;
+    };
+    return FileLikeObject;
+}());
+exports.FileLikeObject = FileLikeObject;
+
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var file_like_object_class_1 = __webpack_require__(80);
+var file_item_class_1 = __webpack_require__(157);
+var file_type_class_1 = __webpack_require__(281);
+function isFile(value) {
+    return (File && value instanceof File);
+}
+var FileUploader = (function () {
+    function FileUploader(options) {
+        this.isUploading = false;
+        this.queue = [];
+        this.progress = 0;
+        this._nextIndex = 0;
+        this.options = {
+            autoUpload: false,
+            isHTML5: true,
+            filters: [],
+            removeAfterUpload: false,
+            disableMultipart: false
+        };
+        this.setOptions(options);
+    }
+    FileUploader.prototype.setOptions = function (options) {
+        this.options = Object.assign(this.options, options);
+        this.authToken = options.authToken;
+        this.authTokenHeader = options.authTokenHeader || 'Authorization';
+        this.autoUpload = options.autoUpload;
+        this.options.filters.unshift({ name: 'queueLimit', fn: this._queueLimitFilter });
+        if (this.options.maxFileSize) {
+            this.options.filters.unshift({ name: 'fileSize', fn: this._fileSizeFilter });
+        }
+        if (this.options.allowedFileType) {
+            this.options.filters.unshift({ name: 'fileType', fn: this._fileTypeFilter });
+        }
+        if (this.options.allowedMimeType) {
+            this.options.filters.unshift({ name: 'mimeType', fn: this._mimeTypeFilter });
+        }
+        for (var i = 0; i < this.queue.length; i++) {
+            this.queue[i].url = this.options.url;
+        }
+        // this.options.filters.unshift({name: 'folder', fn: this._folderFilter});
+    };
+    FileUploader.prototype.addToQueue = function (files, options, filters) {
+        var _this = this;
+        var list = [];
+        for (var _i = 0, files_1 = files; _i < files_1.length; _i++) {
+            var file = files_1[_i];
+            list.push(file);
+        }
+        var arrayOfFilters = this._getFilters(filters);
+        var count = this.queue.length;
+        var addedFileItems = [];
+        list.map(function (some) {
+            if (!options) {
+                options = _this.options;
+            }
+            var temp = new file_like_object_class_1.FileLikeObject(some);
+            if (_this._isValidFile(temp, arrayOfFilters, options)) {
+                var fileItem = new file_item_class_1.FileItem(_this, some, options);
+                addedFileItems.push(fileItem);
+                _this.queue.push(fileItem);
+                _this._onAfterAddingFile(fileItem);
+            }
+            else {
+                var filter = arrayOfFilters[_this._failFilterIndex];
+                _this._onWhenAddingFileFailed(temp, filter, options);
+            }
+        });
+        if (this.queue.length !== count) {
+            this._onAfterAddingAll(addedFileItems);
+            this.progress = this._getTotalProgress();
+        }
+        this._render();
+        if (this.options.autoUpload) {
+            this.uploadAll();
+        }
+    };
+    FileUploader.prototype.removeFromQueue = function (value) {
+        var index = this.getIndexOfItem(value);
+        var item = this.queue[index];
+        if (item.isUploading) {
+            item.cancel();
+        }
+        this.queue.splice(index, 1);
+        this.progress = this._getTotalProgress();
+    };
+    FileUploader.prototype.clearQueue = function () {
+        while (this.queue.length) {
+            this.queue[0].remove();
+        }
+        this.progress = 0;
+    };
+    FileUploader.prototype.uploadItem = function (value) {
+        var index = this.getIndexOfItem(value);
+        var item = this.queue[index];
+        var transport = this.options.isHTML5 ? '_xhrTransport' : '_iframeTransport';
+        item._prepareToUploading();
+        if (this.isUploading) {
+            return;
+        }
+        this.isUploading = true;
+        this[transport](item);
+    };
+    FileUploader.prototype.cancelItem = function (value) {
+        var index = this.getIndexOfItem(value);
+        var item = this.queue[index];
+        var prop = this.options.isHTML5 ? item._xhr : item._form;
+        if (item && item.isUploading) {
+            prop.abort();
+        }
+    };
+    FileUploader.prototype.uploadAll = function () {
+        var items = this.getNotUploadedItems().filter(function (item) { return !item.isUploading; });
+        if (!items.length) {
+            return;
+        }
+        items.map(function (item) { return item._prepareToUploading(); });
+        items[0].upload();
+    };
+    FileUploader.prototype.cancelAll = function () {
+        var items = this.getNotUploadedItems();
+        items.map(function (item) { return item.cancel(); });
+    };
+    FileUploader.prototype.isFile = function (value) {
+        return isFile(value);
+    };
+    FileUploader.prototype.isFileLikeObject = function (value) {
+        return value instanceof file_like_object_class_1.FileLikeObject;
+    };
+    FileUploader.prototype.getIndexOfItem = function (value) {
+        return typeof value === 'number' ? value : this.queue.indexOf(value);
+    };
+    FileUploader.prototype.getNotUploadedItems = function () {
+        return this.queue.filter(function (item) { return !item.isUploaded; });
+    };
+    FileUploader.prototype.getReadyItems = function () {
+        return this.queue
+            .filter(function (item) { return (item.isReady && !item.isUploading); })
+            .sort(function (item1, item2) { return item1.index - item2.index; });
+    };
+    FileUploader.prototype.destroy = function () {
+        return void 0;
+        /*forEach(this._directives, (key) => {
+         forEach(this._directives[key], (object) => {
+         object.destroy();
+         });
+         });*/
+    };
+    FileUploader.prototype.onAfterAddingAll = function (fileItems) {
+        return { fileItems: fileItems };
+    };
+    FileUploader.prototype.onBuildItemForm = function (fileItem, form) {
+        return { fileItem: fileItem, form: form };
+    };
+    FileUploader.prototype.onAfterAddingFile = function (fileItem) {
+        return { fileItem: fileItem };
+    };
+    FileUploader.prototype.onWhenAddingFileFailed = function (item, filter, options) {
+        return { item: item, filter: filter, options: options };
+    };
+    FileUploader.prototype.onBeforeUploadItem = function (fileItem) {
+        return { fileItem: fileItem };
+    };
+    FileUploader.prototype.onProgressItem = function (fileItem, progress) {
+        return { fileItem: fileItem, progress: progress };
+    };
+    FileUploader.prototype.onProgressAll = function (progress) {
+        return { progress: progress };
+    };
+    FileUploader.prototype.onSuccessItem = function (item, response, status, headers) {
+        return { item: item, response: response, status: status, headers: headers };
+    };
+    FileUploader.prototype.onErrorItem = function (item, response, status, headers) {
+        return { item: item, response: response, status: status, headers: headers };
+    };
+    FileUploader.prototype.onCancelItem = function (item, response, status, headers) {
+        return { item: item, response: response, status: status, headers: headers };
+    };
+    FileUploader.prototype.onCompleteItem = function (item, response, status, headers) {
+        return { item: item, response: response, status: status, headers: headers };
+    };
+    FileUploader.prototype.onCompleteAll = function () {
+        return void 0;
+    };
+    FileUploader.prototype._mimeTypeFilter = function (item) {
+        return !(this.options.allowedMimeType && this.options.allowedMimeType.indexOf(item.type) === -1);
+    };
+    FileUploader.prototype._fileSizeFilter = function (item) {
+        return !(this.options.maxFileSize && item.size > this.options.maxFileSize);
+    };
+    FileUploader.prototype._fileTypeFilter = function (item) {
+        return !(this.options.allowedFileType &&
+            this.options.allowedFileType.indexOf(file_type_class_1.FileType.getMimeClass(item)) === -1);
+    };
+    FileUploader.prototype._onErrorItem = function (item, response, status, headers) {
+        item._onError(response, status, headers);
+        this.onErrorItem(item, response, status, headers);
+    };
+    FileUploader.prototype._onCompleteItem = function (item, response, status, headers) {
+        item._onComplete(response, status, headers);
+        this.onCompleteItem(item, response, status, headers);
+        var nextItem = this.getReadyItems()[0];
+        this.isUploading = false;
+        if (nextItem) {
+            nextItem.upload();
+            return;
+        }
+        this.onCompleteAll();
+        this.progress = this._getTotalProgress();
+        this._render();
+    };
+    FileUploader.prototype._headersGetter = function (parsedHeaders) {
+        return function (name) {
+            if (name) {
+                return parsedHeaders[name.toLowerCase()] || void 0;
+            }
+            return parsedHeaders;
+        };
+    };
+    FileUploader.prototype._xhrTransport = function (item) {
+        var _this = this;
+        var xhr = item._xhr = new XMLHttpRequest();
+        var sendable;
+        this._onBeforeUploadItem(item);
+        // todo
+        /*item.formData.map(obj => {
+         obj.map((value, key) => {
+         form.append(key, value);
+         });
+         });*/
+        if (typeof item._file.size !== 'number') {
+            throw new TypeError('The file specified is no longer valid');
+        }
+        if (!this.options.disableMultipart) {
+            sendable = new FormData();
+            this._onBuildItemForm(item, sendable);
+            sendable.append(item.alias, item._file, item.file.name);
+            if (this.options.additionalParameter !== undefined) {
+                Object.keys(this.options.additionalParameter).forEach(function (key) {
+                    sendable.append(key, _this.options.additionalParameter[key]);
+                });
+            }
+        }
+        else {
+            sendable = item._file;
+        }
+        xhr.upload.onprogress = function (event) {
+            var progress = Math.round(event.lengthComputable ? event.loaded * 100 / event.total : 0);
+            _this._onProgressItem(item, progress);
+        };
+        xhr.onload = function () {
+            var headers = _this._parseHeaders(xhr.getAllResponseHeaders());
+            var response = _this._transformResponse(xhr.response, headers);
+            var gist = _this._isSuccessCode(xhr.status) ? 'Success' : 'Error';
+            var method = '_on' + gist + 'Item';
+            _this[method](item, response, xhr.status, headers);
+            _this._onCompleteItem(item, response, xhr.status, headers);
+        };
+        xhr.onerror = function () {
+            var headers = _this._parseHeaders(xhr.getAllResponseHeaders());
+            var response = _this._transformResponse(xhr.response, headers);
+            _this._onErrorItem(item, response, xhr.status, headers);
+            _this._onCompleteItem(item, response, xhr.status, headers);
+        };
+        xhr.onabort = function () {
+            var headers = _this._parseHeaders(xhr.getAllResponseHeaders());
+            var response = _this._transformResponse(xhr.response, headers);
+            _this._onCancelItem(item, response, xhr.status, headers);
+            _this._onCompleteItem(item, response, xhr.status, headers);
+        };
+        xhr.open(item.method, item.url, true);
+        xhr.withCredentials = item.withCredentials;
+        if (this.options.headers) {
+            for (var _i = 0, _a = this.options.headers; _i < _a.length; _i++) {
+                var header = _a[_i];
+                xhr.setRequestHeader(header.name, header.value);
+            }
+        }
+        if (item.headers.length) {
+            for (var _b = 0, _c = item.headers; _b < _c.length; _b++) {
+                var header = _c[_b];
+                xhr.setRequestHeader(header.name, header.value);
+            }
+        }
+        if (this.authToken) {
+            xhr.setRequestHeader(this.authTokenHeader, this.authToken);
+        }
+        xhr.send(sendable);
+        this._render();
+    };
+    FileUploader.prototype._getTotalProgress = function (value) {
+        if (value === void 0) { value = 0; }
+        if (this.options.removeAfterUpload) {
+            return value;
+        }
+        var notUploaded = this.getNotUploadedItems().length;
+        var uploaded = notUploaded ? this.queue.length - notUploaded : this.queue.length;
+        var ratio = 100 / this.queue.length;
+        var current = value * ratio / 100;
+        return Math.round(uploaded * ratio + current);
+    };
+    FileUploader.prototype._getFilters = function (filters) {
+        if (!filters) {
+            return this.options.filters;
+        }
+        if (Array.isArray(filters)) {
+            return filters;
+        }
+        if (typeof filters === 'string') {
+            var names_1 = filters.match(/[^\s,]+/g);
+            return this.options.filters
+                .filter(function (filter) { return names_1.indexOf(filter.name) !== -1; });
+        }
+        return this.options.filters;
+    };
+    FileUploader.prototype._render = function () {
+        return void 0;
+        // todo: ?
+    };
+    // protected _folderFilter(item:FileItem):boolean {
+    //   return !!(item.size || item.type);
+    // }
+    FileUploader.prototype._queueLimitFilter = function () {
+        return this.options.queueLimit === undefined || this.queue.length < this.options.queueLimit;
+    };
+    FileUploader.prototype._isValidFile = function (file, filters, options) {
+        var _this = this;
+        this._failFilterIndex = -1;
+        return !filters.length ? true : filters.every(function (filter) {
+            _this._failFilterIndex++;
+            return filter.fn.call(_this, file, options);
+        });
+    };
+    FileUploader.prototype._isSuccessCode = function (status) {
+        return (status >= 200 && status < 300) || status === 304;
+    };
+    /* tslint:disable */
+    FileUploader.prototype._transformResponse = function (response, headers) {
+        // todo: ?
+        /*var headersGetter = this._headersGetter(headers);
+         forEach($http.defaults.transformResponse, (transformFn) => {
+         response = transformFn(response, headersGetter);
+         });*/
+        return response;
+    };
+    /* tslint:enable */
+    FileUploader.prototype._parseHeaders = function (headers) {
+        var parsed = {};
+        var key;
+        var val;
+        var i;
+        if (!headers) {
+            return parsed;
+        }
+        headers.split('\n').map(function (line) {
+            i = line.indexOf(':');
+            key = line.slice(0, i).trim().toLowerCase();
+            val = line.slice(i + 1).trim();
+            if (key) {
+                parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
+            }
+        });
+        return parsed;
+    };
+    /*protected _iframeTransport(item:FileItem) {
+     // todo: implement it later
+     }*/
+    FileUploader.prototype._onWhenAddingFileFailed = function (item, filter, options) {
+        this.onWhenAddingFileFailed(item, filter, options);
+    };
+    FileUploader.prototype._onAfterAddingFile = function (item) {
+        this.onAfterAddingFile(item);
+    };
+    FileUploader.prototype._onAfterAddingAll = function (items) {
+        this.onAfterAddingAll(items);
+    };
+    FileUploader.prototype._onBeforeUploadItem = function (item) {
+        item._onBeforeUpload();
+        this.onBeforeUploadItem(item);
+    };
+    FileUploader.prototype._onBuildItemForm = function (item, form) {
+        item._onBuildForm(form);
+        this.onBuildItemForm(item, form);
+    };
+    FileUploader.prototype._onProgressItem = function (item, progress) {
+        var total = this._getTotalProgress(progress);
+        this.progress = total;
+        item._onProgress(progress);
+        this.onProgressItem(item, progress);
+        this.onProgressAll(total);
+        this._render();
+    };
+    /* tslint:disable */
+    FileUploader.prototype._onSuccessItem = function (item, response, status, headers) {
+        item._onSuccess(response, status, headers);
+        this.onSuccessItem(item, response, status, headers);
+    };
+    /* tslint:enable */
+    FileUploader.prototype._onCancelItem = function (item, response, status, headers) {
+        item._onCancel(response, status, headers);
+        this.onCancelItem(item, response, status, headers);
+    };
+    return FileUploader;
+}());
+exports.FileUploader = FileUploader;
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(2);
-var ScalarObservable_1 = __webpack_require__(156);
-var EmptyObservable_1 = __webpack_require__(81);
-var isScheduler_1 = __webpack_require__(161);
+var ScalarObservable_1 = __webpack_require__(162);
+var EmptyObservable_1 = __webpack_require__(83);
+var isScheduler_1 = __webpack_require__(167);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -39864,7 +40310,7 @@ exports.ArrayObservable = ArrayObservable;
 //# sourceMappingURL=ArrayObservable.js.map
 
 /***/ }),
-/* 81 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39951,17 +40397,17 @@ exports.EmptyObservable = EmptyObservable;
 //# sourceMappingURL=EmptyObservable.js.map
 
 /***/ }),
-/* 82 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var PromiseObservable_1 = __webpack_require__(155);
+var PromiseObservable_1 = __webpack_require__(161);
 exports.fromPromise = PromiseObservable_1.PromiseObservable.create;
 //# sourceMappingURL=fromPromise.js.map
 
 /***/ }),
-/* 83 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40054,7 +40500,7 @@ var MapSubscriber = (function (_super) {
 //# sourceMappingURL=map.js.map
 
 /***/ }),
-/* 84 */
+/* 86 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40171,7 +40617,7 @@ exports.MergeAllSubscriber = MergeAllSubscriber;
 //# sourceMappingURL=mergeAll.js.map
 
 /***/ }),
-/* 85 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40348,12 +40794,12 @@ exports.MergeMapSubscriber = MergeMapSubscriber;
 //# sourceMappingURL=mergeMap.js.map
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var root_1 = __webpack_require__(21);
+var root_1 = __webpack_require__(25);
 function symbolIteratorPonyfill(root) {
     var Symbol = root.Symbol;
     if (typeof Symbol === 'function') {
@@ -40392,12 +40838,12 @@ exports.$$iterator = exports.iterator;
 //# sourceMappingURL=iterator.js.map
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var root_1 = __webpack_require__(21);
+var root_1 = __webpack_require__(25);
 function getSymbolObservable(context) {
     var $$observable;
     var Symbol = context.Symbol;
@@ -40424,12 +40870,12 @@ exports.$$observable = exports.observable;
 //# sourceMappingURL=observable.js.map
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var root_1 = __webpack_require__(21);
+var root_1 = __webpack_require__(25);
 var Symbol = root_1.root.Symbol;
 exports.rxSubscriber = (typeof Symbol === 'function' && typeof Symbol.for === 'function') ?
     Symbol.for('rxSubscriber') : '@@rxSubscriber';
@@ -40440,7 +40886,7 @@ exports.$$rxSubscriber = exports.rxSubscriber;
 //# sourceMappingURL=rxSubscriber.js.map
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40474,7 +40920,7 @@ exports.EmptyError = EmptyError;
 //# sourceMappingURL=EmptyError.js.map
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40484,7 +40930,7 @@ exports.errorObject = { e: {} };
 //# sourceMappingURL=errorObject.js.map
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40493,7 +40939,7 @@ exports.isArray = Array.isArray || (function (x) { return x && typeof x.length =
 //# sourceMappingURL=isArray.js.map
 
 /***/ }),
-/* 92 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40505,7 +40951,7 @@ exports.isFunction = isFunction;
 //# sourceMappingURL=isFunction.js.map
 
 /***/ }),
-/* 93 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscore.js 1.8.3
@@ -42060,12 +42506,12 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;//     Underscor
 
 
 /***/ }),
-/* 94 */
+/* 96 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion_config__ = __webpack_require__(47);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return NgbPanelTitle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return NgbPanelContent; });
@@ -42248,13 +42694,13 @@ NgbAccordion.propDecorators = {
 //# sourceMappingURL=accordion.js.map
 
 /***/ }),
-/* 95 */
+/* 97 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__accordion__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accordion_config__ = __webpack_require__(47);
 /* unused harmony reexport NgbAccordion */
 /* unused harmony reexport NgbPanel */
@@ -42284,7 +42730,7 @@ NgbAccordionModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=accordion.module.js.map
 
 /***/ }),
-/* 96 */
+/* 98 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42328,13 +42774,13 @@ NgbAlert.propDecorators = {
 //# sourceMappingURL=alert.js.map
 
 /***/ }),
-/* 97 */
+/* 99 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert__ = __webpack_require__(96);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert__ = __webpack_require__(98);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__alert_config__ = __webpack_require__(48);
 /* unused harmony reexport NgbAlert */
 /* unused harmony reexport NgbAlertConfig */
@@ -42360,7 +42806,7 @@ NgbAlertModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=alert.module.js.map
 
 /***/ }),
-/* 98 */
+/* 100 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42591,12 +43037,12 @@ NgbRadio.propDecorators = {
 //# sourceMappingURL=radio.js.map
 
 /***/ }),
-/* 99 */
+/* 101 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__radio__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__radio__ = __webpack_require__(100);
 /* unused harmony reexport NgbRadio */
 /* unused harmony reexport NgbActiveLabel */
 /* unused harmony reexport NgbRadioGroup */
@@ -42620,7 +43066,7 @@ NgbButtonsModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=radio.module.js.map
 
 /***/ }),
-/* 100 */
+/* 102 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42785,13 +43231,13 @@ var NGB_CAROUSEL_DIRECTIVES = [NgbCarousel, NgbSlide];
 //# sourceMappingURL=carousel.js.map
 
 /***/ }),
-/* 101 */
+/* 103 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carousel__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__carousel_config__ = __webpack_require__(49);
 /* unused harmony reexport NgbCarousel */
 /* unused harmony reexport NgbSlide */
@@ -42818,7 +43264,7 @@ NgbCarouselModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=carousel.module.js.map
 
 /***/ }),
-/* 102 */
+/* 104 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42853,12 +43299,12 @@ NgbCollapse.propDecorators = {
 //# sourceMappingURL=collapse.js.map
 
 /***/ }),
-/* 103 */
+/* 105 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collapse__ = __webpack_require__(102);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__collapse__ = __webpack_require__(104);
 /* unused harmony reexport NgbCollapse */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCollapseModule; });
 
@@ -42879,7 +43325,7 @@ NgbCollapseModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=collapse.module.js.map
 
 /***/ }),
-/* 104 */
+/* 106 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42918,18 +43364,18 @@ NgbDatepickerDayView.propDecorators = {
 //# sourceMappingURL=datepicker-day-view.js.map
 
 /***/ }),
-/* 105 */
+/* 107 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngb_date__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ngb_date__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngb_date_parser_formatter__ = __webpack_require__(52);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_positioning__ = __webpack_require__(38);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngb_calendar__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_service__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ngb_calendar__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_service__ = __webpack_require__(111);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbInputDatepicker; });
 
 
@@ -43141,13 +43587,13 @@ NgbInputDatepicker.propDecorators = {
 //# sourceMappingURL=datepicker-input.js.map
 
 /***/ }),
-/* 106 */
+/* 108 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__ = __webpack_require__(26);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerMonthView; });
 
 
@@ -43199,15 +43645,15 @@ NgbDatepickerMonthView.propDecorators = {
 //# sourceMappingURL=datepicker-month-view.js.map
 
 /***/ }),
-/* 107 */
+/* 109 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_i18n__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngb_calendar__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_i18n__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ngb_calendar__ = __webpack_require__(15);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerNavigationSelect; });
 
 
@@ -43272,14 +43718,14 @@ NgbDatepickerNavigationSelect.propDecorators = {
 //# sourceMappingURL=datepicker-navigation-select.js.map
 
 /***/ }),
-/* 108 */
+/* 110 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datepicker_view_model__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_calendar__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__datepicker_view_model__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker_i18n__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_calendar__ = __webpack_require__(15);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerNavigation; });
 
 
@@ -43332,12 +43778,12 @@ NgbDatepickerNavigation.propDecorators = {
 //# sourceMappingURL=datepicker-navigation.js.map
 
 /***/ }),
-/* 109 */
+/* 111 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_calendar__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_calendar__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbDatepickerService; });
 
@@ -43408,7 +43854,7 @@ NgbDatepickerService.ctorParameters = function () { return [
 //# sourceMappingURL=datepicker-service.js.map
 
 /***/ }),
-/* 110 */
+/* 112 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43421,27 +43867,27 @@ var NavigationEvent;
 //# sourceMappingURL=datepicker-view-model.js.map
 
 /***/ }),
-/* 111 */
+/* 113 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__datepicker__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_month_view__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datepicker_navigation__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__datepicker_input__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__datepicker_month_view__ = __webpack_require__(108);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datepicker_navigation__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__datepicker_input__ = __webpack_require__(107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_day_view__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ngb_calendar__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__datepicker_day_view__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__datepicker_i18n__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ngb_calendar__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ngb_date_parser_formatter__ = __webpack_require__(52);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__datepicker_navigation_select__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__datepicker_navigation_select__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__datepicker_config__ = __webpack_require__(50);
 /* unused harmony reexport NgbDatepicker */
 /* unused harmony reexport NgbInputDatepicker */
 /* unused harmony reexport NgbCalendar */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__hijri_ngb_calendar_islamic_civil__ = __webpack_require__(171);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__hijri_ngb_calendar_islamic_civil__ = __webpack_require__(177);
 /* unused harmony reexport NgbCalendarIslamicCivil */
 /* unused harmony reexport NgbDatepickerMonthView */
 /* unused harmony reexport NgbDatepickerDayView */
@@ -43507,7 +43953,7 @@ NgbDatepickerModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=datepicker.module.js.map
 
 /***/ }),
-/* 112 */
+/* 114 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43643,12 +44089,12 @@ NgbDropdownToggle.ctorParameters = function () { return [
 //# sourceMappingURL=dropdown.js.map
 
 /***/ }),
-/* 113 */
+/* 115 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dropdown__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__dropdown__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dropdown_config__ = __webpack_require__(53);
 /* unused harmony reexport NgbDropdown */
 /* unused harmony reexport NgbDropdownToggle */
@@ -43675,7 +44121,7 @@ NgbDropdownModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=dropdown.module.js.map
 
 /***/ }),
-/* 114 */
+/* 116 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43696,7 +44142,7 @@ NgbModalBackdrop.ctorParameters = function () { return []; };
 //# sourceMappingURL=modal-backdrop.js.map
 
 /***/ }),
-/* 115 */
+/* 117 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43709,7 +44155,7 @@ var ModalDismissReasons;
 //# sourceMappingURL=modal-dismiss-reasons.js.map
 
 /***/ }),
-/* 116 */
+/* 118 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43822,16 +44268,16 @@ NgbModalRef.ctorParameters = function () { return [
 //# sourceMappingURL=modal-ref.js.map
 
 /***/ }),
-/* 117 */
+/* 119 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_popup__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_backdrop__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_window__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_ref__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_backdrop__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal_window__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_ref__ = __webpack_require__(118);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalStack; });
 
 
@@ -43914,12 +44360,12 @@ NgbModalStack.ctorParameters = function () { return [
 //# sourceMappingURL=modal-stack.js.map
 
 /***/ }),
-/* 118 */
+/* 120 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_dismiss_reasons__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_dismiss_reasons__ = __webpack_require__(117);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalWindow; });
 
 
@@ -43993,12 +44439,12 @@ NgbModalWindow.propDecorators = {
 //# sourceMappingURL=modal-window.js.map
 
 /***/ }),
-/* 119 */
+/* 121 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_stack__ = __webpack_require__(117);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_stack__ = __webpack_require__(119);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModal; });
 
 
@@ -44037,20 +44483,20 @@ NgbModal.ctorParameters = function () { return [
 //# sourceMappingURL=modal.js.map
 
 /***/ }),
-/* 120 */
+/* 122 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_backdrop__ = __webpack_require__(114);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_window__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_stack__ = __webpack_require__(117);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__modal_backdrop__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_window__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modal_stack__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__modal__ = __webpack_require__(121);
 /* unused harmony reexport NgbModal */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_ref__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__modal_ref__ = __webpack_require__(118);
 /* unused harmony reexport NgbModalRef */
 /* unused harmony reexport NgbActiveModal */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modal_dismiss_reasons__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modal_dismiss_reasons__ = __webpack_require__(117);
 /* unused harmony reexport ModalDismissReasons */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbModalModule; });
 
@@ -44080,12 +44526,12 @@ NgbModalModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=modal.module.js.map
 
 /***/ }),
-/* 121 */
+/* 123 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination_config__ = __webpack_require__(54);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbPagination; });
 
@@ -44247,13 +44693,13 @@ NgbPagination.propDecorators = {
 //# sourceMappingURL=pagination.js.map
 
 /***/ }),
-/* 122 */
+/* 124 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pagination__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pagination_config__ = __webpack_require__(54);
 /* unused harmony reexport NgbPagination */
 /* unused harmony reexport NgbPaginationConfig */
@@ -44279,12 +44725,12 @@ NgbPaginationModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=pagination.module.js.map
 
 /***/ }),
-/* 123 */
+/* 125 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_triggers__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_triggers__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_positioning__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_popup__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__popover_config__ = __webpack_require__(55);
@@ -44427,12 +44873,12 @@ NgbPopover.propDecorators = {
 //# sourceMappingURL=popover.js.map
 
 /***/ }),
-/* 124 */
+/* 126 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popover__ = __webpack_require__(123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__popover__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__popover_config__ = __webpack_require__(55);
 /* unused harmony reexport NgbPopover */
 /* unused harmony reexport NgbPopoverConfig */
@@ -44457,12 +44903,12 @@ NgbPopoverModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=popover.module.js.map
 
 /***/ }),
-/* 125 */
+/* 127 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progressbar_config__ = __webpack_require__(56);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbProgressbar; });
 
@@ -44510,13 +44956,13 @@ NgbProgressbar.propDecorators = {
 //# sourceMappingURL=progressbar.js.map
 
 /***/ }),
-/* 126 */
+/* 128 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progressbar__ = __webpack_require__(125);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__progressbar__ = __webpack_require__(127);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__progressbar_config__ = __webpack_require__(56);
 /* unused harmony reexport NgbProgressbar */
 /* unused harmony reexport NgbProgressbarConfig */
@@ -44542,13 +44988,13 @@ NgbProgressbarModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=progressbar.module.js.map
 
 /***/ }),
-/* 127 */
+/* 129 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rating_config__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbRating; });
 
@@ -44717,14 +45163,14 @@ NgbRating.propDecorators = {
 //# sourceMappingURL=rating.js.map
 
 /***/ }),
-/* 128 */
+/* 130 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__rating_config__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rating__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__rating__ = __webpack_require__(129);
 /* unused harmony reexport NgbRating */
 /* unused harmony reexport NgbRatingConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbRatingModule; });
@@ -44749,7 +45195,7 @@ NgbRatingModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=rating.module.js.map
 
 /***/ }),
-/* 129 */
+/* 131 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44889,13 +45335,13 @@ NgbTabset.propDecorators = {
 //# sourceMappingURL=tabset.js.map
 
 /***/ }),
-/* 130 */
+/* 132 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabset__ = __webpack_require__(129);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabset__ = __webpack_require__(131);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__tabset_config__ = __webpack_require__(58);
 /* unused harmony reexport NgbTabset */
 /* unused harmony reexport NgbTab */
@@ -44925,14 +45371,14 @@ NgbTabsetModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=tabset.module.js.map
 
 /***/ }),
-/* 131 */
+/* 133 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_time__ = __webpack_require__(173);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ngb_time__ = __webpack_require__(179);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__timepicker_config__ = __webpack_require__(59);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTimepicker; });
 
@@ -45062,13 +45508,13 @@ NgbTimepicker.propDecorators = {
 //# sourceMappingURL=timepicker.js.map
 
 /***/ }),
-/* 132 */
+/* 134 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timepicker__ = __webpack_require__(131);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__timepicker__ = __webpack_require__(133);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__timepicker_config__ = __webpack_require__(59);
 /* unused harmony reexport NgbTimepicker */
 /* unused harmony reexport NgbTimepickerConfig */
@@ -45094,12 +45540,12 @@ NgbTimepickerModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=timepicker.module.js.map
 
 /***/ }),
-/* 133 */
+/* 135 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_triggers__ = __webpack_require__(138);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_triggers__ = __webpack_require__(140);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_positioning__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_popup__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tooltip_config__ = __webpack_require__(60);
@@ -45253,12 +45699,12 @@ NgbTooltip.propDecorators = {
 //# sourceMappingURL=tooltip.js.map
 
 /***/ }),
-/* 134 */
+/* 136 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip__ = __webpack_require__(133);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__tooltip__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tooltip_config__ = __webpack_require__(60);
 /* unused harmony reexport NgbTooltipConfig */
 /* unused harmony reexport NgbTooltip */
@@ -45283,12 +45729,12 @@ NgbTooltipModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=tooltip.module.js.map
 
 /***/ }),
-/* 135 */
+/* 137 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_util__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbHighlight; });
 
 
@@ -45335,22 +45781,22 @@ NgbHighlight.propDecorators = {
 //# sourceMappingURL=highlight.js.map
 
 /***/ }),
-/* 136 */
+/* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let__ = __webpack_require__(320);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let__ = __webpack_require__(333);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_operator_let__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__ = __webpack_require__(315);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__ = __webpack_require__(328);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_do__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent__ = __webpack_require__(322);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_observable_fromEvent__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__util_positioning__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__typeahead_window__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__util_popup__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__util_util__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__typeahead_config__ = __webpack_require__(61);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTypeahead; });
 
@@ -45595,15 +46041,15 @@ NgbTypeahead.propDecorators = {
 //# sourceMappingURL=typeahead.js.map
 
 /***/ }),
-/* 137 */
+/* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__highlight__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__highlight__ = __webpack_require__(137);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__typeahead_window__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__typeahead__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__typeahead__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__typeahead_config__ = __webpack_require__(61);
 /* unused harmony reexport NgbHighlight */
 /* unused harmony reexport NgbTypeaheadWindow */
@@ -45640,7 +46086,7 @@ NgbTypeaheadModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=typeahead.module.js.map
 
 /***/ }),
-/* 138 */
+/* 140 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -45701,8 +46147,6 @@ function listenToTriggers(renderer, nativeElement, triggers, openFn, closeFn, to
 //# sourceMappingURL=triggers.js.map
 
 /***/ }),
-/* 139 */,
-/* 140 */,
 /* 141 */,
 /* 142 */,
 /* 143 */,
@@ -45716,7 +46160,341 @@ function listenToTriggers(renderer, nativeElement, triggers, openFn, closeFn, to
 /* 151 */,
 /* 152 */,
 /* 153 */,
-/* 154 */
+/* 154 */,
+/* 155 */,
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var file_uploader_class_1 = __webpack_require__(81);
+var FileDropDirective = (function () {
+    function FileDropDirective(element) {
+        this.fileOver = new core_1.EventEmitter();
+        this.onFileDrop = new core_1.EventEmitter();
+        this.element = element;
+    }
+    FileDropDirective.prototype.getOptions = function () {
+        return this.uploader.options;
+    };
+    FileDropDirective.prototype.getFilters = function () {
+        return {};
+    };
+    FileDropDirective.prototype.onDrop = function (event) {
+        var transfer = this._getTransfer(event);
+        if (!transfer) {
+            return;
+        }
+        var options = this.getOptions();
+        var filters = this.getFilters();
+        this._preventAndStop(event);
+        this.uploader.addToQueue(transfer.files, options, filters);
+        this.fileOver.emit(false);
+        this.onFileDrop.emit(transfer.files);
+    };
+    FileDropDirective.prototype.onDragOver = function (event) {
+        var transfer = this._getTransfer(event);
+        if (!this._haveFiles(transfer.types)) {
+            return;
+        }
+        transfer.dropEffect = 'copy';
+        this._preventAndStop(event);
+        this.fileOver.emit(true);
+    };
+    FileDropDirective.prototype.onDragLeave = function (event) {
+        if (this.element) {
+            if (event.currentTarget === this.element[0]) {
+                return;
+            }
+        }
+        this._preventAndStop(event);
+        this.fileOver.emit(false);
+    };
+    FileDropDirective.prototype._getTransfer = function (event) {
+        return event.dataTransfer ? event.dataTransfer : event.originalEvent.dataTransfer; // jQuery fix;
+    };
+    FileDropDirective.prototype._preventAndStop = function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+    };
+    FileDropDirective.prototype._haveFiles = function (types) {
+        if (!types) {
+            return false;
+        }
+        if (types.indexOf) {
+            return types.indexOf('Files') !== -1;
+        }
+        else if (types.contains) {
+            return types.contains('Files');
+        }
+        else {
+            return false;
+        }
+    };
+    return FileDropDirective;
+}());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", file_uploader_class_1.FileUploader)
+], FileDropDirective.prototype, "uploader", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], FileDropDirective.prototype, "fileOver", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], FileDropDirective.prototype, "onFileDrop", void 0);
+__decorate([
+    core_1.HostListener('drop', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], FileDropDirective.prototype, "onDrop", null);
+__decorate([
+    core_1.HostListener('dragover', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", void 0)
+], FileDropDirective.prototype, "onDragOver", null);
+__decorate([
+    core_1.HostListener('dragleave', ['$event']),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Object)
+], FileDropDirective.prototype, "onDragLeave", null);
+FileDropDirective = __decorate([
+    core_1.Directive({ selector: '[ng2FileDrop]' }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], FileDropDirective);
+exports.FileDropDirective = FileDropDirective;
+
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var file_like_object_class_1 = __webpack_require__(80);
+var FileItem = (function () {
+    function FileItem(uploader, some, options) {
+        this.url = '/';
+        this.headers = [];
+        this.withCredentials = true;
+        this.formData = [];
+        this.isReady = false;
+        this.isUploading = false;
+        this.isUploaded = false;
+        this.isSuccess = false;
+        this.isCancel = false;
+        this.isError = false;
+        this.progress = 0;
+        this.index = void 0;
+        this.uploader = uploader;
+        this.some = some;
+        this.options = options;
+        this.file = new file_like_object_class_1.FileLikeObject(some);
+        this._file = some;
+        if (uploader.options) {
+            this.method = uploader.options.method || 'POST';
+            this.alias = uploader.options.itemAlias || 'file';
+        }
+        this.url = uploader.options.url;
+    }
+    FileItem.prototype.upload = function () {
+        try {
+            this.uploader.uploadItem(this);
+        }
+        catch (e) {
+            this.uploader._onCompleteItem(this, '', 0, {});
+            this.uploader._onErrorItem(this, '', 0, {});
+        }
+    };
+    FileItem.prototype.cancel = function () {
+        this.uploader.cancelItem(this);
+    };
+    FileItem.prototype.remove = function () {
+        this.uploader.removeFromQueue(this);
+    };
+    FileItem.prototype.onBeforeUpload = function () {
+        return void 0;
+    };
+    FileItem.prototype.onBuildForm = function (form) {
+        return { form: form };
+    };
+    FileItem.prototype.onProgress = function (progress) {
+        return { progress: progress };
+    };
+    FileItem.prototype.onSuccess = function (response, status, headers) {
+        return { response: response, status: status, headers: headers };
+    };
+    FileItem.prototype.onError = function (response, status, headers) {
+        return { response: response, status: status, headers: headers };
+    };
+    FileItem.prototype.onCancel = function (response, status, headers) {
+        return { response: response, status: status, headers: headers };
+    };
+    FileItem.prototype.onComplete = function (response, status, headers) {
+        return { response: response, status: status, headers: headers };
+    };
+    FileItem.prototype._onBeforeUpload = function () {
+        this.isReady = true;
+        this.isUploading = true;
+        this.isUploaded = false;
+        this.isSuccess = false;
+        this.isCancel = false;
+        this.isError = false;
+        this.progress = 0;
+        this.onBeforeUpload();
+    };
+    FileItem.prototype._onBuildForm = function (form) {
+        this.onBuildForm(form);
+    };
+    FileItem.prototype._onProgress = function (progress) {
+        this.progress = progress;
+        this.onProgress(progress);
+    };
+    FileItem.prototype._onSuccess = function (response, status, headers) {
+        this.isReady = false;
+        this.isUploading = false;
+        this.isUploaded = true;
+        this.isSuccess = true;
+        this.isCancel = false;
+        this.isError = false;
+        this.progress = 100;
+        this.index = void 0;
+        this.onSuccess(response, status, headers);
+    };
+    FileItem.prototype._onError = function (response, status, headers) {
+        this.isReady = false;
+        this.isUploading = false;
+        this.isUploaded = true;
+        this.isSuccess = false;
+        this.isCancel = false;
+        this.isError = true;
+        this.progress = 0;
+        this.index = void 0;
+        this.onError(response, status, headers);
+    };
+    FileItem.prototype._onCancel = function (response, status, headers) {
+        this.isReady = false;
+        this.isUploading = false;
+        this.isUploaded = false;
+        this.isSuccess = false;
+        this.isCancel = true;
+        this.isError = false;
+        this.progress = 0;
+        this.index = void 0;
+        this.onCancel(response, status, headers);
+    };
+    FileItem.prototype._onComplete = function (response, status, headers) {
+        this.onComplete(response, status, headers);
+        if (this.uploader.options.removeAfterUpload) {
+            this.remove();
+        }
+    };
+    FileItem.prototype._prepareToUploading = function () {
+        this.index = this.index || ++this.uploader._nextIndex;
+        this.isReady = true;
+    };
+    return FileItem;
+}());
+exports.FileItem = FileItem;
+
+
+/***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var file_uploader_class_1 = __webpack_require__(81);
+// todo: filters
+var FileSelectDirective = (function () {
+    function FileSelectDirective(element) {
+        this.element = element;
+    }
+    FileSelectDirective.prototype.getOptions = function () {
+        return this.uploader.options;
+    };
+    FileSelectDirective.prototype.getFilters = function () {
+        return void 0;
+    };
+    FileSelectDirective.prototype.isEmptyAfterSelection = function () {
+        return !!this.element.nativeElement.attributes.multiple;
+    };
+    FileSelectDirective.prototype.onChange = function () {
+        // let files = this.uploader.isHTML5 ? this.element.nativeElement[0].files : this.element.nativeElement[0];
+        var files = this.element.nativeElement.files;
+        var options = this.getOptions();
+        var filters = this.getFilters();
+        // if(!this.uploader.isHTML5) this.destroy();
+        this.uploader.addToQueue(files, options, filters);
+        if (this.isEmptyAfterSelection()) {
+            // todo
+            this.element.nativeElement.value = '';
+        }
+    };
+    return FileSelectDirective;
+}());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", file_uploader_class_1.FileUploader)
+], FileSelectDirective.prototype, "uploader", void 0);
+__decorate([
+    core_1.HostListener('change'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Object)
+], FileSelectDirective.prototype, "onChange", null);
+FileSelectDirective = __decorate([
+    core_1.Directive({ selector: '[ng2FileSelect]' }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], FileSelectDirective);
+exports.FileSelectDirective = FileSelectDirective;
+
+
+/***/ }),
+/* 159 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(158));
+__export(__webpack_require__(156));
+__export(__webpack_require__(81));
+__export(__webpack_require__(157));
+__export(__webpack_require__(80));
+var file_upload_module_1 = __webpack_require__(282);
+exports.FileUploadModule = file_upload_module_1.FileUploadModule;
+
+
+/***/ }),
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45730,7 +46508,7 @@ exports.empty = {
 //# sourceMappingURL=Observer.js.map
 
 /***/ }),
-/* 155 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45740,7 +46518,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var root_1 = __webpack_require__(21);
+var root_1 = __webpack_require__(25);
 var Observable_1 = __webpack_require__(2);
 /**
  * We need this JSDoc comment for affecting ESDoc.
@@ -45857,7 +46635,7 @@ function dispatchError(arg) {
 //# sourceMappingURL=PromiseObservable.js.map
 
 /***/ }),
-/* 156 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45921,7 +46699,7 @@ exports.ScalarObservable = ScalarObservable;
 //# sourceMappingURL=ScalarObservable.js.map
 
 /***/ }),
-/* 157 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45954,7 +46732,7 @@ exports.ObjectUnsubscribedError = ObjectUnsubscribedError;
 //# sourceMappingURL=ObjectUnsubscribedError.js.map
 
 /***/ }),
-/* 158 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45963,7 +46741,7 @@ exports.isArrayLike = (function (x) { return x && typeof x.length === 'number'; 
 //# sourceMappingURL=isArrayLike.js.map
 
 /***/ }),
-/* 159 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45975,7 +46753,7 @@ exports.isObject = isObject;
 //# sourceMappingURL=isObject.js.map
 
 /***/ }),
-/* 160 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45987,7 +46765,7 @@ exports.isPromise = isPromise;
 //# sourceMappingURL=isPromise.js.map
 
 /***/ }),
-/* 161 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45999,12 +46777,12 @@ exports.isScheduler = isScheduler;
 //# sourceMappingURL=isScheduler.js.map
 
 /***/ }),
-/* 162 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var errorObject_1 = __webpack_require__(90);
+var errorObject_1 = __webpack_require__(92);
 var tryCatchTarget;
 function tryCatcher() {
     try {
@@ -46024,12 +46802,12 @@ exports.tryCatch = tryCatch;
 //# sourceMappingURL=tryCatch.js.map
 
 /***/ }),
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */,
-/* 168 */
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72645,13 +73423,13 @@ var ImportResolver = (function () {
 //# sourceMappingURL=compiler.es5.js.map
 
 /***/ }),
-/* 169 */
+/* 175 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(168);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_compiler__ = __webpack_require__(174);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(27);
 /* unused harmony export RESOURCE_CACHE_PROVIDER */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return platformBrowserDynamic; });
@@ -72733,7 +73511,7 @@ ResourceLoaderImpl.ctorParameters = function () { return []; };
  * found in the LICENSE file at https://angular.io/license
  */
 var INTERNAL_BROWSER_DYNAMIC_PLATFORM_PROVIDERS = [
-    __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["c" /* ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS */],
+    __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__["d" /* ɵINTERNAL_BROWSER_PLATFORM_PROVIDERS */],
     {
         provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["COMPILER_OPTIONS"],
         useValue: { providers: [{ provide: __WEBPACK_IMPORTED_MODULE_0__angular_compiler__["a" /* ResourceLoader */], useClass: ResourceLoaderImpl }] },
@@ -72831,13 +73609,13 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__
 
 
 /***/ }),
-/* 170 */
+/* 176 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_calendar__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_calendar__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_util__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbCalendarHijri; });
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
@@ -72914,12 +73692,12 @@ NgbCalendarHijri.ctorParameters = function () { return []; };
 //# sourceMappingURL=ngb-calendar-hijri.js.map
 
 /***/ }),
-/* 171 */
+/* 177 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_calendar_hijri__ = __webpack_require__(170);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ngb_calendar_hijri__ = __webpack_require__(176);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngb_date__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* unused harmony export NgbCalendarIslamicCivil */
 var __extends = (this && this.__extends) || function (d, b) {
@@ -73067,27 +73845,27 @@ NgbCalendarIslamicCivil.ctorParameters = function () { return []; };
 //# sourceMappingURL=ngb-calendar-islamic-civil.js.map
 
 /***/ }),
-/* 172 */
+/* 178 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion_accordion_module__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert_alert_module__ = __webpack_require__(97);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__buttons_radio_module__ = __webpack_require__(99);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__carousel_carousel_module__ = __webpack_require__(101);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__collapse_collapse_module__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__datepicker_datepicker_module__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dropdown_dropdown_module__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modal_modal_module__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pagination_pagination_module__ = __webpack_require__(122);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__popover_popover_module__ = __webpack_require__(124);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__progressbar_progressbar_module__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__rating_rating_module__ = __webpack_require__(128);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__tabset_tabset_module__ = __webpack_require__(130);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__timepicker_timepicker_module__ = __webpack_require__(132);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__tooltip_tooltip_module__ = __webpack_require__(134);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__typeahead_typeahead_module__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accordion_accordion_module__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__alert_alert_module__ = __webpack_require__(99);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__buttons_radio_module__ = __webpack_require__(101);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__carousel_carousel_module__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__collapse_collapse_module__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__datepicker_datepicker_module__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dropdown_dropdown_module__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modal_modal_module__ = __webpack_require__(122);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pagination_pagination_module__ = __webpack_require__(124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__popover_popover_module__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__progressbar_progressbar_module__ = __webpack_require__(128);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__rating_rating_module__ = __webpack_require__(130);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__tabset_tabset_module__ = __webpack_require__(132);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__timepicker_timepicker_module__ = __webpack_require__(134);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__tooltip_tooltip_module__ = __webpack_require__(136);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__typeahead_typeahead_module__ = __webpack_require__(139);
 /* unused harmony reexport NgbAccordionModule */
 /* unused harmony reexport NgbAccordionConfig */
 /* unused harmony reexport NgbAccordion */
@@ -73223,11 +74001,11 @@ NgbModule.ctorParameters = function () { return []; };
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 173 */
+/* 179 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_util__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_util__ = __webpack_require__(6);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NgbTime; });
 
 var NgbTime = (function () {
@@ -73285,12 +74063,6 @@ var NgbTime = (function () {
 //# sourceMappingURL=ngb-time.js.map
 
 /***/ }),
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
 /* 180 */,
 /* 181 */,
 /* 182 */,
@@ -73307,7 +74079,15 @@ var NgbTime = (function () {
 /* 193 */,
 /* 194 */,
 /* 195 */,
-/* 196 */
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73328,14 +74108,14 @@ exports.FlashMessage = FlashMessage;
 //# sourceMappingURL=flash-message.js.map
 
 /***/ }),
-/* 197 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var flash_message_1 = __webpack_require__(196);
+var flash_message_1 = __webpack_require__(204);
 var flash_messages_service_1 = __webpack_require__(63);
 var FlashMessagesComponent = (function () {
     function FlashMessagesComponent(_flashMessagesService, _cdRef) {
@@ -73394,28 +74174,28 @@ exports.FlashMessagesComponent = FlashMessagesComponent;
 //# sourceMappingURL=flash-messages.component.js.map
 
 /***/ }),
-/* 198 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var module_1 = __webpack_require__(199);
+var module_1 = __webpack_require__(207);
 exports.FlashMessagesModule = module_1.FlashMessagesModule;
 var flash_messages_service_1 = __webpack_require__(63);
 exports.FlashMessagesService = flash_messages_service_1.FlashMessagesService;
 //# sourceMappingURL=index.js.map
 
 /***/ }),
-/* 199 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var common_1 = __webpack_require__(6);
-var flash_messages_component_1 = __webpack_require__(197);
+var common_1 = __webpack_require__(5);
+var flash_messages_component_1 = __webpack_require__(205);
 var flash_messages_service_1 = __webpack_require__(63);
 var FlashMessagesModule = (function () {
     function FlashMessagesModule() {
@@ -73436,7 +74216,7 @@ exports.FlashMessagesModule = FlashMessagesModule;
 //# sourceMappingURL=module.js.map
 
 /***/ }),
-/* 200 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73458,12 +74238,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var http_1 = __webpack_require__(17);
+var http_1 = __webpack_require__(14);
 var core_1 = __webpack_require__(0);
 var Observable_1 = __webpack_require__(2);
-__webpack_require__(297);
-__webpack_require__(296);
-__webpack_require__(298);
+__webpack_require__(310);
+__webpack_require__(309);
+__webpack_require__(311);
 var AuthConfigConsts = (function () {
     function AuthConfigConsts() {
     }
@@ -73804,14 +74584,6 @@ var AuthModule_1;
 //# sourceMappingURL=angular2-jwt.js.map
 
 /***/ }),
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */,
-/* 207 */,
-/* 208 */,
 /* 209 */,
 /* 210 */,
 /* 211 */,
@@ -73884,9 +74656,218 @@ var AuthModule_1;
 /* 278 */,
 /* 279 */,
 /* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */,
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var FileType = (function () {
+    function FileType() {
+    }
+    FileType.getMimeClass = function (file) {
+        var mimeClass = 'application';
+        if (this.mime_psd.indexOf(file.type) !== -1) {
+            mimeClass = 'image';
+        }
+        else if (file.type.match('image.*')) {
+            mimeClass = 'image';
+        }
+        else if (file.type.match('video.*')) {
+            mimeClass = 'video';
+        }
+        else if (file.type.match('audio.*')) {
+            mimeClass = 'audio';
+        }
+        else if (file.type === 'application/pdf') {
+            mimeClass = 'pdf';
+        }
+        else if (this.mime_compress.indexOf(file.type) !== -1) {
+            mimeClass = 'compress';
+        }
+        else if (this.mime_doc.indexOf(file.type) !== -1) {
+            mimeClass = 'doc';
+        }
+        else if (this.mime_xsl.indexOf(file.type) !== -1) {
+            mimeClass = 'xls';
+        }
+        else if (this.mime_ppt.indexOf(file.type) !== -1) {
+            mimeClass = 'ppt';
+        }
+        if (mimeClass === 'application') {
+            mimeClass = this.fileTypeDetection(file.name);
+        }
+        return mimeClass;
+    };
+    FileType.fileTypeDetection = function (inputFilename) {
+        var types = {
+            'jpg': 'image',
+            'jpeg': 'image',
+            'tif': 'image',
+            'psd': 'image',
+            'bmp': 'image',
+            'png': 'image',
+            'nef': 'image',
+            'tiff': 'image',
+            'cr2': 'image',
+            'dwg': 'image',
+            'cdr': 'image',
+            'ai': 'image',
+            'indd': 'image',
+            'pin': 'image',
+            'cdp': 'image',
+            'skp': 'image',
+            'stp': 'image',
+            '3dm': 'image',
+            'mp3': 'audio',
+            'wav': 'audio',
+            'wma': 'audio',
+            'mod': 'audio',
+            'm4a': 'audio',
+            'compress': 'compress',
+            'rar': 'compress',
+            '7z': 'compress',
+            'lz': 'compress',
+            'z01': 'compress',
+            'pdf': 'pdf',
+            'xls': 'xls',
+            'xlsx': 'xls',
+            'ods': 'xls',
+            'mp4': 'video',
+            'avi': 'video',
+            'wmv': 'video',
+            'mpg': 'video',
+            'mts': 'video',
+            'flv': 'video',
+            '3gp': 'video',
+            'vob': 'video',
+            'm4v': 'video',
+            'mpeg': 'video',
+            'm2ts': 'video',
+            'mov': 'video',
+            'doc': 'doc',
+            'docx': 'doc',
+            'eps': 'doc',
+            'txt': 'doc',
+            'odt': 'doc',
+            'rtf': 'doc',
+            'ppt': 'ppt',
+            'pptx': 'ppt',
+            'pps': 'ppt',
+            'ppsx': 'ppt',
+            'odp': 'ppt'
+        };
+        var chunks = inputFilename.split('.');
+        if (chunks.length < 2) {
+            return 'application';
+        }
+        var extension = chunks[chunks.length - 1].toLowerCase();
+        if (types[extension] === undefined) {
+            return 'application';
+        }
+        else {
+            return types[extension];
+        }
+    };
+    return FileType;
+}());
+/*  MS office  */
+FileType.mime_doc = [
+    'application/msword',
+    'application/msword',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
+    'application/vnd.ms-word.document.macroEnabled.12',
+    'application/vnd.ms-word.template.macroEnabled.12'
+];
+FileType.mime_xsl = [
+    'application/vnd.ms-excel',
+    'application/vnd.ms-excel',
+    'application/vnd.ms-excel',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.template',
+    'application/vnd.ms-excel.sheet.macroEnabled.12',
+    'application/vnd.ms-excel.template.macroEnabled.12',
+    'application/vnd.ms-excel.addin.macroEnabled.12',
+    'application/vnd.ms-excel.sheet.binary.macroEnabled.12'
+];
+FileType.mime_ppt = [
+    'application/vnd.ms-powerpoint',
+    'application/vnd.ms-powerpoint',
+    'application/vnd.ms-powerpoint',
+    'application/vnd.ms-powerpoint',
+    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    'application/vnd.openxmlformats-officedocument.presentationml.template',
+    'application/vnd.openxmlformats-officedocument.presentationml.slideshow',
+    'application/vnd.ms-powerpoint.addin.macroEnabled.12',
+    'application/vnd.ms-powerpoint.presentation.macroEnabled.12',
+    'application/vnd.ms-powerpoint.presentation.macroEnabled.12',
+    'application/vnd.ms-powerpoint.slideshow.macroEnabled.12'
+];
+/* PSD */
+FileType.mime_psd = [
+    'image/photoshop',
+    'image/x-photoshop',
+    'image/psd',
+    'application/photoshop',
+    'application/psd',
+    'zz-application/zz-winassoc-psd'
+];
+/* Compressed files */
+FileType.mime_compress = [
+    'application/x-gtar',
+    'application/x-gcompress',
+    'application/compress',
+    'application/x-tar',
+    'application/x-rar-compressed',
+    'application/octet-stream'
+];
+exports.FileType = FileType;
+
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var common_1 = __webpack_require__(5);
+var core_1 = __webpack_require__(0);
+var file_drop_directive_1 = __webpack_require__(156);
+var file_select_directive_1 = __webpack_require__(158);
+var FileUploadModule = (function () {
+    function FileUploadModule() {
+    }
+    return FileUploadModule;
+}());
+FileUploadModule = __decorate([
+    core_1.NgModule({
+        imports: [common_1.CommonModule],
+        declarations: [file_drop_directive_1.FileDropDirective, file_select_directive_1.FileSelectDirective],
+        exports: [file_drop_directive_1.FileDropDirective, file_select_directive_1.FileSelectDirective]
+    })
+], FileUploadModule);
+exports.FileUploadModule = FileUploadModule;
+
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(__webpack_require__(159));
+
+
+/***/ }),
 /* 284 */,
 /* 285 */,
 /* 286 */,
@@ -73895,7 +74876,20 @@ var AuthModule_1;
 /* 289 */,
 /* 290 */,
 /* 291 */,
-/* 292 */
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */,
+/* 301 */,
+/* 302 */,
+/* 303 */,
+/* 304 */,
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73906,7 +74900,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subject_1 = __webpack_require__(35);
-var ObjectUnsubscribedError_1 = __webpack_require__(157);
+var ObjectUnsubscribedError_1 = __webpack_require__(163);
 /**
  * @class BehaviorSubject<T>
  */
@@ -73950,7 +74944,7 @@ exports.BehaviorSubject = BehaviorSubject;
 //# sourceMappingURL=BehaviorSubject.js.map
 
 /***/ }),
-/* 293 */
+/* 306 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -73992,7 +74986,7 @@ exports.InnerSubscriber = InnerSubscriber;
 //# sourceMappingURL=InnerSubscriber.js.map
 
 /***/ }),
-/* 294 */
+/* 307 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74125,7 +75119,7 @@ exports.Notification = Notification;
 //# sourceMappingURL=Notification.js.map
 
 /***/ }),
-/* 295 */
+/* 308 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74171,41 +75165,41 @@ exports.SubjectSubscription = SubjectSubscription;
 //# sourceMappingURL=SubjectSubscription.js.map
 
 /***/ }),
-/* 296 */
+/* 309 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var defer_1 = __webpack_require__(306);
+var defer_1 = __webpack_require__(319);
 Observable_1.Observable.defer = defer_1.defer;
 //# sourceMappingURL=defer.js.map
 
 /***/ }),
-/* 297 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var fromPromise_1 = __webpack_require__(82);
+var fromPromise_1 = __webpack_require__(84);
 Observable_1.Observable.fromPromise = fromPromise_1.fromPromise;
 //# sourceMappingURL=fromPromise.js.map
 
 /***/ }),
-/* 298 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var mergeMap_1 = __webpack_require__(85);
+var mergeMap_1 = __webpack_require__(87);
 Observable_1.Observable.prototype.mergeMap = mergeMap_1.mergeMap;
 Observable_1.Observable.prototype.flatMap = mergeMap_1.mergeMap;
 //# sourceMappingURL=mergeMap.js.map
 
 /***/ }),
-/* 299 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74216,8 +75210,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(2);
-var ScalarObservable_1 = __webpack_require__(156);
-var EmptyObservable_1 = __webpack_require__(81);
+var ScalarObservable_1 = __webpack_require__(162);
+var EmptyObservable_1 = __webpack_require__(83);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -74281,7 +75275,7 @@ exports.ArrayLikeObservable = ArrayLikeObservable;
 //# sourceMappingURL=ArrayLikeObservable.js.map
 
 /***/ }),
-/* 300 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74456,7 +75450,7 @@ var RefCountSubscriber = (function (_super) {
 //# sourceMappingURL=ConnectableObservable.js.map
 
 /***/ }),
-/* 301 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74561,7 +75555,7 @@ var DeferSubscriber = (function (_super) {
 //# sourceMappingURL=DeferObservable.js.map
 
 /***/ }),
-/* 302 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74572,8 +75566,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(2);
-var EmptyObservable_1 = __webpack_require__(81);
-var isArray_1 = __webpack_require__(91);
+var EmptyObservable_1 = __webpack_require__(83);
+var isArray_1 = __webpack_require__(93);
 var subscribeToResult_1 = __webpack_require__(37);
 var OuterSubscriber_1 = __webpack_require__(34);
 /**
@@ -74679,7 +75673,7 @@ var ForkJoinSubscriber = (function (_super) {
 //# sourceMappingURL=ForkJoinObservable.js.map
 
 /***/ }),
-/* 303 */
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74690,9 +75684,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Observable_1 = __webpack_require__(2);
-var tryCatch_1 = __webpack_require__(162);
-var isFunction_1 = __webpack_require__(92);
-var errorObject_1 = __webpack_require__(90);
+var tryCatch_1 = __webpack_require__(168);
+var isFunction_1 = __webpack_require__(94);
+var errorObject_1 = __webpack_require__(92);
 var Subscription_1 = __webpack_require__(36);
 var toString = Object.prototype.toString;
 function isNodeStyleEventEmitter(sourceObj) {
@@ -74825,7 +75819,7 @@ exports.FromEventObservable = FromEventObservable;
 //# sourceMappingURL=FromEventObservable.js.map
 
 /***/ }),
-/* 304 */
+/* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74835,17 +75829,17 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var isArray_1 = __webpack_require__(91);
-var isArrayLike_1 = __webpack_require__(158);
-var isPromise_1 = __webpack_require__(160);
-var PromiseObservable_1 = __webpack_require__(155);
-var IteratorObservable_1 = __webpack_require__(305);
-var ArrayObservable_1 = __webpack_require__(80);
-var ArrayLikeObservable_1 = __webpack_require__(299);
-var iterator_1 = __webpack_require__(86);
+var isArray_1 = __webpack_require__(93);
+var isArrayLike_1 = __webpack_require__(164);
+var isPromise_1 = __webpack_require__(166);
+var PromiseObservable_1 = __webpack_require__(161);
+var IteratorObservable_1 = __webpack_require__(318);
+var ArrayObservable_1 = __webpack_require__(82);
+var ArrayLikeObservable_1 = __webpack_require__(312);
+var iterator_1 = __webpack_require__(88);
 var Observable_1 = __webpack_require__(2);
-var observeOn_1 = __webpack_require__(323);
-var observable_1 = __webpack_require__(87);
+var observeOn_1 = __webpack_require__(336);
+var observable_1 = __webpack_require__(89);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -74953,7 +75947,7 @@ exports.FromObservable = FromObservable;
 //# sourceMappingURL=FromObservable.js.map
 
 /***/ }),
-/* 305 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -74963,9 +75957,9 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var root_1 = __webpack_require__(21);
+var root_1 = __webpack_require__(25);
 var Observable_1 = __webpack_require__(2);
-var iterator_1 = __webpack_require__(86);
+var iterator_1 = __webpack_require__(88);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @extends {Ignored}
@@ -75122,67 +76116,67 @@ function sign(value) {
 //# sourceMappingURL=IteratorObservable.js.map
 
 /***/ }),
-/* 306 */
+/* 319 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var DeferObservable_1 = __webpack_require__(301);
+var DeferObservable_1 = __webpack_require__(314);
 exports.defer = DeferObservable_1.DeferObservable.create;
 //# sourceMappingURL=defer.js.map
 
 /***/ }),
-/* 307 */
+/* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ForkJoinObservable_1 = __webpack_require__(302);
+var ForkJoinObservable_1 = __webpack_require__(315);
 exports.forkJoin = ForkJoinObservable_1.ForkJoinObservable.create;
 //# sourceMappingURL=forkJoin.js.map
 
 /***/ }),
-/* 308 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var FromObservable_1 = __webpack_require__(304);
+var FromObservable_1 = __webpack_require__(317);
 exports.from = FromObservable_1.FromObservable.create;
 //# sourceMappingURL=from.js.map
 
 /***/ }),
-/* 309 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var FromEventObservable_1 = __webpack_require__(303);
+var FromEventObservable_1 = __webpack_require__(316);
 exports.fromEvent = FromEventObservable_1.FromEventObservable.create;
 //# sourceMappingURL=fromEvent.js.map
 
 /***/ }),
-/* 310 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var merge_1 = __webpack_require__(321);
+var merge_1 = __webpack_require__(334);
 exports.merge = merge_1.mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 311 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ArrayObservable_1 = __webpack_require__(80);
+var ArrayObservable_1 = __webpack_require__(82);
 exports.of = ArrayObservable_1.ArrayObservable.of;
 //# sourceMappingURL=of.js.map
 
 /***/ }),
-/* 312 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75304,12 +76298,12 @@ var CatchSubscriber = (function (_super) {
 //# sourceMappingURL=catch.js.map
 
 /***/ }),
-/* 313 */
+/* 326 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeAll_1 = __webpack_require__(84);
+var mergeAll_1 = __webpack_require__(86);
 /* tslint:enable:max-line-length */
 /**
  * Converts a higher-order Observable into a first-order Observable by
@@ -75366,12 +76360,12 @@ exports.concatAll = concatAll;
 //# sourceMappingURL=concatAll.js.map
 
 /***/ }),
-/* 314 */
+/* 327 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var mergeMap_1 = __webpack_require__(85);
+var mergeMap_1 = __webpack_require__(87);
 /* tslint:enable:max-line-length */
 /**
  * Projects each source value to an Observable which is merged in the output
@@ -75442,7 +76436,7 @@ exports.concatMap = concatMap;
 //# sourceMappingURL=concatMap.js.map
 
 /***/ }),
-/* 315 */
+/* 328 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75561,7 +76555,7 @@ var DoSubscriber = (function (_super) {
 //# sourceMappingURL=do.js.map
 
 /***/ }),
-/* 316 */
+/* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75641,7 +76635,7 @@ var EverySubscriber = (function (_super) {
 //# sourceMappingURL=every.js.map
 
 /***/ }),
-/* 317 */
+/* 330 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75740,7 +76734,7 @@ var FilterSubscriber = (function (_super) {
 //# sourceMappingURL=filter.js.map
 
 /***/ }),
-/* 318 */
+/* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75751,7 +76745,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(8);
-var EmptyError_1 = __webpack_require__(89);
+var EmptyError_1 = __webpack_require__(91);
 /**
  * Emits only the first value (or the first value that meets some condition)
  * emitted by the source Observable.
@@ -75898,7 +76892,7 @@ var FirstSubscriber = (function (_super) {
 //# sourceMappingURL=first.js.map
 
 /***/ }),
-/* 319 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -75909,7 +76903,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(8);
-var EmptyError_1 = __webpack_require__(89);
+var EmptyError_1 = __webpack_require__(91);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits only the last item emitted by the source Observable.
@@ -76023,7 +77017,7 @@ var LastSubscriber = (function (_super) {
 //# sourceMappingURL=last.js.map
 
 /***/ }),
-/* 320 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76041,15 +77035,15 @@ exports.letProto = letProto;
 //# sourceMappingURL=let.js.map
 
 /***/ }),
-/* 321 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(2);
-var ArrayObservable_1 = __webpack_require__(80);
-var mergeAll_1 = __webpack_require__(84);
-var isScheduler_1 = __webpack_require__(161);
+var ArrayObservable_1 = __webpack_require__(82);
+var mergeAll_1 = __webpack_require__(86);
+var isScheduler_1 = __webpack_require__(167);
 /* tslint:enable:max-line-length */
 /**
  * Creates an output Observable which concurrently emits all values from every
@@ -76192,12 +77186,12 @@ exports.mergeStatic = mergeStatic;
 //# sourceMappingURL=merge.js.map
 
 /***/ }),
-/* 322 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var ConnectableObservable_1 = __webpack_require__(300);
+var ConnectableObservable_1 = __webpack_require__(313);
 /* tslint:enable:max-line-length */
 /**
  * Returns an Observable that emits the results of invoking a specified selector on items
@@ -76255,7 +77249,7 @@ exports.MulticastOperator = MulticastOperator;
 //# sourceMappingURL=multicast.js.map
 
 /***/ }),
-/* 323 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76266,7 +77260,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Subscriber_1 = __webpack_require__(8);
-var Notification_1 = __webpack_require__(294);
+var Notification_1 = __webpack_require__(307);
 /**
  *
  * Re-emits all notifications from source Observable with specified scheduler.
@@ -76374,7 +77368,7 @@ exports.ObserveOnMessage = ObserveOnMessage;
 //# sourceMappingURL=observeOn.js.map
 
 /***/ }),
-/* 324 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76506,12 +77500,12 @@ exports.ReduceSubscriber = ReduceSubscriber;
 //# sourceMappingURL=reduce.js.map
 
 /***/ }),
-/* 325 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var multicast_1 = __webpack_require__(322);
+var multicast_1 = __webpack_require__(335);
 var Subject_1 = __webpack_require__(35);
 function shareSubjectFactory() {
     return new Subject_1.Subject();
@@ -76536,7 +77530,7 @@ exports.share = share;
 //# sourceMappingURL=share.js.map
 
 /***/ }),
-/* 326 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -76567,14 +77561,14 @@ exports.UnsubscriptionError = UnsubscriptionError;
 //# sourceMappingURL=UnsubscriptionError.js.map
 
 /***/ }),
-/* 327 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Subscriber_1 = __webpack_require__(8);
-var rxSubscriber_1 = __webpack_require__(88);
-var Observer_1 = __webpack_require__(154);
+var rxSubscriber_1 = __webpack_require__(90);
+var Observer_1 = __webpack_require__(160);
 function toSubscriber(nextOrObserver, error, complete) {
     if (nextOrObserver) {
         if (nextOrObserver instanceof Subscriber_1.Subscriber) {
@@ -76591,1007 +77585,6 @@ function toSubscriber(nextOrObserver, error, complete) {
 }
 exports.toSubscriber = toSubscriber;
 //# sourceMappingURL=toSubscriber.js.map
-
-/***/ }),
-/* 328 */,
-/* 329 */,
-/* 330 */,
-/* 331 */,
-/* 332 */,
-/* 333 */,
-/* 334 */,
-/* 335 */,
-/* 336 */,
-/* 337 */,
-/* 338 */,
-/* 339 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function isElement(node) {
-    return !!(node && (node.nodeName || node.prop && node.attr && node.find));
-}
-var FileLikeObject = (function () {
-    function FileLikeObject(fileOrInput) {
-        var isInput = isElement(fileOrInput);
-        var fakePathOrObject = isInput ? fileOrInput.value : fileOrInput;
-        var postfix = typeof fakePathOrObject === 'string' ? 'FakePath' : 'Object';
-        var method = '_createFrom' + postfix;
-        this[method](fakePathOrObject);
-    }
-    FileLikeObject.prototype._createFromFakePath = function (path) {
-        this.lastModifiedDate = void 0;
-        this.size = void 0;
-        this.type = 'like/' + path.slice(path.lastIndexOf('.') + 1).toLowerCase();
-        this.name = path.slice(path.lastIndexOf('/') + path.lastIndexOf('\\') + 2);
-    };
-    FileLikeObject.prototype._createFromObject = function (object) {
-        // this.lastModifiedDate = copy(object.lastModifiedDate);
-        this.size = object.size;
-        this.type = object.type;
-        this.name = object.name;
-    };
-    return FileLikeObject;
-}());
-exports.FileLikeObject = FileLikeObject;
-
-
-/***/ }),
-/* 340 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var file_like_object_class_1 = __webpack_require__(339);
-var file_item_class_1 = __webpack_require__(342);
-var file_type_class_1 = __webpack_require__(344);
-function isFile(value) {
-    return (File && value instanceof File);
-}
-var FileUploader = (function () {
-    function FileUploader(options) {
-        this.isUploading = false;
-        this.queue = [];
-        this.progress = 0;
-        this._nextIndex = 0;
-        this.options = {
-            autoUpload: false,
-            isHTML5: true,
-            filters: [],
-            removeAfterUpload: false,
-            disableMultipart: false
-        };
-        this.setOptions(options);
-    }
-    FileUploader.prototype.setOptions = function (options) {
-        this.options = Object.assign(this.options, options);
-        this.authToken = options.authToken;
-        this.authTokenHeader = options.authTokenHeader || 'Authorization';
-        this.autoUpload = options.autoUpload;
-        this.options.filters.unshift({ name: 'queueLimit', fn: this._queueLimitFilter });
-        if (this.options.maxFileSize) {
-            this.options.filters.unshift({ name: 'fileSize', fn: this._fileSizeFilter });
-        }
-        if (this.options.allowedFileType) {
-            this.options.filters.unshift({ name: 'fileType', fn: this._fileTypeFilter });
-        }
-        if (this.options.allowedMimeType) {
-            this.options.filters.unshift({ name: 'mimeType', fn: this._mimeTypeFilter });
-        }
-        for (var i = 0; i < this.queue.length; i++) {
-            this.queue[i].url = this.options.url;
-        }
-        // this.options.filters.unshift({name: 'folder', fn: this._folderFilter});
-    };
-    FileUploader.prototype.addToQueue = function (files, options, filters) {
-        var _this = this;
-        var list = [];
-        for (var _i = 0, files_1 = files; _i < files_1.length; _i++) {
-            var file = files_1[_i];
-            list.push(file);
-        }
-        var arrayOfFilters = this._getFilters(filters);
-        var count = this.queue.length;
-        var addedFileItems = [];
-        list.map(function (some) {
-            if (!options) {
-                options = _this.options;
-            }
-            var temp = new file_like_object_class_1.FileLikeObject(some);
-            if (_this._isValidFile(temp, arrayOfFilters, options)) {
-                var fileItem = new file_item_class_1.FileItem(_this, some, options);
-                addedFileItems.push(fileItem);
-                _this.queue.push(fileItem);
-                _this._onAfterAddingFile(fileItem);
-            }
-            else {
-                var filter = arrayOfFilters[_this._failFilterIndex];
-                _this._onWhenAddingFileFailed(temp, filter, options);
-            }
-        });
-        if (this.queue.length !== count) {
-            this._onAfterAddingAll(addedFileItems);
-            this.progress = this._getTotalProgress();
-        }
-        this._render();
-        if (this.options.autoUpload) {
-            this.uploadAll();
-        }
-    };
-    FileUploader.prototype.removeFromQueue = function (value) {
-        var index = this.getIndexOfItem(value);
-        var item = this.queue[index];
-        if (item.isUploading) {
-            item.cancel();
-        }
-        this.queue.splice(index, 1);
-        this.progress = this._getTotalProgress();
-    };
-    FileUploader.prototype.clearQueue = function () {
-        while (this.queue.length) {
-            this.queue[0].remove();
-        }
-        this.progress = 0;
-    };
-    FileUploader.prototype.uploadItem = function (value) {
-        var index = this.getIndexOfItem(value);
-        var item = this.queue[index];
-        var transport = this.options.isHTML5 ? '_xhrTransport' : '_iframeTransport';
-        item._prepareToUploading();
-        if (this.isUploading) {
-            return;
-        }
-        this.isUploading = true;
-        this[transport](item);
-    };
-    FileUploader.prototype.cancelItem = function (value) {
-        var index = this.getIndexOfItem(value);
-        var item = this.queue[index];
-        var prop = this.options.isHTML5 ? item._xhr : item._form;
-        if (item && item.isUploading) {
-            prop.abort();
-        }
-    };
-    FileUploader.prototype.uploadAll = function () {
-        var items = this.getNotUploadedItems().filter(function (item) { return !item.isUploading; });
-        if (!items.length) {
-            return;
-        }
-        items.map(function (item) { return item._prepareToUploading(); });
-        items[0].upload();
-    };
-    FileUploader.prototype.cancelAll = function () {
-        var items = this.getNotUploadedItems();
-        items.map(function (item) { return item.cancel(); });
-    };
-    FileUploader.prototype.isFile = function (value) {
-        return isFile(value);
-    };
-    FileUploader.prototype.isFileLikeObject = function (value) {
-        return value instanceof file_like_object_class_1.FileLikeObject;
-    };
-    FileUploader.prototype.getIndexOfItem = function (value) {
-        return typeof value === 'number' ? value : this.queue.indexOf(value);
-    };
-    FileUploader.prototype.getNotUploadedItems = function () {
-        return this.queue.filter(function (item) { return !item.isUploaded; });
-    };
-    FileUploader.prototype.getReadyItems = function () {
-        return this.queue
-            .filter(function (item) { return (item.isReady && !item.isUploading); })
-            .sort(function (item1, item2) { return item1.index - item2.index; });
-    };
-    FileUploader.prototype.destroy = function () {
-        return void 0;
-        /*forEach(this._directives, (key) => {
-         forEach(this._directives[key], (object) => {
-         object.destroy();
-         });
-         });*/
-    };
-    FileUploader.prototype.onAfterAddingAll = function (fileItems) {
-        return { fileItems: fileItems };
-    };
-    FileUploader.prototype.onBuildItemForm = function (fileItem, form) {
-        return { fileItem: fileItem, form: form };
-    };
-    FileUploader.prototype.onAfterAddingFile = function (fileItem) {
-        return { fileItem: fileItem };
-    };
-    FileUploader.prototype.onWhenAddingFileFailed = function (item, filter, options) {
-        return { item: item, filter: filter, options: options };
-    };
-    FileUploader.prototype.onBeforeUploadItem = function (fileItem) {
-        return { fileItem: fileItem };
-    };
-    FileUploader.prototype.onProgressItem = function (fileItem, progress) {
-        return { fileItem: fileItem, progress: progress };
-    };
-    FileUploader.prototype.onProgressAll = function (progress) {
-        return { progress: progress };
-    };
-    FileUploader.prototype.onSuccessItem = function (item, response, status, headers) {
-        return { item: item, response: response, status: status, headers: headers };
-    };
-    FileUploader.prototype.onErrorItem = function (item, response, status, headers) {
-        return { item: item, response: response, status: status, headers: headers };
-    };
-    FileUploader.prototype.onCancelItem = function (item, response, status, headers) {
-        return { item: item, response: response, status: status, headers: headers };
-    };
-    FileUploader.prototype.onCompleteItem = function (item, response, status, headers) {
-        return { item: item, response: response, status: status, headers: headers };
-    };
-    FileUploader.prototype.onCompleteAll = function () {
-        return void 0;
-    };
-    FileUploader.prototype._mimeTypeFilter = function (item) {
-        return !(this.options.allowedMimeType && this.options.allowedMimeType.indexOf(item.type) === -1);
-    };
-    FileUploader.prototype._fileSizeFilter = function (item) {
-        return !(this.options.maxFileSize && item.size > this.options.maxFileSize);
-    };
-    FileUploader.prototype._fileTypeFilter = function (item) {
-        return !(this.options.allowedFileType &&
-            this.options.allowedFileType.indexOf(file_type_class_1.FileType.getMimeClass(item)) === -1);
-    };
-    FileUploader.prototype._onErrorItem = function (item, response, status, headers) {
-        item._onError(response, status, headers);
-        this.onErrorItem(item, response, status, headers);
-    };
-    FileUploader.prototype._onCompleteItem = function (item, response, status, headers) {
-        item._onComplete(response, status, headers);
-        this.onCompleteItem(item, response, status, headers);
-        var nextItem = this.getReadyItems()[0];
-        this.isUploading = false;
-        if (nextItem) {
-            nextItem.upload();
-            return;
-        }
-        this.onCompleteAll();
-        this.progress = this._getTotalProgress();
-        this._render();
-    };
-    FileUploader.prototype._headersGetter = function (parsedHeaders) {
-        return function (name) {
-            if (name) {
-                return parsedHeaders[name.toLowerCase()] || void 0;
-            }
-            return parsedHeaders;
-        };
-    };
-    FileUploader.prototype._xhrTransport = function (item) {
-        var _this = this;
-        var xhr = item._xhr = new XMLHttpRequest();
-        var sendable;
-        this._onBeforeUploadItem(item);
-        // todo
-        /*item.formData.map(obj => {
-         obj.map((value, key) => {
-         form.append(key, value);
-         });
-         });*/
-        if (typeof item._file.size !== 'number') {
-            throw new TypeError('The file specified is no longer valid');
-        }
-        if (!this.options.disableMultipart) {
-            sendable = new FormData();
-            this._onBuildItemForm(item, sendable);
-            sendable.append(item.alias, item._file, item.file.name);
-            if (this.options.additionalParameter !== undefined) {
-                Object.keys(this.options.additionalParameter).forEach(function (key) {
-                    sendable.append(key, _this.options.additionalParameter[key]);
-                });
-            }
-        }
-        else {
-            sendable = item._file;
-        }
-        xhr.upload.onprogress = function (event) {
-            var progress = Math.round(event.lengthComputable ? event.loaded * 100 / event.total : 0);
-            _this._onProgressItem(item, progress);
-        };
-        xhr.onload = function () {
-            var headers = _this._parseHeaders(xhr.getAllResponseHeaders());
-            var response = _this._transformResponse(xhr.response, headers);
-            var gist = _this._isSuccessCode(xhr.status) ? 'Success' : 'Error';
-            var method = '_on' + gist + 'Item';
-            _this[method](item, response, xhr.status, headers);
-            _this._onCompleteItem(item, response, xhr.status, headers);
-        };
-        xhr.onerror = function () {
-            var headers = _this._parseHeaders(xhr.getAllResponseHeaders());
-            var response = _this._transformResponse(xhr.response, headers);
-            _this._onErrorItem(item, response, xhr.status, headers);
-            _this._onCompleteItem(item, response, xhr.status, headers);
-        };
-        xhr.onabort = function () {
-            var headers = _this._parseHeaders(xhr.getAllResponseHeaders());
-            var response = _this._transformResponse(xhr.response, headers);
-            _this._onCancelItem(item, response, xhr.status, headers);
-            _this._onCompleteItem(item, response, xhr.status, headers);
-        };
-        xhr.open(item.method, item.url, true);
-        xhr.withCredentials = item.withCredentials;
-        if (this.options.headers) {
-            for (var _i = 0, _a = this.options.headers; _i < _a.length; _i++) {
-                var header = _a[_i];
-                xhr.setRequestHeader(header.name, header.value);
-            }
-        }
-        if (item.headers.length) {
-            for (var _b = 0, _c = item.headers; _b < _c.length; _b++) {
-                var header = _c[_b];
-                xhr.setRequestHeader(header.name, header.value);
-            }
-        }
-        if (this.authToken) {
-            xhr.setRequestHeader(this.authTokenHeader, this.authToken);
-        }
-        xhr.send(sendable);
-        this._render();
-    };
-    FileUploader.prototype._getTotalProgress = function (value) {
-        if (value === void 0) { value = 0; }
-        if (this.options.removeAfterUpload) {
-            return value;
-        }
-        var notUploaded = this.getNotUploadedItems().length;
-        var uploaded = notUploaded ? this.queue.length - notUploaded : this.queue.length;
-        var ratio = 100 / this.queue.length;
-        var current = value * ratio / 100;
-        return Math.round(uploaded * ratio + current);
-    };
-    FileUploader.prototype._getFilters = function (filters) {
-        if (!filters) {
-            return this.options.filters;
-        }
-        if (Array.isArray(filters)) {
-            return filters;
-        }
-        if (typeof filters === 'string') {
-            var names_1 = filters.match(/[^\s,]+/g);
-            return this.options.filters
-                .filter(function (filter) { return names_1.indexOf(filter.name) !== -1; });
-        }
-        return this.options.filters;
-    };
-    FileUploader.prototype._render = function () {
-        return void 0;
-        // todo: ?
-    };
-    // protected _folderFilter(item:FileItem):boolean {
-    //   return !!(item.size || item.type);
-    // }
-    FileUploader.prototype._queueLimitFilter = function () {
-        return this.options.queueLimit === undefined || this.queue.length < this.options.queueLimit;
-    };
-    FileUploader.prototype._isValidFile = function (file, filters, options) {
-        var _this = this;
-        this._failFilterIndex = -1;
-        return !filters.length ? true : filters.every(function (filter) {
-            _this._failFilterIndex++;
-            return filter.fn.call(_this, file, options);
-        });
-    };
-    FileUploader.prototype._isSuccessCode = function (status) {
-        return (status >= 200 && status < 300) || status === 304;
-    };
-    /* tslint:disable */
-    FileUploader.prototype._transformResponse = function (response, headers) {
-        // todo: ?
-        /*var headersGetter = this._headersGetter(headers);
-         forEach($http.defaults.transformResponse, (transformFn) => {
-         response = transformFn(response, headersGetter);
-         });*/
-        return response;
-    };
-    /* tslint:enable */
-    FileUploader.prototype._parseHeaders = function (headers) {
-        var parsed = {};
-        var key;
-        var val;
-        var i;
-        if (!headers) {
-            return parsed;
-        }
-        headers.split('\n').map(function (line) {
-            i = line.indexOf(':');
-            key = line.slice(0, i).trim().toLowerCase();
-            val = line.slice(i + 1).trim();
-            if (key) {
-                parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
-            }
-        });
-        return parsed;
-    };
-    /*protected _iframeTransport(item:FileItem) {
-     // todo: implement it later
-     }*/
-    FileUploader.prototype._onWhenAddingFileFailed = function (item, filter, options) {
-        this.onWhenAddingFileFailed(item, filter, options);
-    };
-    FileUploader.prototype._onAfterAddingFile = function (item) {
-        this.onAfterAddingFile(item);
-    };
-    FileUploader.prototype._onAfterAddingAll = function (items) {
-        this.onAfterAddingAll(items);
-    };
-    FileUploader.prototype._onBeforeUploadItem = function (item) {
-        item._onBeforeUpload();
-        this.onBeforeUploadItem(item);
-    };
-    FileUploader.prototype._onBuildItemForm = function (item, form) {
-        item._onBuildForm(form);
-        this.onBuildItemForm(item, form);
-    };
-    FileUploader.prototype._onProgressItem = function (item, progress) {
-        var total = this._getTotalProgress(progress);
-        this.progress = total;
-        item._onProgress(progress);
-        this.onProgressItem(item, progress);
-        this.onProgressAll(total);
-        this._render();
-    };
-    /* tslint:disable */
-    FileUploader.prototype._onSuccessItem = function (item, response, status, headers) {
-        item._onSuccess(response, status, headers);
-        this.onSuccessItem(item, response, status, headers);
-    };
-    /* tslint:enable */
-    FileUploader.prototype._onCancelItem = function (item, response, status, headers) {
-        item._onCancel(response, status, headers);
-        this.onCancelItem(item, response, status, headers);
-    };
-    return FileUploader;
-}());
-exports.FileUploader = FileUploader;
-
-
-/***/ }),
-/* 341 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var file_uploader_class_1 = __webpack_require__(340);
-var FileDropDirective = (function () {
-    function FileDropDirective(element) {
-        this.fileOver = new core_1.EventEmitter();
-        this.onFileDrop = new core_1.EventEmitter();
-        this.element = element;
-    }
-    FileDropDirective.prototype.getOptions = function () {
-        return this.uploader.options;
-    };
-    FileDropDirective.prototype.getFilters = function () {
-        return {};
-    };
-    FileDropDirective.prototype.onDrop = function (event) {
-        var transfer = this._getTransfer(event);
-        if (!transfer) {
-            return;
-        }
-        var options = this.getOptions();
-        var filters = this.getFilters();
-        this._preventAndStop(event);
-        this.uploader.addToQueue(transfer.files, options, filters);
-        this.fileOver.emit(false);
-        this.onFileDrop.emit(transfer.files);
-    };
-    FileDropDirective.prototype.onDragOver = function (event) {
-        var transfer = this._getTransfer(event);
-        if (!this._haveFiles(transfer.types)) {
-            return;
-        }
-        transfer.dropEffect = 'copy';
-        this._preventAndStop(event);
-        this.fileOver.emit(true);
-    };
-    FileDropDirective.prototype.onDragLeave = function (event) {
-        if (this.element) {
-            if (event.currentTarget === this.element[0]) {
-                return;
-            }
-        }
-        this._preventAndStop(event);
-        this.fileOver.emit(false);
-    };
-    FileDropDirective.prototype._getTransfer = function (event) {
-        return event.dataTransfer ? event.dataTransfer : event.originalEvent.dataTransfer; // jQuery fix;
-    };
-    FileDropDirective.prototype._preventAndStop = function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-    };
-    FileDropDirective.prototype._haveFiles = function (types) {
-        if (!types) {
-            return false;
-        }
-        if (types.indexOf) {
-            return types.indexOf('Files') !== -1;
-        }
-        else if (types.contains) {
-            return types.contains('Files');
-        }
-        else {
-            return false;
-        }
-    };
-    return FileDropDirective;
-}());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", file_uploader_class_1.FileUploader)
-], FileDropDirective.prototype, "uploader", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], FileDropDirective.prototype, "fileOver", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], FileDropDirective.prototype, "onFileDrop", void 0);
-__decorate([
-    core_1.HostListener('drop', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], FileDropDirective.prototype, "onDrop", null);
-__decorate([
-    core_1.HostListener('dragover', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], FileDropDirective.prototype, "onDragOver", null);
-__decorate([
-    core_1.HostListener('dragleave', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Object)
-], FileDropDirective.prototype, "onDragLeave", null);
-FileDropDirective = __decorate([
-    core_1.Directive({ selector: '[ng2FileDrop]' }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], FileDropDirective);
-exports.FileDropDirective = FileDropDirective;
-
-
-/***/ }),
-/* 342 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var file_like_object_class_1 = __webpack_require__(339);
-var FileItem = (function () {
-    function FileItem(uploader, some, options) {
-        this.url = '/';
-        this.headers = [];
-        this.withCredentials = true;
-        this.formData = [];
-        this.isReady = false;
-        this.isUploading = false;
-        this.isUploaded = false;
-        this.isSuccess = false;
-        this.isCancel = false;
-        this.isError = false;
-        this.progress = 0;
-        this.index = void 0;
-        this.uploader = uploader;
-        this.some = some;
-        this.options = options;
-        this.file = new file_like_object_class_1.FileLikeObject(some);
-        this._file = some;
-        if (uploader.options) {
-            this.method = uploader.options.method || 'POST';
-            this.alias = uploader.options.itemAlias || 'file';
-        }
-        this.url = uploader.options.url;
-    }
-    FileItem.prototype.upload = function () {
-        try {
-            this.uploader.uploadItem(this);
-        }
-        catch (e) {
-            this.uploader._onCompleteItem(this, '', 0, {});
-            this.uploader._onErrorItem(this, '', 0, {});
-        }
-    };
-    FileItem.prototype.cancel = function () {
-        this.uploader.cancelItem(this);
-    };
-    FileItem.prototype.remove = function () {
-        this.uploader.removeFromQueue(this);
-    };
-    FileItem.prototype.onBeforeUpload = function () {
-        return void 0;
-    };
-    FileItem.prototype.onBuildForm = function (form) {
-        return { form: form };
-    };
-    FileItem.prototype.onProgress = function (progress) {
-        return { progress: progress };
-    };
-    FileItem.prototype.onSuccess = function (response, status, headers) {
-        return { response: response, status: status, headers: headers };
-    };
-    FileItem.prototype.onError = function (response, status, headers) {
-        return { response: response, status: status, headers: headers };
-    };
-    FileItem.prototype.onCancel = function (response, status, headers) {
-        return { response: response, status: status, headers: headers };
-    };
-    FileItem.prototype.onComplete = function (response, status, headers) {
-        return { response: response, status: status, headers: headers };
-    };
-    FileItem.prototype._onBeforeUpload = function () {
-        this.isReady = true;
-        this.isUploading = true;
-        this.isUploaded = false;
-        this.isSuccess = false;
-        this.isCancel = false;
-        this.isError = false;
-        this.progress = 0;
-        this.onBeforeUpload();
-    };
-    FileItem.prototype._onBuildForm = function (form) {
-        this.onBuildForm(form);
-    };
-    FileItem.prototype._onProgress = function (progress) {
-        this.progress = progress;
-        this.onProgress(progress);
-    };
-    FileItem.prototype._onSuccess = function (response, status, headers) {
-        this.isReady = false;
-        this.isUploading = false;
-        this.isUploaded = true;
-        this.isSuccess = true;
-        this.isCancel = false;
-        this.isError = false;
-        this.progress = 100;
-        this.index = void 0;
-        this.onSuccess(response, status, headers);
-    };
-    FileItem.prototype._onError = function (response, status, headers) {
-        this.isReady = false;
-        this.isUploading = false;
-        this.isUploaded = true;
-        this.isSuccess = false;
-        this.isCancel = false;
-        this.isError = true;
-        this.progress = 0;
-        this.index = void 0;
-        this.onError(response, status, headers);
-    };
-    FileItem.prototype._onCancel = function (response, status, headers) {
-        this.isReady = false;
-        this.isUploading = false;
-        this.isUploaded = false;
-        this.isSuccess = false;
-        this.isCancel = true;
-        this.isError = false;
-        this.progress = 0;
-        this.index = void 0;
-        this.onCancel(response, status, headers);
-    };
-    FileItem.prototype._onComplete = function (response, status, headers) {
-        this.onComplete(response, status, headers);
-        if (this.uploader.options.removeAfterUpload) {
-            this.remove();
-        }
-    };
-    FileItem.prototype._prepareToUploading = function () {
-        this.index = this.index || ++this.uploader._nextIndex;
-        this.isReady = true;
-    };
-    return FileItem;
-}());
-exports.FileItem = FileItem;
-
-
-/***/ }),
-/* 343 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var file_uploader_class_1 = __webpack_require__(340);
-// todo: filters
-var FileSelectDirective = (function () {
-    function FileSelectDirective(element) {
-        this.element = element;
-    }
-    FileSelectDirective.prototype.getOptions = function () {
-        return this.uploader.options;
-    };
-    FileSelectDirective.prototype.getFilters = function () {
-        return void 0;
-    };
-    FileSelectDirective.prototype.isEmptyAfterSelection = function () {
-        return !!this.element.nativeElement.attributes.multiple;
-    };
-    FileSelectDirective.prototype.onChange = function () {
-        // let files = this.uploader.isHTML5 ? this.element.nativeElement[0].files : this.element.nativeElement[0];
-        var files = this.element.nativeElement.files;
-        var options = this.getOptions();
-        var filters = this.getFilters();
-        // if(!this.uploader.isHTML5) this.destroy();
-        this.uploader.addToQueue(files, options, filters);
-        if (this.isEmptyAfterSelection()) {
-            // todo
-            this.element.nativeElement.value = '';
-        }
-    };
-    return FileSelectDirective;
-}());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", file_uploader_class_1.FileUploader)
-], FileSelectDirective.prototype, "uploader", void 0);
-__decorate([
-    core_1.HostListener('change'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Object)
-], FileSelectDirective.prototype, "onChange", null);
-FileSelectDirective = __decorate([
-    core_1.Directive({ selector: '[ng2FileSelect]' }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], FileSelectDirective);
-exports.FileSelectDirective = FileSelectDirective;
-
-
-/***/ }),
-/* 344 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var FileType = (function () {
-    function FileType() {
-    }
-    FileType.getMimeClass = function (file) {
-        var mimeClass = 'application';
-        if (this.mime_psd.indexOf(file.type) !== -1) {
-            mimeClass = 'image';
-        }
-        else if (file.type.match('image.*')) {
-            mimeClass = 'image';
-        }
-        else if (file.type.match('video.*')) {
-            mimeClass = 'video';
-        }
-        else if (file.type.match('audio.*')) {
-            mimeClass = 'audio';
-        }
-        else if (file.type === 'application/pdf') {
-            mimeClass = 'pdf';
-        }
-        else if (this.mime_compress.indexOf(file.type) !== -1) {
-            mimeClass = 'compress';
-        }
-        else if (this.mime_doc.indexOf(file.type) !== -1) {
-            mimeClass = 'doc';
-        }
-        else if (this.mime_xsl.indexOf(file.type) !== -1) {
-            mimeClass = 'xls';
-        }
-        else if (this.mime_ppt.indexOf(file.type) !== -1) {
-            mimeClass = 'ppt';
-        }
-        if (mimeClass === 'application') {
-            mimeClass = this.fileTypeDetection(file.name);
-        }
-        return mimeClass;
-    };
-    FileType.fileTypeDetection = function (inputFilename) {
-        var types = {
-            'jpg': 'image',
-            'jpeg': 'image',
-            'tif': 'image',
-            'psd': 'image',
-            'bmp': 'image',
-            'png': 'image',
-            'nef': 'image',
-            'tiff': 'image',
-            'cr2': 'image',
-            'dwg': 'image',
-            'cdr': 'image',
-            'ai': 'image',
-            'indd': 'image',
-            'pin': 'image',
-            'cdp': 'image',
-            'skp': 'image',
-            'stp': 'image',
-            '3dm': 'image',
-            'mp3': 'audio',
-            'wav': 'audio',
-            'wma': 'audio',
-            'mod': 'audio',
-            'm4a': 'audio',
-            'compress': 'compress',
-            'rar': 'compress',
-            '7z': 'compress',
-            'lz': 'compress',
-            'z01': 'compress',
-            'pdf': 'pdf',
-            'xls': 'xls',
-            'xlsx': 'xls',
-            'ods': 'xls',
-            'mp4': 'video',
-            'avi': 'video',
-            'wmv': 'video',
-            'mpg': 'video',
-            'mts': 'video',
-            'flv': 'video',
-            '3gp': 'video',
-            'vob': 'video',
-            'm4v': 'video',
-            'mpeg': 'video',
-            'm2ts': 'video',
-            'mov': 'video',
-            'doc': 'doc',
-            'docx': 'doc',
-            'eps': 'doc',
-            'txt': 'doc',
-            'odt': 'doc',
-            'rtf': 'doc',
-            'ppt': 'ppt',
-            'pptx': 'ppt',
-            'pps': 'ppt',
-            'ppsx': 'ppt',
-            'odp': 'ppt'
-        };
-        var chunks = inputFilename.split('.');
-        if (chunks.length < 2) {
-            return 'application';
-        }
-        var extension = chunks[chunks.length - 1].toLowerCase();
-        if (types[extension] === undefined) {
-            return 'application';
-        }
-        else {
-            return types[extension];
-        }
-    };
-    return FileType;
-}());
-/*  MS office  */
-FileType.mime_doc = [
-    'application/msword',
-    'application/msword',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
-    'application/vnd.ms-word.document.macroEnabled.12',
-    'application/vnd.ms-word.template.macroEnabled.12'
-];
-FileType.mime_xsl = [
-    'application/vnd.ms-excel',
-    'application/vnd.ms-excel',
-    'application/vnd.ms-excel',
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.template',
-    'application/vnd.ms-excel.sheet.macroEnabled.12',
-    'application/vnd.ms-excel.template.macroEnabled.12',
-    'application/vnd.ms-excel.addin.macroEnabled.12',
-    'application/vnd.ms-excel.sheet.binary.macroEnabled.12'
-];
-FileType.mime_ppt = [
-    'application/vnd.ms-powerpoint',
-    'application/vnd.ms-powerpoint',
-    'application/vnd.ms-powerpoint',
-    'application/vnd.ms-powerpoint',
-    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-    'application/vnd.openxmlformats-officedocument.presentationml.template',
-    'application/vnd.openxmlformats-officedocument.presentationml.slideshow',
-    'application/vnd.ms-powerpoint.addin.macroEnabled.12',
-    'application/vnd.ms-powerpoint.presentation.macroEnabled.12',
-    'application/vnd.ms-powerpoint.presentation.macroEnabled.12',
-    'application/vnd.ms-powerpoint.slideshow.macroEnabled.12'
-];
-/* PSD */
-FileType.mime_psd = [
-    'image/photoshop',
-    'image/x-photoshop',
-    'image/psd',
-    'application/photoshop',
-    'application/psd',
-    'zz-application/zz-winassoc-psd'
-];
-/* Compressed files */
-FileType.mime_compress = [
-    'application/x-gtar',
-    'application/x-gcompress',
-    'application/compress',
-    'application/x-tar',
-    'application/x-rar-compressed',
-    'application/octet-stream'
-];
-exports.FileType = FileType;
-
-
-/***/ }),
-/* 345 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var common_1 = __webpack_require__(6);
-var core_1 = __webpack_require__(0);
-var file_drop_directive_1 = __webpack_require__(341);
-var file_select_directive_1 = __webpack_require__(343);
-var FileUploadModule = (function () {
-    function FileUploadModule() {
-    }
-    return FileUploadModule;
-}());
-FileUploadModule = __decorate([
-    core_1.NgModule({
-        imports: [common_1.CommonModule],
-        declarations: [file_drop_directive_1.FileDropDirective, file_select_directive_1.FileSelectDirective],
-        exports: [file_drop_directive_1.FileDropDirective, file_select_directive_1.FileSelectDirective]
-    })
-], FileUploadModule);
-exports.FileUploadModule = FileUploadModule;
-
-
-/***/ }),
-/* 346 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(__webpack_require__(343));
-__export(__webpack_require__(341));
-__export(__webpack_require__(340));
-__export(__webpack_require__(342));
-__export(__webpack_require__(339));
-var file_upload_module_1 = __webpack_require__(345);
-exports.FileUploadModule = file_upload_module_1.FileUploadModule;
-
-
-/***/ }),
-/* 347 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(__webpack_require__(346));
-
 
 /***/ })
 ]);

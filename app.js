@@ -18,6 +18,7 @@ const multer  = require('multer')
 const Grid = require('gridfs-stream');
 Grid.mongo = mongoose.mongo;
 var gfs;
+var upload;
 const GridFsStorage = require('multer-gridfs-storage');
 
 
@@ -25,7 +26,8 @@ const GridFsStorage = require('multer-gridfs-storage');
 // route files
 const organization = require('./routes/organization');
 const administration = require('./routes/administration');
-const users = require('./routes/users')
+const users = require('./routes/users');
+const fileNames = require('./routes/filename');
 
 // app express
 const app = express();
@@ -40,49 +42,50 @@ mongoose.connection.on('connected',() => {
   console.log('Connected to Database ' + config.database);
 
 });
-// Parte Nueva Añadida
-mongoose.connection.once('open', () => {
-  gfs = Grid(mongoose.connection.db);
-  app.set('gridfs', gfs);
-});
+// // Parte Nueva Añadida
+// mongoose.connection.once('open', () => {
+// });
+
+// Check Mongodb connections
+checkMongooseConnection(mongoose);
+
+// Set Up Mogo to upload PDF files
+setUpStorageUsingMongoDb();
 
 
-/** Setting up storage using multer-gridfs-storage */
-var storage = GridFsStorage({
-    url: config.database,
-    gfs : gfs,
-    filename: function (req, file, cb) {
-      var options = { year: 'numeric', month: 'long', day: 'numeric',
-      				        hour: 'numeric', minute:'numeric',second:'numeric'
-                    };
-      // verificar si el filename tiene mas de un punto y borrarselor que solo se quede con el
-      // ultimo punto
-      var fileName = file.originalname;
-      var nameOfFile = fileName.split(".")[fileName.split(".").length -2]
-      var typeOfFileName = fileName.split('.')[fileName.split('.').length -1];
-      var datetimestamp = new Date().toLocaleDateString('en-US',options);
-
-      cb(null, nameOfFile + '-' + datetimestamp + '.' + typeOfFileName);
-    },
-    /** With gridfs we can store aditional meta-data along with the file */
-    metadata: function(req, file, cb) {
-        cb(null, { originalname: file.originalname });
-    },
-    root: 'templateFiles' //root name for collection to store files into
-});
-
-var upload = multer({ //multer settings for single upload
-    storage: storage
-}).single('file');
-
+const fileName = require('./models/filename');
 /** API path that will upload the files */
 app.post('/upload', function(req, res) {
    upload(req,res,function(err){
+     console.log("body in upload method: " +JSON.stringify(req.body, null, 4));
        if(err){
             res.json({error_code:1,err_desc:err});
             return;
        }
-        res.json({error_code:0,err_desc:null,file:req.file});
+       console.log("Filename of the file " + req.file.grid.filename);
+       console.log("id of the file " + req.file.grid._id);
+
+      //  Save the name of the file here to naother databse for easy retireval
+        let nameFile = new fileName({
+          name:req.file.grid.filename,
+          id:req.file.grid._id
+        })
+        fileName.addFileName(nameFile,(err,file)=> {
+          if (err){
+            console.log("Error saving fileName");
+          }else {
+            console.log("File Name saved Succesfully");
+          }
+
+        });
+
+        res.json({
+          error_code:0,
+          err_desc:null,
+          file:req.file,
+          filename:req.file.grid.filename,
+          dbId: req.file.grid._id
+        });
    });
 });
 
@@ -102,21 +105,19 @@ app.get('/file/:filename', function(req, res){
             filename: files[0].filename,
             root: "templateFiles"
         });
-        /** set the proper content type */
+        /** set the proper content type. */
         res.set('Content-Type', files[0].contentType)
+        console.log("pipe");
+        console.log(readstream.pipe(res).req.originalUrl);
+        // readstream.pipe(res) is the original one but I want the Url because I want
+        // to reference to this link in Angular2
+        return readstream.pipe(res).req.originalUrl;
 
-        return readstream.pipe(res);
+        // 535
     });
   });
 
 // Fin de la parte Nueva Añadida
-
-
-
-
-
-// Check Mongodb connections
-checkMongooseConnection(mongoose);
 
 
 // Port Number
@@ -136,6 +137,8 @@ app.use('/users',users);
 app.use('/organization',organization);
 // route for Administrator
 app.use('/administrator',administration);
+// route for files retrieval
+app.use('/',fileNames);
 
 // app.post('/image',upload.single('img'), (req,res,next) => {
 //
@@ -189,6 +192,7 @@ function checkMongooseConnection(mongose){
    }
     mongoose.connection.on('open', function (ref) {
       connected=true;
+      gfs = Grid(mongoose.connection.db);
       console.log('open connection to mongo server.');
   });
 
@@ -214,6 +218,37 @@ function checkMongooseConnection(mongose){
   });
 }
 
+function setUpStorageUsingMongoDb(){
+  // set up storage for file using mongDb (Mongoose)
+
+  /** Setting up storage using multer-gridfs-storage */
+  var storage = GridFsStorage({
+      url: config.database,
+      gfs : gfs,
+      filename: function (req, file, cb) {
+        var options = { year: 'numeric', month: 'long', day: 'numeric',
+        				        hour: 'numeric', minute:'numeric',second:'numeric'
+                      };
+        // verificar si el filename tiene mas de un punto y borrarselor que solo se quede con el
+        // ultimo punto
+        var fileName = file.originalname;
+        var nameOfFile = fileName.split(".")[fileName.split(".").length -2]
+        var typeOfFileName = fileName.split('.')[fileName.split('.').length -1];
+        var datetimestamp = new Date().toLocaleDateString('en-US',options);
+
+        cb(null, nameOfFile + '-' + datetimestamp + '.' + typeOfFileName);
+      },
+      /** With gridfs we can store aditional meta-data along with the file */
+      metadata: function(req, file, cb) {
+          cb(null, { originalname: file.originalname });
+      },
+      root: 'templateFiles' //root name for collection to store files into
+  });
+
+    upload = multer({ //multer settings for single upload
+      storage: storage
+  }).single('file');
+}
 
 // var user = new users({
 //   name: "Huis2",

@@ -13,7 +13,7 @@ export class UsersService {
   constructor(private http:Http) { }
 
   // getUserById
-  getUserById(id){
+  getUserById(id:Number){
     let headers = new Headers();
     //set the Content-Type to application/json
     headers.append('Content-Type','application/json');
@@ -46,7 +46,7 @@ export class UsersService {
   }
 
   //Get all users
-  skipUsers(number){
+  skipUsers(number:Number){
     let headers = new Headers();
     //set the Content-Type to application/json
     headers.append('Content-Type','application/json');
@@ -54,6 +54,28 @@ export class UsersService {
     // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
     return this.http.get('/users/skipUsers?skipNumber='+number,{headers:headers}).map(res =>
       res.json());
+  }
+
+  // Get a file store in db by his name
+  getFile(fileName:String){
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    headers.append('Content-Type','application/json');
+    // return an observable with the response
+    // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options.
+    return this.http.get('/file/'+fileName,{headers:headers});
+  }
+
+  getLatestFile(){
+    console.log("llamada al metodo getlatesfile");
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    headers.append('Content-Type','application/json');
+    // return an observable with the response
+    // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options.
+    return this.http.get('/getLatestfile',{headers:headers}).map(res =>
+      res.json()
+    );
   }
 
   // Get the role of the user
