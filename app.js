@@ -10,7 +10,7 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 
 // variables
-const config = require('./config/databse')
+const config = require('./config/databse');
 
 const multer  = require('multer')
 // const upload = multer({ dest: 'uploads/' })
@@ -18,7 +18,6 @@ const multer  = require('multer')
 const Grid = require('gridfs-stream');
 Grid.mongo = mongoose.mongo;
 var gfs;
-var upload;
 const GridFsStorage = require('multer-gridfs-storage');
 
 
@@ -49,45 +48,6 @@ mongoose.connection.on('connected',() => {
 // Check Mongodb connections
 checkMongooseConnection(mongoose);
 
-// Set Up Mogo to upload PDF files
-setUpStorageUsingMongoDb();
-
-
-const fileName = require('./models/filename');
-/** API path that will upload the files */
-app.post('/upload', function(req, res) {
-   upload(req,res,function(err){
-     console.log("body in upload method: " +JSON.stringify(req.body, null, 4));
-       if(err){
-            res.json({error_code:1,err_desc:err});
-            return;
-       }
-       console.log("Filename of the file " + req.file.grid.filename);
-       console.log("id of the file " + req.file.grid._id);
-
-      //  Save the name of the file here to naother databse for easy retireval
-        let nameFile = new fileName({
-          name:req.file.grid.filename,
-          id:req.file.grid._id
-        })
-        fileName.addFileName(nameFile,(err,file)=> {
-          if (err){
-            console.log("Error saving fileName");
-          }else {
-            console.log("File Name saved Succesfully");
-          }
-
-        });
-
-        res.json({
-          error_code:0,
-          err_desc:null,
-          file:req.file,
-          filename:req.file.grid.filename,
-          dbId: req.file.grid._id
-        });
-   });
-});
 
 app.get('/file/:filename', function(req, res){
     gfs.collection('templateFiles'); //set collection name to lookup into

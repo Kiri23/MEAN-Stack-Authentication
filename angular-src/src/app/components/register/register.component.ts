@@ -28,11 +28,12 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit() {
     // role of administrator
-    this.role = 1;
+    // cambiar esto
+    this.role = 2;
   }
 
   onRegisterSubmit(){
-    console.log(this.name,this.username,this.email)
+    console.log(this.name,this.username,this.email, "role: ",this.role);
     // Aqui tengo que mandar el rol del usuario pa asegurar quien lo creo y que rol tiene este
     // usuario nuevo
     const user = {
@@ -41,7 +42,8 @@ export class RegisterComponent implements OnInit {
       username:this.username,
       password:this.password,
       role:this.role,
-      CreatedDate:new Date()
+      CreatedDate:new Date(),
+      file:[]
     }
     // Required Fields
     if(!this.validateService.validateRegister(user)){
@@ -68,12 +70,12 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/login'])
       }else{ // user can not be register
         // show a message. sugestion maye in the json can be a error message
-        this.flashMessage.show("Something went wrong" + data.error,{cssClass: 'alert-danger',timeout: 3000});
+        this.flashMessage.show("Something went wrong" + data.error.errors,{cssClass: 'alert-danger',timeout: 3000});
         // Redirect to login
         this.router.navigate(['/register'])
       }
     });
-
+    //  data.error.errors.file.message - mostrar el mensajes de error de excdeio file archivos
   }
 
 }

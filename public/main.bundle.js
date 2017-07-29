@@ -141,6 +141,18 @@ var UsersService = (function () {
             return res.json();
         });
     };
+    UsersService.prototype.getFilesUploaded = function (userId) {
+        console.log("llamada al metodo getFileUploaded - users.service" + "\n userId:" + userId);
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        //set the Content-Type to application/json
+        headers.append('Content-Type', 'application/json');
+        // return an observable with the response
+        // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options.
+        return this.http.get('users/getFilesUploaded?userId=' + userId, { headers: headers }).map(function (res) {
+            // ya aqui en el serve side ya se ha hecho la validacion si es nullo, undefined, vacio
+            return res.json();
+        });
+    };
     // Get the role of the user
     UsersService.prototype.getRoleOfUser = function (id) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
@@ -257,6 +269,7 @@ var AuthService = (function () {
         if (!user.role) {
             return;
         }
+        console.log("rol de que registra: " + user.role);
         if (user.role == 2) {
             // return an observable with the response
             // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
@@ -290,7 +303,7 @@ var AuthService = (function () {
         this.user = user;
         // cargar underscore verificar si role no es empty y setiar el role. pq
         // si voy a estar confiando tanto en el role de auth.servoce tengo que asegurarme que nunca
-        // sea nullo pq si no esto puede traer mucho comportamiento inesperado 
+        // sea nullo pq si no esto puede traer mucho comportamiento inesperado
         this.userRole = role;
     };
     AuthService.prototype.logout = function () {
@@ -316,6 +329,12 @@ var AuthService = (function () {
         // Load token from local storage
         var token = localStorage.getItem('id_token');
         this.authToken = token;
+    };
+    AuthService.prototype.getUserIdLoggedIn = function () {
+        if (this.checkLoggedIn()) {
+            var userId = localStorage.getItem('user');
+            return userId;
+        }
     };
     AuthService.prototype.loadVariables = function () {
     };
@@ -943,15 +962,16 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_admin_users_admin_users_component__ = __webpack_require__(184);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_dashboard_components_table_columns_table_columns_component__ = __webpack_require__(191);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_admin_register_admin_register_component__ = __webpack_require__(183);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__services_validate_service__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_auth_service__ = __webpack_require__(21);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__guards_auth_guard__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__guards_administrtor_guard__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__services_users_service__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__services_utilities_service__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__services_administration_administrator_service__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__services_organization_organization_service__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_upload_file_upload_file_component__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_upload_portfolio_upload_portfolio_component__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__services_validate_service__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__services_auth_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__guards_administrtor_guard__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__services_users_service__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__services_utilities_service__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__services_administration_administrator_service__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__services_organization_organization_service__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_upload_file_upload_file_component__ = __webpack_require__(199);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -989,6 +1009,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 //Services
 
 
@@ -999,23 +1020,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//appRoutes - va a contener todas las routes del app
+//appRoutes - va a contener todas las routes del angular app
 var appRoutes = [
     // Home Route
     { path: '', component: __WEBPACK_IMPORTED_MODULE_12__components_home_home_component__["a" /* HomeComponent */] },
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_11__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_10__components_login_login_component__["a" /* LoginComponent */] },
     // protect route
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_29__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_14__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */]] },
     // protect route
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_13__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_29__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_13__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */]] },
     // protect route
-    { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_15__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_30__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
-    { path: 'adminUsers', component: __WEBPACK_IMPORTED_MODULE_24__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_29__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_15__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_31__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
+    { path: 'adminUsers', component: __WEBPACK_IMPORTED_MODULE_24__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */]] },
     // I will want this route to be protected only another administrator can create other
     // administrator
     { path: 'register/admin', component: __WEBPACK_IMPORTED_MODULE_26__components_admin_register_admin_register_component__["a" /* AdminRegisterComponent */] },
-    { path: 'upload', component: __WEBPACK_IMPORTED_MODULE_35__components_upload_file_upload_file_component__["a" /* UploadFileComponent */] }
+    // administrator upload templates - ponerle protected route
+    { path: 'admin/upload', component: __WEBPACK_IMPORTED_MODULE_36__components_upload_file_upload_file_component__["a" /* UploadFileComponent */] },
+    // user upload portfolios - ponerle protected route
+    { path: 'users/upload', component: __WEBPACK_IMPORTED_MODULE_27__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -1044,8 +1068,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_24__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */],
             __WEBPACK_IMPORTED_MODULE_25__components_dashboard_components_table_columns_table_columns_component__["a" /* TableColumnsComponent */],
             __WEBPACK_IMPORTED_MODULE_26__components_admin_register_admin_register_component__["a" /* AdminRegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_35__components_upload_file_upload_file_component__["a" /* UploadFileComponent */],
-            __WEBPACK_IMPORTED_MODULE_7_ng2_file_upload__["FileSelectDirective"]
+            __WEBPACK_IMPORTED_MODULE_36__components_upload_file_upload_file_component__["a" /* UploadFileComponent */],
+            __WEBPACK_IMPORTED_MODULE_7_ng2_file_upload__["FileSelectDirective"],
+            __WEBPACK_IMPORTED_MODULE_27__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -1055,8 +1080,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesModule"],
             __WEBPACK_IMPORTED_MODULE_6__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_27__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_28__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_29__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_30__guards_administrtor_guard__["a" /* AdministratorGuard */],
-            __WEBPACK_IMPORTED_MODULE_31__services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_32__services_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_33__services_administration_administrator_service__["a" /* AdministratorsService */], __WEBPACK_IMPORTED_MODULE_34__services_organization_organization_service__["a" /* OrganizationsService */]
+        providers: [__WEBPACK_IMPORTED_MODULE_28__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_29__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_30__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_31__guards_administrtor_guard__["a" /* AdministratorGuard */],
+            __WEBPACK_IMPORTED_MODULE_32__services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_33__services_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_34__services_administration_administrator_service__["a" /* AdministratorsService */], __WEBPACK_IMPORTED_MODULE_35__services_organization_organization_service__["a" /* OrganizationsService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
     })
@@ -1793,6 +1818,8 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_underscore__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_underscore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_underscore__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1803,6 +1830,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1822,6 +1850,7 @@ var ProfileComponent = (function () {
     ProfileComponent.prototype.ngOnInit = function () {
         this.getProfile();
         this.getFileByName("Christian Nogueras Rosado Resume v3-July 25, 2017, 11:41:53 AM.docx");
+        this.getListOfFileNames();
     };
     ProfileComponent.prototype.getProfile = function () {
         var _this = this;
@@ -1859,6 +1888,29 @@ var ProfileComponent = (function () {
             _this.flashMessage.show("Error retrieving the file", { cssClass: 'alert-danger', timeout: 5000 });
             // redirect to the login page
             // this.router.navigate(['/login']);
+            return false;
+        });
+    };
+    ProfileComponent.prototype.getListOfFileNames = function () {
+        var _this = this;
+        this.userService.getLatestFile().subscribe(function (file) {
+            if (!__WEBPACK_IMPORTED_MODULE_6_underscore__["isEmpty"](file) &&
+                !__WEBPACK_IMPORTED_MODULE_6_underscore__["isNull"](file) &&
+                !__WEBPACK_IMPORTED_MODULE_6_underscore__["isUndefined"](file)) {
+                // user send with the response
+                _this.listOfFileNames = file;
+            }
+            else {
+                _this.listOfFileNames = [{ name: "No file to show" }];
+            }
+            console.log("file object is " + file);
+            console.log("length of file " + file.length);
+        }, function (err) {
+            // observable can also return error
+            console.log(err);
+            // Show a error message
+            _this.flashMessage.show("Error mostrando los archivos para descargar", { cssClass: 'alert-danger', timeout: 5000 });
+            // redirect to the login page
             return false;
         });
     };
@@ -1924,11 +1976,12 @@ var RegisterComponent = (function () {
     }
     RegisterComponent.prototype.ngOnInit = function () {
         // role of administrator
-        this.role = 1;
+        // cambiar esto
+        this.role = 2;
     };
     RegisterComponent.prototype.onRegisterSubmit = function () {
         var _this = this;
-        console.log(this.name, this.username, this.email);
+        console.log(this.name, this.username, this.email, "role: ", this.role);
         // Aqui tengo que mandar el rol del usuario pa asegurar quien lo creo y que rol tiene este
         // usuario nuevo
         var user = {
@@ -1937,7 +1990,8 @@ var RegisterComponent = (function () {
             username: this.username,
             password: this.password,
             role: this.role,
-            CreatedDate: new Date()
+            CreatedDate: new Date(),
+            file: []
         };
         // Required Fields
         if (!this.validateService.validateRegister(user)) {
@@ -1964,11 +2018,12 @@ var RegisterComponent = (function () {
             }
             else {
                 // show a message. sugestion maye in the json can be a error message
-                _this.flashMessage.show("Something went wrong" + data.error, { cssClass: 'alert-danger', timeout: 3000 });
+                _this.flashMessage.show("Something went wrong" + data.error.errors, { cssClass: 'alert-danger', timeout: 3000 });
                 // Redirect to login
                 _this.router.navigate(['/register']);
             }
         });
+        //  data.error.errors.file.message - mostrar el mensajes de error de excdeio file archivos
     };
     return RegisterComponent;
 }());
@@ -2014,7 +2069,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // modules
 
 
-var URL = "/upload";
+var URL = "administrator/upload";
 var UploadFileComponent = (function () {
     function UploadFileComponent(userService, flashMessage) {
         this.userService = userService;
@@ -2060,7 +2115,7 @@ var UploadFileComponent = (function () {
             // observable can also return error
             console.log(err);
             // Show a error message
-            _this.flashMessage.show("Error retrieving the files", { cssClass: 'alert-danger', timeout: 5000 });
+            _this.flashMessage.show("Error mostrando los archivos que se subieron", { cssClass: 'alert-danger', timeout: 5000 });
             // redirect to the login page
             return false;
         });
@@ -2087,7 +2142,7 @@ var UploadFileComponent = (function () {
             // matche everything before a -
             var filetoUpload = this.uploader.queue.concat()[0]._file.name.match(/^[^-]*[^ -]/g);
             // console.log("file tp" + filetoUpload);
-            uploadFile = window.confirm(lastFile + " sera remplazado con " + filetoUpload);
+            uploadFile = window.confirm("El archivo: \"" + lastFile + "\" sera remplazado con el archivo \"" + filetoUpload + "\" ");
         }
         if (uploadFile == true || this.listOfFileNames.length <= 4) {
             console.log("uplaod file es true");
@@ -2895,7 +2950,7 @@ module.exports = "<nav class=\"navbar navbar-default\">\n  <div class=\"containe
 /* 302 */
 /***/ (function(module, exports) {
 
-module.exports = "<!--ngIf(ifStatement)- Make sure there's a user before showing html  -->\n<div *ngIf=\"user\" class=\"\">\n  <!--Embed the user name -->\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <!--username of the user  -->\n    <li class=\"list-group-item\">\n      Username: {{user.username}}\n    </li>\n    <!--Email of the user  -->\n    <li class=\"list-group-item\">\n      Email: {{user.email}}\n    </li>\n  </ul>\n</div>\n\n<div *ngIf=\"fileLink\" class=\"\">\n  <h2>Template to download\n      <a target=\"_blank\" [href]=fileUrl download (click)=\"downloadLink()\" >Template 1</a>\n  </h2>\n</div>\n\n<div *ngIf=\"isDownloading\" class=\"\">\n  <h2>Downloading Files</h2>\n</div>\n"
+module.exports = "<!--ngIf(ifStatement)- Make sure there's a user before showing html  -->\n<div *ngIf=\"user\" class=\"\">\n  <!--Embed the user name -->\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <!--username of the user  -->\n    <li class=\"list-group-item\">\n      Username: {{user.username}}\n    </li>\n    <!--Email of the user  -->\n    <li class=\"list-group-item\">\n      Email: {{user.email}}\n    </li>\n  </ul>\n</div>\n\n<div *ngIf=\"fileLink\" class=\"\">\n  <h2>Template to download\n      <a target=\"_blank\" [href]=fileUrl download (click)=\"downloadLink()\" >Template 1</a>\n  </h2>\n</div>\n\n<div *ngIf=\"isDownloading\" class=\"\">\n  <h2>Downloading Files</h2>\n</div>\n\n\n<!--Tabla de archivos para descargar-->\n<!--Crear Componente aparte -->\n<br>\n<div class=\"row table-responsive\">\n  <div class=\"col-md-12\">\n    <table class=\"table table-bordered table-hover\">\n      <caption style=\"font-size:40px;\">Descargar Archivos:</caption>\n      <!--Header of the table  -->\n      <tr>\n        <th>Numero</th>\n        <th>Nombre del Archivo</th>\n        <th style=\"width:80px\">Editar</th>\n        <th style=\"width:80px\">Eliminar</th>\n        <th>Subido Por</th>\n      </tr>\n      <!--Rows of tables  -->\n      <tr *ngFor=\"let file of listOfFileNames;let index = index\" class=\"\">\n        <th scope=\"row\">{{index + 1}}</th>\n        <td colspan=\"\">{{file.name}} </td>\n        <!--Edit row  -->\n        <td>\n          <p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Edit\" style=\"display:inline;float:left;\"><button class=\"btn btn-primary btn-xs\" data-title=\"Edit\" data-toggle=\"modal\" data-target=\"#edit\" ><span class=\"glyphicon glyphicon-pencil\" style=\"font-size:12px;\"></span></button></p>\n        </td>\n        <!--Delete Row  -->\n        <td>\n          <p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Delete\"><button class=\"btn btn-danger btn-xs\" data-title=\"Delete\" data-toggle=\"modal\" data-target=\"#delete\" > <span class=\"glyphicon glyphicon-trash\" style=\"font-size:12px\"></span></button></p>\n        </td>\n        <!--Subido Por Row  -->\n        <td>\n\n        </td>\n      </tr> <!-- End of rows Tables -->\n    </table>\n  </div>\n</div>\n\n<h2 *ngIf=\"!listOfFileNames\">No hay archivos para mostrar al momento</h2>\n"
 
 /***/ }),
 /* 303 */
@@ -2907,7 +2962,7 @@ module.exports = "<h2 class=\"page-header\">{{text}}</h2>\n\n<form name=\"regist
 /* 304 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"navbar navbar-default\">\n    <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >File Upload</a>\n    </div>\n</div>\n\n<div class=\"\">\n<span id=\"fileselector\">\n    <label class=\"btn btn-default\" for=\"upload-file-selector\">\n        <input id=\"upload-file-selector\" type=\"file\" name=\"photo\" ng2FileSelect [uploader]=\"uploader\" >\n        <i class=\"fa_icon icon-upload-alt margin-correction\"></i>upload file\n    </label>\n</span>\n</div>\n\n<div class=\"\" style=\"margin-bottom: 40px\">\n\n    <h3>Upload queue</h3>\n    <p>Queue length: {{ uploader?.queue?.length }}</p>\n\n<table class=\"table\">\n    <thead>\n    <tr>\n        <th width=\"50%\">Name</th>\n        <th>Size</th>\n        <th>Progress</th>\n        <th>Status</th>\n        <th>Actions</th>\n    </tr>\n    </thead>\n    <tbody>\n    <tr *ngFor=\"let item of uploader.queue\">\n        <!--Nombre del archivo  -->\n        <td><strong>{{ item?.file?.name }}</strong></td>\n        <td *ngIf=\"true\" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>\n        <td *ngIf=\"true\">\n            <div class=\"progress\" style=\"margin-bottom: 0;\">\n                <div class=\"progress-bar\" role=\"progressbar\" [ngStyle]=\"{ 'width': item.progress + '%' }\"></div>\n            </div>\n        </td>\n        <!--Signo del Status   -->\n        <td class=\"text-center\">\n            <span *ngIf=\"item.isSuccess\"><i class=\"glyphicon glyphicon-ok\"></i></span>\n            <span *ngIf=\"item.isCancel\"><i class=\"glyphicon glyphicon-ban-circle\"></i></span>\n            <span *ngIf=\"item.isError\"><i class=\"glyphicon glyphicon-remove\"></i></span>\n        </td>\n        <!--Actions rows nowrap lo pones todos inline -->\n        <td nowrap>\n            <!--When you click the item will upload  -->\n            <button type=\"button\" class=\"btn btn-success btn-xs\"\n                    (click)=\"item.upload()\" [disabled]=\"item.isReady || item.isUploading || item.isSuccess\">\n                <span class=\"glyphicon glyphicon-upload\"></span> Upload\n            </button>\n            <button type=\"button\" class=\"btn btn-warning btn-xs\"\n                    (click)=\"item.cancel()\" [disabled]=\"!item.isUploading\">\n                <span class=\"glyphicon glyphicon-ban-circle\"></span> Cancel\n            </button>\n            <button type=\"button\" class=\"btn btn-danger btn-xs\"\n                    (click)=\"item.remove()\">\n                <span class=\"glyphicon glyphicon-trash\"></span> Remove\n            </button>\n        </td>\n    </tr>\n    </tbody>\n</table>\n\n<!--Progress Bar  -->\n<div>\n    <div>\n        Queue progress:\n        <div class=\"progress\" style=\"\">\n            <div class=\"progress-bar\" role=\"progressbar\" [ngStyle]=\"{ 'width': uploader.progress + '%' }\"></div>\n        </div>\n    </div>\n    <button type=\"button\" class=\"btn btn-success btn-s\"\n            (click)=\"uploadAll()\" [disabled]=\"!uploader.getNotUploadedItems().length\">\n        <span class=\"glyphicon glyphicon-upload\"></span> Upload all\n    </button>\n    <button type=\"button\" class=\"btn btn-warning btn-s\"\n            (click)=\"uploader.cancelAll()\" [disabled]=\"!uploader.isUploading\">\n        <span class=\"glyphicon glyphicon-ban-circle\"></span> Cancel all\n    </button>\n    <button type=\"button\" class=\"btn btn-danger btn-s\"\n            (click)=\"uploader.clearQueue()\" [disabled]=\"!uploader.queue.length\">\n        <span class=\"glyphicon glyphicon-trash\"></span> Remove all\n    </button>\n</div>\n<!--End Progress bar  -->\n\n<h2> </h2>\n\n</div>\n<br>\n\n<!-- <input *ngIf=\"listOfFileNames\" type=\"button\" (click)=\"addRow()\" [disabled]=\"listOfFileNames.length >=5\" value=\"Add Row\" class=\"btn btn-primary\"> -->\n\n<div class=\"row table-responsive\">\n  <div class=\"col-md-12\">\n    <table class=\"table table-bordered table-hover\">\n      <caption style=\"font-size:40px;\">Archivos Subidos:</caption>\n      <!--Header of the table  -->\n      <tr>\n        <th>Numero</th>\n        <th>Nombre del Archivo</th>\n        <th style=\"width:80px\">Editar</th>\n        <th style=\"width:80px\">Eliminar</th>\n        <th>Subido Por</th>\n      </tr>\n      <!--Rows of tables  -->\n      <tr *ngFor=\"let file of listOfFileNames;let index = index\" class=\"\">\n        <th scope=\"row\">{{index + 1}}</th>\n        <td colspan=\"\">{{file.name}} </td>\n        <!--Edit row  -->\n        <td>\n          <p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Edit\" style=\"display:inline;float:left;\"><button class=\"btn btn-primary btn-xs\" data-title=\"Edit\" data-toggle=\"modal\" data-target=\"#edit\" ><span class=\"glyphicon glyphicon-pencil\" style=\"font-size:12px;\"></span></button></p>\n        </td>\n        <!--Delete Row  -->\n        <td>\n          <p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Delete\"><button class=\"btn btn-danger btn-xs\" data-title=\"Delete\" data-toggle=\"modal\" data-target=\"#delete\" > <span class=\"glyphicon glyphicon-trash\" style=\"font-size:12px\"></span></button></p>\n        </td>\n        <!--Subido Por Row  -->\n        <td>\n\n        </td>\n      </tr> <!-- End of rows Tables -->\n    </table>\n  </div>\n</div>\n\n<h2 *ngIf=\"!listOfFileNames\">No hay archivos para mostrar al momento</h2>\n\n\n<!--Edit Modal -->\n<div class=\"modal fade\" id=\"edit\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"edit\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>\n        <h4 class=\"modal-title custom_align\" id=\"Heading\">Edit Your Detail</h4>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"form-group\">\n          <input class=\"form-control \" type=\"text\" placeholder=\"Mohsin\">\n        </div>\n        <div class=\"form-group\">\n          <input class=\"form-control \" type=\"text\" placeholder=\"Irshad\">\n        </div>\n        <div class=\"form-group\">\n          <textarea rows=\"2\" class=\"form-control\" placeholder=\"CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan\"></textarea>\n        </div>\n    </div>\n    <div class=\"modal-footer \">\n      <button type=\"button\" class=\"btn btn-warning btn-lg\" style=\"width: 100%;\"><span class=\"glyphicon glyphicon-ok-sign\"></span> Update</button>\n    </div>\n  </div>\n <!-- /.modal-content -->\n </div>\n<!-- /.modal-dialog -->\n</div> <!-- End Edit Modal -->\n\n<!--Start Delete Modal -->\n<div class=\"modal fade\" id=\"delete\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"edit\" aria-hidden=\"true\">\n <div class=\"modal-dialog\">\n  <div class=\"modal-content\">\n    <div class=\"modal-header\">\n      <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>\n      <h4 class=\"modal-title custom_align\" id=\"Heading\">Delete this entry</h4>\n    </div>\n    <div class=\"modal-body\">\n      <div class=\"alert alert-danger\"><span class=\"glyphicon glyphicon-warning-sign\"></span> Are you sure you want to delete this Record?</div>\n    </div>\n    <div class=\"modal-footer \">\n      <button type=\"button\" class=\"btn btn-success\" ><span class=\"glyphicon glyphicon-ok-sign\"></span> Yes</button>\n      <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><span class=\"glyphicon glyphicon-remove\"></span> No</button>\n    </div>\n    </div>\n    <!-- /.modal-content -->\n  </div>\n  <!--  /.modal-dialog --> \n</div>\n<!--End Delete Modal  -->\n"
+module.exports = "<div class=\"navbar navbar-default\">\n    <div class=\"navbar-header\">\n        <a class=\"navbar-brand\" >File Upload</a>\n    </div>\n</div>\n\n<div class=\"\">\n<span id=\"fileselector\">\n    <label class=\"btn btn-default\" for=\"upload-file-selector\">\n        <input id=\"upload-file-selector\" type=\"file\" name=\"photo\" ng2FileSelect [uploader]=\"uploader\" >\n        <i class=\"fa_icon icon-upload-alt margin-correction\"></i>upload file\n    </label>\n</span>\n</div>\n\n<div class=\"\" style=\"margin-bottom: 40px\">\n\n    <h3>Upload queue</h3>\n    <p>Queue length: {{ uploader?.queue?.length }}</p>\n\n<table class=\"table\">\n    <thead>\n    <tr>\n        <th width=\"50%\">Name</th>\n        <th>Size</th>\n        <th>Progress</th>\n        <th>Status</th>\n        <th>Actions</th>\n    </tr>\n    </thead>\n    <tbody>\n    <tr *ngFor=\"let item of uploader.queue\">\n        <!--Nombre del archivo  -->\n        <td><strong>{{ item?.file?.name }}</strong></td>\n        <td *ngIf=\"true\" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>\n        <td *ngIf=\"true\">\n            <div class=\"progress\" style=\"margin-bottom: 0;\">\n                <div class=\"progress-bar\" role=\"progressbar\" [ngStyle]=\"{ 'width': item.progress + '%' }\"></div>\n            </div>\n        </td>\n        <!--Signo del Status   -->\n        <td class=\"text-center\">\n            <span *ngIf=\"item.isSuccess\"><i class=\"glyphicon glyphicon-ok\"></i></span>\n            <span *ngIf=\"item.isCancel\"><i class=\"glyphicon glyphicon-ban-circle\"></i></span>\n            <span *ngIf=\"item.isError\"><i class=\"glyphicon glyphicon-remove\"></i></span>\n        </td>\n        <!--Actions rows nowrap lo pones todos inline -->\n        <td nowrap>\n            <!--When you click the item will upload  -->\n            <button type=\"button\" class=\"btn btn-success btn-xs\"\n                    (click)=\"item.upload()\" [disabled]=\"item.isReady || item.isUploading || item.isSuccess\">\n                <span class=\"glyphicon glyphicon-upload\"></span> Upload\n            </button>\n            <button type=\"button\" class=\"btn btn-warning btn-xs\"\n                    (click)=\"item.cancel()\" [disabled]=\"!item.isUploading\">\n                <span class=\"glyphicon glyphicon-ban-circle\"></span> Cancel\n            </button>\n            <button type=\"button\" class=\"btn btn-danger btn-xs\"\n                    (click)=\"item.remove()\">\n                <span class=\"glyphicon glyphicon-trash\"></span> Remove\n            </button>\n        </td>\n    </tr>\n    </tbody>\n</table>\n\n<!--Progress Bar  -->\n<div>\n    <div>\n        Queue progress:\n        <div class=\"progress\" style=\"\">\n            <div class=\"progress-bar\" role=\"progressbar\" [ngStyle]=\"{ 'width': uploader.progress + '%' }\"></div>\n        </div>\n    </div>\n    <button type=\"button\" class=\"btn btn-success btn-s\"\n            (click)=\"uploadAll()\" [disabled]=\"!uploader.getNotUploadedItems().length\">\n        <span class=\"glyphicon glyphicon-upload\"></span> Upload all\n    </button>\n    <button type=\"button\" class=\"btn btn-warning btn-s\"\n            (click)=\"uploader.cancelAll()\" [disabled]=\"!uploader.isUploading\">\n        <span class=\"glyphicon glyphicon-ban-circle\"></span> Cancel all\n    </button>\n    <button type=\"button\" class=\"btn btn-danger btn-s\"\n            (click)=\"uploader.clearQueue()\" [disabled]=\"!uploader.queue.length\">\n        <span class=\"glyphicon glyphicon-trash\"></span> Remove all\n    </button>\n</div>\n<!--End Progress bar  -->\n\n<h2> </h2>\n\n</div>\n<br>\n\n<!-- <input *ngIf=\"listOfFileNames\" type=\"button\" (click)=\"addRow()\" [disabled]=\"listOfFileNames.length >=5\" value=\"Add Row\" class=\"btn btn-primary\"> -->\n\n<div class=\"row table-responsive\">\n  <div class=\"col-md-12\">\n    <table class=\"table table-bordered table-hover\">\n      <caption style=\"font-size:40px;\">Archivos Subidos:</caption>\n      <!--Header of the table  -->\n      <tr>\n        <th>Numero</th>\n        <th>Nombre del Archivo</th>\n        <th style=\"width:80px\">Editar</th>\n        <th style=\"width:80px\">Eliminar</th>\n        <th>Subido Por</th>\n      </tr>\n      <!--Rows of tables  -->\n      <tr *ngFor=\"let file of listOfFileNames;let index = index\" class=\"\">\n        <th scope=\"row\">{{index + 1}}</th>\n        <td colspan=\"\">{{file.name}} </td>\n        <!--Edit row  -->\n        <td>\n          <p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Edit\" style=\"display:inline;float:left;\"><button class=\"btn btn-primary btn-xs\" data-title=\"Edit\" data-toggle=\"modal\" data-target=\"#edit\" ><span class=\"glyphicon glyphicon-pencil\" style=\"font-size:12px;\"></span></button></p>\n        </td>\n        <!--Delete Row  -->\n        <td>\n          <p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Delete\"><button class=\"btn btn-danger btn-xs\" data-title=\"Delete\" data-toggle=\"modal\" data-target=\"#delete\" > <span class=\"glyphicon glyphicon-trash\" style=\"font-size:12px\"></span></button></p>\n        </td>\n        <!--Subido Por Row  -->\n        <td>\n\n        </td>\n      </tr> <!-- End of rows Tables -->\n    </table>\n  </div>\n</div>\n\n<h2 *ngIf=\"!listOfFileNames\">No hay archivos para mostrar al momento</h2>\n\n\n<!--Edit Modal -->\n<div class=\"modal fade\" id=\"edit\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"edit\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>\n        <h4 class=\"modal-title custom_align\" id=\"Heading\">Edit Your Detail</h4>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"form-group\">\n          <input class=\"form-control \" type=\"text\" placeholder=\"Mohsin\">\n        </div>\n        <div class=\"form-group\">\n          <input class=\"form-control \" type=\"text\" placeholder=\"Irshad\">\n        </div>\n        <div class=\"form-group\">\n          <textarea rows=\"2\" class=\"form-control\" placeholder=\"CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan\"></textarea>\n        </div>\n    </div>\n    <div class=\"modal-footer \">\n      <button type=\"button\" class=\"btn btn-warning btn-lg\" style=\"width: 100%;\"><span class=\"glyphicon glyphicon-ok-sign\"></span> Update</button>\n    </div>\n  </div>\n <!-- /.modal-content -->\n </div>\n<!-- /.modal-dialog -->\n</div> <!-- End Edit Modal -->\n\n<!--Start Delete Modal -->\n<div class=\"modal fade\" id=\"delete\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"edit\" aria-hidden=\"true\">\n <div class=\"modal-dialog\">\n  <div class=\"modal-content\">\n    <div class=\"modal-header\">\n      <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>\n      <h4 class=\"modal-title custom_align\" id=\"Heading\">Delete this entry</h4>\n    </div>\n    <div class=\"modal-body\">\n      <div class=\"alert alert-danger\"><span class=\"glyphicon glyphicon-warning-sign\"></span> Are you sure you want to delete this Record?</div>\n    </div>\n    <div class=\"modal-footer \">\n      <button type=\"button\" class=\"btn btn-success\" ><span class=\"glyphicon glyphicon-ok-sign\"></span> Yes</button>\n      <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><span class=\"glyphicon glyphicon-remove\"></span> No</button>\n    </div>\n    </div>\n    <!-- /.modal-content -->\n  </div>\n  <!--/.modal-dialog -->\n</div>\n<!--End Delete Modal  -->\n"
 
 /***/ }),
 /* 305 */,
@@ -2954,6 +3009,170 @@ module.exports = "<div class=\"navbar navbar-default\">\n    <div class=\"navbar
 
 module.exports = __webpack_require__(170);
 
+
+/***/ }),
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_auth_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_file_upload_ng2_file_upload__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ng2_file_upload_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_ng2_file_upload_ng2_file_upload__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_underscore__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_underscore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_underscore__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UploadPortfolioComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+// services
+
+
+// modules
+
+
+// Third Party Libraries
+
+var URL = "users/upload";
+var UploadPortfolioComponent = (function () {
+    function UploadPortfolioComponent(userService, flashMessage, authService) {
+        this.userService = userService;
+        this.flashMessage = flashMessage;
+        this.authService = authService;
+        //declare a property called fileuploader and assign it to an instance of a new fileUploader.
+        //pass in the Url to be uploaded to, and pass the itemAlais, which would be the name of the //file input when sending the post request.
+        this.uploader = new __WEBPACK_IMPORTED_MODULE_4_ng2_file_upload_ng2_file_upload__["FileUploader"]({ url: URL, itemAlias: 'file',
+            additionalParameter: (_a = {}, _a["name"] = "christian", _a)
+        });
+        var _a;
+    }
+    UploadPortfolioComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        console.log("Upload Component Initializar");
+        if (this.authService.checkLoggedIn()) {
+            var userId = this.authService.getUserIdLoggedIn();
+            this.userService.getFilesUploaded(userId).subscribe(function (file) {
+                console.log("arcvivos: ");
+                console.log(JSON.stringify(file.file[0].file, null, 4));
+                if (file.success) {
+                    _this.files = file.file[0].file;
+                }
+                else if (__WEBPACK_IMPORTED_MODULE_5_underscore__["isEmpty"](file)) {
+                    _this.files = ["No hay ningun Archivo subido por usuario"];
+                }
+                else {
+                    // ya aqui en el server side se hace toda validacion si el archvivo es
+                    // nullo , undefined o vacio
+                    if (!file.success) {
+                        _this.files = [file.msg];
+                    }
+                    else {
+                        _this.files = ["Error. No se ha podido obtener los archivos del usuarios"];
+                    }
+                }
+            }, function (err) {
+                // observable can also return error
+                console.log(err);
+                // Show a error message
+                _this.flashMessage.show("Error Obteniendo archivos subidos por usuario", { cssClass: 'alert-danger', timeout: 5000 });
+                return false;
+            });
+        }
+        else {
+            this.files = ["Error. No hay ningun usuario conectado"];
+        }
+        // Upload File
+        //override the onAfterAddingfile property of the uploader so it doesn't authenticate with //credentials.
+        this.uploader.onBeforeUploadItem = function () {
+            console.log("before");
+        };
+        console.log(this.uploader.options.additionalParameter["name"]);
+        // this.uploader.options.removeAfterUpload = true;
+        this.uploader.onAfterAddingFile = function (file) {
+            file.withCredentials = false;
+        };
+        //overide the onCompleteItem property of the uploader so we are
+        //able to deal with the server response.
+        this.uploader.onCompleteItem = function (item, response, status, headers) {
+            console.log("ImageUpload:uploaded:", response);
+        };
+    };
+    UploadPortfolioComponent.prototype.uploadAll = function () {
+        console.log("llamada a uploadAll");
+        console.log("lenght not uploaded item: " + this.uploader.getNotUploadedItems().length);
+        var uploadFile;
+        if (this.files.length >= 4) {
+            var lengthOfList = this.files.length;
+            // this will match the last hyphen [^-]*[^ -]$
+            // this will match the first hyphen ^[^-]*[^ -]
+            // regex expresion will retrieve everything before the last "-" hyphen que va
+            // a ser el que yo le pongo en el server
+            var lastFile = this.files[lengthOfList - 1].match(/^[^-]*[^-]/g);
+            // matche everything before a -
+            var filetoUpload = this.uploader.queue.concat()[0]._file.name.match(/^[^-]*[^ -]/g);
+            // console.log("file tp" + filetoUpload);
+            uploadFile = window.confirm("El archivo: \"" + lastFile + "\" sera remplazado con el archivo \"" + filetoUpload + "\" ");
+        }
+        if (uploadFile == true || this.files.length <= 4) {
+            console.log("uplaod file es true");
+            this.uploader.uploadAll();
+        }
+        else if (uploadFile == false) {
+            window.alert("La subida del archivo fue cancelada");
+        }
+        else {
+            window.alert("Un error ocurrio al subir el archivo");
+        }
+    };
+    return UploadPortfolioComponent;
+}());
+UploadPortfolioComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-upload-portfolio',
+        template: __webpack_require__(350),
+        styles: [__webpack_require__(349)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_auth_service__["a" /* AuthService */]) === "function" && _c || Object])
+], UploadPortfolioComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=upload-portfolio.component.js.map
+
+/***/ }),
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "/**/\n#fileselector {\n    margin: 10px;\n}\n#upload-file-selector {\n    display:none;\n    float: left;\n}\n.margin-correction {\n    margin-right: 10px;\n}\n\n/*Work around for table responsive to work in firefox */\n@-moz-document url-prefix() {\n    fieldset {\n        display: table-cell;\n    }\n}\n", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+/* 350 */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <p>\n  upload-portfolio works!\n</p>\n\n<div *ngIf=\"files\" class=\"\">\n  <h2 *ngIf= \"files.length == 0\">No ha subido ningun archivo</h2>\n  <div *ngFor=\"let file of files;let index = index\" class=\"\">\n    <h2 *ngIf=\"file\">\n        Archivo: {{file}}\n    </h2>\n  </div>\n</div> -->\n\n <!-- Upload Component Start  -->\n\n <div class=\"navbar navbar-default\">\n     <div class=\"navbar-header\">\n         <a class=\"navbar-brand\" >File Upload</a>\n     </div>\n </div>\n\n <div class=\"\">\n <span id=\"fileselector\">\n     <label class=\"btn btn-primary\" for=\"upload-file-selector\">\n         <input id=\"upload-file-selector\" type=\"file\" name=\"photo\" ng2FileSelect [uploader]=\"uploader\" >\n         <i class=\"fa_icon icon-upload-alt margin-correction\"></i>upload file\n     </label>\n </span>\n </div>\n\n <div class=\"\" style=\"margin-bottom: 40px\">\n\n     <h3>Upload queue</h3>\n     <p>Queue length: {{ uploader?.queue?.length }}</p>\n\n <table class=\"table\">\n     <thead>\n     <tr>\n         <th width=\"50%\">Name</th>\n         <th>Size</th>\n         <th>Progress</th>\n         <th>Status</th>\n         <th>Actions</th>\n     </tr>\n     </thead>\n     <tbody>\n     <tr *ngFor=\"let item of uploader.queue\">\n         <!--Nombre del archivo  -->\n         <td><strong>{{ item?.file?.name }}</strong></td>\n         <td *ngIf=\"true\" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>\n         <td *ngIf=\"true\">\n             <div class=\"progress\" style=\"margin-bottom: 0;\">\n                 <div class=\"progress-bar\" role=\"progressbar\" [ngStyle]=\"{ 'width': item.progress + '%' }\"></div>\n             </div>\n         </td>\n         <!--Signo del Status   -->\n         <td class=\"text-center\">\n             <span *ngIf=\"item.isSuccess\"><i class=\"glyphicon glyphicon-ok\"></i></span>\n             <span *ngIf=\"item.isCancel\"><i class=\"glyphicon glyphicon-ban-circle\"></i></span>\n             <span *ngIf=\"item.isError\"><i class=\"glyphicon glyphicon-remove\"></i></span>\n         </td>\n         <!--Actions rows nowrap lo pones todos inline -->\n         <td nowrap>\n             <!--When you click the item will upload  -->\n             <button type=\"button\" class=\"btn btn-success btn-xs\"\n                     (click)=\"item.upload()\" [disabled]=\"item.isReady || item.isUploading || item.isSuccess\">\n                 <span class=\"glyphicon glyphicon-upload\"></span> Upload\n             </button>\n             <button type=\"button\" class=\"btn btn-warning btn-xs\"\n                     (click)=\"item.cancel()\" [disabled]=\"!item.isUploading\">\n                 <span class=\"glyphicon glyphicon-ban-circle\"></span> Cancel\n             </button>\n             <button type=\"button\" class=\"btn btn-danger btn-xs\"\n                     (click)=\"item.remove()\">\n                 <span class=\"glyphicon glyphicon-trash\"></span> Remove\n             </button>\n         </td>\n     </tr>\n     </tbody>\n </table>\n\n <!--Progress Bar  -->\n <div>\n     <div>\n         Queue progress:\n         <div class=\"progress\" style=\"\">\n             <div class=\"progress-bar\" role=\"progressbar\" [ngStyle]=\"{ 'width': uploader.progress + '%' }\"></div>\n         </div>\n     </div>\n     <button type=\"button\" class=\"btn btn-success btn-s\"\n             (click)=\"uploadAll()\" [disabled]=\"!uploader.getNotUploadedItems().length\">\n         <span class=\"glyphicon glyphicon-upload\"></span> Upload all\n     </button>\n     <button type=\"button\" class=\"btn btn-warning btn-s\"\n             (click)=\"uploader.cancelAll()\" [disabled]=\"!uploader.isUploading\">\n         <span class=\"glyphicon glyphicon-ban-circle\"></span> Cancel all\n     </button>\n     <button type=\"button\" class=\"btn btn-danger btn-s\"\n             (click)=\"uploader.clearQueue()\" [disabled]=\"!uploader.queue.length\">\n         <span class=\"glyphicon glyphicon-trash\"></span> Remove all\n     </button>\n </div>\n <!--End Progress bar  -->\n\n <h2> </h2>\n\n </div>\n <br>\n\n <!-- <input *ngIf=\"listOfFileNames\" type=\"button\" (click)=\"addRow()\" [disabled]=\"listOfFileNames.length >=5\" value=\"Add Row\" class=\"btn btn-primary\"> -->\n<div *ngIf=\"files\" class=\"\">\n <h2 *ngIf= \"files.length == 0\">No ha subido ningun archivo</h2>\n</div>\n <div class=\"row table-responsive\">\n   <div class=\"col-md-12\">\n     <table class=\"table table-bordered table-hover\">\n       <caption style=\"font-size:40px;\">Archivos Subidos:</caption>\n       <!--Header of the table  -->\n       <tr>\n         <th>Numero</th>\n         <th>Nombre del Archivo</th>\n         <th style=\"width:80px\">Editar</th>\n         <th style=\"width:80px\">Eliminar</th>\n         <!-- <th>Subido Por</th> -->\n       </tr>\n       <!--Rows of tables  -->\n       <tr *ngFor=\"let file of files;let index = index\" class=\"\">\n         <th scope=\"row\">{{index + 1}}</th>\n         <td colspan=\"\">{{file}} </td>\n         <!--Edit row  -->\n         <td>\n           <p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Edit\" style=\"display:inline;float:left;\"><button class=\"btn btn-primary btn-xs\" data-title=\"Edit\" data-toggle=\"modal\" data-target=\"#edit\" ><span class=\"glyphicon glyphicon-pencil\" style=\"font-size:12px;\"></span></button></p>\n         </td>\n         <!--Delete Row  -->\n         <td>\n           <p data-placement=\"top\" data-toggle=\"tooltip\" title=\"Delete\"><button class=\"btn btn-danger btn-xs\" data-title=\"Delete\" data-toggle=\"modal\" data-target=\"#delete\" > <span class=\"glyphicon glyphicon-trash\" style=\"font-size:12px\"></span></button></p>\n         </td>\n         <!--Subido Por Row  -->\n         <!-- <td>\n\n         </td> -->\n       </tr> <!-- End of rows Tables -->\n     </table>\n   </div>\n </div>\n\n <h2 *ngIf=\"!files\">Error al mostrar los archivos</h2>\n\n\n <!--Edit Modal -->\n <div class=\"modal fade\" id=\"edit\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"edit\" aria-hidden=\"true\">\n   <div class=\"modal-dialog\">\n     <div class=\"modal-content\">\n       <div class=\"modal-header\">\n         <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>\n         <h4 class=\"modal-title custom_align\" id=\"Heading\">Edit Your Detail</h4>\n       </div>\n       <div class=\"modal-body\">\n         <div class=\"form-group\">\n           <input class=\"form-control \" type=\"text\" placeholder=\"Mohsin\">\n         </div>\n         <div class=\"form-group\">\n           <input class=\"form-control \" type=\"text\" placeholder=\"Irshad\">\n         </div>\n         <div class=\"form-group\">\n           <textarea rows=\"2\" class=\"form-control\" placeholder=\"CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan\"></textarea>\n         </div>\n     </div>\n     <div class=\"modal-footer \">\n       <button type=\"button\" class=\"btn btn-warning btn-lg\" style=\"width: 100%;\"><span class=\"glyphicon glyphicon-ok-sign\"></span> Update</button>\n     </div>\n   </div>\n  <!-- /.modal-content -->\n  </div>\n <!-- /.modal-dialog -->\n </div> <!-- End Edit Modal -->\n\n <!--Start Delete Modal -->\n <div class=\"modal fade\" id=\"delete\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"edit\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\">\n   <div class=\"modal-content\">\n     <div class=\"modal-header\">\n       <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-hidden=\"true\"><span class=\"glyphicon glyphicon-remove\" aria-hidden=\"true\"></span></button>\n       <h4 class=\"modal-title custom_align\" id=\"Heading\">Delete this entry</h4>\n     </div>\n     <div class=\"modal-body\">\n       <div class=\"alert alert-danger\"><span class=\"glyphicon glyphicon-warning-sign\"></span> Are you sure you want to delete this Record?</div>\n     </div>\n     <div class=\"modal-footer \">\n       <button type=\"button\" class=\"btn btn-success\" ><span class=\"glyphicon glyphicon-ok-sign\"></span> Yes</button>\n       <button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\"><span class=\"glyphicon glyphicon-remove\"></span> No</button>\n     </div>\n     </div>\n     <!-- /.modal-content -->\n   </div>\n   <!--/.modal-dialog -->\n </div>\n <!--End Delete Modal  -->\n"
 
 /***/ })
 ],[344]);

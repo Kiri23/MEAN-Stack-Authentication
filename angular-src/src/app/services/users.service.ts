@@ -78,6 +78,19 @@ export class UsersService {
     );
   }
 
+  getFilesUploaded(userId){
+    console.log("llamada al metodo getFileUploaded - users.service" + "\n userId:" + userId);
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    headers.append('Content-Type','application/json');
+    // return an observable with the response
+    // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options.
+    return this.http.get('users/getFilesUploaded?userId='+userId,{headers:headers}).map(res =>
+      // ya aqui en el serve side ya se ha hecho la validacion si es nullo, undefined, vacio
+      res.json()
+    );
+  }
+
   // Get the role of the user
   getRoleOfUser(id){
     let headers = new Headers();

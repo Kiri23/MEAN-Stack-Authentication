@@ -36,7 +36,12 @@ const UserSchema = mongoose.Schema({
   },
    ModifiedDate: {
      type: Date,
-  }
+  },
+  // si quiero que sea Object pongo {}, por el momento va a ser un array con los cincos nombres de archivos
+   file: {
+     type:[String],
+     validate:[arrayLimit,'{PATH} excedio el total de archivo a subir']
+   }
 
     /* possible values to the dataType -
       - required bolean function
@@ -109,6 +114,13 @@ module.exports.getUserRole = function(id,callback ){
   User.find({_id:id},{role:1,name:1}).exec(callback)
 }
 
+// Get File Uploaded
+module.exports.getFileUploaded = function(id,callback){
+  console.log("getFileUploaded method Model Call");
+  console.log("UserId from Model User: " + id);
+  User.find({_id:id},{file:1,name:1,_id:1}).exec(callback)
+}
+
 // Compare password to login
 module.exports.comparePassword = function(candidatePassword,hash,callback){
   bcrypt.compare(candidatePassword,hash,(err, isMatch) => {
@@ -118,3 +130,8 @@ module.exports.comparePassword = function(candidatePassword,hash,callback){
 
   })
 };
+
+// file limit upload
+function arrayLimit(val) {
+  return val.length <= 5;
+}

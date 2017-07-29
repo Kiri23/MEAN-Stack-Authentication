@@ -1,0 +1,18 @@
+/**/
+#fileselector {
+    margin: 10px;
+}
+#upload-file-selector {
+    display:none;
+    float: left;
+}
+.margin-correction {
+    margin-right: 10px;
+}
+
+/*Work around for table responsive to work in firefox */
+@-moz-document url-prefix() {
+    fieldset {
+        display: table-cell;
+    }
+}

@@ -6,7 +6,10 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
 const config = require('../config/databse');
+var upload = require ('../config/multer');
+
 const Administration = require('../models/administrator');
+const fileName = require('../models/filename');
 
 //aget6 shortcut for app.get
 
@@ -75,6 +78,41 @@ router.post('/authenticate', (req, res,next) => {
 
   })
 
+});
+
+// route to upload a file
+router.post('/upload',(req, res) => {
+  upload(req,res,function(err){
+    console.log("body in upload method: " +JSON.stringify(req.body, null, 4));
+      if(err){
+           res.json({error_code:1,err_desc:err});
+           return;
+      }
+      console.log("Filename of the file " + req.file.grid.filename);
+      console.log("id of the file " + req.file.grid._id);
+
+     //  Save the name of the file here to naother databse for easy retireval
+       let nameFile = new fileName({
+         name:req.file.grid.filename,
+         id:req.file.grid._id
+       })
+       fileName.addFileName(nameFile,(err,file)=> {
+         if (err){
+           console.log("Error saving fileName");
+         }else {
+           console.log("File Name saved Succesfully");
+         }
+
+       });
+
+       res.json({
+         error_code:0,
+         err_desc:null,
+         file:req.file,
+         filename:req.file.grid.filename,
+         dbId: req.file.grid._id
+       });
+  });
 });
 
 // protect route with our Authentication, Our Token

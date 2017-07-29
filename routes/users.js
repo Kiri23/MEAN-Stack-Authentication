@@ -9,6 +9,8 @@ const underscore = require('underscore');
 
 
 const config = require('../config/databse');
+var upload = require ('../config/multer');
+
 const User = require('../models/user');
 const Administrator = require('../models/administrator');
 
@@ -28,7 +30,8 @@ router.post('/register', (req, res,next) => {
     name: req.body.user.name,
     email: req.body.user.email,
     username: req.body.user.username,
-    password: req.body.user.password
+    password: req.body.user.password,
+    file: req.body.user.file
     // role:req.body.user.role,
     // CreatedDate:req.body.user.CreatedDate
   });
@@ -114,6 +117,41 @@ function userCheckPassowrd(res,err,isMatch,user){
   }
 }
 
+// route to upload a file
+router.post('/upload',(req, res) => {
+  upload(req,res,function(err){
+    console.log("body in upload method: " +JSON.stringify(req.body, null, 4));
+      if(err){
+           res.json({error_code:1,err_desc:err});
+           return;
+      }
+      console.log("Filename of the file " + req.file.grid.filename);
+      console.log("id of the file " + req.file.grid._id);
+
+     //  Save the name of the file here to naother databse for easy retireval
+      //  let nameFile = new fileName({
+      //    name:req.file.grid.filename,
+      //    id:req.file.grid._id
+      //  })
+      //  fileName.addFileName(nameFile,(err,file)=> {
+      //    if (err){
+      //      console.log("Error saving fileName");
+      //    }else {
+      //      console.log("File Name saved Succesfully");
+      //    }
+       //
+      //  });
+
+       res.json({
+         error_code:0,
+         err_desc:null,
+         file:req.file,
+         filename:req.file.grid.filename,
+         dbId: req.file.grid._id
+       });
+  });
+});
+
 // protect route with our Authentication, Our Token
 // Profile Route
 router.get('/profile',passport.authenticate('jwt',{session:false}),(req, res,next) => {
@@ -169,6 +207,29 @@ router.get('/skipUsers', (req, res) => {
     res.send(users);
   })
 
+});
+
+router.get('/getFilesUploaded', (req, res) => {
+  console.log("getFilesUploaded Route");
+  const userId = req.query.userId;
+  console.log("User Id: "+ userId);
+  User.getFileUploaded(userId,(err, file) => {
+    if(err){
+      console.log("Error Obteniendo Archvivos subidos por Uusario");
+      return res.json({success:false,msg:"Error Obteniendo archivos subidos por usuario",error:err})
+    }
+
+    if(! underscore.isUndefined(file) || ! underscore.isNull(file) ) {
+         console.log("Enviando el Json con los getFileUploaded ");
+         res.json({success:true,file:file});
+      }else if (underscore.isEmpty(file)){
+        console.log("No hay nignun archvio subido por el usuario");
+        res.json({success:false,msg:"No hay ningun archivo subido por el usuario",file:file});
+      }else {
+        console.log("Error al obtener Archvivos de usuarios de la base de datos");
+        res.json({success:false,msg:"Error al obtener Archivos de usuarios de la base de datos",file:file})
+      }
+  });
 });
 
 // EndPoit for the Role of the User

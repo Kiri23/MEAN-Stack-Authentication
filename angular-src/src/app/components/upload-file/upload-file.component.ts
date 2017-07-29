@@ -8,7 +8,7 @@ import * as underscore from 'underscore';
 
 
 
-  const URL = "/upload";
+  const URL = "administrator/upload";
 
 @Component({
   selector: 'app-upload-file',
@@ -49,24 +49,24 @@ public uploader:FileUploader = new FileUploader({url: URL, itemAlias: 'file',
 
     this.userService.getLatestFile().subscribe(file => {
 
-    if ( ! underscore.isEmpty(file) &&
-         ! underscore.isNull(file) &&
-         ! underscore.isUndefined(file)) {
+      if ( ! underscore.isEmpty(file) &&
+          ! underscore.isNull(file) &&
+          ! underscore.isUndefined(file)) {
            // user send with the response
            this.listOfFileNames = file;
-    }else {
-      this.listOfFileNames = [{name:"No file to show"}];
-    }
+      }else {
+        this.listOfFileNames = [{name:"No file to show"}];
+      }
       console.log("file object is " + file);
       console.log("length of file " + file.length);
-    },
-    err => {
-      // observable can also return error
-      console.log(err);
-      // Show a error message
-      this.flashMessage.show("Error retrieving the files",{cssClass:'alert-danger',timeout: 5000});
-      // redirect to the login page
-      return false;
+      },
+      err => {
+        // observable can also return error
+        console.log(err);
+        // Show a error message
+        this.flashMessage.show("Error mostrando los archivos que se subieron",{cssClass:'alert-danger',timeout: 5000});
+        // redirect to the login page
+        return false;
 
     });
 
@@ -101,7 +101,7 @@ public uploader:FileUploader = new FileUploader({url: URL, itemAlias: 'file',
       // matche everything before a -
       var filetoUpload = this.uploader.queue.concat()[0]._file.name.match(/^[^-]*[^ -]/g);
       // console.log("file tp" + filetoUpload);
-      uploadFile = window.confirm(lastFile + " sera remplazado con " + filetoUpload);
+      uploadFile = window.confirm("El archivo: \"" + lastFile + "\" sera remplazado con el archivo \""  + filetoUpload + "\" " );
     }
 
     if (uploadFile == true || this.listOfFileNames.length <=4){

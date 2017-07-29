@@ -1,0 +1,198 @@
+<!-- <p>
+  upload-portfolio works!
+</p>
+
+<div *ngIf="files" class="">
+  <h2 *ngIf= "files.length == 0">No ha subido ningun archivo</h2>
+  <div *ngFor="let file of files;let index = index" class="">
+    <h2 *ngIf="file">
+        Archivo: {{file}}
+    </h2>
+  </div>
+</div> -->
+
+ <!-- Upload Component Start  -->
+
+ <div class="navbar navbar-default">
+     <div class="navbar-header">
+         <a class="navbar-brand" >File Upload</a>
+     </div>
+ </div>
+
+ <div class="">
+ <span id="fileselector">
+     <label class="btn btn-primary" for="upload-file-selector">
+         <input id="upload-file-selector" type="file" name="photo" ng2FileSelect [uploader]="uploader" >
+         <i class="fa_icon icon-upload-alt margin-correction"></i>upload file
+     </label>
+ </span>
+ </div>
+
+ <div class="" style="margin-bottom: 40px">
+
+     <h3>Upload queue</h3>
+     <p>Queue length: {{ uploader?.queue?.length }}</p>
+
+ <table class="table">
+     <thead>
+     <tr>
+         <th width="50%">Name</th>
+         <th>Size</th>
+         <th>Progress</th>
+         <th>Status</th>
+         <th>Actions</th>
+     </tr>
+     </thead>
+     <tbody>
+     <tr *ngFor="let item of uploader.queue">
+         <!--Nombre del archivo  -->
+         <td><strong>{{ item?.file?.name }}</strong></td>
+         <td *ngIf="true" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+         <td *ngIf="true">
+             <div class="progress" style="margin-bottom: 0;">
+                 <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+             </div>
+         </td>
+         <!--Signo del Status   -->
+         <td class="text-center">
+             <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+             <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
+             <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+         </td>
+         <!--Actions rows nowrap lo pones todos inline -->
+         <td nowrap>
+             <!--When you click the item will upload  -->
+             <button type="button" class="btn btn-success btn-xs"
+                     (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                 <span class="glyphicon glyphicon-upload"></span> Upload
+             </button>
+             <button type="button" class="btn btn-warning btn-xs"
+                     (click)="item.cancel()" [disabled]="!item.isUploading">
+                 <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+             </button>
+             <button type="button" class="btn btn-danger btn-xs"
+                     (click)="item.remove()">
+                 <span class="glyphicon glyphicon-trash"></span> Remove
+             </button>
+         </td>
+     </tr>
+     </tbody>
+ </table>
+
+ <!--Progress Bar  -->
+ <div>
+     <div>
+         Queue progress:
+         <div class="progress" style="">
+             <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
+         </div>
+     </div>
+     <button type="button" class="btn btn-success btn-s"
+             (click)="uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+         <span class="glyphicon glyphicon-upload"></span> Upload all
+     </button>
+     <button type="button" class="btn btn-warning btn-s"
+             (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+         <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
+     </button>
+     <button type="button" class="btn btn-danger btn-s"
+             (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+         <span class="glyphicon glyphicon-trash"></span> Remove all
+     </button>
+ </div>
+ <!--End Progress bar  -->
+
+ <h2> </h2>
+
+ </div>
+ <br>
+
+ <!-- <input *ngIf="listOfFileNames" type="button" (click)="addRow()" [disabled]="listOfFileNames.length >=5" value="Add Row" class="btn btn-primary"> -->
+<div *ngIf="files" class="">
+ <h2 *ngIf= "files.length == 0">No ha subido ningun archivo</h2>
+</div>
+ <div class="row table-responsive">
+   <div class="col-md-12">
+     <table class="table table-bordered table-hover">
+       <caption style="font-size:40px;">Archivos Subidos:</caption>
+       <!--Header of the table  -->
+       <tr>
+         <th>Numero</th>
+         <th>Nombre del Archivo</th>
+         <th style="width:80px">Editar</th>
+         <th style="width:80px">Eliminar</th>
+         <!-- <th>Subido Por</th> -->
+       </tr>
+       <!--Rows of tables  -->
+       <tr *ngFor="let file of files;let index = index" class="">
+         <th scope="row">{{index + 1}}</th>
+         <td colspan="">{{file}} </td>
+         <!--Edit row  -->
+         <td>
+           <p data-placement="top" data-toggle="tooltip" title="Edit" style="display:inline;float:left;"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil" style="font-size:12px;"></span></button></p>
+         </td>
+         <!--Delete Row  -->
+         <td>
+           <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" > <span class="glyphicon glyphicon-trash" style="font-size:12px"></span></button></p>
+         </td>
+         <!--Subido Por Row  -->
+         <!-- <td>
+
+         </td> -->
+       </tr> <!-- End of rows Tables -->
+     </table>
+   </div>
+ </div>
+
+ <h2 *ngIf="!files">Error al mostrar los archivos</h2>
+
+
+ <!--Edit Modal -->
+ <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+         <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
+       </div>
+       <div class="modal-body">
+         <div class="form-group">
+           <input class="form-control " type="text" placeholder="Mohsin">
+         </div>
+         <div class="form-group">
+           <input class="form-control " type="text" placeholder="Irshad">
+         </div>
+         <div class="form-group">
+           <textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
+         </div>
+     </div>
+     <div class="modal-footer ">
+       <button type="button" class="btn btn-warning btn-lg" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+     </div>
+   </div>
+  <!-- /.modal-content -->
+  </div>
+ <!-- /.modal-dialog -->
+ </div> <!-- End Edit Modal -->
+
+ <!--Start Delete Modal -->
+ <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+  <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+       <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
+     </div>
+     <div class="modal-body">
+       <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
+     </div>
+     <div class="modal-footer ">
+       <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+       <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+     </div>
+     </div>
+     <!-- /.modal-content -->
+   </div>
+   <!--/.modal-dialog -->
+ </div>
+ <!--End Delete Modal  -->

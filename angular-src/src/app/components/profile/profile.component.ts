@@ -3,7 +3,10 @@ import { DomSanitizer, SafeResourceUrl, SafeUrl } from '@angular/platform-browse
 import {AuthService} from '../../services/auth.service';
 import {UsersService} from '../../services/users.service';
 import {Router} from '@angular/router';
+
 import {FlashMessagesService} from 'angular2-flash-messages';
+import * as underscore from 'underscore';
+
 
 @Component({
   selector: 'app-profile',
@@ -16,6 +19,8 @@ export class ProfileComponent implements OnInit {
   safeFileLink:SafeUrl;
   fileUrl:string;
   isDownloading:boolean = true;
+  listOfFileNames;
+
   // Inject the service into the constructor
   constructor(private authService:AuthService,private router:Router, private flashMessage:FlashMessagesService,private userService:UsersService,private sanitizer: DomSanitizer) {
 
@@ -24,6 +29,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
       this.getProfile();
       this.getFileByName("Christian Nogueras Rosado Resume v3-July 25, 2017, 11:41:53 AM.docx");
+      this.getListOfFileNames();
   }
 
   getProfile(){
@@ -65,6 +71,30 @@ export class ProfileComponent implements OnInit {
       // redirect to the login page
       // this.router.navigate(['/login']);
       return false;
+    });
+  }
+
+  getListOfFileNames(){
+    this.userService.getLatestFile().subscribe(file => {
+      if ( ! underscore.isEmpty(file) &&
+          ! underscore.isNull(file) &&
+          ! underscore.isUndefined(file)) {
+           // user send with the response
+           this.listOfFileNames = file;
+      }else {
+        this.listOfFileNames = [{name:"No file to show"}];
+      }
+      console.log("file object is " + file);
+      console.log("length of file " + file.length);
+      },
+      err => {
+        // observable can also return error
+        console.log(err);
+        // Show a error message
+        this.flashMessage.show("Error mostrando los archivos para descargar",{cssClass:'alert-danger',timeout: 5000});
+        // redirect to the login page
+        return false;
+
     });
   }
 

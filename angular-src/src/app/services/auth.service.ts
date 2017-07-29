@@ -23,6 +23,7 @@ export class AuthService {
     if(!user.role){
       return;
     }
+    console.log("rol de que registra: " + user.role);
     if(user.role == 2){
       // return an observable with the response
       // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
@@ -58,7 +59,7 @@ export class AuthService {
     this.user = user;
     // cargar underscore verificar si role no es empty y setiar el role. pq
     // si voy a estar confiando tanto en el role de auth.servoce tengo que asegurarme que nunca
-    // sea nullo pq si no esto puede traer mucho comportamiento inesperado 
+    // sea nullo pq si no esto puede traer mucho comportamiento inesperado
     this.userRole = role;
   }
 
@@ -89,6 +90,12 @@ export class AuthService {
     this.authToken = token;
   }
 
+  getUserIdLoggedIn(){
+    if(this.checkLoggedIn()){
+      const userId = localStorage.getItem('user');
+      return userId;
+    }
+  }
   loadVariables(){
 
   }

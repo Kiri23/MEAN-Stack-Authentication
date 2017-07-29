@@ -29,6 +29,8 @@ import { ModalComponent } from './components/dashboard-components/modal/modal.co
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
 import { TableColumnsComponent } from './components/dashboard-components/table-columns/table-columns.component';
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
+import { UploadPortfolioComponent } from './components/upload-portfolio/upload-portfolio.component';
+
 
 //Services
 import {ValidateService} from './services/validate.service';
@@ -44,7 +46,7 @@ import { UploadFileComponent } from './components/upload-file/upload-file.compon
 
 
 
-//appRoutes - va a contener todas las routes del app
+//appRoutes - va a contener todas las routes del angular app
 const appRoutes: Routes = [
   // Home Route
   {path:'',component:HomeComponent},
@@ -60,7 +62,10 @@ const appRoutes: Routes = [
   // I will want this route to be protected only another administrator can create other
   // administrator
   {path:'register/admin',component:AdminRegisterComponent},
-  {path:'upload',component:UploadFileComponent}
+  // administrator upload templates - ponerle protected route
+  {path:'admin/upload',component:UploadFileComponent},
+  // user upload portfolios - ponerle protected route
+  {path:'users/upload',component:UploadPortfolioComponent}
 
 
 ];
@@ -87,7 +92,8 @@ const appRoutes: Routes = [
     TableColumnsComponent,
     AdminRegisterComponent,
     UploadFileComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    UploadPortfolioComponent
   ],
   imports: [
     BrowserModule,
