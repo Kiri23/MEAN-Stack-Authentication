@@ -23,6 +23,7 @@ export class AuthService {
     if(!user.role){
       return;
     }
+    
     console.log("rol de que registra: " + user.role);
     if(user.role == 2){
       // return an observable with the response

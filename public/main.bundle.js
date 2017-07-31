@@ -804,7 +804,7 @@ var ValidateService = (function () {
     }
     // validate for blank fields
     ValidateService.prototype.validateRegister = function (user) {
-        var expresion = user.name == undefined || user.username == undefined || user.email == undefined || user.password == undefined;
+        var expresion = user.name == undefined || user.username == undefined || user.email == undefined || user.password == undefined || user.nombreEscuela == undefined;
         if (expresion) {
             return false;
         }
@@ -815,7 +815,7 @@ var ValidateService = (function () {
     // validate email
     ValidateService.prototype.validateEmail = function (email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        // return regex bolean expresion 
+        // return regex bolean expresion
         return re.test(email);
     };
     return ValidateService;
@@ -1981,7 +1981,7 @@ var RegisterComponent = (function () {
     };
     RegisterComponent.prototype.onRegisterSubmit = function () {
         var _this = this;
-        console.log(this.name, this.username, this.email, "role: ", this.role);
+        console.log(this.name, this.username, this.email, "role: ", this.role + " escuela: " + this.escuela.toString().toLowerCase());
         // Aqui tengo que mandar el rol del usuario pa asegurar quien lo creo y que rol tiene este
         // usuario nuevo
         var user = {
@@ -1991,7 +1991,8 @@ var RegisterComponent = (function () {
             password: this.password,
             role: this.role,
             CreatedDate: new Date(),
-            file: []
+            file: [],
+            nombreEscuela: this.escuela.toString().toLowerCase()
         };
         // Required Fields
         if (!this.validateService.validateRegister(user)) {
@@ -2018,7 +2019,7 @@ var RegisterComponent = (function () {
             }
             else {
                 // show a message. sugestion maye in the json can be a error message
-                _this.flashMessage.show("Something went wrong" + data.error.errors, { cssClass: 'alert-danger', timeout: 3000 });
+                _this.flashMessage.show("Error: " + data.msg || data.error.errors.nombreEscuela.message, { cssClass: 'alert-danger', timeout: 10000 });
                 // Redirect to login
                 _this.router.navigate(['/register']);
             }
@@ -2048,10 +2049,11 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_file_upload_ng2_file_upload__ = __webpack_require__(283);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_file_upload_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_file_upload_ng2_file_upload__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_users_service__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(22);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_underscore__ = __webpack_require__(95);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_underscore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_underscore__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_auth_service__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_underscore__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_underscore___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_underscore__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UploadFileComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2066,14 +2068,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 //import the file uploader plugin
 
 
+
 // modules
 
 
+var userId = localStorage.getItem('user');
 var URL = "administrator/upload";
 var UploadFileComponent = (function () {
-    function UploadFileComponent(userService, flashMessage) {
+    function UploadFileComponent(userService, flashMessage, authService) {
         this.userService = userService;
         this.flashMessage = flashMessage;
+        this.authService = authService;
         this.rows = [{ name: 'Chris Daly' }];
         this.name = "";
         //declare a property called fileuploader and assign it to an instance of a new fileUploader.
@@ -2100,9 +2105,9 @@ var UploadFileComponent = (function () {
             console.log("ImageUpload:uploaded:", response);
         };
         this.userService.getLatestFile().subscribe(function (file) {
-            if (!__WEBPACK_IMPORTED_MODULE_4_underscore__["isEmpty"](file) &&
-                !__WEBPACK_IMPORTED_MODULE_4_underscore__["isNull"](file) &&
-                !__WEBPACK_IMPORTED_MODULE_4_underscore__["isUndefined"](file)) {
+            if (!__WEBPACK_IMPORTED_MODULE_5_underscore__["isEmpty"](file) &&
+                !__WEBPACK_IMPORTED_MODULE_5_underscore__["isNull"](file) &&
+                !__WEBPACK_IMPORTED_MODULE_5_underscore__["isUndefined"](file)) {
                 // user send with the response
                 _this.listOfFileNames = file;
             }
@@ -2163,10 +2168,10 @@ UploadFileComponent = __decorate([
         template: __webpack_require__(304),
         styles: [__webpack_require__(280)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */]) === "function" && _c || Object])
 ], UploadFileComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=upload-file.component.js.map
 
 /***/ }),
@@ -2956,7 +2961,7 @@ module.exports = "<!--ngIf(ifStatement)- Make sure there's a user before showing
 /* 303 */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">{{text}}</h2>\n\n<form name=\"registerForm\" (submit)=\"onRegisterSubmit()\">\n\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" required [(ngModel)]=\"name\" name=\"name\" ng-model=\"name\"  required class=\"form-control\">\n    <!-- <h1>{{registerForm.name.$touched}}</h1> -->\n    <!--Error message -->\n    <!--Esto es cpmo hacer que muestre un mesnaje a base de true o false de un estado -->\n    <!-- <span ng-show=\"registerForm.name.$touched && registerForm.name.$invalid\">The name is required.</span> -->\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" required [(ngModel)]=\"username\" name=\"username\" required class=\"form-control\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"name\">Password</label>\n    <input type=\"password\" required [(ngModel)]=\"password\" name=\"password\"  required class=\"form-control\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"name\">Email</label>\n    <input type=\"text\" required [(ngModel)]=\"email\" name=\"email\" required class=\"form-control\">\n  </div>\n\n  <input type=\"submit\" class=\"btn btn-primary\" name=\"\" value=\"submit\">\n\n</form>\n"
+module.exports = "<h2 class=\"page-header\">{{text}}</h2>\n\n<form name=\"registerForm\" (submit)=\"onRegisterSubmit()\">\n\n  <div class=\"form-group\">\n    <label for=\"name\">Name</label>\n    <input type=\"text\" required [(ngModel)]=\"name\" name=\"name\" ng-model=\"name\"  required class=\"form-control\">\n    <!-- <h1>{{registerForm.name.$touched}}</h1> -->\n    <!--Error message -->\n    <!--Esto es cpmo hacer que muestre un mesnaje a base de true o false de un estado -->\n    <!-- <span ng-show=\"registerForm.name.$touched && registerForm.name.$invalid\">The name is required.</span> -->\n  </div>\n  <div class=\"form-group\">\n    <label for=\"schooName\">Nombre de escuela</label>\n    <input type=\"text\" required [(ngModel)]=\"escuela\" name=\"escuela\" required class=\"form-control\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"username\">Username</label>\n    <input type=\"text\" required [(ngModel)]=\"username\" name=\"username\" required class=\"form-control\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"name\">Password</label>\n    <input type=\"password\" required [(ngModel)]=\"password\" name=\"password\"  required class=\"form-control\">\n  </div>\n\n  <div class=\"form-group\">\n    <label for=\"name\">Email</label>\n    <input type=\"text\" required [(ngModel)]=\"email\" name=\"email\" required class=\"form-control\">\n  </div>\n\n  <input type=\"submit\" class=\"btn btn-primary\" name=\"\" value=\"submit\">\n\n</form>\n"
 
 /***/ }),
 /* 304 */
@@ -3046,7 +3051,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 // Third Party Libraries
 
-var URL = "users/upload";
+var userId = localStorage.getItem('user');
+var URL = "users/upload?userId=" + userId;
 var UploadPortfolioComponent = (function () {
     function UploadPortfolioComponent(userService, flashMessage, authService) {
         this.userService = userService;
@@ -3063,8 +3069,8 @@ var UploadPortfolioComponent = (function () {
         var _this = this;
         console.log("Upload Component Initializar");
         if (this.authService.checkLoggedIn()) {
-            var userId = this.authService.getUserIdLoggedIn();
-            this.userService.getFilesUploaded(userId).subscribe(function (file) {
+            var userId_1 = this.authService.getUserIdLoggedIn();
+            this.userService.getFilesUploaded(userId_1).subscribe(function (file) {
                 console.log("arcvivos: ");
                 console.log(JSON.stringify(file.file[0].file, null, 4));
                 if (file.success) {

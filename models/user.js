@@ -38,9 +38,15 @@ const UserSchema = mongoose.Schema({
      type: Date,
   },
   // si quiero que sea Object pongo {}, por el momento va a ser un array con los cincos nombres de archivos
-   file: {
+  file: {
      type:[String],
      validate:[arrayLimit,'{PATH} excedio el total de archivo a subir']
+   },
+   nombreEscuela: {
+     type:String,
+     lowercase:true,
+     required: true
+    //  validator alomejor que trate de guardar el nombre de la misma escuela.
    }
 
     /* possible values to the dataType -
@@ -114,12 +120,42 @@ module.exports.getUserRole = function(id,callback ){
   User.find({_id:id},{role:1,name:1}).exec(callback)
 }
 
+module.exports.numberOfEscuelas = function(escuela,callback){
+  if(escuela == undefined){
+    return res.json({success:false,msg:"Error no hay una escuela definidad para buscar"})
+  }
+  if (! typeof escuela === 'string' || ! escuela instanceof String){
+    return res.json({success:false,msg:"Nombre de escuela no valido"});
+  }
+  User.count({nombreEscuela:escuela},callback)
+}
+
 // Get File Uploaded
 module.exports.getFileUploaded = function(id,callback){
   console.log("getFileUploaded method Model Call");
   console.log("UserId from Model User: " + id);
   User.find({_id:id},{file:1,name:1,_id:1}).exec(callback)
 }
+
+// no funciona
+// module.exports.addFileToUser = function(id,file,callback){
+//   User.findById(id,callback){
+//     if(err){
+//       throw err;
+//     }
+//     if (file == undefined){
+//       return "Error. File is not defined"
+//     }
+//     User.file = file;
+//     User.save(callback){
+//       if (err){
+//         throw err;
+//       }
+//       return userUpdate;
+//     }
+//   }
+//
+// }
 
 // Compare password to login
 module.exports.comparePassword = function(candidatePassword,hash,callback){

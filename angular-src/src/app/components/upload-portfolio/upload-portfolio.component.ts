@@ -10,7 +10,8 @@ import {FileUploader } from 'ng2-file-upload/ng2-file-upload';
 // Third Party Libraries
 import * as underscore from 'underscore'
 
-const URL = "users/upload";
+const userId = localStorage.getItem('user');
+const URL = "users/upload?userId="+userId;
 
 
 @Component({

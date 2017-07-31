@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 //import the file uploader plugin
 import {FileUploader } from 'ng2-file-upload/ng2-file-upload';
 import {UsersService} from '../../services/users.service';
+import {AuthService} from '../../services/auth.service';
 // modules
 import {FlashMessagesService} from 'angular2-flash-messages';
 import * as underscore from 'underscore';
 
 
+  const userId = localStorage.getItem('user');
 
   const URL = "administrator/upload";
 
@@ -28,7 +30,7 @@ public uploader:FileUploader = new FileUploader({url: URL, itemAlias: 'file',
 });
 
 
-  constructor(private userService:UsersService,private flashMessage:FlashMessagesService) { }
+  constructor(private userService:UsersService,private flashMessage:FlashMessagesService, private authService:AuthService) { }
 
   ngOnInit() {
     //override the onAfterAddingfile property of the uploader so it doesn't authenticate with //credentials.

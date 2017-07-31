@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   username:String;
   email:String;
   password:String;
+  escuela: String;
   role;
 
   text = "Register"
@@ -33,7 +34,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegisterSubmit(){
-    console.log(this.name,this.username,this.email, "role: ",this.role);
+    console.log(this.name,this.username,this.email, "role: ",this.role + " escuela: " + this.escuela.toString().toLowerCase());
     // Aqui tengo que mandar el rol del usuario pa asegurar quien lo creo y que rol tiene este
     // usuario nuevo
     const user = {
@@ -43,7 +44,8 @@ export class RegisterComponent implements OnInit {
       password:this.password,
       role:this.role,
       CreatedDate:new Date(),
-      file:[]
+      file:[],
+      nombreEscuela: this.escuela.toString().toLowerCase()
     }
     // Required Fields
     if(!this.validateService.validateRegister(user)){
@@ -70,7 +72,7 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['/login'])
       }else{ // user can not be register
         // show a message. sugestion maye in the json can be a error message
-        this.flashMessage.show("Something went wrong" + data.error.errors,{cssClass: 'alert-danger',timeout: 3000});
+        this.flashMessage.show("Error: " + data.msg || data.error.errors.nombreEscuela.message,{cssClass: 'alert-danger',timeout: 10000});
         // Redirect to login
         this.router.navigate(['/register'])
       }

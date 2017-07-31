@@ -10,6 +10,10 @@
     <!--Esto es cpmo hacer que muestre un mesnaje a base de true o false de un estado -->
     <!-- <span ng-show="registerForm.name.$touched && registerForm.name.$invalid">The name is required.</span> -->
   </div>
+  <div class="form-group">
+    <label for="schooName">Nombre de escuela</label>
+    <input type="text" required [(ngModel)]="escuela" name="escuela" required class="form-control">
+  </div>
 
   <div class="form-group">
     <label for="username">Username</label>

@@ -31,22 +31,38 @@ router.post('/register', (req, res,next) => {
     email: req.body.user.email,
     username: req.body.user.username,
     password: req.body.user.password,
-    file: req.body.user.file
+    file: req.body.user.file,
+    nombreEscuela: req.body.user.nombreEscuela.toString().trim()//replace(/\s+/g, '')
     // role:req.body.user.role,
     // CreatedDate:req.body.user.CreatedDate
   });
-// Add User to mongoDb
-  User.addUser(newUser,(err, user) => {
-    if(err){
-      console.log(err + " add user");
-      res.json({success: false, msg:'Failed to register user',error:err});
-    }else{ // addUser to the Database
-      res.json({success:true,msg:'User Registered',user:newUser});
-    }
-  });
-// End add User logic
 
-});
+  console.log("Escuela en miniscula y sin espacio " + newUser.nombreEscuela);
+  User.numberOfEscuelas(newUser.nombreEscuela,(err, count) => {
+    if (err){
+      console.log("Error al buscar el total de escuela en la base de datos");
+      res.json({success: false,msg:"Error al buscar el total de escuela en la base de datos"})
+    }else{
+      console.log("total de escuelas: " + count + " de " + newUser.nombreEscuela);
+      if (count >= 3){
+        res.json({succes:false,msg:"Ya la escuela " + newUser.nombreEscuela + " llego a su limite de 3 profesores por escuela"})
+      }else {
+        // Add User to mongoDb
+          User.addUser(newUser,(err, user) => {
+            if(err){
+              console.log(err + " add user");
+              res.json({success: false, msg:'Failed to register user',error:err});
+            }else{ // addUser to the Database
+              res.json({success:true,msg:'User Registered',user:newUser});
+            }
+          });
+        // End add User logic
+
+        }
+      }
+    });
+  });
+
 
 // Authenticate Route
 router.post('/authenticate', (req, res,next) => {
@@ -119,6 +135,10 @@ function userCheckPassowrd(res,err,isMatch,user){
 
 // route to upload a file
 router.post('/upload',(req, res) => {
+  // si el userId es undefined mandar un json con una propiedad mensajes
+  var userId = req.query.userId;
+  console.log("UserId from users/upload: " + userId);
+
   upload(req,res,function(err){
     console.log("body in upload method: " +JSON.stringify(req.body, null, 4));
       if(err){
@@ -128,19 +148,45 @@ router.post('/upload',(req, res) => {
       console.log("Filename of the file " + req.file.grid.filename);
       console.log("id of the file " + req.file.grid._id);
 
-     //  Save the name of the file here to naother databse for easy retireval
-      //  let nameFile = new fileName({
-      //    name:req.file.grid.filename,
-      //    id:req.file.grid._id
-      //  })
-      //  fileName.addFileName(nameFile,(err,file)=> {
-      //    if (err){
-      //      console.log("Error saving fileName");
-      //    }else {
-      //      console.log("File Name saved Succesfully");
-      //    }
-       //
-      //  });
+      User.getUserById(userId,(err,user) => {
+        if (err){
+          return res.json({err,msg:err.error.msg});
+        }
+        console.log("User Data: " +JSON.stringify(user.file, null, 4) + "\n");
+
+        console.log("user file lenght" + user.file.length);
+        // si es mayor
+        // user.file.length >=5 ? user.file[user.file.length - 1] = req.file.grid.filename :
+        // user.file[user.file.length] = req.file.grid.filename
+
+        if (user.file.length >=5){
+          console.log("User file lenght es mayor o igual a 5");
+          // user.file[user.file.length - 1] = req.file.grid.filename
+          user.file.pop();
+          user.file.push(req.file.grid.filename);
+        }else if (user.file.length >=0) {
+          console.log("User file lenght es menor que 5 o igual a 0");
+          // user.file[user.file.length] = req.file.grid.filename
+          user.file.push(req.file.grid.filename)
+
+        }else{
+          return res.json({msg:"Error al guardar el archivo del usuario"})
+        }
+
+
+        user.save((err, updatedUser) => {
+          if(err){
+            //  data.error.errors.file.message - mostrar el mensajes de error de excdeio file archivos
+            console.log("Error User Data: " +JSON.stringify(err, null, 4));
+
+
+          }
+          console.log("User Data: " +JSON.stringify(updatedUser, null, 4));
+          // res.json to send json date here
+          console.log("Update User Succesfully");
+        })
+        // return res.json({user:data})
+      });
 
        res.json({
          error_code:0,
