@@ -34,7 +34,7 @@ router.post('/register', (req, res,next) => {
     file: req.body.user.file,
     nombreEscuela: req.body.user.nombreEscuela.toString().trim()//replace(/\s+/g, '')
     // role:req.body.user.role,
-    // CreatedDate:req.body.user.CreatedDate
+    // CreatedDate:req.body.user.CreatedDate 
   });
 
   console.log("Escuela en miniscula y sin espacio " + newUser.nombreEscuela);
