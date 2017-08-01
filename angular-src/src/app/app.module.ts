@@ -58,7 +58,7 @@ const appRoutes: Routes = [
   {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
   // protect route
   {path:'adminDashboard',component:AdminDashboardComponent,canActivate:[AdministratorGuard]},
-  {path:'adminUsers',component:AdminUsersComponent,canActivate:[AuthGuard]},
+  {path:'adminUsers',component:AdminUsersComponent,canActivate:[AdministratorGuard]},
   // I will want this route to be protected only another administrator can create other
   // administrator
   {path:'register/admin',component:AdminRegisterComponent},

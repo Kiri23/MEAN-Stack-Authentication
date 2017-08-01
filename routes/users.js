@@ -14,11 +14,42 @@ var upload = require ('../config/multer');
 const User = require('../models/user');
 const Administrator = require('../models/administrator');
 
-// const Administrator = require("./models/administrator")
-
-
 //aget6 shortcut for app.get
 
+
+/**
+ * @apiDefine error
+ *
+ * @apiError error Contain the error message.
+ *
+ * @apiErrorExample Error-Response:
+ *     HTTP/1.1 404 Not Found
+ *     {
+ *       "success": "false"
+ *       "msg": "Failed to register user"
+ *       "error": "{Object} errorMessage"
+ *     }
+ */
+
+
+/**
+* @api {post} register/ Register a new User
+* @apiDescription This route is used for register a new user
+* @apiGroup User
+* @apiName registerUser
+* @apiSuccess {Object} user The new user store in the db.
+* @apiSuccess {Bolean} success If the user got Succesfully saved in the db.
+* @apiSuccess {String} msg Contain the error mesage or a Succesfully message.
+*
+* @apiSuccessExample Success-Response:
+*     HTTP/1.1 200 OK
+*     {
+*       "success": "True",
+*       "msg": "User Registered",
+*       "user": "{Object} of User "
+*     }
+* @apiUse error
+*/
 // Register
 // cause whe're in the users file is users/register
 router.post('/register', (req, res,next) => {
@@ -34,7 +65,7 @@ router.post('/register', (req, res,next) => {
     file: req.body.user.file,
     nombreEscuela: req.body.user.nombreEscuela.toString().trim()//replace(/\s+/g, '')
     // role:req.body.user.role,
-    // CreatedDate:req.body.user.CreatedDate  
+    // CreatedDate:req.body.user.CreatedDate
   });
 
   console.log("Escuela en miniscula y sin espacio " + newUser.nombreEscuela);
@@ -64,6 +95,40 @@ router.post('/register', (req, res,next) => {
   });
 
 
+  /**
+   * @apiDefine throwError
+   * @apiError error Throw an error message. Failed to do the main purpose of the route.
+   *
+   */
+
+  /**
+  * @api {post} authenticate/ Authenticate a User when Logged In
+  * @apiDescription This route is used for Authenticate user when Logged In. This route get call
+  * when a user attemp to Logged in to the application.
+  *
+  *
+  * @apiGroup User
+  * @apiName AuthenticateUser
+  * @apiSuccess {String} msg Contain the error mesage or a Succesfully message.
+  * @apiSuccess {Bolean} token Unique Token.
+  * @apiSuccess {Object} user The user who logged in.
+  *
+  * @apiSuccessExample Success-Response:
+  *     HTTP/1.1 200 OK
+  *     {
+  *       "success": "True",
+  *       "token": "Unique token for each user logged in",
+  *       "user": "{Object} of User "
+  *     }
+  * @apiUse throwError
+  * @apiError UserNotFound User Not found in db.
+  * @apiErrorExample UserNotFound Error:
+  *     HTTP/1.1 404 Not Found
+  *     {
+  *       "success": "false"
+  *       "msg": "User not found"
+  *     }
+  */
 // Authenticate Route
 router.post('/authenticate', (req, res,next) => {
   const username = req.body.username;
@@ -102,6 +167,7 @@ router.post('/authenticate', (req, res,next) => {
 
 // Function to compare the password of a regular user or administratopr
 function userCheckPassowrd(res,err,isMatch,user){
+  // TODO return a Json Error
   if (err) throw err;
   // if the password match
   if(isMatch){
@@ -133,6 +199,38 @@ function userCheckPassowrd(res,err,isMatch,user){
   }
 }
 
+
+
+/**
+* @api {post} upload/ Upload a file
+* @apiDescription This route is used for user who want to upload a file.
+* @apiGroup User
+* @apiName UploadFile
+* @apiSuccess {Intenger} error_code The error code for this operation.
+* @apiSuccess {String} err_desc  Error description if there's one.
+* @apiSuccess {String} file The file uploaded.
+* @apiSuccess {String} filename The name of the file uploaded.
+* @apiSuccess {String} dbId The Id of the file uploaded.
+*
+* @apiSuccessExample Success-Response:
+*     HTTP/1.1 200 OK
+*     {
+*       "error_code": "0",
+*       "err_desc": Null,
+*       "File": "BytStream of the file uploaded",
+*       "FileName": "NameOfYourFile.pdf",
+*       "dbId": "Unique Id"
+*     }
+* @apiUse throwError
+* @apiError UserNotFound The user who's trying to upload this file dont exit in the DB.
+* @apiError UserSaveFilenameError Error attemping to save the file of the user in the DB.
+* @apiErrorExample Success-Response:
+*     HTTP/1.1 200 OK
+*     {
+*       "err": Object of err,
+*       "msg": "The message of the error",
+*     }
+*/
 // route to upload a file
 router.post('/upload',(req, res) => {
   // si el userId es undefined mandar un json con una propiedad mensajes
@@ -198,12 +296,41 @@ router.post('/upload',(req, res) => {
   });
 });
 
+
+/**
+* @api {get} profile/ The profile of the user
+* @apiDescription This route is used to retrieve the profile of a user.
+* @apiGroup User
+* @apiName UserProfile
+* @apiSuccess {Object} User The User information.
+*
+* @apiSuccessExample Success-Response:
+*     HTTP/1.1 200 OK
+*     {
+*       "user":"Object of User"
+*     }
+* @apiUse throwError
+*/
 // protect route with our Authentication, Our Token
 // Profile Route
 router.get('/profile',passport.authenticate('jwt',{session:false}),(req, res,next) => {
   res.json({user:req.user});
 });
 
+/**
+* @api {get} getUserById/ Get a user by his Id
+* @apiDescription This route is used to retrieve a user by his Id.
+* @apiGroup User
+* @apiName GetUserById
+* @apiSuccess {Object} User The User information.
+*
+* @apiSuccessExample Success-Response:
+*     HTTP/1.1 200 OK
+*     {
+*       "user":"Object of User"
+*     }
+* @apiUse throwError
+*/
 // Get a Users by their Id
 router.get('/getUserById', (req, res) => {
   var id = req.query.userId;
@@ -216,6 +343,21 @@ router.get('/getUserById', (req, res) => {
 
 });
 
+/**
+* @api {get} getLatestUsers/ Get the latest user from the db.
+* @apiDescription This route is used to retrieve the last five user who registered to the
+* application.
+* @apiGroup User
+* @apiName GetLatestUser
+* @apiSuccess {Object} User The last five User information.
+*
+* @apiSuccessExample Success-Response:
+*     HTTP/1.1 200 OK
+*     {
+*       "user":"Object of User"
+*     }
+* @apiUse throwError
+*/
 // get the Latest Users from Database
 router.get('/getLatestUsers', (req, res) => {
   User.getLatestUser((err, users) => {
@@ -228,6 +370,20 @@ router.get('/getLatestUsers', (req, res) => {
 
 });
 
+/**
+* @api {get} getAllUsers/ Get all user from the db
+* @apiDescription This route is used to retrieve all user in the db.
+* @apiGroup User
+* @apiName GetAllUsers
+* @apiSuccess {Object} User All User information in the db.
+*
+* @apiSuccessExample Success-Response:
+*     HTTP/1.1 200 OK
+*     {
+*       "user":"Object of User"
+*     }
+* @apiUse throwError
+*/
 // get all the Users from Database
 router.get('/getAllUsers', (req, res) => {
   User.getAllUser((err, users) => {

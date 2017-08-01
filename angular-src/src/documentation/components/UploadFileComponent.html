@@ -1,0 +1,796 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>My app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">My app documentation</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../">My app documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a href="../" >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <span class="fa fa-archive"></span>
+                            <span>Modules</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            ></span>
+                        </a>
+                        <ul class="links collapse in"
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-components-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AdminDashboardComponent.html" >AdminDashboardComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AdminRegisterComponent.html" >AdminRegisterComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AdminUsersComponent.html" >AdminUsersComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/BoxComponent.html" >BoxComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/BoxesComponent.html" >BoxesComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/DashboardComponent.html" >DashboardComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HomeComponent.html" >HomeComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/IconComponent.html" >IconComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ListGroupComponent.html" >ListGroupComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ModalComponent.html" >ModalComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NavbarComponent.html" >NavbarComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ProgressbarComponent.html" >ProgressbarComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/RegisterComponent.html" >RegisterComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/SidebarComponent.html" >SidebarComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TableColumnsComponent.html" >TableColumnsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/TableComponent.html" >TableComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UploadFileComponent.html"  class="active" >UploadFileComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/UploadPortfolioComponent.html" >UploadPortfolioComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-file-code-o"></span>
+                            <span>Classes</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-classes-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-classes-links"
+                            >
+                                <li class="link">
+                                    <a href="../classes/AngularSrcPage.html" >AngularSrcPage</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple">
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                    data-target="#xs-injectables-links"
+                                ></span>
+                        </div>
+                        <ul class="links collapse in"
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/AdministratorGuard.html" >AdministratorGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/AdministratorsService.html" >AdministratorsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/AuthGuard.html" >AuthGuard</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/AuthService.html" >AuthService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/OrganizationsService.html" >OrganizationsService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/UsersService.html" >UsersService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/UtilitiesService.html" >UtilitiesService</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../injectables/ValidateService.html" >ValidateService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                    </li>
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../">My app documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a href="../" >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <span class="fa fa-archive"></span>
+                                   <span>Modules</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   ></span>
+                               </a>
+                               <ul class="links collapse in"
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#components-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AdminDashboardComponent.html" >AdminDashboardComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AdminRegisterComponent.html" >AdminRegisterComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AdminUsersComponent.html" >AdminUsersComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/BoxComponent.html" >BoxComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/BoxesComponent.html" >BoxesComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/DashboardComponent.html" >DashboardComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HomeComponent.html" >HomeComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/IconComponent.html" >IconComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ListGroupComponent.html" >ListGroupComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/LoginComponent.html" >LoginComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ModalComponent.html" >ModalComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NavbarComponent.html" >NavbarComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProfileComponent.html" >ProfileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ProgressbarComponent.html" >ProgressbarComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/RegisterComponent.html" >RegisterComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/SidebarComponent.html" >SidebarComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TableColumnsComponent.html" >TableColumnsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/TableComponent.html" >TableComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UploadFileComponent.html"  class="active" >UploadFileComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/UploadPortfolioComponent.html" >UploadPortfolioComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-file-code-o"></span>
+                                   <span>Classes</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#classes-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="classes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../classes/AngularSrcPage.html" >AngularSrcPage</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../routes.html" ><span class="fa fa-code-fork"></span>Routes</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple">
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="menu-toggler fa fa-angle-up" data-toggle="collapse"
+                                           data-target="#injectables-links"
+                   ></span>
+                               </div>
+                               <ul class="links collapse in"
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/AdministratorGuard.html" >AdministratorGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/AdministratorsService.html" >AdministratorsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/AuthGuard.html" >AuthGuard</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/AuthService.html" >AuthService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/OrganizationsService.html" >OrganizationsService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/UsersService.html" >UsersService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/UtilitiesService.html" >UtilitiesService</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../injectables/ValidateService.html" >ValidateService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../miscellaneous.html" ><span class="fa fa-cubes"></span>Miscellaneous</a>
+                           </li>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/compodoc/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content component">
+                   <div class="content-data">
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>UploadFileComponent</li>
+</ol>
+
+
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#infos" id="infos-tab" role="tab" data-toggle="tab">Infos</a>
+        </li>
+        <li>
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab">Source</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane fade active in" id="infos"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>app/components/upload-file/upload-file.component.ts</code>
+</p>
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-upload-file</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>upload-file.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>upload-file.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(userService: <a href="../injectables/UsersService.html" >UsersService</a>, flashMessage: FlashMessagesService, authService: <a href="../injectables/AuthService.html" >AuthService</a>)</code>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="methods">Methods</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> addRow</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>addRow()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> uploadAll</b>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+    <code>uploadAll()</code>
+                        </td>
+                    </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description">
+                                    <b>Returns: </b>    <code>void</code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        <h3 id="inputs">Properties</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> listOfFileNames</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>listOfFileNames:     <code>any</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> name</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>name:     <code>string</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b> rows</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>rows:     <code>{ name: string; }[]</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <b><span class="modifier">Public</span> uploader</b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-circle"></span><code>uploader:     <code>FileUploader</code>
+    </bcode>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+</div>
+        <div class="tab-pane fade tab-source-code" id="source">
+            <pre><code class="hljs javascript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+//import the file uploader plugin
+import {FileUploader } from &#x27;ng2-file-upload/ng2-file-upload&#x27;;
+import {UsersService} from &#x27;../../services/users.service&#x27;;
+import {AuthService} from &#x27;../../services/auth.service&#x27;;
+// modules
+import {FlashMessagesService} from &#x27;angular2-flash-messages&#x27;;
+import * as underscore from &#x27;underscore&#x27;;
+
+
+  const userId &#x3D; localStorage.getItem(&#x27;user&#x27;);
+
+  const URL &#x3D; &quot;administrator/upload&quot;;
+
+@Component({
+  selector: &#x27;app-upload-file&#x27;,
+  templateUrl: &#x27;./upload-file.component.html&#x27;,
+  styleUrls: [&#x27;./upload-file.component.css&#x27;]
+})
+export class UploadFileComponent implements OnInit {
+  rows &#x3D; [{name: &#x27;Chris Daly&#x27;}];
+  name &#x3D; &quot;&quot;;
+  listOfFileNames;
+
+
+//declare a property called fileuploader and assign it to an instance of a new fileUploader.
+//pass in the Url to be uploaded to, and pass the itemAlais, which would be the name of the //file input when sending the post request.
+public uploader:FileUploader &#x3D; new FileUploader({url: URL, itemAlias: &#x27;file&#x27;,
+                               additionalParameter:{[&quot;name&quot;]:&quot;christian&quot;}
+});
+
+
+  constructor(private userService:UsersService,private flashMessage:FlashMessagesService, private authService:AuthService) { }
+
+  ngOnInit() {
+    //override the onAfterAddingfile property of the uploader so it doesn&#x27;t authenticate with //credentials.
+    this.uploader.onBeforeUploadItem &#x3D; () &#x3D;&gt; {
+      console.log(&quot;before&quot;);
+    }
+    console.log(this.uploader.options.additionalParameter[&quot;name&quot;]);
+
+    // this.uploader.options.removeAfterUpload &#x3D; true;
+    this.uploader.onAfterAddingFile &#x3D; (file)&#x3D;&gt; { file.withCredentials &#x3D; false;
+    };
+    //overide the onCompleteItem property of the uploader so we are
+    //able to deal with the server response.
+    this.uploader.onCompleteItem &#x3D; (item:any, response:any, status:any, headers:any) &#x3D;&gt; {
+      console.log(&quot;ImageUpload:uploaded:&quot;,response)
+    };
+
+
+    this.userService.getLatestFile().subscribe(file &#x3D;&gt; {
+
+      if ( ! underscore.isEmpty(file) &amp;&amp;
+          ! underscore.isNull(file) &amp;&amp;
+          ! underscore.isUndefined(file)) {
+           // user send with the response
+           this.listOfFileNames &#x3D; file;
+      }else {
+        this.listOfFileNames &#x3D; [{name:&quot;No file to show&quot;}];
+      }
+      console.log(&quot;file object is &quot; + file);
+      console.log(&quot;length of file &quot; + file.length);
+      },
+      err &#x3D;&gt; {
+        // observable can also return error
+        console.log(err);
+        // Show a error message
+        this.flashMessage.show(&quot;Error mostrando los archivos que se subieron&quot;,{cssClass:&#x27;alert-danger&#x27;,timeout: 5000});
+        // redirect to the login page
+        return false;
+
+    });
+
+
+
+
+
+  }
+
+
+  addRow() {
+    console.log(&quot;filename: &quot; +this.listOfFileNames[0].name);
+    console.log(&quot;filename length &quot; + this.listOfFileNames.length);
+    if (this.rows.length &lt;&#x3D;4){
+      this.rows.push({name: this.name});
+      this.name &#x3D; &#x27;&#x27;;
+    }
+  }
+
+  uploadAll(){
+    console.log(&quot;llamada a uploadAll&quot;);
+    console.log(&quot;lenght not uploaded item: &quot; + this.uploader.getNotUploadedItems().length);
+
+    var uploadFile;
+    if (this.listOfFileNames.length &gt;&#x3D;4){
+      var lengthOfList &#x3D; this.listOfFileNames.length;
+      // this will match the last hyphen [^-]*[^ -]$
+      // this will match the first hyphen ^[^-]*[^ -]
+      // regex expresion will retrieve everything before the last &quot;-&quot; hyphen que va
+      // a ser el que yo le pongo en el server
+      var lastFile &#x3D; this.listOfFileNames[lengthOfList -1].name.match(/^[^-]*[^-]/g);
+      // matche everything before a -
+      var filetoUpload &#x3D; this.uploader.queue.concat()[0]._file.name.match(/^[^-]*[^ -]/g);
+      // console.log(&quot;file tp&quot; + filetoUpload);
+      uploadFile &#x3D; window.confirm(&quot;El archivo: \&quot;&quot; + lastFile + &quot;\&quot; sera remplazado con el archivo \&quot;&quot;  + filetoUpload + &quot;\&quot; &quot; );
+    }
+
+    if (uploadFile &#x3D;&#x3D; true || this.listOfFileNames.length &lt;&#x3D;4){
+      console.log(&quot;uplaod file es true&quot;);
+      this.uploader.uploadAll();
+
+    }else if (uploadFile &#x3D;&#x3D; false){
+      window.alert(&quot;La subida del archivo fue cancelada&quot;);
+    }else{
+      window.alert(&quot;Un error ocurrio al subir el archivo&quot;)
+    }
+  }
+
+}
+</code></pre>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/highlight.pack.js"></script>
+       <script src="../js/libs/highlightjs-line-numbers.min.js"></script>
+       <script src="../js/search/search_index.js"></script>
+       <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                hljs.initHighlightingOnLoad();
+                hljs.initLineNumbersOnLoad();
+            });
+       </script>
+
+    </body>
+</html>
