@@ -1,5 +1,8 @@
-/* Author: Christian Nogueras
-app.js - main start application */
+/** 
+ * Author: Christian Nogueras
+ * 
+ * app.js - main start application 
+*/
 
 // Modules
 const express = require('express');
@@ -14,7 +17,6 @@ const config = require('./config/databse');
 
 const multer  = require('multer')
 // const upload = multer({ dest: 'uploads/' })
-
 const Grid = require('gridfs-stream');
 Grid.mongo = mongoose.mongo;
 var gfs;
@@ -27,6 +29,7 @@ const organization = require('./routes/organization');
 const administration = require('./routes/administration');
 const users = require('./routes/users');
 const fileNames = require('./routes/filename');
+
 
 // app express
 const app = express();
@@ -90,7 +93,6 @@ app.use(cors());
 
 // Body Parser Middleware
 app.use(bodyParser.json());
-
 // anything that is /users will go to that users file
 app.use('/users',users);
 // route for organization

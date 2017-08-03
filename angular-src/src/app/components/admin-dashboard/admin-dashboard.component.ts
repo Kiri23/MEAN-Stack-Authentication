@@ -4,6 +4,11 @@ import {UsersService} from '../../services/users.service';
 // How I add an javascript libary
 import * as underscore from 'underscore';
 
+/**
+ * 
+ * @class AdminDashboardComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',

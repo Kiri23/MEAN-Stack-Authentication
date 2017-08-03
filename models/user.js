@@ -95,10 +95,14 @@ module.exports.getUserByUsername = function(username,callback){
   const query = {username: username}
   User.findOne(query,callback);
 };
-
+/** 
+ * This function is to add a new user to the Database. This function save a password hash and dont save in Plain Text
+ * @memberof user
+ */
 // Add User to the Database
 module.exports.addUser = function(newUser,callback){
   console.log("password: "+ newUser.password + " from addUser Function");
+  console.log("Escuela en Miniscula? sin espacio: "+ newUser.nombreEscuela + "");
   // Hash password
   bcrypt.genSalt(10,(err, salt) => {
     bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -128,6 +132,19 @@ module.exports.numberOfEscuelas = function(escuela,callback){
     return res.json({success:false,msg:"Nombre de escuela no valido"});
   }
   User.count({nombreEscuela:escuela},callback)
+}
+
+/** Function para escoger todas las ecuelas 
+ * @memberof User
+ * @return All the name of the escuelas that user is In.
+ */
+module.exports.getAllEscuelas = function(callback){
+  User.distinct('nombreEscuela',callback);
+}
+/** Get name of the user by the name of his school */
+module.exports.getUserByEscuela = function(escuela,callback){
+  User.find({nombreEscuela:escuela},{name:1,_id:0}).exec(callback)  
+  // User.find({nombreEscuela:escuela},{name:1,nombreEscuela:1,file:1,_id:1}).exec(callback)
 }
 
 // Get File Uploaded

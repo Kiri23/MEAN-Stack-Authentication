@@ -57,13 +57,43 @@
 </div>
 
 
-<div *ngFor="let record of dataset; let ind = index" class="bg-gray ">
-  <div *ngIf="record" class="">
-    <h2 *ngIf = " ! (record.nombreEscuela[index + 1 ] === record.nombreEscuela [index])">
-      {{record.nombreEscuela || "No se proveyó nombre de escuela"}}
+ <!-- <div *ngFor="let school of schoolNames; let index = index" class="bg-gray">
+  <div class="">
+      <h2 class="well"> {{school || "No hay niguna escuela registrada"}} </h2>
+       <h2  *ngFor="let item of [1,2,3]; let index = index"> 
+          &nbsp;&nbsp;&nbsp;&nbsp; - {{professors[index]}} 
+        </h2> 
+  </div> 
+ </div> -->
+
+
+ <h2> {{dictionary["Escuela uno"]}} </h2>
+ <div *ngFor="let school of dictionaryKeys(dictionary)">
+    <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->
+    <h2 class="well">{{school}} </h2>
+    <div *ngFor="let professor of dictionary[school]">
+        &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} 
+    </div>
+ </div>
+
+
+
+
+
+
+
+
+
+  <!-- <div *ngFor="let professor of professors; let index = index"> 
+    <h2 *ngIf="index % 4 !=0" style= "display:inline;" >
+      &nbsp;&nbsp;&nbsp;&nbsp; - {{professor|| "Estas escuelas no tiene ningun profesor"}} - Files: {{numberProfessorsFiles[index]}}
     </h2>
-    <h2 style= "display:inline;" *ngIf= "record.nombreEscuela[index + 1 ] === record.nombreEscuela [index]">
-      &nbsp;&nbsp;&nbsp;&nbsp; - {{record.name || "No tiene nombre el profesor"}}
-    </h2>
-  </div>
-</div>
+
+    <div *ngIf="index % 3 == 0 ">
+      <br>
+      <h2 class="well"> 
+        {{professor}}
+      </h2>
+    </div>
+  </div> -->
+

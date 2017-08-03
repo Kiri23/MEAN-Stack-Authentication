@@ -7,14 +7,16 @@ import {Http,Headers} from '@angular/http';
 import {AuthService} from '../services/auth.service';
 import {UsersService} from '../services/users.service';
 
+
 // 3rd Pathy
-import {FlashMessagesService} from 'angular2-flash-messages';
+import { FlashMessagesService } from "angular2-flash-messages/module";
+
 
 
 @Injectable()
 export class AuthGuard implements CanActivate{
   userRole;
-  ss:any;
+  ss12:any;
   constructor(
     private authService:AuthService,
     private router:Router,
@@ -25,7 +27,12 @@ export class AuthGuard implements CanActivate{
     // this.getRole()
    }
 
-  // Protect Route with lowercase c. to restrict whatever page you nedd to extend the CanActivate interface and include the canActivate function. inside the function you put whatever logic you want and return true or false to Authorized access.
+   /**
+    * Auth Guard canActivate Method
+    * @memberOf AuthGuard
+    * @returns {Boolean} True if you have acces. False if you dont have acces to this * route    
+    */
+  // Protect Route with lowercase c. to restrict whatever page you nedd to extend the CanActivate interface and include the canActivate function. inside the function you put whatever logic you want and return true or false to Authorized access    
    canActivate(){
     if (this.authService.checkLoggedIn()){
       // console.log("role from authservice: " + this.authService.userRole);
@@ -60,11 +67,20 @@ export class AuthGuard implements CanActivate{
     }
   }
 
-// Helper Method
-
+  /**
+   * Helper Function to get the role of a user. This function use the userId store in local storage to retrieve the role of a user
+   * @throws show an error message if can't get the role of the user
+   * @memberOf AuthGuard
+   */
+  // Helper Method
   getRoleOfUser(){
+    /**
+     * The id of the user 
+     * @type {string} 
+     * @readonly 
+     */
     const userId = localStorage.getItem('user')
-    var id;
+    // var id;
     // make an http call to the API
     this.userService.getRoleOfUser(userId).subscribe(user => {
       // user send with the response
@@ -82,6 +98,13 @@ export class AuthGuard implements CanActivate{
 
   }
 
+  /**
+   * @summary Function to detect if someone try to change the local Storage
+   *  
+   * @desc I use this function to verify if someone try to change his role, if someone do that I redirect to the last page they were using ``` window.location.reload()```
+   *
+   * @memberOf AuthGuard
+   */
   detectLocalStorageChange(){
     window.addEventListener("storage", function () {
        console.log("localstorage cambio");
@@ -92,6 +115,11 @@ export class AuthGuard implements CanActivate{
      }, false);
   }
 
+  /**
+   * Show a message that the user is not logged in using the flashMessage Module
+   * @see {@link https://github.com/moff/angular2-flash-messages }
+   * @memberOf AuthGuard
+   */
   showMessageUserNotLoggedIn(){
     // Unathorized Access
     // Show a error message
@@ -103,3 +131,4 @@ export class AuthGuard implements CanActivate{
   }
 
 }
+

@@ -8,34 +8,88 @@ import {FlashMessagesService} from 'angular2-flash-messages';
 import * as underscore from 'underscore';
 
 
+/**
+ * This Componet will show the user profile.
+ * @class ProfileComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  /**
+   * user object that contain the user information
+   * @member {Object} User Contain the user information  */  
   user:Object;
+  /**
+   * The file to download
+   * @member {String} file  */  
   fileLink:string;
+  /**
+   * The link of the file to download need to pass to a security class in angular 2. 
+   * @see {@link https://angular.io/guide/security#bypass-security-apis }
+   * @member {SafeUrl} file  
+   */  
   safeFileLink:SafeUrl;
+  /**
+   * The url that link to download the file
+   * @type {string}
+   * @memberOf ProfileComponent
+   */
   fileUrl:string;
+  /**
+   * Flag to verify is the file is downloading
+   * @type {boolean}
+   * @memberOf ProfileComponent
+   */
   isDownloading:boolean = true;
+  /**
+   * The file names to downloads provided with the administrator
+   * @memberOf ProfileComponent
+   */
   listOfFileNames;
 
+  /**
+   * Creates an instance of ProfileComponent.
+   * @param {AuthService} authService 
+   * @param {Router} router 
+   * @param {FlashMessagesService} flashMessage 
+   * @param {UsersService} userService 
+   * @param {DomSanitizer} sanitizer 
+   * 
+   * @memberOf ProfileComponent
+   */
   // Inject the service into the constructor
   constructor(private authService:AuthService,private router:Router, private flashMessage:FlashMessagesService,private userService:UsersService,private sanitizer: DomSanitizer) {
 
   }
 
+  /**
+   * Initialize component. This method get call when the component is render for the first time
+   * @memberOf ProfileComponent
+   */
   ngOnInit() {
       this.getProfile();
       this.getFileByName("Christian Nogueras Rosado Resume v3-July 25, 2017, 11:41:53 AM.docx");
       this.getListOfFileNames();
   }
 
+
+  /**
+   * Get profile of the user.
+   * @return {Object} User The user information
+   * @throws error Show an error message of the operation
+   * @memberOf ProfileComponent
+   */
   getProfile(){
     // get request to users/profile to authenticate user with a token.
     this.authService.getProfile().subscribe(profile => {
       // user send with the response
+      /** 
+       * El usuario obtenido de la llamada Http 
+       * @type {Object}*/
       this.user = profile.user;
     },
     err => {
@@ -50,6 +104,11 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Retrieve a file from the db with his name.
+   * @param {String} filename the name of the file to retrieve
+   * @memberOf ProfileComponent
+   */
   getFileByName(filename:String){
     // get request to users/profile to authenticate user with a token.
     this.userService.getFile(filename).subscribe(file => {
@@ -74,6 +133,10 @@ export class ProfileComponent implements OnInit {
     });
   }
 
+  /**
+   * Funcion para obtener los archivos que el usuario tiene que descargar. Estos archivos son proveidos por los templates que suba el administrador
+   * @memberOf ProfileComponent
+   */
   getListOfFileNames(){
     this.userService.getLatestFile().subscribe(file => {
       if ( ! underscore.isEmpty(file) &&

@@ -16,10 +16,9 @@ const Administrator = require('../models/administrator');
 
 //aget6 shortcut for app.get
 
-
 /**
  * @apiDefine error
- *
+ * 
  * @apiError error Contain the error message.
  *
  * @apiErrorExample Error-Response:
@@ -34,7 +33,10 @@ const Administrator = require('../models/administrator');
 
 /**
 * @api {post} register/ Register a new User
-* @apiDescription This route is used for register a new user
+* @apiDescription This route is used for register a new user. In this route the name of school only check for whitespace if the school contain uppercase or aditional word is going to be different with the other school. 
+* @apiExample {User} NameEscuela Example:
+*     ```escuela``` is different to ```escuela**s**```
+*     but ```      escuela ``` is the same to ```escuela``` the nameEscuela can have space but no diffente words.   
 * @apiGroup User
 * @apiName registerUser
 * @apiSuccess {Object} user The new user store in the db.
@@ -63,11 +65,12 @@ router.post('/register', (req, res,next) => {
     username: req.body.user.username,
     password: req.body.user.password,
     file: req.body.user.file,
+    /** En esta parte es que le quito todos los espacios y en el modelo es que valido que toda la ```string``` sea en minisicula */
     nombreEscuela: req.body.user.nombreEscuela.toString().trim()//replace(/\s+/g, '')
     // role:req.body.user.role,
     // CreatedDate:req.body.user.CreatedDate
   });
-
+  
   console.log("Escuela en miniscula y sin espacio " + newUser.nombreEscuela);
   User.numberOfEscuelas(newUser.nombreEscuela,(err, count) => {
     if (err){
@@ -470,6 +473,61 @@ router.get('/getUserRoleById', (req, res) => {
     });
 });
 
+/**
+ * 
+ * @api {get} /escuelas Get all the schools stored in the db with his professor
+ * @apiName getSchoolsAndName
+ * @apiGroup user
+ * @apiVersion  0.0.1
+ * 
+ * @apiSuccess (200) {type} name description
+ * 
+ * @apiSuccessExample {type} Success-Response:
+   {
+       property : value
+   }
+ * 
+ */
+router.get('/escuelas',(req,res)=> {
+  var escuelas;
+  // Get all the name of school that are in the Db.
+  User.getAllEscuelas( (err,escuela)=>{
+    if (err) {
+      return res.json({succes:false,msg:"No se pudo completar la operacion", err:err,errMsg:err.errors.msg})
+    }
+    escuelas = escuela;
+    console.log("Escuela parameter: "+ JSON.stringify(escuela, null, 4));
+    // Get the names of the profesor of each school 
+    User.getUserByEscuela(escuela,(err,name)=>{
+      console.log("Name Escuela parameter: "+ JSON.stringify(name, null, 4));  
+      var names = [];
+      underscore(name).each((elem,key) => {
+          // console.log("elem: " + elem.name + " key " + key );
+          names.push(elem.name);
+      });
+
+      return res.json({success:true,msg:"Se encontro los nombre de escuelas ", schools:escuelas,professors:names})      
+    });
+  });
+});
+
+/**
+ * 
+ * @api {get} /ping pong the server
+ * @apiName pong
+ * @apiGroup user
+ * @apiVersion  0.0.1
+ * 
+ * 
+ * @apiSuccess (200)
+ * 
+ * @apiSuccessExample {type} Success-Response:
+   {
+        Pong
+   }
+ * 
+ * 
+ */
 router.get('/ping', (req, res) => {
     return res.json('pong');
 });

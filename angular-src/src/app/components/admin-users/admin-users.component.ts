@@ -3,6 +3,11 @@ import {UsersService} from '../../services/users.service';
 // Third Party Javscript libaries
 import * as underscore from 'underscore';
 
+/**
+ * 
+ * @class AdminUsersComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-admin-users',
   templateUrl: './admin-users.component.html',
