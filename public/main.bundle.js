@@ -648,7 +648,7 @@ var TableComponent = (function () {
             "Escuela uno": ["Mi nombre", "Segundo Nombre", "Tercer Nombre"],
             "Escuela dos": ["Mi nombre"],
             "Escuela Tres": ["Nombre de jose Juan", "Jose juan nombre"],
-            "Escuela Cuatro": ["Juan jaramillo", "Jason barwone", "jason derulo"]
+            "Escuela Cuatro": ["Juan jaramillo", "Jason barwone", "jason"]
         };
     }
     /**
