@@ -82,7 +82,7 @@ export class TableComponent implements OnInit {
       "Escuela uno":["Mi nombre","Segundo Nombre","Tercer Nombre"],
       "Escuela dos":["Mi nombre"], 
       "Escuela Tres":["Nombre de jose Juan","Jose juan nombre"],
-      "Escuela Cuatro":["Juan jaramillo","Jason barwone"]
+      "Escuela Cuatro":["Juan jaramillo","Jason barwone","jason derulo"]
   };
 
 
