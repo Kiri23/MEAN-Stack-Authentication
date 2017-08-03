@@ -79,10 +79,10 @@ export class TableComponent implements OnInit {
   dictionaryKeys = Object.keys;
 
   dictionary: {[escuela:string]:string[];} = {
-      "Escuela uno":["Mi nombre","Segundo Nombre","Tercer Nombre"],
-      "Escuela dos":["Mi nombre"], 
-      "Escuela Tres":["Nombre de jose Juan","Jose juan nombre"],
-      "Escuela Cuatro":["Juan jaramillo","Jason barwone","jasonz"]
+      // "Escuela uno":["Mi nombre","Segundo Nombre","Tercer Nombre"],
+      // "Escuela dos":["Mi nombre"], 
+      // "Escuela Tres":["Nombre de jose Juan","Jose juan nombre"],
+      // "Escuela Cuatro":["Juan jaramillo","Jason barwone","jasonz"]
   };
 
 
@@ -103,7 +103,7 @@ export class TableComponent implements OnInit {
     // this.currentPage = 1;
     this.skipUser(this.currentPage );
     this.showSchoolNamesAndProfessor2();
-
+    // this.dictionary["Escuela uno"] = ["Nuevos nombres puestos","Por mi para ","Saber si funcionan"];
   } // End NGonInit()
 
   /**
@@ -175,10 +175,15 @@ export class TableComponent implements OnInit {
         console.log("Data de escuela: "+ JSON.stringify(data.professors, null, 4));
         this.schoolNames = data.schools;
         this.professors = data.professors
-        var count = 0;
-        var professor = 0;
+        var arra = [];
+        var start = 0
+        var end = 3 
         for (var index = 0; index < data.schools.length; index++) {
             // this.professors.push(data.professors[index].name)
+            this.dictionary[this.schoolNames[index]] = this.professors.slice(start,end)
+            
+            start = end
+            end += data.numberOfSchool[this.schoolNames[index]];
         }
         console.log("Profesores de escuela: "+ JSON.stringify(this.professors, null, 4)); 
         console.log("Escuela uno "+ this.dictionary["Escuela uno"])   

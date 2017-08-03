@@ -501,12 +501,16 @@ router.get('/escuelas',(req,res)=> {
     User.getUserByEscuela(escuela,(err,name)=>{
       console.log("Name Escuela parameter: "+ JSON.stringify(name, null, 4));  
       var names = [];
+      var schools = [];
+      name = underscore.sortBy(name,'nombreEscuela');
+      escuelas = underscore.sortBy(escuelas)
       underscore(name).each((elem,key) => {
           // console.log("elem: " + elem.name + " key " + key );
           names.push(elem.name);
+          schools.push(elem.nombreEscuela);
       });
-
-      return res.json({success:true,msg:"Se encontro los nombre de escuelas ", schools:escuelas,professors:names})      
+      schools = underscore.countBy(schools);
+      return res.json({success:true,msg:"Se encontro los nombre de escuelas ", schools:escuelas,professors:names,numberOfSchool:schools,data:name})      
     });
   });
 });

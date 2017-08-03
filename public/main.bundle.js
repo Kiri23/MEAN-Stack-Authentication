@@ -644,12 +644,7 @@ var TableComponent = (function () {
         this.count = 0;
         this.arra = [];
         this.dictionaryKeys = Object.keys;
-        this.dictionary = {
-            "Escuela uno": ["Mi nombre", "Segundo Nombre", "Tercer Nombre"],
-            "Escuela dos": ["Mi nombre"],
-            "Escuela Tres": ["Nombre de jose Juan", "Jose juan nombre"],
-            "Escuela Cuatro": ["Juan jaramillo", "Jason barwone", "jasonz"]
-        };
+        this.dictionary = {};
     }
     /**
      * Initialization of the componet
@@ -659,6 +654,7 @@ var TableComponent = (function () {
         // this.currentPage = 1;
         this.skipUser(this.currentPage);
         this.showSchoolNamesAndProfessor2();
+        // this.dictionary["Escuela uno"] = ["Nuevos nombres puestos","Por mi para ","Saber si funcionan"];
     }; // End NGonInit()
     /**
      * Method for the paginantion to work in the table. Show only a limite result of user in the table
@@ -729,10 +725,14 @@ var TableComponent = (function () {
             console.log("Data de escuela: " + JSON.stringify(data.professors, null, 4));
             _this.schoolNames = data.schools;
             _this.professors = data.professors;
-            var count = 0;
-            var professor = 0;
+            var arra = [];
+            var start = 0;
+            var end = 3;
             for (var index = 0; index < data.schools.length; index++) {
                 // this.professors.push(data.professors[index].name)
+                _this.dictionary[_this.schoolNames[index]] = _this.professors.slice(start, end);
+                start = end;
+                end += data.numberOfSchool[_this.schoolNames[index]];
             }
             console.log("Profesores de escuela: " + JSON.stringify(_this.professors, null, 4));
             console.log("Escuela uno " + _this.dictionary["Escuela uno"]);

@@ -143,7 +143,7 @@ module.exports.getAllEscuelas = function(callback){
 }
 /** Get name of the user by the name of his school */
 module.exports.getUserByEscuela = function(escuela,callback){
-  User.find({nombreEscuela:escuela},{name:1,_id:0}).exec(callback)  
+  User.find({nombreEscuela:escuela},{name:1,nombreEscuela:1,file:1,_id:1}).exec(callback)  
   // User.find({nombreEscuela:escuela},{name:1,nombreEscuela:1,file:1,_id:1}).exec(callback)
 }
 
