@@ -177,16 +177,74 @@ export class TableComponent implements OnInit {
         this.professors = data.professors
         var arra = [];
         var start = 0
-        var end = 3 
+        var end = data.numberOfSchool[this.schoolNames[0]];
         for (var index = 0; index < data.schools.length; index++) {
             // this.professors.push(data.professors[index].name)
             this.dictionary[this.schoolNames[index]] = this.professors.slice(start,end)
-            
+            console.log("Start antes : " + start + " ,End antes: "+ end + "\n")
+            console.log("School Names:  " + this.schoolNames[index])            
+            console.log("Professor slice: " ,this.professors.slice(start,end))
+            console.log("Cantida de profesores : " + data.numberOfSchool[this.schoolNames[index]] + " para escuela: " + this.schoolNames[index]);
+            console.log("Index del loop: " + index + "\n \n")
             start = end
-            end += data.numberOfSchool[this.schoolNames[index]];
+            end += data.numberOfSchool[this.schoolNames[index + 1]];
+            console.log("Start despues : " + start + " ,End despues: "+ end + "\n")
+            console.log("Professor slice de la proxima linea: " ,this.professors.slice(start,end))
+            console.log("--------------------------------------")
+            
+            
+            
+            }
+        console.log("Profesores de escuela: "+ JSON.stringify(this.professors, null, 4)); 
+        console.log("Escuela uno "+ this.dictionary["Escuela uno"])  
+         
+    });
+  }
+
+
+
+
+
+
+  showSchoolNamesAndProfessor3(){
+    this.userService.getAllSchoolAndProfessor().subscribe(data => {
+        console.log("Data de escuela: "+ JSON.stringify(data.professors, null, 4));
+        this.schoolNames = data.schools;
+        this.professors = data.professors
+        var arra = [];
+        var start = 0
+        var end = data.numberOfSchool[this.schoolNames[0]];
+        for (var index = 0; index < data.schools.length; index++) {
+            // this.professors.push(data.professors[index].name)
+            if(index != data.schools.length -1){
+              this.dictionary[this.schoolNames[index]] = this.professors.slice(start,end)
+              console.log("Start: " + start + " ,End: "+ end + "\n")
+              console.log("School Names:  " + this.schoolNames[index])            
+              console.log("Professor slice: " ,this.professors.slice(start,end))
+              console.log("numero: " + data.numberOfSchool[this.schoolNames[index]]);
+              console.log("Index: " + index)
+              console.log("--------------------------------------")
+              start = end
+              end += data.numberOfSchool[this.schoolNames[index]];
+            }
+
+
+            if(index == data.schools.length -1){
+              console.log("Start: " + start + " end " + end)
+              // start = end - data.numberOfSchool[this.schoolNames[index -1 ]]
+              start = end
+              end += data.numberOfSchool[this.schoolNames[index]];
+              console.log("Ultima escuela")
+              console.log("data number school anterior: " + data.numberOfSchool[this.schoolNames[index -1 ]])
+              console.log("index: "+ index)
+              console.log("Start: " + start + " ,End: "+ end + "\n")              
+              this.dictionary[this.schoolNames[index]] = this.professors.slice(start,end);
+              console.log("profesores: " , this.professors.slice(start,end) )
+            }
+
         }
         console.log("Profesores de escuela: "+ JSON.stringify(this.professors, null, 4)); 
-        console.log("Escuela uno "+ this.dictionary["Escuela uno"])   
+        console.log("Escuela uno "+ this.dictionary["Escuela uno"])  
          
     });
   }

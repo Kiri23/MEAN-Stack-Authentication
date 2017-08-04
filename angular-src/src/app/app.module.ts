@@ -27,7 +27,6 @@ import { BoxesComponent } from './components/dashboard-components/boxes/boxes.co
 import { TableComponent } from './components/dashboard-components/table/table.component';
 import { ModalComponent } from './components/dashboard-components/modal/modal.component';
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
-import { TableColumnsComponent } from './components/dashboard-components/table-columns/table-columns.component';
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { UploadPortfolioComponent } from './components/upload-portfolio/upload-portfolio.component';
 
@@ -89,7 +88,6 @@ const appRoutes: Routes = [
     TableComponent,
     ModalComponent,
     AdminUsersComponent,
-    TableColumnsComponent,
     AdminRegisterComponent,
     UploadFileComponent,
     FileSelectDirective,

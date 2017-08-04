@@ -505,7 +505,7 @@ router.get('/escuelas',(req,res)=> {
       name = underscore.sortBy(name,'nombreEscuela');
       escuelas = underscore.sortBy(escuelas)
       underscore(name).each((elem,key) => {
-          //console.log("elem: " + elem.name + " key " + key );
+          // console.log("elem: " + elem.name + " key " + key );
           names.push(elem.name);
           schools.push(elem.nombreEscuela);
       });
