@@ -67,16 +67,16 @@
  </div> -->
 
 
- <h2> {{dictionary["z escuela"]}} </h2>
- <div *ngFor="let school of dictionaryKeys(dictionary)">
-    <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->
-    <h2 class="well">{{school}} </h2>
-    <div *ngFor="let professor of dictionary[school]">
-        &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} 
-    </div>
- </div>
-
-
+<div class="wrapper2">
+  <!-- <h2> {{dictionary["z escuela"]}} </h2> -->
+  <div class="gridItemSchool" *ngFor="let school of dictionaryKeys(dictionary)">
+      <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->
+      <h2 class="well">{{school}} </h2>
+      <div class="gridItemProfessor" *ngFor="let professor of dictionary[school]">
+          &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} 
+      </div>
+  </div>
+</div>
 
 
 

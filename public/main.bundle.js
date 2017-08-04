@@ -951,6 +951,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__services_administration_administrator_service__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__services_organization_organization_service__ = __webpack_require__(142);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_upload_file_upload_file_component__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_display_professors_display_professors_component__ = __webpack_require__(348);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -998,6 +999,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 //appRoutes - va a contener todas las routes del angular app
 var appRoutes = [
     // Home Route
@@ -1016,6 +1018,7 @@ var appRoutes = [
     { path: 'register/admin', component: __WEBPACK_IMPORTED_MODULE_25__components_admin_register_admin_register_component__["a" /* AdminRegisterComponent */] },
     // administrator upload templates - ponerle protected route
     { path: 'admin/upload', component: __WEBPACK_IMPORTED_MODULE_35__components_upload_file_upload_file_component__["a" /* UploadFileComponent */] },
+    { path: 'admin/professors', component: __WEBPACK_IMPORTED_MODULE_36__components_display_professors_display_professors_component__["a" /* DisplayProfessorsComponent */] },
     // user upload portfolios - ponerle protected route
     { path: 'users/upload', component: __WEBPACK_IMPORTED_MODULE_26__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */] }
 ];
@@ -1047,7 +1050,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_25__components_admin_register_admin_register_component__["a" /* AdminRegisterComponent */],
             __WEBPACK_IMPORTED_MODULE_35__components_upload_file_upload_file_component__["a" /* UploadFileComponent */],
             __WEBPACK_IMPORTED_MODULE_7_ng2_file_upload__["FileSelectDirective"],
-            __WEBPACK_IMPORTED_MODULE_26__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */]
+            __WEBPACK_IMPORTED_MODULE_26__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_display_professors_display_professors_component__["a" /* DisplayProfessorsComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -3097,7 +3101,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "/* Custom Color*/\n.main-color-bg{\n  background-color: #e74c3c !important;\n  border-color: #c0932b !important ;\n  color: #ffffff !important;\n}\n .panel-title{\n   color: #ffffff;\n }\n\n .panel-heading{\n   background-color: black ;\n   border-color: black  ;\n }\n\n/*.pagination{}*/\n.center {\n  margin-left: 200px;\n}\n\n/* Make Inout Search Field Smaller*/\n.makeSmaller{\n  height: 34px;\n}\n", ""]);
+exports.push([module.i, "/* Custom Color*/\n.main-color-bg{\n  background-color: #e74c3c !important;\n  border-color: #c0932b !important ;\n  color: #ffffff !important;\n}\n .panel-title{\n   color: #ffffff;\n }\n\n .panel-heading{\n   background-color: black ;\n   border-color: black  ;\n }\n\n/*.pagination{}*/\n.center {\n  margin-left: 200px;\n}\n\n/* Make Inout Search Field Smaller*/\n.makeSmaller{\n  height: 34px;\n}\n\n/** ------------------------------- ** /\n/** Display Grid Wrapper */\n.grid-wrapper{\n  /* display: -ms-grid; */\n  display: inline;\n  /* -ms-layout-grid-type: 1fr,1fr,1fr; */\n  -ms-grid-columns: 1fr,1fr,1fr;\n      grid-template-columns: 1fr,1fr,1fr;\n}\n\n*, *:before, *:after {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 40px;\n  font-family: 'Open Sans', 'sans-serif';\n  background-color: #fff;\n  color: #444;\n}\n\nh1, p {\n  margin: 0 0 1em 0;\n}\n\n.wrapper {\n  max-width: 940px;\n  margin: 0 20px;\n  display: -ms-grid;\n  display: grid;\n  grid-gap: 10px;\n}\n\n\n@media screen and (min-width: 500px) {\n\n  /* no grid support? */\n  .sidebar {\n    float: left;\n    width: 19.1489%;\n  }\n\n  .content {\n    float: right;\n    width: 79.7872%;\n  }\n\n  .wrapper {\n    margin: 0 auto;\n    -ms-grid-columns: 1fr 1fr 1fr;\n        grid-template-columns: 1fr 1fr 1fr;\n  }\n  \n  .header, .footer {\n    grid-column: 1 / -1;\n    /* needed for the floated layout */\n    clear: both;\n  }\n  .wrapper2{\n     display: -ms-grid;\n     display: grid;\n     color:darkcyan;\n     -ms-grid-columns: 1fr 3fr;\n         grid-template-columns: 1fr 3fr;\n  }\n\n}\n\n\n", ""]);
 
 // exports
 
@@ -3271,7 +3275,7 @@ module.exports = "<!--app navabr for every routes of the application  -->\n<!--E
 /* 286 */
 /***/ (function(module, exports) {
 
-module.exports = "<header id=\"header\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-9\">\n        <h2><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span> DashBoard <small>Manage your website</small></h2>\n      </div>\n      <div class=\"col-md-3\">\n       <div class=\"dropdown create\">\n          <button class=\"btn btn-default dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            Create Content\n            <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n            <li><a type=\"button\" data-toggle = \"modal\" data-target=\"#addPage\">Add Page</a></li>\n            <li><a href=\"#\">Add Post</a></li>\n            <li><a href=\"/register\">Add User</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div> <!--End div container -->\n</header> <!--End top Part of the website -->\n\n<!--Breadcrumb section  -->\n<section id=\"breadcrumb\">\n    <ol class=\"breadcrumb\">\n      <li class=\"active\">Dashboard </li>\n    </ol>\n</section> <!--End breadcrumb section -->\n\n<section id=\"main\">\n  <div class=\"controller\">\n    <div class=\"row\">\n      <div class=\"col-md-3\">\n        <!--Sidebar need to have the [] to pass the data to the child -->\n        <app-sidebar [admin-Dashboard-totalUser-Props] = totalUsers></app-sidebar>\n      </div>\n      <div class=\"col-md-9\">\n        <!--Boxes -->\n        <!--Pass the totalUser number to the app-boxes component  -->\n        <app-boxes [admin-Dashboard-totalUser-Props] = totalUsers></app-boxes>\n        <!--User Table-->\n        <app-table [dataset] = latestUser text=\"Latest Users\">\n          <!-- <app-table-columns value='name' header='Name'></app-table-columns>\n\n          <app-table-columns value='email' header='email'></app-table-columns>\n\n          <app-table-columns value='CreatedDate' header='Joined'></app-table-columns> -->\n\n        </app-table>\n      </div>\n    </div>\n  </div>\n  <!--Add Page Modal  -->\n  <app-modal modalId=\"addPage\"></app-modal>\n</section>\n"
+module.exports = "<header id=\"header\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-md-9\">\n        <h2><span class=\"glyphicon glyphicon-cog\" aria-hidden=\"true\"></span> DashBoard <small>Manage your website</small></h2>\n      </div>\n      <div class=\"col-md-3\">\n       <div class=\"dropdown create\">\n          <button class=\"btn btn-default dropdown-toggle\" type=\"button\" id=\"dropdownMenu1\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\">\n            Create Content\n            <span class=\"caret\"></span>\n          </button>\n          <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenu1\">\n            <li><a type=\"button\" data-toggle = \"modal\" data-target=\"#addPage\">Add Page</a></li>\n            <li><a href=\"#\">Add Post</a></li>\n            <li><a href=\"/register\">Add User</a></li>\n          </ul>\n        </div>\n      </div>\n    </div>\n  </div> <!--End div container -->\n</header> <!--End top Part of the website -->\n\n<!--Breadcrumb section  -->\n<section id=\"breadcrumb\">\n    <ol class=\"breadcrumb\">\n      <li class=\"active\">Dashboard </li>\n    </ol>\n</section> <!--End breadcrumb section -->\n\n<section id=\"main\">\n  <div class=\"controller\">\n    <div class=\"row\">\n      <div class=\"col-md-3\">\n        <!--Sidebar need to have the [] to pass the data to the child -->\n        <app-sidebar [admin-Dashboard-totalUser-Props] = totalUsers></app-sidebar>\n      </div>\n      <div class=\"col-md-9\">\n        <!--Boxes -->\n        <!--Pass the totalUser number to the app-boxes component  -->\n        <app-boxes [admin-Dashboard-totalUser-Props] = totalUsers></app-boxes>\n        <!--User Table-->\n        <app-table [dataset] = latestUser text=\"Latest Users\">\n          <!-- <app-table-columns value='name' header='Name'></app-table-columns>\n\n          <app-table-columns value='email' header='email'></app-table-columns>\n\n          <app-table-columns value='CreatedDate' header='Joined'></app-table-columns> -->\n\n        </app-table>\n      </div>\n    </div>\n  </div>\n  <!--Add Page Modal  -->\n  <app-modal modalId=\"addPage\"></app-modal>\n</section>\n\n<app-display-professors> \n  component\n</app-display-professors>"
 
 /***/ }),
 /* 287 */
@@ -3325,7 +3329,7 @@ module.exports = "<!--List Group  -->\n<!-- <h1>{{totalUserProps}}</h1> -->\n<!-
 /* 295 */
 /***/ (function(module, exports) {
 
-module.exports = "<!--To add External Javscript file I need to add it to the script section angular-cli.json   -->\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <div *ngIf=\"showFilter\" class=\"form-group\">\n      <!--Show Search Filter  -->\n      <input id=\"filterInput\" class=\"makeSmaller form-control\" onkeyup=\"filterUsersByName()\" type=\"text\" placeholder=\"Search Filter\" name=\"\" value=\"\">\n    </div>\n    <table id=\"userTable\" class=\"table table-striped table-hover table-responsive\">\n      <!-- Table Header -->\n      <tr>\n        <th>Name</th>\n        <th>Escuela</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <!--Table Body -->\n    <tbody>\n      <!-- Do a for loop to show the tables -->\n      <tr *ngFor=\"let record of dataset; let ind = index\">\n          <!-- || - mean alternate text. is Like an If  -->\n          <!-- <h1>{{i}} index</h1> -->\n          <!--if index(i) is greater than 5 dont show more Table data  -->\n          <!--if index > 6 render the tableDate but with a display set to none.That way the search filter will look for all the user in the db and not only the one that are showing in the table  -->\n          <td style=\"display:none\" *ngIf=\"ind > 5\">{{record.name || \"No hay nombre\" }}</td>\n           <td *ngIf=\"ind < 6\">{{record.name || \"No name\" }}</td>\n\n           <!-- escuela row  -->\n           <td style=\"display:none\" *ngIf=\"ind > 5\">{{record.nombreEscuela || \"No se proveyó nombre de escuela\" }}</td>\n            <td *ngIf=\"ind < 6\">{{record.nombreEscuela || \"No se proveyó nombre de escuela\" }}</td>\n\n           <!-- email -->\n           <td style=\"display:none\" *ngIf=\"ind > 5\">{{record.email || \"No hay email \"}}</td>\n           <td *ngIf=\"ind < 6\">{{record.email || \"No email\"}}</td>\n\n           <td style=\"display:none\" *ngIf=\"(record.CreatedDate && ind > 5)\">{{record.CreatedDate | date:'MMM dd' }} at {{record.CreatedDate | date:'hh:mm' }}\n           </td>\n           <!--Show this row if there's a date in the json  -->\n           <td *ngIf=\"(record.CreatedDate && ind < 6)\">{{record.CreatedDate | date:'MMM dd' }} at\n             {{record.CreatedDate | date:'hh:mm' }}\n          </td>\n          <!--Alternate show this row if there is not a date in the json data  -->\n          <td style=\"display:none\" *ngIf=\"(!record.CreatedDate && ind > 5)\"> Niguna fecha fue dada</td>\n          <td *ngIf=\"(!record.CreatedDate && ind < 6)\"> No se otorgo una fecha</td>\n      </tr>\n    </tbody>\n</table>\n  <!--[(page)] - pa pasar la variable  -->\n  <div *ngIf=\"showFilter\" class=\" text-center d-flex justify-content-center\">\n    <ngb-pagination [collectionSize]=\"100\" [(page)]=\"currentPage\" aria-label=\"Default pagination\" (click) = \"skipUser(currentPage)\" size =\"\"></ngb-pagination>\n    <pre></pre>\n  </div>\n  </div>\n</div>\n\n\n <!-- <div *ngFor=\"let school of schoolNames; let index = index\" class=\"bg-gray\">\n  <div class=\"\">\n      <h2 class=\"well\"> {{school || \"No hay niguna escuela registrada\"}} </h2>\n       <h2  *ngFor=\"let item of [1,2,3]; let index = index\"> \n          &nbsp;&nbsp;&nbsp;&nbsp; - {{professors[index]}} \n        </h2> \n  </div> \n </div> -->\n\n\n <h2> {{dictionary[\"z escuela\"]}} </h2>\n <div *ngFor=\"let school of dictionaryKeys(dictionary)\">\n    <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->\n    <h2 class=\"well\">{{school}} </h2>\n    <div *ngFor=\"let professor of dictionary[school]\">\n        &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} \n    </div>\n </div>\n\n\n\n\n\n\n\n\n\n\n  <!-- <div *ngFor=\"let professor of professors; let index = index\"> \n    <h2 *ngIf=\"index % 4 !=0\" style= \"display:inline;\" >\n      &nbsp;&nbsp;&nbsp;&nbsp; - {{professor|| \"Estas escuelas no tiene ningun profesor\"}} - Files: {{numberProfessorsFiles[index]}}\n    </h2>\n\n    <div *ngIf=\"index % 3 == 0 \">\n      <br>\n      <h2 class=\"well\"> \n        {{professor}}\n      </h2>\n    </div>\n  </div> -->\n\n"
+module.exports = "<!--To add External Javscript file I need to add it to the script section angular-cli.json   -->\n\n<div class=\"panel panel-default\">\n  <div class=\"panel-heading {{className}} \">\n    <h3 class=\"panel-title \">{{text}}</h3>\n  </div>\n  <div class=\"panel-body\">\n    <div *ngIf=\"showFilter\" class=\"form-group\">\n      <!--Show Search Filter  -->\n      <input id=\"filterInput\" class=\"makeSmaller form-control\" onkeyup=\"filterUsersByName()\" type=\"text\" placeholder=\"Search Filter\" name=\"\" value=\"\">\n    </div>\n    <table id=\"userTable\" class=\"table table-striped table-hover table-responsive\">\n      <!-- Table Header -->\n      <tr>\n        <th>Name</th>\n        <th>Escuela</th>\n        <th>Email</th>\n        <th>Joined</th>\n      </tr>\n      <!--Table Body -->\n    <tbody>\n      <!-- Do a for loop to show the tables -->\n      <tr *ngFor=\"let record of dataset; let ind = index\">\n          <!-- || - mean alternate text. is Like an If  -->\n          <!-- <h1>{{i}} index</h1> -->\n          <!--if index(i) is greater than 5 dont show more Table data  -->\n          <!--if index > 6 render the tableDate but with a display set to none.That way the search filter will look for all the user in the db and not only the one that are showing in the table  -->\n          <td style=\"display:none\" *ngIf=\"ind > 5\">{{record.name || \"No hay nombre\" }}</td>\n           <td *ngIf=\"ind < 6\">{{record.name || \"No name\" }}</td>\n\n           <!-- escuela row  -->\n           <td style=\"display:none\" *ngIf=\"ind > 5\">{{record.nombreEscuela || \"No se proveyó nombre de escuela\" }}</td>\n            <td *ngIf=\"ind < 6\">{{record.nombreEscuela || \"No se proveyó nombre de escuela\" }}</td>\n\n           <!-- email -->\n           <td style=\"display:none\" *ngIf=\"ind > 5\">{{record.email || \"No hay email \"}}</td>\n           <td *ngIf=\"ind < 6\">{{record.email || \"No email\"}}</td>\n\n           <td style=\"display:none\" *ngIf=\"(record.CreatedDate && ind > 5)\">{{record.CreatedDate | date:'MMM dd' }} at {{record.CreatedDate | date:'hh:mm' }}\n           </td>\n           <!--Show this row if there's a date in the json  -->\n           <td *ngIf=\"(record.CreatedDate && ind < 6)\">{{record.CreatedDate | date:'MMM dd' }} at\n             {{record.CreatedDate | date:'hh:mm' }}\n          </td>\n          <!--Alternate show this row if there is not a date in the json data  -->\n          <td style=\"display:none\" *ngIf=\"(!record.CreatedDate && ind > 5)\"> Niguna fecha fue dada</td>\n          <td *ngIf=\"(!record.CreatedDate && ind < 6)\"> No se otorgo una fecha</td>\n      </tr>\n    </tbody>\n</table>\n  <!--[(page)] - pa pasar la variable  -->\n  <div *ngIf=\"showFilter\" class=\" text-center d-flex justify-content-center\">\n    <ngb-pagination [collectionSize]=\"100\" [(page)]=\"currentPage\" aria-label=\"Default pagination\" (click) = \"skipUser(currentPage)\" size =\"\"></ngb-pagination>\n    <pre></pre>\n  </div>\n  </div>\n</div>\n\n\n <!-- <div *ngFor=\"let school of schoolNames; let index = index\" class=\"bg-gray\">\n  <div class=\"\">\n      <h2 class=\"well\"> {{school || \"No hay niguna escuela registrada\"}} </h2>\n       <h2  *ngFor=\"let item of [1,2,3]; let index = index\"> \n          &nbsp;&nbsp;&nbsp;&nbsp; - {{professors[index]}} \n        </h2> \n  </div> \n </div> -->\n\n\n<div class=\"wrapper2\">\n  <!-- <h2> {{dictionary[\"z escuela\"]}} </h2> -->\n  <div class=\"gridItemSchool\" *ngFor=\"let school of dictionaryKeys(dictionary)\">\n      <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->\n      <h2 class=\"well\">{{school}} </h2>\n      <div class=\"gridItemProfessor\" *ngFor=\"let professor of dictionary[school]\">\n          &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} \n      </div>\n  </div>\n</div>\n\n\n\n\n\n\n\n\n  <!-- <div *ngFor=\"let professor of professors; let index = index\"> \n    <h2 *ngIf=\"index % 4 !=0\" style= \"display:inline;\" >\n      &nbsp;&nbsp;&nbsp;&nbsp; - {{professor|| \"Estas escuelas no tiene ningun profesor\"}} - Files: {{numberProfessorsFiles[index]}}\n    </h2>\n\n    <div *ngIf=\"index % 3 == 0 \">\n      <br>\n      <h2 class=\"well\"> \n        {{professor}}\n      </h2>\n    </div>\n  </div> -->\n\n"
 
 /***/ }),
 /* 296 */
@@ -3426,6 +3430,110 @@ module.exports = "<!-- <p>\n  upload-portfolio works!\n</p>\n\n<div *ngIf=\"file
 
 module.exports = __webpack_require__(171);
 
+
+/***/ }),
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_users_service__ = __webpack_require__(9);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DisplayProfessorsComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DisplayProfessorsComponent = (function () {
+    function DisplayProfessorsComponent(userService) {
+        this.userService = userService;
+        /**
+         * The profesors on each schools
+         * @memberOf TableComponent
+         */
+        this.professors = [];
+        this.dictionaryKeys = Object.keys;
+        this.dictionary = {};
+    }
+    DisplayProfessorsComponent.prototype.ngOnInit = function () {
+        this.showSchoolNamesAndProfessor2();
+    };
+    /**
+  * Function to retrieve all the School in the DB with his professor
+  * @memberOf TableComponent
+  */
+    DisplayProfessorsComponent.prototype.showSchoolNamesAndProfessor2 = function () {
+        var _this = this;
+        this.userService.getAllSchoolAndProfessor().subscribe(function (data) {
+            console.log("Data de escuela: " + JSON.stringify(data.professors, null, 4));
+            _this.schoolNames = data.schools;
+            _this.professors = data.professors;
+            var arra = [];
+            var start = 0;
+            var end = data.numberOfSchool[_this.schoolNames[0]];
+            for (var index = 0; index < data.schools.length; index++) {
+                // this.professors.push(data.professors[index].name)
+                _this.dictionary[_this.schoolNames[index]] = _this.professors.slice(start, end);
+                console.log("Start antes : " + start + " ,End antes: " + end + "\n");
+                console.log("School Names:  " + _this.schoolNames[index]);
+                console.log("Professor slice: ", _this.professors.slice(start, end));
+                console.log("Cantida de profesores : " + data.numberOfSchool[_this.schoolNames[index]] + " para escuela: " + _this.schoolNames[index]);
+                console.log("Index del loop: " + index + "\n \n");
+                start = end;
+                end += data.numberOfSchool[_this.schoolNames[index + 1]];
+                console.log("Start despues : " + start + " ,End despues: " + end + "\n");
+                console.log("Professor slice de la proxima linea: ", _this.professors.slice(start, end));
+                console.log("--------------------------------------");
+            }
+            console.log("Profesores de escuela: " + JSON.stringify(_this.professors, null, 4));
+            console.log("Escuela uno " + _this.dictionary["Escuela uno"]);
+        });
+    };
+    return DisplayProfessorsComponent;
+}());
+DisplayProfessorsComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-display-professors',
+        template: __webpack_require__(350),
+        styles: [__webpack_require__(349)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_users_service__["a" /* UsersService */]) === "function" && _a || Object])
+], DisplayProfessorsComponent);
+
+var _a;
+//# sourceMappingURL=display-professors.component.js.map
+
+/***/ }),
+/* 349 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(false);
+// imports
+
+
+// module
+exports.push([module.i, "*,\n*:before,\n*:after {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 40px;\n  font-family: 'Open Sans', 'sans-serif';\n  background-color: #fff;\n  /* color: #444; */\n}\n\nh1,\np {\n  margin: 0 0 1em 0;\n}\n\n.wrapper {\n  max-width: 940px;\n  margin: 0 20px;\n  display: -ms-grid;\n  display: grid;\n  grid-gap: 10px;\n}\n\n\n/* for no grid support? fallback */\n.wrapper {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n/* if it has grid support the browser  */\n.wrapper {\n  display: -ms-grid;\n  display: grid;\n  margin: 0 auto;\n  /* the minmax control the width  */\n  -ms-grid-columns: (minmax(200px, 1fr))[auto-fill];\n      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));\n  /*control the height  */\n  grid-auto-rows: minmax(250px, auto);\n}\n\n.panel {\n  /* needed for the flex layout if it has not grid support*/\n  margin-left: 5px;\n  margin-right: 5px;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 200px;\n          flex: 1 1 200px;\n  /*border to each school */\n  border: 3px solid black;\n  \n}\n\n.header,\n.footer {\n  margin-left: 5px;\n  margin-right: 5px;\n  /* if tt doesnt have grid support  */\n  -webkit-box-flex: 0;\n      -ms-flex: 0 1 100%;\n          flex: 0 1 100%;\n  grid-column: 1 / -1;\n}\n\n/* everything inside the wrapper class  */\n.wrapper > * {\n   /* background-color: #444;  */\n  /* color: #fff; */\n  /* border-style: solid; */\n  color: black;\n  border-radius: 5px;\n  padding: 20px;\n  font-size: 150%;\n  margin-bottom: 10px;\n}\n\n .schoolText{\n   /* color: blue; */\n}\n\n.professorText{\n    padding: 10px 5px 10px 5px ;\n}\n\n\n/* We need to set the margin used on flex items to 0 as we have gaps in grid.  */\n\n @supports ((display: -ms-grid) or (display: grid)) {\n  .wrapper > * {\n    margin: 0;\n  }\n} ", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+/* 350 */
+/***/ (function(module, exports) {
+
+module.exports = "<!-- <div class=\"wrapper\">\n  <header class=\"header\">My header</header>\n  \n  <div class=\"panel\">\n     <div class=\"\">\n       Escuela 1\n     </div>\n      <div> \n        Profesor de escuela 1\n      </div>\n  </div>\n  <div class=\"panel\">Panel B</div>\n  <div class=\"panel\">Panel C</div>\n  <div class=\"panel\">Panel D</div>\n  <div class=\"panel\">Panel E</div>\n  <div class=\"panel\">Panel F</div>\n  <div class=\"panel\">Panel G</div>\n  <div class=\"panel\">Panel H</div>\n  <div class=\"panel\">Panel I</div>\n  <div class=\"panel\">Panel 1</div>\n  <div class=\"panel\">Panel 2</div>\n  <div class=\"panel\">Panel 3</div>\n  <div class=\"panel\">Panel 4</div>\n  <div class=\"panel\">Panel 5</div>\n  <div class=\"panel\">Panel 6</div>\n  <div class=\"panel\">Panel 7</div>\n  \n  \n  <footer class=\"footer\">My footer</footer>\n</div> -->\n\n<br>\n<div class=\"wrapper\">\n   <!-- <h2> hello {{dictionary[\"z escuela\"]}} </h2>  -->\n  <div class=\"panel\" *ngFor=\"let school of dictionaryKeys(dictionary)\">\n      <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->\n      <h2 class=\"schoolText\">{{school}} </h2>\n      <div class=\"professorText\" *ngFor=\"let professor of dictionary[school]\">\n          &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} \n      </div>\n  </div>\n</div>"
 
 /***/ })
 ],[344]);

@@ -1,0 +1,42 @@
+<!-- <div class="wrapper">
+  <header class="header">My header</header>
+  
+  <div class="panel">
+     <div class="">
+       Escuela 1
+     </div>
+      <div> 
+        Profesor de escuela 1
+      </div>
+  </div>
+  <div class="panel">Panel B</div>
+  <div class="panel">Panel C</div>
+  <div class="panel">Panel D</div>
+  <div class="panel">Panel E</div>
+  <div class="panel">Panel F</div>
+  <div class="panel">Panel G</div>
+  <div class="panel">Panel H</div>
+  <div class="panel">Panel I</div>
+  <div class="panel">Panel 1</div>
+  <div class="panel">Panel 2</div>
+  <div class="panel">Panel 3</div>
+  <div class="panel">Panel 4</div>
+  <div class="panel">Panel 5</div>
+  <div class="panel">Panel 6</div>
+  <div class="panel">Panel 7</div>
+  
+  
+  <footer class="footer">My footer</footer>
+</div> -->
+
+<br>
+<div class="wrapper">
+   <!-- <h2> hello {{dictionary["z escuela"]}} </h2>  -->
+  <div class="panel" *ngFor="let school of dictionaryKeys(dictionary)">
+      <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->
+      <h2 class="schoolText">{{school}} </h2>
+      <div class="professorText" *ngFor="let professor of dictionary[school]">
+          &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} 
+      </div>
+  </div>
+</div>

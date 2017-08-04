@@ -41,6 +41,7 @@ import {UtilitiesService} from './services/utilities.service';
 import {AdministratorsService} from './services/administration/administrator.service';
 import {OrganizationsService} from './services/organization/organization.service';
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
+import { DisplayProfessorsComponent } from './components/display-professors/display-professors.component';
 
 
 
@@ -63,6 +64,7 @@ const appRoutes: Routes = [
   {path:'register/admin',component:AdminRegisterComponent},
   // administrator upload templates - ponerle protected route
   {path:'admin/upload',component:UploadFileComponent},
+  {path:'admin/professors',component:DisplayProfessorsComponent},
   // user upload portfolios - ponerle protected route
   {path:'users/upload',component:UploadPortfolioComponent}
 
@@ -91,7 +93,8 @@ const appRoutes: Routes = [
     AdminRegisterComponent,
     UploadFileComponent,
     FileSelectDirective,
-    UploadPortfolioComponent
+    UploadPortfolioComponent,
+    DisplayProfessorsComponent
   ],
   imports: [
     BrowserModule,
