@@ -18,9 +18,9 @@ p {
 
 .wrapper {
   max-width: 940px;
-  margin: 0 20px;
+  margin: 0 20px; 
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 48px;
 }
 
 
@@ -34,10 +34,21 @@ p {
 .wrapper {
   display: grid;
   margin: 0 auto;
-  /* the minmax control the width  */
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  /*control the height  */
-  grid-auto-rows: minmax(250px, auto);
+  /* si quiero que no se corten las palabras de el nombre de la escuela tengo que
+  hacer que los rows sean fijos lo que quita el responsive pero los nombre de las 
+  escuelas no se van a cortar despues de 19 carateres words sin espacios .*/
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+   /* Despues de 19 palabras se corta el nombre de la escuela si no tiene un 
+   espacio y si no es la ultimacolumna*/
+  /* the minmax control the width  */   
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));    
+  /*control the height de todo y el panel  */
+  grid-auto-rows: minmax(250px, auto); 
+  grid-auto-columns: minmax(300px,auto);
+
+  /* Estilo */
+   /* box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);   */
+
 }
 
 .panel {
@@ -46,8 +57,15 @@ p {
   margin-right: 5px;
   flex: 1 1 200px;
   /*border to each school */
-  border: 3px solid black;
-  
+  /* border: 3px solid black; */
+  /* height de todo lo que esta dentro del panel   */
+  /* Estilo  */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);    
+  width: auto
+}
+
+.panel:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 .header,
@@ -73,17 +91,31 @@ p {
 
  .schoolText{
    /* color: blue;  */
+  align-self: stretch;   
+  display: inline-block;
+  
 }
 
 .professorText{
-    padding: 10px 5px 10px 5px ;
+   padding: 10px 10px 10px 5px ;
+   text-align: center;
+    
 }
 
 
-/* We need to set the margin used on flex items to 0 as we have gaps in grid.  */
 
+
+/* We need to set the margin used on flex items to 0 as we have gaps in grid.  */
  @supports (display: grid) {
   .wrapper > * {
     margin: 0;
+    width: auto;
   }
 } 
+
+/* make the data appear on a fixed weight 
+los nombre de escuela no se va a salir del
+cuadrado pero quita el responsive */
+.wrapper {
+ /* grid-template-columns: 1fr 1fr 1fr;      */
+}

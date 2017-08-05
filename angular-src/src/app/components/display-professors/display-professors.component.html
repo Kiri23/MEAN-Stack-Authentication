@@ -29,14 +29,17 @@
   <footer class="footer">My footer</footer>
 </div> -->
 
-<br>
 <div class="wrapper">
    <!-- <h2> hello {{dictionary["z escuela"]}} </h2>  -->
+    <h2 class="loader" *ngIf="!schoolNames">
+      Cargando escuelas
+    </h2>
   <div class="panel" *ngFor="let school of dictionaryKeys(dictionary)">
       <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->
-      <h2 class="schoolText">{{school}} </h2>
+      <h2 class="schoolText well">{{school}} </h2>
       <div class="professorText" *ngFor="let professor of dictionary[school]">
           &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} 
       </div>
   </div>
 </div>
+

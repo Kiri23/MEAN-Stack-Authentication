@@ -78,12 +78,19 @@ h1, p {
     /* needed for the floated layout */
     clear: both;
   }
+
+
+}
+
+ .s{
+   color:blue;
+ }
   .wrapper2{
      display: grid;
      color:darkcyan;
-     grid-template-columns: 1fr 3fr;
   }
-
-}
+  .wrapper2{
+    grid-template-columns: 1fr 3fr;
+  }
 
 
