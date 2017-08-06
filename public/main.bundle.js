@@ -3462,6 +3462,8 @@ var DisplayProfessorsComponent = (function () {
          */
         this.professors = [];
         this.dictionaryKeys = Object.keys;
+        this.filesDictionary = {};
+        this.files = 0;
         this.dictionary = {};
     }
     DisplayProfessorsComponent.prototype.ngOnInit = function () {
@@ -3480,20 +3482,52 @@ var DisplayProfessorsComponent = (function () {
             var arra = [];
             var start = 0;
             var end = data.numberOfSchool[_this.schoolNames[0]];
+            var count = 0;
+            var co = -1;
+            var achivos = 0;
+            var nu = 0;
+            var multipl = 1;
             for (var index = 0; index < data.schools.length; index++) {
                 // this.professors.push(data.professors[index].name)
                 _this.dictionary[_this.schoolNames[index]] = _this.professors.slice(start, end);
-                console.log("Start antes : " + start + " ,End antes: " + end + "\n");
-                console.log("School Names:  " + _this.schoolNames[index]);
-                console.log("Professor slice: ", _this.professors.slice(start, end));
-                console.log("Cantida de profesores : " + data.numberOfSchool[_this.schoolNames[index]] + " para escuela: " + _this.schoolNames[index]);
-                console.log("Index del loop: " + index + "\n \n");
                 start = end;
                 end += data.numberOfSchool[_this.schoolNames[index + 1]];
-                console.log("Start despues : " + start + " ,End despues: " + end + "\n");
-                console.log("Professor slice de la proxima linea: ", _this.professors.slice(start, end));
-                console.log("--------------------------------------");
+                if (index != data.schools.length - 1) {
+                    multipl += data.numberOfSchool[_this.schoolNames[index + 1]];
+                }
             }
+            // multiplicar todos los numberschool para saber las repeteciones
+            for (var index2 = 0; index2 < 10000; index2++) {
+                console.log("count: " + index2);
+                _this.files += data.data[index].file.length;
+                _this.filesDictionary[_this.schoolNames[index]] = data.data[index].file.length;
+                if (co == -1) {
+                    count = data.numberOfSchool[_this.schoolNames[nu]];
+                    co = 0;
+                }
+                if (co < count) {
+                    console.log("co " + co + " es menor que " + "count " + count);
+                    if (co == 0) {
+                        achivos = nu;
+                    }
+                    co++;
+                    console.log("index: " + achivos);
+                    console.log("Escuela: " + _this.schoolNames[achivos]);
+                    console.log("***************");
+                }
+                else {
+                    console.log("----------------");
+                    nu++;
+                    count = data.numberOfSchool[_this.schoolNames[nu]];
+                    console.log("El nuevo count es " + count);
+                    console.log("----------------");
+                    co = 0;
+                }
+                if (count == undefined) {
+                    break;
+                }
+            }
+            console.log("multipli es " + multipl);
             console.log("Profesores de escuela: " + JSON.stringify(_this.professors, null, 4));
             console.log("Escuela uno " + _this.dictionary["Escuela uno"]);
         });
@@ -3521,7 +3555,7 @@ exports = module.exports = __webpack_require__(3)(false);
 
 
 // module
-exports.push([module.i, "*,\n*:before,\n*:after {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 40px;\n  font-family: 'Open Sans', 'sans-serif';\n  background-color: #fff;\n  /* color: #444; */\n}\n\nh1,\np {\n  margin: 0 0 1em 0;\n}\n\n.wrapper {\n  max-width: 940px;\n  margin: 0 20px; \n  display: -ms-grid; \n  display: grid;\n  grid-gap: 48px;\n}\n\n\n/* for no grid support? fallback */\n.wrapper {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n/* if it has grid support the browser  */\n.wrapper {\n  display: -ms-grid;\n  display: grid;\n  margin: 0 auto;\n  /* si quiero que no se corten las palabras de el nombre de la escuela tengo que\n  hacer que los rows sean fijos lo que quita el responsive pero los nombre de las \n  escuelas no se van a cortar despues de 19 carateres words sin espacios .*/\n  -ms-grid-columns: 1fr 1fr 1fr 1fr;\n      grid-template-columns: 1fr 1fr 1fr 1fr; \n   /* Despues de 19 palabras se corta el nombre de la escuela si no tiene un \n   espacio y si no es la ultimacolumna*/\n  /* the minmax control the width  */   \n   -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];   \n       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));    \n  /*control the height de todo y el panel  */\n  grid-auto-rows: minmax(250px, auto); \n  grid-auto-columns: minmax(300px,auto);\n\n  /* Estilo */\n   /* box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);   */\n\n}\n\n.panel {\n  /* needed for the flex layout if it has not grid support*/\n  margin-left: 5px;\n  margin-right: 5px;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 200px;\n          flex: 1 1 200px;\n  /*border to each school */\n  /* border: 3px solid black; */\n  /* height de todo lo que esta dentro del panel   */\n  /* Estilo  */\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);    \n  width: auto\n}\n\n.panel:hover {\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\n}\n\n.header,\n.footer {\n  margin-left: 5px;\n  margin-right: 5px;\n  /* if tt doesnt have grid support  */\n  -webkit-box-flex: 0;\n      -ms-flex: 0 1 100%;\n          flex: 0 1 100%;\n  grid-column: 1 / -1;\n}\n\n/* everything inside the wrapper class  */\n.wrapper > * {\n   /* background-color: #444;  */\n  /* color: #fff; */\n  /* border-style: solid; */\n  color: black;\n  border-radius: 5px;\n  padding: 20px;\n  font-size: 150%;\n  margin-bottom: 10px;\n}\n\n .schoolText{\n   /* color: blue;  */\n  -ms-flex-item-align: stretch;\n      -ms-grid-row-align: stretch;\n      align-self: stretch;   \n  display: inline-block;\n  \n}\n\n.professorText{\n   padding: 10px 10px 10px 5px ;\n   text-align: center;\n    \n}\n\n\n\n\n/* We need to set the margin used on flex items to 0 as we have gaps in grid.  */\n @supports ((display: -ms-grid) or (display: grid)) {\n  .wrapper > * {\n    margin: 0;\n    width: auto;\n  }\n} \n\n/* make the data appear on a fixed weight \nlos nombre de escuela no se va a salir del\ncuadrado pero quita el responsive */\n.wrapper {\n /* grid-template-columns: 1fr 1fr 1fr;      */\n}\n", ""]);
+exports.push([module.i, "*,\n*:before,\n*:after {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 40px;\n  font-family: 'Open Sans', 'sans-serif';\n  background-color: #fff;\n  /* color: #444; */\n}\n\nh1,\np {\n  margin: 0 0 1em 0;\n}\n\n.wrapper {\n  max-width: 940px;\n  margin: 0 20px; \n  display: -ms-grid; \n  display: grid;\n  grid-gap: 48px;\n}\n\n\n/* for no grid support? fallback */\n.wrapper {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n\n/* if it has grid support the browser  */\n.wrapper {\n  display: -ms-grid;\n  display: grid;\n  margin: 0 auto;\n  /* si quiero que no se corten las palabras de el nombre de la escuela tengo que\n  hacer que los rows sean fijos lo que quita el responsive pero los nombre de las \n  escuelas no se van a cortar despues de 19 carateres words sin espacios .*/\n  -ms-grid-columns: 1fr 1fr 1fr 1fr;\n      grid-template-columns: 1fr 1fr 1fr 1fr; \n   /* Despues de 19 palabras se corta el nombre de la escuela si no tiene un \n   espacio y si no es la ultimacolumna*/\n  /* the minmax control the width  */   \n   -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];   \n       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));    \n  /*control the height de todo y el panel  */\n  grid-auto-rows: minmax(250px, auto); \n  grid-auto-columns: minmax(300px,auto);\n\n\n  /* Estilo */\n   /* box-shadow: 0 4px 4px 0 rgba(0,0,0,0.2);   */\n\n}\n\n.panel {\n  /* needed for the flex layout if it has not grid support*/\n  margin-left: 5px;\n  margin-right: 5px;\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 200px;\n          flex: 1 1 200px;\n  /*border to each school */\n  /* border: 3px solid black; */\n  /* height de todo lo que esta dentro del panel   */\n  /* Estilo  */\n  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);    \n  width: auto\n}\n\n.panel:hover {\n    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);\n}\n\n.header,\n.footer {\n  margin-left: 5px;\n  margin-right: 5px;\n  /* if tt doesnt have grid support  */\n  -webkit-box-flex: 0;\n      -ms-flex: 0 1 100%;\n          flex: 0 1 100%;\n  grid-column: 1 / -1;\n}\n\n/* everything inside the wrapper class  */\n.wrapper > * {\n   /* background-color: #444;  */\n  /* color: #fff; */\n  /* border-style: solid; */\n  color: black;\n  border-radius: 5px;\n  padding: 20px;\n  font-size: 150%;\n  margin-bottom: 10px;\n}\n\n .schoolText{\n   /* color: blue;  */\n  -ms-flex-item-align: stretch;\n      -ms-grid-row-align: stretch;\n      align-self: stretch;   \n  display: inline-block;\n  \n}\n\n.professorText{\n   padding: 10px 10px 10px 5px ;\n   text-align: center;\n    \n}\n\n\n\n\n/* We need to set the margin used on flex items to 0 as we have gaps in grid.  */\n @supports ((display: -ms-grid) or (display: grid)) {\n  .wrapper > * {\n    margin: 0;\n    width: auto;\n  }\n} \n\n/* make the data appear on a fixed weight \nlos nombre de escuela no se va a salir del\ncuadrado pero quita el responsive */\n.wrapper {\n /* grid-template-columns: 1fr 1fr 1fr;      */\n}\n", ""]);
 
 // exports
 
@@ -3533,7 +3567,7 @@ module.exports = module.exports.toString();
 /* 350 */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <div class=\"wrapper\">\n  <header class=\"header\">My header</header>\n  \n  <div class=\"panel\">\n     <div class=\"\">\n       Escuela 1\n     </div>\n      <div> \n        Profesor de escuela 1\n      </div>\n  </div>\n  <div class=\"panel\">Panel B</div>\n  <div class=\"panel\">Panel C</div>\n  <div class=\"panel\">Panel D</div>\n  <div class=\"panel\">Panel E</div>\n  <div class=\"panel\">Panel F</div>\n  <div class=\"panel\">Panel G</div>\n  <div class=\"panel\">Panel H</div>\n  <div class=\"panel\">Panel I</div>\n  <div class=\"panel\">Panel 1</div>\n  <div class=\"panel\">Panel 2</div>\n  <div class=\"panel\">Panel 3</div>\n  <div class=\"panel\">Panel 4</div>\n  <div class=\"panel\">Panel 5</div>\n  <div class=\"panel\">Panel 6</div>\n  <div class=\"panel\">Panel 7</div>\n  \n  \n  <footer class=\"footer\">My footer</footer>\n</div> -->\n\n<div class=\"wrapper\">\n   <!-- <h2> hello {{dictionary[\"z escuela\"]}} </h2>  -->\n    <h2 class=\"loader\" *ngIf=\"!schoolNames\">\n      Cargando escuelas\n    </h2>\n  <div class=\"panel\" *ngFor=\"let school of dictionaryKeys(dictionary)\">\n      <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->\n      <h2 class=\"schoolText well\">{{school}} </h2>\n      <div class=\"professorText\" *ngFor=\"let professor of dictionary[school]\">\n          &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} \n      </div>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"wrapper\">\n   <!-- <h2> hello {{dictionary[\"z escuela\"]}} </h2>  -->\n    <h2 class=\"loader\" *ngIf=\"!schoolNames\">\n      Cargando escuelas\n    </h2>\n  <div class=\"panel\" *ngFor=\"let school of dictionaryKeys(dictionary)\">\n      <h2>{{files}}</h2>\n      <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->\n      <h2 class=\"schoolText well\">{{school}} </h2>\n      <div class=\"professorText\" *ngFor=\"let professor of dictionary[school]\">\n          &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} \n      </div>\n  </div>\n</div>\n\n"
 
 /***/ })
 ],[344]);
