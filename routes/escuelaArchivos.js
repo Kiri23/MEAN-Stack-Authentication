@@ -18,46 +18,58 @@ router.post('/add', (req, res,next) => {
     var number;
     var queryEscuela = req.query.escuela
     console.log("Escuela: " + queryEscuela)
+    let newArchivo = new escuelaArchivos({
+        numberOfFiles: req.body.file,
+        nombreEscuela: queryEscuela
+    });
+    // find only one school
     escuelaArchivos.getArchivosCountByEscuela(queryEscuela,(err, escuela) => {
     if (err){
         return res.json(err);
     }
-    console.log("lenght- " + escuela.length)
-    console.log(escuela.numberOfFiles + " All fileNames from the api");
+     if(escuela){
+        console.log("lenght- " + escuela)
         number = escuela.numberOfFiles
-        console.log("Numero anterior " + number)
-    
-        console.log("llego a la ruta del register newArchivo");
-
-        // Administration Object Retriev newArchivo Properties from Form
-        let newArchivo = new escuelaArchivos({
-            numberOfFiles: req.body.file,
-            nombreEscuela: req.body.nombreEscuela
-        });
         parseInt(newArchivo.numberOfFiles)
         parseInt(number)
-        console.log("number = " + number)
-        console.log("NAN - "+underscore.isNaN(newArchivo.numberOfFiles))
-        console.log("NAN 2 - "+underscore.isNaN(number))
-        console.log("Is Number - " + underscore.isNumber(newArchivo.numberOfFiles))
-        console.log("Is Number 2 - " + underscore.isNumber(number))
-        console.log("Is string 2 - " + underscore.isString(number))
-        newArchivo.numberOfFiles =  (newArchivo.numberOfFiles + number)
-
-        
+        console.log("Numero anterior " + number)        
+        console.log("number file = " + newArchivo.numberOfFiles)
+        // here Update the numbers of files uploaded
+        escuela.numberOfFiles =  (newArchivo.numberOfFiles + number)
+        // Update school number of files
+        escuela.save((err,updatedSchool)=>{
+            if (err){
+                return res.json({success:false,msg:"Error al actualizar los archivos subido de la escuela",errorMessage:err.errors.msg,error:err})
+            }else {
+                return res.json({success:true,msg:"Actualizado correctamente el numero de archivos subidos por la escuela",updatedSchool:updatedSchool})
+            }
+        });
         // Add Administration to mongoDb
-        escuelaArchivos.addArchivos(newArchivo,(err, newArchivo) => {
+        // escuelaArchivos.addArchivos(newArchivo,(err, newArchivo) => {
+        //     if(err){
+        //         console.log(err + " adding newArchivo");
+        //         res.json({success: false, msg:'Failed to register newArchivo',error:err});
+        //     }else{ // addAdministrator to the Database
+        //        res.json({success:true,msg:'Escuela Actualizada',newArchivo:newArchivo});
+        //     }
+        // });
+     }else {
+        // adding New School
+        newArchivo.save( (err,newSchool)=> {
             if(err){
-            console.log(err + " adding newArchivo");
-            res.json({success: false, msg:'Failed to register newArchivo',error:err});
-            }else{ // addAdministrator to the Database
-            res.json({success:true,msg:'Archivo Added',newArchivo:newArchivo});
-         }
+                res.json({success:false,msg:"Error al crear nueva escuela para guardas los archivos",errorMessage:err.errors.msg,error:err})
+            }
+            res.json({
+               success:true,
+               message: "Escuela Guardada Exitosamente!",
+               newSchool:newSchool
+          });
+        })
+     }
     })
   });
 // End add Administration logic
 
-})
 // Get a fileNames by their Id
 router.get('/getNumbe', (req, res) => {
   var id = req.query.fileNameId;
