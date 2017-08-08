@@ -3500,7 +3500,6 @@ var DisplayProfessorsComponent = (function () {
             for (var index2 = 0; index2 < 10000; index2++) {
                 console.log("count: " + index2);
                 _this.files += data.data[index].file.length;
-                _this.filesDictionary[_this.schoolNames[index]] = data.data[index].file.length;
                 if (co == -1) {
                     count = data.numberOfSchool[_this.schoolNames[nu]];
                     co = 0;
@@ -3511,16 +3510,19 @@ var DisplayProfessorsComponent = (function () {
                         achivos = nu;
                     }
                     co++;
-                    console.log("index: " + achivos);
                     console.log("Escuela: " + _this.schoolNames[achivos]);
+                    console.log("Escuela: " + data.data[achivos].nombreEscuela);
+                    //  console.log("index: " + achivos)              
+                    _this.filesDictionary[_this.schoolNames[achivos]] = data.data[achivos].file.length;
+                    console.log("Archivos Lenght: " + data.data[achivos].file.length);
                     console.log("***************");
                 }
                 else {
                     console.log("----------------");
                     nu++;
                     count = data.numberOfSchool[_this.schoolNames[nu]];
-                    console.log("El nuevo count es " + count);
-                    console.log("----------------");
+                    // console.log("El nuevo count es " + count)
+                    // console.log("----------------")                
                     co = 0;
                 }
                 if (count == undefined) {
@@ -3567,7 +3569,7 @@ module.exports = module.exports.toString();
 /* 350 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper\">\n   <!-- <h2> hello {{dictionary[\"z escuela\"]}} </h2>  -->\n    <h2 class=\"loader\" *ngIf=\"!schoolNames\">\n      Cargando escuelas\n    </h2>\n  <div class=\"panel\" *ngFor=\"let school of dictionaryKeys(dictionary)\">\n      <h2>{{files}}</h2>\n      <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->\n      <h2 class=\"schoolText well\">{{school}} </h2>\n      <div class=\"professorText\" *ngFor=\"let professor of dictionary[school]\">\n          &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} \n      </div>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"wrapper\">\n   <!-- <h2> hello {{dictionary[\"z escuela\"]}} </h2>  -->\n    <h2 class=\"loader\" *ngIf=\"!schoolNames\">\n      Cargando escuelas\n    </h2>\n  <div class=\"panel\" *ngFor=\"let school of dictionaryKeys(dictionary)\">\n      <div *ngFor = \"let schoolFiles of dictionaryKeys(filesDictionary)\"> \n        <!-- <h2 >Archivos Subidos - {{filesDictionary[schoolFiles]}}</h2> -->\n      </div>\n      <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->\n      <h2 class=\"schoolText well\">{{school}}</h2>\n      <div class=\"professorText\" *ngFor=\"let professor of dictionary[school]\">\n          &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} \n      </div>\n  </div>\n</div>\n\n"
 
 /***/ })
 ],[344]);

@@ -502,15 +502,32 @@ router.get('/escuelas',(req,res)=> {
       console.log("Name Escuela parameter: "+ JSON.stringify(name, null, 4));
       var names = [];
       var schools = [];
+      var numberOfFiles = [] ;
+      var number;
       name = underscore.sortBy(name,'nombreEscuela');
       escuelas = underscore.sortBy(escuelas)
       underscore(name).each((elem,key) => {
           // console.log("elem: " + elem.name + " key " + key );
           names.push(elem.name);
           schools.push(elem.nombreEscuela);
+          numberOfFiles.push(elem.file.length)                      
+          console.log(schools[key] === schools[key - 1])
+          console.log(schools[key - 1])
+          console.log(schools[key])
+          console.log("------")
+          // if(schools[key] === schools[key - 1] ) {
+          //   number += elem.file.length
+          //   console.log("Number: " + number)
+          // }else {
+          //   numberOfFiles.push(number)            
+          //   console.log("Son falso")
+          //   number = 0
+          // }
+          
+          
       });
       schools = underscore.countBy(schools);
-      return res.json({success:true,msg:"Se encontro los nombre de escuelas ", schools:escuelas,professors:names,numberOfSchool:schools,data:name})
+      return res.json({success:true,msg:"Se encontro los nombre de escuelas ", schools:escuelas,professors:names,numberOfSchool:schools,files:numberOfFiles,data:name})
     });
   });
 });

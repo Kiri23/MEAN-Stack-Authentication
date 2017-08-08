@@ -69,7 +69,6 @@ export class DisplayProfessorsComponent implements OnInit {
         for (var index2 = 0; index2 < 10000; index2++) {
             console.log("count: " + index2)
             this.files += data.data[index].file.length
-            this.filesDictionary[this.schoolNames[index]] = data.data[index].file.length
             if (co == -1){
                 count = data.numberOfSchool[this.schoolNames[nu]]
                 co = 0
@@ -80,15 +79,18 @@ export class DisplayProfessorsComponent implements OnInit {
                 achivos = nu
               }
               co++
-              console.log("index: " + achivos) 
-              console.log("Escuela: " + this.schoolNames[achivos])               
+             console.log("Escuela: " + this.schoolNames[achivos]) 
+             console.log("Escuela: " + data.data[achivos].nombreEscuela)
+            //  console.log("index: " + achivos)              
+            this.filesDictionary[this.schoolNames[achivos]] = data.data[achivos].file.length  
+              console.log("Archivos Lenght: " + data.data[achivos].file.length)              
               console.log("***************")
             }else {
               console.log("----------------")
               nu ++;                
               count = data.numberOfSchool[this.schoolNames[nu]]
-              console.log("El nuevo count es " + count)
-              console.log("----------------")                
+              // console.log("El nuevo count es " + count)
+              // console.log("----------------")                
               co = 0
             }
             if (count == undefined){

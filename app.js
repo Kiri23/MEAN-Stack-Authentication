@@ -29,6 +29,7 @@ const organization = require('./routes/organization');
 const administration = require('./routes/administration');
 const users = require('./routes/users');
 const fileNames = require('./routes/filename');
+const escuelaArchivos = require('./routes/escuelaArchivos');
 
 
 // app express
@@ -100,7 +101,7 @@ app.use('/organization',organization);
 // route for Administrator
 app.use('/administrator',administration);
 // route for files retrieval
-app.use('/',fileNames);
+app.use('/',[fileNames,escuelaArchivos]);
 
 // app.post('/image',upload.single('img'), (req,res,next) => {
 //
