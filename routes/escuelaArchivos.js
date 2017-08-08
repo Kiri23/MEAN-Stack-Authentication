@@ -14,7 +14,7 @@ const escuelaArchivos = require('../models/escuelaArchivos');
 
 //aget6 shortcut for app.get
 // cause whe're in the newArchivo file is newArchivo/register
-router.post('/add', (req, res,next) => {
+router.post('/modifiedNumberOfFiles', (req, res,next) => {
     var number;
     var queryEscuela = req.query.escuela
     console.log("Escuela: " + queryEscuela)

@@ -13,6 +13,8 @@ var upload = require ('../config/multer');
 
 const User = require('../models/user');
 const Administrator = require('../models/administrator');
+const escuelaArchivos = require('../models/escuelaArchivos');
+
 
 //aget6 shortcut for app.get
 
@@ -274,17 +276,32 @@ router.post('/upload',(req, res) => {
           return res.json({msg:"Error al guardar el archivo del usuario"})
         }
 
+        // tiene que ir en numberOfFiles el length de req.file 
+        // let newArchivo = new escuelaArchivos({
+        //     numberOfFiles: 1,
+        //     nombreEscuela: user.nombreEscuela
+        // });
+
+        // newArchivo.save( (err,updateNumbersOfFiles) => {
+        //   if (err){
+        //     // no se puede poner un return aqui sale un error cant set header after they're sent
+        //     console.log("Error Updating numbers Of Files: " +JSON.stringify(err, null, 4));            
+        //   }else {
+        //     console.log("Numero de archivos actualizado Correctamentes")
+        //   }
+        // });
+        updateNumberOfFilesOfSchools(user);
 
         user.save((err, updatedUser) => {
           if(err){
             //  data.error.errors.file.message - mostrar el mensajes de error de excdeio file archivos
             console.log("Error User Data: " +JSON.stringify(err, null, 4));
-
-
+            // no se puede poner un return aqui sale un error cant set header after they're sent
+          }else{
+            console.log("User Data: " +JSON.stringify(updatedUser, null, 4));
+            // res.json to send json date here
+            console.log("Update User Succesfully");
           }
-          console.log("User Data: " +JSON.stringify(updatedUser, null, 4));
-          // res.json to send json date here
-          console.log("Update User Succesfully");
         })
         // return res.json({user:data})
       });
@@ -299,6 +316,50 @@ router.post('/upload',(req, res) => {
   });
 });
 
+// Helper Method Update Number of files of schools
+function updateNumberOfFilesOfSchools(user){
+    var number;
+    var queryEscuela = user.nombreEscuela
+    console.log("Escuela: " + queryEscuela)
+    let newArchivo = new escuelaArchivos({
+        numberOfFiles: 1,
+        nombreEscuela: queryEscuela
+    });
+    // find only one school
+    escuelaArchivos.getArchivosCountByEscuela(queryEscuela,(err, escuela) => {
+    if (err){
+        return res.json(err);
+    }
+     if(escuela){
+        console.log("lenght- " + escuela)
+        number = escuela.numberOfFiles
+        parseInt(newArchivo.numberOfFiles)
+        parseInt(number)
+        console.log("Numero anterior " + number)        
+        console.log("number file = " + newArchivo.numberOfFiles)
+        // here Update the numbers of files uploaded
+        escuela.numberOfFiles =  (newArchivo.numberOfFiles + number)
+        // Update school number of files
+        escuela.save((err,updatedSchool)=>{
+            if (err){
+               console.log("Error Updating numbers Of Files: " +JSON.stringify(err, null, 4));             
+            }else {
+              console.log("Actualizado correctamente el numero de archivos subidos por la escuela")
+            }
+        });
+     }else {
+        // adding New School
+        newArchivo.save( (err,newSchool)=> {
+            if(err){
+               console.log("Error adding new school to update number of files: " +JSON.stringify(err, null, 4));             
+            }else{
+              console.log("Numeros de archivos para escuela Guardada Exitosamente!")
+            }
+            
+        })
+     }
+    })
+}
 
 /**
 * @api {get} profile/ The profile of the user
