@@ -184,6 +184,20 @@ export class UsersService {
     });
   }
 
+  getNumberOfFilesBySchools(){
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    headers.append('Content-Type','application/json');
+
+    // return an observable with the response
+    // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+    return this.http.get('/getAllArchivosEscuela',{headers:headers}).map(res => {
+      // This is how can I send only the _id or the role in this method
+      // console.log(res.json()[0]._id," reuktado from the call");
+      return res.json();
+    });
+  }
+
 
   // getRole():string
  async getRole(){

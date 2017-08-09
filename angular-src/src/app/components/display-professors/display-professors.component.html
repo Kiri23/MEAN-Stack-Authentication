@@ -7,7 +7,9 @@
       <div *ngFor = "let schoolFiles of dictionaryKeys(filesDictionary)"> 
         <!-- <h2 >Archivos Subidos - {{filesDictionary[schoolFiles]}}</h2> -->
       </div>
-      <!-- <h2> {{school + ':' + dictionary[school] }} </h2> -->
+       <!-- <h2> {{school + ':' + dictionary[school] }} </h2>  -->
+       <h2 *ngIf="!(numberOfFilesDictionary[school]) ">Archivos Subidos: 0/5 </h2>       
+       <h2 *ngIf="numberOfFilesDictionary[school]" >Archivos Subidos: {{numberOfFilesDictionary[school] }}/5 </h2>
       <h2 class="schoolText well">{{school}}</h2>
       <div class="professorText" *ngFor="let professor of dictionary[school]">
           &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} 

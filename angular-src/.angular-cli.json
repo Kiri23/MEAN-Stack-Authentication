@@ -9,7 +9,9 @@
       "outDir": "../public",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        "app/components/user-timeline/img/cd-arrow.svg"
+        
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -22,7 +24,11 @@
         "styles.css"
       ],
       "scripts": [
-        "app/components/dashboard-components/table/table.component.js"
+        "../node_modules/jquery/dist/jquery.min.js",        
+        "app/components/dashboard-components/table/table.component.js",
+        "app/components/user-timeline/js/main.js",
+        "app/components/user-timeline/js/modernizr.js"
+        
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

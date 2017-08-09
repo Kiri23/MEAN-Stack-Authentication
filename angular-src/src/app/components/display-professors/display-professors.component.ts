@@ -23,6 +23,7 @@ export class DisplayProfessorsComponent implements OnInit {
   professors = [];
   dictionaryKeys = Object.keys;
   filesDictionary: {[escuela:string]:number;} = {}  
+  numberOfFilesDictionary: {[escuela:string]:number;} = {}  
   files = 0;
 
   dictionary: {[escuela:string]:string[];} = {
@@ -36,9 +37,16 @@ export class DisplayProfessorsComponent implements OnInit {
 
   ngOnInit() {
     this.showSchoolNamesAndProfessor2()
+    // this.numbersOFFilesCount()
   }
 
-     /**
+   numbersOFFilesCount(){
+     console.log("files dictionary: " + this.dictionary["mi s"])
+     this.userService.getNumberOfFilesBySchools().subscribe(schoolFiles => {
+        console.log("Escuela Numbers of Files: "+ JSON.stringify(schoolFiles, null, 4));       
+     });
+   }
+   /**
    * Function to retrieve all the School in the DB with his professor 
    * @memberOf TableComponent
    */
@@ -63,7 +71,7 @@ export class DisplayProfessorsComponent implements OnInit {
             if (index != data.schools.length - 1){
               multipl += data.numberOfSchool[this.schoolNames[index + 1]]; 
             }
-            }
+         }
 
         // multiplicar todos los numberschool para saber las repeteciones
         for (var index2 = 0; index2 < 10000; index2++) {
@@ -102,6 +110,22 @@ export class DisplayProfessorsComponent implements OnInit {
         console.log("multipli es " + multipl)
         console.log("Profesores de escuela: "+ JSON.stringify(this.professors, null, 4)); 
         console.log("Escuela uno "+ this.dictionary["Escuela uno"])  
+
+        console.log("files dictionary: " + this.dictionary["mi s"])
+        this.userService.getNumberOfFilesBySchools().subscribe(schoolFiles => {
+           console.log("Escuela Numbers of Files: "+ JSON.stringify(schoolFiles, null, 4));   
+           for (var index = 0; index < schoolFiles.length; index++) {
+            if (this.dictionary[schoolFiles[index].nombreEscuela]){
+              console.log("no es nullo")
+              var escuela = schoolFiles[index].nombreEscuela
+              var numberOfFiles = schoolFiles[index].numberOfFiles
+              this.numberOfFilesDictionary[escuela] = numberOfFiles
+              console.log("Escuela " +escuela)
+              console.log("Archivos: " + this.numberOfFilesDictionary[escuela])
+            }    
+                          
+           }
+        });
          
     });
   }

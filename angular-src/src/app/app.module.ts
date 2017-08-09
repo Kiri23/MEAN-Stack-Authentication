@@ -29,6 +29,9 @@ import { ModalComponent } from './components/dashboard-components/modal/modal.co
 import { AdminUsersComponent } from './components/admin-users/admin-users.component';
 import { AdminRegisterComponent } from './components/admin-register/admin-register.component';
 import { UploadPortfolioComponent } from './components/upload-portfolio/upload-portfolio.component';
+import { UploadFileComponent } from './components/upload-file/upload-file.component';
+import { DisplayProfessorsComponent } from './components/display-professors/display-professors.component';
+import { UserTimelineComponent } from './components/user-timeline/user-timeline.component';
 
 
 //Services
@@ -40,8 +43,7 @@ import {UsersService} from './services/users.service';
 import {UtilitiesService} from './services/utilities.service';
 import {AdministratorsService} from './services/administration/administrator.service';
 import {OrganizationsService} from './services/organization/organization.service';
-import { UploadFileComponent } from './components/upload-file/upload-file.component';
-import { DisplayProfessorsComponent } from './components/display-professors/display-professors.component';
+
 
 
 
@@ -66,7 +68,8 @@ const appRoutes: Routes = [
   {path:'admin/upload',component:UploadFileComponent},
   {path:'admin/professors',component:DisplayProfessorsComponent},
   // user upload portfolios - ponerle protected route
-  {path:'users/upload',component:UploadPortfolioComponent}
+  {path:'users/upload',component:UploadPortfolioComponent},
+  {path:'timeline',component:UserTimelineComponent},
 
 
 ];
@@ -94,7 +97,8 @@ const appRoutes: Routes = [
     UploadFileComponent,
     FileSelectDirective,
     UploadPortfolioComponent,
-    DisplayProfessorsComponent
+    DisplayProfessorsComponent,
+    UserTimelineComponent
   ],
   imports: [
     BrowserModule,
