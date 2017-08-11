@@ -3,7 +3,7 @@
 <form name="registerForm" (submit)="onRegisterSubmit()">
 
   <div class="form-group">
-    <label for="name">Name</label>
+    <label for="name">Nombre</label>
     <input type="text" required [(ngModel)]="name" name="name" ng-model="name"  required class="form-control">
     <!-- <h1>{{registerForm.name.$touched}}</h1> -->
     <!--Error message -->
@@ -16,17 +16,17 @@
   </div>
 
   <div class="form-group">
-    <label for="username">Username</label>
+    <label for="username">Nombre de usuario</label>
     <input type="text" required [(ngModel)]="username" name="username" required class="form-control">
   </div>
 
   <div class="form-group">
-    <label for="name">Password</label>
+    <label for="name">Contraseña</label>
     <input type="password" required [(ngModel)]="password" name="password"  required class="form-control">
   </div>
 
   <div class="form-group">
-    <label for="name">Email</label>
+    <label for="name">Dirección de correo electrónico</label>
     <input type="text" required [(ngModel)]="email" name="email" required class="form-control">
   </div>
 

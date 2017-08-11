@@ -7,15 +7,15 @@
   <div class="panel-body">
     <div *ngIf="showFilter" class="form-group">
       <!--Show Search Filter  -->
-      <input id="filterInput" class="makeSmaller form-control" onkeyup="filterUsersByName()" type="text" placeholder="Search Filter" name="" value="">
+      <input id="filterInput" class="makeSmaller form-control" onkeyup="filterUsersByName()" type="text" placeholder="Buscar Professores" name="" value="">
     </div>
     <table id="userTable" class="table table-striped table-hover table-responsive">
       <!-- Table Header -->
       <tr>
-        <th>Name</th>
+        <th>Nombre</th>
         <th>Escuela</th>
-        <th>Email</th>
-        <th>Joined</th>
+        <th>Dirección de Correo Electrónico</th>
+        <th>Día en que se registro</th>
       </tr>
       <!--Table Body -->
     <tbody>
@@ -26,7 +26,7 @@
           <!--if index(i) is greater than 5 dont show more Table data  -->
           <!--if index > 6 render the tableDate but with a display set to none.That way the search filter will look for all the user in the db and not only the one that are showing in the table  -->
           <td style="display:none" *ngIf="ind > 5">{{record.name || "No hay nombre" }}</td>
-           <td *ngIf="ind < 6">{{record.name || "No name" }}</td>
+           <td *ngIf="ind < 6">{{record.name || "No hay nombre" }}</td>
 
            <!-- escuela row  -->
            <td style="display:none" *ngIf="ind > 5">{{record.nombreEscuela || "No se proveyó nombre de escuela" }}</td>
@@ -34,7 +34,7 @@
 
            <!-- email -->
            <td style="display:none" *ngIf="ind > 5">{{record.email || "No hay email "}}</td>
-           <td *ngIf="ind < 6">{{record.email || "No email"}}</td>
+           <td *ngIf="ind < 6">{{record.email || "No hay email"}}</td>
 
            <td style="display:none" *ngIf="(record.CreatedDate && ind > 5)">{{record.CreatedDate | date:'MMM dd' }} at {{record.CreatedDate | date:'hh:mm' }}
            </td>

@@ -2,18 +2,18 @@
   <div class="container">
     <div class="row">
       <div class="col-md-9">
-        <h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> DashBoard <small>Manage your website</small></h2>
+        <h2><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> DashBoard <small>Maneja las escuelas</small></h2>
       </div>
       <div class="col-md-3">
        <div class="dropdown create">
           <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Create Content
+            Opciones
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a type="button" data-toggle = "modal" data-target="#addPage">Add Page</a></li>
-            <li><a href="#">Add Post</a></li>
-            <li><a href="/register">Add User</a></li>
+            <li><a href="/register">Añade un professor</a></li>
+            <li><a href="/admin/professors">Busque Escuela con sus professores</a></li>
+            <li><a type="button" data-toggle = "modal" data-target="#addPage">Vea todos los professores disponibles</a></li>
           </ul>
         </div>
       </div>
@@ -39,20 +39,14 @@
         <!--Boxes -->
         <!--Pass the totalUser number to the app-boxes component  -->
         <app-boxes [admin-Dashboard-totalUser-Props] = totalUsers></app-boxes>
-        <!--User Table-->
-        <app-table [dataset] = latestUser text="Latest Users">
-          <!-- <app-table-columns value='name' header='Name'></app-table-columns>
-
-          <app-table-columns value='email' header='email'></app-table-columns>
-
-          <app-table-columns value='CreatedDate' header='Joined'></app-table-columns> -->
-
-        </app-table>
-        <app-display-professors> 
-          cargando los profesores
-        </app-display-professors>        
       </div>
     </div>
+    <!--Professores Table-->
+    <app-table [dataset] = latestUser text="Ultimos Professores Registrados">
+    </app-table>
+    <app-display-professors> 
+      cargando los profesores
+    </app-display-professors>        
   </div>
   <!--Add Page Modal  -->
   <app-modal modalId="addPage"></app-modal>

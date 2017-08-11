@@ -1,5 +1,5 @@
 // Modules
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
 // Service for validate blank(empty) form and email
 import {ValidateService} from '../../services/validate.service';
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   escuela: String;
   role;
 
-  text = "Register"
+  @Input() text = "Regístrate"
 
   //anytime we use a service we need to inject to a constructor and module also need to be injected
   // so we can this.validateService

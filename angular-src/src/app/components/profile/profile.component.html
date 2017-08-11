@@ -5,24 +5,31 @@
   <ul class="list-group">
     <!--username of the user  -->
     <li class="list-group-item">
-      Username: {{user.username}}
+      Nombre de usuario: {{user.username}}
 
     </li>
     <!--Email of the user  -->
     <li class="list-group-item">
-      Email: {{user.email}}
+      Dirrecion de Correo Electrónico: {{user.email}}
+    </li>    
+    <!--Escuela of the user  -->
+    <li *ngIf="user.nombreEscuela" class="list-group-item">
+      Escuela a la que pertenece: {{user.nombreEscuela}}
+    </li>
+    <li *ngIf="!user.nombreEscuela" class="list-group-item">
+      No pertenece a niguna escuela
     </li>
   </ul>
 </div>
 
 <div *ngIf="fileLink" class="">
-  <h2>Template to download
+  <h2>modelo para descargar
       <a target="_blank" [href]=fileUrl download (click)="downloadLink()" >Template 1</a>
   </h2>
 </div>
 
 <div *ngIf="isDownloading" class="">
-  <h2>Downloading Files</h2>
+  <h2>Descargando archivos</h2>
 </div>
 
 
@@ -37,26 +44,12 @@
       <tr>
         <th>Numero</th>
         <th>Nombre del Archivo</th>
-        <th style="width:80px">Editar</th>
-        <th style="width:80px">Eliminar</th>
-        <th>Subido Por</th>
       </tr>
       <!--Rows of tables  -->
       <tr *ngFor="let file of listOfFileNames;let index = index" class="">
         <th scope="row">{{index + 1}}</th>
         <td colspan="">{{file.name}} </td>
-        <!--Edit row  -->
-        <td>
-          <p data-placement="top" data-toggle="tooltip" title="Edit" style="display:inline;"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil" style="font-size:12px;"></span></button></p>
-        </td>
-        <!--Delete Row  -->
-        <td>
-          <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" > <span class="glyphicon glyphicon-trash" style="font-size:12px"></span></button></p>
-        </td>
-        <!--Subido Por Row  -->
-        <td>
-
-        </td>
+        
       </tr> <!-- End of rows Tables -->
     </table>
   </div>

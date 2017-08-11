@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Mean Auth App</a>
+      <a class="navbar-brand" href="#">OPAS</a>
     </div>
   <div id="navbar" class="collapse navbar-collapse">
   <ul class="nav navbar-nav navbar-left">  -->
@@ -17,18 +17,18 @@
    </ul>
 
   <ul class="nav navbar-nav navbar-right">
-    <li *ngIf="authService.checkLoggedIn()&& isAdminRole()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/adminDashboard']">Admin</a></li>
+    <li *ngIf="authService.checkLoggedIn()&& isAdminRole()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/adminDashboard']">Administrador</a></li>
 
     <li *ngIf="authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/dashboard']">Dashboard</a></li>
 
-    <li *ngIf="authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/profile']">Profile</a></li>
+    <li *ngIf="authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/profile']">Perfil</a></li>
 
-
-    <li *ngIf="!authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/login']">Login</a></li>
-
-    <li *ngIf="!authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]= "['/register']">Register</a></li>
     <!--click event  -->
-    <li *ngIf="authService.checkLoggedIn()" > <a href="#" (click)="onLogoutClick()">Logout</a></li>
+    <li *ngIf="authService.checkLoggedIn()" > <a href="#" (click)="onLogoutClick()">Salir</a></li>
+
+    <li *ngIf="!authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/login']">Conéctate</a></li>
+
+    <li *ngIf="!authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]= "['/register']">Regístrate</a></li>
  </ul>
 
 </div>
