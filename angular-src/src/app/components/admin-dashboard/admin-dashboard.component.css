@@ -2,7 +2,7 @@
 
 /* Custom Color*/
 .main-color-bg{
-  background-color: #e74c3c !important;
+  background-color: #93c54b !important;
   border-color: #c0932b !important ;
   color: #ffffff !important;
 }
@@ -16,7 +16,7 @@
 
 /* Header */
 #header{
-  background: #333333;
+  background: #333358;
   color:#ffffff;
   padding-bottom: 10px;
   margin-bottom: 15px;

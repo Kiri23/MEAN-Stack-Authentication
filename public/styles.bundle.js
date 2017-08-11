@@ -9,7 +9,7 @@ webpackJsonp([3,5],{
 var content = __webpack_require__(268);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(354)(content, {});
+var update = __webpack_require__(355)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -118,14 +118,14 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n/* Override Boostrap Default Color  */\n.navbar-default .navbar-nav>li>a {\n    color: #363636;\n}\n\n.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{\n    color: #ffffff;\n    background-color: #93c54b;\n}\n\n.navbar-default{\n color: #93c54b; \n background-color: #93c54b;    \n}\n\n.btn-default {\n    background-color: #93c54b; \n}\n\n.btn-default:hover{\n    background-color: #93c54b;\n}\n\n.btn-default:active:hover, .btn-default.active:hover, .open>.dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open>.dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open>.dropdown-toggle.btn-default.focus{\n    background-color: #93c54b;\n}\n\n.btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default{\n    background-color: #93c54b;\n}\n\n.breadcrumb{\n    background-color: #93c54b\n}\n\n/*Color green for OPAS Website  */\n.greenOpasColor{\n    background-color: #93c54b;\n}", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 354:
+/***/ 355:
 /***/ (function(module, exports) {
 
 /*
@@ -378,7 +378,7 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 358:
+/***/ 359:
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(178);
@@ -386,5 +386,5 @@ module.exports = __webpack_require__(178);
 
 /***/ })
 
-},[358]);
+},[359]);
 //# sourceMappingURL=styles.bundle.js.map

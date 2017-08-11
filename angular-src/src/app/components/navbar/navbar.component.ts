@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
     // this just set the variable to null and clear the local storage
     this.authService.logout();
     // show logout message
-    this.flashMessage.show("You are logged out"
+    this.flashMessage.show("Has sido desconectado correctamente!"
       ,{cssClass:'alert-success',timeout:4000}
     );
     // redirect to login
@@ -71,7 +71,7 @@ export class NavbarComponent implements OnInit {
       // observable can also return error
       console.log(err);
       // Show a error message
-      this.flashMessage.show("An error has ocurred retrieving the role",{cssClass:'alert-danger',timeout: 5000});
+      this.flashMessage.show("Un error ocurrio determinando su rol",{cssClass:'alert-danger',timeout: 5000});
       // redirect to the login page
       this.router.navigate(['/login']);
     });

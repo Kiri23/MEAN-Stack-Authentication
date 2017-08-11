@@ -1,4 +1,36 @@
-<!-- Poner Un BreadCum Aqui -->
-<p class="page-header" style="font-size:35px;">Bienvenido a tu dashboard</p>
+ <p class="page-header" style="font-size:35px;">Bienvenido a tu dashboard</p>
+
+
+<!--Breadcrumb section  -->
+<section class="breadcrumb" id="breadcrumb">
+    <div class="row">
+        <div style="margin-top: 10px;" class="col-md-9">
+            <h4 class="active">Dashboard </h4>
+        </div>
+        <div style="margin-top: 10px;" class="col-md-3">
+            <div class="dropdown create">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Opciones
+                <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <li><a [routerLink]="['/profile']" >Descarque las plantillas</a></li>
+                    <li><a [routerLink]="['/users/upload']">Suba algun archivo</a></li>
+                </ul>
+            </div>
+        </div>
+</div>
+</section> <!--End breadcrumb section -->
+     
+
 <h1 class="h1 text-center pad1">Linea del tiempo</h1>
 <app-user-timeline> </app-user-timeline>
+
+<div class="row">
+    <div class="col-md-6">
+        <h1><a [routerLink]="['/profile']">Aqui</a> puedes descargar los modelos </h1>
+    </div>
+    <div class="col-md-6">
+        <h1><a [routerLink]="['/users/upload']">Aqui</a> puedes subir los archivos </h1>
+    </div>
+</div>

@@ -37,12 +37,12 @@ Main Components
 }
 .cd-horizontal-timeline::before {
   /* never visible - this is used in jQuery to check the current MQ */
-  content: 'mobile';
-  display: none;
+   content: 'mobile'; 
+   display: none; 
 }
 .cd-horizontal-timeline.loaded {
   /* show the timeline after events position has been set (using JavaScript) */
-  opacity: 1;
+   opacity: 1; 
 }
 .cd-horizontal-timeline .timeline {
   position: relative;

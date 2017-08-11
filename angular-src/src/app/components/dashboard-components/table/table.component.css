@@ -1,6 +1,6 @@
 /* Custom Color*/
 .main-color-bg{
-  background-color: #e74c3c !important;
+  background-color: #93c54b !important;
   border-color: #c0932b !important ;
   color: #ffffff !important;
 }
@@ -9,7 +9,7 @@
  }
 
  .panel-heading{
-   background-color: black ;
+   background-color: #93c54b ;
    border-color: black  ;
  }
 
@@ -92,5 +92,4 @@ h1, p {
   .wrapper2{
     grid-template-columns: 1fr 3fr;
   }
-
 

@@ -23,6 +23,8 @@
 
     <li *ngIf="authService.checkLoggedIn()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/profile']">Perfil</a></li>
 
+    <li *ngIf="authService.checkLoggedIn() && !isAdminRole()" [routerLinkActive]= "['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]="['/users/upload']">Subir un archivo</a></li>
+
     <!--click event  -->
     <li *ngIf="authService.checkLoggedIn()" > <a href="#" (click)="onLogoutClick()">Salir</a></li>
 

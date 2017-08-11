@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Override Boostrap Default Color  */
+.navbar-default .navbar-nav>li>a {
+    color: #363636;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{
+    color: #ffffff;
+    background-color: #93c54b;
+}
+
+.navbar-default{
+ color: #93c54b; 
+ background-color: #93c54b;    
+}
+
+.btn-default {
+    background-color: #93c54b; 
+}
+
+.btn-default:hover{
+    background-color: #93c54b;
+}
+
+.btn-default:active:hover, .btn-default.active:hover, .open>.dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open>.dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open>.dropdown-toggle.btn-default.focus{
+    background-color: #93c54b;
+}
+
+.btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default{
+    background-color: #93c54b;
+}
+
+.breadcrumb{
+    background-color: #93c54b
+}
+
+/*Color green for OPAS Website  */
+.greenOpasColor{
+    background-color: #93c54b;
+}
