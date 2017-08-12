@@ -5,7 +5,7 @@
   "main": "app.js",
   "coment": "Se puede ver Npm Script en Google para ver las oppurtnidades que me ofrece",
   "scripts": {
-    "start": "node app.js"
+    "start": "pm2 start app.js --name='OpasApp'"
   },
   "dependencies": {
     "bcryptjs": "*",
@@ -20,7 +20,8 @@
     "multer-gridfs-storage": "^1.2.2",
     "passport": "*",
     "passport-jwt": "*",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "pm2":"^2.6.1"
   },
   "repository": {
     "type": "git",
