@@ -239,18 +239,6 @@ function startPM2() {
       post_update: ["npm install"]       // Commands to execute once we do a pull from Keymetrics
     }, function() {
       pm2.interact(PRIVATE_KEY, PUBLIC_KEY, MACHINE_NAME, function() {
-      // Display logs in standard output 
-      pm2.launchBus(function(err, bus) {
-        console.log('[PM2] Log streaming started');
-
-        bus.on('log:out', function(packet) {
-          console.log('[App:%s] %s', packet.process.name, packet.data);
-        });
-          
-        bus.on('log:err', function(packet) {
-          console.error('[App:%s][Err] %s', packet.process.name, packet.data);
-        });
-        });
       });
     });
   });
