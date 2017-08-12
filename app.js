@@ -62,7 +62,7 @@ mongoose.connection.on('connected',() => {
 checkMongooseConnection(mongoose);
 
 console.log("Se va a llamar el metodo")
-startPM2();
+// startPM2();
 
 app.get('/file/:filename', function(req, res){
     gfs.collection('templateFiles'); //set collection name to lookup into
