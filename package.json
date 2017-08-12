@@ -21,7 +21,8 @@
     "passport": "*",
     "passport-jwt": "*",
     "underscore": "^1.8.3",
-    "pm2":"^2.6.1"
+    "pm2":"^2.6.1",
+    "@risingstack/trace":"^3.16.0"
   },
   "repository": {
     "type": "git",
