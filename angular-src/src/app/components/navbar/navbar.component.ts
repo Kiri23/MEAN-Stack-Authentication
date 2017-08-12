@@ -71,7 +71,7 @@ export class NavbarComponent implements OnInit {
       // observable can also return error
       console.log(err);
       // Show a error message
-      this.flashMessage.show("Un error ocurrio determinando su rol",{cssClass:'alert-danger',timeout: 5000});
+      this.flashMessage.show("Un error ocurrió determinando su rol",{cssClass:'alert-danger',timeout: 5000});
       // redirect to the login page
       this.router.navigate(['/login']);
     });
