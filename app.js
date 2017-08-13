@@ -4,6 +4,9 @@
  * app.js - main start application 
 */
 
+// for heroku monitoring app
+require('newrelic');
+
 // Modules
 const express = require('express');
 const path = require('path');
