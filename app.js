@@ -12,6 +12,7 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 var pm2 = require('pm2');
+var trace = require('@risingstack/trace');
 
 
 // variables
