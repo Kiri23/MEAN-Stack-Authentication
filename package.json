@@ -22,7 +22,8 @@
     "passport-jwt": "*",
     "underscore": "^1.8.3",
     "pm2":"^2.6.1",
-    "@risingstack/trace":"^3.16.0"
+    "@risingstack/trace":"^3.16.0",
+    "newrelic": "^2.1.0"
   },
   "repository": {
     "type": "git",
