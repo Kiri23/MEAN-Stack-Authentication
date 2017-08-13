@@ -8,22 +8,23 @@
     "start": "node ./node_modules/.bin/pm2 start app.js -i 4 --attach"
   },
   "dependencies": {
+    "@risingstack/trace": "^3.16.0",
     "bcryptjs": "*",
     "body-parser": "*",
     "cors": "*",
     "express": "*",
     "gridfs-stream": "^1.1.1",
     "jsonwebtoken": "*",
+    "logrocket": "^0.5.2",
     "make-array": "^1.0.2",
     "mongoose": "*",
     "multer": "^1.3.0",
     "multer-gridfs-storage": "^1.2.2",
+    "newrelic": "^2.1.0",
     "passport": "*",
     "passport-jwt": "*",
-    "underscore": "^1.8.3",
-    "pm2":"^2.6.1",
-    "@risingstack/trace":"^3.16.0",
-    "newrelic": "^2.1.0"
+    "pm2": "^2.6.1",
+    "underscore": "^1.8.3"
   },
   "repository": {
     "type": "git",

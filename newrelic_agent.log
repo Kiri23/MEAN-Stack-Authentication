@@ -1,0 +1,8 @@
+{"v":0,"level":30,"name":"newrelic","hostname":"MBPdeChristian.lan","pid":86378,"time":"2017-08-13T17:55:18.138Z","msg":"Using New Relic for Node.js. Agent version: 2.1.0; Node version: v7.10.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"MBPdeChristian.lan","pid":86378,"time":"2017-08-13T17:55:26.555Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"MBPdeChristian.lan","pid":86378,"time":"2017-08-13T17:55:41.290Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1713805/applications/64390202","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"MBPdeChristian.lan","pid":86378,"time":"2017-08-13T17:55:41.291Z","msg":"Connected to collector-230.newrelic.com:443 with agent run ID 276553822036740813.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"MBPdeChristian.lan","pid":87156,"time":"2017-08-13T18:27:26.768Z","msg":"Using New Relic for Node.js. Agent version: 2.1.0; Node version: v7.10.0."}
+{"v":0,"level":30,"name":"newrelic","hostname":"MBPdeChristian.lan","pid":87156,"time":"2017-08-13T18:27:39.820Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"MBPdeChristian.lan","pid":87156,"time":"2017-08-13T18:27:48.965Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1713805/applications/64390202","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"MBPdeChristian.lan","pid":87156,"time":"2017-08-13T18:27:48.966Z","msg":"Connected to collector-230.newrelic.com:443 with agent run ID 276553822036880292.","component":"collector_api"}

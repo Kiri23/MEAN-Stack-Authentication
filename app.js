@@ -16,6 +16,8 @@ const passport = require('passport');
 const mongoose = require('mongoose');
 var pm2 = require('pm2');
 var trace = require('@risingstack/trace');
+// var LogRocket = require('logrocket')
+// LogRocket.init('rtbfoe/opas-web-app');
 
 
 // variables
