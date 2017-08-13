@@ -1,6 +1,6 @@
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
@@ -8,6 +8,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FileSelectDirective } from 'ng2-file-upload';
+// external js files 
+import * as Raven from 'raven-js';
 
 // Components
 import { AppComponent } from './app.component';
@@ -45,8 +47,16 @@ import {AdministratorsService} from './services/administration/administrator.ser
 import {OrganizationsService} from './services/organization/organization.service';
 
 
+// sentry setup for tarckering error
+Raven
+  .config('https://8437f0ecddb64e0b9af3912881bec74f@sentry.io/203113')
+  .install();
 
-
+export class RavenErrorHandler implements ErrorHandler {
+  handleError(err:any) : void {
+    Raven.captureException(err);
+  }
+}
 
 //appRoutes - va a contener todas las routes del angular app
 const appRoutes: Routes = [
@@ -109,8 +119,9 @@ const appRoutes: Routes = [
     NgbModule.forRoot()
   ],
   providers: [ValidateService,AuthService,AuthGuard,AdministratorGuard,
-    UsersService,UtilitiesService,AdministratorsService,OrganizationsService
+    UsersService,UtilitiesService,AdministratorsService,OrganizationsService, { provide: ErrorHandler, useClass: RavenErrorHandler } 
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

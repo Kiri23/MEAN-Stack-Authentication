@@ -29,6 +29,7 @@
     "jquery": "^3.2.1",
     "make-array": "^1.0.2",
     "ng2-file-upload": "^1.2.1",
+    "raven-js": "^3.17.0",
     "rxjs": "^5.1.0",
     "underscore": "^1.8.3",
     "zone.js": "^0.8.4"
