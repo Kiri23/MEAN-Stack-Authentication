@@ -4,6 +4,9 @@
   "description": "authentication app",
   "main": "app.js",
   "coment": "Se puede ver Npm Script en Google para ver las oppurtnidades que me ofrece",
+  "engines": {
+    "node": ">=7.10.0"
+  },
   "scripts": {
     "start": "node ./node_modules/.bin/pm2 start app.js -i 1 --attach",
     "snyk-protect": "snyk protect",
