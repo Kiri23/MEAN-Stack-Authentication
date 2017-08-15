@@ -1,5 +1,7 @@
 # Project Title
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Kiri23/MEAN-Stack-Authentication.svg)](https://greenkeeper.io/)
+
 One Paragraph of project description goes here
 
 ## Getting Started
