@@ -12,6 +12,12 @@
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
+  "coment2":"Dejar Ignorando este archvio ver pull request #2 el response que viene del server es diffente al que tengo y tambien el UI se cambia",
+  "greenkeeper": {
+    "ignore": [
+      "multer-gridfs-storage"
+    ]
+  },
   "dependencies": {
     "bcryptjs": "*",
     "body-parser": "*",
