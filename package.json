@@ -5,7 +5,9 @@
   "main": "app.js",
   "coment": "Se puede ver Npm Script en Google para ver las oppurtnidades que me ofrece",
   "scripts": {
-    "start": "node ./node_modules/.bin/pm2 start app.js -i 1 --attach"
+    "start": "node ./node_modules/.bin/pm2 start app.js -i 1 --attach",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "bcryptjs": "*",
@@ -21,8 +23,9 @@
     "passport": "*",
     "passport-jwt": "*",
     "underscore": "^1.8.3",
-    "pm2":"^2.6.1",
-    "@risingstack/trace":"^3.16.0"
+    "pm2": "^2.6.1",
+    "@risingstack/trace": "^3.16.0",
+    "snyk": "^1.38.2"
   },
   "repository": {
     "type": "git",
@@ -41,5 +44,6 @@
   "homepage": "https://github.com/Kiri23/MEAN-Stack-Authentication-#readme",
   "devDependencies": {
     "@angular/cli": "^1.0.4"
-  }
+  },
+  "snyk": true
 }
