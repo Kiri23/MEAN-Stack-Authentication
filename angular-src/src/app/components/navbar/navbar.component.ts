@@ -7,6 +7,23 @@ import {UsersService} from '../../services/users.service';
 // 3rd parthy
 import {FlashMessagesService} from 'angular2-flash-messages';
 
+declare var LogRocket:any;
+
+// This is an example script - don't forget to change it!
+LogRocket.identify('THE_USER_ID_IN_YOUR_APP', {
+  name: 'James Morrison',
+  email: 'jamesmorrison@example.com',
+
+  // Add your own custom user variables here, ie:
+  subscriptionType: 'pro'
+});
+
+LogRocket.getSessionURL(function (sessionURL) {
+  console.log(sessionURL);
+});
+
+LogRocket.track('Register User');
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

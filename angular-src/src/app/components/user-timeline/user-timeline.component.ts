@@ -1,5 +1,4 @@
 import { Component, OnInit, ChangeDetectorRef} from '@angular/core';
-
 /** Javascript function alert2
  * @see main.js 
  */
@@ -9,6 +8,9 @@ declare var alertT2: any;
  * @see main.js
 */
 declare var loadTimeline: any;
+
+
+
 
 /**
  *  

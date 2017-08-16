@@ -1,10 +1,10 @@
 function alertT() {
-    alert("Hola alert MainJs");   
+	alert("Hola alert MainJs");  
+	console.log("Second Read Function",window.LogRocket) 
 }
 
 
 function loadTimeline() {
-	console.log("Second Read Function")
 	jQuery(document).ready(function($){
 		var timelines = $('.cd-horizontal-timeline'),
 			eventsMinDistance = 60;

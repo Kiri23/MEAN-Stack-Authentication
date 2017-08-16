@@ -248,6 +248,7 @@ router.post('/upload',(req, res) => {
            res.json({error_code:1,err_desc:err});
            return;
       }
+      console.log("body in upload method: " +JSON.stringify(req.file, null, 4));
       console.log("Filename of the file " + req.file.grid.filename);
       console.log("id of the file " + req.file.grid._id);
 

@@ -7,6 +7,9 @@ import {AuthService} from '../../services/auth.service';
 // external module 3rd party
 import {FlashMessagesService} from 'angular2-flash-messages';
 
+// Acces to external Method in window
+declare var LogRocket:any;
+
 
 @Component({
   selector: 'app-register',
@@ -68,6 +71,10 @@ export class RegisterComponent implements OnInit {
       if(data.success){
         // show a message
         this.flashMessage.show("You are now registered and can log in",{cssClass: 'alert-success',timeout: 3000});
+        if (LogRocket){
+        LogRocket.track('Register User');
+        }
+
         // Redirect to login
         this.router.navigate(['/login'])
       }else{ // user can not be register
