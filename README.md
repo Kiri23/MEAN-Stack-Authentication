@@ -1,6 +1,8 @@
 # Project Title
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/Kiri23/MEAN-Stack-Authentication.svg)](https://greenkeeper.io/)
+[![David DM badge](
+https://david-dm.org/Kiri23/MEAN-Stack-Authentication.svg)](https://david-dm.org/)
 
 One Paragraph of project description goes here
 
