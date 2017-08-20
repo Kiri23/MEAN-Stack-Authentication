@@ -10,13 +10,13 @@
   "scripts": {
     "start": "node ./node_modules/.bin/pm2 start app.js -i 4 --attach"
   },
-  "coment2":"Dejar Ignorando este archvio ver pull request #2 el response que viene del server es diffente al que tengo y tambien el UI se cambia",
+  "coment2": "Dejar Ignorando este archvio ver pull request #2 el response que viene del server es diffente al que tengo y tambien el UI se cambia",
   "greenkeeper": {
     "ignore": [
       "multer-gridfs-storage"
     ]
   },
-  "Coment3":"No Poner el carrot ^ alfrente de cada actualizacion pq greenkeeper lo va a actualizar automaticamente lo que puede romper mi codigo. Poner siempre el latest update para que greenKeeper no la actualize",
+  "Coment3": "No Poner el carrot ^ alfrente de cada actualizacion pq greenkeeper lo va a actualizar automaticamente lo que puede romper mi codigo. Poner siempre el latest update para que greenKeeper no la actualize",
   "dependencies": {
     "@risingstack/trace": "3.16.0",
     "bcryptjs": "2.4.3",
@@ -31,6 +31,7 @@
     "multer": "1.3.0",
     "multer-gridfs-storage": "1.2.2",
     "newrelic": "2.1.0",
+    "nodemailer": "^4.0.1",
     "passport": "0.4.0",
     "passport-jwt": "2.2.1",
     "pm2": "2.6.1",

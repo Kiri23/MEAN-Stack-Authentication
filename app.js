@@ -50,8 +50,9 @@ const escuelaArchivos = require('./routes/escuelaArchivos');
 const app = express();
 
 
-// Connect to Mongodb Database
+// Connect to Mongodb Database 
 // To start the mongodb Server go to /usr/local/bin and run ./mongo - that will start the server and you can use 'mongod'
+// Cant fix deprecation because required to change the logic of the mongoose connection
 mongoose.connect(config.database);
 
 

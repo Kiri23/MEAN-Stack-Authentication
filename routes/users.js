@@ -4,17 +4,18 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
+// for sending email in node.js 
 // Import third partie library js
 const underscore = require('underscore');
 
 
 const config = require('../config/databse');
 var upload = require ('../config/multer');
+const nodeEmail = require('../utilities/nodemailer')
 
 const User = require('../models/user');
 const Administrator = require('../models/administrator');
 const escuelaArchivos = require('../models/escuelaArchivos');
-
 
 //aget6 shortcut for app.get
 
@@ -73,6 +74,15 @@ router.post('/register', (req, res,next) => {
     // CreatedDate:req.body.user.CreatedDate
   });
 
+  // setup e-mail data, even with unicode symbols
+var mailOptions = {
+  from: 'christian_nogueras94@hotmail.com', // sender address (who sends)
+  to: 'christian_nogueras94@hotmail.com,'+newUser.email.toString(), // list of receivers (who receives)
+  subject: 'Registracion Completada a la aplicacion web OPAS ', // Subject line
+  text: 'Hola has sido registrado a la aplicacion web de Opas. Si ha recibido este mensaje por error puede ignorarlo. ', // plaintext body
+  // html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
+};
+
   console.log("Escuela en miniscula y sin espacio " + newUser.nombreEscuela);
   User.numberOfEscuelas(newUser.nombreEscuela,(err, count) => {
     if (err){
@@ -89,8 +99,9 @@ router.post('/register', (req, res,next) => {
               console.log(err + " add user");
               res.json({success: false, msg:'Failed to register user',error:err});
             }else{ // addUser to the Database
-              res.json({success:true,msg:'User Registered',user:newUser});
-            }
+              nodeEmail.sendEmail(mailOptions);
+              res.json({success:true,msg:'Professor registrado, ya se puede conectar. Pronto debe estar recibiendo un correo electrónico de confirmación',user:newUser});  
+            }              
           });
         // End add User logic
 
