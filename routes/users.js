@@ -7,6 +7,10 @@ const jwt = require('jsonwebtoken');
 // for sending email in node.js 
 // Import third partie library js
 const underscore = require('underscore');
+// for Asychronous Code 
+var async = require('async')
+// for Generating a token
+var crypto = require('crypto');
 
 
 const config = require('../config/databse');
@@ -74,13 +78,13 @@ router.post('/register', (req, res,next) => {
     // CreatedDate:req.body.user.CreatedDate
   });
 
-  // setup e-mail data, even with unicode symbols
-var mailOptions = {
-  from: 'christian_nogueras94@hotmail.com', // sender address (who sends)
-  to: 'christian_nogueras94@hotmail.com,'+newUser.email.toString(), // list of receivers (who receives)
-  subject: 'Registracion Completada a la aplicacion web OPAS ', // Subject line
-  text: 'Hola has sido registrado a la aplicacion web de Opas. Si ha recibido este mensaje por error puede ignorarlo. ', // plaintext body
-  // html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
+ // setup e-mail data, even with unicode symbols
+  var mailOptions = {
+    from: 'christian_nogueras94@hotmail.com', // sender address (who sends)
+    to: 'christian_nogueras94@hotmail.com,'+newUser.email.toString(), // list of receivers (who receives)
+    subject: 'Registracion Completada a la aplicacion web OPAS ', // Subject line
+    text: 'Hola has sido registrado a la aplicacion web de Opas. Si ha recibido este mensaje por error puede ignorarlo. ', // plaintext body
+    // html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
 };
 
   console.log("Escuela en miniscula y sin espacio " + newUser.nombreEscuela);
@@ -100,7 +104,7 @@ var mailOptions = {
               res.json({success: false, msg:'Failed to register user',error:err});
             }else{ // addUser to the Database
               nodeEmail.sendEmail(mailOptions);
-              res.json({success:true,msg:'Professor registrado, ya se puede conectar. Pronto debe estar recibiendo un correo electrónico de confirmación',user:newUser});  
+              res.json({success:true,msg:'Profesor registrado, ya se puede conectar. Pronto debe estar recibiendo un correo electrónico de confirmación',user:newUser});  
             }              
           });
         // End add User logic
@@ -215,7 +219,106 @@ function userCheckPassowrd(res,err,isMatch,user){
   }
 }
 
+// Enpoint to send email to change password
+router.post('/forgot',function (req,res,next){
+  // do asyncronous Code
+  async.waterfall([
+    // First Function
+    function (done){
+      // create a random token using the crypto libraries
+      crypto.randomBytes(20, function(err, buf) {
+        var token = buf.toString('hex');
+        done(err, token);
+      });
+    },
+    // Second Function
+    function(token, done) {
+      console.log('email de recovery password ' + req.query.email)
+      User.findOne({ email: req.query.email }, function(err, user) {
+        if (!user) {
+          console.log('No hay nigun usuario con esa cuenta')
+          res.json({succes:false,msg:'No se encontro ningun usuario con esta direccion de correo electronico: ' + req.query.email})
+          return // res.redirect('/forgot');
+        }
+        user.resetPasswordToken = token;
+        user.resetPasswordExpires = Date.now() + 3600000; // 1 hour to expire the recovery email link 
+        console.log(JSON.stringify('Usuario encontrado recovery password' + user, null, 4));
 
+        user.save(function(err) {
+          done(err, token, user);
+        });
+      });
+    },
+    function(token, user, done) {
+
+      var mailOptions = {
+        to: user.email,
+        from: 'opaspuertorico@gmail.com',
+        subject: 'Recuperacion contrasena aplicacion OPAS',
+        text: 'Estas recibiendo este correo electronico porque solicistatse recuperar la contrasena en la aplicacion OPAS.\n\n' +
+          'Por favor entra a este enlance para recuperar tu contrasena, o copiar este enlance en tu navegador web para completar el processo \n\n' +
+          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+          'Este enlance expirara despues de una hora, es recomendable que cambie la contrasena ahora. Si no solicistaste este correo eletronico por favor ignorarlo y la contrasena seguira siendo la misma.\n'
+      };
+      nodeEmail.sendEmail(mailOptions);
+      res.json({success:true,msg:'Instrucciones para recuperar la contrasena fueron enviaron a ' + user.email})
+    } 
+    
+  ],function(err){
+    if (err){
+      return next(err);
+    }
+    res.redirect('/forgot');
+  });
+});
+
+// Endpoint to get a new password
+router.get('/reset/:token', function(req, res) {
+  User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+    if (!user) {
+      res.json({success:false,msg:'Enlance invalido o es posible que ya se ha expirado'}) //res.send('enlance no valido')
+      return // res.redirect('/forgot');
+    }
+    res.redirect('/reset');
+    
+  });
+});
+
+// Post Enpoint to change the password
+router.post('/reset/:token', function(req, res) {
+  async.waterfall([
+    function(done) {
+      User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+        if (!user) {
+          res.json({success:false,msg:'Enlance no valido o ya pudo haberse expirado'})
+          return // res.redirect('back');
+        }
+        console.log('password '+ req.body.password)
+        user.password = req.body.password;
+        User.changePassword(user,(err,user)=>{
+          if (err){
+            res.json({success:false,err:err,msg:'Ha ocurrido un error al guardar la nueva contrasena'})
+          }
+          res.json({success:true,msg:'Contrasena cambiada existosamente. Ya se pueede conectar.' + user.password})
+        });
+        // user.resetPasswordToken = undefined;
+        // user.resetPasswordExpires = undefined;
+      });
+    },
+    function(user, done) {
+      var mailOptions = {
+        to: user.email,
+        from: 'opaspuertorico@gmail.com',
+        subject: 'Tu contrasena a la Aplicacion OPAS ha sido cambiada',
+        text: 'Hola,\n\n' +
+          'Esto es un correo electronico para confirmar que la contrasena de tu cuenta: ' + user.email + ' ha sido cambiado.\n'
+      };
+      nodeEmail.sendEmail(mailOptions);
+    }
+  ], function(err) {
+    res.redirect('/');
+  });
+});
 
 /**
 * @api {post} upload/ Upload a file

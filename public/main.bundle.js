@@ -964,14 +964,16 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_upload_file_upload_file_component__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_display_professors_display_professors_component__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_user_timeline_user_timeline_component__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__services_validate_service__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__services_auth_service__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__guards_auth_guard__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__guards_administrtor_guard__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__services_users_service__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__services_utilities_service__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_administration_administrator_service__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__services_organization_organization_service__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_forgot_password_forgot_password_component__ = __webpack_require__(368);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_reset_password_reset_password_component__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__services_validate_service__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__services_auth_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__guards_auth_guard__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__guards_administrtor_guard__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_users_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__services_utilities_service__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__services_administration_administrator_service__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__services_organization_organization_service__ = __webpack_require__(143);
 /* unused harmony export RavenErrorHandler */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -993,6 +995,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 // external js files 
 
 // Components
+
+
 
 
 
@@ -1043,12 +1047,12 @@ var appRoutes = [
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__["a" /* LoginComponent */] },
     // protect route
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_33__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_35__guards_auth_guard__["a" /* AuthGuard */]] },
     // protect route
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_14__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_33__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_14__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_35__guards_auth_guard__["a" /* AuthGuard */]] },
     // protect route
-    { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_16__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_34__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
-    { path: 'adminUsers', component: __WEBPACK_IMPORTED_MODULE_25__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_34__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
+    { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_16__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_36__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
+    { path: 'adminUsers', component: __WEBPACK_IMPORTED_MODULE_25__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_36__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
     // I will want this route to be protected only another administrator can create other
     // administrator
     { path: 'register/admin', component: __WEBPACK_IMPORTED_MODULE_26__components_admin_register_admin_register_component__["a" /* AdminRegisterComponent */] },
@@ -1058,6 +1062,8 @@ var appRoutes = [
     // user upload portfolios - ponerle protected route
     { path: 'users/upload', component: __WEBPACK_IMPORTED_MODULE_27__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */] },
     { path: 'timeline', component: __WEBPACK_IMPORTED_MODULE_30__components_user_timeline_user_timeline_component__["a" /* UserTimelineComponent */] },
+    { path: 'forgot', component: __WEBPACK_IMPORTED_MODULE_31__components_forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */] },
+    { path: 'reset', component: __WEBPACK_IMPORTED_MODULE_32__components_reset_password_reset_password_component__["a" /* ResetPasswordComponent */] }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -1089,7 +1095,9 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_7_ng2_file_upload__["FileSelectDirective"],
             __WEBPACK_IMPORTED_MODULE_27__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */],
             __WEBPACK_IMPORTED_MODULE_29__components_display_professors_display_professors_component__["a" /* DisplayProfessorsComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__components_user_timeline_user_timeline_component__["a" /* UserTimelineComponent */]
+            __WEBPACK_IMPORTED_MODULE_30__components_user_timeline_user_timeline_component__["a" /* UserTimelineComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__components_forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__components_reset_password_reset_password_component__["a" /* ResetPasswordComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -1099,8 +1107,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesModule"],
             __WEBPACK_IMPORTED_MODULE_6__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_31__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_32__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_33__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_34__guards_administrtor_guard__["a" /* AdministratorGuard */],
-            __WEBPACK_IMPORTED_MODULE_35__services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_36__services_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_37__services_administration_administrator_service__["a" /* AdministratorsService */], __WEBPACK_IMPORTED_MODULE_38__services_organization_organization_service__["a" /* OrganizationsService */], { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ErrorHandler"], useClass: RavenErrorHandler }
+        providers: [__WEBPACK_IMPORTED_MODULE_33__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_34__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_35__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_36__guards_administrtor_guard__["a" /* AdministratorGuard */],
+            __WEBPACK_IMPORTED_MODULE_37__services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_38__services_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_39__services_administration_administrator_service__["a" /* AdministratorsService */], __WEBPACK_IMPORTED_MODULE_40__services_organization_organization_service__["a" /* OrganizationsService */], { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ErrorHandler"], useClass: RavenErrorHandler }
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
     })
@@ -3654,7 +3662,7 @@ module.exports = "<span class=\"glyphicon glyphicon-\" aria-hidden=\"true\"></sp
 /* 319 */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Conéctate</h2>\n<form (submit)=\"onLoginSubmit()\">\n  <div class=\"form-group\">\n    <label for=\"username\">Nombre de usuario</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" value=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Contraseña</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\"  value=\"\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Conectar\">\n</form>\n"
+module.exports = "<h2 class=\"page-header\">Conéctate</h2>\n<form (submit)=\"onLoginSubmit()\">\n  <div class=\"form-group\">\n    <label for=\"username\">Nombre de usuario</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" value=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Contraseña</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\"  value=\"\">\n  </div>\n  <div class=\"form-group\">\n    <a href=\"/forgot\" class=\"\" style=\"float: left;\" > Olvidaste tu Contraseña?</a>\n    <br>\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Conectar\">\n</form>\n"
 
 /***/ }),
 /* 320 */
@@ -3736,6 +3744,125 @@ module.exports = "\t<!-- \n\t<link rel=\"stylesheet\" href=\"css/reset.css\"> <!
 
 module.exports = __webpack_require__(173);
 
+
+/***/ }),
+/* 365 */,
+/* 366 */,
+/* 367 */,
+/* 368 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ForgotPasswordComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ForgotPasswordComponent = (function () {
+    function ForgotPasswordComponent() {
+    }
+    ForgotPasswordComponent.prototype.ngOnInit = function () {
+    };
+    return ForgotPasswordComponent;
+}());
+ForgotPasswordComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-forgot-password',
+        template: __webpack_require__(370),
+        styles: [__webpack_require__(369)]
+    }),
+    __metadata("design:paramtypes", [])
+], ForgotPasswordComponent);
+
+//# sourceMappingURL=forgot-password.component.js.map
+
+/***/ }),
+/* 369 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+/* 370 */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 class=\"page-header\">Recupera tu Contraseña</h2>\n<h4> &nbsp; &nbsp; Escribe tu direccion de electronico en el encasillado abajo y te estara llegando un correo electronico para cambiar la Contraseña</h4>\n<!-- <form (submit)=\"onLoginSubmit()\"> -->\n<form action=\"users/forgot\" method=\"post\">\n  <div style=\"width: 72%\" class=\"form-group\">\n    <label for=\"email\">Correo electronico</label>\n    <input type=\"email\" required [(ngModel)]=\"email\" name=\"email\" class=\"form-control\" value=\"\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Recuperar Contraseña\">\n</form>\n"
+
+/***/ }),
+/* 371 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ResetPasswordComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ResetPasswordComponent = (function () {
+    function ResetPasswordComponent() {
+    }
+    ResetPasswordComponent.prototype.ngOnInit = function () {
+    };
+    return ResetPasswordComponent;
+}());
+ResetPasswordComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-reset-password',
+        template: __webpack_require__(373),
+        styles: [__webpack_require__(372)]
+    }),
+    __metadata("design:paramtypes", [])
+], ResetPasswordComponent);
+
+//# sourceMappingURL=reset-password.component.js.map
+
+/***/ }),
+/* 372 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+/* 373 */
+/***/ (function(module, exports) {
+
+module.exports = "<h2 class=\"page-header\">Cambia tu Contraseña</h2>\n<h4> &nbsp; Escribe tu nueva contraseña en el encasillado de abajo</h4>\n<!-- <form (submit)=\"onLoginSubmit()\"> -->\n<form action=\"/forgot\" method=\"post\">\n  <div style=\"width: 72%\" class=\"form-group\">\n    <label for=\"email\">Contraseña</label>\n    <input type=\"password\" required [(ngModel)]=\"password\" name=\"password\" class=\"form-control\" placeholder=\"Nueva Contrasena\" value=\"\">\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Cambiar Contrasena\">\n</form>\n"
 
 /***/ })
 ],[364]);

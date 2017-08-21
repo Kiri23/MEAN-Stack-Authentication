@@ -27,6 +27,12 @@ const UserSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  resetPasswordToken: {
+    type: String
+  },
+  resetPasswordExpires: {
+    type: Date
+  },
   // This type will auto-generate itself with default properties
   CreatedDate: {
     type: Date,
@@ -64,6 +70,26 @@ const UserSchema = mongoose.Schema({
         se pueden crear custom funciones and se puede descargar ya custom funciones hechos por otros en la secion de plugins
     */
 });
+
+// UserSchema.pre('save', function(next) {
+//   var user = this;
+//   var SALT_FACTOR = 10;
+
+//   if (!user.isModified('password')) return next();
+
+//   bcrypt.genSalt(SALT_FACTOR, function(err, salt) {
+//     if (err) return next(err);
+//     console.log('User Pre Save Call' + salt)
+//     bcrypt.hash(user.password, salt, function(err, hash) {
+//       if (err) return next(err);
+//       console.log('hash: ' + hash)
+//       console.log('password: ' + user.password)
+//       user.password = hash;
+//       console.log('password hash: ' + user.password)      
+//       next();
+//     });
+//   });
+// });
 
 const User = module.exports = mongoose.model('User',UserSchema);
 
@@ -115,6 +141,24 @@ module.exports.addUser = function(newUser,callback){
     })
   })
 };
+
+module.exports.changePassword = function(newUser,callback){
+  console.log("password: "+ newUser.password + " from addUser Function");
+  console.log("Escuela en Miniscula? sin espacio: "+ newUser.nombreEscuela + "");
+  // Hash password
+  bcrypt.genSalt(10,(err, salt) => {
+    bcrypt.hash(newUser.password, salt, (err, hash) => {
+      if(err){
+        throw err
+      }
+      newUser.password = hash;
+      console.log('new password: ' + newUser.password)
+      //save user
+      newUser.save(callback);
+    })
+  })
+};
+
 
 // Get the user role from the db
 module.exports.getUserRole = function(id,callback ){

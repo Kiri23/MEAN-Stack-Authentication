@@ -34,6 +34,8 @@ import { UploadPortfolioComponent } from './components/upload-portfolio/upload-p
 import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { DisplayProfessorsComponent } from './components/display-professors/display-professors.component';
 import { UserTimelineComponent } from './components/user-timeline/user-timeline.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
 
 //Services
@@ -80,7 +82,9 @@ const appRoutes: Routes = [
   // user upload portfolios - ponerle protected route
   {path:'users/upload',component:UploadPortfolioComponent},
   {path:'timeline',component:UserTimelineComponent},
-
+  {path:'forgot',component:ForgotPasswordComponent},
+  {path:'reset',component:ResetPasswordComponent}  
+  
 
 ];
 
@@ -108,7 +112,9 @@ const appRoutes: Routes = [
     FileSelectDirective,
     UploadPortfolioComponent,
     DisplayProfessorsComponent,
-    UserTimelineComponent
+    UserTimelineComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
