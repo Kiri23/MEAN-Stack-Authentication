@@ -5,11 +5,11 @@ import {Http,Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 //Third party Module
 import {tokenNotExpired} from 'angular2-jwt';
-
+ 
 @Injectable()
 export class AuthService {
   authToken:any;
-  user:any;
+  user:any; 
   userRole:Number;
   // inject the http module into the constructor. like the service
   constructor(private http:Http) { }

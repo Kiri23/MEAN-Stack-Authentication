@@ -221,6 +221,7 @@ function userCheckPassowrd(res,err,isMatch,user){
 
 // Enpoint to send email to change password
 router.post('/forgot',function (req,res,next){
+  console.log('route forgot reached')
   // do asyncronous Code
   async.waterfall([
     // First Function
@@ -257,7 +258,7 @@ router.post('/forgot',function (req,res,next){
         subject: 'Recuperacion contrasena aplicacion OPAS',
         text: 'Estas recibiendo este correo electronico porque solicistatse recuperar la contrasena en la aplicacion OPAS.\n\n' +
           'Por favor entra a este enlance para recuperar tu contrasena, o copiar este enlance en tu navegador web para completar el processo \n\n' +
-          'http://' + req.headers.host + '/reset/' + token + '\n\n' +
+          'http://' + req.headers.host + 'users/reset/' + token + '\n\n' +
           'Este enlance expirara despues de una hora, es recomendable que cambie la contrasena ahora. Si no solicistaste este correo eletronico por favor ignorarlo y la contrasena seguira siendo la misma.\n'
       };
       nodeEmail.sendEmail(mailOptions);
@@ -276,9 +277,10 @@ router.post('/forgot',function (req,res,next){
 router.get('/reset/:token', function(req, res) {
   User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
     if (!user) {
-      res.json({success:false,msg:'Enlance invalido o es posible que ya se ha expirado'}) //res.send('enlance no valido')
+      res.json({success:false,msg:'Enlance invalido o es posible que ya se ha expirado.. Recuerde que solamente cambiar la contrasena es valido por una hora.'}) //res.send('enlance no valido')
       return // res.redirect('/forgot');
     }
+    // res.json({success:true,msg:'Enlance valido'}) //res.send('enlance no valido')    
     res.redirect('/reset');
     
   });
@@ -290,7 +292,7 @@ router.post('/reset/:token', function(req, res) {
     function(done) {
       User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
         if (!user) {
-          res.json({success:false,msg:'Enlance no valido o ya pudo haberse expirado'})
+          res.json({success:false,msg:'Enlance no valido o ya pudo haberse expirado. Recuerde que cambiar la contrasena es valido por una hora.'})
           return // res.redirect('back');
         }
         console.log('password '+ req.body.password)
@@ -303,6 +305,7 @@ router.post('/reset/:token', function(req, res) {
         });
         // user.resetPasswordToken = undefined;
         // user.resetPasswordExpires = undefined;
+        done(err,user)
       });
     },
     function(user, done) {
@@ -311,8 +314,9 @@ router.post('/reset/:token', function(req, res) {
         from: 'opaspuertorico@gmail.com',
         subject: 'Tu contrasena a la Aplicacion OPAS ha sido cambiada',
         text: 'Hola,\n\n' +
-          'Esto es un correo electronico para confirmar que la contrasena de tu cuenta: ' + user.email + ' ha sido cambiado.\n'
+          'Este correo electronico es para confirmar que la contrasena de tu cuenta: ' + user.email + ' ha sido cambiado.\n'
       };
+      console.log('enviando email contasena cambiada')
       nodeEmail.sendEmail(mailOptions);
     }
   ], function(err) {

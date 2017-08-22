@@ -31,7 +31,7 @@ export class UsersService {
    * @memberOf UsersService
    */
   // getUserById
-  getUserById(id:Number){
+  getUserById(id){
     let headers = new Headers();
     //set the Content-Type to application/json
     headers.append('Content-Type','application/json');
@@ -72,6 +72,44 @@ export class UsersService {
     return this.http.get('/users/getAllUsers',{headers:headers}).map(res =>
       res.json());
   }
+
+  /**
+   * Send email to user email to reset the password 
+   * @param {string} email - The email of the user to recover password.   
+   * @returns 
+   * @memberOf UsersService
+   */
+  //Send email to user to restore the password
+  sendForgotEmail(email){
+    console.log('user service forgot email')
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    headers.append('Content-Type','application/json');
+    // return an observable with the response
+    // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+    return this.http.post('/users/forgot?email='+email,{headers:headers}).map(res =>
+      res.json());
+  }
+
+  /**
+   * Restore User Password
+   * @param {string} password - The new password to set.   
+   * @param {string} token - The token to restore password.   
+   * @returns 
+   * @memberOf UsersService
+   */
+  //Restore user password
+  resetPassword(password,token){
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    headers.append('Content-Type','application/json');
+    // return an observable with the response
+    // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+    return this.http.post('/users/reset/'+ token,{headers:headers,password}).map(res =>
+      res.json());
+  }
+
+  
 
   /**
    * This function skip user in the db. 

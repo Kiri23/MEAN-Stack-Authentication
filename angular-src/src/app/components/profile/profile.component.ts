@@ -90,7 +90,7 @@ export class ProfileComponent implements OnInit {
       /** 
        * El usuario obtenido de la llamada Http 
        * @type {Object}*/
-      this.user = profile.user;
+      this.user = profile.user; 
     },
     err => {
       // observable can also return error
