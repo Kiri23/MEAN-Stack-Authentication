@@ -109,8 +109,6 @@ export class UsersService {
       res.json());
   }
 
-  
-
   /**
    * This function skip user in the db. 
    * @param {Number} number - The number of users to skip.

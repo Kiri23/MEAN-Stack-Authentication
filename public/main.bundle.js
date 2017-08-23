@@ -2631,33 +2631,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 // external modules 
 
 var ResetPasswordComponent = (function () {
-    function ResetPasswordComponent(usersService, flashMessage, router, authService) {
+    function ResetPasswordComponent(usersService, flashMessage, router, route, authService) {
         this.usersService = usersService;
         this.flashMessage = flashMessage;
         this.router = router;
+        this.route = route;
         this.authService = authService;
         // token = "453bc3b66146c23fecd2055f0d022efe3a910ae0"
         this.token = 'No token';
     }
     ResetPasswordComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        var id = this.authService.getUserIdLoggedIn();
-        console.log('id = ' + id);
-        if (id === 'undefined') {
-            console.log('id nullo ');
-            return;
-        }
-        this.usersService.getUserById(id).subscribe(function (user) {
-            // console.log("User Data token: " +JSON.stringify(user, null, 4));      
-            if (user === 'undefined') {
-                console.log('user nulo take token');
-                return;
-            }
-            else {
-                _this.token = user.user.resetPasswordToken;
-                console.log('token: ' + _this.token);
-            }
-        });
+        this.token = this.route.snapshot.queryParams["token"];
+        console.log('token param ' + this.token);
     };
     ResetPasswordComponent.prototype.resetPassword = function () {
         var _this = this;
@@ -2694,10 +2679,10 @@ ResetPasswordComponent = __decorate([
         template: __webpack_require__(328),
         styles: [__webpack_require__(291)]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_users_service__["a" /* UsersService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_users_service__["a" /* UsersService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* ActivatedRoute */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_auth_service__["a" /* AuthService */]) === "function" && _e || Object])
 ], ResetPasswordComponent);
 
-var _a, _b, _c, _d;
+var _a, _b, _c, _d, _e;
 //# sourceMappingURL=reset-password.component.js.map
 
 /***/ }),

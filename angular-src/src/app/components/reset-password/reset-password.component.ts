@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 // Services 
 import {UsersService} from '../../services/users.service';
 import {AuthService} from '../../services/auth.service';
@@ -16,26 +16,11 @@ export class ResetPasswordComponent implements OnInit {
   password:String;
   // token = "453bc3b66146c23fecd2055f0d022efe3a910ae0"
   token = 'No token'
-  constructor(private usersService:UsersService,private flashMessage:FlashMessagesService,private router:Router,private authService:AuthService) { }
+  constructor(private usersService:UsersService,private flashMessage:FlashMessagesService,private router:Router,private route: ActivatedRoute,private authService:AuthService) { }
   
   ngOnInit() {
-    var id = this.authService.getUserIdLoggedIn();
-    console.log('id = '+ id)
-    if (id === 'undefined'){
-      console.log ('id nullo ')
-      return
-    }
-    this.usersService.getUserById(id).subscribe(user =>{
-      // console.log("User Data token: " +JSON.stringify(user, null, 4));      
-      if (user === 'undefined'){
-        console.log('user nulo take token')
-        return
-      }else {
-       this.token = user.user.resetPasswordToken;
-       console.log('token: ' + this.token)
-      }
-    });
-    
+     this.token = this.route.snapshot.queryParams["token"];
+    console.log('token param '+ this.token )    
   }
 
   resetPassword(){

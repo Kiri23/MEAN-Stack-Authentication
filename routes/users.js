@@ -280,8 +280,9 @@ router.get('/reset/:token', function(req, res) {
       res.json({success:false,msg:'Enlance invalido o es posible que ya se ha expirado.. Recuerde que solamente cambiar la contrasena es valido por una hora.'}) //res.send('enlance no valido')
       return // res.redirect('/forgot');
     }
+    console.log('req param token:'+ req.params.token)  
     // res.json({success:true,msg:'Enlance valido'}) //res.send('enlance no valido')    
-    res.redirect('/reset');
+    res.redirect('/reset?token='+ req.params.token);
     
   });
 });
