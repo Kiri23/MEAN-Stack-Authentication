@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for version in $NODE_MATRIX; do
+  export NODE_VERSION=$version
+  for cmd in "$@"; do $cmd; done
+done
