@@ -52,7 +52,7 @@ export class DisplayProfessorsComponent implements OnInit {
    */
   showSchoolNamesAndProfessor2(){
     this.userService.getAllSchoolAndProfessor().subscribe(data => {
-        console.log("Data de escuela: "+ JSON.stringify(data.professors, null, 4));
+        console.log("Data de escuela: "+ JSON.stringify(data.data, null, 4));
         this.schoolNames = data.schools;
         this.professors = data.professors
         var arra = [];
@@ -63,6 +63,9 @@ export class DisplayProfessorsComponent implements OnInit {
         var achivos = 0;
         var nu = 0;
         var multipl = 1;
+
+        var files = data.data[5].file
+        console.log('Data files:' + files)
         for (var index = 0; index < data.schools.length; index++) {
             // this.professors.push(data.professors[index].name)
             this.dictionary[this.schoolNames[index]] = this.professors.slice(start,end)

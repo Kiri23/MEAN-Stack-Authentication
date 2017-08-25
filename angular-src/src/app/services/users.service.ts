@@ -41,6 +41,16 @@ export class UsersService {
       res.json());
   }
 
+  getUserByEscuela(escuela){
+    let headers = new Headers();
+    //set the Content-Type to application/json
+    headers.append('Content-Type','application/json');
+    // return an observable with the response
+    // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+    return this.http.get('/users/getUserByEscuela/'+escuela,{headers:headers}).map(res =>
+      res.json());
+  }
+
   /**
    * Get the last five (5) user registered to the app. 
    * @returns 

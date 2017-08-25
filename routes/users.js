@@ -713,6 +713,22 @@ router.get('/escuelas',(req,res)=> {
   });
 });
 
+router.get('/getUserByEscuela/:escuela',(req,res)=> {
+  var listOfFiles = [];
+  User.getUserByEscuela(req.params.escuela,(err,name)=>{
+    for (var index = 0; index < name.length; index++) {
+      // listOfFiles.push(name[index].file + " - Nombre: " +  name[index].name)
+      // listOfFiles.push(name[index].file + "")
+      listOfFiles.push(name[index].file)      
+      
+    }
+    console.log('list '+ listOfFiles [1])
+    res.json({users:name,files:listOfFiles})
+  });
+    
+});
+
+
 /**
  *
  * @api {get} /ping pong the server

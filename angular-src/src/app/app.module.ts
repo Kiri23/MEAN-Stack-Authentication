@@ -36,6 +36,7 @@ import { DisplayProfessorsComponent } from './components/display-professors/disp
 import { UserTimelineComponent } from './components/user-timeline/user-timeline.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { DownloadProfessorFilesComponent } from './components/download-professor-files/download-professor-files.component';
 
 
 //Services
@@ -79,6 +80,7 @@ const appRoutes: Routes = [
   // administrator upload templates - ponerle protected route
   {path:'admin/upload',component:UploadFileComponent},
   {path:'admin/professors',component:DisplayProfessorsComponent},
+  {path:'admin/DownloadProfessorsFiles/:escuela',component:DownloadProfessorFilesComponent},
   // user upload portfolios - ponerle protected route
   {path:'users/upload',component:UploadPortfolioComponent},
   {path:'timeline',component:UserTimelineComponent},
@@ -114,7 +116,8 @@ const appRoutes: Routes = [
     DisplayProfessorsComponent,
     UserTimelineComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    DownloadProfessorFilesComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,8 @@
       <div class="professorText" *ngFor="let professor of dictionary[school]">
           &nbsp;&nbsp;&nbsp;&nbsp; - {{professor}} 
       </div>
+      <!-- <app-download-professor-files [escuela]= school> </app-download-professor-files> -->
+      <a [routerLink]="['/admin/DownloadProfessorsFiles/']+ school" [queryParams]="{escuela:school}" > Ver Archivos</a>
   </div>
 </div>
-
+ 

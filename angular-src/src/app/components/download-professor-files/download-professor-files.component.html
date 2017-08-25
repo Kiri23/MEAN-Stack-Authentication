@@ -1,0 +1,23 @@
+<!--Tabla de archivos para descargar-->
+<!--Crear Componente aparte -->
+<br>
+<div class="row table-responsive">
+  <div class="col-md-12">
+    <table class="table table-bordered table-hover">
+      <caption style="font-size:40px;">Descargar Archivos:</caption>
+      <!--Header of the table  -->
+      <tr>
+        <th>Numero</th>
+        <th>Nombre del Archivo</th>
+      </tr>
+      <!--Rows of tables  -->
+      <tr *ngFor="let file of listOfFileNames;let index = index" class="">
+        <th *ngIf="file.length > 0" scope="row">{{index + 1}}</th>
+        <td *ngIf="file.length > 0" colspan="">{{file}} </td>
+        <td *ngIf="file.length == 0 && index == 0" colspan="2" class="text-center"> Esta escuela no ha subido ningun archivo</td>
+      </tr> <!-- End of rows Tables -->
+    </table>
+  </div>
+</div>
+
+<h2 *ngIf="listOfFileNames.length == 0">No hay archivos para mostrar al momento</h2>
