@@ -14,7 +14,7 @@
   "greenkeeper": {
     "ignore": [
       "multer-gridfs-storage"
-    ]
+    ] 
   },
   "Coment3": "No Poner el carrot ^ alfrente de cada actualizacion pq greenkeeper lo va a actualizar automaticamente lo que puede romper mi codigo. Poner siempre el latest update para que greenKeeper no la actualize",
   "dependencies": {
