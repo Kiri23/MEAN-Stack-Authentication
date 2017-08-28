@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
 import {UsersService} from '../../services/users.service';
 import {Router, ActivatedRoute, Params} from '@angular/router';
@@ -13,7 +14,7 @@ export class DownloadProfessorFilesComponent implements OnInit {
 
   constructor(private userService:UsersService,private route: ActivatedRoute) { }
   escuela = ""
-  listOfFileNames = "No hay ningun archivos pa mostrar"
+  listOfFileNames = []
   ngOnInit() {
     this.escuela = this.route.snapshot.queryParams["escuela"];
     console.log('parameter escuela:'+ this.escuela)
@@ -25,7 +26,13 @@ export class DownloadProfessorFilesComponent implements OnInit {
     console.log('escuela load')
     this.userService.getUserByEscuela(this.escuela).subscribe(data => {
       console.log("Escuela: "+ JSON.stringify(data.files, null, 4));
-      this.listOfFileNames = data.files
+      for (var index = 0; index < data.files.length; index++) {
+        for (var index2 = 0; index2 < data.files[index].length; index2++) {
+          console.log(data.files[index][index2])
+          this.listOfFileNames.push(data.files[index][index2])
+        }   
+        
+      }
 
       
 

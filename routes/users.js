@@ -497,7 +497,8 @@ function updateNumberOfFilesOfSchools(user){
 */
 // protect route with our Authentication, Our Token
 // Profile Route
-router.get('/profile',passport.authenticate('jwt',{session:false}),(req, res,next) => {
+// protect route -> ,passport.authenticate('jwt',{session:false})
+router.get('/profile',(req, res,next) => {
   res.json({user:req.user});
 });
 

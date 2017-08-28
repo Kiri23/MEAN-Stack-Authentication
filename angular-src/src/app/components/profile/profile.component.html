@@ -22,15 +22,15 @@
   </ul>
 </div>
 
-<div *ngIf="fileLink" class="">
+<!-- <div *ngIf="fileLink" class="">
   <h2>modelo para descargar
       <a target="_blank" [href]=fileUrl download (click)="downloadLink()" >Template 1</a>
   </h2>
-</div>
+</div> -->
 
-<div *ngIf="isDownloading" class="">
+<!-- <div *ngIf="isDownloading" class="">
   <h2>Descargando archivos</h2>
-</div>
+</div> -->
 
 
 <!--Tabla de archivos para descargar-->
@@ -48,7 +48,8 @@
       <!--Rows of tables  -->
       <tr *ngFor="let file of listOfFileNames;let index = index" class="">
         <th scope="row">{{index + 1}}</th>
-        <td colspan="">{{file.name}} </td>
+        <td colspan=""> <a href="/file/{{file.name}}" > {{file.name}} 
+        </a> </td>
         
       </tr> <!-- End of rows Tables -->
     </table>
