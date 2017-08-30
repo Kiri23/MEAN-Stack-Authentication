@@ -16,3 +16,5 @@ patch:
         patched: '2017-08-15T18:43:07.108Z'
     - pm2 > pm2-axon > debug > ms:
         patched: '2017-08-15T18:43:07.108Z'
+    - pm2 > pm2-axon > debug > ms:
+        patched: '2017-08-30T13:06:07.427Z'
