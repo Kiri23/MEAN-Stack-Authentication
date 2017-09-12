@@ -23,7 +23,7 @@
     "@risingstack/trace": "3.16.0",
     "async": "https://registry.npmjs.org/async/-/async-2.4.1.tgz",
     "bcryptjs": "2.4.3",
-    "body-parser": "1.17.2",
+    "body-parser": "1.18.1",
     "cors": "2.8.4",
     "express": "4.15.4",
     "gridfs-stream": "1.1.1",
