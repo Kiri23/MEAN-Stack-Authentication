@@ -83,8 +83,8 @@ router.post('/register', (req, res,next) => {
     from: 'christian_nogueras94@hotmail.com', // sender address (who sends)
     to: 'christian_nogueras94@hotmail.com,'+newUser.email.toString(), // list of receivers (who receives)
     subject: 'Registracion Completada a la aplicacion web OPAS ', // Subject line
-    text: 'Hola has sido registrado a la aplicacion web de Opas. Si ha recibido este mensaje por error puede ignorarlo. ', // plaintext body
-    // html: '<b>Hello world </b><br> This is the first email sent with Nodemailer in Node.js' // html body
+    // text: '¡Su registro ha sido exitoso! ', // plaintext body
+    html: ',<h3> ¡Su registro ha sido exitoso! </h3> <br> &nbsp; &nbsp;    Bienvenido a su nueva carpeta electrónica para el programa Eco Escuelas. Esta cuenta le permitirá acceder a los documentos modelos para crear sus portafolios con todos los trabajos del comité ambiental trabajos de una manera más sencilla y completa. Si tiene algún problema con el registro favor referirlo escribiendo a: nrivera.opas@gmail.com <br> ¡Gracias por su continuo apoyo!' // html body
 };
 
   console.log("Escuela en miniscula y sin espacio " + newUser.nombreEscuela);
@@ -258,7 +258,7 @@ router.post('/forgot',function (req,res,next){
         subject: 'Recuperacion contrasena aplicacion OPAS',
         text: 'Estas recibiendo este correo electronico porque solicistatse recuperar la contrasena en la aplicacion OPAS.\n\n' +
           'Por favor entra a este enlance para recuperar tu contrasena, o copiar este enlance en tu navegador web para completar el processo \n\n' +
-          'http://' + req.headers.host + 'users/reset/' + token + '\n\n' +
+          'http://' + req.headers.host + '/users/reset/' + token + '\n\n' +
           'Este enlance expirara despues de una hora, es recomendable que cambie la contrasena ahora. Si no solicistaste este correo eletronico por favor ignorarlo y la contrasena seguira siendo la misma.\n'
       };
       nodeEmail.sendEmail(mailOptions);
