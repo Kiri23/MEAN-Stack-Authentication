@@ -68,9 +68,9 @@ const appRoutes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},
   // protect route
-  {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+  {path:'profile',component:ProfileComponent}, // ,canActivate:[AuthGuard]
   // protect route
-  {path:'dashboard',component:DashboardComponent,canActivate:[AuthGuard]},
+  {path:'dashboard',component:DashboardComponent},//,canActivate:[AuthGuard]
   // protect route
   {path:'adminDashboard',component:AdminDashboardComponent,canActivate:[AdministratorGuard]},
   {path:'adminUsers',component:AdminUsersComponent,canActivate:[AdministratorGuard]},

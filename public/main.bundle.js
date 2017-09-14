@@ -1095,9 +1095,9 @@ var appRoutes = [
     { path: 'register', component: __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__["a" /* RegisterComponent */] },
     { path: 'login', component: __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__["a" /* LoginComponent */] },
     // protect route
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__["a" /* ProfileComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_36__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__["a" /* ProfileComponent */] },
     // protect route
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_14__components_dashboard_dashboard_component__["a" /* DashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_36__guards_auth_guard__["a" /* AuthGuard */]] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_14__components_dashboard_dashboard_component__["a" /* DashboardComponent */] },
     // protect route
     { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_16__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_37__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
     { path: 'adminUsers', component: __WEBPACK_IMPORTED_MODULE_25__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_37__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
