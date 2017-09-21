@@ -39,7 +39,7 @@
     "passport-jwt": "2.2.1",
     "pm2": "2.6.1",
     "underscore": "1.8.3",
-    "snyk": "^1.40.2"
+    "snyk": "^1.41.0"
   },
   "repository": {
     "type": "git",
