@@ -36,7 +36,7 @@
     "newrelic": "^2.1.0",
     "nodemailer": "^4.0.1",
     "passport": "^0.4.0",
-    "passport-jwt": "2.2.1",
+    "passport-jwt": "3.0.1",
     "pm2": "2.6.1",
     "underscore": "1.8.3",
     "snyk": "^1.40.2"
