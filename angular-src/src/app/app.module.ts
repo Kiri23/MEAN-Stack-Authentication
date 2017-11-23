@@ -86,7 +86,7 @@ const appRoutes: Routes = [
   {path:'timeline',component:UserTimelineComponent},
   {path:'forgot',component:ForgotPasswordComponent},
   {path:'reset',component:ResetPasswordComponent}  
-  
+  
 
 ];
 

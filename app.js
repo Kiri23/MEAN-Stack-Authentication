@@ -15,7 +15,7 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 var pm2 = require('pm2');
-var trace = require('@risingstack/trace');
+// var trace = require('@risingstack/trace');
 // var LogRocket = require('logrocket')
 // LogRocket.init('rtbfoe/opas-web-app');
 
@@ -53,19 +53,14 @@ const app = express();
 // Connect to Mongodb Database 
 // To start the mongodb Server go to /usr/local/bin and run ./mongo - that will start the server and you can use 'mongod'
 // Cant fix deprecation because required to change the logic of the mongoose connection
-mongoose.connect(config.database);
-
-
-mongoose.connection.on('connected',() => {
-  console.log('Connected to Database ' + config.database);
-
+var promise = mongoose.connect(config.database, {
+  useMongoClient: true,
+  /* other options */
 });
-// // Parte Nueva Añadida
-// mongoose.connection.once('open', () => {
-// });
-
-// Check Mongodb connections
-checkMongooseConnection(mongoose);
+promise.then( ()=>{
+  // Check Mongodb connections
+  checkMongooseConnection(mongoose);
+});
 
 console.log("Se va a llamar el metodo")
 // startPM2();
