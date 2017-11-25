@@ -4,6 +4,9 @@ const modules = require('../config/modules');
 const paypal = modules.paypal
 
  variables.router.post('/pay',(req, res)=>{
+     console.log(process.env.client_id)
+     console.log(process.env.client_secret)
+     console.log('cgequeide env')
     configurePaypal()
     createPaypalPayment(res)
 });
