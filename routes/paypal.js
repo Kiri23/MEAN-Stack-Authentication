@@ -41,8 +41,8 @@ variables.router.get('/cancel', (req, res) => res.send('Cancelled'));
 function configurePaypal(){
     paypal.configure({
         'mode': 'live', //sandbox or live
-        'client_id':"Afq9Fc5n8aH4TTriTOuriGEpl142p-y4faM1ZfxR580pNtWZIEQXK22A5NbUTkwXOKZ5Qn-NKMW9j2lq",
-        'client_secret':"ELZPn7XjE3Eb3Nzj2jGpkqcTvYnZoHH3pPwgA9JVwc1MoHanMlVxxphvv2oqJ32GwkmaB-ca1Hp3dmzB" // no funciona si quito las string y pongo variables
+        'client_id':process.env.client_id,
+        'client_secret':process.env.client_secret // no funciona si quito las string y pongo variables
       });
 }
 
