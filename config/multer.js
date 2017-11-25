@@ -1,6 +1,6 @@
 const multer  = require('multer');
 const mongoose = require('mongoose');
-const config = require('./databse');
+const config = require('./database');
 const Grid = require('gridfs-stream');
 Grid.mongo = mongoose.mongo;
 var gfs;

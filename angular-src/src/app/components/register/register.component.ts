@@ -52,6 +52,7 @@ export class RegisterComponent implements OnInit {
     }
     // Required Fields
     if(!this.validateService.validateRegister(user)){
+      // tslint:disable-next-line:max-line-length
       // send a flash message error. contains options you want to show eg. cssClass,timeout-set a timeout to go away watch angular2-flash message documentaion on google
       this.flashMessage.show("Porfavor llena todo los encasillados antes de crear la cuenta.",{cssClass: 'alert-danger',timeout: 3000});
       return false;
@@ -59,6 +60,7 @@ export class RegisterComponent implements OnInit {
 
     // Validate Email
     if(!this.validateService.validateEmail(user.email)){
+      // tslint:disable-next-line:max-line-length
       // send a flash message error. contains options you want to show eg. cssClass,timeout-set a timeout to go away watch angular2-flash message documentaion on google
       this.flashMessage.show("Porfavor utiliza una direccion de correo electronico valida o completa",{cssClass: 'alert-danger',timeout: 3000});
       return false;

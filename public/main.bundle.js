@@ -1013,14 +1013,16 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_forgot_password_forgot_password_component__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_reset_password_reset_password_component__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_download_professor_files_download_professor_files_component__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__services_validate_service__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__services_auth_service__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__guards_auth_guard__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__guards_administrtor_guard__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__services_users_service__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__services_utilities_service__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__services_administration_administrator_service__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__services_organization_organization_service__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_pay_pay_component__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__services_validate_service__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__services_auth_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__guards_auth_guard__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__guards_administrtor_guard__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__services_users_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__services_utilities_service__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__services_administration_administrator_service__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__services_organization_organization_service__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__services_paypal_service__ = __webpack_require__(380);
 /* unused harmony export RavenErrorHandler */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1067,7 +1069,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 //Services
+
 
 
 
@@ -1099,8 +1103,8 @@ var appRoutes = [
     // protect route
     { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_14__components_dashboard_dashboard_component__["a" /* DashboardComponent */] },
     // protect route
-    { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_16__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_37__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
-    { path: 'adminUsers', component: __WEBPACK_IMPORTED_MODULE_25__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_37__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
+    { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_16__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_38__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
+    { path: 'adminUsers', component: __WEBPACK_IMPORTED_MODULE_25__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_38__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
     // I will want this route to be protected only another administrator can create other
     // administrator
     { path: 'register/admin', component: __WEBPACK_IMPORTED_MODULE_26__components_admin_register_admin_register_component__["a" /* AdminRegisterComponent */] },
@@ -1112,7 +1116,9 @@ var appRoutes = [
     { path: 'users/upload', component: __WEBPACK_IMPORTED_MODULE_27__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */] },
     { path: 'timeline', component: __WEBPACK_IMPORTED_MODULE_30__components_user_timeline_user_timeline_component__["a" /* UserTimelineComponent */] },
     { path: 'forgot', component: __WEBPACK_IMPORTED_MODULE_31__components_forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */] },
-    { path: 'reset', component: __WEBPACK_IMPORTED_MODULE_32__components_reset_password_reset_password_component__["a" /* ResetPasswordComponent */] }
+    { path: 'reset', component: __WEBPACK_IMPORTED_MODULE_32__components_reset_password_reset_password_component__["a" /* ResetPasswordComponent */] },
+    { path: 'pay', component: __WEBPACK_IMPORTED_MODULE_34__components_pay_pay_component__["a" /* PayComponent */] }
+    // {path:'succes',component:PayComponent}
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -1147,7 +1153,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_30__components_user_timeline_user_timeline_component__["a" /* UserTimelineComponent */],
             __WEBPACK_IMPORTED_MODULE_31__components_forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */],
             __WEBPACK_IMPORTED_MODULE_32__components_reset_password_reset_password_component__["a" /* ResetPasswordComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__components_download_professor_files_download_professor_files_component__["a" /* DownloadProfessorFilesComponent */]
+            __WEBPACK_IMPORTED_MODULE_33__components_download_professor_files_download_professor_files_component__["a" /* DownloadProfessorFilesComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__components_pay_pay_component__["a" /* PayComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -1157,8 +1164,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesModule"],
             __WEBPACK_IMPORTED_MODULE_6__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_34__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_35__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_36__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_37__guards_administrtor_guard__["a" /* AdministratorGuard */],
-            __WEBPACK_IMPORTED_MODULE_38__services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_39__services_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_40__services_administration_administrator_service__["a" /* AdministratorsService */], __WEBPACK_IMPORTED_MODULE_41__services_organization_organization_service__["a" /* OrganizationsService */], { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ErrorHandler"], useClass: RavenErrorHandler }
+        providers: [__WEBPACK_IMPORTED_MODULE_35__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_36__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_37__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_38__guards_administrtor_guard__["a" /* AdministratorGuard */],
+            __WEBPACK_IMPORTED_MODULE_39__services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_40__services_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_41__services_administration_administrator_service__["a" /* AdministratorsService */], __WEBPACK_IMPORTED_MODULE_42__services_organization_organization_service__["a" /* OrganizationsService */], __WEBPACK_IMPORTED_MODULE_43__services_paypal_service__["a" /* PaypalService */], { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ErrorHandler"], useClass: RavenErrorHandler }
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
     })
@@ -2627,12 +2634,14 @@ var RegisterComponent = (function () {
         };
         // Required Fields
         if (!this.validateService.validateRegister(user)) {
+            // tslint:disable-next-line:max-line-length
             // send a flash message error. contains options you want to show eg. cssClass,timeout-set a timeout to go away watch angular2-flash message documentaion on google
             this.flashMessage.show("Porfavor llena todo los encasillados antes de crear la cuenta.", { cssClass: 'alert-danger', timeout: 3000 });
             return false;
         }
         // Validate Email
         if (!this.validateService.validateEmail(user.email)) {
+            // tslint:disable-next-line:max-line-length
             // send a flash message error. contains options you want to show eg. cssClass,timeout-set a timeout to go away watch angular2-flash message documentaion on google
             this.flashMessage.show("Porfavor utiliza una direccion de correo electronico valida o completa", { cssClass: 'alert-danger', timeout: 3000 });
             return false;
@@ -3978,7 +3987,7 @@ module.exports = "<h2 class=\"page-header\">Recupera tu Contraseña</h2>\n<h4> &
 /* 325 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"jumbotron text-center\">\n    <h1> Carpeta Electrónica para Eco Escuelas </h1>\n    <p class=\"lead\">Bienvenido a tu carpeta electrónica</p>\n  <div>\n    <a [routerLink] = \"['/register']\" class=\"btn btn-primary\">Regístrate</a>\n    <a [routerLink] = \"['/login']\" class=\"btn btn-default\">Conéctate</a>\n  </div>\n</div>\n\n\n<!-- <div class=\"row\">\n  <div class=\"col-md-4 col-sm-4 col-sm\">\n    <h3>Express Backend</h3>\n    <p>A rock solid Node.js/Express server using mongoose to organize models and query </p>\n  </div>\n  <div class=\"col-md-4 col-sm-4 col-sm\">\n    <h3>Angular-CLI</h3>\n    <p>Angular-cli to generate components,services and more. Local dev server and easy</p>\n  </div>\n  <div class=\"col-md-4 col-sm-4 col-sm\">\n    <h3>JWT Tokens</h3>\n    <p>Full feautured authentication using JSON web tokens. Login and store user data</p>\n  </div>\n</div> -->\n"
+module.exports = "<div class=\"jumbotron text-center\">\n    <h1> Carpeta Electrónica para Eco Escuelas </h1>\n    <p class=\"lead\">Bienvenido a tu carpeta electrónica</p>\n  <div>\n    <a [routerLink] = \"['/register']\" class=\"btn btn-primary\">Regístrate</a>\n    <a [routerLink] = \"['/login']\" class=\"btn btn-default\">Conéctate</a>\n  </div>\n  <br>\n  <p  class=\"lead\">Paga la membresia de Opas</p>\n  <button [routerLink]=\"['/pay']\" class=\"btn btn-primary\">Paga aqui</button>\n\n</div>\n\n\n<!-- <div class=\"row\">\n  <div class=\"col-md-4 col-sm-4 col-sm\">\n    <h3>Express Backend</h3>\n    <p>A rock solid Node.js/Express server using mongoose to organize models and query </p>\n  </div>\n  <div class=\"col-md-4 col-sm-4 col-sm\">\n    <h3>Angular-CLI</h3>\n    <p>Angular-cli to generate components,services and more. Local dev server and easy</p>\n  </div>\n  <div class=\"col-md-4 col-sm-4 col-sm\">\n    <h3>JWT Tokens</h3>\n    <p>Full feautured authentication using JSON web tokens. Login and store user data</p>\n  </div>\n</div> -->\n"
 
 /***/ }),
 /* 326 */
@@ -4078,6 +4087,143 @@ module.exports = "\t<!-- \n\t<link rel=\"stylesheet\" href=\"css/reset.css\"> <!
 
 module.exports = __webpack_require__(173);
 
+
+/***/ }),
+/* 374 */,
+/* 375 */,
+/* 376 */,
+/* 377 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_paypal_service__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PayComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+// services
+
+// external modules
+
+var PayComponent = (function () {
+    function PayComponent(paypalService, flashMessage, router) {
+        this.paypalService = paypalService;
+        this.flashMessage = flashMessage;
+        this.router = router;
+    }
+    PayComponent.prototype.ngOnInit = function () {
+    };
+    PayComponent.prototype.onPaySubmit = function () {
+        console.log("payment submited");
+        this.paypalService.createPayment().subscribe(function (data) {
+            console.log(data);
+            window.location.href = data.paymentLink;
+            if (data.success === 'undefined') {
+                console.log(' data succes data succes nullo');
+                return;
+            }
+        });
+    };
+    PayComponent.prototype.alertT = function () {
+        alert('Hola from Pay');
+    };
+    return PayComponent;
+}());
+PayComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-pay',
+        template: __webpack_require__(379),
+        styles: [__webpack_require__(378)]
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_paypal_service__["a" /* PaypalService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_paypal_service__["a" /* PaypalService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angular2_flash_messages__["FlashMessagesService"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _c || Object])
+], PayComponent);
+
+var _a, _b, _c;
+//# sourceMappingURL=pay.component.js.map
+
+/***/ }),
+/* 378 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+/* 379 */
+/***/ (function(module, exports) {
+
+module.exports = "<p class=\"lead\"> Paga aqui la membresia para ecoescuelas</p>\n\n<form name=\"registerForm\" (submit)=\"onPaySubmit()\">\n  <input class=\"btn btn-primary\" type=\"submit\" value=\"Pagar\">\n</form>"
+
+/***/ }),
+/* 380 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(18);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaypalService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PaypalService = (function () {
+    function PaypalService(http) {
+        this.http = http;
+    }
+    /**
+   * Retrieve a user from the db with his Id
+   * @param {Number} id - The id of the user
+   * @returns
+   * @memberOf UsersService
+   */
+    // getUserById
+    PaypalService.prototype.createPayment = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
+        //set the Content-Type to application/json
+        headers.append('Content-Type', 'application/json');
+        // return an observable with the response
+        // tslint:disable-next-line:max-line-length
+        // here I make the Post http call. The second parameter is the data the I want to send to the post call,third parameter are the options. .map map or convert every value to a json
+        return this.http.post('/pay', { headers: headers }).map(function (res) { return res.json(); });
+    };
+    return PaypalService;
+}());
+PaypalService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["Http"]) === "function" && _a || Object])
+], PaypalService);
+
+var _a;
+//# sourceMappingURL=paypal.service.js.map
 
 /***/ })
 ],[373]);

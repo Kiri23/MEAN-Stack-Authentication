@@ -28,7 +28,7 @@ export class ResetPasswordComponent implements OnInit {
     console.log('pass'+ this.password)
     this.usersService.resetPassword(this.password,this.token).subscribe(data=> {
       if (data.success === 'undefined'){
-        console.log(' data succes data succes nullo')        
+        console.log(' data succes data succes nullo')
         return
       }
       if (data.success){

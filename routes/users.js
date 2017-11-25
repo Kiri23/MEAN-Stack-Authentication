@@ -13,7 +13,7 @@ var async = require('async')
 var crypto = require('crypto');
 
 
-const config = require('../config/databse');
+const config = require('../config/database');
 var upload = require ('../config/multer');
 const nodeEmail = require('../utilities/nodemailer')
 

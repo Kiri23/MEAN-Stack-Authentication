@@ -5,7 +5,7 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
-const config = require('../config/databse');
+const config = require('../config/database');
 const Organization = require('../models/organization');
 
 //aget6 shortcut for app.get

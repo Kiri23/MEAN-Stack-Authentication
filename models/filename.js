@@ -1,6 +1,6 @@
 //Modules d
 const mongoose = require('mongoose');
-const config = require('../config/databse');
+const config = require('../config/database');
 
 //FileName Schema
 const FileNameSchema = new mongoose.Schema({

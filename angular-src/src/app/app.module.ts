@@ -37,7 +37,7 @@ import { UserTimelineComponent } from './components/user-timeline/user-timeline.
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { DownloadProfessorFilesComponent } from './components/download-professor-files/download-professor-files.component';
-
+import { PayComponent } from './components/pay/pay.component';
 
 //Services
 import {ValidateService} from './services/validate.service';
@@ -48,6 +48,9 @@ import {UsersService} from './services/users.service';
 import {UtilitiesService} from './services/utilities.service';
 import {AdministratorsService} from './services/administration/administrator.service';
 import {OrganizationsService} from './services/organization/organization.service';
+import {PaypalService} from './services/paypal.service';
+
+
 
 
 // sentry setup for tarckering error
@@ -73,7 +76,7 @@ const appRoutes: Routes = [
   {path:'dashboard',component:DashboardComponent},//,canActivate:[AuthGuard]
   // protect route
   {path:'adminDashboard',component:AdminDashboardComponent,canActivate:[AdministratorGuard]},
-  {path:'adminUsers',component:AdminUsersComponent,canActivate:[AdministratorGuard]},
+  {path:'adminUsers',component:AdminUsersComponent, canActivate:[AdministratorGuard]},
   // I will want this route to be protected only another administrator can create other
   // administrator
   {path:'register/admin',component:AdminRegisterComponent},
@@ -85,8 +88,11 @@ const appRoutes: Routes = [
   {path:'users/upload',component:UploadPortfolioComponent},
   {path:'timeline',component:UserTimelineComponent},
   {path:'forgot',component:ForgotPasswordComponent},
-  {path:'reset',component:ResetPasswordComponent}  
-  
+  {path:'reset',component:ResetPasswordComponent},
+  {path:'pay',component:PayComponent}
+  // {path:'succes',component:PayComponent}
+
+
 
 ];
 
@@ -117,7 +123,8 @@ const appRoutes: Routes = [
     UserTimelineComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-    DownloadProfessorFilesComponent
+    DownloadProfessorFilesComponent,
+    PayComponent
   ],
   imports: [
     BrowserModule,
@@ -127,8 +134,8 @@ const appRoutes: Routes = [
     FlashMessagesModule,
     NgbModule.forRoot()
   ],
-  providers: [ValidateService,AuthService,AuthGuard,AdministratorGuard,
-    UsersService,UtilitiesService,AdministratorsService,OrganizationsService, { provide: ErrorHandler, useClass: RavenErrorHandler } 
+  providers: [ValidateService, AuthService, AuthGuard, AdministratorGuard,
+    UsersService, UtilitiesService, AdministratorsService, OrganizationsService, PaypalService, { provide: ErrorHandler, useClass: RavenErrorHandler }
   ],
   bootstrap: [AppComponent]
 })

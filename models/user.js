@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 // to encrypt files
 const bcrypt = require('bcryptjs');
-const config = require('../config/databse');
+const config = require('../config/database');
 
 //user Schema
 const UserSchema = mongoose.Schema({

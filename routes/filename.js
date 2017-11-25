@@ -7,8 +7,10 @@ const jwt = require('jsonwebtoken');
 // Import third partie library js
 const underscore = require('underscore');
 
-const config = require('../config/databse');
+const config = require('../config/database');
 const fileName = require('../models/filename');
+
+const variables = require('../config/variables')
 
 
 
@@ -19,6 +21,34 @@ const fileName = require('../models/filename');
 router.get('/profile',passport.authenticate('jwt',{session:false}),(req, res,next) => {
 
 });
+
+// router.get('/file/:filename', function(req, res){
+//   variables.gfs.collection('templateFiles'); //set collection name to lookup into
+
+//   /** First check if file exists */
+//   variables.gfs.files.find({filename: req.params.filename}).toArray(function(err, files){
+//       if(!files || files.length === 0){
+//           return res.status(404).json({
+//               responseCode: 1,
+//               responseMessage: "error"
+//           });
+//       }
+//       /** create read stream */
+//       var readstream = variables.gfs.createReadStream({
+//           filename: files[0].filename,
+//           root: "templateFiles"
+//       });
+//       /** set the proper content type. */
+//       res.set('Content-Type', files[0].contentType)
+//       console.log("pipe");
+//       console.log(readstream.pipe(res).req.originalUrl);
+//       // readstream.pipe(res) is the original one but I want the Url because I want
+//       // to reference to this link in Angular2
+//       return readstream.pipe(res).req.originalUrl;
+
+//       // 535
+//   });
+// });
 
 // Get a fileNames by their Id
 router.get('/getfileNameById', (req, res) => {

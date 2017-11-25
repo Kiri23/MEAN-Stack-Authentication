@@ -5,7 +5,7 @@ const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 
-const config = require('../config/databse');
+const config = require('../config/database');
 var upload = require ('../config/multer');
 
 const Administration = require('../models/administrator');

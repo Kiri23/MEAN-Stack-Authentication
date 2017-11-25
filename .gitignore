@@ -4,7 +4,8 @@
 /node_modules
 
 # dependencies
-/config/databse.js
+/config/database.js
+/config/paypal.js
 
 # testing
 /coverage

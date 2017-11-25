@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 // Import third partie library js
 const underscore = require('underscore');
 
-const config = require('../config/databse');
+const config = require('../config/database');
 const escuelaArchivos = require('../models/escuelaArchivos');
 
 

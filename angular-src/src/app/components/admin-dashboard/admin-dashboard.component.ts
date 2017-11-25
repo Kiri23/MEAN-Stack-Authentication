@@ -7,7 +7,7 @@ import * as underscore from 'underscore';
 /**
  * 
  * @class AdminDashboardComponent
- * @implements {OnInit}
+ * @implements {OnInit} 
  */
 @Component({
   selector: 'app-admin-dashboard',
