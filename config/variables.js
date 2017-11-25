@@ -13,7 +13,8 @@ module.exports = {
     gfs: gfs,
     app: modules.express(), // app express,
     router: modules.express.Router(),
-    port: process.env.PORT || 3002, // Port Number
-    client_secret_paypal: require('./paypal').client_id ,// por el momento no se esta utilizando
-    client_id_paypal: require('./paypal').client_secret // por el momento no se esta utilizando
+    port: process.env.PORT || 3002 // Port Number
   };
+
+  // client_secret_paypal: require('./paypal').client_id ,// por el momento no se esta utilizando
+  // client_id_paypal: require('./paypal').client_secret // por el momento no se esta utilizando
