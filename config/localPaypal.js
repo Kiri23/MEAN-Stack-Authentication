@@ -1,0 +1,3 @@
+client id = "Afq9Fc5n8aH4TTriTOuriGEpl142p-y4faM1ZfxR580pNtWZIEQXK22A5NbUTkwXOKZ5Qn-NKMW9j2lq"
+
+client_secret = "ELZPn7XjE3Eb3Nzj2jGpkqcTvYnZoHH3pPwgA9JVwc1MoHanMlVxxphvv2oqJ32GwkmaB-ca1Hp3dmzB"

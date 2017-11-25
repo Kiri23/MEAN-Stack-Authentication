@@ -44,7 +44,7 @@ variables.router.get('/cancel', (req, res) => res.send('Cancelled'));
 function configurePaypal(){
     paypal.configure({
         'mode': 'live', //sandbox or live
-        'client_id':process.env.client_id,
+        'client_id':process.env.client_id ,
         'client_secret':process.env.client_secret // no funciona si quito las string y pongo variables
       });
 }
