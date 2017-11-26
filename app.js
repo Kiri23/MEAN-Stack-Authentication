@@ -4,10 +4,9 @@
  * app.js - main start application 
 */
 
-// Modules
+// Modules que se leen de un archvio externo 
 const modules = require('./config/modules')
-
-// variables
+// variables que se leen de un archivo externo
 const variables = require('./config/variables')
 
 // route files

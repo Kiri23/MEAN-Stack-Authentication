@@ -1,11 +1,12 @@
 const variables = require('../config/variables');
 const modules = require('../config/modules');
-
+const url = require('url')
 const paypal = modules.paypal
 require('../config/paypal'); // require configuration paypal
 
- variables.router.post('/pay',(req, res)=>{
-    createPaypalPayment(res)
+
+variables.router.post('/pay',(req, res)=>{
+    createPaypalPayment(res,req)
 });
 
 variables.router.get('/succes',(req,res)=> {
@@ -19,25 +20,26 @@ variables.router.get('/cancel', (req, res) => {
     res.send('Cancelled')
 });
 
+
     /******* FUNCTIONS ********/
 
-function configurePaypal(){
-    paypal.configure({
-        'mode': 'live', //sandbox or live
-        'client_id':process.env.client_id ,
-        'client_secret':process.env.client_secret // no funciona si quito las string y pongo variables
-      });
+// esta fucnion coge el protocoo si es https o http y ademas coge el domain name (host). El pathname es lo que va despues del /       
+function fullUrl(req) {
+    return url.format({
+        protocol: req.protocol,
+        host: req.get('host')
+        // pathname: req.originalUrl
+    });
 }
-
- function createPaypalPayment(res){
+ function createPaypalPayment(res,req){
     var create_payment_json = {
         "intent": "sale",
         "payer": {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:3002/succes",
-            "cancel_url": "http://localhost:3002/cancel"
+            "return_url": fullUrl(req)+ "/succes",
+            "cancel_url": fullUrl(req)+"/cancel"
         },
         "transactions": [{
             "item_list": {
