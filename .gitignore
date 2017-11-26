@@ -6,6 +6,8 @@
 # dependencies
 /config
 
+/.vscode
+
 # testing
 /coverage
 
