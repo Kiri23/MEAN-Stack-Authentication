@@ -10,9 +10,8 @@ require('../config/paypal'); // require configuration paypal
 
 variables.router.get('/succes',(req,res)=> {
    const payerId = req.query.PayerID;
-   const paymentId = req.query.paymentId;   
-   excecutePayment(payerId,paymentId,res)
-
+   const paymentId = req.query.paymentId;
+   excecutePayment(paymentId,payerId,res)
 });
 
 
@@ -66,7 +65,6 @@ function configurePaypal(){
             for(let i = 0; i< payment.links.length; i++) {
                 if (payment.links[i].rel == "approval_url"){
                     console.log("approval url")
-                    console.log(payment.links[i].href)
                     return res.json({paymentLink:payment.links[i].href,msg:'Succes'})
                 }
             }
