@@ -4,7 +4,7 @@
 /node_modules
 
 # dependencies
-config
+/config
 
 # testing
 /coverage
