@@ -4,8 +4,9 @@
 /node_modules
 
 # dependencies
-/config/localPaypal.txt
+./config/localPaypal.txt
 /config/database.js
+/config
 
 # testing
 /coverage
