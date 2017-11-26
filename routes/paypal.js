@@ -1,40 +1,20 @@
 const variables = require('../config/variables');
 const modules = require('../config/modules');
-
-const paypal = modules.paypal
+const paypal = require('../config/paypal');
+console.log(paypal)
+// const paypal = modules.paypal
 
  variables.router.post('/pay',(req, res)=>{
-     console.log(process.env.client_id)
-     console.log(process.env.client_secret)
-     console.log('cgequeide env')
-    configurePaypal()
+     consolole.log(paypal)
+    // configurePaypal()
     createPaypalPayment(res)
 });
 
 variables.router.get('/succes',(req,res)=> {
    const payerId = req.query.PayerID;
-   const paymentId = req.query.paymentId;
+   const paymentId = req.query.paymentId;   
+   excecutePayment(payerId,paymentId,res)
 
-
-  const execute_payment_json = {
-    "payer_id": payerId,
-    "transactions": [{
-        "amount": {
-            "currency": "USD",
-            "total": "1.00"
-        }
-    }]
-  };
-
-  paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
-    if (error) {
-        console.log(error.response);
-        throw error;
-    } else {
-        console.log(JSON.stringify(payment));
-        res.send('Success');
-    }
- });
 });
 
 
@@ -91,6 +71,29 @@ function configurePaypal(){
             }
         }
     });
+}
+
+function excecutePayment(paymentId,payerId,res){
+    const execute_payment_json = {
+        "payer_id": payerId,
+        "transactions": [{
+            "amount": {
+                "currency": "USD",
+                "total": "1.00"
+            }
+        }]
+      };
+    
+      paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
+        if (error) {
+            console.log(error.response);
+            throw error;
+        } else {
+            console.log(JSON.stringify(payment));
+            res.send('Success');
+        }
+     });
+
 }
 
 module.exports = variables.router;

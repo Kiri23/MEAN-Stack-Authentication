@@ -4,9 +4,7 @@
 /node_modules
 
 # dependencies
-/config
 
-/.vscode
 
 # testing
 /coverage
