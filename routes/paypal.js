@@ -1,12 +1,10 @@
 const variables = require('../config/variables');
 const modules = require('../config/modules');
-const paypal = require('../config/paypal');
-console.log(paypal)
-// const paypal = modules.paypal
+
+const paypal = modules.paypal
+require('../config/paypal'); // require configuration paypal
 
  variables.router.post('/pay',(req, res)=>{
-     consolole.log(paypal)
-    // configurePaypal()
     createPaypalPayment(res)
 });
 
@@ -18,8 +16,11 @@ variables.router.get('/succes',(req,res)=> {
 });
 
 
-variables.router.get('/cancel', (req, res) => res.send('Cancelled'));
+variables.router.get('/cancel', (req, res) => {
+    res.send('Cancelled')
+});
 
+    /******* FUNCTIONS ********/
 
 function configurePaypal(){
     paypal.configure({

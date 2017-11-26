@@ -12,7 +12,8 @@ module.exports = {
     multer: require('multer'),
     Grid: require('gridfs-stream'),
     GridFsStorage: require('multer-gridfs-storage'),
-    paypal: require('paypal-rest-sdk')
+    paypal: require('paypal-rest-sdk'),
+    dotenv: require('dotenv').config()
     
 
   };
