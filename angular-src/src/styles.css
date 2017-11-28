@@ -39,3 +39,75 @@
 .greenOpasColor{
     background-color: #93c54b;
 }
+
+
+/* Clase de Boostrap4 Css Btn y button primary  */
+
+.btn {
+    display: inline-block;
+    font-weight: normal;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 1rem;
+    font-size: 1.4rem;
+    border-radius: 0.25rem;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .btn:focus, .btn:hover {
+    text-decoration: none;
+  }
+  
+  .btn:focus, .btn.focus {
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+            box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);
+  }
+  
+  .btn.disabled, .btn:disabled {
+    cursor: not-allowed;
+    opacity: .65;
+  }
+  
+  .btn:active, .btn.active {
+    background-image: none;
+  }
+
+  .btn-primary {
+    color: #fff;
+    background-color: #0275d8;
+    border-color: #0275d8;
+  }
+  
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #025aa5;
+    border-color: #01549b;
+  }
+  
+  .btn-primary:focus, .btn-primary.focus {
+    -webkit-box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+            box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);
+  }
+  
+  .btn-primary.disabled, .btn-primary:disabled {
+    background-color: #0275d8;
+    border-color: #0275d8;
+  }
+  
+  .btn-primary:active, .btn-primary.active,
+  .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #025aa5;
+    background-image: none;
+    border-color: #01549b;
+  }

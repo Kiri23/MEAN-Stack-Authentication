@@ -39,7 +39,7 @@ function fullUrl(req) {
         },
         "redirect_urls": {
             "return_url": fullUrl(req)+ "/succes",
-            "cancel_url": fullUrl(req)+"/cancel"
+            "cancel_url": fullUrl(req)+ "/cancel"
         },
         "transactions": [{
             "item_list": {
