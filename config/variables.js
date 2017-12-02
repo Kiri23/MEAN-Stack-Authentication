@@ -5,6 +5,7 @@ module.exports = {
     passport: require('./passport')(modules.passport),
     config: require('./database'),
     paypal: require('./paypal'),
+    compañia : process.env.Compañia,
     MACHINE_NAME:  'OpasWebApp', // variables for keymetrics and PM2
     PRIVATE_KEY: process.env.PRIVATE_KEY ||'tpa9qml5rkc1ybs', // change to use in procces.env 
     PUBLIC_KEY: process.env.PUBLIC_KEY ||'x9k7bhzcxyvkhgd',

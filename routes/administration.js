@@ -4,37 +4,59 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
+const assert = require('assert')
+const AssertionError = require('assert').AssertionError
 
 const config = require('../config/database');
 var upload = require ('../config/multer');
+var errorUtility = require('../utilities/error')
+
 
 const Administration = require('../models/administrator');
 const fileName = require('../models/filename');
 
 //aget6 shortcut for app.get
 
+
+
 // Register
 // cause whe're in the Administrator file is Administrator/register
 router.post('/register', (req, res,next) => {
   console.log("llego a la ruta del register administrator");
-  // Administration Object Retriev Administrator Properties from Form
-  let newAdministrator = new Administration({
-    name: req.body.user.name,
-    email: req.body.user.email,
-    username: req.body.user.username,
-    password: req.body.user.password
-  });
-// Add Administration to mongoDb
-  Administration.addAdministrator(newAdministrator,(err, Administrator) => {
-    if(err){
-      console.log(err + " adding Administrator");
-      res.json({success: false, msg:'Failed to register Administrator',error:err});
-    }else{ // addAdministrator to the Database
-      res.json({success:true,msg:'Administration Registered',Administrator:newAdministrator});
-    }
-  });
-// End add Administration logic
+  try {
+    // Administration Object Retriev Administrator Properties from Form
+    let newAdministrator = new Administration({
+      name: req.body.user.name,
+      email: req.body.user.email,
+      username: req.body.user.username,
+      password: req.body.user.password
+    });
+    
+    
+    // Validation error. This throw an error and I triying to cacth the error and respond to it   
+   assert.notEqual(newAdministrator, undefined,"Algunos campos no fueron llenados correctamente por favor intente otra vez. Extra informacion algunos de los campos son indefinidos")
+    assert.notEqual(newAdministrator.password,undefined,"El campo de la contraseña no fue llenado. Si lo lleno intentelo de nuevo otra vez. Extra informacion ruta register")
 
+  // Add Administration to mongoDb. Esta es una llamada al modelo.
+    Administration.addAdministrator(newAdministrator,res,(err, Administrator) => {
+      if(err){
+        console.log(err.message + " adding Administrator from administration/register");
+        errorUtility.sendErrorHttpJsonMessage(res,err,"Error creando(Guardando) cuenta de administrador en la base de datos")
+        // res.json({success: false, msg:'Failed to register Administrator',error:err});
+      }else{ // addAdministrator to the Database
+        console.log("Este es adm " + Administrator)
+        res.json({success:true,msg:'Administrador Registrado',Administrator:newAdministrator});
+      }
+    });
+ }catch(error){
+   if (error instanceof AssertionError){
+     errorUtility.sendErrorHttpJsonMessage(res,error,error.message)
+   }else {
+     var message = "Error no documentado cuando se crea un administrador. Error: " + error.message
+     errorUtility.sendErrorHttpJsonMessage(res,error,message)
+   }
+ }
+// End add Administration logic
 })
 
 // Authenticate Route
@@ -185,8 +207,9 @@ router.get('/getAdminRole', (req, res) => {
     })
 });
 
-router.get('/ping', (req, res) => {
-    return res.json('pong');
+router.get('/ping', (req, res,next) => {
+    throw(new Error("Error para prueba en ruta"));
+    // return res.json('pong');
 });
 
 

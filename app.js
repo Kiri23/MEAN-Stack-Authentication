@@ -3,6 +3,10 @@
  * 
  * app.js - main start application 
 */
+callAllUncaughtExceptionFromNodeJs() // no registrada en los archivos.js del app
+
+// Global Variable. Para poner el nombre de la compañia a la que le estoy haciendo el producto.
+process.env.Compañia = "OPAS"
 
 // Modules que se leen de un archvio externo 
 const modules = require('./config/modules')
@@ -16,7 +20,6 @@ const users = require('./routes/users');
 const fileNames = require('./routes/filename');
 const escuelaArchivos = require('./routes/escuelaArchivos');
 const paypal = require('./routes/paypal');
-
 
 modules.Grid.mongo = modules.mongoose.mongo;
 // modules.LogRocket.init('rtbfoe/opas-web-app');
@@ -62,11 +65,22 @@ variables.app.use(modules.express.static(modules.path.join(__dirname,'public')))
 variables.app.use(modules.passport.initialize());
 variables.app.use(modules.passport.session());
 
+// Express error Handling Middleware. Cualquier error no cactheado en la aplicacion epxress de opas pasara a esta funcion y cualquier error que surga tendra este mensaje de json
+variables.app.use(function (err,req,res,next){
+  const customMsg = "Error no documentado en la aplicacion express de " + variables.compañia + ". Intentelo nuevamente, si el problema persiste porfavor notifique a un representate de OPAS de este error a continuacion. Error: " + err.message 
+  res.json({success: false, msg:customMsg  ,error:err,errorMessage:err.message,listOfErrors: err.errors})
+
+});
+
+variables.app.get('/m',(req,res,next) =>{
+  next("Hola error next")
+});
+
 // index Route. Invalid Route 
 variables.app.get('/',(req,res) => {
   res.send('invalid EndPoint');
-
 })
+
 
 // This is how you combine Angular with Node.js
 // Catch all other routes and return the index file that mange the angular logic
@@ -80,8 +94,17 @@ variables.app.listen(variables.port,() => {
 
 })
 
-
 // ********** Functions  ***************** // 
+
+// Este metodo va a coger todas las excepciones que no se han recogido en mi codigo y va a llamar un evento para enviar un json al server
+function callAllUncaughtExceptionFromNodeJs(){
+  process.on('uncaughtException', function (err) {
+    process.emit('notCaughtExeception',"Un error no documentado en la aplicacion " + variables.compañia+ ". Si el problema persiste Por favor adviertele a un representante de "+variables.compañia)  // falta http core modules para hacer un request  en json
+    console.log("Un error no registrado en toda la aplicacion de node para la apicacion de "+variables.compañia)
+    console.log(err);
+    process.exit(1)
+  })
+}
 
 // Function to chech different event in mongoDb
 function checkMongooseConnection(mongose){
