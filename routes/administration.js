@@ -41,8 +41,9 @@ router.post('/register', (req, res,next) => {
     Administration.addAdministrator(newAdministrator,res,(err, Administrator) => {
       if(err){
         console.log(err.message + " adding Administrator from administration/register");
-        errorUtility.sendErrorHttpJsonMessage(res,err,"Error creando(Guardando) cuenta de administrador en la base de datos")
-        // res.json({success: false, msg:'Failed to register Administrator',error:err});
+        err.customMsg = "Error guardando cuenta de administrador en la base de datos pero con customMessage Errors"
+        // This will pass the error to the epxress error handling defined in app.js
+        return next(err)
       }else{ // addAdministrator to the Database
         console.log("Este es adm " + Administrator)
         res.json({success:true,msg:'Administrador Registrado',Administrator:newAdministrator});

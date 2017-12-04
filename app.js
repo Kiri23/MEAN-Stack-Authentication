@@ -1,17 +1,20 @@
+
 /** 
  * Author: Christian Nogueras
  * 
  * app.js - main start application 
 */
-callAllUncaughtExceptionFromNodeJs() // no registrada en los archivos.js del app
 
 // Global Variable. Para poner el nombre de la compañia a la que le estoy haciendo el producto.
 process.env.Compañia = "OPAS"
 
+var gfs
 // Modules que se leen de un archvio externo 
 const modules = require('./config/modules')
 // variables que se leen de un archivo externo
 const variables = require('./config/variables')
+callAllUncaughtExceptionFromNodeJs() // no registrada en los archivos.js del app.Need to be after const variables
+
 
 // route files
 const organization = require('./routes/organization');
@@ -24,23 +27,12 @@ const paypal = require('./routes/paypal');
 modules.Grid.mongo = modules.mongoose.mongo;
 // modules.LogRocket.init('rtbfoe/opas-web-app');
 
-// ********************** MONGO Database *************** // 
-    // Connect to Mongodb Database 
-    // To start the mongodb Server go to /usr/local/bin and run ./mongo - that will start the server and you can use 'mongod'
-    // Cant fix deprecation because required to change the logic of the mongoose connection
-    var promise = modules.mongoose.connect(variables.config.database, {
-      useMongoClient: true,
-      /* other options */
-    });
-    promise.then( ()=>{
-      // Check Mongodb connections
-      checkMongooseConnection(mongoose);
-    });
+connectToMongoDatabase()
 
-// ********************** End MONGO Database *************** // 
+checkMongooseConnections()
+
 
 console.log("Se va a llamar el metodo")
-
 // express cors google- App.Use Cors lo que hace es que
 // da Allow Acces a cualquier dominio y tambien acepta tipo de data que se envie en el nuevo request.
 //CORS Middleware
@@ -65,16 +57,30 @@ variables.app.use(modules.express.static(modules.path.join(__dirname,'public')))
 variables.app.use(modules.passport.initialize());
 variables.app.use(modules.passport.session());
 
+variables.app.get('/m',(req,res,next) =>{
+  var err = new Error("E");
+  err.customMsg = "Custom Meessage error"
+  next(err)
+});
+
+variables.app.get('/s',(req,res)=>{
+    
+})
 // Express error Handling Middleware. Cualquier error no cactheado en la aplicacion epxress de opas pasara a esta funcion y cualquier error que surga tendra este mensaje de json
 variables.app.use(function (err,req,res,next){
-  const customMsg = "Error no documentado en la aplicacion express de " + variables.compañia + ". Intentelo nuevamente, si el problema persiste porfavor notifique a un representate de OPAS de este error a continuacion. Error: " + err.message 
-  res.json({success: false, msg:customMsg  ,error:err,errorMessage:err.message,listOfErrors: err.errors})
-
+  console.log("Error custom message ", err.customMsg)
+  if(err.customMsg){
+    return variables.errorUtility.sendErrorHttpJsonMessage(res,err,err.customMsg);    
+  }else {
+    console.log("Error general en aplicacion express de Opas")
+    const customMsg = "Error no documentado en la aplicacion express de " + variables.compañia + ". Intentelo nuevamente, si el problema persiste porfavor notifique a un representate de OPAS de este error a continuacion. Error: " + err.message 
+    return variables.errorUtility.sendErrorHttpJsonMessage(res,err,customMsg);
+    // variables.nodeSendEmail.
+  }
+  
 });
 
-variables.app.get('/m',(req,res,next) =>{
-  next("Hola error next")
-});
+
 
 // index Route. Invalid Route 
 variables.app.get('/',(req,res) => {
@@ -94,6 +100,7 @@ variables.app.listen(variables.port,() => {
 
 })
 
+
 // ********** Functions  ***************** // 
 
 // Este metodo va a coger todas las excepciones que no se han recogido en mi codigo y va a llamar un evento para enviar un json al server
@@ -107,36 +114,47 @@ function callAllUncaughtExceptionFromNodeJs(){
 }
 
 // Function to chech different event in mongoDb
-function checkMongooseConnection(mongose){
-  // do Validation if Mongoose(param) is a type of Mongoose
-   if (modules.mongoose.constructor.name !== "Mongoose"){
-     console.log("Parameter is not a mongoose Object");
-     return;
-   }
-    modules.mongoose.connection.on('open', function (ref) {
-      connected=true;
-      gfs = modules.Grid(mongoose.connection.db);
+function checkMongooseConnections(){
+  modules.mongoose.connection.on('open', function (ref) {
       console.log('open connection to mongo server.');
   });
 
   modules.mongoose.connection.on('disconnected', function (ref) {
-      connected=false;
+
       console.log('disconnected from mongo server.');
   });
 
   modules.mongoose.connection.on('close', function (ref) {
-      connected=false;
+
       console.log('close connection to mongo server');
   });
 
   modules.mongoose.connection.on('error', function (err) {
-      connected=false;
+
       console.log('error connection to mongo server!');
       console.log(err);
   });
 
-  modules.mongoose.connection.db.on('reconnect', function (ref) {
-      connected=true;
-      console.log('reconnect to mongo server.');
-  });
+  // modules.mongoose.connection.db
+  // modules.mongoose.connection.db.on('reconnect', function (ref) {
+  //     console.log('reconnect to mongo server.');
+  // });
+}
+
+function connectToMongoDatabase (){
+  // ********************** MONGO Database *************** // 
+    // Connect to Mongodb Database 
+    // To start the mongodb Server go to /usr/local/bin and run ./mongo - that will start the server and you can use 'mongod'
+    // Cant fix deprecation because required to change the logic of the mongoose connection
+    var promise = modules.mongoose.connect(variables.config.database, {
+      useMongoClient: true,
+      /* other options */
+    });
+    promise.then( ()=>{
+      gfs = modules.Grid(modules.mongoose.connection.db);
+      // Check Mongodb connections
+      checkMongooseConnection(mongoose);
+    });
+
+// ********************** End MONGO Database *************** // 
 }

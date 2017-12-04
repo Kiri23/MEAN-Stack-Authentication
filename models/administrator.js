@@ -107,7 +107,7 @@ module.exports.addAdministrator = function(newAministrator,res,callback){
     bcrypt.hash(newAministrator.password, salt, (err, hash) => {
       if(err){
         console.log("Error en genSalt. Modelo del administrador.Funcion add")
-        const message = "Error. El campo de la contraseña no puede quedarse sin rellenar. Si usted no ha dejo el camplo de la contraseña sin rellenar, intentelo de nuevo. Informacion extra: Succedio en el modelo del administrador";
+        const message = "Error. El campo de la contraseña no puede quedarse sin rellenar. Si usted no ha dejo el camplo de la contraseña sin rellenar, intentelo de nuevo. Informacion extra: Succedio en el modelo del administrador";        
         // throw new Error(message + "\n \n " + err)
         return errorUtilities.sendErrorHttpJsonMessage(res,err,message)
         // callback = err.message

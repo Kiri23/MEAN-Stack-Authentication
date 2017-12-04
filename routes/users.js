@@ -332,7 +332,7 @@ router.post('/reset/:token', function(req, res) {
 * @apiName UploadFile
 * @apiSuccess {Intenger} error_code The error code for this operation.
 * @apiSuccess {String} err_desc  Error description if there's one.
-* @apiSuccess {String} file The file uploaded.
+* @apiSuccess {String} file The file `upload`ed.
 * @apiSuccess {String} filename The name of the file uploaded.
 * @apiSuccess {String} dbId The Id of the file uploaded.
 *
@@ -729,7 +729,40 @@ router.get('/getUserByEscuela/:escuela',(req,res)=> {
     
 });
 
+router.get("/file",(req,res)=>{
+  res.finishe
+  console.log(__dirname)
+   return res.download(__dirname + "/apidoc.json","userRoute.js",(err)=>{
+     if(err){
+        if (err.code == "ENOENT") {
+          return res.json({succes:false,msg:"Error archivo no encontrado",err:err})
+        }
+        return res.json({err:err,succes:false,msg:"Error al descargar archivos"})
+     }else {
+        
+        console.log("true o false se envio el archivo: " + res.sendDate)
+        // can't set header after the're sent
+        // return res.json({succes:true,msg:"Archivos descargado exitosamente"})      
+     }
+   });
+})
 
+router.get("/upload",(req,res)=>{
+  console.log("Header enviados ",res.headersSent)
+  return res.sendFile(__filename,(error)=>{
+    if (error){
+      return res.json({succes:false,msg:"Error al subir el archivo. Codigo de error: " + error.code,err:error})
+    }else {
+      console.log("Headers enviados ",res.headersSent)
+      if (! res.headersSent){
+          return res.json({succes:false,msg:"El archivo no se ha enviado todavia"})
+      }else {
+        console.log("Archivos ya enviado")
+      }
+    }
+  })
+
+})
 /**
  *
  * @api {get} /ping pong the server

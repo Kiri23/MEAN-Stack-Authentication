@@ -10,6 +10,7 @@ export class AdminRegisterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
+
+   }
 
 }

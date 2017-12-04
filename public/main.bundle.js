@@ -1037,42 +1037,43 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_ng2_file_upload__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_raven_js__ = __webpack_require__(306);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_raven_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_raven_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_navbar_navbar_component__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_dashboard_dashboard_component__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_admin_dashboard_admin_dashboard_component__ = __webpack_require__(189);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_dashboard_components_listgroup_listgroup_component__ = __webpack_require__(194);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_icon_icon_component__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_dashboard_components_sidebar_sidebar_component__ = __webpack_require__(197);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_dashboard_components_progressbar_progressbar_component__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_dashboard_components_box_box_component__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_dashboard_components_boxes_boxes_component__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_dashboard_components_table_table_component__ = __webpack_require__(198);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_dashboard_components_modal_modal_component__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_admin_users_admin_users_component__ = __webpack_require__(191);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_admin_register_admin_register_component__ = __webpack_require__(190);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_upload_portfolio_upload_portfolio_component__ = __webpack_require__(212);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_upload_file_upload_file_component__ = __webpack_require__(211);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_display_professors_display_professors_component__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_user_timeline_user_timeline_component__ = __webpack_require__(213);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_forgot_password_forgot_password_component__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_reset_password_reset_password_component__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_download_professor_files_download_professor_files_component__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_pay_pay_component__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__services_validate_service__ = __webpack_require__(145);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__services_auth_service__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__guards_auth_guard__ = __webpack_require__(215);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__guards_administrtor_guard__ = __webpack_require__(214);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__services_users_service__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__services_utilities_service__ = __webpack_require__(216);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__services_administration_administrator_service__ = __webpack_require__(142);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__services_organization_organization_service__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__services_paypal_service__ = __webpack_require__(144);
-/* unused harmony export RavenErrorHandler */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__CustomErrorHandler__ = __webpack_require__(381);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_navbar_navbar_component__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_register_register_component__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_dashboard_dashboard_component__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__components_admin_dashboard_admin_dashboard_component__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__components_dashboard_components_listgroup_listgroup_component__ = __webpack_require__(194);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__components_icon_icon_component__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__components_dashboard_components_sidebar_sidebar_component__ = __webpack_require__(197);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__components_dashboard_components_progressbar_progressbar_component__ = __webpack_require__(196);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__components_dashboard_components_box_box_component__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__components_dashboard_components_boxes_boxes_component__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__components_dashboard_components_table_table_component__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__components_dashboard_components_modal_modal_component__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__components_admin_users_admin_users_component__ = __webpack_require__(191);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__components_admin_register_admin_register_component__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__components_upload_portfolio_upload_portfolio_component__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__components_upload_file_upload_file_component__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__components_display_professors_display_professors_component__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__components_user_timeline_user_timeline_component__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__components_forgot_password_forgot_password_component__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__components_reset_password_reset_password_component__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__components_download_professor_files_download_professor_files_component__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__components_pay_pay_component__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__components_not_found_path_not_found_path_component__ = __webpack_require__(383);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__services_validate_service__ = __webpack_require__(145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__services_auth_service__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__guards_auth_guard__ = __webpack_require__(215);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__guards_administrtor_guard__ = __webpack_require__(214);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__services_users_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__services_utilities_service__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__services_administration_administrator_service__ = __webpack_require__(142);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__services_organization_organization_service__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45__services_paypal_service__ = __webpack_require__(144);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1090,9 +1091,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-// external js files 
+//External Js File 
+
+// My own modules
 
 // Components
+
 
 
 
@@ -1129,46 +1133,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-// sentry setup for tarckering error
 __WEBPACK_IMPORTED_MODULE_8_raven_js__["config"]('https://8437f0ecddb64e0b9af3912881bec74f@sentry.io/203113')
     .install();
-var RavenErrorHandler = (function () {
-    function RavenErrorHandler() {
-    }
-    RavenErrorHandler.prototype.handleError = function (err) {
-        __WEBPACK_IMPORTED_MODULE_8_raven_js__["captureException"](err);
-    };
-    return RavenErrorHandler;
-}());
-
 //appRoutes - va a contener todas las routes del angular app
 var appRoutes = [
     // Home Route
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__["a" /* HomeComponent */] },
-    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__["a" /* RegisterComponent */] },
-    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__["a" /* LoginComponent */] },
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__["a" /* HomeComponent */] },
+    { path: 'register', component: __WEBPACK_IMPORTED_MODULE_13__components_register_register_component__["a" /* RegisterComponent */] },
+    { path: 'login', component: __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */] },
     // protect route
-    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__["a" /* ProfileComponent */] },
+    { path: 'profile', component: __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__["a" /* ProfileComponent */] },
     // protect route
-    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_14__components_dashboard_dashboard_component__["a" /* DashboardComponent */] },
+    { path: 'dashboard', component: __WEBPACK_IMPORTED_MODULE_15__components_dashboard_dashboard_component__["a" /* DashboardComponent */] },
     // protect route
-    { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_16__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_38__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
-    { path: 'adminUsers', component: __WEBPACK_IMPORTED_MODULE_25__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_38__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
+    { path: 'adminDashboard', component: __WEBPACK_IMPORTED_MODULE_17__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_40__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
+    { path: 'adminUsers', component: __WEBPACK_IMPORTED_MODULE_26__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */], canActivate: [__WEBPACK_IMPORTED_MODULE_40__guards_administrtor_guard__["a" /* AdministratorGuard */]] },
     // I will want this route to be protected only another administrator can create other
     // administrator
-    { path: 'register/admin', component: __WEBPACK_IMPORTED_MODULE_26__components_admin_register_admin_register_component__["a" /* AdminRegisterComponent */] },
+    { path: 'register/admin', component: __WEBPACK_IMPORTED_MODULE_27__components_admin_register_admin_register_component__["a" /* AdminRegisterComponent */] },
     // administrator upload templates - ponerle protected route
-    { path: 'admin/upload', component: __WEBPACK_IMPORTED_MODULE_28__components_upload_file_upload_file_component__["a" /* UploadFileComponent */] },
-    { path: 'admin/professors', component: __WEBPACK_IMPORTED_MODULE_29__components_display_professors_display_professors_component__["a" /* DisplayProfessorsComponent */] },
-    { path: 'admin/DownloadProfessorsFiles/:escuela', component: __WEBPACK_IMPORTED_MODULE_33__components_download_professor_files_download_professor_files_component__["a" /* DownloadProfessorFilesComponent */] },
+    { path: 'admin/upload', component: __WEBPACK_IMPORTED_MODULE_29__components_upload_file_upload_file_component__["a" /* UploadFileComponent */] },
+    { path: 'admin/professors', component: __WEBPACK_IMPORTED_MODULE_30__components_display_professors_display_professors_component__["a" /* DisplayProfessorsComponent */] },
+    { path: 'admin/DownloadProfessorsFiles/:escuela', component: __WEBPACK_IMPORTED_MODULE_34__components_download_professor_files_download_professor_files_component__["a" /* DownloadProfessorFilesComponent */] },
     // user upload portfolios - ponerle protected route
-    { path: 'users/upload', component: __WEBPACK_IMPORTED_MODULE_27__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */] },
-    { path: 'timeline', component: __WEBPACK_IMPORTED_MODULE_30__components_user_timeline_user_timeline_component__["a" /* UserTimelineComponent */] },
-    { path: 'forgot', component: __WEBPACK_IMPORTED_MODULE_31__components_forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */] },
-    { path: 'reset', component: __WEBPACK_IMPORTED_MODULE_32__components_reset_password_reset_password_component__["a" /* ResetPasswordComponent */] },
-    { path: 'pay', component: __WEBPACK_IMPORTED_MODULE_34__components_pay_pay_component__["a" /* PayComponent */] }
+    { path: 'users/upload', component: __WEBPACK_IMPORTED_MODULE_28__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */] },
+    { path: 'timeline', component: __WEBPACK_IMPORTED_MODULE_31__components_user_timeline_user_timeline_component__["a" /* UserTimelineComponent */] },
+    { path: 'forgot', component: __WEBPACK_IMPORTED_MODULE_32__components_forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */] },
+    { path: 'reset', component: __WEBPACK_IMPORTED_MODULE_33__components_reset_password_reset_password_component__["a" /* ResetPasswordComponent */] },
+    { path: 'pay', component: __WEBPACK_IMPORTED_MODULE_35__components_pay_pay_component__["a" /* PayComponent */] },
+    //This route need to be at the end if none of this route match send to this route
+    { path: '**', component: __WEBPACK_IMPORTED_MODULE_36__components_not_found_path_not_found_path_component__["a" /* NotFoundPathComponent */] }
     // {path:'succes',component:PayComponent}
 ];
+// enableProdMode();
 var AppModule = (function () {
     function AppModule() {
     }
@@ -1177,33 +1174,34 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__components_navbar_navbar_component__["a" /* NavbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__["a" /* LoginComponent */],
-            __WEBPACK_IMPORTED_MODULE_12__components_register_register_component__["a" /* RegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_13__components_home_home_component__["a" /* HomeComponent */],
-            __WEBPACK_IMPORTED_MODULE_14__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_15__components_profile_profile_component__["a" /* ProfileComponent */],
-            __WEBPACK_IMPORTED_MODULE_16__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */],
-            __WEBPACK_IMPORTED_MODULE_17__components_dashboard_components_listgroup_listgroup_component__["a" /* ListGroupComponent */],
-            __WEBPACK_IMPORTED_MODULE_18__components_icon_icon_component__["a" /* IconComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__components_dashboard_components_sidebar_sidebar_component__["a" /* SidebarComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__components_dashboard_components_progressbar_progressbar_component__["a" /* ProgressbarComponent */],
-            __WEBPACK_IMPORTED_MODULE_21__components_dashboard_components_box_box_component__["a" /* BoxComponent */],
-            __WEBPACK_IMPORTED_MODULE_22__components_dashboard_components_boxes_boxes_component__["a" /* BoxesComponent */],
-            __WEBPACK_IMPORTED_MODULE_23__components_dashboard_components_table_table_component__["a" /* TableComponent */],
-            __WEBPACK_IMPORTED_MODULE_24__components_dashboard_components_modal_modal_component__["a" /* ModalComponent */],
-            __WEBPACK_IMPORTED_MODULE_25__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */],
-            __WEBPACK_IMPORTED_MODULE_26__components_admin_register_admin_register_component__["a" /* AdminRegisterComponent */],
-            __WEBPACK_IMPORTED_MODULE_28__components_upload_file_upload_file_component__["a" /* UploadFileComponent */],
+            __WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_11__components_navbar_navbar_component__["a" /* NavbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_12__components_login_login_component__["a" /* LoginComponent */],
+            __WEBPACK_IMPORTED_MODULE_13__components_register_register_component__["a" /* RegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_14__components_home_home_component__["a" /* HomeComponent */],
+            __WEBPACK_IMPORTED_MODULE_15__components_dashboard_dashboard_component__["a" /* DashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_16__components_profile_profile_component__["a" /* ProfileComponent */],
+            __WEBPACK_IMPORTED_MODULE_17__components_admin_dashboard_admin_dashboard_component__["a" /* AdminDashboardComponent */],
+            __WEBPACK_IMPORTED_MODULE_18__components_dashboard_components_listgroup_listgroup_component__["a" /* ListGroupComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__components_icon_icon_component__["a" /* IconComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__components_dashboard_components_sidebar_sidebar_component__["a" /* SidebarComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__components_dashboard_components_progressbar_progressbar_component__["a" /* ProgressbarComponent */],
+            __WEBPACK_IMPORTED_MODULE_22__components_dashboard_components_box_box_component__["a" /* BoxComponent */],
+            __WEBPACK_IMPORTED_MODULE_23__components_dashboard_components_boxes_boxes_component__["a" /* BoxesComponent */],
+            __WEBPACK_IMPORTED_MODULE_24__components_dashboard_components_table_table_component__["a" /* TableComponent */],
+            __WEBPACK_IMPORTED_MODULE_25__components_dashboard_components_modal_modal_component__["a" /* ModalComponent */],
+            __WEBPACK_IMPORTED_MODULE_26__components_admin_users_admin_users_component__["a" /* AdminUsersComponent */],
+            __WEBPACK_IMPORTED_MODULE_27__components_admin_register_admin_register_component__["a" /* AdminRegisterComponent */],
+            __WEBPACK_IMPORTED_MODULE_29__components_upload_file_upload_file_component__["a" /* UploadFileComponent */],
             __WEBPACK_IMPORTED_MODULE_7_ng2_file_upload__["FileSelectDirective"],
-            __WEBPACK_IMPORTED_MODULE_27__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */],
-            __WEBPACK_IMPORTED_MODULE_29__components_display_professors_display_professors_component__["a" /* DisplayProfessorsComponent */],
-            __WEBPACK_IMPORTED_MODULE_30__components_user_timeline_user_timeline_component__["a" /* UserTimelineComponent */],
-            __WEBPACK_IMPORTED_MODULE_31__components_forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */],
-            __WEBPACK_IMPORTED_MODULE_32__components_reset_password_reset_password_component__["a" /* ResetPasswordComponent */],
-            __WEBPACK_IMPORTED_MODULE_33__components_download_professor_files_download_professor_files_component__["a" /* DownloadProfessorFilesComponent */],
-            __WEBPACK_IMPORTED_MODULE_34__components_pay_pay_component__["a" /* PayComponent */]
+            __WEBPACK_IMPORTED_MODULE_28__components_upload_portfolio_upload_portfolio_component__["a" /* UploadPortfolioComponent */],
+            __WEBPACK_IMPORTED_MODULE_30__components_display_professors_display_professors_component__["a" /* DisplayProfessorsComponent */],
+            __WEBPACK_IMPORTED_MODULE_31__components_user_timeline_user_timeline_component__["a" /* UserTimelineComponent */],
+            __WEBPACK_IMPORTED_MODULE_32__components_forgot_password_forgot_password_component__["a" /* ForgotPasswordComponent */],
+            __WEBPACK_IMPORTED_MODULE_33__components_reset_password_reset_password_component__["a" /* ResetPasswordComponent */],
+            __WEBPACK_IMPORTED_MODULE_34__components_download_professor_files_download_professor_files_component__["a" /* DownloadProfessorFilesComponent */],
+            __WEBPACK_IMPORTED_MODULE_35__components_pay_pay_component__["a" /* PayComponent */],
+            __WEBPACK_IMPORTED_MODULE_36__components_not_found_path_not_found_path_component__["a" /* NotFoundPathComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -1213,10 +1211,10 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5_angular2_flash_messages__["FlashMessagesModule"],
             __WEBPACK_IMPORTED_MODULE_6__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_35__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_36__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_37__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_38__guards_administrtor_guard__["a" /* AdministratorGuard */],
-            __WEBPACK_IMPORTED_MODULE_39__services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_40__services_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_41__services_administration_administrator_service__["a" /* AdministratorsService */], __WEBPACK_IMPORTED_MODULE_42__services_organization_organization_service__["a" /* OrganizationsService */], __WEBPACK_IMPORTED_MODULE_43__services_paypal_service__["a" /* PaypalService */], { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ErrorHandler"], useClass: RavenErrorHandler }
+        providers: [__WEBPACK_IMPORTED_MODULE_37__services_validate_service__["a" /* ValidateService */], __WEBPACK_IMPORTED_MODULE_38__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_39__guards_auth_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_40__guards_administrtor_guard__["a" /* AdministratorGuard */],
+            __WEBPACK_IMPORTED_MODULE_41__services_users_service__["a" /* UsersService */], __WEBPACK_IMPORTED_MODULE_42__services_utilities_service__["a" /* UtilitiesService */], __WEBPACK_IMPORTED_MODULE_43__services_administration_administrator_service__["a" /* AdministratorsService */], __WEBPACK_IMPORTED_MODULE_44__services_organization_organization_service__["a" /* OrganizationsService */], __WEBPACK_IMPORTED_MODULE_45__services_paypal_service__["a" /* PaypalService */], { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ErrorHandler"], useClass: __WEBPACK_IMPORTED_MODULE_9__CustomErrorHandler__["a" /* CustomErrorHandler */] }
         ],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -2727,6 +2725,7 @@ var RegisterComponent = (function () {
         // role of administrator
         // cambiar esto
         this.role = 2;
+        console.log("Error and");
     };
     RegisterComponent.prototype.onRegisterSubmit = function () {
         var _this = this;
@@ -4127,7 +4126,7 @@ module.exports = "<span class=\"glyphicon glyphicon-\" aria-hidden=\"true\"></sp
 /* 330 */
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Conéctate</h2>\n<form (submit)=\"onLoginSubmit()\">\n  <div class=\"form-group\">\n    <label for=\"username\">Nombre de usuario</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" value=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Contraseña</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\"  value=\"\">\n  </div>\n  <div class=\"form-group\">\n    <a href=\"/forgot\" class=\"\" style=\"float: left;\" > Olvidaste tu Contraseña?</a>\n    <br>\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Conectar\">\n</form>\n"
+module.exports = "<h2 class=\"page-header\">Conéctate</h2>\n<form (submit)=\"onLoginSubmit()\">\n  <div class=\"form-group\">\n    <label for=\"username\">Nombre de usuario</label>\n    <input type=\"text\" [(ngModel)]=\"username\" name=\"username\" class=\"form-control\" value=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"username\">Contraseña</label>\n    <input type=\"password\" [(ngModel)]=\"password\" name=\"password\" class=\"form-control\"  value=\"\">\n  </div>\n  <div class=\"form-group\">\n    <a href=\"/forgot\" class=\"\" style=\"float: left;\" > Olvidaste tu Contraseña?</a>\n    <br>\n    <a href=\"/register\" class=\"\" style=\"float: left;\" > No tienes una cuenta?</a>\n    <br>\n  </div>\n  <input type=\"submit\" class=\"btn btn-primary\" value=\"Conectar\">\n</form>\n"
 
 /***/ }),
 /* 331 */
@@ -4145,7 +4144,7 @@ module.exports = "<p class=\"lead\"> Paga aqui la membresia para ecoescuelas</p>
 /* 333 */
 /***/ (function(module, exports) {
 
-module.exports = "<!--ngIf(ifStatement)- Make sure there's a user before showing html  -->\n<div *ngIf=\"user\" class=\"\">\n  <!--Embed the user name -->\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <!--username of the user  -->\n    <li class=\"list-group-item\">\n      Nombre de usuario: {{user.username}}\n\n    </li>\n    <!--Email of the user  -->\n    <li class=\"list-group-item\">\n      Dirrecion de Correo Electrónico: {{user.email}}\n    </li>    \n    <!--Escuela of the user  -->\n    <li *ngIf=\"user.nombreEscuela\" class=\"list-group-item\">\n      Escuela a la que pertenece: {{user.nombreEscuela}}\n    </li>\n    <li *ngIf=\"!user.nombreEscuela\" class=\"list-group-item\">\n      No pertenece a niguna escuela\n    </li>\n  </ul>\n</div>\n\n<!-- <div *ngIf=\"fileLink\" class=\"\">\n  <h2>modelo para descargar\n      <a target=\"_blank\" [href]=fileUrl download (click)=\"downloadLink()\" >Template 1</a>\n  </h2>\n</div> -->\n\n<!-- <div *ngIf=\"isDownloading\" class=\"\">\n  <h2>Descargando archivos</h2>\n</div> -->\n\n\n<!--Tabla de archivos para descargar-->\n<!--Crear Componente aparte -->\n<br>\n<div class=\"row table-responsive\">\n  <div class=\"col-md-12\">\n    <table class=\"table table-bordered table-hover\">\n      <caption style=\"font-size:40px;\">Descargar plantillas de trabajo:</caption>\n      <!--Header of the table  -->\n      <tr>\n        <th>Numero</th>\n        <th>Nombre del Archivo</th>\n      </tr>\n      <!--Rows of tables  -->\n      <tr *ngFor=\"let file of listOfFileNames;let index = index\" class=\"\">\n        <th scope=\"row\">{{index + 1}}</th>\n        <td colspan=\"\"> <a href=\"/file/{{file.name}}\" > {{file.name}} \n        </a> </td>\n        \n      </tr> <!-- End of rows Tables -->\n    </table>\n  </div>\n</div>\n\n<h2 *ngIf=\"!listOfFileNames\">No hay archivos para mostrar al momento</h2>\n"
+module.exports = "<!--ngIf(ifStatement)- Make sure there's a user before showing html  -->\n<div *ngIf=\"user\" class=\"\">\n  <!--Embed the user name -->\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <!--username of the user  -->\n    <li class=\"list-group-item\">\n      Nombre de usuario: {{user.username}}\n\n    </li>\n    <!--Email of the user  -->\n    <li class=\"list-group-item\">\n      Dirrecion de Correo Electrónico: {{user.email}}\n    </li>    \n    <!--Escuela of the user  -->\n    <li *ngIf=\"user.nombreEscuela\" class=\"list-group-item\">\n      Escuela a la que pertenece: {{user.nombreEscuela}}\n    </li>\n    <li *ngIf=\"!user.nombreEscuela\" class=\"list-group-item\">\n      No pertenece a niguna escuela\n    </li>\n  </ul>\n</div>\n\n<!-- <div *ngIf=\"fileLink\" class=\"\">\n  <h2>modelo para descargar\n      <a target=\"_blank\" [href]=fileUrl download (click)=\"downloadLink()\" >Template 1</a>\n  </h2>\n</div> -->\n\n<!-- <div *ngIf=\"isDownloading\" class=\"\">\n  <h2>Descargando archivos</h2>\n</div> -->\n\n\n<!--Tabla de archivos para descargar-->\n<!--Crear Componente aparte -->\n<br>\n<div class=\"row table-responsive\">\n  <div class=\"col-md-12\">\n    <table class=\"table table-bordered table-hover\">\n      <caption style=\"font-size:40px;\">Descargar plantillas de trabajo:</caption>\n      <!--Header of the table  -->\n      <tr>\n        <th>Numero</th>\n        <th>Nombre del Archivo</th>\n      </tr>\n      <!--Rows of tables  -->\n      <tr *ngFor=\"let file of listOfFileNames;let index = index\" class=\"\">\n        <th scope=\"row\">{{index + 1}}</th>\n        <!-- <td colspan=\"\"> <a href=\"/file/{{file.name}}\" download> {{file.name}}  -->\n          <td colspan=\"\"> <a href=\"/file/{{file.name}}\" > {{file.name}} \n        </a> </td>\n        \n      </tr> <!-- End of rows Tables -->\n    </table>\n  </div>\n</div>\n\n<h2 *ngIf=\"!listOfFileNames\">No hay archivos para mostrar al momento</h2>\n"
 
 /***/ }),
 /* 334 */
@@ -4221,6 +4220,120 @@ module.exports = "\t<!-- \n\t<link rel=\"stylesheet\" href=\"css/reset.css\"> <!
 
 module.exports = __webpack_require__(174);
 
+
+/***/ }),
+/* 378 */,
+/* 379 */,
+/* 380 */,
+/* 381 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_raven_js__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_raven_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_raven_js__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CustomErrorHandler; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+// external modules
+
+// external js files 
+
+var CustomErrorHandler = (function () {
+    function CustomErrorHandler(flashMessage) {
+        this.flashMessage = flashMessage;
+    }
+    CustomErrorHandler.prototype.handleError = function (error) {
+        console.log('Este error es cogido desde mi aplicacion global');
+        console.log('Este es el error que se producio ', error.message);
+        console.log('Esto es lo que causo el error ', error.stack);
+        __WEBPACK_IMPORTED_MODULE_2_raven_js__["captureException"](error);
+        __WEBPACK_IMPORTED_MODULE_2_raven_js__["context"](function () { }, {
+            error: error,
+            errorMessage: error.msg,
+            errorStack: error.stack
+        });
+        // IMPORTANT: Rethrow the error otherwise it gets swallowed
+        throw error;
+    };
+    return CustomErrorHandler;
+}());
+CustomErrorHandler = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesModule"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angular2_flash_messages__["FlashMessagesModule"]) === "function" && _a || Object])
+], CustomErrorHandler);
+
+var _a;
+//# sourceMappingURL=CustomErrorHandler.js.map
+
+/***/ }),
+/* 382 */,
+/* 383 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NotFoundPathComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var NotFoundPathComponent = (function () {
+    function NotFoundPathComponent() {
+    }
+    NotFoundPathComponent.prototype.ngOnInit = function () {
+    };
+    return NotFoundPathComponent;
+}());
+NotFoundPathComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-not-found-path',
+        template: __webpack_require__(385),
+        styles: [__webpack_require__(384)]
+    }),
+    __metadata("design:paramtypes", [])
+], NotFoundPathComponent);
+
+//# sourceMappingURL=not-found-path.component.js.map
+
+/***/ }),
+/* 384 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(2)(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+/* 385 */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  not-found-path works!\n</p>\n"
 
 /***/ })
 ],[377]);

@@ -48,7 +48,8 @@
       <!--Rows of tables  -->
       <tr *ngFor="let file of listOfFileNames;let index = index" class="">
         <th scope="row">{{index + 1}}</th>
-        <td colspan=""> <a href="/file/{{file.name}}" > {{file.name}} 
+        <!-- <td colspan=""> <a href="/file/{{file.name}}" download> {{file.name}}  -->
+          <td colspan=""> <a href="/file/{{file.name}}" > {{file.name}} 
         </a> </td>
         
       </tr> <!-- End of rows Tables -->

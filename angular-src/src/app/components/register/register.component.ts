@@ -6,6 +6,7 @@ import {ValidateService} from '../../services/validate.service';
 import {AuthService} from '../../services/auth.service';
 // external module 3rd party
 import {FlashMessagesService} from 'angular2-flash-messages';
+import { error } from 'util';
 
 // Acces to external Method in window
 declare var LogRocket:any;
@@ -34,6 +35,7 @@ export class RegisterComponent implements OnInit {
     // role of administrator
     // cambiar esto
     this.role = 2;
+    console.log("Error and");
   }
 
   onRegisterSubmit(){
@@ -57,7 +59,6 @@ export class RegisterComponent implements OnInit {
       this.flashMessage.show("Porfavor llena todo los encasillados antes de crear la cuenta.",{cssClass: 'alert-danger',timeout: 3000});
       return false;
     }
-
     // Validate Email
     if(!this.validateService.validateEmail(user.email)){
       // tslint:disable-next-line:max-line-length
