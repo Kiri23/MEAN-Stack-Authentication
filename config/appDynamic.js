@@ -10,7 +10,7 @@ require("appdynamics").profile({
     controllerSslEnabled: true,
     accountName: 'hopper2017120806294145',
     accountAccessKey: '01mcepvf95e0',
-    applicationName: 'Opas',
-    tierName: 'Opas Production Site',
+    applicationName: 'Opas Production',
+    tierName: 'Opas',
     nodeName: 'process' // The controller will automatically append the node name with a unique number
    });
