@@ -444,6 +444,7 @@ var AuthService = (function () {
         //set the Content-Type to application/json
         // with this now we have acces to the token.
         this.loadToken();
+        console.log("Estes es el token", this.authToken);
         // append the token to the header
         headers.append('Authorization', this.authToken);
         headers.append('Content-Type', 'application/json');
@@ -2592,17 +2593,27 @@ var ProfileComponent = (function () {
         // get request to users/profile to authenticate user with a token.
         this.authService.getProfile().subscribe(function (profile) {
             // user send with the response
-            /**
-             * El usuario obtenido de la llamada Http
-             * @type {Object}*/
-            _this.user = profile.user;
+            if (profile.success) {
+                /**
+                 * El usuario obtenido de la llamada Http
+                 * @type {Object}*/
+                _this.user = profile.user;
+            }
+            else {
+                // Show a error message
+                _this.flashMessage.show("Error: " + profile.msg, { cssClass: 'alert-danger', timeout: 30000 }); // 30 segundos
+            }
+            if (_this.user) {
+                console.log("Se debe mostrar");
+            }
         }, function (err) {
             // observable can also return error
             console.log(err);
+            console.log('aqui succed erro???!!!!!');
             // Show a error message
-            _this.flashMessage.show("Error retrieving the profile", { cssClass: 'alert-danger', timeout: 5000 });
+            _this.flashMessage.show("Error. Verifique que usted tenga conexion a internet. Contacte un representates de OPAS si el problema persiste y muestrele este error. Extra informacion: No se pudo comunicar con el servidor express. Tuvo que haber ocurrido un error con la aplicacion Node. Este es el error:  " + err.msg, { cssClass: 'alert-danger', timeout: 50000 });
             // redirect to the login page
-            _this.router.navigate(['/login']);
+            _this.router.navigate(['/dashboard']);
             return false;
         });
     };

@@ -25,7 +25,7 @@ setGfsVariable()
 
 router.get('/file/:filename', function(req, res,next){
   try{
-    gfs.collection('templateFiles'); //set collection name to lookup into mongodb
+    gfs.collection('templateFiles'); //set collection name where every files is located in the db
     assert.notEqual(req.params.filename,undefined,"Error tiene que especificar que archivo quiere descargar. Extra informacion el parametro del nombre del archivo no esta definido")    
 
     /** First check if file exists */
@@ -45,7 +45,7 @@ router.get('/file/:filename', function(req, res,next){
             return next(err)
         }
 
-
+        // End error handling. Start setup to download the file
         /** set the proper content type. */
         // for viewing in the Browser
         res.set('Content-Type', files[0].contentType)  
@@ -53,11 +53,12 @@ router.get('/file/:filename', function(req, res,next){
         var filename = __dirname+'/download2.pdf'
         var fs_write_stream = fs.createWriteStream(filename);
 
+        // De la unica forma que pueden ocurrir errores aqui es que uno de los dos stream no se pueda abrir para descargar o para escribir archivos
         /** create read stream */
         var readstream = gfs.createReadStream({
             // the file to download
             filename: files[0].filename,
-            root: "templateFiles"
+            root: "templateFiles" // name of collection where all files resides in mongdb
         });
         // Como la logica funciona para bajar este archivo, es que primero yo abro un archivo y lo guardo localmente con el file system de node.js. Luego yo escribo a ese archivo y cuando yo termino de escribir a ese archivo, lo descargo con el express helper method y luego que lo descarque, lo borro localmente de la computadora.
         readstream.pipe(fs_write_stream);

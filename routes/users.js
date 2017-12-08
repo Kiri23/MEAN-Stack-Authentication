@@ -498,7 +498,9 @@ function updateNumberOfFilesOfSchools(user){
 // protect route with our Authentication, Our Token
 // Profile Route
 // protect route -> ,passport.authenticate('jwt',{session:false})
-router.get('/profile',(req, res,next) => {
+router.get('/profile',passport.authenticate('jwt',{session:false}),
+(req, res,next) => {
+  console.log('usuario: ',req.user)
   res.json({user:req.user});
 });
 
@@ -623,11 +625,12 @@ router.get('/getFilesUploaded', (req, res) => {
 router.get('/getUserRoleById', (req, res) => {
     var id = req.query.id
     // convert the string to a Int
-    console.log("User Id from route Api" +id);
+    console.log("User Id from users route Api " +id);
     // var idInt = parseInt(idStr)
     // console.log(idInt);
     User.getUserRole(id,(err,userRole) => {
       if (err){
+        console.log("Hubo un error obteniendo el usuario por su rol ")
         return res.json(err);
       }
       // get role of a Admin User
@@ -642,6 +645,7 @@ router.get('/getUserRoleById', (req, res) => {
               }
               // A role is found
               else {
+                console.log("Se encontro un rol de administrador")
                 res.json(adminRole)
               }
 
@@ -649,6 +653,7 @@ router.get('/getUserRoleById', (req, res) => {
       }
       // Get role of a regular user
       else {
+        console.log("Se encontro un rol de usuario ", userRole + " end.")        
         res.json(userRole);
       }
 
@@ -747,7 +752,7 @@ router.get("/file",(req,res)=>{
    });
 })
 
-router.get("/upload",(req,res)=>{
+router.get("/Testupload",(req,res)=>{
   console.log("Header enviados ",res.headersSent)
   return res.sendFile(__filename,(error)=>{
     if (error){
@@ -763,6 +768,7 @@ router.get("/upload",(req,res)=>{
   })
 
 })
+
 /**
  *
  * @api {get} /ping pong the server

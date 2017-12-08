@@ -9,10 +9,11 @@
 process.env.Compañia = "OPAS"
 
 var gfs
-// Modules que se leen de un archvio externo 
+// Modules que se leen de un archvio externo . Need to be first because of appDynamic
 const modules = require('./config/modules')
 // variables que se leen de un archivo externo
 const variables = require('./config/variables')
+const passport = require('passport')
 callAllUncaughtExceptionFromNodeJs() // no registrada en los archivos.js del app.Need to be after const variables
 
 
@@ -26,6 +27,15 @@ const paypal = require('./routes/paypal');
 
 modules.Grid.mongo = modules.mongoose.mongo;
 // modules.LogRocket.init('rtbfoe/opas-web-app');
+// console.log("este el archivo node app que debe llamar al hijo")
+// var exec = require('child_process').exec
+// exec('node app1.js',(err)=>{
+//   if (err){
+//     console.log(err)
+//   }else {
+//     console.log('se llamo al hijo')
+//   }
+// })
 
 connectToMongoDatabase()
 
@@ -54,17 +64,19 @@ variables.app.use('/',[fileNames,escuelaArchivos,paypal]);
 variables.app.use(modules.express.static(modules.path.join(__dirname,'public')));
 
 // Passport Middleware
-variables.app.use(modules.passport.initialize());
-variables.app.use(modules.passport.session());
+variables.app.use(passport.initialize());
+variables.app.use(passport.session());
+// this need to be here for the authentication to work 
+require('./config/passport')(passport)
 
-variables.app.get('/m',(req,res,next) =>{
+variables.app.get('/m',passport.authenticate('jwt',{session:false}),(req,res,next) =>{
   var err = new Error("E");
   err.customMsg = "Custom Meessage error"
   next(err)
 });
 
 variables.app.get('/s',(req,res)=>{
-    
+
 })
 // Express error Handling Middleware. Cualquier error no cactheado en la aplicacion epxress de opas pasara a esta funcion y cualquier error que surga tendra este mensaje de json
 variables.app.use(function (err,req,res,next){
@@ -106,9 +118,8 @@ variables.app.listen(variables.port,() => {
 // Este metodo va a coger todas las excepciones que no se han recogido en mi codigo y va a llamar un evento para enviar un json al server
 function callAllUncaughtExceptionFromNodeJs(){
   process.on('uncaughtException', function (err) {
-    process.emit('notCaughtExeception',"Un error no documentado en la aplicacion " + variables.compañia+ ". Si el problema persiste Por favor adviertele a un representante de "+variables.compañia)  // falta http core modules para hacer un request  en json
     console.log("Un error no registrado en toda la aplicacion de node para la apicacion de "+variables.compañia)
-    console.log(err);
+    console.log("Este es el erro que no se registro en toda la aplicacion node" ,err);
     process.exit(1)
   })
 }

@@ -87,18 +87,28 @@ export class ProfileComponent implements OnInit {
     // get request to users/profile to authenticate user with a token.
     this.authService.getProfile().subscribe(profile => {
       // user send with the response
-      /** 
-       * El usuario obtenido de la llamada Http 
-       * @type {Object}*/
-      this.user = profile.user; 
+
+      if (profile.success){
+        /** 
+         * El usuario obtenido de la llamada Http 
+         * @type {Object}*/
+        this.user = profile.user;
+      }else {
+        // Show a error message
+        this.flashMessage.show("Error: "+ profile.msg,{cssClass:'alert-danger',timeout: 30000});// 30 segundos
+      }
+      if (this.user){
+        console.log("Se debe mostrar")
+      }
     },
     err => {
       // observable can also return error
       console.log(err);
+      console.log('aqui succed erro???!!!!!')
       // Show a error message
-      this.flashMessage.show("Error retrieving the profile",{cssClass:'alert-danger',timeout: 5000});
+      this.flashMessage.show("Error. Verifique que usted tenga conexion a internet. Contacte un representates de OPAS si el problema persiste y muestrele este error. Extra informacion: No se pudo comunicar con el servidor express. Tuvo que haber ocurrido un error con la aplicacion Node. Este es el error:  "+ err.msg,{cssClass:'alert-danger',timeout: 50000});
       // redirect to the login page
-      this.router.navigate(['/login']);
+      this.router.navigate(['/dashboard']);
       return false;
 
     });

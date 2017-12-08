@@ -44,6 +44,7 @@ const escuelaArchivos = require('./routes/escuelaArchivos');
 // app express
 const app = express();
 
+console.log('este es el archvio node app1 que se debe llamar')
 
 // Connect to Mongodb Database
 // To start the mongodb Server go to /usr/local/bin and run ./mongo - that will start the server and you can use 'mongod'
@@ -100,7 +101,7 @@ app.get('/file/:filename', function(req, res){
 
 
 // Port Number
-const port = process.env.PORT || 3002;
+const port = process.env.PORT || 3003;
 
 // express cors google- App.Use Cors lo que hace es que
 // da Allow Acces a cualquier dominio y tambien acepta tipo de data que se envie en el nuevo request.
