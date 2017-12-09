@@ -1,4 +1,3 @@
-
 /** 
  * Author: Christian Nogueras
  * 
@@ -198,10 +197,12 @@ function buttonSlack(){
 
 // buttonSlack()
 
-variables.app.post('/slashComand',(req,res)=>{
+var urlencodedParser = modules.bodyParser.urlencoded({ extended: false })
+
+variables.app.post('/slashComand',urlencodedParser,(req,res)=>{
+  res.status(200).end() // best practice to respond with empty 200 status code  
   console.log("form localhos")
   console.log(req.body)
-  res.status(200).end() // best practice to respond with empty 200 status code
   var reqBody = req.body
   var responseURL = reqBody.response_url
   if (reqBody.token != process.env.slack_verifcation_token){
@@ -245,8 +246,7 @@ variables.app.post('/slashComand',(req,res)=>{
 
     console.log("llego aca")
     // sendMessageToSlack(message)
-    sendMessageToSlackResponseURL(responseURL, message)
-    res.end()
+    // sendMessageToSlackResponseURL(responseURL, message)
 
 })
 
@@ -262,7 +262,7 @@ variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
 
 variables.app.post("/slackEvents",(req,res)=>{
   console.log("Se llamo events")
-  console.log(req.body)
+  // console.log(req.body)
   if (req.body.type === 'url_verification') {
     res.send(req.body.challenge);
   }
