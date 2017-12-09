@@ -259,7 +259,7 @@ variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
   var actionJSONPayload = JSON.parse(req.body.payload) // parse URL-encoded payload JSON string
 
   var message = {
-    "text": actionJSONPayload.user.name+" clicked: "+actionJSONPayload.actions[0].name,
+    "text": actionJSONPayload.user.name+" clicked: "+actionJSONPayload.actions[0].value,
     "replace_original": false
 }
 sendMessageToSlackResponseURL(actionJSONPayload.response_url, message)
