@@ -245,7 +245,7 @@ variables.app.post('/slashComand',urlencodedParser,(req,res)=>{
   console.log("Se llega aqui?")
   sendMessageToSlackResponseURL(responseURL, message)  
 }
-
+console.log("No llega a ninguno de los dos")
 })
 
 var urlencodedParser = modules.bodyParser.urlencoded({ extended: false })
