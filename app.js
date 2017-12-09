@@ -213,6 +213,14 @@ function sendMessageToSlack(message){
 
 }
 
+function buttonSlack(){
+  console.log("llamando butones")
+  var token = process.env.slack_token  
+  var apiEndPoint = "https://slack.com/api/chat.postMessage?token="+token+"&channel=C0G3G37HN&text=hola&attachments=%5B%7B%22text%22%3A%22Chose%20a%20game%20to%20play%22%2C%22attachment_type%22%3A%20%22default%22%2C%22actions%22%3A%20%5B%20%7B%20%20%22name%22%3A%20%22game%22%2C%20%20%22text%22%3A%20%22Chess%22%2C%20%20%22type%22%3A%20%22button%22%2C%20%22value%22%3A%20%22chess%22%20%7D%5D%7D%5D%5D&pretty=1"
+  modules.request.get(apiEndPoint)
+}
+
+buttonSlack()
 
 variables.app.post('/slashComand',(req,res)=>{
   console.log("form localhos")
@@ -265,12 +273,32 @@ variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
   // res.send(req.body)
 });
 
+
+
+
+
+
+
 variables.app.post("/slackEvents",(req,res)=>{
   console.log("Se llamo events")
   console.log(req.body)
   if (req.body.type === 'url_verification') {
     res.send(req.body.challenge);
   }
+
+  let q = req.body;
+  // 1. To see if the request is coming from Slack
+  if (q.token !== process.env.SLACK_VERIFICATION_TOKEN) {
+    res.sendStatus(400);
+    return;
+  }
+  // 2. Events - get the message text
+  else if (q.type === 'event_callback') {
+    if(!q.event.text) return;
+      // Do logic here
+      //  analyzeTone(q.event); // sentiment analysis
+  }
+
 })
 
 
