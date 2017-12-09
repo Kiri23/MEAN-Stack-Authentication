@@ -252,6 +252,7 @@ variables.app.post('/slashComand',(req,res)=>{
 
     console.log("llego aca")
     sendMessageToSlack(message)
+    res.end()
 
 })
 
