@@ -125,15 +125,17 @@ variables.app.get('*', (req, res) => {
 var server = variables.app.listen(variables.port,(req,res) => {
   console.log('Server started on port '+ variables.port);
 })
-
+var count = 0 ;
 server.on('connect',(request,socket,head)=>{
   console.log("New connetction")
+  count ++;
 })
 
 server.on('connection',(socket)=>{
   // console.log(socket)
   console.log(socket.address())
   console.log("conection")
+  console.log(count)
 })
 
 server.on('request',(request,response)=>{
