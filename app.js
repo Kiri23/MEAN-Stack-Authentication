@@ -258,11 +258,35 @@ variables.app.post('/slashComand',(req,res)=>{
 
 var urlencodedParser = modules.bodyParser.urlencoded({ extended: false })
 
-variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
-  res.status(200).end()
-  console.log("Hello baby")
-  console.log(req.body)
-  // res.send(req.body)
+// variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
+//   res.status(200).end()
+//   console.log("Hello baby")
+//   console.log(req.body)
+//   // res.send(req.body)
+// });
+
+
+
+const { createMessageAdapter } = require('@slack/interactive-messages');
+const slackMessages = createMessageAdapter(process.env.slack_verification_token);
+
+variables.app.post("/incomingSlackMessageAction",slackMessages.expressMiddleware());
+
+slackMessages.action('welcome_button', (payload) => {
+  // `payload` is JSON that describes an interaction with a message.
+  console.log(`The user ${payload.user.name} in team ${payload.team.domain} pressed the welcome button`);
+
+  // The `actions` array contains details about the specific action (button press, menu selection, etc.)
+  const action = payload.actions[0];
+  console.log(`The button had name ${action.name} and value ${action.value}`);
+
+  // You should return a JSON object which describes a message to replace the original.
+  // Note that the payload contains a copy of the original message (`payload.original_message`).
+  const replacement = payload.original_message;
+  // Typically, you want to acknowledge the action and remove the interactive elements from the message
+  const replacement.text =`Welcome ${payload.user.name}`;
+  delete replacement.attachments[0].actions;
+  return replacement;
 });
 
 function sendMessageToSlackResponseURL(responseURL, JSONmessage){
