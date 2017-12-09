@@ -42,33 +42,6 @@ connectToMongoDatabase()
 
 checkMongooseConnections()
 
-var message1 = {
-  "attachments": [
-      {
-          "fallback": "Required plain-text summary of the attachment.",
-          "color": "#36a64f",
-          "pretext": "Optional text that appears above the attachment block",
-          "author_name": "Bobby Tables",
-          "author_link": "http://flickr.com/bobby/",
-          "author_icon": "http://flickr.com/icons/bobby.jpg",
-          "title": "Slack API Documentation",
-          "title_link": "https://api.slack.com/",
-          "text": "Optional text that appears within the attachment",
-          "fields": [
-              {
-                  "title": "Priority",
-                  "value": "High",
-                  "short": false
-              }
-          ],
-          "image_url": "http://my-website.com/path/to/image.jpg",
-          "thumb_url": "http://example.com/path/to/thumb.png",
-          "footer": "Slack API",
-          "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
-          "ts": 123456789
-      }
-  ]
-}
 // sendMessageToSlack("/foodme")
 
 setupWinstonLogger()
@@ -175,7 +148,10 @@ function callAllUncaughtExceptionFromNodeJs(){
 function setupWinstonLogger(){
   logger = modules.winston.createLogger({
     level: 'info',
-    format: modules.winston.format.json(),
+    format: modules.winston.format.combine(
+      modules.winston.format.colorize({ all: true }),
+      modules.winston.format.simple()
+    ),
     transports: [
       //
       // - Write to all logs with level `info` and below to `combined.log` 
@@ -220,7 +196,7 @@ function buttonSlack(){
   modules.request.get(apiEndPoint)
 }
 
-buttonSlack()
+// buttonSlack()
 
 variables.app.post('/slashComand',(req,res)=>{
   console.log("form localhos")
@@ -274,8 +250,8 @@ variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
 });
 
 variables.app.post('/1',(req,res)=>{
+  res.status(200).end()
   console.log("hellobaby 1")
-  
   console.log(req.body)
   console.log(req.params)
   console.log(req.headers)
