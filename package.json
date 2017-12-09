@@ -8,8 +8,8 @@
     "node": "7.10.0"
   },
   "scripts": {
-    "start1": "node ./node_modules/.bin/pm2 start app.js -i 4 --attach",
-    "start": "node app",
+    "start": "node ./node_modules/.bin/pm2 start app.js -i 4 --attach",
+    "start1": "node app",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },

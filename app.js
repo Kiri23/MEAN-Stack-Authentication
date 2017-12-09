@@ -265,6 +265,13 @@ variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
   // res.send(req.body)
 });
 
+variables.app.post("/slackEvents",(req,resp)=>{
+  console.log("Se llamo events")
+  if (req.body.type === 'url_verification') {
+    res.send(q.challenge);
+  }
+})
+
 
 function sendMessageToSlackResponseURL(responseURL, JSONmessage){
   console.log('hello response url')
