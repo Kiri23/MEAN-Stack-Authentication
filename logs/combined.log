@@ -298,3 +298,6 @@
 {"level":"info","message":"Hello distributed log files!"}
 {"level":"error","message":"Hello distributed log files! error"}
 {"level":"warn","message":"Test Message"}
+{"level":"info","message":"Hello distributed log files!"}
+{"level":"error","message":"Hello distributed log files! error"}
+{"level":"warn","message":"Test Message"}
