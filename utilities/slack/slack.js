@@ -1,7 +1,7 @@
 var modules = require('../../config/modules')
 // to parse the repsonse form post response. for buton actions methods
 var urlencodedParser = modules.bodyParser.urlencoded({ extended: false })
-
+var host = "https://slack.com/api"
 /**
  * Send webhook to slack
  * @param {any} message
@@ -22,12 +22,33 @@ module.exports.slackWebhookSendMessage = function (message){
     );
   }
  /**
-  * Send message to slack via the web api
-  * 
+  * Send message to slack via the web api.
+  * Using Destructive Parameters
   */
-  module.exports.slackWebSendMessage = function (){
-    console.log("llamando butones")
-    var token = process.env.slack_token  
-    var apiEndPoint = "https://slack.com/api/chat.postMessage?token="+token+"&channel=C0G3G37HN&text=hola&attachments=%5B%7B%22text%22%3A%22Chose%20a%20game%20to%20play%22%2C%22attachment_type%22%3A%20%22default%22%2C%22actions%22%3A%20%5B%20%7B%20%20%22name%22%3A%20%22game%22%2C%20%20%22text%22%3A%20%22Chess%22%2C%20%20%22type%22%3A%20%22button%22%2C%20%22value%22%3A%20%22chess%22%20%7D%5D%7D%5D%5D&pretty=1"
-    modules.request.get(apiEndPoint)
+  module.exports.slackWebSendMessage = function ({message,channel='general'}){
+    var options = {
+        method: 'POST',
+        uri: 'https://slack.com/api/chat.postMessage',
+        form: {
+          token: process.env.slack_token,
+          // channel to send the message in slack
+          channel: channel,
+          text: message.text,
+          attachments: JSON.stringify([message.attachments[0]])
+        },
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded'
+        }
+      };  
+      // make the request with the options speccfied in the object option
+      modules.request(options, (error, response, body) => {
+        if (error){
+            console.log(error)
+            // handle errors as you see fit
+        }else {
+          console.log("se envio el mensaje?")
+          console.log(body)
+        }
+    })
   }
+  

@@ -138,8 +138,6 @@ function callAllUncaughtExceptionFromNodeJs(){
   })
 }
 
-
-variables.slack.slackWebSendMessage()
 var urlencodedParser = modules.bodyParser.urlencoded({ extended: false })
 
 variables.app.post('/slashComand',urlencodedParser,(req,res)=>{
