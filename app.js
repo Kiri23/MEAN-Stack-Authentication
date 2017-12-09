@@ -134,15 +134,18 @@ server.on('connect',(request,socket,head)=>{
 server.on('connection',(socket)=>{
   // console.log(socket)
   console.log(socket.address())
-  console.log("conection")
+  console.log("conection socket")
   console.log(count)
+  server.getConnections((er,count)=>{
+    console.log('conecoiones ',count)
+  })
 })
 
 server.on('request',(request,response)=>{
   console.log("request made")
 })
 
-console.log(server.listening," server kistneing")
+
 
 // ********** Functions  ***************** // 
 
