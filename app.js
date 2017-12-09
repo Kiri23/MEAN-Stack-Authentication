@@ -69,7 +69,7 @@ var message1 = {
       }
   ]
 }
-sendMessageToSlack("/foodme")
+// sendMessageToSlack("/foodme")
 
 setupWinstonLogger()
 
@@ -249,17 +249,9 @@ variables.app.post('/slashComand',(req,res)=>{
           }
       ]
   }
-
-  var message1 = {
-    "text": "I am a test message http://slack.com",
-    "attachments": [
-        {
-            "text": "And here’s an attachment!"
-        }
-    ]
-}
+  
     console.log("llego aca")
-    sendMessageToSlack(message1)
+    sendMessageToSlack(message)
 
 })
 
