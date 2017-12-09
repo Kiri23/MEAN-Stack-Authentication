@@ -241,11 +241,10 @@ variables.app.post('/slashComand',urlencodedParser,(req,res)=>{
           }
       ]
   }
+  sendMessageToSlackResponseURL(responseURL, message)  
 }
 
 
-    console.log("llego aca")
-    sendMessageToSlackResponseURL(responseURL, message)
 
 })
 
