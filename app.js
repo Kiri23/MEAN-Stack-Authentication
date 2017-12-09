@@ -245,8 +245,7 @@ variables.app.post('/slashComand',urlencodedParser,(req,res)=>{
 
 
     console.log("llego aca")
-    // sendMessageToSlack(message)
-    // sendMessageToSlackResponseURL(responseURL, message)
+    sendMessageToSlackResponseURL(responseURL, message)
 
 })
 

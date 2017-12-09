@@ -34,3 +34,6 @@
 [32minfo[39m: [32mHello distributed log files![39m {}
 [31merror[39m: [31mHello distributed log files! error[39m {}
 [33mwarn[39m: [33mTest Message[39m {}
+[32minfo[39m: [32mHello distributed log files![39m {}
+[31merror[39m: [31mHello distributed log files! error[39m {}
+[33mwarn[39m: [33mTest Message[39m {}
