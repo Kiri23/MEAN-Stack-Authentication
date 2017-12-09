@@ -69,7 +69,7 @@ var message1 = {
       }
   ]
 }
-// sendMessageToSlack("hello")
+sendMessageToSlack("/foodme")
 
 setupWinstonLogger()
 
@@ -197,44 +197,7 @@ function setupWinstonLogger(){
 
 function sendMessageToSlack(message){
   payload = {
-    "text": "Would you like to play a game?",
-    "attachments": [
-        {
-            "text": "Choose a game to play",
-            "fallback": "You are unable to choose a game",
-            "callback_id": "wopr_game",
-            "color": "#3AA3E3",
-            "attachment_type": "default",
-            "actions": [
-                {
-                    "name": "game",
-                    "text": "Chess",
-                    "type": "button",
-                    "value": "chess"
-                },
-                {
-                    "name": "game",
-                    "text": "Falken's Maze",
-                    "type": "button",
-                    "value": "maze"
-                },
-                {
-                    "name": "game",
-                    "text": "Thermonuclear War",
-                    "style": "danger",
-                    "type": "button",
-                    "value": "war",
-                    "confirm": {
-                        "title": "Are you sure?",
-                        "text": "Wouldn't you prefer a good game of chess?",
-                        "ok_text": "Yes",
-                        "dismiss_text": "No"
-                    }
-                }
-            ]
-        }
-    ]
-}
+    "text": message}
   modules.request.post(
     process.env.slack_webhook_url,
     { json: payload },
@@ -249,20 +212,10 @@ function sendMessageToSlack(message){
 
 }
 
-function comandInSlack(){
-  console.log('coman in slack')
-  modules.request.post("http://www.ecoescuelasporfolio.net/slahComand",{},(error,response,body)=>{
-      console.log("Se recibio el mensaje")
-      console.log(body)
-  });
-}
-
-variables.app.post('/http://www.ecoescuelasporfolio.net/slahComand', (req, res) =>{
-  console.log('hello funciona web')
-})
 
 variables.app.post('/slashComand',(req,res)=>{
   console.log("form localhos")
+  console.log(req.body)
   var reqBody = req.body
   var responseURL = reqBody.response_url
   if (reqBody.token != process.env.slack_verification_token){
