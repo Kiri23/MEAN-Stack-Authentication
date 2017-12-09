@@ -269,7 +269,7 @@ variables.app.post("/slackEvents",(req,res)=>{
   console.log("Se llamo events")
   console.log(req.body)
   if (req.body.type === 'url_verification') {
-    res.send(req.body.desafío);
+    res.send(req.body.challenge);
   }
 })
 
