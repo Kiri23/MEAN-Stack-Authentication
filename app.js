@@ -293,6 +293,7 @@ variables.app.post("/slackEvents",(req,res)=>{
 function sendMessageToSlackResponseURL(responseURL, JSONmessage){
   console.log('hello response url')
   console.log(responseURL)
+  console.log(JSONmessage)
   var postOptions = {
       uri: responseURL,
       method: 'POST',
