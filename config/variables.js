@@ -7,6 +7,8 @@ module.exports = {
     paypal: require('./paypal'),
     errorUtility: require('../utilities/error'),
     nodeSendEmail: require('../utilities/nodemailer'),
+    wisntonLogger: require('../utilities/winstonLogger'),
+    slack: require('../utilities/slack/slack'),
     compañia : process.env.Compañia,
     raygunClient: new modules.raygun.Client().init({ apiKey: process.env.raygun_api_key }),
     MACHINE_NAME:  'OpasWebApp', // variables for keymetrics and PM2

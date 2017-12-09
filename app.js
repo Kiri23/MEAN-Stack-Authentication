@@ -6,17 +6,13 @@
 
 // Global Variable. Para poner el nombre de la compañia a la que le estoy haciendo el producto.
 process.env.Compañia = "OPAS"
-var gfs
-let logger
+var gfs // dont delete this variable is used when conecting to mongodb function
 // Modules que se leen de un archvio externo . Need to be first because of appDynamic
 const modules = require('./config/modules')
 // variables que se leen de un archivo externo
 const variables = require('./config/variables')
 const passport = require('passport')
 callAllUncaughtExceptionFromNodeJs() // no registrada en los archivos.js del app.Need to be after const variables
-
-console.log(process.env.slack_verification_token)
-console.log("metodo")
 
 // route files
 const organization = require('./routes/organization');
@@ -44,19 +40,17 @@ checkMongooseConnections()
 
 // sendMessageToSlack("/foodme")
 
-setupWinstonLogger()
-
-logger.log({
+variables.wisntonLogger.log({
   level: 'info',
   message: 'Hello distributed log files!'
 });
 
-logger.log({
+variables.wisntonLogger.log({
   level: 'error',
   message: 'Hello distributed log files! error'
 });
 
-logger.log({
+variables.wisntonLogger.log({
   level: 'warn',
   message: "Test Message"
 });
@@ -128,11 +122,10 @@ variables.app.get('*', (req, res) => {
 });
 
 // Start Server
-variables.app.listen(variables.port,() => {
+variables.app.listen(variables.port,(req,res) => {
   console.log('Server started on port '+ variables.port);
-
 })
-
+ 
 
 // ********** Functions  ***************** // 
 
@@ -145,59 +138,8 @@ function callAllUncaughtExceptionFromNodeJs(){
   })
 }
 
-function setupWinstonLogger(){
-  logger = modules.winston.createLogger({
-    level: 'info',
-    format: modules.winston.format.combine(
-      modules.winston.format.colorize({ all: true }),
-      modules.winston.format.simple()
-    ),
-    transports: [
-      //
-      // - Write to all logs with level `info` and below to `combined.log` 
-      // - Write all logs error (and below) to `error.log`.
-      //
-      new modules.winston.transports.File({ filename: 'logs/error.log', 
-                                            level: 'error' ,
-                                            maxsize: 5242880, //5MB
-                                            maxFiles: 5
-                                          }),
-      new modules.winston.transports.File({ filename: 'logs/combined.log' }),
-    ]
-  });
-  logger.add(new modules.winston.transports.Console({
-   format: modules.winston.format.simple(),
-    colorize:true  
-  }));
-}
 
-function sendMessageToSlack(message){
-  payload = {
-    "text": message}
-
-  modules.request.post(
-    process.env.slack_webhook_url,
-    { json: message },
-    function (error, response, body) {
-        if (!error && response.statusCode == 200) {
-            console.log(body)
-        }else {
-          console.log(body)
-        }
-    }
-);
-
-}
-
-function buttonSlack(){
-  console.log("llamando butones")
-  var token = process.env.slack_token  
-  var apiEndPoint = "https://slack.com/api/chat.postMessage?token="+token+"&channel=C0G3G37HN&text=hola&attachments=%5B%7B%22text%22%3A%22Chose%20a%20game%20to%20play%22%2C%22attachment_type%22%3A%20%22default%22%2C%22actions%22%3A%20%5B%20%7B%20%20%22name%22%3A%20%22game%22%2C%20%20%22text%22%3A%20%22Chess%22%2C%20%20%22type%22%3A%20%22button%22%2C%20%22value%22%3A%20%22chess%22%20%7D%5D%7D%5D%5D&pretty=1"
-  modules.request.get(apiEndPoint)
-}
-
-// buttonSlack()
-
+variables.slack.slackWebSendMessage()
 var urlencodedParser = modules.bodyParser.urlencoded({ extended: false })
 
 variables.app.post('/slashComand',urlencodedParser,(req,res)=>{
