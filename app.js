@@ -263,7 +263,6 @@ variables.app.post('/http://www.ecoescuelasporfolio.net/slahComand', (req, res) 
 
 variables.app.post('/slashComand',(req,res)=>{
   console.log("form localhos")
-  res.status(200).end() // best practice to respond with empty 200 status code
   var reqBody = req.body
   var responseURL = reqBody.response_url
   if (reqBody.token != process.env.slack_verification_token){
