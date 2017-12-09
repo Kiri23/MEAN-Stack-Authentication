@@ -6,7 +6,6 @@
 
 // Global Variable. Para poner el nombre de la compañia a la que le estoy haciendo el producto.
 process.env.Compañia = "OPAS"
-
 var gfs
 let logger
 // Modules que se leen de un archvio externo . Need to be first because of appDynamic
@@ -16,6 +15,8 @@ const variables = require('./config/variables')
 const passport = require('passport')
 callAllUncaughtExceptionFromNodeJs() // no registrada en los archivos.js del app.Need to be after const variables
 
+console.log(process.env.slack_verification_token)
+console.log("metodo")
 
 // route files
 const organization = require('./routes/organization');
