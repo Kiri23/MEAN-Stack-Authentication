@@ -207,8 +207,8 @@ variables.app.post('/slashComand',urlencodedParser,(req,res)=>{
   var reqBody = req.body
   var responseURL = reqBody.response_url
   console.log(reqBody.token)
-  console.log(process.env.slack_verifcation_token)
-  if (reqBody.token != process.env.slack_verifcation_token){
+  console.log(process.env.slack_verification_token)
+  if (reqBody.token != process.env.slack_verification_token){
       console.log("o aqui ?")
       res.status(403).end("Access forbidden")
   }else{
