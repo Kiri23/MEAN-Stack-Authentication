@@ -200,42 +200,52 @@ function buttonSlack(){
 
 variables.app.post('/slashComand',(req,res)=>{
   console.log("form localhos")
-  var message = {
-      "text": "This is your first interactive message",
-      "attachments": [
-          {
-              "text": "Building buttons is easy right?",
-              "fallback": "Shame... buttons aren't supported in this land",
-              "callback_id": "button_tutorial",
-              "color": "#3AA3E3",
-              "attachment_type": "default",
-              "actions": [
-                  {
-                      "name": "yes",
-                      "text": "yes",
-                      "type": "button",
-                      "value": "yes"
-                  },
-                  {
-                      "name": "no",
-                      "text": "no",
-                      "type": "button",
-                      "value": "no"
-                  },
-                  {
-                      "name": "maybe",
-                      "text": "maybe",
-                      "type": "button",
-                      "value": "maybe",
-                      "style": "danger"
-                  }
-              ]
-          }
-      ]
-  }
+  console.log(req.body)
+  res.status(200).end() // best practice to respond with empty 200 status code
+  var reqBody = req.body
+  var responseURL = reqBody.response_url
+  if (reqBody.token != process.env.slack_verifcation_token){
+      res.status(403).end("Access forbidden")
+  }else{
+      var message = {
+          "text": "This is your first interactive message",
+          "attachments": [
+              {
+                  "text": "Building buttons is easy right?",
+                  "fallback": "Shame... buttons aren't supported in this land",
+                  "callback_id": "button_tutorial",
+                  "color": "#3AA3E3",
+                  "attachment_type": "default",
+                  "actions": [
+                      {
+                          "name": "yes",
+                          "text": "yes",
+                          "type": "button",
+                          "value": "yes"
+                      },
+                      {
+                          "name": "no",
+                          "text": "no",
+                          "type": "button",
+                          "value": "no"
+                      },
+                      {
+                          "name": "maybe",
+                          "text": "maybe",
+                          "type": "button",
+                          "value": "maybe",
+                          "style": "danger"
+                      }
+                  ]
+              }
+          ]
+      }
+    }
+
 
     console.log("llego aca")
-    sendMessageToSlack(message)
+    // sendMessageToSlack(message)
+    sendMessageToSlackResponseURL(responseURL, message)
     res.end()
 
 })
@@ -248,19 +258,6 @@ variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
   console.log(req.body)
   // res.send(req.body)
 });
-
-variables.app.post('/1',(req,res)=>{
-  res.status(200).end()
-  console.log("hellobaby 1")
-  console.log(req.body)
-  console.log(req.params)
-  console.log(req.headers)
-})
-
-
-
-
-
 
 
 variables.app.post("/slackEvents",(req,res)=>{
@@ -297,7 +294,7 @@ function sendMessageToSlackResponseURL(responseURL, JSONmessage){
       },
       json: JSONmessage
   }
-  request(postOptions, (error, response, body) => {
+  modules.request(postOptions, (error, response, body) => {
       if (error){
           // handle errors as you see fit
       }
