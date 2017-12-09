@@ -206,6 +206,7 @@ variables.app.post('/slashComand',urlencodedParser,(req,res)=>{
   var reqBody = req.body
   var responseURL = reqBody.response_url
   if (reqBody.token != process.env.slack_verifcation_token){
+      console.log("o aqui ?")
       res.status(403).end("Access forbidden")
   }else{
     var message = {
@@ -241,10 +242,9 @@ variables.app.post('/slashComand',urlencodedParser,(req,res)=>{
           }
       ]
   }
+  console.log("Se llega aqui?")
   sendMessageToSlackResponseURL(responseURL, message)  
 }
-
-
 
 })
 
