@@ -9,6 +9,7 @@
 process.env.Compañia = "OPAS"
 
 var gfs
+let logger
 // Modules que se leen de un archvio externo . Need to be first because of appDynamic
 const modules = require('./config/modules')
 // variables que se leen de un archivo externo
@@ -41,6 +42,52 @@ connectToMongoDatabase()
 
 checkMongooseConnections()
 
+var message1 = {
+  "attachments": [
+      {
+          "fallback": "Required plain-text summary of the attachment.",
+          "color": "#36a64f",
+          "pretext": "Optional text that appears above the attachment block",
+          "author_name": "Bobby Tables",
+          "author_link": "http://flickr.com/bobby/",
+          "author_icon": "http://flickr.com/icons/bobby.jpg",
+          "title": "Slack API Documentation",
+          "title_link": "https://api.slack.com/",
+          "text": "Optional text that appears within the attachment",
+          "fields": [
+              {
+                  "title": "Priority",
+                  "value": "High",
+                  "short": false
+              }
+          ],
+          "image_url": "http://my-website.com/path/to/image.jpg",
+          "thumb_url": "http://example.com/path/to/thumb.png",
+          "footer": "Slack API",
+          "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
+          "ts": 123456789
+      }
+  ]
+}
+// sendMessageToSlack("hello")
+
+setupWinstonLogger()
+
+logger.log({
+  level: 'info',
+  message: 'Hello distributed log files!'
+});
+
+logger.log({
+  level: 'error',
+  message: 'Hello distributed log files! error'
+});
+
+logger.log({
+  level: 'warn',
+  message: "Test Message"
+});
+
 
 console.log("Se va a llamar el metodo")
 // express cors google- App.Use Cors lo que hace es que
@@ -62,6 +109,7 @@ variables.app.use('/',[fileNames,escuelaArchivos,paypal]);
 // Set Static Folder for when we use Angular an other files - staticfile keyboard shortcut
 // Esto ultiliza los archivos Html o Javscript que tu pongas dentro de el y busca siempre en un folder que se llama public que lo junta con el current directories por eso path.join(__dirname)
 variables.app.use(modules.express.static(modules.path.join(__dirname,'public')));
+
 
 // Passport Middleware
 variables.app.use(passport.initialize());
@@ -123,6 +171,102 @@ function callAllUncaughtExceptionFromNodeJs(){
     process.exit(1)
   })
 }
+
+function setupWinstonLogger(){
+  logger = modules.winston.createLogger({
+    level: 'info',
+    format: modules.winston.format.json(),
+    transports: [
+      //
+      // - Write to all logs with level `info` and below to `combined.log` 
+      // - Write all logs error (and below) to `error.log`.
+      //
+      new modules.winston.transports.File({ filename: 'logs/error.log', 
+                                            level: 'error' ,
+                                            maxsize: 5242880, //5MB
+                                            maxFiles: 5
+                                          }),
+      new modules.winston.transports.File({ filename: 'logs/combined.log' }),
+    ]
+  });
+  logger.add(new modules.winston.transports.Console({
+   format: modules.winston.format.simple(),
+    colorize:true  
+  }));
+}
+
+function sendMessageToSlack(message){
+  payload = {
+    "text": "Would you like to play a game?",
+    "attachments": [
+        {
+            "text": "Choose a game to play",
+            "fallback": "You are unable to choose a game",
+            "callback_id": "wopr_game",
+            "color": "#3AA3E3",
+            "attachment_type": "default",
+            "actions": [
+                {
+                    "name": "game",
+                    "text": "Chess",
+                    "type": "button",
+                    "value": "chess"
+                },
+                {
+                    "name": "game",
+                    "text": "Falken's Maze",
+                    "type": "button",
+                    "value": "maze"
+                },
+                {
+                    "name": "game",
+                    "text": "Thermonuclear War",
+                    "style": "danger",
+                    "type": "button",
+                    "value": "war",
+                    "confirm": {
+                        "title": "Are you sure?",
+                        "text": "Wouldn't you prefer a good game of chess?",
+                        "ok_text": "Yes",
+                        "dismiss_text": "No"
+                    }
+                }
+            ]
+        }
+    ]
+}
+  modules.request.post(
+    process.env.slack_webhook_url,
+    { json: payload },
+    function (error, response, body) {
+        if (!error && response.statusCode == 200) {
+            console.log(body)
+        }else {
+          console.log(body)
+        }
+    }
+);
+
+}
+
+function comandInSlack(){
+  console.log('coman in slack')
+  modules.request.post("http://www.ecoescuelasporfolio.net/slahComand",{},(error,response,body)=>{
+      console.log("Se recibio el mensaje")
+      console.log(body)
+  });
+}
+
+variables.app.post('/http://www.ecoescuelasporfolio.net/slahComand', (req, res) =>{
+  console.log('hello funciona web')
+})
+
+variables.app.post('/slashComand',(req,res)=>{
+  console.log("form localhos")
+  res.send("hola form nodw")
+
+})
+
 
 // Function to chech different event in mongoDb
 function checkMongooseConnections(){

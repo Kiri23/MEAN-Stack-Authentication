@@ -1,7 +1,10 @@
 // export all required modules to have for the application
 module.exports = {
-    appDynamic: require('./appDynamic'),// this need to be the first for appDynamic to work
+    // appDynamic: require('./appDynamic'),// this need to be the first for appDynamic to work
     express: require('express'),
+    winston: require('winston'),
+    request: require('request'),
+    raygun: require('raygun'),  
     // newrelic: require('newrelic'), // for Heroku Monitoring app,
     path: require('path'),
     bodyParser: require('body-parser'),
