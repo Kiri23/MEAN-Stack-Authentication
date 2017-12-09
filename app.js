@@ -275,6 +275,7 @@ variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
 
 variables.app.post('/1',(req,res)=>{
   console.log("hellobaby 1")
+  
   console.log(req.body)
   console.log(req.params)
   console.log(req.headers)
