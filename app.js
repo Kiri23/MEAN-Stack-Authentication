@@ -268,7 +268,7 @@ variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
 variables.app.post("/slackEvents",(req,res)=>{
   console.log("Se llamo events")
   if (req.body.type === 'url_verification') {
-    res.send(q.challenge);
+    res.send(req.body.challenge);
   }
 })
 
