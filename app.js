@@ -258,6 +258,7 @@ variables.app.post('/slashComand',(req,res)=>{
 variables.app.post("/incomingSlackMessageAction",(req,res)=>{
   console.log("Hello baby")
   console.log(req.body)
+  res.send(req.body)
 });
 
 function sendMessageToSlackResponseURL(responseURL, JSONmessage){
