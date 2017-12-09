@@ -257,7 +257,7 @@ variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
   console.log(req.body)
 
   var actionJSONPayload = JSON.parse(req.body.payload) // parse URL-encoded payload JSON string
-  
+
   var message = {
     "text": actionJSONPayload.user.name+" clicked: "+actionJSONPayload.actions[0].name,
     "replace_original": false
@@ -303,7 +303,11 @@ function sendMessageToSlackResponseURL(responseURL, JSONmessage){
   }
   modules.request(postOptions, (error, response, body) => {
       if (error){
+          console.log(error)
           // handle errors as you see fit
+      }else {
+        console.log("se envio el mensaje?")
+        console.log(body)
       }
   })
 }
