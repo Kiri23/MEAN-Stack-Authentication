@@ -198,9 +198,10 @@ function setupWinstonLogger(){
 function sendMessageToSlack(message){
   payload = {
     "text": message}
+
   modules.request.post(
     process.env.slack_webhook_url,
-    { json: payload },
+    { json: message },
     function (error, response, body) {
         if (!error && response.statusCode == 200) {
             console.log(body)
