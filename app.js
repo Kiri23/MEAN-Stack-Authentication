@@ -132,6 +132,7 @@ server.on('connect',(request,socket,head)=>{
 
 server.on('connection',(socket)=>{
   // console.log(socket)
+  console.log(socket.address())
   console.log("conection")
 })
 
