@@ -122,10 +122,24 @@ variables.app.get('*', (req, res) => {
 });
 
 // Start Server
-variables.app.listen(variables.port,(req,res) => {
+var server = variables.app.listen(variables.port,(req,res) => {
   console.log('Server started on port '+ variables.port);
 })
- 
+
+server.on('connect',(request,socket,head)=>{
+  console.log("New connetction")
+})
+
+server.on('connection',(socket)=>{
+  // console.log(socket)
+  console.log("conection")
+})
+
+server.on('request',(request,response)=>{
+  console.log("request made")
+})
+
+console.log(server.listening," server kistneing")
 
 // ********** Functions  ***************** // 
 
