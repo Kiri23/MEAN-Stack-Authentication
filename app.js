@@ -122,30 +122,9 @@ variables.app.get('*', (req, res) => {
 });
 
 // Start Server
-var server = variables.app.listen(variables.port,(req,res) => {
+variables.app.listen(variables.port,(req,res) => {
   console.log('Server started on port '+ variables.port);
 })
-var count = 0 ;
-server.on('connect',(request,socket,head)=>{
-  console.log("New connetction")
-  count ++;
-})
-
-server.on('connection',(socket)=>{
-  // console.log(socket)
-  console.log(socket.address())
-  console.log("conection socket")
-  console.log(count)
-  server.getConnections((er,count)=>{
-    console.log('conecoiones ',count)
-  })
-})
-
-server.on('request',(request,response)=>{
-  console.log("request made")
-})
-
-
 
 // ********** Functions  ***************** // 
 
@@ -321,3 +300,12 @@ function connectToMongoDatabase (){
 
 // ********************** End MONGO Database *************** // 
 }
+
+// roolbar setup 
+
+// include and initialize the rollbar library with your access token
+var Rollbar = require("rollbar");
+var rollbar = new Rollbar("97c27781395e432f9917b870d976c1c4");
+
+// record a generic message and send it to Rollbar
+rollbar.log("Hello world!");
