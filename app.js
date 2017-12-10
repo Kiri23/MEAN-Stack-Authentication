@@ -321,11 +321,3 @@ function connectToMongoDatabase (){
 
 // ********************** End MONGO Database *************** // 
 }
-
-
-/**
- * Uploading Source Map to Sentry
- * sentry-cli releases -o christian-nogueras -p opas-web-app files \
-    2da95dfb052f477380608d59d32b4ab9 upload-sourcemaps --url-prefix \
-    http://www.ecoescuelasporfolio.net/ /Users/Christiannogueras/Documents/Web\ development/MeanStack\ /Authetication/public/",
- */
