@@ -10,11 +10,28 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <!--CDN for CKEditor   -->
    <script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script> 
-   <!--errror watch record  -->
-    <script src="https://cdn.logrocket.com/LogRocket.min.js"></script>
-    <script>window.LogRocket && window.LogRocket.init('rtbfoe/opas-web-app');
-    </script>
-    <!-- heap analytic -->
+     <!-- Sentry CDN to work in conjuction with logRocket -->
+<script src="https://cdn.ravenjs.com/3.20.1/raven.min.js"    crossorigin="anonymous">
+  Raven.config('https://8437f0ecddb64e0b9af3912881bec74f@sentry.io/203113').install()
+  Raven.captureMessage("hello from console")
+</script>
+
+<!--errror watch record  -->
+<script src="https://cdn.logrocket.com/LogRocket.min.js"></script>
+<script>window.LogRocket && window.LogRocket.init('rtbfoe/opas-web-app',{
+        console: {
+          isEnabled: false,
+        }
+  });
+    // Attach LogRocket session to Sentry 
+    window.Raven.setDataCallback(function (data) {
+        data.extra.sessionURL = window.LogRocket.sessionURL;
+        return data;
+      });
+
+
+</script>
+   <!-- heap analytic -->
     <script type="text/javascript">
       window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
         heap.load("190442895");
@@ -30,8 +47,6 @@ mixpanel.init("838c93a084719c4bfe8ffbfecb9ce986");
 <script type="text/javascript" src="inline.bundle.js"></script><script type="text/javascript" src="polyfills.bundle.js"></script><script type="text/javascript" src="scripts.bundle.js"></script><script type="text/javascript" src="styles.bundle.js"></script><script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="main.bundle.js"></script></body>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="utf-8"></script>
-
-
 <!-- <script type="text/javascript" src="./main.js" > </script> 
           "app/components/user-timeline/js/modernizr.js",
         "app/components/user-timeline/js/jquery-2.1.4.js",

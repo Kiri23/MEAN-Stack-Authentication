@@ -8,5 +8,5 @@ module.exports.sendErrorHttpJsonMessage = function (res,err,msg) {
         res.json({success: false, msg: msg ,error:err,errorMessage:err.message,listOfErrors: err.errors,stack:err.stack});
     }
     // My error reporting tool
-    variables.raven.sendErrorMessageToSentry(err)    
+    raven.sendErrorMessageToSentry(err)    
 }
