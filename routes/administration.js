@@ -23,6 +23,7 @@ const fileName = require('../models/filename');
 // cause whe're in the Administrator file is Administrator/register
 router.post('/register', (req, res,next) => {
   console.log("llego a la ruta del register administrator");
+  
   try {
     // Administration Object Retriev Administrator Properties from Form
     let newAdministrator = new Administration({

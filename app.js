@@ -38,6 +38,10 @@ connectToMongoDatabase()
 
 checkMongooseConnections()
 
+
+// The request handler must be the first middleware on the app
+variables.app.use(variables.raven.requestHandler());
+
 // sendMessageToSlack("/foodme")
 
 variables.wisntonLogger.log({
@@ -96,6 +100,8 @@ variables.app.get('/s',(req,res)=>{
 // Express error Handling Middleware. Cualquier error no cactheado en la aplicacion epxress de opas pasara a esta funcion y cualquier error que surga tendra este mensaje de json
 variables.app.use(function (err,req,res,next){
   console.log("Error custom message ", err.customMsg)
+  // My error reporting tool
+  variables.raven.sendErrorMessageToSentry(err)
   if(err.customMsg){
     return variables.errorUtility.sendErrorHttpJsonMessage(res,err,err.customMsg);    
   }else {
@@ -107,13 +113,13 @@ variables.app.use(function (err,req,res,next){
   
 });
 
-
+// The error handler must be before any other error middleware
+variables.app.use(variables.raven.errorHandler());
 
 // index Route. Invalid Route 
 variables.app.get('/',(req,res) => {
   res.send('invalid EndPoint');
 })
-
 
 // This is how you combine Angular with Node.js
 // Catch all other routes and return the index file that mange the angular logic
@@ -124,6 +130,13 @@ variables.app.get('*', (req, res) => {
 // Start Server
 variables.app.listen(variables.port,(req,res) => {
   console.log('Server started on port '+ variables.port);
+  variables.raven.captureBreadcrumb({
+    message: 'Conecion a servidor hecha',
+    category: 'payment',
+    data: {
+       amount: 312,
+    }
+  });
 })
 
 // ********** Functions  ***************** // 
@@ -131,9 +144,10 @@ variables.app.listen(variables.port,(req,res) => {
 // Este metodo va a coger todas las excepciones que no se han recogido en mi codigo y va a llamar un evento para enviar un json al server
 function callAllUncaughtExceptionFromNodeJs(){
   process.on('uncaughtException', function (err) {
+    // My error Reporting Tool
+    variables.raven.sendErrorMessageToSentry(err)    
     console.log("Un error no registrado en toda la aplicacion de node para la apicacion de "+variables.compañia)
     console.log("Este es el erro que no se registro en toda la aplicacion node" ,err);
-    process.exit(1)
   })
 }
 
@@ -294,6 +308,13 @@ function connectToMongoDatabase (){
     });
     promise.then( ()=>{
       gfs = modules.Grid(modules.mongoose.connection.db);
+      variables.raven.captureBreadcrumb({
+        message: 'Conecion a base de datos',
+        category: 'payment',
+        data: {
+           amount: 312,
+        }
+      });
       // Check Mongodb connections
       checkMongooseConnection(mongoose);
     });
@@ -301,24 +322,10 @@ function connectToMongoDatabase (){
 // ********************** End MONGO Database *************** // 
 }
 
-// roolbar setup 
 
-// include and initialize the rollbar library with your access token
-var Rollbar = require("rollbar");
-// Set the person data to be sent with all errors for this notifier.
-Rollbar.configure({
-  payload: {
-    person: {
-      id: 456,
-      username: "foo",
-      email: "foo@example.com"
-    }
-  }
-});
-var rollbar = new Rollbar(process.env.rollbar_token);
-
-// record a generic message and send it to Rollbar
-rollbar.log("Hello world!");
-rollbar.error('error prueba')
-
-variables.app.use(rollbar.errorHandler());
+/**
+ * Uploading Source Map to Sentry
+ * sentry-cli releases -o christian-nogueras -p opas-web-app files \
+    2da95dfb052f477380608d59d32b4ab9 upload-sourcemaps --url-prefix \
+    http://www.ecoescuelasporfolio.net/ /Users/Christiannogueras/Documents/Web\ development/MeanStack\ /Authetication/public/",
+ */
