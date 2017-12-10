@@ -305,7 +305,20 @@ function connectToMongoDatabase (){
 
 // include and initialize the rollbar library with your access token
 var Rollbar = require("rollbar");
-var rollbar = new Rollbar("97c27781395e432f9917b870d976c1c4");
+// Set the person data to be sent with all errors for this notifier.
+Rollbar.configure({
+  payload: {
+    person: {
+      id: 456,
+      username: "foo",
+      email: "foo@example.com"
+    }
+  }
+});
+var rollbar = new Rollbar(process.env.rollbar_token);
 
 // record a generic message and send it to Rollbar
 rollbar.log("Hello world!");
+rollbar.error('error prueba')
+
+variables.app.use(rollbar.errorHandler());
