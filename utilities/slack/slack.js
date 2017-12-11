@@ -52,3 +52,25 @@ module.exports.slackWebhookSendMessage = function (message){
     })
   }
   
+module.exports.sendMessageToSlackResponseURL = function (responseURL, JSONmessage){
+    console.log('hello response url')
+    console.log(responseURL)
+    console.log(JSONmessage)
+    var postOptions = {
+        uri: responseURL,
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        json: JSONmessage
+    }
+    modules.request(postOptions, (error, response, body) => {
+        if (error){
+            console.log(error)
+            // handle errors as you see fit
+        }else {
+          console.log("se envio el mensaje?")
+          console.log(body)
+        }
+    })
+  }

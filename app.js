@@ -21,6 +21,7 @@ const users = require('./routes/users');
 const fileNames = require('./routes/filename');
 const escuelaArchivos = require('./routes/escuelaArchivos');
 const paypal = require('./routes/paypal');
+const slack = require('./routes/slack');
 
 modules.Grid.mongo = modules.mongoose.mongo;
 // modules.LogRocket.init('rtbfoe/opas-web-app');
@@ -65,7 +66,7 @@ console.log("Se va a llamar el metodo")
 // da Allow Acces a cualquier dominio y tambien acepta tipo de data que se envie en el nuevo request.
 //CORS Middleware
 variables.app.use(modules.cors());
-
+let routes = [fileNames,escuelaArchivos,paypal,slack]
 // Body Parser Middleware
 variables.app.use(modules.bodyParser.json());
 // anything that is /users will go to that users file
@@ -75,12 +76,11 @@ variables.app.use('/organization',organization);
 // route for Administrator
 variables.app.use('/administrator',administration);
 // route for files retrieval
-variables.app.use('/',[fileNames,escuelaArchivos,paypal]);
+variables.app.use('/',routes);
 
 // Set Static Folder for when we use Angular an other files - staticfile keyboard shortcut
 // Esto ultiliza los archivos Html o Javscript que tu pongas dentro de el y busca siempre en un folder que se llama public que lo junta con el current directories por eso path.join(__dirname)
 variables.app.use(modules.express.static(modules.path.join(__dirname,'public')));
-
 
 // Passport Middleware
 variables.app.use(passport.initialize());
@@ -150,124 +150,6 @@ function callAllUncaughtExceptionFromNodeJs(){
     console.log("Este es el erro que no se registro en toda la aplicacion node" ,err);
   })
 }
-
-var urlencodedParser = modules.bodyParser.urlencoded({ extended: false })
-
-variables.app.post('/slashComand',urlencodedParser,(req,res)=>{
-  res.status(200).end() // best practice to respond with empty 200 status code  
-  console.log("form localhos")
-  console.log(req.body)
-  var reqBody = req.body
-  var responseURL = reqBody.response_url
-  console.log(reqBody.token)
-  console.log(process.env.slack_verification_token)
-  if (reqBody.token != process.env.slack_verification_token){
-      console.log("o aqui ?")
-      res.status(403).end("Access forbidden")
-  }else{
-    var message = {
-      "text": "This is your first interactive message",
-      "attachments": [
-          {
-              "text": "Building buttons is easy right?",
-              "fallback": "Shame... buttons aren't supported in this land",
-              "callback_id": "button_tutorial",
-              "color": "#3AA3E3",
-              "attachment_type": "default",
-              "actions": [
-                  {
-                      "name": "yes",
-                      "text": "yes",
-                      "type": "button",
-                      "value": "yes"
-                  },
-                  {
-                      "name": "no",
-                      "text": "no",
-                      "type": "button",
-                      "value": "no"
-                  },
-                  {
-                      "name": "maybe",
-                      "text": "maybe",
-                      "type": "button",
-                      "value": "maybe",
-                      "style": "danger"
-                  }
-              ]
-          }
-      ]
-  }
-  console.log("Se llega aqui?")
-  sendMessageToSlackResponseURL(responseURL, message)  
-}
-console.log("No llega a ninguno de los dos")
-})
-
-var urlencodedParser = modules.bodyParser.urlencoded({ extended: false })
-
-variables.app.post("/incomingSlackMessageAction",urlencodedParser,(req,res)=>{
-  res.status(200).end()
-  console.log("Hello baby")
-  console.log(req.body)
-
-  var actionJSONPayload = JSON.parse(req.body.payload) // parse URL-encoded payload JSON string
-
-  var message = {
-    "text": actionJSONPayload.user.name+" clicked: "+actionJSONPayload.actions[0].value,
-    "replace_original": false
-}
-sendMessageToSlackResponseURL(actionJSONPayload.response_url, message)
-  // res.send(req.body)
-});
-
-
-variables.app.post("/slackEvents",(req,res)=>{
-  console.log("Se llamo events")
-  // console.log(req.body)
-  if (req.body.type === 'url_verification') {
-    res.send(req.body.challenge);
-  }
-
-  let q = req.body;
-  // 1. To see if the request is coming from Slack
-  if (q.token !== process.env.SLACK_VERIFICATION_TOKEN) {
-    res.sendStatus(400);
-    return;
-  }
-  // 2. Events - get the message text
-  else if (q.type === 'event_callback') {
-    if(!q.event.text) return;
-      // Do logic here
-      //  analyzeTone(q.event); // sentiment analysis
-  }
-
-})
-
-
-function sendMessageToSlackResponseURL(responseURL, JSONmessage){
-  console.log('hello response url')
-  console.log(responseURL)
-  console.log(JSONmessage)
-  var postOptions = {
-      uri: responseURL,
-      method: 'POST',
-      headers: {
-          'Content-type': 'application/json'
-      },
-      json: JSONmessage
-  }
-  modules.request(postOptions, (error, response, body) => {
-      if (error){
-          console.log(error)
-          // handle errors as you see fit
-      }else {
-        console.log("se envio el mensaje?")
-        console.log(body)
-      }
-  })
-}
-
 
 // Function to chech different event in mongoDb
 function checkMongooseConnections(){
