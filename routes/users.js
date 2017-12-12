@@ -162,11 +162,11 @@ router.post('/authenticate', (req, res,next) => {
         console.log("va a buscar los administradores ahora ")
         console.log("password: " + password);
         Administrator.getAdministratorByUsername(username,(err,administrator) => {
-           console.log("User Role from call from db: " + administrator.role);
             // if not administrator where found in the db
             if(!administrator){
               return res.json({success:false,msg:'User not found'});
             }
+            console.log("User Role from call from db: " + administrator.role);
             // compare the administrator Password
             Administrator.comparePassword(password,administrator.password,(err,isMatch) => {
                userCheckPassowrd(res,err,isMatch,administrator);

@@ -2,7 +2,6 @@
 module.exports = {
     // appDynamic: require('./appDynamic'),// this need to be the first for appDynamic to work
     express: require('express'),
-    winston: require('winston'),
     request: require('request'),
     raygun: require('raygun'),  
     // newrelic: require('newrelic'), // for Heroku Monitoring app,
@@ -18,7 +17,7 @@ module.exports = {
     GridFsStorage: require('multer-gridfs-storage'),
     paypal: require('paypal-rest-sdk'),
     dotenv: require('dotenv').config(),
-    winston: require('winston')    
+    winston: require('winston')  
 
   };
 

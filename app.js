@@ -43,7 +43,6 @@ checkMongooseConnections()
 // The request handler must be the first middleware on the app
 variables.app.use(variables.raven.requestHandler());
 
-// sendMessageToSlack("/foodme")
 
 variables.wisntonLogger.log({
   level: 'info',
@@ -61,7 +60,7 @@ variables.wisntonLogger.log({
 });
 
 
-console.log("Se va a llamar el metodo")
+
 // express cors google- App.Use Cors lo que hace es que
 // da Allow Acces a cualquier dominio y tambien acepta tipo de data que se envie en el nuevo request.
 //CORS Middleware

@@ -1,5 +1,5 @@
 var Raven = require('raven');
-Raven.config('https://8437f0ecddb64e0b9af3912881bec74f:3f827187629b4a4ca9e609e704bc5cf2@sentry.io/203113',{
+Raven.config(process.env.sentry_dsn,{
   release: '2da95dfb052f477380608d59d32b4ab9',
   autoBreadcrumbs: true
 }).install();
