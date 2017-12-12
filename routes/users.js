@@ -149,7 +149,7 @@ router.post('/register', (req, res,next) => {
   *       "msg": "User not found"
   *     }
   */
-// Authenticate Route
+// Authenticate Route.
 router.post('/authenticate', (req, res,next) => {
   const username = req.body.username;
   const password = req.body.password;
@@ -164,7 +164,7 @@ router.post('/authenticate', (req, res,next) => {
         Administrator.getAdministratorByUsername(username,(err,administrator) => {
             // if not administrator where found in the db
             if(!administrator){
-              return res.json({success:false,msg:'Este administrador no se encontro en nuestro registro.'});
+              return res.json({success:false,msg:'Este usuario no se encontro en nuestro registro.'});
             }
             console.log("User Role from call from db: " + administrator.role);
             // compare the administrator Password
