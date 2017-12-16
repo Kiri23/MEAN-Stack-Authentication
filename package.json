@@ -10,6 +10,7 @@
   "scripts": {
     "start": "node ./node_modules/.bin/pm2 start app.js -i 4 --attach",
     "start1": "node app",
+    "test":"mocha ./Node.Js\\ test/",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },

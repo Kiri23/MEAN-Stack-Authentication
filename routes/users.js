@@ -185,13 +185,21 @@ router.post('/authenticate', (req, res,next) => {
    });
 });
 
+
 // Function to compare the password of a regular user or administratopr
 function userCheckPassowrd(res,err,isMatch,user){
   // TODO return a Json Error
-  if (err) throw err;
+  if (err) {
+    console.log('Eror en usercheckpasword ')
+    console.log('user: ',user)
+    throw err;
+  }
   // if the password match
   if(isMatch){
-    // construct the token- it has option
+    // construct the token- it has option. Aqui en el user cuando se pasa el del administrador como tiene una referencia circular a Users aveces me tira error.
+    var util = require('util');
+    console.log('util inspect.',util.inspect(user))
+    console.log("Aqui escratchea porque se trato de conectar un administrador y el jwt sign metodo no maneja un json circular. no se donde esta el json circular en el json del administrador ")
     const token = jwt.sign(user,config.secret,{
       expiresIn:120000 // 20 minutes
     });
