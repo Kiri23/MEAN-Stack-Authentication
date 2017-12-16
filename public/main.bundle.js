@@ -2818,13 +2818,15 @@ var RegisterComponent = (function () {
         this.flashMessage = flashMessage;
         this.authService = authService;
         this.router = router;
+        // role;
         this.text = "Regístrate";
+        this.role = 2;
     }
     RegisterComponent.prototype.ngOnInit = function () {
         // role of administrator
         // cambiar esto
-        this.role = 2;
         console.log("Error and");
+        console.log('role es ', this.role);
     };
     RegisterComponent.prototype.onRegisterSubmit = function () {
         var _this = this;
@@ -2884,6 +2886,10 @@ __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
     __metadata("design:type", Object)
 ], RegisterComponent.prototype, "text", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", Object)
+], RegisterComponent.prototype, "role", void 0);
 RegisterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-register',
@@ -4151,7 +4157,7 @@ module.exports = "<header id=\"header\">\n  <div class=\"container\">\n    <div 
 /* 318 */
 /***/ (function(module, exports) {
 
-module.exports = "<app-register text = \"Registra un Administrador\"> </app-register>\n"
+module.exports = "<app-register text = \"Registra un Administrador\" role = 1> </app-register>\n"
 
 /***/ }),
 /* 319 */

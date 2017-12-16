@@ -23,9 +23,10 @@ export class RegisterComponent implements OnInit {
   email:String;
   password:String;
   escuela: String;
-  role;
+  // role;
 
-  @Input() text = "Regístrate"
+  @Input() text = "Regístrate";
+  @Input() role = 2;
 
   //anytime we use a service we need to inject to a constructor and module also need to be injected
   // so we can this.validateService
@@ -34,8 +35,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     // role of administrator
     // cambiar esto
-    this.role = 2;
     console.log("Error and");
+    console.log('role es ',this.role);
   }
 
   onRegisterSubmit(){
