@@ -136,6 +136,11 @@ variables.app.listen(variables.port,(req,res) => {
        amount: 312,
     }
   });
+
+  if (process.env.NODE_ENV == 'production'){
+      variables.slack.slackWebhookSendMessage("Hay un visitante en la pagina web de Opas")
+  }
+
 })
 
 // ********** Functions  ***************** // 
