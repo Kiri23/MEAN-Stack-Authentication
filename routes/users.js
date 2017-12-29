@@ -506,7 +506,7 @@ function updateNumberOfFilesOfSchools(user){
 // protect route with our Authentication, Our Token
 // Profile Route
 // protect route -> ,passport.authenticate('jwt',{session:false})
-router.get('/profile',
+router.get('/profile',passport.authenticate('jwt',{session:false}),
 (req, res,next) => {
   console.log('usuario: ',req.user)
   res.json({user:req.user});

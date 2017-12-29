@@ -2681,7 +2681,8 @@ var ProfileComponent = (function () {
         // get request to users/profile to authenticate user with a token.
         this.authService.getProfile().subscribe(function (profile) {
             // user send with the response
-            if (profile.success) {
+            console.log("este es profile", profile);
+            if (profile.user) {
                 /**
                  * El usuario obtenido de la llamada Http
                  * @type {Object}*/
@@ -2689,7 +2690,7 @@ var ProfileComponent = (function () {
             }
             else {
                 // Show a error message
-                _this.flashMessage.show("Error: " + profile.msg, { cssClass: 'alert-danger', timeout: 30000 }); // 30 segundos
+                _this.flashMessage.show("Error obteniendo informacion del usuario" + " - code ang", { cssClass: 'alert-danger', timeout: 30000 }); // 30 segundos
             }
             if (_this.user) {
                 console.log("Se debe mostrar");
@@ -2697,9 +2698,9 @@ var ProfileComponent = (function () {
         }, function (err) {
             // observable can also return error
             console.log(err);
-            console.log('aqui succed erro???!!!!!');
+            console.log('aqui succed erro???!!!!! en profile component angular');
             // Show a error message
-            _this.flashMessage.show("Error. Verifique que usted tenga conexion a internet. Contacte un representates de OPAS si el problema persiste y muestrele este error. Extra informacion: No se pudo comunicar con el servidor express. Tuvo que haber ocurrido un error con la aplicacion Node. Este es el error:  " + err.msg, { cssClass: 'alert-danger', timeout: 50000 });
+            _this.flashMessage.show("Error. Verifique que usted tenga conexion a internet. Contacte un representates de OPAS si el problema persiste y muestrele este error. Extra informacion: No se pudo comunicar con el servidor express. Tuvo que haber ocurrido un error con la aplicacion Node. Este es el error:  " + err.msg + " - code ang", { cssClass: 'alert-danger', timeout: 50000 });
             // redirect to the login page
             _this.router.navigate(['/dashboard']);
             return false;
