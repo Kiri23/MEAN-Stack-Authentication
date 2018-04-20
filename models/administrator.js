@@ -14,10 +14,10 @@ const AministratorSchema = mongoose.Schema({
     type: String
   },
   // users of this administrator. Reference to the user schema
-  users: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  },
+  // users: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'User'
+  // },
   email : {
     type: String,
     unique: true,
@@ -134,7 +134,7 @@ module.exports.getAdminRole = function(id,callback){
 module.exports.comparePassword = function(candidatePassword,hash,callback){
   bcrypt.compare(candidatePassword,hash,(err, isMatch) => {
     if (err) throw err;
-    // This isMatch is going to be rturned i  the callback of bcrypt.compare. This is going to compare the password and return true if is match and do the callback and create the token in the user.js Route Autheticaction
+    // This isMatch is going to be returned in the callback of bcrypt.compare. This is going to compare the password and return true if is match and do the callback and create the token in the user.js Route Autheticaction
     callback(null,isMatch);
 
   })
