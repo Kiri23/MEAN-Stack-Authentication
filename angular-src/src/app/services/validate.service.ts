@@ -9,6 +9,7 @@ export class ValidateService {
   validateRegister(user){
     const expresion = user.name  == undefined || user.username == undefined || user.email == undefined || user.password == undefined || user.nombreEscuela == undefined;
     if(expresion){
+      // console.log("Registeration services register")
       return false;
     }else {
       return true;

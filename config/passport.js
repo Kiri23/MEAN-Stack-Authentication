@@ -6,6 +6,7 @@ const User = require('../models/user');
 const Administrator = require('../models/administrator');
 const config = require('./database');
 
+
 module.exports = function(passport){
   let opts = {};
   // Token Send in Authentciation Header
@@ -18,6 +19,8 @@ module.exports = function(passport){
     // por el momento solo funciona con usuarioa regulares. Tengo que hacer que tambien busque por administradores
     User.getUserById(jwt_payload._doc._id, (err,user) => {
       if (err){
+        // para el express handler tengas este mensaje de error
+        err.message += " -- .Ocurrio un error buscando el usuario por su ID para passport"
         return done(err,false);
       }
       if(user){
@@ -40,6 +43,7 @@ function searchAdministrator(jwt_payload,done){
     Administrator.getAdministratorById(jwt_payload._doc._id,(err,administrator)=>{
       if (err){
         console.log("Error en passport.js config file funcion del administrador. Hubo un error autenticado el administrador me devolvio un error la llamada a la base de datos. error - " + err )
+        err.message += " -- .Ocurrio un error buscando el administrador por su ID para passport"
         return done(err,false)
       }if (administrator){
         return done(null,administrator)

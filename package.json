@@ -21,6 +21,7 @@
     ]
   },
   "Coment3": "No Poner el carrot ^ alfrente de cada actualizacion pq greenkeeper lo va a actualizar automaticamente lo que puede romper mi codigo. Poner siempre el latest update para que greenKeeper no la actualize",
+  "coment4":" Dejar passport en la version 0.3.2 que es la version que actualmente hace que funcione la autenticancion a las rutas(Passport authenticate)",
   "dependencies": {
     "@risingstack/trace": "3.16.0",
     "@slack/interactive-messages": "^0.2.0",

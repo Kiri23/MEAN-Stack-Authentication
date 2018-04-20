@@ -16,6 +16,8 @@ var crypto = require('crypto');
 const config = require('../config/database');
 var upload = require ('../config/multer');
 const nodeEmail = require('../utilities/nodemailer')
+var errorUtility = require('../utilities/error')
+
 
 const User = require('../models/user');
 const Administrator = require('../models/administrator');

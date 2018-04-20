@@ -893,6 +893,7 @@ var ValidateService = (function () {
     ValidateService.prototype.validateRegister = function (user) {
         var expresion = user.name == undefined || user.username == undefined || user.email == undefined || user.password == undefined || user.nombreEscuela == undefined;
         if (expresion) {
+            // console.log("Registeration services register")
             return false;
         }
         else {
@@ -2826,12 +2827,13 @@ var RegisterComponent = (function () {
     RegisterComponent.prototype.ngOnInit = function () {
         // role of administrator
         // cambiar esto
-        console.log("Error and");
         console.log('role es ', this.role);
+    };
+    RegisterComponent.prototype.cho = function () {
+        console.log("hhelo baby");
     };
     RegisterComponent.prototype.onRegisterSubmit = function () {
         var _this = this;
-        console.log(this.name, this.username, this.email, "role: ", this.role + " escuela: " + this.escuela.toString().toLowerCase());
         // Aqui tengo que mandar el rol del usuario pa asegurar quien lo creo y que rol tiene este
         // usuario nuevo
         var user = {
@@ -2860,7 +2862,7 @@ var RegisterComponent = (function () {
         }
         // register user. since it's an observable we need to subcribe to it.
         this.authService.registerUser(user).subscribe(function (data) {
-            // console.log(data);
+            console.log(data);
             // callback with the data(aka json)
             // data.succes I refer to this as the json come with the respond. if user register
             if (data.success) {
@@ -2876,9 +2878,10 @@ var RegisterComponent = (function () {
                 // show a message. sugestion maye in the json can be a error message
                 _this.flashMessage.show("Error: " + data.msg || data.error.errors.nombreEscuela.message, { cssClass: 'alert-danger', timeout: 10000 });
                 // Redirect to login
-                _this.router.navigate(['/register']);
+                // this.router.navigate(['/register'])
             }
         });
+        // console.log(this.name,this.username,this.email, "role: ",this.role + " escuela: " + this.escuela.toString().toLowerCase());
         //  data.error.errors.file.message - mostrar el mensajes de error de excdeio file archivos
     };
     return RegisterComponent;

@@ -34,7 +34,7 @@ router.post('/register', (req, res,next) => {
     });
     
     
-    // Validation error. This throw an error and I triying to cacth the error and respond to it   
+    // Validation error. This throw an error and I trying to cacth the error and respond to it   
    assert.notEqual(newAdministrator, undefined,"Algunos campos no fueron llenados correctamente por favor intente otra vez. Extra informacion algunos de los campos son indefinidos")
     assert.notEqual(newAdministrator.password,undefined,"El campo de la contraseña no fue llenado. Si lo lleno intentelo de nuevo otra vez. Extra informacion ruta register")
 
@@ -63,54 +63,67 @@ router.post('/register', (req, res,next) => {
 
 // Authenticate Route
 router.post('/authenticate', (req, res,next) => {
-  const username = req.body.username;
-  const password = req.body.password;
+  try{
+    const username = req.body.username;
+    const password = req.body.password;
+    assert.notEqual(username, undefined,"Autenticando el Administrador. El nombre de Usuario no esta definido. Code Nod") 
+    assert.notEqual(password, undefined,"Autenticando el administrador. La contraseña no esta definida. Code Nod") 
 
-  // Get the Administrator to authenticate
-  Administration.getAdministratorByUsername(username,(err,Administrator) => {
-    if (err) throw err;
-    if(!Administrator){
-      return res.json({success:false,msg:'Administration not found'});
+    // Get the Administrator to authenticate
+    Administration.getAdministratorByUsername(username,(err,Administrator) => {
+      if (err) {
+        errorUtility.sendErrorHttpJsonMessage(res,err,"Ocurrio un error buscando el administrador por su nombre de usuario para autenticar. Code nod")
+      }
+      if(!Administrator){
+        return res.json({success:false,msg:'No se encontro ningun administrador con ese nombre de usuario para autenticar'});
+      }
+      // Compare the Password
+      Administration.comparePassword(password,Administrator.password,(err,isMatch) => {
+        if (err) {
+          errorUtility.sendErrorHttpJsonMessage(res,err,"Ocurrio un error buscando el administrador por su contraseña para autenticar. Code nod")
+        }
+        // if the password match
+        if(isMatch){
+          // construct the token- it has option
+          const token = jwt.sign(Administrator,config.secret,{
+            expiresIn:120000 // 20 minutes
+          });
+          // Send the reponse in Json Format
+          res.json({success:true,
+            token:'JWT '+token,
+            Administrator:{
+              id:Administrator._id,
+              name:Administrator.name,
+              username:Administrator.username,
+              email:Administrator.email
+            }
+          });
+        }
+        // if no match
+        else {
+          return res.json({success:false,msg:'No se encontro ningun administrador con esa contraseña para autenticar'});
+        }
+
+      });
+
+
+    })
+  }catch(error){
+    if (error instanceof AssertionError){
+      errorUtility.sendErrorHttpJsonMessage(res,error,error.message)
+    }else {
+      var message = "Error no documentado cuando se autentica un administrador. Error: " + error.message
+      errorUtility.sendErrorHttpJsonMessage(res,error,message)
     }
-    // Compare the Password
-    Administration.comparePassword(password,Administrator.password,(err,isMatch) => {
-      if (err) throw err;
-      // if the password match
-      if(isMatch){
-        // construct the token- it has option
-        const token = jwt.sign(Administrator,config.secret,{
-          expiresIn:120000 // 20 minutes
-        });
-        // Send the reponse in Json Format
-        res.json({success:true,
-          token:'JWT '+token,
-          Administrator:{
-            id:Administrator._id,
-            name:Administrator.name,
-            username:Administrator.username,
-            email:Administrator.email
-          }
-        });
-      }
-      // if no match
-      else {
-        return res.json({success:false,msg:'Wrong password'});
-      }
-
-    });
-
-
-  })
-
+  }
 });
 
 // route to upload a file
 router.post('/upload',(req, res) => {
   upload(req,res,function(err){
-    console.log("body in upload method: " +JSON.stringify(req.body, null, 4));
+    console.log("administration upload body in upload method: " +JSON.stringify(req.body, null, 4));
       if(err){
-           res.json({error_code:1,err_desc:err});
-           return;
+        errorUtility.sendErrorHttpJsonMessage(res,err,"Ocurrio un error subiendo el archivo. Code nod")
       }
       console.log("Filename of the file " + req.file.grid.filename);
       console.log("id of the file " + req.file.grid._id);
@@ -122,7 +135,7 @@ router.post('/upload',(req, res) => {
        })
        fileName.addFileName(nameFile,(err,file)=> {
          if (err){
-           console.log("Error saving fileName");
+          errorUtility.sendErrorHttpJsonMessage(res,err,"Ocurrio un error guardando el archivo. Code nod")
          }else {
            console.log("File Name saved Succesfully");
          }
@@ -130,6 +143,8 @@ router.post('/upload',(req, res) => {
        });
 
        res.json({
+         success: true,
+         msg: "Archivo guardado exitosamente",
          error_code:0,
          err_desc:null,
          file:req.file,
@@ -151,9 +166,9 @@ router.get('/getAdministratorById', (req, res) => {
   var id = req.query.AdministratorId;
   Administration.getAdministratorById(id,(err,data) => {
     if (err){
-      return res.json(err);
+      return errorUtility.sendErrorHttpJsonMessage(res,err,"Ocurrio un error encontrando el administrador por su ID. Code nod")
     }
-    return res.json({Administrator:data})
+    return res.json({success:true,Administrator:data})
   });
 
 });
@@ -162,7 +177,7 @@ router.get('/getAdministratorById', (req, res) => {
 router.get('/getLatestAdministrators', (req, res) => {
   Administration.getLatestAdministrator((err, Administrator) => {
     if (err){
-      return res.json(err);
+      return errorUtility.sendErrorHttpJsonMessage(res,err,"Ocurrio un error encontrando los ultimos administradores registrados. Code nod")
     }
     // console.log(Administrator[0].name + " latest Administrator from api");
     res.send(Administrator);
@@ -174,7 +189,7 @@ router.get('/getLatestAdministrators', (req, res) => {
 router.get('/getAllAdministrators', (req, res) => {
   Administration.getAllAdministrator((err, Administrator) => {
     if (err){
-      return res.json(err);
+      return errorUtility.sendErrorHttpJsonMessage(res,err,"Ocurrio un error encontrando todos los administradores registradores. Code nod")
     }
     // console.log(Administrator[0].name + " All Administrator from the api");
     res.send(Administrator);
@@ -189,7 +204,7 @@ router.get('/skipAdministrators', (req, res) => {
   // Convert number to string
   Administration.skipAdministrator(parseInt(number),(err, Administrator) => {
     if (err){
-      return res.json(err);
+      return errorUtility.sendErrorHttpJsonMessage(res,err,"Ocurrio un error bricando los administradores. Code nod")
     }
     // console.log(Administrator[0].name + " Skip Administrator from the api");
     res.send(Administrator);
@@ -202,7 +217,7 @@ router.get('/getAdminRole', (req, res) => {
     var roleNumber = req.query.role;
     Administration.getAdminRole(roleNumber,(err, AdminRole) => {
       if (err){
-        return res.json(err);
+        return errorUtility.sendErrorHttpJsonMessage(res,err,"Ocurrio un error obteniendo el rol del administrador. Code nod")
       }
       res.json(AdminRole);
 
