@@ -893,6 +893,7 @@ var ValidateService = (function () {
     ValidateService.prototype.validateRegister = function (user) {
         var expresion = user.name == undefined || user.username == undefined || user.email == undefined || user.password == undefined || user.nombreEscuela == undefined;
         if (expresion) {
+            // console.log("Registeration services register")
             return false;
         }
         else {
@@ -2681,7 +2682,8 @@ var ProfileComponent = (function () {
         // get request to users/profile to authenticate user with a token.
         this.authService.getProfile().subscribe(function (profile) {
             // user send with the response
-            if (profile.success) {
+            console.log("este es profile", profile);
+            if (profile.user) {
                 /**
                  * El usuario obtenido de la llamada Http
                  * @type {Object}*/
@@ -2689,7 +2691,7 @@ var ProfileComponent = (function () {
             }
             else {
                 // Show a error message
-                _this.flashMessage.show("Error: " + profile.msg, { cssClass: 'alert-danger', timeout: 30000 }); // 30 segundos
+                _this.flashMessage.show("Error obteniendo informacion del usuario" + " - code ang", { cssClass: 'alert-danger', timeout: 30000 }); // 30 segundos
             }
             if (_this.user) {
                 console.log("Se debe mostrar");
@@ -2697,9 +2699,9 @@ var ProfileComponent = (function () {
         }, function (err) {
             // observable can also return error
             console.log(err);
-            console.log('aqui succed erro???!!!!!');
+            console.log('aqui succed erro???!!!!! en profile component angular');
             // Show a error message
-            _this.flashMessage.show("Error. Verifique que usted tenga conexion a internet. Contacte un representates de OPAS si el problema persiste y muestrele este error. Extra informacion: No se pudo comunicar con el servidor express. Tuvo que haber ocurrido un error con la aplicacion Node. Este es el error:  " + err.msg, { cssClass: 'alert-danger', timeout: 50000 });
+            _this.flashMessage.show("Error. Verifique que usted tenga conexion a internet. Contacte un representates de OPAS si el problema persiste y muestrele este error. Extra informacion: No se pudo comunicar con el servidor express. Tuvo que haber ocurrido un error con la aplicacion Node. Este es el error:  " + err.msg + " - code ang", { cssClass: 'alert-danger', timeout: 50000 });
             // redirect to the login page
             _this.router.navigate(['/dashboard']);
             return false;
@@ -2825,12 +2827,13 @@ var RegisterComponent = (function () {
     RegisterComponent.prototype.ngOnInit = function () {
         // role of administrator
         // cambiar esto
-        console.log("Error and");
         console.log('role es ', this.role);
+    };
+    RegisterComponent.prototype.cho = function () {
+        console.log("hhelo baby");
     };
     RegisterComponent.prototype.onRegisterSubmit = function () {
         var _this = this;
-        console.log(this.name, this.username, this.email, "role: ", this.role + " escuela: " + this.escuela.toString().toLowerCase());
         // Aqui tengo que mandar el rol del usuario pa asegurar quien lo creo y que rol tiene este
         // usuario nuevo
         var user = {
@@ -2859,7 +2862,7 @@ var RegisterComponent = (function () {
         }
         // register user. since it's an observable we need to subcribe to it.
         this.authService.registerUser(user).subscribe(function (data) {
-            // console.log(data);
+            console.log(data);
             // callback with the data(aka json)
             // data.succes I refer to this as the json come with the respond. if user register
             if (data.success) {
@@ -2875,9 +2878,10 @@ var RegisterComponent = (function () {
                 // show a message. sugestion maye in the json can be a error message
                 _this.flashMessage.show("Error: " + data.msg || data.error.errors.nombreEscuela.message, { cssClass: 'alert-danger', timeout: 10000 });
                 // Redirect to login
-                _this.router.navigate(['/register']);
+                // this.router.navigate(['/register'])
             }
         });
+        // console.log(this.name,this.username,this.email, "role: ",this.role + " escuela: " + this.escuela.toString().toLowerCase());
         //  data.error.errors.file.message - mostrar el mensajes de error de excdeio file archivos
     };
     return RegisterComponent;

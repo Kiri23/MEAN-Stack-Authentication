@@ -16,6 +16,8 @@ var crypto = require('crypto');
 const config = require('../config/database');
 var upload = require ('../config/multer');
 const nodeEmail = require('../utilities/nodemailer')
+var errorUtility = require('../utilities/error')
+
 
 const User = require('../models/user');
 const Administrator = require('../models/administrator');
@@ -506,7 +508,7 @@ function updateNumberOfFilesOfSchools(user){
 // protect route with our Authentication, Our Token
 // Profile Route
 // protect route -> ,passport.authenticate('jwt',{session:false})
-router.get('/profile',
+router.get('/profile',passport.authenticate('jwt',{session:false}),
 (req, res,next) => {
   console.log('usuario: ',req.user)
   res.json({user:req.user});

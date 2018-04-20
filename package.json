@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node ./node_modules/.bin/pm2 start app.js -i 4 --attach",
     "start1": "node app",
-    "test":"mocha ./Node.Js\\ test/",
+    "test": "mocha ./Node.Js\\ test/",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
@@ -21,6 +21,7 @@
     ]
   },
   "Coment3": "No Poner el carrot ^ alfrente de cada actualizacion pq greenkeeper lo va a actualizar automaticamente lo que puede romper mi codigo. Poner siempre el latest update para que greenKeeper no la actualize",
+  "coment4":" Dejar passport en la version 0.3.2 que es la version que actualmente hace que funcione la autenticancion a las rutas(Passport authenticate)",
   "dependencies": {
     "@risingstack/trace": "3.16.0",
     "@slack/interactive-messages": "^0.2.0",
@@ -39,7 +40,7 @@
     "multer": "1.3.0",
     "multer-gridfs-storage": "1.2.2",
     "nodemailer": "^4.0.1",
-    "passport": "^0.4.0",
+    "passport": "0.3.2",
     "passport-jwt": "2.2.1",
     "paypal-rest-sdk": "^1.7.1",
     "pm2": "2.6.1",
