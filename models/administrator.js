@@ -4,6 +4,9 @@ const mongoose = require('mongoose');
 // to encrypt files
 const bcrypt = require('bcryptjs');
 const config = require('../config/database');
+const errorUtilities = require ('../utilities/error');
+const assert = require('assert')
+const AssertionError = require('assert').AssertionError
 
 //user Schema
 const AministratorSchema = mongoose.Schema({
@@ -11,10 +14,10 @@ const AministratorSchema = mongoose.Schema({
     type: String
   },
   // users of this administrator. Reference to the user schema
-  users: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  },
+  // users: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'User'
+  // },
   email : {
     type: String,
     unique: true,
@@ -64,6 +67,10 @@ const Administrator = module.exports = mongoose.model('Administrator',Aministrat
 
 // Get a user by the id
 module.exports.getAdministratorById = function(id,callback){
+  if (id == null || id == undefined){
+    console.log("Error modelo administrador. Id no esta definido.")
+    return 
+  }
   Administrator.findById(id,callback);
 };
 
@@ -93,13 +100,18 @@ module.exports.getAdministratorByUsername = function(username,callback){
 };
 
 // Add Administrator to the Database
-module.exports.addAdministrator = function(newAministrator,callback){
+module.exports.addAdministrator = function(newAministrator,res,callback){
   // console.log(JSON.stringify(newAministrator,null,4) + " add administrator model");
-  // Hash password
+  // Hash password  
   bcrypt.genSalt(10,(err, salt) => {
     bcrypt.hash(newAministrator.password, salt, (err, hash) => {
       if(err){
-        throw err
+        console.log("Error en genSalt. Modelo del administrador.Funcion add")
+        const message = "Error. El campo de la contraseña no puede quedarse sin rellenar. Si usted no ha dejo el camplo de la contraseña sin rellenar, intentelo de nuevo. Informacion extra: Succedio en el modelo del administrador";        
+        // throw new Error(message + "\n \n " + err)
+        return errorUtilities.sendErrorHttpJsonMessage(res,err,message)
+        // callback = err.message
+        // throw new Error(errorUtilities.sendModelJsonErrorMessage(err,message))
       }
       newAministrator.password = hash;
       //save user
@@ -122,7 +134,7 @@ module.exports.getAdminRole = function(id,callback){
 module.exports.comparePassword = function(candidatePassword,hash,callback){
   bcrypt.compare(candidatePassword,hash,(err, isMatch) => {
     if (err) throw err;
-    // This isMatch is going to be rturned i  the callback of bcrypt.compare. This is going to compare the password and return true if is match and do the callback and create the token in the user.js Route Autheticaction
+    // This isMatch is going to be returned in the callback of bcrypt.compare. This is going to compare the password and return true if is match and do the callback and create the token in the user.js Route Autheticaction
     callback(null,isMatch);
 
   })

@@ -1,5 +1,6 @@
 const variables = require('../config/variables');
 const modules = require('../config/modules');
+var errorUtility = require('../utilities/error')
 const url = require('url')
 const paypal = modules.paypal
 require('../config/paypal'); // require configuration paypal
@@ -61,13 +62,13 @@ function fullUrl(req) {
 
     paypal.payment.create(create_payment_json, function (error, payment) {
         if (error) {
-            throw error;
+            throw errorUtility.sendErrorHttpJsonMessage(res,error,"Ocurrio un error para crear el pago con Paypal. Code nod")
         } else {
             console.log(payment)
             for(let i = 0; i< payment.links.length; i++) {
                 if (payment.links[i].rel == "approval_url"){
                     console.log("approval url")
-                    return res.json({paymentLink:payment.links[i].href,msg:'Succes'})
+                    return res.json({paymentLink:payment.links[i].href,msg:'Exitosa',success:true})
                 }
             }
         }
@@ -88,7 +89,7 @@ function excecutePayment(paymentId,payerId,res){
       paypal.payment.execute(paymentId, execute_payment_json, function (error, payment) {
         if (error) {
             console.log(error.response);
-            throw error;
+            errorUtility.sendErrorHttpJsonMessage(res,error,"Ocurrio un error ejecutando el pago por paypal.Code nod")
         } else {
             console.log(JSON.stringify(payment));
             res.send('Success');

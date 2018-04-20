@@ -120,22 +120,23 @@
        <tr>
          <th>Numero</th>
          <th>Nombre del Archivo</th>
-         <th style="width:80px">Editar</th>
-         <th style="width:80px">Eliminar</th>
+         <!-- <th style="width:80px">Editar</th> -->
+         <!-- <th style="width:80px">Eliminar</th> -->
          <!-- <th>Subido Por</th> -->
        </tr>
        <!--Rows of tables  -->
        <tr *ngFor="let file of files;let index = index" class="">
          <th scope="row">{{index + 1}}</th>
          <td colspan="">{{file}} </td>
-         <!--Edit row  -->
-         <td>
+         <!--Edit row desactivados 21/diciembre 2017  -->
+         <!-- <td>
            <p data-placement="top" data-toggle="tooltip" title="Edit" style="display:inline;float:left;"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil" style="font-size:12px;"></span></button></p>
-         </td>
-         <!--Delete Row  -->
-         <td>
+         </td> -->
+         <!--Delete Row desactivados 21/diciembre 2017 -->
+         <!-- <td>
            <p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" > <span class="glyphicon glyphicon-trash" style="font-size:12px"></span></button></p>
-         </td>
+         </td> -->
+
          <!--Subido Por Row  -->
          <!-- <td>
 
@@ -148,7 +149,7 @@
  <h2 *ngIf="!files">Error al mostrar los archivos</h2>
 
 
- <!--Edit Modal -->
+ <!--Edit Modal que por ahora 21/diciembre 2017 estaran desactivados -->
  <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
    <div class="modal-dialog">
      <div class="modal-content">
@@ -176,7 +177,7 @@
  <!-- /.modal-dialog -->
  </div> <!-- End Edit Modal -->
 
- <!--Start Delete Modal -->
+ <!--Start Delete Modal que por ahora 21/diciembre 2017 estaran desactivados -->
  <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
   <div class="modal-dialog">
    <div class="modal-content">

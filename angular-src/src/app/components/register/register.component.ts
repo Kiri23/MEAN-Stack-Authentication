@@ -6,6 +6,7 @@ import {ValidateService} from '../../services/validate.service';
 import {AuthService} from '../../services/auth.service';
 // external module 3rd party
 import {FlashMessagesService} from 'angular2-flash-messages';
+import { error } from 'util';
 
 // Acces to external Method in window
 declare var LogRocket:any;
@@ -22,9 +23,10 @@ export class RegisterComponent implements OnInit {
   email:String;
   password:String;
   escuela: String;
-  role;
+  // role;
 
-  @Input() text = "Regístrate"
+  @Input() text = "Regístrate";
+  @Input() role = 2;
 
   //anytime we use a service we need to inject to a constructor and module also need to be injected
   // so we can this.validateService
@@ -33,11 +35,13 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     // role of administrator
     // cambiar esto
-    this.role = 2;
+    console.log('role es ',this.role);
   }
 
+  cho(){
+   console.log("hhelo baby"); 
+  }
   onRegisterSubmit(){
-    console.log(this.name,this.username,this.email, "role: ",this.role + " escuela: " + this.escuela.toString().toLowerCase());
     // Aqui tengo que mandar el rol del usuario pa asegurar quien lo creo y que rol tiene este
     // usuario nuevo
     const user = {
@@ -57,7 +61,6 @@ export class RegisterComponent implements OnInit {
       this.flashMessage.show("Porfavor llena todo los encasillados antes de crear la cuenta.",{cssClass: 'alert-danger',timeout: 3000});
       return false;
     }
-
     // Validate Email
     if(!this.validateService.validateEmail(user.email)){
       // tslint:disable-next-line:max-line-length
@@ -67,7 +70,7 @@ export class RegisterComponent implements OnInit {
     }
     // register user. since it's an observable we need to subcribe to it.
     this.authService.registerUser(user).subscribe(data=> {
-      // console.log(data);
+      console.log(data);
       // callback with the data(aka json)
       // data.succes I refer to this as the json come with the respond. if user register
       if(data.success){
@@ -83,9 +86,11 @@ export class RegisterComponent implements OnInit {
         // show a message. sugestion maye in the json can be a error message
         this.flashMessage.show("Error: " + data.msg || data.error.errors.nombreEscuela.message,{cssClass: 'alert-danger',timeout: 10000});
         // Redirect to login
-        this.router.navigate(['/register'])
+        // this.router.navigate(['/register'])
       }
     });
+    // console.log(this.name,this.username,this.email, "role: ",this.role + " escuela: " + this.escuela.toString().toLowerCase());
+
     //  data.error.errors.file.message - mostrar el mensajes de error de excdeio file archivos
   }
 

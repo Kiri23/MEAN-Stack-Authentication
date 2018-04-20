@@ -4,12 +4,18 @@ import { NgModule,ErrorHandler } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
+import { enableProdMode } from '@angular/core';
+
 // External Modules
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FileSelectDirective } from 'ng2-file-upload';
-// external js files 
+
+//External Js File 
 import * as Raven from 'raven-js';
+
+// My own modules
+import { CustomErrorHandler } from './CustomErrorHandler';
 
 // Components
 import { AppComponent } from './app.component';
@@ -38,6 +44,9 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { DownloadProfessorFilesComponent } from './components/download-professor-files/download-professor-files.component';
 import { PayComponent } from './components/pay/pay.component';
+import { NotFoundPathComponent } from './components/not-found-path/not-found-path.component';
+
+
 
 //Services
 import {ValidateService} from './services/validate.service';
@@ -49,20 +58,12 @@ import {UtilitiesService} from './services/utilities.service';
 import {AdministratorsService} from './services/administration/administrator.service';
 import {OrganizationsService} from './services/organization/organization.service';
 import {PaypalService} from './services/paypal.service';
+import { environment } from 'environments/environment';
 
 
-
-
-// sentry setup for tarckering error
 Raven
-  .config('https://8437f0ecddb64e0b9af3912881bec74f@sentry.io/203113')
-  .install();
-
-export class RavenErrorHandler implements ErrorHandler {
-  handleError(err:any) : void {
-    Raven.captureException(err);
-  }
-}
+.config('https://8437f0ecddb64e0b9af3912881bec74f@sentry.io/203113')
+.install();
 
 //appRoutes - va a contener todas las routes del angular app
 const appRoutes: Routes = [
@@ -89,12 +90,15 @@ const appRoutes: Routes = [
   {path:'timeline',component:UserTimelineComponent},
   {path:'forgot',component:ForgotPasswordComponent},
   {path:'reset',component:ResetPasswordComponent},
-  {path:'pay',component:PayComponent}
+  {path:'pay',component:PayComponent},
+  //This route need to be at the end if none of this route match send to this route
+  {path:'**',component:NotFoundPathComponent}
   // {path:'succes',component:PayComponent}
 
 
 
 ];
+// enableProdMode();
 
 @NgModule({
   declarations: [
@@ -124,7 +128,8 @@ const appRoutes: Routes = [
     ForgotPasswordComponent,
     ResetPasswordComponent,
     DownloadProfessorFilesComponent,
-    PayComponent
+    PayComponent,
+    NotFoundPathComponent
   ],
   imports: [
     BrowserModule,
@@ -135,7 +140,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot()
   ],
   providers: [ValidateService, AuthService, AuthGuard, AdministratorGuard,
-    UsersService, UtilitiesService, AdministratorsService, OrganizationsService, PaypalService, { provide: ErrorHandler, useClass: RavenErrorHandler }
+    UsersService, UtilitiesService, AdministratorsService, OrganizationsService, PaypalService, { provide: ErrorHandler, useClass: CustomErrorHandler }
   ],
   bootstrap: [AppComponent]
 })

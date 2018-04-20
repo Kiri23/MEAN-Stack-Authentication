@@ -1,33 +1,6 @@
 webpackJsonp([3,5],{
 
-/***/ 180:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(274);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(375)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js??ref--9-1!../node_modules/postcss-loader/index.js??postcss!./styles.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js??ref--9-1!../node_modules/postcss-loader/index.js??postcss!./styles.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 2:
+/***/ 1:
 /***/ (function(module, exports) {
 
 /*
@@ -110,22 +83,49 @@ function toComment(sourceMap) {
 
 /***/ }),
 
-/***/ 274:
+/***/ 181:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(2)(false);
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(277);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(379)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../node_modules/css-loader/index.js??ref--9-1!../node_modules/postcss-loader/index.js??postcss!./styles.css", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js??ref--9-1!../node_modules/postcss-loader/index.js??postcss!./styles.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ 277:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
 // imports
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n/* Override Boostrap Default Color  */\n.navbar-default .navbar-nav>li>a {\n    color: #363636;\n}\n\n.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{\n    color: #ffffff;\n    background-color: #93c54b;\n}\n\n.navbar-default{\n color: #93c54b; \n  background-color: #93c54b;  /** b9eb50 */   \n}\n\n.btn-default {\n    background-color: #93c54b; \n}\n\n.btn-default:hover{\n    background-color: #93c54b;\n}\n\n.btn-default:active:hover, .btn-default.active:hover, .open>.dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open>.dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open>.dropdown-toggle.btn-default.focus{\n    background-color: #93c54b;\n}\n\n.btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default{\n    background-color: #93c54b;\n}\n\n.breadcrumb{\n    background-color: #93c54b\n}\n\n/*Color green for OPAS Website  */\n.greenOpasColor{\n    background-color: #93c54b;\n}", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\n/* Override Boostrap Default Color  */\n.navbar-default .navbar-nav>li>a {\n    color: #363636;\n}\n\n.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus{\n    color: #ffffff;\n    background-color: #93c54b;\n}\n\n.navbar-default{\n color: #93c54b; \n  background-color: #93c54b;  /** b9eb50 */   \n}\n\n.btn-default {\n    background-color: #93c54b; \n}\n\n.btn-default:hover{\n    background-color: #93c54b;\n}\n\n.btn-default:active:hover, .btn-default.active:hover, .open>.dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open>.dropdown-toggle.btn-default:focus, .btn-default:active.focus, .btn-default.active.focus, .open>.dropdown-toggle.btn-default.focus{\n    background-color: #93c54b;\n}\n\n.btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default{\n    background-color: #93c54b;\n}\n\n.breadcrumb{\n    background-color: #93c54b\n}\n\n/*Color green for OPAS Website  */\n.greenOpasColor{\n    background-color: #93c54b;\n}\n\n\n/* Clase de Boostrap4 Css Btn y button primary  */\n\n.btn {\n    display: inline-block;\n    font-weight: normal;\n    line-height: 1.25;\n    text-align: center;\n    white-space: nowrap;\n    vertical-align: middle;\n    -webkit-user-select: none;\n       -moz-user-select: none;\n        -ms-user-select: none;\n            user-select: none;\n    border: 1px solid transparent;\n    padding: 0.5rem 1rem;\n    font-size: 1.4rem;\n    border-radius: 0.25rem;\n    transition: all 0.2s ease-in-out;\n  }\n\n  .btn:focus, .btn:hover {\n    text-decoration: none;\n  }\n  \n  .btn:focus, .btn.focus {\n    outline: 0;\n    box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.25);\n  }\n  \n  .btn.disabled, .btn:disabled {\n    cursor: not-allowed;\n    opacity: .65;\n  }\n  \n  .btn:active, .btn.active {\n    background-image: none;\n  }\n\n  .btn-primary {\n    color: #fff;\n    background-color: #0275d8;\n    border-color: #0275d8;\n  }\n  \n  .btn-primary:hover {\n    color: #fff;\n    background-color: #025aa5;\n    border-color: #01549b;\n  }\n  \n  .btn-primary:focus, .btn-primary.focus {\n    box-shadow: 0 0 0 2px rgba(2, 117, 216, 0.5);\n  }\n  \n  .btn-primary.disabled, .btn-primary:disabled {\n    background-color: #0275d8;\n    border-color: #0275d8;\n  }\n  \n  .btn-primary:active, .btn-primary.active,\n  .show > .btn-primary.dropdown-toggle {\n    color: #fff;\n    background-color: #025aa5;\n    background-image: none;\n    border-color: #01549b;\n  }", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 375:
+/***/ 379:
 /***/ (function(module, exports) {
 
 /*
@@ -378,13 +378,13 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 379:
+/***/ 383:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(180);
+module.exports = __webpack_require__(181);
 
 
 /***/ })
 
-},[379]);
+},[383]);
 //# sourceMappingURL=styles.bundle.js.map

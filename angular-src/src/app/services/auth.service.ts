@@ -78,6 +78,7 @@ export class AuthService {
     //set the Content-Type to application/json
     // with this now we have acces to the token.
     this.loadToken()
+    console.log("Estes es el token",this.authToken)
     // append the token to the header
     headers.append('Authorization',this.authToken);
     headers.append('Content-Type','application/json');

@@ -16,6 +16,8 @@ var crypto = require('crypto');
 const config = require('../config/database');
 var upload = require ('../config/multer');
 const nodeEmail = require('../utilities/nodemailer')
+var errorUtility = require('../utilities/error')
+
 
 const User = require('../models/user');
 const Administrator = require('../models/administrator');
@@ -91,20 +93,20 @@ router.post('/register', (req, res,next) => {
   User.numberOfEscuelas(newUser.nombreEscuela,(err, count) => {
     if (err){
       console.log("Error al buscar el total de escuela en la base de datos");
-      res.json({success: false,msg:"Error al buscar el total de escuela en la base de datos"})
+      res.json({success: false,msg:"Error buscando el total de professores registrado en esta escuela: "+newUser.nombreEscuela+".Intentelo de nuevo."})
     }else{
       console.log("total de escuelas: " + count + " de " + newUser.nombreEscuela);
       if (count >= 3){
-        res.json({succes:false,msg:"Ya la escuela " + newUser.nombreEscuela + " llego a su limite de 3 profesores por escuela"})
+        res.json({succes:false,msg:"Ya la escuela " + newUser.nombreEscuela + " llego a su limite de 3 professores por escuela"})
       }else {
         // Add User to mongoDb
           User.addUser(newUser,(err, user) => {
             if(err){
               console.log(err + " add user");
-              res.json({success: false, msg:'Failed to register user',error:err});
+              res.json({success: false, msg:'Error creando cuenta de Professor. Intentelo nuevamente',error:err});
             }else{ // addUser to the Database
               nodeEmail.sendEmail(mailOptions);
-              res.json({success:true,msg:'Profesor registrado, ya se puede conectar. Pronto debe estar recibiendo un correo electrónico de confirmación',user:newUser});  
+              res.json({success:true,msg:'Professor registrado, ya se puede conectar. Pronto debe estar recibiendo un correo electrónico de confirmación',user:newUser});  
             }              
           });
         // End add User logic
@@ -149,7 +151,7 @@ router.post('/register', (req, res,next) => {
   *       "msg": "User not found"
   *     }
   */
-// Authenticate Route
+// Authenticate Route.
 router.post('/authenticate', (req, res,next) => {
   const username = req.body.username;
   const password = req.body.password;
@@ -162,11 +164,11 @@ router.post('/authenticate', (req, res,next) => {
         console.log("va a buscar los administradores ahora ")
         console.log("password: " + password);
         Administrator.getAdministratorByUsername(username,(err,administrator) => {
-           console.log("User Role from call from db: " + administrator.role);
             // if not administrator where found in the db
             if(!administrator){
-              return res.json({success:false,msg:'User not found'});
+              return res.json({success:false,msg:'Este usuario no se encontro en nuestro registro.'});
             }
+            console.log("User Role from call from db: " + administrator.role);
             // compare the administrator Password
             Administrator.comparePassword(password,administrator.password,(err,isMatch) => {
                userCheckPassowrd(res,err,isMatch,administrator);
@@ -185,13 +187,21 @@ router.post('/authenticate', (req, res,next) => {
    });
 });
 
+
 // Function to compare the password of a regular user or administratopr
 function userCheckPassowrd(res,err,isMatch,user){
   // TODO return a Json Error
-  if (err) throw err;
+  if (err) {
+    console.log('Eror en usercheckpasword ')
+    console.log('user: ',user)
+    throw err;
+  }
   // if the password match
   if(isMatch){
-    // construct the token- it has option
+    // construct the token- it has option. Aqui en el user cuando se pasa el del administrador como tiene una referencia circular a Users aveces me tira error.
+    var util = require('util');
+    console.log('util inspect.',util.inspect(user))
+    console.log("Aqui escratchea porque se trato de conectar un administrador y el jwt sign metodo no maneja un json circular. no se donde esta el json circular en el json del administrador ")
     const token = jwt.sign(user,config.secret,{
       expiresIn:120000 // 20 minutes
     });
@@ -215,7 +225,7 @@ function userCheckPassowrd(res,err,isMatch,user){
   }
   // if no match
   else {
-    return res.json({success:false,msg:'Wrong password'});
+    return res.json({success:false,msg:'Contraseña incorrecta. Intentelo de nuevo.'});
   }
 }
 
@@ -238,7 +248,7 @@ router.post('/forgot',function (req,res,next){
       User.findOne({ email: req.query.email }, function(err, user) {
         if (!user) {
           console.log('No hay nigun usuario con esa cuenta')
-          res.json({succes:false,msg:'No se encontro ningun usuario con esta direccion de correo electronico: ' + req.query.email})
+          res.json({succes:false,msg:'No se encontro ningun usuario con esta direccion de correo electronico: ' + req.query.email + ". Recuerde que tiene que utilizar la misma direcion de correo electronico con la cual se registro."})
           return // res.redirect('/forgot');
         }
         user.resetPasswordToken = token;
@@ -256,13 +266,13 @@ router.post('/forgot',function (req,res,next){
         to: user.email,
         from: 'opaspuertorico@gmail.com',
         subject: 'Recuperacion contrasena aplicacion OPAS',
-        text: 'Estas recibiendo este correo electronico porque solicistatse recuperar la contrasena en la aplicacion OPAS.\n\n' +
+        html: 'Estas recibiendo este correo electronico porque solicistatse recuperar la contrasena en la aplicacion OPAS.\n\n' +
           'Por favor entra a este enlance para recuperar tu contrasena, o copiar este enlance en tu navegador web para completar el processo \n\n' +
           'http://' + req.headers.host + '/users/reset/' + token + '\n\n' +
-          'Este enlance expirara despues de una hora, es recomendable que cambie la contrasena ahora. Si no solicistaste este correo eletronico por favor ignorarlo y la contrasena seguira siendo la misma.\n'
+          '<b> Este enlance expirara despues de una hora </b>, es recomendable que cambie la contrasena ahora. Si no solicistaste este correo eletronico por favor ignorarlo y la contrasena seguira siendo la misma.\n'
       };
       nodeEmail.sendEmail(mailOptions);
-      res.json({success:true,msg:'Instrucciones para recuperar la contrasena fueron enviaron a ' + user.email})
+      res.json({success:true,msg:'Instrucciones para recuperar la contrasena fueron enviadas a este correo electronico: ' + user.email})
     } 
     
   ],function(err){
@@ -277,7 +287,7 @@ router.post('/forgot',function (req,res,next){
 router.get('/reset/:token', function(req, res) {
   User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
     if (!user) {
-      res.json({success:false,msg:'Enlance invalido o es posible que ya se ha expirado.. Recuerde que solamente cambiar la contrasena es valido por una hora.'}) //res.send('enlance no valido')
+      res.json({success:false,msg:'Enlance invalido o es posible que ya se ha expirado. Recuerde que solamente cambiar la contrasena es valido por una hora.'}) //res.send('enlance no valido')
       return // res.redirect('/forgot');
     }
     console.log('req param token:'+ req.params.token)  
@@ -300,9 +310,9 @@ router.post('/reset/:token', function(req, res) {
         user.password = req.body.password;
         User.changePassword(user,(err,user)=>{
           if (err){
-            res.json({success:false,err:err,msg:'Ha ocurrido un error al guardar la nueva contrasena'})
+            res.json({success:false,err:err,msg:'Ha ocurrido un error al guardar la nueva contrasena. Por favor intentelo de nuevo o vuelva a pedir el cambio de contraseña'})
           }
-          res.json({success:true,msg:'Contrasena cambiada existosamente. Ya se pueede conectar.' + user.password})
+          res.json({success:true,msg:'Contrasena cambiada existosamente. Ya se puede volver a conectar.'})
         });
         // user.resetPasswordToken = undefined;
         // user.resetPasswordExpires = undefined;
@@ -332,7 +342,7 @@ router.post('/reset/:token', function(req, res) {
 * @apiName UploadFile
 * @apiSuccess {Intenger} error_code The error code for this operation.
 * @apiSuccess {String} err_desc  Error description if there's one.
-* @apiSuccess {String} file The file uploaded.
+* @apiSuccess {String} file The file `upload`ed.
 * @apiSuccess {String} filename The name of the file uploaded.
 * @apiSuccess {String} dbId The Id of the file uploaded.
 *
@@ -498,7 +508,9 @@ function updateNumberOfFilesOfSchools(user){
 // protect route with our Authentication, Our Token
 // Profile Route
 // protect route -> ,passport.authenticate('jwt',{session:false})
-router.get('/profile',(req, res,next) => {
+router.get('/profile',passport.authenticate('jwt',{session:false}),
+(req, res,next) => {
+  console.log('usuario: ',req.user)
   res.json({user:req.user});
 });
 
@@ -611,10 +623,10 @@ router.get('/getFilesUploaded', (req, res) => {
          res.json({success:true,file:file});
       }else if (underscore.isEmpty(file)){
         console.log("No hay nignun archvio subido por el usuario");
-        res.json({success:false,msg:"No hay ningun archivo subido por el usuario",file:file});
+        res.json({success:false,msg:"No hay ningun archivo subido por este usuario",file:file});
       }else {
         console.log("Error al obtener Archvivos de usuarios de la base de datos");
-        res.json({success:false,msg:"Error al obtener Archivos de usuarios de la base de datos",file:file})
+        res.json({success:false,msg:"Error al obtener Archivos de usuarios de nuestro registro",file:file})
       }
   });
 });
@@ -623,11 +635,12 @@ router.get('/getFilesUploaded', (req, res) => {
 router.get('/getUserRoleById', (req, res) => {
     var id = req.query.id
     // convert the string to a Int
-    console.log("User Id from route Api" +id);
+    console.log("User Id from users route Api " +id);
     // var idInt = parseInt(idStr)
     // console.log(idInt);
     User.getUserRole(id,(err,userRole) => {
       if (err){
+        console.log("Hubo un error obteniendo el usuario por su rol ")
         return res.json(err);
       }
       // get role of a Admin User
@@ -638,10 +651,11 @@ router.get('/getUserRoleById', (req, res) => {
               if (underscore.isEmpty(adminRole)){
                 console.log(adminRole + " AdminRole");
                 console.log("Ningun usuario del rol fue encotrado.No usuario, no administrador");
-                res.json({data:false,msg:"Usuario Role no encontrado"})
+                res.json({data:false,msg:"El Rol de este usuario no fue encontrado por favor conectese nuevamente."})
               }
               // A role is found
               else {
+                console.log("Se encontro un rol de administrador")
                 res.json(adminRole)
               }
 
@@ -649,6 +663,7 @@ router.get('/getUserRoleById', (req, res) => {
       }
       // Get role of a regular user
       else {
+        console.log("Se encontro un rol de usuario ", userRole + " end.")        
         res.json(userRole);
       }
 
@@ -728,6 +743,40 @@ router.get('/getUserByEscuela/:escuela',(req,res)=> {
   });
     
 });
+
+router.get("/file",(req,res)=>{
+  res.finishe
+  console.log(__dirname)
+   return res.download(__dirname + "/apidoc.json","userRoute.js",(err)=>{
+     if(err){
+        if (err.code == "ENOENT") {
+          return res.json({succes:false,msg:"Error este archivo no fue encontrado en nuestro registro",err:err})
+        }
+        return res.json({err:err,succes:false,msg:"Hubo un error al descargar el archivo. Por favor intentenlo de nuevo. "})
+     }else {
+        
+        console.log("true o false se envio el archivo: " + res.sendDate)
+        // can't set header after the're sent
+        // return res.json({succes:true,msg:"Archivos descargado exitosamente"})      
+     }
+   });
+})
+
+router.get("/Testupload",(req,res)=>{
+  console.log("Header enviados ",res.headersSent)
+  return res.sendFile(__filename,(error)=>{
+    if (error){
+      return res.json({succes:false,msg:"Error al subir el archivo. Codigo de error: " + error.code,err:error})
+    }else {
+      console.log("Headers enviados ",res.headersSent)
+      if (! res.headersSent){
+          return res.json({succes:false,msg:"El archivo no se ha enviado todavia"})
+      }else {
+        console.log("Archivos ya enviado")
+      }
+    }
+  })
+})
 
 
 /**
