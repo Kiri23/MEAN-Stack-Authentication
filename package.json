@@ -10,7 +10,8 @@
   "scripts": {
     "start": "node ./node_modules/.bin/pm2 start app.js -i 4 --attach",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublish": "npm run snyk-protect",
+    "prepare": "npm run snyk-protect"
   },
   "coment2": "Dejar Ignorando este archvio ver pull request #2 el response que viene del server es diffente al que tengo y tambien el UI se cambia",
   "greenkeeper": {
@@ -28,7 +29,7 @@
     "dotenv": "^4.0.0",
     "express": "4.15.4",
     "gridfs-stream": "1.1.1",
-    "jsonwebtoken": "7.4.3",
+    "jsonwebtoken": "8.0.0",
     "logrocket": "0.5.2",
     "make-array": "1.0.2",
     "mongoose": "^4.11.7",
@@ -40,7 +41,7 @@
     "passport-jwt": "2.2.1",
     "paypal-rest-sdk": "^1.7.1",
     "pm2": "2.6.1",
-    "snyk": "^1.40.2",
+    "snyk": "^1.83.0",
     "underscore": "1.8.3"
   },
   "repository": {
