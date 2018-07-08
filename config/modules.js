@@ -1,5 +1,6 @@
 // export all required modules to have for the application
 module.exports = {
+    compression: require('compression'),
     express: require('express'),
     // newrelic: require('newrelic'), // for Heroku Monitoring app,
     path: require('path'),

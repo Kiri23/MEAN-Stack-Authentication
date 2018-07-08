@@ -36,8 +36,7 @@ modules.Grid.mongo = modules.mongoose.mongo;
 
 // ********************** End MONGO Database *************** // 
 
-console.log("Se va a llamar el metodo")
-
+variables.app.use(modules.compression());
 // express cors google- App.Use Cors lo que hace es que
 // da Allow Acces a cualquier dominio y tambien acepta tipo de data que se envie en el nuevo request.
 //CORS Middleware
