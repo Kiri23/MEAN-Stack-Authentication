@@ -1,0 +1,2 @@
+// descargado por la web https://github.com/elcodabra/angular4-starter/commit/d6dbf6794daad16d20badcb4a3d502c9cf8d5f50#diff-11e9f7f953edc64ba14b0cc350ae7b9d
+module.exports = require('./config/webpack.local.js');

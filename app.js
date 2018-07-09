@@ -36,6 +36,7 @@ modules.Grid.mongo = modules.mongoose.mongo;
 
 // ********************** End MONGO Database *************** // 
 
+// Need to be the first middleware in order to compress files size
 variables.app.use(modules.compression());
 // express cors google- App.Use Cors lo que hace es que
 // da Allow Acces a cualquier dominio y tambien acepta tipo de data que se envie en el nuevo request.

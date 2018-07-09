@@ -1,20 +1,19 @@
+// Configuraciones cambiadas por estas https://github.com/elcodabra/angular4-starter/commit/d6dbf6794daad16d20badcb4a3d502c9cf8d5f50#diff-11e9f7f953edc64ba14b0cc350ae7b9d
 {
-  "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "../public/out-tsc",
-    "baseUrl": "src",
+    "target": "es5",
+    "module": "es2015",
     "sourceMap": true,
-    "declaration": false,
+    "lib": ["es2015", "dom"],
+    "noImplicitAny": false,
+    "suppressImplicitAnyIndexErrors": false,
+    "skipLibCheck": true,
+    "baseUrl": "src",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
     "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2016",
-      "dom"
+      "./node_modules/@types/"
     ]
   }
 }

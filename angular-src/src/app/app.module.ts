@@ -7,7 +7,7 @@ import {RouterModule, Routes} from '@angular/router';
 // External Modules
 import {FlashMessagesModule} from 'angular2-flash-messages';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { FileSelectDirective } from 'ng2-file-upload';
+import { FileUploadModule } from 'ng2-file-upload';
 // external js files 
 import * as Raven from 'raven-js';
 
@@ -117,7 +117,6 @@ const appRoutes: Routes = [
     AdminUsersComponent,
     AdminRegisterComponent,
     UploadFileComponent,
-    FileSelectDirective,
     UploadPortfolioComponent,
     DisplayProfessorsComponent,
     UserTimelineComponent,
@@ -128,6 +127,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FileUploadModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),

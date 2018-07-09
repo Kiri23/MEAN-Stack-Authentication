@@ -32,7 +32,7 @@ LogRocket.track('Register User');
 export class NavbarComponent implements OnInit {
   userRole:Number;
   // inject the module and service to the constructor
-  constructor(private authService:AuthService,
+  constructor(public authService:AuthService,
               private userService:UsersService,
               private router:Router,
               private flashMessage:FlashMessagesService) {}
