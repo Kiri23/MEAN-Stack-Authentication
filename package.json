@@ -40,7 +40,7 @@
     "passport-jwt": "2.2.1",
     "paypal-rest-sdk": "^1.7.1",
     "pm2": "2.6.1",
-    "snyk": "^1.40.2",
+    "snyk": "^1.107.1",
     "underscore": "1.8.3"
   },
   "repository": {
